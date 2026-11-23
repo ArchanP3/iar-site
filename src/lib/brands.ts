@@ -72,7 +72,7 @@ export const brands: Brand[] = [
     core: true,
     card: "SINAMICS drives, SIMODRIVE, SINUMERIK, 1FK7 motors",
     intro:
-      "Siemens is one of our core specialties. We repair SINAMICS and SIMODRIVE drives, 1FK7, 1FT and 1PH motors, SINUMERIK 840C and 840D CNC controls, SIMATIC PLCs and panels, and SITOP power supplies, at component level, with a free evaluation and a 1-year warranty.",
+      "Siemens motion control is IAR’s core specialty. We repair SINAMICS and SIMODRIVE drives, 1FT5, 1FT6, 1FT7, 1FK6, 1FK7 and 1PH motors, SINUMERIK 840C and 840D controls, SIMATIC PLCs and panels and SITOP power supplies — and test them on working systems, including our own SINUMERIK 840D test setup.",
     lines: [
       { t: "Servo & AC drives", series: ["SINAMICS S120", "SIMODRIVE 611", "SINAMICS G120", "MICROMASTER", "SINAMICS V90"], service: "servo-drive-repair" },
       { t: "Servo & spindle motors", series: ["1FK7", "1FT6 / 1FT7", "1PH7 / 1PH8"], service: "servo-motor-repair" },
@@ -102,7 +102,7 @@ export const brands: Brand[] = [
     core: true,
     card: "IndraDrive, EcoDrive DKC, DIAX, MKD / MSK motors",
     intro:
-      "Rexroth Indramat is one of our core specialties. We repair IndraDrive, EcoDrive DKC, DIAX and DDS drives, MKD, MSK and MAC servo motors and supply modules, including obsolete Indramat equipment, with a free evaluation and a 1-year warranty.",
+      "IAR provides Indramat servo motor repair for legacy equipment, along with Bosch Rexroth drives and power supplies. Our work covers fault diagnosis, mechanical repair, winding assessment and feedback testing on MKD, MAC and MDD motors, DKC, DDS and IndraDrive drives, with the repair scope confirmed for each model.",
     lines: [
       { t: "Servo drives", series: ["EcoDrive DKC", "IndraDrive", "DIAX03 / DIAX04", "DDS / System 200"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["MKD", "MSK", "MAC", "MHD"], service: "servo-motor-repair" },
@@ -130,7 +130,7 @@ export const brands: Brand[] = [
     core: true,
     card: "Kinetix, PowerFlex, PanelView, SLC 500, ControlLogix",
     intro:
-      "Allen-Bradley is one of our core specialties. We repair Kinetix servo drives, PowerFlex drives, MPL servo motors, PanelView HMIs and SLC 500, PLC-5 and ControlLogix PLCs at component level, with a free evaluation and a 1-year warranty.",
+      "Allen-Bradley and Rockwell Automation motion systems are one of IAR’s core specialties. As experienced servo motor rebuilders, we repair and test Allen-Bradley servo motors from legacy 1326AB models to current MPL and MPF series, plus Kinetix, Ultra and 1394 drives, PanelView terminals and SLC 500 hardware.",
     lines: [
       { t: "Servo drives", series: ["Kinetix 6000", "Kinetix 5500", "Kinetix 2000", "Ultra 3000"], service: "servo-drive-repair" },
       { t: "AC drives", series: ["PowerFlex 40", "PowerFlex 525", "PowerFlex 700", "PowerFlex 753"], service: "vfd-repair" },
@@ -159,7 +159,7 @@ export const brands: Brand[] = [
     core: true,
     card: "αi / βi amplifiers, spindle motors, CNC controls, robots",
     intro:
-      "We repair Fanuc αi and βi servo and spindle amplifiers, power supply modules, servo and spindle motors, pulsecoders, CNC controls and robot controllers at component level, with a free evaluation and a 1-year warranty.",
+      "IAR repairs FANUC servo motors, spindle motors, CNC controls and robot teach pendants, and handles FANUC drive repair for alpha i and beta i amplifiers and power supplies. Our technicians refurbish and load test FANUC equipment to factory specification so it installs and runs exactly as it should.",
     lines: [
       { t: "Servo & spindle amplifiers", series: ["αi SVM", "αi SPM", "βi SVSP", "βi SVU"], service: "servo-drive-repair" },
       { t: "Power supply modules", series: ["αi PSM"], service: "power-supply-repair" },
@@ -221,7 +221,8 @@ export const brands: Brand[] = [
   {
     slug: "abb", group: "drives", categories: ["vfd-repair", "servo-drive-repair", "servo-motor-repair", "industrial-motor-repair", "plc-repair", "power-supply-repair", "controller-card-repair", "robotics-repair", "hmi-repair", "exchange"], name: "ABB", initials: "ABB", color: "#F87171",
     card: "ACS and DCS drives, motors, robot controllers",
-    intro: "We repair ABB ACS AC drives, DCS DC drives, MicroFlex servo drives, motors and IRC5 robot controllers and FlexPendants at component level.",
+    intro:
+      "When an ABB robot axis or drive fails, the whole cell stops. IAR provides ABB robot motor repair, axis drive module repair and ACS and DCS drive repair, confirming the repair scope and test method for each model before work begins.",
     lines: [
       { t: "AC drives", series: ["ACS355", "ACS550", "ACS800", "ACS880"], service: "vfd-repair" },
       { t: "DC drives", series: ["DCS400", "DCS800"], service: "vfd-repair" },

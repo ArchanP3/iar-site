@@ -27,10 +27,10 @@ export const generateMetadata = seo("/contact", {
 });
 
 const stats = [
-  { value: 20, suffix: "+", l: "Years repairing automation" },
-  { value: 1000, suffix: "+", l: "Brands we repair" },
+  { value: 100, suffix: "%", l: "Units load tested before they ship" },
+  { value: 24, suffix: "/7", l: "Emergency repair line" },
   { value: 24, to: 72, suffix: " hr", l: "Typical turnaround once approved" },
-  { value: 12, suffix: "-month", l: "Warranty on every repair" },
+  { value: 1, suffix: "-year", l: "Warranty on every repair" },
 ];
 
 /* Who to talk to: each desk goes to the form that already asks the right questions */
@@ -111,9 +111,9 @@ export default async function ContactPage() {
   const contact = await getContact();
   const schema = schemaFor(contact);
   const cards = ([
-    contact.phone && { icon: Phone, k: "Call us", v: contact.phone, note: "Calls and WhatsApp on the same number", href: phoneHref(contact.phone) },
+    contact.phone && { icon: Phone, k: "Call us", v: contact.phone, note: "Toll-free, 24/7 for line-down emergencies · Local 416-904-6155", href: phoneHref(contact.phone) },
     contact.email && { icon: Mail, k: "Email us", v: contact.email, note: "Attach photos of the nameplate", href: `mailto:${contact.email}` },
-    { icon: WhatsAppIcon, k: "WhatsApp", v: contact.phone || "Connect with our team", note: "Message us, send nameplate photos", wa: true },
+    { icon: WhatsAppIcon, k: "Chat with us", v: "Message our team", note: "Message us, send nameplate photos", wa: true },
     { icon: MessageSquare, k: "Send a message", v: "Use the form below", note: "Repairs, parts or anything else", href: "#message" },
     { icon: Wrench, k: "Equipment down?", v: "Request a Repair", note: "Free evaluation, quote first", href: "/request-repair" },
     { icon: MapPin, k: "Repair centre", v: fullAddress(contact), note: "Serving Canada & USA", href: "#visit" },
