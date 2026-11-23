@@ -4,7 +4,7 @@ import TrustStrip from "@/components/iar/TrustStrip";
 import BrandLogos from "@/components/iar/BrandLogos";
 import RepairServices from "@/components/RepairServices";
 import PartsSection from "@/components/PartsSection";
-import HowWeWork from "@/components/HowWeWork";
+import ProcessSection from "@/components/iar/ProcessSection";
 import FaultCodeTeaser from "@/components/FaultCodeTeaser";
 import Industries from "@/components/Industries";
 import GlobalReach from "@/components/GlobalReach";
@@ -47,7 +47,7 @@ export default function Home() {
       {/* Sections below the first screen are only laid out when scrolled near (faster first load, same look) */}
       <div className="cv-auto"><RepairServices /></div>
       <div className="cv-auto"><PartsSection /></div>
-      <div className="cv-auto"><HowWeWork /></div>
+      <div className="cv-auto"><ProcessSection /></div>
       <div className="cv-auto"><ServiceAreasBand /></div>
       <div className="cv-auto"><GlobalReach /></div>
       <div className="cv-auto"><Industries /></div>
