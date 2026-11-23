@@ -1,0 +1,42 @@
+import Link from "next/link";
+import { ChevronRight, Lock } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { montserrat } from "@/lib/font";
+
+/* Shared frame for the cart, checkout and account pages */
+export default function ShopShell({ crumb, title, accent, text, secure, children }: {
+  crumb: string; title: string; accent: string; text: string; secure?: boolean; children: React.ReactNode;
+}) {
+  return (
+    <main className={`${montserrat.className} flex min-h-screen flex-col bg-[#F4F7FB] text-[#0B1A3C]`}>
+      <Header />
+      <section className="relative overflow-hidden bg-[#050B18] pb-24 pt-8 text-white">
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(0,176,255,0.3),transparent)] blur-2xl" />
+        <div className="relative mx-auto flex max-w-310 flex-wrap items-end justify-between gap-4 px-5 sm:px-8">
+          <div>
+            <nav aria-label="Breadcrumb">
+              <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
+                <li><Link href="/" className="hover:text-white">Home</Link></li>
+                <li aria-hidden="true"><ChevronRight size={13} /></li>
+                <li className="text-white/85">{crumb}</li>
+              </ol>
+            </nav>
+            <h1 className="mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">
+              {title} <span className="bg-linear-to-r from-[#7FD3FF] to-[#00B0FF] bg-clip-text text-transparent">{accent}</span>
+            </h1>
+            <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">{text}</p>
+          </div>
+          {secure && (
+            <p className="flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[12.5px] font-semibold text-white/85 ring-1 ring-white/15">
+              <Lock size={13} className="text-[#7FD3FF]" aria-hidden="true" /> No payment taken online yet
+            </p>
+          )}
+        </div>
+      </section>
+      <div className="relative mx-auto -mt-16 w-full max-w-310 flex-1 px-5 pb-14 sm:px-8">{children}</div>
+      <Footer />
+    </main>
+  );
+}

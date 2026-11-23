@@ -1,0 +1,415 @@
+[
+ {
+  "code": "F002",
+  "slug": "f002",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Auxiliary Input",
+  "area": "Inputs / external"
+ },
+ {
+  "code": "F003",
+  "slug": "f003",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Power Loss",
+  "area": "Power section"
+ },
+ {
+  "code": "F004",
+  "slug": "f004",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "UnderVoltage",
+  "area": "Power section",
+  "meaning": "The DC bus voltage inside the drive fell below its minimum.",
+  "symptoms": "Trips when the plant supply dips, at power-down, or when a large load starts nearby.",
+  "causes": "Low or interrupted incoming supply; a blown or open input fuse; a loose input terminal; a failing pre-charge circuit or weak DC bus capacitors inside the drive.",
+  "checks": "Measure all three input phases under load; check the input fuses and terminal tightness; note whether it trips only when other equipment starts.",
+  "repairable": "Yes, when the cause is inside the drive: pre-charge and capacitor faults are repaired at component level.",
+  "service": "VFD repair"
+ },
+ {
+  "code": "F005",
+  "slug": "f005",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "OverVoltage",
+  "area": "Power section",
+  "meaning": "The DC bus voltage rose above its maximum, usually because the motor is feeding energy back into the drive.",
+  "symptoms": "Trips while the motor is slowing down, or with a load that pushes the motor (lowering, unwinding, fans spinning on).",
+  "causes": "Deceleration time too short for the load inertia; overhauling load with no dynamic braking; high or spiking incoming voltage; a failed brake resistor or brake circuit.",
+  "checks": "Lengthen the decel time as a test; check the incoming voltage; if a brake resistor is fitted, measure it and check its wiring.",
+  "repairable": "Yes: if the brake transistor or bus sensing has failed, the drive can be repaired.",
+  "service": "VFD repair"
+ },
+ {
+  "code": "F006",
+  "slug": "f006",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Motor Stalled",
+  "area": "Motor / load"
+ },
+ {
+  "code": "F007",
+  "slug": "f007",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Motor Overload",
+  "area": "Motor / load",
+  "meaning": "The drive's electronic motor-overload protection tripped: the motor drew more current than its setting allows, for too long.",
+  "symptoms": "Trips after running a while under load, often earlier on hot days.",
+  "causes": "Mechanical load too heavy or binding; motor current setting in the drive too low for the motor; worn motor bearings; a failing motor winding.",
+  "checks": "Compare running current with the motor nameplate; check that the motor nameplate current is entered correctly; turn the load by hand to feel for binding.",
+  "repairable": "Yes: motor bearing and winding repairs are routine; the drive itself is usually healthy.",
+  "service": "Industrial motor repair; motor rewinding"
+ },
+ {
+  "code": "F008",
+  "slug": "f008",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Heatsink OvrTmp",
+  "area": "Thermal",
+  "meaning": "The heatsink or power module inside the drive is too hot.",
+  "symptoms": "Trips after running a while, worse in summer or in a closed cabinet.",
+  "causes": "Blocked or dusty heatsink fins; failed cooling fan; high cabinet temperature; drive overloaded for its size.",
+  "checks": "Check that the drive fan spins; clean the heatsink fins; measure the cabinet temperature.",
+  "repairable": "Yes: fan replacement and power-section repair are routine.",
+  "service": "VFD repair; cooling fan replacement"
+ },
+ {
+  "code": "F009",
+  "slug": "f009",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "CC OvrTmp",
+  "area": "Thermal"
+ },
+ {
+  "code": "F012",
+  "slug": "f012",
+  "type": "Type 2 fault (manual reset)",
+  "name": "HW OverCurrent",
+  "area": "Power section",
+  "meaning": "The output current jumped above the drive's hardware limit, so the power stage shut off at once to protect itself.",
+  "symptoms": "Trips right at start or on a sudden load change; after a power-section failure it can trip as soon as the drive is told to run.",
+  "causes": "Short in the motor or motor cable; very fast acceleration into a heavy load; wrong motor data or boost setting; a failed output transistor (IGBT) in the drive.",
+  "checks": "With power off, disconnect the motor and megger the motor and cable; try running the drive with no motor connected; check the accel time and boost settings.",
+  "repairable": "Yes: failed IGBTs and gate drivers are replaced at component level and the drive is tested under load.",
+  "service": "VFD repair; industrial motor repair"
+ },
+ {
+  "code": "F013",
+  "slug": "f013",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Ground Fault",
+  "area": "Power section",
+  "meaning": "The drive detected current flowing from its output to earth (ground).",
+  "symptoms": "Trips at start or as soon as the motor turns, often after rain, washdown or cable damage.",
+  "causes": "Damaged motor cable insulation; moisture in the motor or terminal box; motor winding breaking down to ground; a failed current sensor in the drive.",
+  "checks": "With power off, disconnect the motor and insulation-test (megger) the motor and the cable separately.",
+  "repairable": "Yes: motors are dried out or rewound; if the drive's sensing has failed, the drive is repaired.",
+  "service": "Industrial motor repair; motor rewinding; VFD repair"
+ },
+ {
+  "code": "F015",
+  "slug": "f015",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Load Loss",
+  "area": "Motor / load"
+ },
+ {
+  "code": "F021",
+  "slug": "f021",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Output Ph Loss",
+  "area": "Motor / load",
+  "meaning": "One of the three output phases to the motor is missing (when output-phase-loss detection is turned on).",
+  "symptoms": "Motor hums, runs rough or will not start, then the drive trips.",
+  "causes": "Loose or burnt motor terminal; broken motor cable; an output contactor with a bad contact; an open motor winding; a failed output transistor.",
+  "checks": "With power off, check every connection between drive and motor; measure motor winding resistance phase to phase.",
+  "repairable": "Yes: open windings are rewound and failed output stages are repaired.",
+  "service": "Industrial motor repair; VFD repair"
+ },
+ {
+  "code": "F029",
+  "slug": "f029",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Analog In Loss",
+  "area": "Inputs / external"
+ },
+ {
+  "code": "F033",
+  "slug": "f033",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Auto Rstrt Tries",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "F038",
+  "slug": "f038",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase U to Gnd",
+  "area": "Power section",
+  "meaning": "Phase U of the drive output has a path to ground. F039 and F040 are the same fault on phases V and W.",
+  "symptoms": "Trips as soon as the drive is told to run.",
+  "causes": "Damaged insulation on that phase of the motor cable or motor; moisture; a shorted output transistor on that phase.",
+  "checks": "With power off, disconnect the motor and megger each phase of the cable and the motor to ground. If both test good and the fault stays, the drive is the cause.",
+  "repairable": "Yes: a shorted output stage is repaired at component level.",
+  "service": "VFD repair; industrial motor repair"
+ },
+ {
+  "code": "F039",
+  "slug": "f039",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase V to Gnd",
+  "area": "Power section"
+ },
+ {
+  "code": "F040",
+  "slug": "f040",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase W to Gnd",
+  "area": "Power section"
+ },
+ {
+  "code": "F041",
+  "slug": "f041",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase UV Short",
+  "area": "Power section",
+  "meaning": "Too much current flowed between output phases U and V. F042 (U to W) and F043 (V to W) are the same fault on the other phase pairs.",
+  "symptoms": "Trips immediately on run.",
+  "causes": "Short between phases in the motor cable or motor terminal box; a shorted motor winding; a failed output transistor.",
+  "checks": "With power off, disconnect the motor and measure phase-to-phase resistance of the motor and cable. If they test good and the fault stays with the motor removed, the drive has failed.",
+  "repairable": "Yes: output stages and motors are both repairable.",
+  "service": "VFD repair; industrial motor repair"
+ },
+ {
+  "code": "F042",
+  "slug": "f042",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase UW Short",
+  "area": "Power section"
+ },
+ {
+  "code": "F043",
+  "slug": "f043",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Phase VW Short",
+  "area": "Power section"
+ },
+ {
+  "code": "F048",
+  "slug": "f048",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Params Defaulted",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "F059",
+  "slug": "f059",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "Safety Open",
+  "area": "Inputs / external"
+ },
+ {
+  "code": "F063",
+  "slug": "f063",
+  "type": "Type 1 fault (auto-reset)",
+  "name": "SW OverCurrent",
+  "area": "Motor / load"
+ },
+ {
+  "code": "F064",
+  "slug": "f064",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Drive Overload",
+  "area": "Power section",
+  "meaning": "The drive's own overload rating was exceeded: the drive, not just the motor, carried too much current for too long.",
+  "symptoms": "Trips under heavy load or long, hard accelerations.",
+  "causes": "Drive undersized for the application; mechanical load too heavy; acceleration time too short.",
+  "checks": "Compare output current with the drive rating; lengthen the accel time; check the machine for binding.",
+  "repairable": "Usually an application issue; if the drive trips at light load, its current sensing may be faulty and can be repaired.",
+  "service": "VFD repair"
+ },
+ {
+  "code": "F070",
+  "slug": "f070",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Power Unit",
+  "area": "Power section",
+  "meaning": "The drive detected a failure in its power section.",
+  "symptoms": "Fault returns after a power cycle, sometimes with no motor running.",
+  "causes": "Failed power module, gate driver or power supply on the power board; overheating damage; a supply surge.",
+  "checks": "Check the ambient temperature and the fan, cycle power once. If the fault comes back, the power section needs repair.",
+  "repairable": "Yes: power-section repair at component level, followed by a load test.",
+  "service": "VFD repair"
+ },
+ {
+  "code": "F071",
+  "slug": "f071",
+  "type": "Type 2 fault (manual reset)",
+  "name": "DSI Net Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F072",
+  "slug": "f072",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Opt Net Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F073",
+  "slug": "f073",
+  "type": "Type 2 fault (manual reset)",
+  "name": "EN Net Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F080",
+  "slug": "f080",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Autotune Failure",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "F081",
+  "slug": "f081",
+  "type": "Type 2 fault (manual reset)",
+  "name": "DSI Comm Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F082",
+  "slug": "f082",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Opt Comm Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F083",
+  "slug": "f083",
+  "type": "Type 2 fault (manual reset)",
+  "name": "EN Comm Loss",
+  "area": "Communication"
+ },
+ {
+  "code": "F091",
+  "slug": "f091",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Encoder Loss",
+  "area": "Encoder / feedback",
+  "meaning": "One channel of the encoder signal is missing. The drive needs a differential (A, A-not, B, B-not) encoder to check this.",
+  "symptoms": "Trips on start or while running when the drive uses encoder feedback or positioning.",
+  "causes": "Broken or loose encoder wire; poor shield grounding; encoder power missing; a failed encoder.",
+  "checks": "Check the encoder wiring and shield at both ends; measure the encoder supply; with positioning, make sure the channels or motor leads are not swapped.",
+  "repairable": "Yes: encoders are repaired or replaced and cables rebuilt.",
+  "service": "Encoder repair; custom cables"
+ },
+ {
+  "code": "F094",
+  "slug": "f094",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Function Loss",
+  "area": "Inputs / external"
+ },
+ {
+  "code": "F100",
+  "slug": "f100",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Parameter Chksum",
+  "area": "Control module"
+ },
+ {
+  "code": "F101",
+  "slug": "f101",
+  "type": "Type 2 fault (manual reset)",
+  "name": "External Storage",
+  "area": "Control module"
+ },
+ {
+  "code": "F105",
+  "slug": "f105",
+  "type": "Type 2 fault (manual reset)",
+  "name": "C Connect Err",
+  "area": "Control module"
+ },
+ {
+  "code": "F106",
+  "slug": "f106",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Incompat C-P",
+  "area": "Control module"
+ },
+ {
+  "code": "F107",
+  "slug": "f107",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Replaced C-P",
+  "area": "Control module"
+ },
+ {
+  "code": "F109",
+  "slug": "f109",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Mismatch C-P",
+  "area": "Control module"
+ },
+ {
+  "code": "F110",
+  "slug": "f110",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Keypad Membrane",
+  "area": "Control module"
+ },
+ {
+  "code": "F111",
+  "slug": "f111",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Safety Hardware",
+  "area": "Control module"
+ },
+ {
+  "code": "F114",
+  "slug": "f114",
+  "type": "Type 2 fault (manual reset)",
+  "name": "uC Failure",
+  "area": "Control module",
+  "meaning": "The microprocessor on the control module failed.",
+  "symptoms": "Fault on power-up or random trips; keypad may freeze.",
+  "causes": "Control module hardware failure; electrical noise; supply problems on the control board.",
+  "checks": "Cycle power. If the fault returns, the control module needs repair or replacement.",
+  "repairable": "Yes: control modules are repaired at component level.",
+  "service": "VFD repair; controller card & PCB repair"
+ },
+ {
+  "code": "F122",
+  "slug": "f122",
+  "type": "Type 2 fault (manual reset)",
+  "name": "I/O Board Fail",
+  "area": "Control module",
+  "meaning": "A failure was detected in the control and I/O section of the drive.",
+  "symptoms": "Fault on power-up or when inputs change; I/O may not respond.",
+  "causes": "Damaged I/O circuit (often from wiring mistakes or surges); control module hardware failure.",
+  "checks": "Check control wiring for wrong voltages on the terminals; cycle power. If it returns, the control module or drive needs repair.",
+  "repairable": "Yes: I/O circuits on the control module are repairable.",
+  "service": "VFD repair; controller card & PCB repair"
+ },
+ {
+  "code": "F125",
+  "slug": "f125",
+  "type": "Type 2 fault (manual reset)",
+  "name": "Flash Update Req",
+  "area": "Control module"
+ },
+ {
+  "code": "F126",
+  "slug": "f126",
+  "type": "Type 2 fault (manual reset)",
+  "name": "NonRecoverablErr",
+  "area": "Control module"
+ },
+ {
+  "code": "F127",
+  "slug": "f127",
+  "type": "Type 2 fault (manual reset)",
+  "name": "DSIFlashUpdatReq",
+  "area": "Control module"
+ }
+]

@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+/*
+ * Catalog tokens: used by the parts catalog (src/app/(catalog), src/components/*-card etc.).
+ * Values follow the AutomIQ Drive Services palette used across the marketing pages.
+ * (Named "cta" rather than "accent" to avoid clashing with the shadcn --color-accent.)
+ */
+@theme {
+  --color-brand: #0066ff;
+  --color-brand-dark: #0052cc;
+  --color-brand-soft: #eaf2ff;
+  --color-cta: #0066ff;
+  --color-ink: #0b1a3c;
+  --color-ink-muted: #56677f;
+  --color-line: #d9e4f1;
+  --color-surface: #f4f7fb;
+  --color-ok: #15803d;
+  --color-warn: #b45309;
+  --color-danger: #b91c1c;
+}
+
+/* ---------- RouteGlobe (Serving Customers Worldwide) ---------- */
+.rg-layer .rg-base { fill: none; stroke: rgba(0, 176, 255, 0.28); stroke-width: 1.4; stroke-dasharray: 3 7; }
+.rg-layer .rg-trail { fill: none; stroke: #00b0ff; stroke-width: 2.6; stroke-linecap: round; filter: url(#rg-glow); }
+.rg-layer .rg-plane path { fill: #ffffff; filter: drop-shadow(0 0 4px rgba(0, 176, 255, 0.9)); }
+.rg-layer .rg-dot { fill: #7fd3ff; }
+.rg-layer .rg-home .rg-dot { fill: #ffffff; }
+.rg-layer .rg-pulse { fill: none; stroke: #00b0ff; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: rg-pulse 2.4s ease-out infinite; }
+.rg-layer .rg-home .rg-pulse { stroke: #ffffff; }
+@keyframes rg-pulse { 0% { transform: scale(0.35); opacity: 0.9; } 100% { transform: scale(1.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .rg-layer .rg-pulse { animation: none; opacity: 0.5; } }
+
+/* ---------- Service Areas map ---------- */
+.sa-map .sa-route { fill: none; stroke: url(#sa-route); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 6 9; animation: sa-flow 2.6s linear infinite; }
+.sa-map .sa-city circle:nth-child(2) { transition: r 0.2s, fill 0.2s; }
+.sa-map .sa-city:hover circle:nth-child(2) { r: 8; fill: #0066ff; }
+.sa-map .sa-label { font-size: 20px; font-weight: 700; fill: #3e4f68; paint-order: stroke; stroke: #fff; stroke-width: 5px; stroke-linejoin: round; }
+.sa-map .sa-pulse { fill: none; stroke: #0066ff; stroke-width: 3; transform-box: fill-box; transform-origin: center; animation: rg-pulse 2.4s ease-out infinite; }
+.sa-ping { animation: sa-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+@keyframes sa-flow { to { stroke-dashoffset: -30; } }
+@keyframes sa-ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+.sa-dark .sa-label { fill: rgba(255,255,255,0.88); stroke: #050b18; }
+.sa-dark .sa-city:hover circle:nth-child(2) { fill: #00b0ff; }
+.sa-dark .sa-pulse { stroke: #00b0ff; }
+@media (max-width: 640px) { .sa-map .sa-label { font-size: 30px; } }
+@media (prefers-reduced-motion: reduce) { .sa-map .sa-route, .sa-map .sa-pulse, .sa-ping { animation: none; } }
+
+/* ---------- Service Areas page: routes draw in, dots pop in, then flow ---------- */
+.sa-hero .sah-draw { fill: none; stroke: #38B6FF; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0.55; animation: sah-draw 1.4s cubic-bezier(.3,.7,.2,1) forwards; }
+.sa-hero .sah-flow { fill: none; stroke: url(#sah-route); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 6 9; opacity: 0; animation: sah-in 0.6s ease 1.8s forwards, sa-flow 2.6s linear infinite; transition: opacity .2s, stroke-width .2s; }
+.sa-hero .sah-dot { opacity: 0; animation: sah-in 0.5s ease forwards; }
+.sa-hero .sah-dot circle { transition: r .2s, fill .2s; } .sa-hero .sah-dot { cursor: pointer; }
+@keyframes sah-draw { to { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes sah-in { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sa-hero .sah-draw { display: none; } .sa-hero .sah-flow, .sa-hero .sah-dot { animation: none; opacity: 1; } }
+
+/* Big faded step numbers are decoration: drawn by CSS so they are not read as text (or checked as text contrast). */
+.deco-num::before { content: attr(data-n); }
+.cv-auto { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+
+/* Phones and tablets: iPhone zooms the whole page in when a text box under 16px is tapped,
+   and it stays zoomed. 16px text boxes on touch screens stop that. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), select, textarea { font-size: 16px; }
+}
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.sa-map .sa-city path { transition: filter 0.2s; }
+.sa-map .sa-city:hover path, .sa-map .sa-city:focus-visible path { filter: brightness(1.25) drop-shadow(0 0 6px currentColor); }

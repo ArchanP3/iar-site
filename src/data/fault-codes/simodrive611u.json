@@ -1,0 +1,1394 @@
+[
+ {
+  "code": "001",
+  "slug": "f001",
+  "type": "Fault",
+  "name": "Drive does not have firmware",
+  "area": "Control module"
+ },
+ {
+  "code": "002",
+  "slug": "f002",
+  "type": "Fault",
+  "name": "Computation time overflow",
+  "area": "Control module"
+ },
+ {
+  "code": "003",
+  "slug": "f003",
+  "type": "Fault",
+  "name": "NMI due to watchdog",
+  "area": "Control module",
+  "meaning": "The watchdog on the closed-loop control module expired, which points to a hardware fault in the module's time base.",
+  "symptoms": "Drive faults at power-up or at random and will not stay ready.",
+  "causes": "Failed control module hardware; poorly seated module or memory module; electrical noise.",
+  "checks": "Power off, reseat the control module and memory module, check grounding and shielding, then power on. If it returns, the control module has failed.",
+  "repairable": "Yes: 611U control modules are repaired at component level and tested on a drive.",
+  "service": "Servo drive repair; controller card & PCB repair"
+ },
+ {
+  "code": "004",
+  "slug": "f004",
+  "type": "Fault",
+  "name": "Stack overflow",
+  "area": "Control module"
+ },
+ {
+  "code": "005",
+  "slug": "f005",
+  "type": "Fault",
+  "name": "Illegal Opcode, Trace, SWI, NMI (DSP)",
+  "area": "Control module"
+ },
+ {
+  "code": "006",
+  "slug": "f006",
+  "type": "Fault",
+  "name": "Checksum test error",
+  "area": "Control module",
+  "meaning": "The checksum test of the program or data memory failed, so the firmware or its memory is corrupt.",
+  "symptoms": "Fault at power-up; the axis never becomes ready.",
+  "causes": "Memory fault on the control module; corrupted firmware.",
+  "checks": "Power cycle once. If it repeats, reload firmware with a known-good memory module; if it still repeats, the control module needs repair.",
+  "repairable": "Yes: 611U control modules are repaired at component level and tested on a drive.",
+  "service": "Servo drive repair; controller card & PCB repair"
+ },
+ {
+  "code": "007",
+  "slug": "f007",
+  "type": "Fault",
+  "name": "Error when initializing",
+  "area": "Control module"
+ },
+ {
+  "code": "020",
+  "slug": "f020",
+  "type": "Fault",
+  "name": "NMI due to cycle failure",
+  "area": "Control module",
+  "meaning": "The control module's basic cycle failed, either from electrical noise or a hardware fault.",
+  "symptoms": "Random trips, sometimes when nearby equipment switches.",
+  "causes": "Poor grounding or shielding; loose plug-in connections; control module hardware fault.",
+  "checks": "Check plug-in connections, cabinet grounding and noise suppression on contactors and brakes. If it continues on a clean installation, the module is faulty.",
+  "repairable": "Yes: 611U control modules are repaired at component level and tested on a drive.",
+  "service": "Servo drive repair; controller card & PCB repair"
+ },
+ {
+  "code": "025",
+  "slug": "f025",
+  "type": "Fault",
+  "name": "SSI interrupt",
+  "area": "Control module"
+ },
+ {
+  "code": "026",
+  "slug": "f026",
+  "type": "Fault",
+  "name": "SCI interrupt",
+  "area": "Control module"
+ },
+ {
+  "code": "027",
+  "slug": "f027",
+  "type": "Fault",
+  "name": "HOST interrupt",
+  "area": "Control module"
+ },
+ {
+  "code": "028",
+  "slug": "f028",
+  "type": "Fault",
+  "name": "Actual current sensing during power-up",
+  "area": "Power section",
+  "meaning": "At power-up the drive expected zero current but measured current, so the current-sensing hardware is suspect.",
+  "symptoms": "Fault every time the drive powers up, before the motor turns.",
+  "causes": "Faulty current sensors or measuring circuit in the power section; poorly seated control module; control module fault.",
+  "checks": "With power off, reseat the control module in the power section and check its connectors. If the fault stays, the power section or control module needs repair.",
+  "repairable": "Yes: current-sensing faults in the power section and control module are repairable.",
+  "service": "Servo drive repair"
+ },
+ {
+  "code": "029",
+  "slug": "f029",
+  "type": "Fault",
+  "name": "Incorrect measuring circuit evaluation",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "030",
+  "slug": "f030",
+  "type": "Fault",
+  "name": "S7 communication error",
+  "area": "Control module"
+ },
+ {
+  "code": "031",
+  "slug": "f031",
+  "type": "Fault",
+  "name": "Internal data error",
+  "area": "Control module"
+ },
+ {
+  "code": "032",
+  "slug": "f032",
+  "type": "Fault",
+  "name": "Incorrect number of current setpoint filters",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "033",
+  "slug": "f033",
+  "type": "Fault",
+  "name": "Incorrect number of speed setpoint filters",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "034",
+  "slug": "f034",
+  "type": "Fault",
+  "name": "Axis count function failed",
+  "area": "Control module"
+ },
+ {
+  "code": "035",
+  "slug": "f035",
+  "type": "Fault",
+  "name": "Error when saving user data",
+  "area": "Control module"
+ },
+ {
+  "code": "036",
+  "slug": "f036",
+  "type": "Fault",
+  "name": "Error when downloading firmware",
+  "area": "Control module"
+ },
+ {
+  "code": "037",
+  "slug": "f037",
+  "type": "Fault",
+  "name": "Error when initializing user data",
+  "area": "Control module"
+ },
+ {
+  "code": "039",
+  "slug": "f039",
+  "type": "Fault",
+  "name": "Error during power section identification",
+  "area": "Power section"
+ },
+ {
+  "code": "040",
+  "slug": "f040",
+  "type": "Fault",
+  "name": "Expected option module not available",
+  "area": "Option module"
+ },
+ {
+  "code": "041",
+  "slug": "f041",
+  "type": "Fault",
+  "name": "Firmware does not support option module",
+  "area": "Option module"
+ },
+ {
+  "code": "042",
+  "slug": "f042",
+  "type": "Fault",
+  "name": "Internal software error",
+  "area": "Control module"
+ },
+ {
+  "code": "043",
+  "slug": "f043",
+  "type": "Fault",
+  "name": "Firmware, option module",
+  "area": "Option module"
+ },
+ {
+  "code": "044",
+  "slug": "f044",
+  "type": "Fault",
+  "name": "Connection to option module failed",
+  "area": "Option module"
+ },
+ {
+  "code": "045",
+  "slug": "f045",
+  "type": "Fault",
+  "name": "Expected option module axially unequal",
+  "area": "Option module"
+ },
+ {
+  "code": "048",
+  "slug": "f048",
+  "type": "Fault",
+  "name": "Illegal status PROFIBUS hardware",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "101",
+  "slug": "f101",
+  "type": "Fault",
+  "name": "Target position block below plus software limit",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "102",
+  "slug": "f102",
+  "type": "Fault",
+  "name": "Target position block below minus software limit",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "103",
+  "slug": "f103",
+  "type": "Fault",
+  "name": "Block: direct output function not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "104",
+  "slug": "f104",
+  "type": "Fault",
+  "name": "Block: no jump target",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "105",
+  "slug": "f105",
+  "type": "Fault",
+  "name": "Illegal mode specified in block",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "106",
+  "slug": "f106",
+  "type": "Fault",
+  "name": "ABS_POS mode not possible for linear axis",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "107",
+  "slug": "f107",
+  "type": "Fault",
+  "name": "ABS_NEG mode not possible for linear axis",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "108",
+  "slug": "f108",
+  "type": "Fault",
+  "name": "Block number available twice",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "109",
+  "slug": "f109",
+  "type": "Fault",
+  "name": "External block change not requested",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "110",
+  "slug": "f110",
+  "type": "Fault",
+  "name": "Selected block number does not exist",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "111",
+  "slug": "f111",
+  "type": "Fault",
+  "name": "GOTO in block not permissible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "112",
+  "slug": "f112",
+  "type": "Fault",
+  "name": "Activate traversing task and start referencing, handwheel simultaneously",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "113",
+  "slug": "f113",
+  "type": "Fault",
+  "name": "Activate traversing task and jog, handwheel simultaneously",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "114",
+  "slug": "f114",
+  "type": "Fault",
+  "name": "Block change enable END expected",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "115",
+  "slug": "f115",
+  "type": "Fault",
+  "name": "Traversing range start reached",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "116",
+  "slug": "f116",
+  "type": "Fault",
+  "name": "Traversing range end reached",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "117",
+  "slug": "f117",
+  "type": "Fault",
+  "name": "Target position block below start of traversing range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "118",
+  "slug": "f118",
+  "type": "Fault",
+  "name": "Target position block below end of traversing range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "119",
+  "slug": "f119",
+  "type": "Fault",
+  "name": "PLUS software limit switch actuated",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "120",
+  "slug": "f120",
+  "type": "Fault",
+  "name": "MINUS software limit switch actuated",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "121",
+  "slug": "f121",
+  "type": "Fault",
+  "name": "Jog 1, jog 2 or handwheel simultaneously active",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "122",
+  "slug": "f122",
+  "type": "Fault",
+  "name": "Parameter: value range limits violated",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "123",
+  "slug": "f123",
+  "type": "Fault",
+  "name": "Linear encoder illegal for dimension system",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "124",
+  "slug": "f124",
+  "type": "Fault",
+  "name": "Referencing and jog simultaneously started",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "125",
+  "slug": "f125",
+  "type": "Fault",
+  "name": "Falling edge of reference cam not identified",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "126",
+  "slug": "f126",
+  "type": "Fault",
+  "name": "ABS_POS for rotary axis not possible without modulo conversion",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "127",
+  "slug": "f127",
+  "type": "Fault",
+  "name": "ABS_NEG for rotary axis not possible without modulo conversion",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "128",
+  "slug": "f128",
+  "type": "Fault",
+  "name": "Target position outside modulo range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "129",
+  "slug": "f129",
+  "type": "Fault",
+  "name": "Maximum velocity for rotary axis with modulo too high",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "130",
+  "slug": "f130",
+  "type": "Fault",
+  "name": "Controller or pulse enable withdrawn in motion",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "131",
+  "slug": "f131",
+  "type": "Fault",
+  "name": "Following error too high",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "132",
+  "slug": "f132",
+  "type": "Fault",
+  "name": "Drive located after minus software limit switch",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "133",
+  "slug": "f133",
+  "type": "Fault",
+  "name": "Drive located after plus software limit switch",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "134",
+  "slug": "f134",
+  "type": "Fault",
+  "name": "Positioning monitoring has responded",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "135",
+  "slug": "f135",
+  "type": "Fault",
+  "name": "Standstill monitoring has responded",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "136",
+  "slug": "f136",
+  "type": "Fault",
+  "name": "Conversion factor feedforward speed cannot be represented",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "137",
+  "slug": "f137",
+  "type": "Fault",
+  "name": "Conversion factor position controller output cannot be represented",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "138",
+  "slug": "f138",
+  "type": "Fault",
+  "name": "Conversion factor motor to load too high",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "139",
+  "slug": "f139",
+  "type": "Fault",
+  "name": "Modulo range and ratio do not match",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "140",
+  "slug": "f140",
+  "type": "Fault",
+  "name": "Minus hardware limit switch",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "141",
+  "slug": "f141",
+  "type": "Fault",
+  "name": "Plus hardware limit switch",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "142",
+  "slug": "f142",
+  "type": "Fault",
+  "name": "Input I0.x not parameterized as equivalent zero mark",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "143",
+  "slug": "f143",
+  "type": "Fault",
+  "name": "Endless traversing and external block change",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "144",
+  "slug": "f144",
+  "type": "Fault",
+  "name": "Switching-in/switching-out MDI erroneous",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "145",
+  "slug": "f145",
+  "type": "Fault",
+  "name": "Fixed endstop not reached",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "146",
+  "slug": "f146",
+  "type": "Fault",
+  "name": "Fixed endstop, axis outside monitoring window",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "147",
+  "slug": "f147",
+  "type": "Fault",
+  "name": "Enable signals withdrawn at fixed endstop",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "148",
+  "slug": "f148",
+  "type": "Fault",
+  "name": "Velocity in block outside range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "149",
+  "slug": "f149",
+  "type": "Fault",
+  "name": "Incorrect data for modulo axis with absolute encoder",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "150",
+  "slug": "f150",
+  "type": "Fault",
+  "name": "External position reference value above max traversing range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "151",
+  "slug": "f151",
+  "type": "Fault",
+  "name": "External position reference value below min traversing range",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "152",
+  "slug": "f152",
+  "type": "Fault",
+  "name": "Position values via bus interface limited",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "160",
+  "slug": "f160",
+  "type": "Fault",
+  "name": "Reference cam not reached",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "161",
+  "slug": "f161",
+  "type": "Fault",
+  "name": "Reference cams too short",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "162",
+  "slug": "f162",
+  "type": "Fault",
+  "name": "No zero reference pulse present",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "163",
+  "slug": "f163",
+  "type": "Fault",
+  "name": "Encoderless operation and operating mode do not match",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "164",
+  "slug": "f164",
+  "type": "Fault",
+  "name": "Coupling released during traversing job",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "165",
+  "slug": "f165",
+  "type": "Fault",
+  "name": "Absolute positioning block not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "166",
+  "slug": "f166",
+  "type": "Fault",
+  "name": "Coupling not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "167",
+  "slug": "f167",
+  "type": "Fault",
+  "name": "Activate coupling signal present",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "168",
+  "slug": "f168",
+  "type": "Fault",
+  "name": "Overflow, buffer memory",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "169",
+  "slug": "f169",
+  "type": "Fault",
+  "name": "Coupling trigger missed",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "170",
+  "slug": "f170",
+  "type": "Fault",
+  "name": "Coupling switched out during traversing program",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "171",
+  "slug": "f171",
+  "type": "Fault",
+  "name": "Coupling not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "172",
+  "slug": "f172",
+  "type": "Fault",
+  "name": "External block change for coupling not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "173",
+  "slug": "f173",
+  "type": "Fault",
+  "name": "Coupling and traverse to endstop simultaneously",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "174",
+  "slug": "f174",
+  "type": "Fault",
+  "name": "Passive referencing not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "175",
+  "slug": "f175",
+  "type": "Fault",
+  "name": "Passive referencing not realized",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "176",
+  "slug": "f176",
+  "type": "Fault",
+  "name": "Absolute encoder must be adjusted",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "177",
+  "slug": "f177",
+  "type": "Fault",
+  "name": "Start-up passive referencing not possible",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "180",
+  "slug": "f180",
+  "type": "Fault",
+  "name": "Teach-in without reference point",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "181",
+  "slug": "f181",
+  "type": "Fault",
+  "name": "Teach-in block invalid",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "182",
+  "slug": "f182",
+  "type": "Fault",
+  "name": "Teach-in standard block invalid",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "183",
+  "slug": "f183",
+  "type": "Fault",
+  "name": "Teach-in block not found",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "184",
+  "slug": "f184",
+  "type": "Fault",
+  "name": "Teach-in standard block not found",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "185",
+  "slug": "f185",
+  "type": "Fault",
+  "name": "Positioning mode invalid",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "186",
+  "slug": "f186",
+  "type": "Fault",
+  "name": "Spindle cannot be referenced",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "187",
+  "slug": "f187",
+  "type": "Fault",
+  "name": "Conversion factor spindle positioning cannot be represented",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "188",
+  "slug": "f188",
+  "type": "Fault",
+  "name": "Spindle positioning: parameter illegal",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "189",
+  "slug": "f189",
+  "type": "Fault",
+  "name": "Jogging, incremental invalid",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "190",
+  "slug": "f190",
+  "type": "Fault",
+  "name": "Actual firmware does not support spindle positioning",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "191",
+  "slug": "f191",
+  "type": "Fault",
+  "name": "Zero mark setting unsuccessful",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "192",
+  "slug": "f192",
+  "type": "Fault",
+  "name": "Max. search velocity too high",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "193",
+  "slug": "f193",
+  "type": "Fault",
+  "name": "Zero mark not found",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "194",
+  "slug": "f194",
+  "type": "Fault",
+  "name": "Spindle positioning only possible with motor 1",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "195",
+  "slug": "f195",
+  "type": "Fault",
+  "name": "Speed pre-control not permissible",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "196",
+  "slug": "f196",
+  "type": "Fault",
+  "name": "Illegal combination of input signals",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "501",
+  "slug": "f501",
+  "type": "Fault",
+  "name": "Measuring circuit error, absolute current",
+  "area": "Power section"
+ },
+ {
+  "code": "504",
+  "slug": "f504",
+  "type": "Fault",
+  "name": "Measuring circuit error, motor measuring system",
+  "area": "Encoder / feedback",
+  "meaning": "The signal from the motor encoder is too weak or faulty, or the cable-break monitor tripped.",
+  "symptoms": "Fault on enable or while running, often when the cable moves or the machine vibrates.",
+  "causes": "Damaged or wrong encoder cable; poor shield connection; loose connector; failed encoder; faulty encoder input on the control module.",
+  "checks": "Check the encoder cable along its length and at both connectors; make sure the shield is clamped; swap in a known-good cable if you have one.",
+  "repairable": "Yes: encoders, encoder cables and the drive's encoder input are all repairable.",
+  "service": "Encoder repair; servo motor repair; custom cables"
+ },
+ {
+  "code": "505",
+  "slug": "f505",
+  "type": "Fault",
+  "name": "Measuring circuit error, motor measuring system absolute track",
+  "area": "Encoder / feedback",
+  "meaning": "The absolute track of the motor encoder is interrupted, or an EnDat absolute encoder failed to initialize.",
+  "symptoms": "Fault at power-up or after a cable is disturbed; position is lost.",
+  "causes": "Wrong cable type or damaged cable; encoder type set wrong in the drive; failed absolute encoder.",
+  "checks": "Confirm the cable is the correct type for the encoder; check the encoder type parameter; inspect the connectors for bent pins.",
+  "repairable": "Yes: absolute encoders are repaired or replaced and aligned to the motor.",
+  "service": "Encoder repair; servo motor repair"
+ },
+ {
+  "code": "507",
+  "slug": "f507",
+  "type": "Fault",
+  "name": "Synchronization error, rotor position",
+  "area": "Encoder / feedback",
+  "meaning": "The rotor position from the encoder disagrees with the fine-synchronized position by more than 45 electrical degrees.",
+  "symptoms": "Fault on enable; the motor may jerk, run rough or lack torque.",
+  "causes": "Encoder slipped on the shaft or replaced without alignment; noisy encoder signals from poor grounding or shielding; failed encoder.",
+  "checks": "Check encoder cabling, grounding and shield; ask whether the motor or encoder was recently changed (it may need re-alignment).",
+  "repairable": "Yes: we re-align encoders to the motor and test under drive control.",
+  "service": "Encoder repair; servo motor repair"
+ },
+ {
+  "code": "508",
+  "slug": "f508",
+  "type": "Fault",
+  "name": "Zero mark monitoring, motor measuring system",
+  "area": "Encoder / feedback",
+  "meaning": "The measured rotor position changes between two zero marks, which means encoder pulses are being lost.",
+  "symptoms": "Fault while running, often at higher speed or when the cable flexes.",
+  "causes": "Intermittent encoder cable or connector; poor shielding; dirty or failing encoder.",
+  "checks": "Check the cable and connectors, especially in cable tracks; make sure the shield is clamped at the drive.",
+  "repairable": "Yes: encoder and cable repair.",
+  "service": "Encoder repair; custom cables"
+ },
+ {
+  "code": "509",
+  "slug": "f509",
+  "type": "Fault",
+  "name": "Drive converter limiting frequency exceeded",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "512",
+  "slug": "f512",
+  "type": "Fault",
+  "name": "Measuring circuit error, direct measuring system",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "513",
+  "slug": "f513",
+  "type": "Fault",
+  "name": "Measuring circuit error, direct measuring system absolute track",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "514",
+  "slug": "f514",
+  "type": "Fault",
+  "name": "Zero mark monitoring, direct measuring system",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "515",
+  "slug": "f515",
+  "type": "Fault",
+  "name": "Power module temperature exceeded",
+  "area": "Power section",
+  "meaning": "The power module heatsink is too hot. The drive warns first and shuts down about 20 seconds later.",
+  "symptoms": "Trips after running a while under load, or in a hot cabinet.",
+  "causes": "Failed or clogged module fan; blocked airflow; high cabinet temperature; too much load for the module size.",
+  "checks": "Check the fan and airflow through the module; clean dust; measure the cabinet temperature.",
+  "repairable": "Yes: fans are replaced and power modules repaired and tested.",
+  "service": "Servo drive repair; cooling fan replacement"
+ },
+ {
+  "code": "591",
+  "slug": "f591",
+  "type": "Fault",
+  "name": "Pos. contr. clock cycle not equal to DP / master application clock cycle",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "592",
+  "slug": "f592",
+  "type": "Fault",
+  "name": "Spindle positioning: pos. contr. not equal to master application clock cycle",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "593",
+  "slug": "f593",
+  "type": "Fault",
+  "name": "Fieldbus: drive is not in synchronism",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "595",
+  "slug": "f595",
+  "type": "Fault",
+  "name": "Fieldbus: cyclic data transfer was interrupted",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "596",
+  "slug": "f596",
+  "type": "Fault",
+  "name": "PROFIBUS: connection to the publisher interrupted",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "597",
+  "slug": "f597",
+  "type": "Fault",
+  "name": "PROFIBUS: drive not in synchronism",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "598",
+  "slug": "f598",
+  "type": "Fault",
+  "name": "PROFIBUS: synchronization error",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "599",
+  "slug": "f599",
+  "type": "Fault",
+  "name": "PROFIBUS: cyclic data transfer was interrupted",
+  "area": "Fieldbus / PROFIBUS"
+ },
+ {
+  "code": "601",
+  "slug": "f601",
+  "type": "Fault",
+  "name": "Error in AD conversion, terminal 56/14 or 24/20",
+  "area": "Control module",
+  "meaning": "The control module made a timing error while reading its analog-to-digital converter, so analog values may be wrong.",
+  "symptoms": "Fault on power-up or during operation; analog setpoints may misbehave.",
+  "causes": "Hardware fault on the closed-loop control module.",
+  "checks": "Power cycle once. If it returns, the control module needs repair.",
+  "repairable": "Yes: 611U control modules are repaired at component level and tested on a drive.",
+  "service": "Servo drive repair; controller card & PCB repair"
+ },
+ {
+  "code": "602",
+  "slug": "f602",
+  "type": "Fault",
+  "name": "Open-loop torque controlled operation without encoder not permissible",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "603",
+  "slug": "f603",
+  "type": "Fault",
+  "name": "Changeover to non-parameterized motor data set",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "604",
+  "slug": "f604",
+  "type": "Fault",
+  "name": "Motor encoder is not adjusted",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "605",
+  "slug": "f605",
+  "type": "Fault",
+  "name": "Position controller output limited",
+  "area": "Positioning / motion"
+ },
+ {
+  "code": "606",
+  "slug": "f606",
+  "type": "Fault",
+  "name": "Flux controller output limited",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "607",
+  "slug": "f607",
+  "type": "Fault",
+  "name": "Current controller output limited",
+  "area": "Power section",
+  "meaning": "The current controller hit its output limit: the drive cannot push the requested current into the motor.",
+  "symptoms": "Fault on enable or under load; the motor may not move.",
+  "causes": "Motor disconnected or a phase missing (cable, contactor); DC link voltage missing; failed power section.",
+  "checks": "With power off, check the motor cable and any motor contactor; measure winding resistance phase to phase; check the DC link supply.",
+  "repairable": "Yes: power sections and motors are both repairable.",
+  "service": "Servo drive repair; servo motor repair"
+ },
+ {
+  "code": "608",
+  "slug": "f608",
+  "type": "Fault",
+  "name": "Speed controller output limited",
+  "area": "Positioning / motion",
+  "meaning": "The speed controller stayed at its limit for too long: the motor cannot reach the requested speed.",
+  "symptoms": "Fault on enable or when the axis starts moving; the axis may run away or not move.",
+  "causes": "Motor brake not releasing; mechanical blocking; wrong motor or encoder wiring; encoder fault; incorrect controller data.",
+  "checks": "Check that the brake releases; turn the axis by hand to feel for blocking; check motor phase order and encoder cable.",
+  "repairable": "Yes: brakes, encoders and motors are repaired and tested under drive control.",
+  "service": "Servo motor repair; encoder repair; motor brake repair"
+ },
+ {
+  "code": "609",
+  "slug": "f609",
+  "type": "Fault",
+  "name": "Encoder limit frequency exceeded",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "610",
+  "slug": "f610",
+  "type": "Fault",
+  "name": "Rotor position identification has failed",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "611",
+  "slug": "f611",
+  "type": "Fault",
+  "name": "Illegal motion during rotor position identification",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "612",
+  "slug": "f612",
+  "type": "Fault",
+  "name": "Illegal current during rotor position identification",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "613",
+  "slug": "f613",
+  "type": "Fault",
+  "name": "Shutdown limit, motor overtemperature exceeded",
+  "area": "Power section",
+  "meaning": "The motor's temperature sensor reading went above the shutdown limit.",
+  "symptoms": "Trips after the axis has worked hard; trips at once if the sensor circuit is faulty.",
+  "causes": "Motor overloaded or cycled too hard; failed motor fan; faulty temperature sensor; break in the sensor wires in the encoder cable.",
+  "checks": "Feel whether the motor is really hot; check the motor fan; check the sensor wiring in the encoder cable.",
+  "repairable": "Yes: sensor replacement, bearing work and rewinding are routine motor repairs.",
+  "service": "Servo motor repair; motor rewinding"
+ },
+ {
+  "code": "614",
+  "slug": "f614",
+  "type": "Fault",
+  "name": "Delayed shutdown for motor overtemperature",
+  "area": "Power section"
+ },
+ {
+  "code": "615",
+  "slug": "f615",
+  "type": "Fault",
+  "name": "DM encoder limiting frequency exceeded",
+  "area": "Encoder / feedback"
+ },
+ {
+  "code": "616",
+  "slug": "f616",
+  "type": "Fault",
+  "name": "DC link undervoltage",
+  "area": "Power section",
+  "meaning": "The DC link voltage fell below the lower limit.",
+  "symptoms": "Trips when the line supply dips or the infeed drops out.",
+  "causes": "Line supply problem; infeed or supply module fault; braking resistor overloaded.",
+  "checks": "Check the line supply and the infeed module status; check the braking resistor.",
+  "repairable": "Yes: infeed and supply modules are repaired at component level.",
+  "service": "Servo drive repair; line module repair"
+ },
+ {
+  "code": "617",
+  "slug": "f617",
+  "type": "Fault",
+  "name": "DC link overvoltage",
+  "area": "Power section",
+  "meaning": "The DC link voltage rose above the upper limit, usually from braking energy.",
+  "symptoms": "Trips when axes decelerate hard.",
+  "causes": "Braking energy too high for the regen or braking resistor; high line voltage; failed pulse resistor or infeed module.",
+  "checks": "Check the line voltage; reduce the deceleration as a test; check the pulsed resistor module or regenerative infeed.",
+  "repairable": "Yes: infeed and resistor modules are repairable.",
+  "service": "Servo drive repair; line module repair"
+ },
+ {
+  "code": "680",
+  "slug": "f680",
+  "type": "Fault",
+  "name": "Illegal motor code number",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "681",
+  "slug": "f681",
+  "type": "Fault",
+  "name": "Illegal power section code number",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "682",
+  "slug": "f682",
+  "type": "Fault",
+  "name": "Illegal encoder code number",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "683",
+  "slug": "f683",
+  "type": "Fault",
+  "name": "Calculate controller data was unsuccessful at first start-up",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "703",
+  "slug": "f703",
+  "type": "Fault",
+  "name": "Invalid current controller cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "704",
+  "slug": "f704",
+  "type": "Fault",
+  "name": "Invalid speed controller cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "705",
+  "slug": "f705",
+  "type": "Fault",
+  "name": "Invalid position controller cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "706",
+  "slug": "f706",
+  "type": "Fault",
+  "name": "Invalid interpolation cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "708",
+  "slug": "f708",
+  "type": "Fault",
+  "name": "Axial deviations in current controller cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "709",
+  "slug": "f709",
+  "type": "Fault",
+  "name": "Axial deviations in speed controller cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "710",
+  "slug": "f710",
+  "type": "Fault",
+  "name": "Axial deviations in position controller or interpolation cycle",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "716",
+  "slug": "f716",
+  "type": "Fault",
+  "name": "Invalid torque constant",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "719",
+  "slug": "f719",
+  "type": "Fault",
+  "name": "Motor not parameterized for delta operation",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "720",
+  "slug": "f720",
+  "type": "Fault",
+  "name": "Invalid maximum motor speed",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "721",
+  "slug": "f721",
+  "type": "Fault",
+  "name": "Spindle speed too high",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "722",
+  "slug": "f722",
+  "type": "Fault",
+  "name": "Changeover speed/velocity too low",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "723",
+  "slug": "f723",
+  "type": "Fault",
+  "name": "Axial deviations in STS configuration",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "724",
+  "slug": "f724",
+  "type": "Fault",
+  "name": "Invalid motor pole pair number",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "725",
+  "slug": "f725",
+  "type": "Fault",
+  "name": "Invalid encoder pulse number",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "726",
+  "slug": "f726",
+  "type": "Fault",
+  "name": "Invalid voltage constant",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "727",
+  "slug": "f727",
+  "type": "Fault",
+  "name": "Invalid combination of power section and synchronous motor",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "728",
+  "slug": "f728",
+  "type": "Fault",
+  "name": "Torque/current adaptation factor too high",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "729",
+  "slug": "f729",
+  "type": "Fault",
+  "name": "Invalid motor stall current",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "731",
+  "slug": "f731",
+  "type": "Fault",
+  "name": "Invalid rated output",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "732",
+  "slug": "f732",
+  "type": "Fault",
+  "name": "Invalid rated speed",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "738",
+  "slug": "f738",
+  "type": "Fault",
+  "name": "Incorrect mode, analog input for the equalization controller",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "739",
+  "slug": "f739",
+  "type": "Fault",
+  "name": "Incorrect axis number, equalization controller",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "742",
+  "slug": "f742",
+  "type": "Fault",
+  "name": "V/f operation: drive frequency not permissible",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "743",
+  "slug": "f743",
+  "type": "Fault",
+  "name": "Function is not possible using this control board",
+  "area": "Control module"
+ },
+ {
+  "code": "744",
+  "slug": "f744",
+  "type": "Fault",
+  "name": "Motor changeover only permissible for closed-loop speed control",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "749",
+  "slug": "f749",
+  "type": "Fault",
+  "name": "Speed measuring range is not sufficient",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "751",
+  "slug": "f751",
+  "type": "Fault",
+  "name": "Speed controller gain too high",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "753",
+  "slug": "f753",
+  "type": "Fault",
+  "name": "Current, rotor position identification less than the min. value",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "756",
+  "slug": "f756",
+  "type": "Fault",
+  "name": "Invalid speed hysteresis of the current setpoint smoothing",
+  "area": "Parameters / setup"
+ },
+ {
+  "code": "757",
+  "slug": "f757",
+  "type": "Fault",
+  "name": "PZD config.: illegal frame no. in P0922",
+  "area": "Fieldbus / PROFIBUS"
+ }
+]

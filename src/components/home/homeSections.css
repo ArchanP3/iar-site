@@ -1,0 +1,239 @@
+/* Shared styles for the home page Repair Services and Shop Parts sections.
+   Brand: #0066FF blue · #00B0FF accent · #005AE0 link blue · #0B1A3C navy · #030817 night */
+
+@layer components {
+/* ---------- Sliding tabs ---------- */
+.aq-tabs {
+  position: relative;
+  display: inline-flex;
+  padding: 5px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #d9e4f1;
+  box-shadow: 0 8px 20px -16px rgba(11, 26, 60, 0.4);
+}
+.aq-tabs__ind {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  border-radius: 10px;
+  background: #0b1a3c;
+  box-shadow: 0 8px 18px -10px rgba(11, 26, 60, 0.8);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s;
+}
+.aq-tabs__btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #52647f;
+  transition: color 0.3s;
+}
+.aq-tabs__btn:hover { color: #0b1a3c; }
+.aq-tabs__btn[aria-selected="true"] { color: #fff; }
+/* Before JS measures the indicator, the selected tab still shows as selected */
+.aq-tabs:not([data-ready]) .aq-tabs__btn[aria-selected="true"] { background: #0b1a3c; }
+.aq-tabs__count {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #f4f7fb;
+  color: #5b6b84;
+  transition: background 0.3s, color 0.3s;
+}
+.aq-tabs__btn[aria-selected="true"] .aq-tabs__count { background: rgba(255, 255, 255, 0.14); color: #7fd3ff; }
+@media (max-width: 639px) {
+  .aq-tabs__btn { padding: 8px 12px; font-size: 13px; }
+  .aq-tabs__count { display: none; }
+}
+.aq-panel { animation: aq-fade-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+@keyframes aq-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Showcase cards (photo on a soft blue stage) ---------- */
+.aq-card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  isolation: isolate;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #e3eaf3;
+  background: #fff;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s, border-color 0.35s;
+}
+/* Blue light that follows the pointer around the card edge */
+.aq-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(240px circle at var(--mx) var(--my), rgba(0, 102, 255, 0.85), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.aq-card:hover,
+.aq-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 26px 46px -28px rgba(0, 102, 255, 0.55);
+}
+.aq-card:hover::before,
+.aq-card:focus-visible::before { opacity: 1; }
+.aq-card__go {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #00b0ff;
+  box-shadow: 0 4px 10px -6px rgba(11, 26, 60, 0.4);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+.aq-card:hover .aq-card__go,
+.aq-card:focus-visible .aq-card__go { background: #0066ff; color: #fff; transform: rotate(45deg); }
+.aq-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: radial-gradient(120% 90% at 50% 100%, #dce8ff 0%, #eef4ff 45%, #f7fafe 100%);
+}
+.aq-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 102, 255, 0.13) 1px, transparent 1.4px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(circle at 50% 60%, #000, transparent 75%);
+  mask-image: radial-gradient(circle at 50% 60%, #000, transparent 75%);
+  opacity: 0.6;
+}
+.aq-stage::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: 8%;
+  height: 10%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(11, 26, 60, 0.22), transparent);
+  transition: left 0.45s, right 0.45s, opacity 0.45s;
+}
+.aq-stage img {
+  z-index: 1;
+  filter: drop-shadow(0 12px 14px rgba(11, 26, 60, 0.18));
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aq-card:hover .aq-stage img { transform: translateY(-4px) scale(1.08); }
+.aq-card:hover .aq-stage::after { left: 28%; right: 28%; opacity: 0.6; }
+.aq-card__title { transition: color 0.3s; }
+.aq-card:hover .aq-card__title { color: #005ae0; }
+
+/* ---------- Navy brand panel ---------- */
+.aq-bpanel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 24px;
+  color: #fff;
+  background:
+    radial-gradient(700px 400px at 100% 100%, rgba(0, 102, 255, 0.35), transparent 65%),
+    radial-gradient(500px 300px at 0 0, rgba(255, 255, 255, 0.07), transparent 65%),
+    linear-gradient(160deg, #0b1a3c, #030817);
+}
+.aq-bpanel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(circle at 80% 70%, #000, transparent 70%);
+  mask-image: radial-gradient(circle at 80% 70%, #000, transparent 70%);
+}
+.aq-btile {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  transition: transform 0.3s, border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.aq-btile:hover,
+.aq-btile:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(0, 176, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 30px -20px rgba(0, 176, 255, 0.8);
+}
+.aq-btile__mark { transition: transform 0.4s; }
+.aq-btile:hover .aq-btile__mark { transform: scale(1.07) rotate(-4deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .aq-panel { animation: none; }
+  .aq-card,
+  .aq-card::before,
+  .aq-card__go,
+  .aq-stage img,
+  .aq-stage::after,
+  .aq-tabs__ind,
+  .aq-btile,
+  .aq-btile__mark { transition: none; }
+  .aq-card:hover,
+  .aq-card:hover .aq-stage img,
+  .aq-btile:hover,
+  .aq-btile:hover .aq-btile__mark { transform: none; }
+}
+
+/* ---------- Shop Parts navy panel ---------- */
+.aq-shop-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(circle at 75% 35%, #000, transparent 70%);
+  mask-image: radial-gradient(circle at 75% 35%, #000, transparent 70%);
+}
+.aq-shop-glow { animation: aq-drift 11s ease-in-out infinite alternate; }
+.aq-shop-glow--b { animation-duration: 15s; animation-direction: alternate-reverse; }
+@keyframes aq-drift { to { transform: translate(-70px, 40px) scale(1.12); } }
+/* light sweep across a button on hover */
+.aq-shine { position: relative; overflow: hidden; }
+.aq-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s;
+  pointer-events: none;
+}
+.aq-shine:hover::after { transform: translateX(120%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .aq-shop-glow { animation: none; }
+  .aq-shine::after { transition: none; }
+}
+}
