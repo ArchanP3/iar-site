@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { brands, brandUrl } from "@/lib/brands";
+import { brandLogo, brands, brandUrl } from "@/lib/brands";
 import BrandDirectory from "@/components/brands/BrandDirectory";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
@@ -25,7 +25,14 @@ export default function BrandsPage() {
     <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:rounded-[22px] sm:p-5 sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
       <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${b.color}77, transparent)` }} />
       <div className="relative flex items-start justify-between">
-        <span className={`flex items-center justify-center rounded-2xl font-extrabold ring-1 ring-white/20 ${big ? "h-14 w-14 text-[18px]" : "h-12 w-12 text-[15px]"}`} style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
+        {brandLogo(b.slug) ? (
+          <span className={`flex items-center justify-center rounded-2xl bg-white px-2 ring-1 ring-white/20 ${big ? "h-14 w-28" : "h-12 w-24"}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={brandLogo(b.slug)} alt="" className="max-h-[70%] w-full object-contain" />
+          </span>
+        ) : (
+          <span className={`flex items-center justify-center rounded-2xl font-extrabold ring-1 ring-white/20 ${big ? "h-14 w-14 text-[18px]" : "h-12 w-12 text-[15px]"}`} style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
+        )}
         <ArrowUpRight size={18} style={{ color: b.color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
       </div>
       <h2 className={`relative mt-3 min-h-[2lh] font-extrabold leading-snug sm:mt-4 ${big ? "text-[17px] sm:text-[22px]" : "text-[15px] sm:text-[18px]"}`}>{b.name} Repair</h2>
