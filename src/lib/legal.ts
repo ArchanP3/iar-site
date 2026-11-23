@@ -8,7 +8,7 @@ export const legal = {
   /** Laws that apply to the Terms */
   law: "the Province of Ontario and the federal laws of Canada that apply there",
   /** Shown as "Last updated" on every legal page. Change it whenever the wording changes. */
-  updated: "October 26, 2026",
+  updated: "November 23, 2026",
   warrantyMonths: 12,
   returnDays: 14,
   restockingFee: "15%",

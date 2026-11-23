@@ -75,7 +75,7 @@ const sections: LegalSection[] = [
     body: (
       <>
         <ul>
-          <li>Shipping is not free. You can ship units to us with any carrier, or request a pickup, and the shipping cost is added to your invoice or billed to your carrier account.</li>
+          <li>Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders within Canada and the USA. Shipping units to us is at your cost: send them with any carrier, request a pickup (added to your invoice or billed to your carrier account) or drop them off in Mississauga.</li>
           <li>Risk of loss or damage passes to you when we hand the shipment to the carrier. Please inspect deliveries and report visible damage to the carrier and to us right away.</li>
           <li>Pack units you send us carefully. We are not responsible for damage caused in transit to us.</li>
           <li>For shipments between Canada and the USA, any duties, taxes and brokerage fees are your responsibility unless we agree otherwise.</li>
@@ -122,7 +122,7 @@ const sections: LegalSection[] = [
     id: "warranty",
     title: "Warranty",
     body: (
-      <p>Repairs, refurbished parts and exchange units are covered by our {legal.warrantyMonths}-month warranty, as set out on our <Link href="/warranty">Warranty page</Link>. Except for that warranty and to the fullest extent allowed by law, units and parts are supplied without any other warranty or condition, written or implied.</p>
+      <p>Repairs, refurbished parts and exchange units are covered by our one-year warranty, as set out on our <Link href="/warranty">Warranty page</Link>. Except for that warranty and to the fullest extent allowed by law, units and parts are supplied without any other warranty or condition, written or implied.</p>
     ),
   },
   {

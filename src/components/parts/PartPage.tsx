@@ -222,7 +222,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
               <h2 className="text-[20px] font-extrabold sm:text-[22px]">Shipping &amp; warranty</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {[
-                  { icon: Truck, t: "Canada & USA", d: "We ship across Canada and the USA. We confirm the ship date and shipping cost with your order." },
+                  { icon: Truck, t: "Canada & USA", d: "We ship across Canada and the USA, and outbound shipping on in-stock orders is on us. We confirm the ship date with your order." },
                   { icon: MapPin, t: "Pickup available", d: "Ship your unit in, or book a pickup for repairs and exchanges." },
                   { icon: ShieldCheck, t: WARRANTY, d: "On every repair." },
                   { icon: Package, t: "No payment online", d: "We confirm stock, shipping and your invoice before you pay." },

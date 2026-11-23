@@ -23,12 +23,20 @@ export const faqGroups: FaqGroup[] = [
         a: "Typical turnaround is 24–72 hours once you approve the quote. Exchange units usually ship within 1–2 business days of receiving your unit.",
       },
       {
-        q: "How much does an industrial repair cost?",
-        a: "It depends on the unit and the failure. The evaluation is free, you receive a written quote before any work begins, and a repair usually costs a fraction of a new unit.",
+        q: "How do I get a repair quote?",
+        a: "Send the manufacturer, part number and fault description by phone, email or the request form — the evaluation is free. You get a written quote with the repair cost and lead time, and a repair is usually far cheaper than a new unit.",
       },
       {
-        q: "Is the evaluation really free?",
-        a: "Yes. We inspect the unit, power it up and test it to find the root cause, then send our findings with a written quote. No work starts without your approval.",
+        q: "Do you charge to look at a unit?",
+        a: "No — the evaluation costs nothing and commits you to nothing. We inspect and test the unit, find the root cause and send a written quote with the lead time. No work starts without your approval.",
+      },
+      {
+        q: "Can you fix a servo drive overcurrent fault?",
+        a: "Usually. The cause is often a failed output stage or a shorted motor cable, and the free evaluation tells you which.",
+      },
+      {
+        q: "Do you save drive settings?",
+        a: "Yes. We take a drive parameter backup before work starts, where the drive allows it.",
       },
       {
         q: "What if my unit can't be repaired?",
@@ -36,15 +44,15 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "How do you test a repaired drive or motor?",
-        a: "Every unit is run under power on our test benches. Drives are tested with a motor, motors are tested under drive control, encoder alignment is checked, and a test report ships with the unit.",
+        a: "Every repaired unit is tested under real operating load on OEM-standard test equipment, including a SINUMERIK 840D test setup for Siemens units. Drives run a motor, motors run under drive control, and the results go into the test report that ships with the unit.",
       },
       {
         q: "Do you repair obsolete or discontinued equipment?",
-        a: "Yes. We repair discontinued servo drives, servo motors, CNC controls and power supplies at component level, so proven machines keep running after the manufacturer stops support.",
+        a: "Yes. Legacy and discontinued motors, drives and controls are a large part of our work. When the manufacturer stops support, repair is often the only option, and we also stock obsolete automation parts and offer a servo exchange on many models.",
       },
       {
         q: "Which brands do you repair?",
-        a: "We specialise in Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa, and repair equipment from every major brand, including Mitsubishi, Kollmorgen, Schneider Electric, Omron and ABB.",
+        a: "We specialize in Siemens (SINAMICS, SIMODRIVE, SINUMERIK), Bosch Rexroth Indramat and Allen-Bradley / Rockwell Automation, and routinely repair FANUC, ABB, Yaskawa, Mitsubishi, Panasonic, Kollmorgen, Parker, Baldor and Control Techniques equipment.",
       },
       {
         q: "Do you repair encoders and align them to the motor?",
@@ -109,7 +117,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Do you serve customers in the United States?",
-        a: "Yes. We repair and supply parts for manufacturers across Canada and the United States from our repair centre in Mississauga, Ontario.",
+        a: "Yes. US plants ship straight to our Mississauga address. Include a commercial invoice marked “for repair and return” so the unit clears customs both ways.",
       },
       {
         q: "Do you ship parts outside Canada and the USA?",
@@ -117,7 +125,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "What warranty comes with a repair?",
-        a: "Every repair comes with a 1-year warranty and a test report showing how the unit was tested before it left our bench.",
+        a: "Every repair is covered by our one-year warranty from the ship date, return shipping is free, and a test report ships with the unit.",
       },
       {
         q: "How does an exchange work?",
@@ -156,7 +164,7 @@ export const moreFaqGroups: FaqGroup[] = [
     items: [
       { q: "What currency are your prices in?", a: "All prices on our website are in US dollars (USD). Shipping, taxes and duties are confirmed with your order." },
       { q: "How do I buy a part online?", a: "Press Buy Now on a refurbished or exchange unit to add it to your cart, then check out with your shipping details. We confirm stock, shipping and your invoice by email before you pay." },
-      { q: "Can I pay by card on the website?", a: "Not yet. We send payment details with your invoice once your order is confirmed." },
+      { q: "Can I pay by card on the website?", a: "We send payment details with your invoice once your order is confirmed. We accept Visa, Mastercard, American Express, Discover and PayPal." },
       { q: "How does Make an Offer work?", a: "On refurbished units you can type the price you want to pay per unit. We review every offer and reply to accept, counter or decline. No payment is taken with an offer." },
       { q: "How fast do you ship parts?", a: "Usually within 1–2 business days. Some units take 5–10 business days to test, prepare or bring in from our warehouse. We confirm the ship date with your order. Need it sooner? Call or email us: rush handling is available for an extra fee." },
       { q: "Why do new parts show Request a Quote instead of a price?", a: "Prices and lead times for new parts change often, so we confirm them for you. Send the part number and we reply with price and availability." },
@@ -167,7 +175,7 @@ export const moreFaqGroups: FaqGroup[] = [
     label: "Shipping & Customs",
     short: "Customs",
     items: [
-      { q: "Is shipping free?", a: "No. You can ship units to us with any carrier, or request a pickup. The shipping cost is added to your invoice or billed to your own carrier account." },
+      { q: "Is shipping free?", a: "Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders. You can send units to us with any carrier, request a pickup or drop them off in Mississauga." },
       { q: "Which carriers do you use?", a: "FedEx, Purolator, UPS and DHL. You can also give us your own carrier account number at checkout or on a pickup request." },
       { q: "What do you need for shipments to the USA?", a: "Parts ship from Canada, so US customs needs your company's business EIN (IRS number). You enter it at checkout, and it is used only on the customs paperwork for that shipment." },
       { q: "Who pays duties and brokerage fees?", a: "For shipments between Canada and the USA, duties, taxes and brokerage fees are paid by the receiver unless we agree otherwise." },
@@ -179,7 +187,7 @@ export const moreFaqGroups: FaqGroup[] = [
     label: "Warranty & Returns",
     short: "Returns",
     items: [
-      { q: "What warranty do refurbished parts and exchange units have?", a: "Repairs, refurbished parts and exchange units are all covered for 12 months from the date we ship them." },
+      { q: "What warranty do refurbished parts and exchange units have?", a: "Repairs, refurbished parts and exchange units are all covered by our one-year warranty from the date we ship them." },
       { q: "What does the warranty not cover?", a: "Failures caused by incorrect installation, misuse, power surges, water or contamination, faults elsewhere in the machine, or opening of the unit by anyone else. Lost parameters and programs are not covered, so keep a backup." },
       { q: "Can I return a part I ordered by mistake?", a: "Yes, within 14 days of delivery if it is unused and in its original condition and packaging, less a 15% restocking fee. Contact us first for a return authorization." },
       { q: "What cannot be returned?", a: "Repairs, exchange units, custom cables and special-order or sourced parts cannot be returned unless they are faulty." },

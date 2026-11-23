@@ -20,7 +20,7 @@ const sections: LegalSection[] = [
     title: "What is covered",
     body: (
       <>
-        <p>{legal.name} (&quot;we&quot;, &quot;us&quot;) warrants the following against failure in normal use for <strong>{m} months</strong> from the date we ship the unit to you:</p>
+        <p>{legal.name} (&quot;we&quot;, &quot;us&quot;) warrants the following against failure in normal use for <strong>one year ({m} months)</strong> from the date we ship the unit to you:</p>
         <ul>
           <li><strong>Repairs:</strong> the repair we carried out on your unit, including the parts we replaced.</li>
           <li><strong>Refurbished parts:</strong> the refurbished unit you bought from us.</li>
@@ -102,7 +102,7 @@ const sections: LegalSection[] = [
 ];
 
 const highlights = [
-  { icon: ShieldCheck, t: `${m}-month warranty`, d: "On repairs, refurbished parts and exchange units." },
+  { icon: ShieldCheck, t: "1-year warranty", d: "On repairs, refurbished parts and exchange units." },
   { icon: ClipboardCheck, t: "Test report included", d: "Every repaired unit ships with its test report." },
   { icon: BadgeCheck, t: "Load tested on OEM-standard equipment", d: "Drives with a motor, motors under drive control." },
   { icon: RefreshCw, t: "Free warranty evaluation", d: "We check any claim free and tell you first." },
@@ -115,7 +115,7 @@ export default function WarrantyPage() {
       crumb="Warranty"
       title="Our"
       accent="Warranty"
-      intro={`Every repair, refurbished part and exchange unit we ship is tested and covered for ${m} months. Here is exactly what that means.`}
+      intro={`Every repair, refurbished part and exchange unit we ship is load tested and covered by our one-year warranty from the ship date. Here is exactly what that means.`}
       sections={sections}
       highlights={highlights}
     />
