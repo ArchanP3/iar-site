@@ -76,7 +76,7 @@ export default function BrandPage({ b }: { b: Brand }) {
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
         <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full blur-2xl" style={{ background: `radial-gradient(closest-side, ${b.color}55, transparent)` }} />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full blur-2xl" style={{ background: `radial-gradient(closest-side, #C8102E55, transparent)` }} />
         <div className="relative mx-auto grid max-w-310 gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>
             <nav aria-label="Breadcrumb">
@@ -120,14 +120,14 @@ export default function BrandPage({ b }: { b: Brand }) {
             <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-30px_rgba(200,16,46,0.9)] backdrop-blur-xl">
               <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255,59,85,0.12)_100%)]" />
               <div className="relative flex h-42.5 items-center justify-center">
-                <span aria-hidden="true" className="absolute h-40 w-40 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${b.color}88, transparent)` }} />
+                <span aria-hidden="true" className="absolute h-40 w-40 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, #C8102E88, transparent)` }} />
                 {brandLogo(b.slug) ? (
                   <span className="relative flex h-32 w-64 items-center justify-center rounded-[24px] bg-white px-6 shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={brandLogo(b.slug)} alt={`${b.name} logo`} className="max-h-20 w-full object-contain" />
                   </span>
                 ) : (
-                  <span className="relative flex h-28 w-28 items-center justify-center rounded-[28px] text-[34px] font-extrabold tracking-[-0.02em] text-white shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>
+                  <span className="relative flex h-28 w-28 items-center justify-center rounded-[28px] text-[34px] font-extrabold tracking-[-0.02em] text-white shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}>
                     {b.initials}
                   </span>
                 )}
@@ -159,7 +159,7 @@ export default function BrandPage({ b }: { b: Brand }) {
                   {(() => {
                     const I = catIcon[s.slug] ?? Cpu;
                     return (
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-[0_8px_18px_-10px_rgba(0,0,0,0.6)]" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-[0_8px_18px_-10px_rgba(0,0,0,0.6)]" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}>
                         <I size={22} strokeWidth={1.8} aria-hidden="true" />
                       </span>
                     );
@@ -257,7 +257,7 @@ export default function BrandPage({ b }: { b: Brand }) {
                           <img src={brandLogo(o.slug)} alt="" className="max-h-7 w-full object-contain" />
                         </span>
                       ) : (
-                        <span className="flex h-10 w-10 items-center justify-center rounded-lg text-[12px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, ${o.color}, #131316)` }}>{o.initials}</span>
+                        <span className="flex h-10 w-10 items-center justify-center rounded-lg text-[12px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}>{o.initials}</span>
                       )}
                       <span className="flex-1 text-[14px] font-semibold">{o.name} Repair</span>
                       <ArrowRight size={15} className="text-[#B30E29] transition group-hover:translate-x-0.5" aria-hidden="true" />

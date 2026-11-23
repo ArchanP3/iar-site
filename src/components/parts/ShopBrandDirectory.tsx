@@ -40,7 +40,7 @@ export default function ShopBrandDirectory({ brands }: { brands: B[] }) {
             {g.map((b) => (
               <li key={b.slug} className="relative">
                 <Link href={`/shop/brands/${b.slug}`} className="group flex h-full items-center gap-3.5 rounded-2xl border border-[#EAEAEC] bg-white p-4 pr-16 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200,16,46,0.6)]">
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-[13px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-[13px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}>{b.initials}</span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-[15.5px] font-extrabold text-[#131316] group-hover:text-[#B30E29]">{b.name}</span>
                     <span className="line-clamp-2 block text-[12.5px] leading-snug text-[#696976]">{b.card}</span>

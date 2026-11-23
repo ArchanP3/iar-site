@@ -184,8 +184,8 @@ export default async function AboutPage() {
           <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
             {offer.map(({ icon: Icon, color, t, d, href }) => (
               <li key={t}>
-                <Link href={href} className="group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-white/10 p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:p-6" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${color}40 100%)` }}>
-                  <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${color}77, transparent)` }} />
+                <Link href={href} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-white/10 p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:p-6">
+                  <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E77, transparent)` }} />
                   <div className="relative flex items-start justify-between">
                     <span className="flex h-12 w-12 items-center justify-center rounded-2xl ring-1 ring-white/15" style={{ background: `linear-gradient(145deg, ${color}40, #131316)`, boxShadow: `0 10px 26px -12px ${color}` }}><Icon size={22} style={{ color }} aria-hidden="true" /></span>
                     <ArrowUpRight size={18} style={{ color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
@@ -249,7 +249,7 @@ export default async function AboutPage() {
             {values.map(({ icon: Icon, color, t, d }) => (
               <li key={t} className="group relative overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-1 hover:shadow-[0_25px_50px_-35px_rgba(19,19,22,0.6)] sm:p-6">
                 <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
-                <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full opacity-60 blur-2xl transition group-hover:opacity-100" style={{ background: `radial-gradient(closest-side, ${color}40, transparent)` }} />
+                <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full opacity-60 blur-2xl transition group-hover:opacity-100" style={{ background: `radial-gradient(closest-side, #C8102E40, transparent)` }} />
                 <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl" style={{ background: `${color}18`, boxShadow: `inset 0 0 0 1px ${color}30` }}>
                   <Icon size={22} style={{ color }} aria-hidden="true" />
                 </span>
