@@ -63,7 +63,7 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
         </select>
         <span className="flex-1" />
         <form ref={formRef} action={upAction} className="flex items-center gap-2">
-          <input list="folders" name="folder" defaultValue={folder || "General"} className="h-9.5 w-36 rounded-[10px] border border-[#EEDADD] px-2.5 text-[12.5px]" title="Folder" />
+          <input list="folders" name="folder" defaultValue={folder || "General"} className="h-9.5 w-36 rounded-[10px] border border-[#E2E2E6] px-2.5 text-[12.5px]" title="Folder" />
           <datalist id="folders">{folders.map((f) => <option key={f} value={f} />)}</datalist>
           <input ref={fileRef} type="file" name="files" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,application/pdf" onChange={onPick} className="hidden" />
           <button type="button" disabled={uploading || prep} onClick={() => fileRef.current?.click()} className={b("primary")}><Upload size={15} /> {prep ? "Preparing…" : uploading ? "Uploading…" : "Upload"}</button>
@@ -76,8 +76,8 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
         {list.length ? (
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
             {list.map((i) => (
-              <button type="button" key={i.id} onClick={() => setSelId(i.id)} className={cx("overflow-hidden rounded-2xl border bg-white text-left", sel?.id === i.id ? "border-[#C8102E] ring-2 ring-[#C8102E]/30" : "border-[#EAEAEC] hover:border-[#E2BBC1]")}>
-                <div className="relative flex h-30 items-center justify-center border-b border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]">
+              <button type="button" key={i.id} onClick={() => setSelId(i.id)} className={cx("overflow-hidden rounded-2xl border bg-white text-left", sel?.id === i.id ? "border-[#C8102E] ring-2 ring-[#C8102E]/30" : "border-[#EAEAEC] hover:border-[#CCCCD1]")}>
+                <div className="relative flex h-30 items-center justify-center border-b border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#ECECEE_100%)]">
                   {i.mime.startsWith("image/") ? <img src={`/media/${i.filename}`} alt="" loading="lazy" className="max-h-[78%] max-w-[78%] object-contain" /> : <FileText size={34} className="text-[#91919E]" />}
                   {!i.alt && i.mime.startsWith("image/") && <span className="absolute left-2 top-2"><Pill tone="bad"><TriangleAlert size={11} /> No alt</Pill></span>}
                 </div>
@@ -86,7 +86,7 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-[#FDD1D8] bg-white py-16 text-center text-[#696976]">
+          <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-[#E6E6E8] bg-white py-16 text-center text-[#696976]">
             <ImageIcon size={30} className="text-[#91919E]" /><b className="text-[#131316]">{items.length ? "Nothing matches this filter" : "No images yet"}</b>
             <span className="max-w-sm text-[13px]">Upload photos and they are resized, compressed and converted to WebP automatically.</span>
           </div>
@@ -111,7 +111,7 @@ function Details({ m, close, canDelete }: { m: MediaItem; close: () => void; can
     <form action={action} className="flex flex-col gap-3.5 rounded-2xl border border-[#EAEAEC] bg-white p-4.5 xl:sticky xl:top-20">
       <input type="hidden" name="id" value={m.id} />
       <div className="flex items-center"><b className="text-[14.5px]">Image details</b><button type="button" onClick={close} className="ml-auto text-[#91919E]"><X size={16} /></button></div>
-      <div className="flex h-37.5 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]">
+      <div className="flex h-37.5 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#ECECEE_100%)]">
         {m.mime.startsWith("image/") ? <img src={`/media/${m.filename}`} alt="" className="max-h-[80%] max-w-[80%] object-contain" /> : <FileText size={40} className="text-[#91919E]" />}
       </div>
       <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">File name {nonDescriptive && <span className="ml-auto text-[12px] text-[#B45309]">Not descriptive</span>}</span><input name="filename" defaultValue={base} className={cx(input, "font-mono text-[12.5px]")} /><span className="flex gap-1.5 text-[11.5px] text-[#696976]"><Sparkles size={13} /> Describe the photo, e.g. siemens-sinamics-s120-repair. Renaming keeps the old link working.</span></label>

@@ -115,7 +115,7 @@ export default function ModelCodeDecoder() {
             )}
 
             {valid && (
-              <p className="mt-3 flex items-center gap-2 rounded-2xl border border-[#F8D1D7] bg-[#FFF6F7] px-4 py-3 text-[13.5px] text-[#131316]">
+              <p className="mt-3 flex items-center gap-2 rounded-2xl border border-[#E3E3E6] bg-[#FFF6F7] px-4 py-3 text-[13.5px] text-[#131316]">
                 <CheckCircle2 size={17} aria-hidden="true" className="text-[#C8102E]" /> Every part of this code is a listed option for this {family.kind}.
               </p>
             )}

@@ -125,7 +125,7 @@ async function Content({ params }: Props) {
             <ul className="mt-4 flex flex-wrap gap-2">
               {inds.map((i) => (
                 <li key={i.slug}>
-                  <Link href={industryUrl(i.slug)} className="inline-flex h-10 items-center gap-2 rounded-full border border-[#F0DADD] bg-white px-4 text-[13.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
+                  <Link href={industryUrl(i.slug)} className="inline-flex h-10 items-center gap-2 rounded-full border border-[#E3E3E7] bg-white px-4 text-[13.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
                     <span className="h-2 w-2 rounded-full" style={{ background: i.color }} aria-hidden="true" />{i.name}
                   </Link>
                 </li>

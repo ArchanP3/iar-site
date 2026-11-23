@@ -19,7 +19,7 @@ export default function PartCard({ p, priority = false }: { p: PartSummary; prio
       className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#EAEAEC] bg-white shadow-[0_20px_45px_-38px_rgba(19,19,22,0.6)] transition hover:-translate-y-1 hover:border-[#C8102E]/40 hover:shadow-[0_30px_60px_-36px_rgba(165,13,37,0.45)]"
     >
       {/* Photo box is 4:3: a 1600×1200 photo fills it edge to edge; other shapes sit on white, never cropped. */}
-      <div className={`relative aspect-4/3 overflow-hidden border-b border-[#F3F3F4] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_60%,#F7E3E6_100%)]"}`}>
+      <div className={`relative aspect-4/3 overflow-hidden border-b border-[#F3F3F4] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_60%,#ECECEE_100%)]"}`}>
         {img ? (
           <Image src={img.src} alt={img.alt} fill priority={priority} sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw" className="object-contain transition duration-300 group-hover:scale-[1.03]" />
         ) : (

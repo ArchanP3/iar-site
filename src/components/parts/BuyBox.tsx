@@ -43,7 +43,7 @@ const link = (path: string, params: Record<string, string | number | undefined>)
 const primary =
   "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5";
 const secondary =
-  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-[#F0DADD] bg-white px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]";
+  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-[#E3E3E7] bg-white px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]";
 
 
 /* Selling rules live in src/lib/parts/rules.ts:
@@ -145,7 +145,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
             )}
           </div>
           {o.condition !== "repair" && (
-            <div className="flex h-10 flex-none items-center rounded-xl border border-[#F0DADD]" aria-label="Quantity">
+            <div className="flex h-10 flex-none items-center rounded-xl border border-[#E3E3E7]" aria-label="Quantity">
               <button type="button" aria-label="Less" onClick={() => setQty((q) => Math.max(1, q - 1))} className="flex h-full w-9 items-center justify-center text-[#5A5A66] hover:text-[#B30E29]"><Minus size={14} /></button>
               <span className="w-7 text-center text-[14.5px] font-semibold tabular-nums" aria-live="polite">{qty}</span>
               <button type="button" aria-label="More" onClick={() => setQty((q) => Math.min(999, q + 1))} className="flex h-full w-9 items-center justify-center text-[#5A5A66] hover:text-[#B30E29]"><Plus size={14} /></button>
@@ -166,7 +166,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
                 <ArrowLeft size={13} aria-hidden="true" /> Back
               </button>
             </div>
-            <span className="mt-2 flex h-12 items-center rounded-xl border border-[#F0DADD] bg-white px-3 focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/10">
+            <span className="mt-2 flex h-12 items-center rounded-xl border border-[#E3E3E7] bg-white px-3 focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/10">
               <span className="text-[15px] font-semibold text-[#696976]">US$</span>
               <input
                 id="offer-amount"

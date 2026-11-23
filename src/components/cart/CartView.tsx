@@ -37,7 +37,7 @@ export default function CartView() {
           <Link href="/shop" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
             Shop Parts <ArrowRight size={16} aria-hidden="true" />
           </Link>
-          <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]">
+          <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#E3E3E7] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]">
             <FileText size={16} aria-hidden="true" /> Request a Quote
           </Link>
         </div>
@@ -82,7 +82,7 @@ export default function CartView() {
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#F3F3F4] pt-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 items-center rounded-xl border border-[#F0DADD]" aria-label="Quantity">
+                  <div className="flex h-11 items-center rounded-xl border border-[#E3E3E7]" aria-label="Quantity">
                     <button type="button" aria-label="Less" onClick={() => setQty(i.id, i.qty - 1)} disabled={i.qty <= 1} className="flex h-full w-10 items-center justify-center text-[#5A5A66] hover:text-[#B30E29] disabled:opacity-35"><Minus size={15} /></button>
                     <span className="w-9 text-center text-[15px] font-semibold tabular-nums" aria-live="polite">{i.qty}</span>
                     <button type="button" aria-label="More" onClick={() => setQty(i.id, i.qty + 1)} className="flex h-full w-10 items-center justify-center text-[#5A5A66] hover:text-[#B30E29]"><Plus size={15} /></button>

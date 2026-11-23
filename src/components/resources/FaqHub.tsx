@@ -22,7 +22,7 @@ export default function FaqHub({ groups }: { groups: FaqGroup[] }) {
   return (
     <div className="min-w-0">
       <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:p-4">
-        <label className="flex items-center gap-2 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
+        <label className="flex items-center gap-2 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Search questions</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${total} questions, e.g. warranty, exchange, EIN`} className="h-12 w-full bg-transparent text-[15px] outline-none placeholder:text-[#696976]" />
@@ -30,7 +30,7 @@ export default function FaqHub({ groups }: { groups: FaqGroup[] }) {
         <div className="-mx-1 mt-3 flex gap-2 overflow-x-auto px-1 scrollbar-none sm:flex-wrap">
           {[{ key: "all", label: "All" }, ...groups].map((g) => (
             <button key={g.key} type="button" onClick={() => setCat(g.key)} aria-pressed={cat === g.key}
-              className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${cat === g.key ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+              className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${cat === g.key ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {g.label}
             </button>
           ))}
@@ -55,7 +55,7 @@ export default function FaqHub({ groups }: { groups: FaqGroup[] }) {
       ))}
 
       {!shown.length && (
-        <p className="mt-8 rounded-2xl border border-dashed border-[#E6CBCF] bg-white p-6 text-[14.5px] text-[#62626F]">
+        <p className="mt-8 rounded-2xl border border-dashed border-[#D6D6DB] bg-white p-6 text-[14.5px] text-[#62626F]">
           No answer for that yet. <Link href="/contact" className="font-semibold text-[#A50D25] hover:underline">Ask us directly</Link> and a technician will reply.
         </p>
       )}

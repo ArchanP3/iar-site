@@ -65,7 +65,7 @@ export default function InternationalPage() {
       <PageExtras path="/international" />
 
       {/* For Canada & USA buyers */}
-      <div className="flex flex-col gap-3 rounded-[22px] border border-[#FCC2CB] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165,13,37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div className="flex flex-col gap-3 rounded-[22px] border border-[#DDDDE1] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165,13,37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><ShoppingCart size={19} aria-hidden="true" /></span>
           <div>
@@ -75,7 +75,7 @@ export default function InternationalPage() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Link href="/shop" className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#131316] px-4 text-[13.5px] font-semibold text-white hover:bg-[#A50D25]"><ShoppingCart size={15} aria-hidden="true" /> Shop Parts</Link>
-          <Link href="/request-repair" className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#F0DADD] px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Wrench size={15} aria-hidden="true" /> Request a Repair</Link>
+          <Link href="/request-repair" className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#E3E3E7] px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Wrench size={15} aria-hidden="true" /> Request a Repair</Link>
         </div>
       </div>
 

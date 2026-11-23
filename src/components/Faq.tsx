@@ -40,7 +40,7 @@ export default function Faq() {
             {total} straight answers about industrial repair, parts, shipping and warranty.
           </p>
 
-          <div role="tablist" aria-label="FAQ topics" className="mt-4 flex gap-1 rounded-xl border border-[#F0DADD] bg-white p-1 lg:flex-col">
+          <div role="tablist" aria-label="FAQ topics" className="mt-4 flex gap-1 rounded-xl border border-[#E3E3E7] bg-white p-1 lg:flex-col">
             {groups.map((g) => (
               <button
                 key={g.key}

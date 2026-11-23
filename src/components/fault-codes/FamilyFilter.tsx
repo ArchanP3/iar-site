@@ -85,7 +85,7 @@ export default function FamilyFilter({
       className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${
         a === area
           ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"
-          : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"
+          : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"
       }`}
     >
       {a} <span className={a === area ? "text-white/75" : "text-[#62626F]"}>· {c.toLocaleString("en-US")}</span>
@@ -94,7 +94,7 @@ export default function FamilyFilter({
 
   return (
     <div className="space-y-3">
-      <label className="flex items-center gap-2 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] p-1.5 pl-4">
+      <label className="flex items-center gap-2 rounded-2xl border border-[#E3E3E7] bg-[#FAFAFB] p-1.5 pl-4">
         <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
         <span className="sr-only">Search {label} codes</span>
         <input
@@ -114,7 +114,7 @@ export default function FamilyFilter({
             value={rest.some(([a]) => a === area) ? area : ""}
             onChange={(e) => setArea(e.target.value || "All")}
             className={`h-9.5 shrink-0 rounded-xl border px-3 text-[13px] font-semibold outline-none ${
-              rest.some(([a]) => a === area) ? "border-[#C8102E] text-[#B30E29]" : "border-[#F0DADD] text-[#131316]"
+              rest.some(([a]) => a === area) ? "border-[#C8102E] text-[#B30E29]" : "border-[#E3E3E7] text-[#131316]"
             } bg-white`}
           >
             <option value="">More areas ({rest.length})</option>

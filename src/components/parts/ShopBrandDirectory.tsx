@@ -19,7 +19,7 @@ export default function ShopBrandDirectory({ brands }: { brands: B[] }) {
   return (
     <div>
       <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:flex-row sm:items-center sm:p-4">
-        <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
+        <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Find a brand</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a brand or series, e.g. Kinetix" className="h-12 w-full bg-transparent text-[15px] outline-none placeholder:text-[#696976]" />
@@ -54,7 +54,7 @@ export default function ShopBrandDirectory({ brands }: { brands: B[] }) {
       ))}
 
       {list.length === 0 && (
-        <p className="mt-6 rounded-2xl border border-dashed border-[#E6CBCF] bg-white p-6 text-[14.5px] text-[#62626F]">
+        <p className="mt-6 rounded-2xl border border-dashed border-[#D6D6DB] bg-white p-6 text-[14.5px] text-[#62626F]">
           Not listed? We still source it. <Link href={`/request-quote${q ? `?brand=${encodeURIComponent(q)}` : ""}`} className="font-semibold text-[#A50D25] hover:underline">Send us the part number</Link> and we&apos;ll quote it.
         </p>
       )}

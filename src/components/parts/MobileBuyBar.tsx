@@ -121,9 +121,9 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
                       <p className="text-[11.5px] leading-snug text-[#696976]">{blurb[r.o.condition]}</p>
                     </div>
                     {"go" in a ? (
-                      <button type="button" onClick={a.go} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#F0DADD] bg-white text-[#131316]"}`}>{a.label}</button>
+                      <button type="button" onClick={a.go} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#E3E3E7] bg-white text-[#131316]"}`}>{a.label}</button>
                     ) : (
-                      <Link href={a.href!} onClick={close} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#F0DADD] bg-white text-[#131316]"}`}>{a.label}</Link>
+                      <Link href={a.href!} onClick={close} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#E3E3E7] bg-white text-[#131316]"}`}>{a.label}</Link>
                     )}
                   </li>
                 );
@@ -135,11 +135,11 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
                 <WhatsAppIcon size={16} className="text-[#1DA851]" /> WhatsApp
               </WhatsAppTrigger>
               {contact.phone && (
-                <a href={phoneHref(contact.phone)} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] text-[14px] font-bold text-[#131316]">
+                <a href={phoneHref(contact.phone)} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#E3E3E7] text-[14px] font-bold text-[#131316]">
                   <Phone size={16} aria-hidden="true" /> Call
                 </a>
               )}
-              <a href={`mailto:${contact.email || site.email}?subject=${encodeURIComponent(`${manufacturer} ${partNumber}`)}`} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] text-[14px] font-bold text-[#131316]">
+              <a href={`mailto:${contact.email || site.email}?subject=${encodeURIComponent(`${manufacturer} ${partNumber}`)}`} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#E3E3E7] text-[14px] font-bold text-[#131316]">
                 <Mail size={16} aria-hidden="true" /> Email
               </a>
             </div>

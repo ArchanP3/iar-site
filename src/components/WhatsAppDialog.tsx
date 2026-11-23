@@ -89,7 +89,7 @@ export default function WhatsAppDialog() {
     setState(delivered ? "sent" : "error");
   }
 
-  const field = "h-12 w-full rounded-xl border border-[#EDD7DA] bg-[#FAFAFA] px-4 text-[15px] text-[#131316] outline-none transition placeholder:text-[#888895] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
+  const field = "h-12 w-full rounded-xl border border-[#E0E0E4] bg-[#FAFAFA] px-4 text-[15px] text-[#131316] outline-none transition placeholder:text-[#888895] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
   const lab = "mb-1.5 block text-[12px] font-bold uppercase tracking-[0.12em] text-[#4B4B55]";
 
   return (
@@ -125,7 +125,7 @@ export default function WhatsAppDialog() {
             <p className="mx-auto mt-2 max-w-80 text-[14px] leading-relaxed text-[#62626F]">
               {number ? "Your details are saved with us too, so we can follow up by email if the chat doesn't connect." : "Thank you. A member of our team will reply by email."}
             </p>
-            <button type="button" onClick={close} className="mt-6 inline-flex h-11 items-center rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">Done</button>
+            <button type="button" onClick={close} className="mt-6 inline-flex h-11 items-center rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">Done</button>
           </div>
         ) : (
           <form onSubmit={submit} className="flex min-h-0 flex-1 flex-col">
@@ -134,7 +134,7 @@ export default function WhatsAppDialog() {
               <legend className={lab}>I need</legend>
               <div className="grid grid-cols-4 gap-1.5">
                 {NEEDS.map(({ v, icon: I }) => (
-                  <label key={v} className={`flex cursor-pointer flex-col items-center gap-1 rounded-xl border px-1 py-2.5 text-[12px] font-semibold transition has-focus-visible:ring-2 has-focus-visible:ring-[#C8102E] ${need === v ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25]" : "border-[#EDD7DA] text-[#4B4B55] hover:border-[#C8102E]/50"}`}>
+                  <label key={v} className={`flex cursor-pointer flex-col items-center gap-1 rounded-xl border px-1 py-2.5 text-[12px] font-semibold transition has-focus-visible:ring-2 has-focus-visible:ring-[#C8102E] ${need === v ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25]" : "border-[#E0E0E4] text-[#4B4B55] hover:border-[#C8102E]/50"}`}>
                     <input type="radio" name="Need" value={v} checked={need === v} onChange={() => setNeed(v)} className="sr-only" />
                     <I size={17} aria-hidden="true" /> {v}
                   </label>

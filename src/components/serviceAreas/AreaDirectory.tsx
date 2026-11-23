@@ -30,7 +30,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
             return (
               <button key={x.key} type="button" onClick={() => setG(x.key)} aria-pressed={act}
                 style={act ? { background: x.key === "all" ? "#131316" : `linear-gradient(135deg, ${x.color}, #131316)`, borderColor: "transparent" } : undefined}
-                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[13.5px] font-semibold transition ${act ? "text-white shadow-[0_10px_22px_-12px_rgba(19,19,22,0.9)]" : "border-[#F1DDE0] bg-white text-[#4E4E58] hover:border-[#E2BBC1]"}`}>
+                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[13.5px] font-semibold transition ${act ? "text-white shadow-[0_10px_22px_-12px_rgba(19,19,22,0.9)]" : "border-[#E6E6E8] bg-white text-[#4E4E58] hover:border-[#CCCCD1]"}`}>
                 {x.key !== "all" && <span className="h-2.5 w-2.5 rounded-full" style={{ background: x.color, boxShadow: `0 0 0 3px ${x.color}33` }} aria-hidden="true" />}
                 {x.label}
                 <span className={`rounded-full px-1.5 text-[11px] font-bold ${act ? "bg-white/20" : "bg-[#F4F4F5] text-[#A50D25]"}`}>{n}</span>
@@ -38,7 +38,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
             );
           })}
         </div>
-        <label className="flex h-11 w-full items-center gap-2.5 rounded-xl border border-[#F1DDE0] bg-white px-3.5 text-[#696976] focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/10 lg:w-72">
+        <label className="flex h-11 w-full items-center gap-2.5 rounded-xl border border-[#E6E6E8] bg-white px-3.5 text-[#696976] focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/10 lg:w-72">
           <Search size={16} aria-hidden="true" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find your city" aria-label="Find your city" className="h-full min-w-0 flex-1 bg-transparent text-[14px] text-[#131316] outline-none placeholder:text-[#91919E]" />
         </label>
@@ -69,7 +69,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
         })}
       </ul>
       {shown.size === 0 && (
-        <div className="mt-6 flex flex-col items-start gap-3 rounded-[20px] border border-dashed border-[#E6CBCF] bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-6 flex flex-col items-start gap-3 rounded-[20px] border border-dashed border-[#D6D6DB] bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[14.5px] text-[#4E4E58]"><b className="text-[#131316]">{q ? `“${q}” isn’t on the list yet` : "No cities here"}</b>, but we serve every city in Canada and the USA.</p>
           <Link href="/request-pickup" className="inline-flex h-11 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white"><Truck size={16} aria-hidden="true" /> Request a Pickup</Link>
         </div>

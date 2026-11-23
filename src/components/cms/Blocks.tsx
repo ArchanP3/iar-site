@@ -24,7 +24,7 @@ function Btn({ link, primary, dark }: { link?: { label: string; href: string }; 
   return (
     <Link href={link.href} className={primary
       ? "inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:brightness-110"
-      : `inline-flex h-12 items-center gap-2 rounded-xl border px-6 text-[15px] font-semibold transition ${dark ? "border-white/25 text-white hover:bg-white/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]"}`}>
+      : `inline-flex h-12 items-center gap-2 rounded-xl border px-6 text-[15px] font-semibold transition ${dark ? "border-white/25 text-white hover:bg-white/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]"}`}>
       {link.label} {primary && <ArrowRight size={16} aria-hidden="true" />}
     </Link>
   );
@@ -145,7 +145,7 @@ async function Section({ b, vars, H }: { b: Block; vars: Record<string, string>;
       const { html } = renderMarkdown(f(b.body));
       return (
         <section className={`${wrap} grid items-center gap-8 py-12 lg:grid-cols-2`}>
-          <div className={`flex min-h-65 items-center justify-center rounded-[24px] border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)] p-6 ${b.side === "right" ? "lg:order-2" : ""}`}>
+          <div className={`flex min-h-65 items-center justify-center rounded-[24px] border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#ECECEE_100%)] p-6 ${b.side === "right" ? "lg:order-2" : ""}`}>
             {b.image && /* eslint-disable-next-line @next/next/no-img-element */ <img src={b.image} alt={f(b.alt)} loading="lazy" className="max-h-80 w-auto object-contain" />}
           </div>
           <div>

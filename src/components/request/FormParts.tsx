@@ -6,7 +6,7 @@ import { ArrowRight, Check, CheckCircle2, Loader2, Minus, Plus, ShieldCheck } fr
 import { submitServiceRequest } from "@/lib/requests";
 
 export const input =
-  "h-11 w-full rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 text-[14px] text-[#131316] outline-none transition placeholder:text-[#90909C] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
+  "h-11 w-full rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 text-[14px] text-[#131316] outline-none transition placeholder:text-[#90909C] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
 export const label = "mb-1.5 block text-[12.5px] font-semibold text-[#131316]";
 export const brands = ["Siemens", "Rexroth Indramat", "Allen-Bradley", "Fanuc", "Yaskawa", "Mitsubishi", "Kollmorgen", "Schneider Electric", "Omron", "ABB", "Other"];
 
@@ -34,7 +34,7 @@ export function Choice({ name, options, value, onChange, cols = 3 }: { name: str
       {options.map(({ v, t, d, icon: Icon }) => {
         const on = value === v;
         return (
-          <label key={v} className={`relative flex cursor-pointer gap-3 rounded-2xl border p-3.5 transition has-focus-visible:ring-4 has-focus-visible:ring-[#C8102E]/25 ${on ? "border-[#C8102E] bg-[#C8102E]/5 ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] hover:border-[#C8102E]/40"}`}>
+          <label key={v} className={`relative flex cursor-pointer gap-3 rounded-2xl border p-3.5 transition has-focus-visible:ring-4 has-focus-visible:ring-[#C8102E]/25 ${on ? "border-[#C8102E] bg-[#C8102E]/5 ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] hover:border-[#C8102E]/40"}`}>
             <input type="radio" name={name} value={t} checked={on} onChange={() => onChange(v)} className="sr-only" />
             <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${on ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "bg-[#C8102E]/8 text-[#B30E29]"}`}>
               <Icon size={17} aria-hidden="true" />
@@ -103,7 +103,7 @@ export function CarrierPicker({ prefix, value, onChange }: { prefix: string; val
         <div className="flex flex-wrap gap-2">
           {carriers.map((c) => (
             <button key={c} type="button" aria-pressed={value === c} onClick={() => onChange(c)}
-              className={`min-w-24 rounded-xl border px-4 py-2.5 text-[13.5px] font-bold transition ${value === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+              className={`min-w-24 rounded-xl border px-4 py-2.5 text-[13.5px] font-bold transition ${value === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c}
             </button>
           ))}
@@ -180,7 +180,7 @@ export function Thanks({ title, text }: { title: string; text: string }) {
       <CheckCircle2 size={48} className="mx-auto text-emerald-500" aria-hidden="true" />
       <h2 className="mt-4 text-[24px] font-extrabold text-[#131316]">{title}</h2>
       <p className="mx-auto mt-2 max-w-115 text-[14.5px] leading-[1.6] text-[#62626F]">{text}</p>
-      <Link href="/" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
+      <Link href="/" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
         Back to home <ArrowRight size={15} aria-hidden="true" />
       </Link>
     </div>
@@ -228,7 +228,7 @@ export function PackageFields({ prefix }: { prefix: string }) {
       <div>
         <p className={label}>Boxes</p>
         <input type="hidden" name="Boxes" value={boxes} />
-        <div className="flex h-11 items-center justify-between rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-1.5">
+        <div className="flex h-11 items-center justify-between rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-1.5">
           <button type="button" aria-label="Fewer boxes" onClick={() => setBoxes((b) => Math.max(1, b - 1))} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#131316] ring-1 ring-[#EAEAEC]"><Minus size={14} /></button>
           <span className="text-[14px] font-bold text-[#131316]">{boxes}</span>
           <button type="button" aria-label="More boxes" onClick={() => setBoxes((b) => b + 1)} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#131316] ring-1 ring-[#EAEAEC]"><Plus size={14} /></button>
@@ -258,7 +258,7 @@ export function PackageFields({ prefix }: { prefix: string }) {
         <div className="flex flex-wrap items-center gap-2">
           {["Morning 8–12", "Afternoon 12–5", "Anytime", "Exact time"].map((t) => (
             <button key={t} type="button" aria-pressed={slot === t} onClick={() => setSlot(t)}
-              className={`rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${slot === t ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+              className={`rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${slot === t ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {t}
             </button>
           ))}

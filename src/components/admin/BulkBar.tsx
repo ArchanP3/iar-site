@@ -26,7 +26,7 @@ export default function BulkBar({ children, paths }: { children: React.ReactNode
   return (
     <div onChange={onChange}>
       {sel.length > 0 && (
-        <div className="flex flex-wrap items-center gap-2.5 border-b border-[#FDD1D8] bg-[#FDF1F3] px-4 py-2.5 text-[12.8px] text-[#78101F]">
+        <div className="flex flex-wrap items-center gap-2.5 border-b border-[#E6E6E8] bg-[#FDF1F3] px-4 py-2.5 text-[12.8px] text-[#78101F]">
           <Info size={16} />
           <b>{sel.length} selected.</b>
           <span className="flex-1" />

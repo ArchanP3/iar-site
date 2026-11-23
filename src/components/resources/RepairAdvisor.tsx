@@ -164,7 +164,7 @@ export default function RepairAdvisor() {
           const on = a[cur.key] === o.v;
           return (
             <button key={o.v} type="button" onClick={() => pick(cur.key, o.v)}
-              className={`flex items-center justify-between gap-3 rounded-2xl border p-4 text-left transition ${on ? "border-[#C8102E] bg-[#C8102E]/5 ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] hover:border-[#C8102E]/50 hover:bg-[#FBFBFC]"}`}>
+              className={`flex items-center justify-between gap-3 rounded-2xl border p-4 text-left transition ${on ? "border-[#C8102E] bg-[#C8102E]/5 ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] hover:border-[#C8102E]/50 hover:bg-[#FBFBFC]"}`}>
               <span><span className="block text-[15.5px] font-bold">{o.t}</span>{o.d && <span className="block text-[13px] text-[#696976]">{o.d}</span>}</span>
               <ArrowRight size={17} className={on ? "text-[#B30E29]" : "text-[#C2C2C9]"} aria-hidden="true" />
             </button>
