@@ -3,7 +3,7 @@
 import Image from "next/image";
 import PartSuggest from "@/components/search/PartSuggest";
 import Link from "next/link";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { BadgeCheck, Factory } from "lucide-react";
 import { ArrowRight, ArrowUpRight, Cog, HandCoins, Radar, Search, ShieldCheck, ShoppingCart, Wind, Zap } from "lucide-react";
 import { useState } from "react";
@@ -102,8 +102,8 @@ const schema = {
 function Marquee({ words, reverse = false, tone }: { words: string[]; reverse?: boolean; tone: "brand" | "item" }) {
   const chip =
     tone === "brand"
-      ? "border-[#0B1A3C]/10 bg-white text-[#0B1A3C] font-bold"
-      : "border-[#0066FF]/15 bg-[#F4F7FB] text-[#005AE0] font-semibold";
+      ? "border-[#131316]/10 bg-white text-[#131316] font-bold"
+      : "border-[#C8102E]/15 bg-[#F7F7F8] text-[#B30E29] font-semibold";
   return (
     <div className={`aq-marquee ${reverse ? "aq-marquee--reverse" : ""}`}>
       <div className="aq-marquee__track py-1">
@@ -138,22 +138,22 @@ export default function PartsSection() {
     <section
       id="parts"
       aria-labelledby="parts-heading"
-      className={`${montserrat.className} relative bg-white py-10 sm:py-12 lg:py-14`}
+      className={`${brandFont.className} relative bg-white py-10 sm:py-12 lg:py-14`}
     >
       <style dangerouslySetInnerHTML={{ __html: css }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="mx-auto max-w-360 px-5 sm:px-8 lg:px-12">
         {/* ---------- Navy panel: heading + part number search ---------- */}
-        <div className="aq-shop-hero relative isolate overflow-hidden rounded-3xl bg-linear-to-br from-[#0B1A3C] to-[#030817] p-5 text-white sm:p-8 lg:p-10">
-          <span aria-hidden="true" className="aq-shop-glow pointer-events-none absolute -right-40 -top-56 -z-10 h-105 w-170 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.65),transparent)]" />
-          <span aria-hidden="true" className="aq-shop-glow aq-shop-glow--b pointer-events-none absolute -bottom-52 -left-44 -z-10 h-75 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(0,176,255,0.3),transparent)]" />
+        <div className="aq-shop-hero relative isolate overflow-hidden rounded-3xl bg-linear-to-br from-[#131316] to-[#060607] p-5 text-white sm:p-8 lg:p-10">
+          <span aria-hidden="true" className="aq-shop-glow pointer-events-none absolute -right-40 -top-56 -z-10 h-105 w-170 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.65),transparent)]" />
+          <span aria-hidden="true" className="aq-shop-glow aq-shop-glow--b pointer-events-none absolute -bottom-52 -left-44 -z-10 h-75 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)]" />
           <span aria-hidden="true" className="aq-shop-grid pointer-events-none absolute inset-0 -z-10" />
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-10">
             <div className="min-w-0">
-              <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#7FD3FF] sm:text-[12px]">
-                <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#0066FF] to-[#00B0FF]" />
+              <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FF8A99] sm:text-[12px]">
+                <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />
                 Shop Parts
               </p>
               <h2
@@ -162,10 +162,10 @@ export default function PartsSection() {
               >
                 Buy Industrial Automation Parts: New, Refurbished, Surplus &amp; Obsolete
               </h2>
-              <p className="mt-2 text-[14px] font-semibold text-[#4DB8FF] sm:text-[15px]">
+              <p className="mt-2 text-[14px] font-semibold text-[#FF5A6E] sm:text-[15px]">
                 Hard-to-find parts for current and legacy machines · Tested before it ships
               </p>
-              <p className="mt-3 text-[14px] leading-[1.7] text-[#B7C5DC] sm:text-[15px]">
+              <p className="mt-3 text-[14px] leading-[1.7] text-[#C6C6CD] sm:text-[15px]">
                 AutomIQ Automation & Drive Services supplies new, surplus, refurbished and obsolete industrial automation parts for
                 manufacturers across Canada and the United States, including servo drives, servo motors, encoders, PLCs,
                 HMIs, CNC controls, power supplies, sensors and gearboxes. Send a part number for price, condition and lead
@@ -174,18 +174,18 @@ export default function PartsSection() {
             </div>
 
             <form action="/search" method="get" className="rounded-[22px] border border-white/12 bg-white/5 p-4 backdrop-blur-md sm:p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7FD3FF]">Part number search</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Part number search</p>
               <label htmlFor="part-search" className="mt-1 block text-[20px] font-extrabold leading-tight sm:text-[22px]">Have a part number?</label>
-              <div data-suggest-anchor className="mt-4 flex items-center gap-3 rounded-2xl bg-white px-4 transition-shadow focus-within:ring-4 focus-within:ring-[#00B0FF]/35">
-                <Search size={21} className="shrink-0 text-[#005AE0]" />
-                <PartSuggest id="part-search" name="part" required placeholder="e.g. 6SL3120-1TE21-0AA3" className="h-14 w-full min-w-0 bg-transparent font-mono text-[16.5px] text-[#0B1A3C] outline-none placeholder:font-sans placeholder:text-[#5B6B84]" />
+              <div data-suggest-anchor className="mt-4 flex items-center gap-3 rounded-2xl bg-white px-4 transition-shadow focus-within:ring-4 focus-within:ring-[#FF3B55]/35">
+                <Search size={21} className="shrink-0 text-[#B30E29]" />
+                <PartSuggest id="part-search" name="part" required placeholder="e.g. 6SL3120-1TE21-0AA3" className="h-14 w-full min-w-0 bg-transparent font-mono text-[16.5px] text-[#131316] outline-none placeholder:font-sans placeholder:text-[#696976]" />
               </div>
-              <button type="submit" className="aq-shine mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[16px] font-semibold shadow-[0_14px_30px_-14px_rgba(0,176,255,0.9)] transition hover:-translate-y-0.5">
+              <button type="submit" className="aq-shine mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[16px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5">
                 Check Availability <ArrowRight size={18} />
               </button>
               <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[12.5px] text-white/75">
                 {([["Price, condition & lead time", BadgeCheck], ["Obsolete & discontinued sourced", Radar], ["1,000+ brands", Factory]] as const).map(([t, I]) => (
-                  <li key={t} className="flex items-center gap-1.5"><I size={14} className="shrink-0 text-[#7FD3FF]" />{t}</li>
+                  <li key={t} className="flex items-center gap-1.5"><I size={14} className="shrink-0 text-[#FF8A99]" />{t}</li>
                 ))}
               </ul>
             </form>
@@ -197,7 +197,7 @@ export default function PartsSection() {
           <SlidingTabs label="Shop parts by" idPrefix="parts" tabs={tabs} value={tab} onChange={setTab} />
           <Link
             href={tab === "category" ? "/shop" : "/shop/brands"}
-            className="group inline-flex shrink-0 items-center gap-1.5 text-[13px] font-semibold text-[#005AE0] sm:text-[14px]"
+            className="group inline-flex shrink-0 items-center gap-1.5 text-[13px] font-semibold text-[#B30E29] sm:text-[14px]"
           >
             {tab === "category" ? "View all categories" : "View all brands"}
             <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
@@ -237,15 +237,15 @@ export default function PartsSection() {
                     ) : (
                       (() => {
                         const Icon = fallbackIcons[c.title] ?? Cog;
-                        return <Icon size={30} strokeWidth={1.7} className="relative z-1 text-[#005AE0]" />;
+                        return <Icon size={30} strokeWidth={1.7} className="relative z-1 text-[#B30E29]" />;
                       })()
                     )}
                   </span>
                   <span className="block px-1.5 pb-1.5 pt-3">
-                    <h3 className="aq-card__title pr-1 text-[13px] font-bold leading-snug text-[#0B1A3C] sm:text-[14px]">
+                    <h3 className="aq-card__title pr-1 text-[13px] font-bold leading-snug text-[#131316] sm:text-[14px]">
                       {c.title}
                     </h3>
-                    <p className="mt-1 hidden text-[12px] leading-[1.45] text-[#5B6B84] sm:line-clamp-2">{c.text}</p>
+                    <p className="mt-1 hidden text-[12px] leading-[1.45] text-[#696976] sm:line-clamp-2">{c.text}</p>
                   </span>
                   <span aria-hidden="true" className="aq-card__go">
                     <ArrowUpRight size={15} />
@@ -257,18 +257,18 @@ export default function PartsSection() {
         </div>
 
         {/* ---------- Critical / spare / rush parts + 2 scrolling rows ---------- */}
-        <div className="mt-6 rounded-[22px] border border-[#E3EAF3] bg-[#F7FAFE] py-5 [contain-intrinsic-size:auto_300px] [content-visibility:auto] sm:py-6">
+        <div className="mt-6 rounded-[22px] border border-[#EAEAEC] bg-[#FAFAFB] py-5 [contain-intrinsic-size:auto_300px] [content-visibility:auto] sm:py-6">
           <div className="flex flex-col gap-2 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
-            <p className="flex items-center gap-2 text-[16px] font-extrabold text-[#0B1A3C] sm:text-[18px]">
-              <Zap size={18} className="text-[#005AE0]" />
+            <p className="flex items-center gap-2 text-[16px] font-extrabold text-[#131316] sm:text-[18px]">
+              <Zap size={18} className="text-[#B30E29]" />
               Critical, spare and rush parts for all major brands
             </p>
-            <p className="text-[13px] font-semibold text-[#52647F] sm:text-[14px]">
-              Sourcing from <span className="text-[#005AE0]">1,000+ brands</span>
+            <p className="text-[13px] font-semibold text-[#62626F] sm:text-[14px]">
+              Sourcing from <span className="text-[#B30E29]">1,000+ brands</span>
             </p>
           </div>
 
-          <div className="mt-4 flex flex-col gap-2.5 [--fade-bg:#F7FAFE]" aria-label="Manufacturers and part types we supply">
+          <div className="mt-4 flex flex-col gap-2.5 [--fade-bg:#FAFAFB]" aria-label="Manufacturers and part types we supply">
             <Marquee words={brands} tone="brand" />
             <Marquee words={items} tone="item" reverse />
           </div>
@@ -281,31 +281,31 @@ export default function PartsSection() {
                 <span
                   key={c.label}
                   title={c.text}
-                  className="group/chip relative cursor-default rounded-lg border border-[#0B1A3C]/10 bg-white px-3 py-1.5 text-[12.5px] font-semibold text-[#0B1A3C]"
+                  className="group/chip relative cursor-default rounded-lg border border-[#131316]/10 bg-white px-3 py-1.5 text-[12.5px] font-semibold text-[#131316]"
                 >
                   {c.label}
-                  <span className="pointer-events-none absolute bottom-full left-0 z-20 mb-2 hidden w-56 rounded-lg bg-[#0B1A3C] px-3 py-2 text-[12px] font-medium leading-snug text-white shadow-lg group-hover/chip:block">
+                  <span className="pointer-events-none absolute bottom-full left-0 z-20 mb-2 hidden w-56 rounded-lg bg-[#131316] px-3 py-2 text-[12px] font-medium leading-snug text-white shadow-lg group-hover/chip:block">
                     {c.text}
                   </span>
                 </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-[12.5px] text-[#52647F]">
+            <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-[12.5px] text-[#62626F]">
               <span className="flex items-start gap-2">
                 <span className="mt-1.25 h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
-                <span><b className="text-[#0B1A3C]">In stock</b> · tested in-house, ready to ship</span>
+                <span><b className="text-[#131316]">In stock</b> · tested in-house, ready to ship</span>
               </span>
               <span className="flex items-start gap-2">
-                <span className="mt-1.25 h-2 w-2 shrink-0 rounded-full bg-[#0066FF]" />
-                <span><b className="text-[#0B1A3C]">Sourced to order</b> · lead time confirmed on your quote</span>
+                <span className="mt-1.25 h-2 w-2 shrink-0 rounded-full bg-[#C8102E]" />
+                <span><b className="text-[#131316]">Sourced to order</b> · lead time confirmed on your quote</span>
               </span>
             </div>
           </div>
         </div>
 
         {/* ---------- Ways to buy + sourcing ---------- */}
-        <div className="relative mt-5 overflow-hidden rounded-[22px] bg-[#030817] p-3 sm:p-4">
-          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#0066FF_0%,#0A2A6E_35%,transparent_70%)] opacity-80" />
+        <div className="relative mt-5 overflow-hidden rounded-[22px] bg-[#060607] p-3 sm:p-4">
+          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#C8102E_0%,#5E0D1A_35%,transparent_70%)] opacity-80" />
           <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.06)_0%,transparent_30%)]" />
           <div className="relative grid grid-cols-2 gap-2 sm:gap-2.5 lg:grid-cols-[1fr_1fr_1.55fr]">
             {[
@@ -315,33 +315,33 @@ export default function PartsSection() {
               <Tile
                 key={t}
                 href={href}
-                className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/4 p-3 text-center sm:flex-row sm:items-start sm:gap-3 sm:p-3.5 sm:text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:-translate-y-0.5 hover:border-[#00B0FF]/50 hover:bg-white/[0.07]"
+                className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/4 p-3 text-center sm:flex-row sm:items-start sm:gap-3 sm:p-3.5 sm:text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:-translate-y-0.5 hover:border-[#FF3B55]/50 hover:bg-white/[0.07]"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white shadow-[0_10px_22px_-10px_rgba(0,176,255,0.9)]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(255, 59, 85,0.9)]">
                   <I size={18} />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center justify-between gap-2">
                     <span className="w-full text-[13px] font-bold leading-tight text-white sm:w-auto sm:text-[15px]">{t}</span>
-                    {href && <ArrowUpRight size={15} className="hidden shrink-0 text-[#4DB8FF] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:block" />}
+                    {href && <ArrowUpRight size={15} className="hidden shrink-0 text-[#FF5A6E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:block" />}
                   </span>
                   <span className="mt-0.5 hidden text-[12.5px] leading-snug text-white/60 sm:block">{d}</span>
-                  <span className="mt-2 hidden rounded-md bg-white/[0.07] sm:inline-flex px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#7FD3FF]">{tag}</span>
+                  <span className="mt-2 hidden rounded-md bg-white/[0.07] sm:inline-flex px-2 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#FF8A99]">{tag}</span>
                 </span>
               </Tile>
             ))}
 
             {/* Can't find it? */}
-            <form action="/request-quote" method="get" className="rounded-2xl border border-[#00B0FF]/30 bg-[linear-gradient(135deg,rgba(0,102,255,0.22),rgba(0,176,255,0.08))] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] col-span-2 lg:col-span-1">
+            <form action="/request-quote" method="get" className="rounded-2xl border border-[#FF3B55]/30 bg-[linear-gradient(135deg,rgba(200, 16, 46,0.22),rgba(255, 59, 85,0.08))] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] col-span-2 lg:col-span-1">
               <p className="flex items-center gap-2 text-[15px] font-bold text-white">
-                <Radar size={17} className="text-[#7FD3FF]" />
+                <Radar size={17} className="text-[#FF8A99]" />
                 Can&apos;t find your part? We&apos;ll source it.
               </p>
               <p className="mt-0.5 text-[12.5px] text-white/65">Our team searches 1,000+ brands and surplus stock for you.</p>
-              <div className="mt-2.5 flex items-center gap-2 rounded-xl border border-white/15 bg-[#030817]/60 p-1 pl-3">
+              <div className="mt-2.5 flex items-center gap-2 rounded-xl border border-white/15 bg-[#060607]/60 p-1 pl-3">
                 <label htmlFor="source-part" className="sr-only">Part number</label>
                 <input id="source-part" name="part" placeholder="Part number or model" className="h-9 w-full min-w-0 bg-transparent text-[13.5px] text-white outline-none placeholder:text-white/60" />
-                <button type="submit" className="inline-flex h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white px-3.5 text-[13px] font-semibold text-[#0B1A3C] transition hover:bg-[#EAF2FF]">
+                <button type="submit" className="inline-flex h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white px-3.5 text-[13px] font-semibold text-[#131316] transition hover:bg-[#FBE9EC]">
                   Find It <ArrowRight size={14} />
                 </button>
               </div>

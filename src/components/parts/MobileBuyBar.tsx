@@ -70,25 +70,25 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
   return (
     <>
       {/* ---------- sticky bar (always on, phones and tablets) ---------- */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#E3EAF3] bg-white/95 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#EAEAEC] bg-white/95 px-4 pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
         <div className="mx-auto flex max-w-160 items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-[14px] font-extrabold">{partNumber}</p>
-            <p className="truncate text-[11.5px] text-[#5B6B84]">{lead ? `From ${usd(lead.price!)}` : `${manufacturer} · ${rows.length} options`}</p>
+            <p className="truncate text-[11.5px] text-[#696976]">{lead ? `From ${usd(lead.price!)}` : `${manufacturer} · ${rows.length} options`}</p>
           </div>
           <WhatsAppButton topic={`${manufacturer} ${partNumber}`} kind="part" label={`Ask about ${partNumber} on WhatsApp`} />
-          <button type="button" onClick={() => setOpen(true)} aria-haspopup="dialog" className="inline-flex h-11 flex-none items-center gap-1.5 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-5 text-[14px] font-semibold text-white">See options</button>
+          <button type="button" onClick={() => setOpen(true)} aria-haspopup="dialog" className="inline-flex h-11 flex-none items-center gap-1.5 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white">See options</button>
         </div>
       </div>
 
       {/* ---------- panel ---------- */}
       {open && (
         <div className="fixed inset-0 z-[70] lg:hidden">
-          <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 bg-[#030817]/55 backdrop-blur-[2px]" />
+          <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 bg-[#060607]/55 backdrop-blur-[2px]" />
           <div
             role="dialog" aria-modal="true" aria-labelledby="bo-title"
             style={{ transform: `translateY(${drag}px)` }}
-            className="absolute inset-x-0 bottom-0 max-h-[88dvh] overflow-y-auto overscroll-contain rounded-t-[26px] bg-white px-4 pt-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-30px_60px_-20px_rgba(3,8,23,0.5)] transition-transform duration-150"
+            className="absolute inset-x-0 bottom-0 max-h-[88dvh] overflow-y-auto overscroll-contain rounded-t-[26px] bg-white px-4 pt-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-30px_60px_-20px_rgba(6, 6, 7,0.5)] transition-transform duration-150"
           >
             <div
               className="-mx-4 -mt-2.5 px-4 pt-2.5 pb-2"
@@ -96,13 +96,13 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
               onTouchMove={(e) => { if (startY.current !== null) setDrag(Math.max(0, e.touches[0].clientY - startY.current)); }}
               onTouchEnd={() => { if (drag > 90) close(); else setDrag(0); startY.current = null; }}
             >
-              <span aria-hidden="true" className="mx-auto block h-1.25 w-10.5 rounded-full bg-[#D4DDE9]" />
+              <span aria-hidden="true" className="mx-auto block h-1.25 w-10.5 rounded-full bg-[#DDDDE0]" />
               <div className="mt-3 flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="truncate text-[12px] font-semibold text-[#5B6B84]">{manufacturer} · {partNumber}</p>
-                  <h2 id="bo-title" className="mt-0.5 text-[18px] font-extrabold text-[#0B1A3C]">Choose how you want it</h2>
+                  <p className="truncate text-[12px] font-semibold text-[#696976]">{manufacturer} · {partNumber}</p>
+                  <h2 id="bo-title" className="mt-0.5 text-[18px] font-extrabold text-[#131316]">Choose how you want it</h2>
                 </div>
-                <button type="button" onClick={close} aria-label="Close" className="grid size-8 flex-none place-items-center rounded-[10px] bg-[#F1F5FA] text-[#4A5B76]"><X size={17} aria-hidden="true" /></button>
+                <button type="button" onClick={close} aria-label="Close" className="grid size-8 flex-none place-items-center rounded-[10px] bg-[#F5F5F6] text-[#5A5A66]"><X size={17} aria-hidden="true" /></button>
               </div>
             </div>
 
@@ -111,19 +111,19 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
                 const a = action(r);
                 const best = r === lead;
                 return (
-                  <li key={r.o.condition} className={`flex items-center gap-3 rounded-2xl border p-3 ${best ? "border-[#0066FF] bg-[#F5F9FF] ring-3 ring-[#0066FF]/8" : "border-[#E3EAF3]"}`}>
+                  <li key={r.o.condition} className={`flex items-center gap-3 rounded-2xl border p-3 ${best ? "border-[#C8102E] bg-[#FFF6F7] ring-3 ring-[#C8102E]/8" : "border-[#EAEAEC]"}`}>
                     <div className="min-w-0 flex-1">
-                      <p className="flex flex-wrap items-center gap-1.5 text-[14.5px] font-extrabold text-[#0B1A3C]">
+                      <p className="flex flex-wrap items-center gap-1.5 text-[14.5px] font-extrabold text-[#131316]">
                         {r.o.condition === "repair" ? "Repair your unit" : conditionLabel[r.o.condition]}
                         {r.inStock && r.o.condition !== "repair" && <span className="rounded-md bg-[#DCFCE7] px-1.5 py-0.5 text-[9.5px] font-extrabold uppercase tracking-[0.08em] text-[#15803D]">In stock</span>}
                       </p>
-                      <p className="text-[13px] font-bold text-[#0B1A3C]">{r.priced ? usd(r.price!) : r.o.condition === "repair" ? "Free evaluation" : "Price on request"}</p>
-                      <p className="text-[11.5px] leading-snug text-[#5B6B84]">{blurb[r.o.condition]}</p>
+                      <p className="text-[13px] font-bold text-[#131316]">{r.priced ? usd(r.price!) : r.o.condition === "repair" ? "Free evaluation" : "Price on request"}</p>
+                      <p className="text-[11.5px] leading-snug text-[#696976]">{blurb[r.o.condition]}</p>
                     </div>
                     {"go" in a ? (
-                      <button type="button" onClick={a.go} className={`${btn} ${best ? "bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white" : "border border-[#D9E4F1] bg-white text-[#0B1A3C]"}`}>{a.label}</button>
+                      <button type="button" onClick={a.go} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#F0DADD] bg-white text-[#131316]"}`}>{a.label}</button>
                     ) : (
-                      <Link href={a.href!} onClick={close} className={`${btn} ${best ? "bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white" : "border border-[#D9E4F1] bg-white text-[#0B1A3C]"}`}>{a.label}</Link>
+                      <Link href={a.href!} onClick={close} className={`${btn} ${best ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#F0DADD] bg-white text-[#131316]"}`}>{a.label}</Link>
                     )}
                   </li>
                 );
@@ -135,15 +135,15 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
                 <WhatsAppIcon size={16} className="text-[#1DA851]" /> WhatsApp
               </WhatsAppTrigger>
               {contact.phone && (
-                <a href={phoneHref(contact.phone)} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#D9E4F1] text-[14px] font-bold text-[#0B1A3C]">
+                <a href={phoneHref(contact.phone)} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] text-[14px] font-bold text-[#131316]">
                   <Phone size={16} aria-hidden="true" /> Call
                 </a>
               )}
-              <a href={`mailto:${contact.email || site.email}?subject=${encodeURIComponent(`${manufacturer} ${partNumber}`)}`} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#D9E4F1] text-[14px] font-bold text-[#0B1A3C]">
+              <a href={`mailto:${contact.email || site.email}?subject=${encodeURIComponent(`${manufacturer} ${partNumber}`)}`} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] text-[14px] font-bold text-[#131316]">
                 <Mail size={16} aria-hidden="true" /> Email
               </a>
             </div>
-            <p className="mt-2.5 text-center text-[11.5px] text-[#5B6B84]">Not sure which one? Our team will help.</p>
+            <p className="mt-2.5 text-center text-[11.5px] text-[#696976]">Not sure which one? Our team will help.</p>
           </div>
         </div>
       )}

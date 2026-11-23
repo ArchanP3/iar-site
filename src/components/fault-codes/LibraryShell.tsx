@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ChevronRight, ShieldAlert } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { SITE_URL } from "@/lib/site";
 
 export type Crumb = { label: string; href?: string };
@@ -10,7 +10,7 @@ export type Crumb = { label: string; href?: string };
 /* Header, breadcrumb trail and footer shared by every fault code page */
 export function LibraryShell({ children }: { children: React.ReactNode }) {
   return (
-    <main className={`${montserrat.className} min-h-screen bg-white text-[#0B1A3C]`}>
+    <main className={`${brandFont.className} min-h-screen bg-white text-[#131316]`}>
       <Header />
       {children}
       <Footer />
@@ -21,16 +21,16 @@ export function LibraryShell({ children }: { children: React.ReactNode }) {
 export function Breadcrumbs({ items, dark = false }: { items: Crumb[]; dark?: boolean }) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className={`flex flex-wrap items-center gap-1.5 text-[12.5px] ${dark ? "text-white/55" : "text-[#56677F]"}`}>
+      <ol className={`flex flex-wrap items-center gap-1.5 text-[12.5px] ${dark ? "text-white/55" : "text-[#646471]"}`}>
         {items.map((c, i) => (
           <li key={c.label} className="flex items-center gap-1.5">
             {i > 0 && <ChevronRight size={13} aria-hidden="true" />}
             {c.href ? (
-              <Link href={c.href} className={dark ? "hover:text-white" : "hover:text-[#005AE0]"}>
+              <Link href={c.href} className={dark ? "hover:text-white" : "hover:text-[#B30E29]"}>
                 {c.label}
               </Link>
             ) : (
-              <span aria-current="page" className={`font-semibold ${dark ? "text-white/85" : "text-[#0B1A3C]"}`}>
+              <span aria-current="page" className={`font-semibold ${dark ? "text-white/85" : "text-[#131316]"}`}>
                 {c.label}
               </span>
             )}

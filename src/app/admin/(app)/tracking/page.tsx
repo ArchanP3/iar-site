@@ -6,7 +6,7 @@ import TrackingForm from "@/components/admin/TrackingForm";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Tracking />
     </Suspense>
   );

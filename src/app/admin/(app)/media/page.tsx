@@ -7,7 +7,7 @@ import MediaLibrary, { type MediaItem } from "@/components/admin/MediaLibrary";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Media />
     </Suspense>
   );

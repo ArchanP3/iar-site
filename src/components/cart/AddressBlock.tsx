@@ -43,7 +43,7 @@ export default function AddressBlock({ prefix, name, section, country, onCountry
         <div className={`grid gap-2 ${options.length === 3 ? "max-w-140 grid-cols-3" : "max-w-105 grid-cols-2"}`} role="radiogroup" aria-label={`${name === "Ship" ? "Shipping" : "Billing"} country`}>
           {options.map((c) => (
             <button key={c} type="button" role="radio" aria-checked={country === c} onClick={() => onCountry(c)}
-              className={`h-11 rounded-xl border text-[14px] font-bold transition ${country === c ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+              className={`h-11 rounded-xl border text-[14px] font-bold transition ${country === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c === "Canada" ? "Canada" : c === "United States" ? "USA" : "Other country"}
             </button>
           ))}
@@ -52,7 +52,7 @@ export default function AddressBlock({ prefix, name, section, country, onCountry
       {!other && (
         <>
       <div className="sm:col-span-4"><label className={label} htmlFor={f("street")}>Street address *</label><input id={f("street")} name={`${name} street`} required className={input} autoComplete={ac("address-line1")} /></div>
-      <div className="sm:col-span-2"><label className={label} htmlFor={f("suite")}>Unit / dock <span className="font-normal text-[#52647F]">(optional)</span></label><input id={f("suite")} name={`${name} unit or dock`} className={input} autoComplete={ac("address-line2")} /></div>
+      <div className="sm:col-span-2"><label className={label} htmlFor={f("suite")}>Unit / dock <span className="font-normal text-[#62626F]">(optional)</span></label><input id={f("suite")} name={`${name} unit or dock`} className={input} autoComplete={ac("address-line2")} /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("city")}>City *</label><input id={f("city")} name={`${name} city`} required className={input} autoComplete={ac("address-level2")} /></div>
       <div className="sm:col-span-2">
         <label className={label} htmlFor={f("region")}>{regionLabel} *</label>

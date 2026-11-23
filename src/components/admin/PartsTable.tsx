@@ -48,8 +48,8 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
   const toggle = (id: number) => setSel((s) => { const n = new Set(s); if (n.has(id)) n.delete(id); else n.add(id); return n; });
   const low = (r: ListRow) => r.price != null && r.categorySlug != null && mins[r.categorySlug] != null && Number(r.price) < mins[r.categorySlug];
 
-  const statusDot = { published: ["#12B76A", "Published"], draft: ["#F59E0B", "Draft"], hidden: ["#94A3B8", "Hidden"] } as const;
-  const th = "whitespace-nowrap border-b border-[#E3EAF3] bg-[#FAFCFE] px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#8494AB]";
+  const statusDot = { published: ["#12B76A", "Published"], draft: ["#F59E0B", "Draft"], hidden: ["#A1A1AB", "Hidden"] } as const;
+  const th = "whitespace-nowrap border-b border-[#EAEAEC] bg-[#FCFCFC] px-3 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#91919E]";
 
   return (
     <>
@@ -65,7 +65,7 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
           <thead>
             <tr>
               <th className={cx(th, "w-10 pl-4")}>
-                <input type="checkbox" checked={all} onChange={() => setSel(all ? new Set() : new Set(rows.map((r) => r.id)))} aria-label="Select every listing on this page" className="h-4 w-4 accent-[#0066FF] align-middle" disabled={!rows.length} />
+                <input type="checkbox" checked={all} onChange={() => setSel(all ? new Set() : new Set(rows.map((r) => r.id)))} aria-label="Select every listing on this page" className="h-4 w-4 accent-[#C8102E] align-middle" disabled={!rows.length} />
               </th>
               <th className={th}>Part</th>
               <th className={cx(th, "max-md:hidden")}>Category</th>
@@ -76,20 +76,20 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
           </thead>
           <tbody>
             {rows.map((p) => (
-              <tr key={p.id} className={cx("group border-b border-[#EEF3F9] transition-colors last:border-0 hover:bg-[#F8FBFF]", sel.has(p.id) && "bg-[#F2F7FF] hover:bg-[#F2F7FF]")}>
-                <td className="w-10 py-3 pl-4 pr-2 align-middle"><input type="checkbox" checked={sel.has(p.id)} onChange={() => toggle(p.id)} aria-label={`Select ${p.label}`} className="h-4 w-4 accent-[#0066FF] align-middle" /></td>
+              <tr key={p.id} className={cx("group border-b border-[#F3F3F4] transition-colors last:border-0 hover:bg-[#FBFBFC]", sel.has(p.id) && "bg-[#F8F8F9] hover:bg-[#F8F8F9]")}>
+                <td className="w-10 py-3 pl-4 pr-2 align-middle"><input type="checkbox" checked={sel.has(p.id)} onChange={() => toggle(p.id)} aria-label={`Select ${p.label}`} className="h-4 w-4 accent-[#C8102E] align-middle" /></td>
                 <td className="px-3 py-3 align-middle max-sm:min-w-40">
-                  <Link href={`/admin/parts/edit?id=${p.id}`} className="block min-w-0 hover:text-[#0052CC]">
+                  <Link href={`/admin/parts/edit?id=${p.id}`} className="block min-w-0 hover:text-[#A50D25]">
                     <span className="block truncate text-[13.5px] font-extrabold tracking-[-0.01em] tabular-nums">
-                      {p.brand && <span className="mr-1.5 text-[12px] font-semibold text-[#5B6B84]">{p.brand}</span>}
+                      {p.brand && <span className="mr-1.5 text-[12px] font-semibold text-[#696976]">{p.brand}</span>}
                       {p.partNumber}
                     </span>
-                    <span className="block max-w-90 truncate text-[12.5px] text-[#5B6B84] max-sm:max-w-40">{p.title}</span>
+                    <span className="block max-w-90 truncate text-[12.5px] text-[#696976] max-sm:max-w-40">{p.title}</span>
                   </Link>
                 </td>
                 <td className="px-3 py-3 align-middle text-[12.8px] font-semibold max-md:hidden">
                   <span className="inline-flex items-center gap-1.5">
-                    {p.category ?? <span className="font-medium text-[#8494AB]">No category</span>}
+                    {p.category ?? <span className="font-medium text-[#91919E]">No category</span>}
                     {p.locked.includes("category") && <Lock size={11} className="text-[#B45309]" aria-label="Category edited in the CMS: imports won't change it" />}
                   </span>
                 </td>
@@ -112,8 +112,8 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
                 </td>
                 <td className="whitespace-nowrap py-3 pl-2 pr-4 text-right align-middle max-sm:hidden">
                   <span className="inline-flex gap-1 opacity-60 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
-                    <Link href={`/admin/parts/edit?id=${p.id}`} className="grid h-8 w-8 place-items-center rounded-lg text-[#5B6B84] hover:bg-[#F4F7FB] hover:text-[#0052CC]" title="Edit" aria-label={`Edit ${p.label}`}><Pencil size={15} /></Link>
-                    <a href={p.url} target="_blank" rel="noopener" className="grid h-8 w-8 place-items-center rounded-lg text-[#5B6B84] hover:bg-[#F4F7FB] hover:text-[#0052CC]" title="View on the site" aria-label={`View ${p.label} on the site`}><ExternalLink size={15} /></a>
+                    <Link href={`/admin/parts/edit?id=${p.id}`} className="grid h-8 w-8 place-items-center rounded-lg text-[#696976] hover:bg-[#F7F7F8] hover:text-[#A50D25]" title="Edit" aria-label={`Edit ${p.label}`}><Pencil size={15} /></Link>
+                    <a href={p.url} target="_blank" rel="noopener" className="grid h-8 w-8 place-items-center rounded-lg text-[#696976] hover:bg-[#F7F7F8] hover:text-[#A50D25]" title="View on the site" aria-label={`View ${p.label} on the site`}><ExternalLink size={15} /></a>
                   </span>
                 </td>
               </tr>
@@ -121,7 +121,7 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
           </tbody>
         </table>
       </div>
-      {!rows.length && <p className="px-5 py-8 text-center text-[13px] text-[#5B6B84]">{empty}</p>}
+      {!rows.length && <p className="px-5 py-8 text-center text-[13px] text-[#696976]">{empty}</p>}
 
       {/* Floating bar: appears at the bottom of the screen when rows are ticked */}
       <div
@@ -130,14 +130,14 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
         aria-hidden={!sel.size}
         inert={!sel.size}
         className={cx(
-          "fixed bottom-[calc(20px+env(safe-area-inset-bottom,0px))] max-sm:bottom-[calc(76px+env(safe-area-inset-bottom,0px))] left-1/2 z-40 flex max-w-[calc(100vw-32px)] -translate-x-1/2 items-center gap-1.5 rounded-2xl bg-[#0B1A3C] py-2 pl-4 pr-2 text-white shadow-[0_24px_50px_-20px_rgba(11,26,60,0.8)] transition-all duration-300",
+          "fixed bottom-[calc(20px+env(safe-area-inset-bottom,0px))] max-sm:bottom-[calc(76px+env(safe-area-inset-bottom,0px))] left-1/2 z-40 flex max-w-[calc(100vw-32px)] -translate-x-1/2 items-center gap-1.5 rounded-2xl bg-[#131316] py-2 pl-4 pr-2 text-white shadow-[0_24px_50px_-20px_rgba(19, 19, 22,0.8)] transition-all duration-300",
           sel.size ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0",
         )}
       >
         <span className="mr-1.5 whitespace-nowrap text-[13px] font-bold">{sel.size}<span className="max-sm:hidden"> selected</span></span>
-        {canBulkPrice && <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setDialog("price")} className="inline-flex h-8 items-center gap-1.5 whitespace-nowrap rounded-lg border border-white/15 bg-white/8 px-2.5 text-[12.5px] font-bold hover:border-[#00B0FF] hover:bg-white/14"><DollarSign size={13} /> <span className="max-sm:hidden">Change</span> price</button>}
-        <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setDialog("category")} className="inline-flex h-8 items-center gap-1.5 whitespace-nowrap rounded-lg border border-white/15 bg-white/8 px-2.5 text-[12.5px] font-bold hover:border-[#00B0FF] hover:bg-white/14"><FolderInput size={13} /> <span className="max-sm:hidden">Change</span> category</button>
-        <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setSel(new Set())} className="px-2 text-[12.5px] font-semibold text-[#9FB2D3] hover:text-white">Clear</button>
+        {canBulkPrice && <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setDialog("price")} className="inline-flex h-8 items-center gap-1.5 whitespace-nowrap rounded-lg border border-white/15 bg-white/8 px-2.5 text-[12.5px] font-bold hover:border-[#FF3B55] hover:bg-white/14"><DollarSign size={13} /> <span className="max-sm:hidden">Change</span> price</button>}
+        <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setDialog("category")} className="inline-flex h-8 items-center gap-1.5 whitespace-nowrap rounded-lg border border-white/15 bg-white/8 px-2.5 text-[12.5px] font-bold hover:border-[#FF3B55] hover:bg-white/14"><FolderInput size={13} /> <span className="max-sm:hidden">Change</span> category</button>
+        <button type="button" tabIndex={sel.size ? 0 : -1} onClick={() => setSel(new Set())} className="px-2 text-[12.5px] font-semibold text-[#B5B5BD] hover:text-white">Clear</button>
       </div>
 
       {dialog === "price" && <PriceDialog rows={picked} mins={mins} onClose={() => setDialog(null)} onDone={(m) => { setDialog(null); setSel(new Set()); setDone(m); }} />}
@@ -163,14 +163,14 @@ function Dialog({ title, sub, onClose, children }: { title: string; sub: string;
     return () => { document.removeEventListener("keydown", onKey); prev?.focus(); };
   }, []);
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#0B1A3C]/40 p-4 sm:items-center" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby="bulk-title" className="w-full max-w-140 rounded-2xl bg-white p-5 shadow-[0_30px_80px_-30px_rgba(11,26,60,0.6)] sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#131316]/40 p-4 sm:items-center" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby="bulk-title" className="w-full max-w-140 rounded-2xl bg-white p-5 shadow-[0_30px_80px_-30px_rgba(19, 19, 22,0.6)] sm:p-6">
         <div className="mb-4 flex items-start gap-3">
           <div className="min-w-0 flex-1">
-            <h2 id="bulk-title" className="text-[17px] font-extrabold text-[#0B1A3C]">{title}</h2>
-            <p className="mt-0.5 text-[12.5px] text-[#5B6B84]">{sub}</p>
+            <h2 id="bulk-title" className="text-[17px] font-extrabold text-[#131316]">{title}</h2>
+            <p className="mt-0.5 text-[12.5px] text-[#696976]">{sub}</p>
           </div>
-          <button type="button" onClick={onClose} className="rounded-md p-1 text-[#8494AB] hover:bg-[#F4F7FB] hover:text-[#0B1A3C]" aria-label="Close"><X size={16} /></button>
+          <button type="button" onClick={onClose} className="rounded-md p-1 text-[#91919E] hover:bg-[#F7F7F8] hover:text-[#131316]" aria-label="Close"><X size={16} /></button>
         </div>
         {children}
       </div>
@@ -240,22 +240,22 @@ function PriceDialog({ rows, mins, onClose, onDone }: { rows: ListRow[]; mins: R
         )}
       </div>
 
-      <div className="mt-4 rounded-xl border border-[#E3EAF3]">
-        <div className="border-b border-[#E3EAF3] bg-[#FAFCFE] px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-[#8494AB]">Preview</div>
-        <ul className="max-h-56 divide-y divide-[#EEF3F9] overflow-y-auto">
+      <div className="mt-4 rounded-xl border border-[#EAEAEC]">
+        <div className="border-b border-[#EAEAEC] bg-[#FCFCFC] px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-[#91919E]">Preview</div>
+        <ul className="max-h-56 divide-y divide-[#F3F3F4] overflow-y-auto">
           {plan.map(({ r, cur, n, tooLow: tl, underMin: um }) => (
             <li key={r.id} className="flex items-center gap-2 px-3.5 py-2 text-[12.8px]">
               <span className="min-w-0 flex-1 truncate font-semibold">{r.label}</span>
-              <span className="text-[#5B6B84]">{cur == null ? "Request Quote" : usd(cur)}</span>
-              <ArrowRight size={13} className="text-[#8494AB]" />
-              <span className={cx("min-w-24 text-right font-bold", tl ? "text-[#B42318]" : um ? "text-[#B45309]" : n === undefined || n === cur ? "font-semibold text-[#8494AB]" : "text-[#0B1A3C]")}>
+              <span className="text-[#696976]">{cur == null ? "Request Quote" : usd(cur)}</span>
+              <ArrowRight size={13} className="text-[#91919E]" />
+              <span className={cx("min-w-24 text-right font-bold", tl ? "text-[#B42318]" : um ? "text-[#B45309]" : n === undefined || n === cur ? "font-semibold text-[#91919E]" : "text-[#131316]")}>
                 {n === undefined || n === cur ? "no change" : n == null ? "Request Quote" : usd(n)}
               </span>
             </li>
           ))}
         </ul>
       </div>
-      {pct || mode === "amt_up" || mode === "amt_down" ? <p className="mt-2 text-[11.5px] text-[#8494AB]">Request Quote listings stay Request Quote.</p> : null}
+      {pct || mode === "amt_up" || mode === "amt_down" ? <p className="mt-2 text-[11.5px] text-[#91919E]">Request Quote listings stay Request Quote.</p> : null}
       {invalid && <div className="mt-3"><Alert tone="bad" icon={<TriangleAlert size={16} />}>{invalid}</Alert></div>}
       {tooLow.length > 0 && <div className="mt-3"><Alert tone="bad" icon={<TriangleAlert size={16} />}>{tooLow.length} listing{tooLow.length > 1 ? "s" : ""} would go under US${BULK_MIN_PRICE}. Untick {tooLow.length > 1 ? "them" : "it"} or use a smaller change.</Alert></div>}
       {underMin.length > 0 && <div className="mt-3"><Alert tone="warn" icon={<TriangleAlert size={16} />}>{underMin.length} listing{underMin.length > 1 ? "s" : ""} would be under the minimum price for {underMin.length > 1 ? "their categories" : "its category"} (marked in orange). Check before saving.</Alert></div>}
@@ -292,7 +292,7 @@ function CategoryDialog({ rows, cats, onClose, onDone }: { rows: ListRow[]; cats
     <Dialog title={`Change category · ${rows.length} listing${rows.length > 1 ? "s" : ""}`} sub="For listings that were imported into the wrong category." onClose={onClose}>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5 text-[12.5px] font-bold">From
-          <div className="rounded-[10px] border border-[#E3EAF3] bg-[#F8FAFD] px-3 py-2.5 text-[13px] font-semibold text-[#5B6B84]">{from.slice(0, 3).join(", ")}{from.length > 3 ? ` +${from.length - 3}` : ""}</div>
+          <div className="rounded-[10px] border border-[#EAEAEC] bg-[#FAFAFB] px-3 py-2.5 text-[13px] font-semibold text-[#696976]">{from.slice(0, 3).join(", ")}{from.length > 3 ? ` +${from.length - 3}` : ""}</div>
         </div>
         <label className="flex flex-col gap-1.5 text-[12.5px] font-bold">To
           <select value={to} onChange={(e) => { setTo(e.target.value); setErr(undefined); }} className={input}>
@@ -301,7 +301,7 @@ function CategoryDialog({ rows, cats, onClose, onDone }: { rows: ListRow[]; cats
           </select>
         </label>
       </div>
-      <ul className="mt-4 flex flex-col gap-1.5 text-[12.5px] text-[#5B6B84]">
+      <ul className="mt-4 flex flex-col gap-1.5 text-[12.5px] text-[#696976]">
         <li className="flex gap-2"><CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#12B76A]" />The part page URL stays the same, so no links break.</li>
         <li className="flex gap-2"><CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#12B76A]" />Shop category pages, filters and counts follow the new category.</li>
         <li className="flex gap-2"><CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#12B76A]" />The category is locked against imports. Undo in Users &amp; Activity moves them all back.</li>

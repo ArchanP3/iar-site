@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Cpu, FileText, Loader2, Mail, Phone, PhoneCall, Search, Send, TriangleAlert, Wrench, X } from "lucide-react";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { phoneHref } from "@/lib/contact";
 import { WA_EVENT, WhatsAppIcon } from "@/components/WhatsAppButton";
 import { useContact } from "@/components/cms/ContactProvider";
@@ -125,12 +125,12 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
       role="dialog"
       aria-modal="false"
       aria-label="AutomIQ assistant"
-      className={`${montserrat.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F4F7FB] text-[#0B1A3C] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#D9E4F1] sm:shadow-[0_40px_90px_-30px_rgba(3,8,23,0.55)] print:hidden`}
+      className={`${brandFont.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F7F7F8] text-[#131316] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#F0DADD] sm:shadow-[0_40px_90px_-30px_rgba(6, 6, 7,0.55)] print:hidden`}
     >
       {/* header */}
-      <div className="relative flex items-center gap-3 overflow-hidden bg-[#030817] px-4 py-3.5 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -top-16 -left-10 size-48 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.55),transparent)]" />
-        <span className="relative grid size-10 place-items-center rounded-xl bg-[#0066FF]"><Cpu size={20} aria-hidden="true" /></span>
+      <div className="relative flex items-center gap-3 overflow-hidden bg-[#060607] px-4 py-3.5 text-white">
+        <span aria-hidden="true" className="pointer-events-none absolute -top-16 -left-10 size-48 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)]" />
+        <span className="relative grid size-10 place-items-center rounded-xl bg-[#C8102E]"><Cpu size={20} aria-hidden="true" /></span>
         <div className="relative min-w-0 flex-1">
           <p className="text-[15px] font-bold leading-tight">AutomIQ Assistant</p>
           <p className="flex items-center gap-1.5 text-[12px] text-white/70"><span className="size-1.5 rounded-full bg-emerald-400" aria-hidden="true" /> Parts, fault codes, repairs and quotes</p>
@@ -141,13 +141,13 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
       </div>
 
       {/* contact strip */}
-      <div className="flex gap-2 border-b border-[#E3EAF3] bg-white px-3 py-2">
+      <div className="flex gap-2 border-b border-[#EAEAEC] bg-white px-3 py-2">
           {contact.phone && (
-            <a href={phoneHref(contact.phone)} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#D9E4F1] px-2.5 text-[12.5px] font-semibold hover:border-[#0066FF]"><Phone size={13} aria-hidden="true" /> Call</a>
+            <a href={phoneHref(contact.phone)} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Phone size={13} aria-hidden="true" /> Call</a>
           )}
-          <button type="button" onClick={() => window.dispatchEvent(new CustomEvent(WA_EVENT, { detail: { topic: "A question from the website chat" } }))} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#D9E4F1] px-2.5 text-[12.5px] font-semibold hover:border-[#25D366]"><WhatsAppIcon size={13} className="text-[#1DA851]" /> WhatsApp</button>
+          <button type="button" onClick={() => window.dispatchEvent(new CustomEvent(WA_EVENT, { detail: { topic: "A question from the website chat" } }))} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#25D366]"><WhatsAppIcon size={13} className="text-[#1DA851]" /> WhatsApp</button>
           {contact.email && (
-            <a href={`mailto:${contact.email}`} className="inline-flex h-8 min-w-0 items-center gap-1.5 rounded-lg border border-[#D9E4F1] px-2.5 text-[12.5px] font-semibold hover:border-[#0066FF]"><Mail size={13} aria-hidden="true" /> <span className="truncate">Email</span></a>
+            <a href={`mailto:${contact.email}`} className="inline-flex h-8 min-w-0 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Mail size={13} aria-hidden="true" /> <span className="truncate">Email</span></a>
           )}
         </div>
 
@@ -157,24 +157,24 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
         {msgs.map((m) =>
           m.from === "me" ? (
             <div key={m.id} className="flex justify-end">
-              <p className="max-w-[85%] rounded-2xl rounded-br-md bg-[#0066FF] px-3.5 py-2 text-[14px] leading-snug text-white">{m.text}</p>
+              <p className="max-w-[85%] rounded-2xl rounded-br-md bg-[#C8102E] px-3.5 py-2 text-[14px] leading-snug text-white">{m.text}</p>
             </div>
           ) : "card" in m ? (
             <RequestCard key={m.id} kind={m.card} done={m.done} onDone={() => markDone(m.id)} page={path} />
           ) : (
             <div key={m.id} className="max-w-[92%] space-y-2">
               {m.text.map((t, i) => (
-                <p key={i} className="rounded-2xl rounded-bl-md border border-[#E3EAF3] bg-white px-3.5 py-2 text-[14px] leading-relaxed">{t}</p>
+                <p key={i} className="rounded-2xl rounded-bl-md border border-[#EAEAEC] bg-white px-3.5 py-2 text-[14px] leading-relaxed">{t}</p>
               ))}
               {!!m.reply?.parts.length && (
                 <div className="space-y-1.5">
                   {m.reply.parts.map((p) => (
-                    <Link key={p.href} href={p.href} className="flex items-center gap-2 rounded-xl border border-[#E3EAF3] bg-white px-3 py-2 hover:border-[#0066FF]">
+                    <Link key={p.href} href={p.href} className="flex items-center gap-2 rounded-xl border border-[#EAEAEC] bg-white px-3 py-2 hover:border-[#C8102E]">
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-mono text-[13px] font-semibold">{p.partNumber}</span>
-                        <span className="block truncate text-[12px] text-[#52647F]">{p.manufacturer} · {p.name}</span>
+                        <span className="block truncate text-[12px] text-[#62626F]">{p.manufacturer} · {p.name}</span>
                       </span>
-                      <ArrowRight size={15} className="shrink-0 text-[#005AE0]" aria-hidden="true" />
+                      <ArrowRight size={15} className="shrink-0 text-[#B30E29]" aria-hidden="true" />
                     </Link>
                   ))}
                 </div>
@@ -182,9 +182,9 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
               {!!m.reply?.links.length && (
                 <div className="flex flex-col gap-1">
                   {m.reply.links.map((l) => (
-                    <Link key={l.href + l.label} href={l.href} className="inline-flex items-start gap-1.5 text-[13px] font-semibold text-[#005AE0] hover:underline">
+                    <Link key={l.href + l.label} href={l.href} className="inline-flex items-start gap-1.5 text-[13px] font-semibold text-[#B30E29] hover:underline">
                       <ArrowUpRight size={14} className="mt-0.5 shrink-0" aria-hidden="true" />
-                      <span>{l.label}{l.note && <span className="font-normal text-[#52647F]"> · {l.note}</span>}</span>
+                      <span>{l.label}{l.note && <span className="font-normal text-[#62626F]"> · {l.note}</span>}</span>
                     </Link>
                   ))}
                 </div>
@@ -194,7 +194,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
                   {m.chips.map((a) => {
                     const I = actionIcon[a];
                     return (
-                      <button key={a} type="button" onClick={() => choose(a)} className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[#C9D8EC] bg-white px-3 text-[12.5px] font-semibold text-[#0B1A3C] hover:border-[#0066FF] hover:text-[#005AE0]">
+                      <button key={a} type="button" onClick={() => choose(a)} className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[#EACBCF] bg-white px-3 text-[12.5px] font-semibold text-[#131316] hover:border-[#C8102E] hover:text-[#B30E29]">
                         <I size={13} aria-hidden="true" /> {actionLabel[a]}
                       </button>
                     );
@@ -205,14 +205,14 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
           ),
         )}
         {busy && (
-          <p className="inline-flex items-center gap-2 rounded-2xl border border-[#E3EAF3] bg-white px-3.5 py-2 text-[13px] text-[#52647F]">
+          <p className="inline-flex items-center gap-2 rounded-2xl border border-[#EAEAEC] bg-white px-3.5 py-2 text-[13px] text-[#62626F]">
             <Loader2 size={14} className="animate-spin" aria-hidden="true" /> Looking that up…
           </p>
         )}
       </div>
 
       {/* input */}
-      <form onSubmit={(e) => { e.preventDefault(); void ask(text); }} className="flex items-center gap-2 border-t border-[#E3EAF3] bg-white p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <form onSubmit={(e) => { e.preventDefault(); void ask(text); }} className="flex items-center gap-2 border-t border-[#EAEAEC] bg-white p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <label htmlFor="aq-chat-input" className="sr-only">Type your question</label>
         <input
           ref={input}
@@ -222,9 +222,9 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
           maxLength={300}
           autoComplete="off"
           placeholder="Part number, fault code, question…"
-          className="h-11 min-w-0 flex-1 rounded-xl border border-[#D9E4F1] bg-[#F7FAFD] px-3.5 text-[14px] outline-none placeholder:text-[#5B6B84] focus:border-[#0066FF]"
+          className="h-11 min-w-0 flex-1 rounded-xl border border-[#F0DADD] bg-[#FAFAFA] px-3.5 text-[14px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]"
         />
-        <button type="submit" disabled={busy || !text.trim()} aria-label="Send" className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#0066FF] text-white hover:bg-[#005AE0] disabled:opacity-50">
+        <button type="submit" disabled={busy || !text.trim()} aria-label="Send" className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#C8102E] text-white hover:bg-[#B30E29] disabled:opacity-50">
           <Send size={17} aria-hidden="true" />
         </button>
       </form>
@@ -236,8 +236,8 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
 function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean; onDone: () => void; page: string }) {
   const contact = useContact();
   const [state, setState] = useState<"idle" | "sending" | "error" | "closed">("idle");
-  const field = "h-10 w-full rounded-lg border border-[#D9E4F1] bg-white px-3 text-[13.5px] outline-none placeholder:text-[#5B6B84] focus:border-[#0066FF]";
-  const lab = "mb-1 block text-[12px] font-semibold text-[#3A4B66]";
+  const field = "h-10 w-full rounded-lg border border-[#F0DADD] bg-white px-3 text-[13.5px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]";
+  const lab = "mb-1 block text-[12px] font-semibold text-[#4B4B55]";
   const fid = (n: string) => `aqc-${kind}-${n}`;
 
   if (done) {
@@ -258,7 +258,7 @@ function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean;
   }
 
   return (
-    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#D9E4F1] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(11,26,60,0.6)]">
+    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#F0DADD] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(19, 19, 22,0.6)]">
       <p className="text-[14px] font-bold">{title[kind]}</p>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid grid-cols-2 gap-2">
@@ -298,10 +298,10 @@ function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean;
       )}
       {state === "error" && <p role="alert" className="text-[12.5px] text-red-700">That didn&apos;t send. Please try again{contact.email ? ` or email ${contact.email}` : ""}.</p>}
       {state === "closed" && <p role="alert" className="text-[12.5px] text-[#5B4A1E]">Online requests open very soon.{contact.email ? ` Please email ${contact.email} for now.` : ""}</p>}
-      <button type="submit" disabled={state === "sending"} className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-[#0066FF] text-[13.5px] font-semibold text-white hover:bg-[#005AE0] disabled:opacity-60">
+      <button type="submit" disabled={state === "sending"} className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-[#C8102E] text-[13.5px] font-semibold text-white hover:bg-[#B30E29] disabled:opacity-60">
         {state === "sending" ? <><Loader2 size={15} className="animate-spin" aria-hidden="true" /> Sending…</> : <>Send {kind === "callback" ? "call back request" : "request"} <ArrowRight size={15} aria-hidden="true" /></>}
       </button>
-      <p className="text-[11.5px] leading-snug text-[#5B6B84]">No work starts without your approval. Your details are used only for this request.</p>
+      <p className="text-[11.5px] leading-snug text-[#696976]">No work starts without your approval. Your details are used only for this request.</p>
     </form>
   );
 }

@@ -6,7 +6,7 @@ import { DetailsFields, FormMeta, Step, SubmitBar, Thanks, brands, fill, input, 
 
 const types = ["Feedback / encoder", "Motor power", "Brake", "Hybrid (power + feedback)", "Communication", "Other"];
 const chip = (on: boolean) =>
-  `rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${on ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`;
+  `rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${on ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`;
 
 /* Custom / spare cable order. Links can pre-fill: ?drive=…  ?motor=…  ?type=… */
 export default function CableForm() {
@@ -29,7 +29,7 @@ export default function CableForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="cable" subject="New custom cable request: AutomIQ website" />
 
       <Step n={1} title="What it connects" hint="The drive and motor model numbers tell us the connectors and pinout.">
@@ -48,7 +48,7 @@ export default function CableForm() {
             <datalist id="cb-brands">{brands.map((b) => <option key={b} value={b} />)}</datalist>
           </div>
           <div>
-            <label className={label} htmlFor="cb-old">Original cable part number <span className="font-normal text-[#52647F]">(if known)</span></label>
+            <label className={label} htmlFor="cb-old">Original cable part number <span className="font-normal text-[#62626F]">(if known)</span></label>
             <input id="cb-old" name="Original cable part number" className={`${input} font-mono`} placeholder="e.g. 6FX5002-2DC10" />
           </div>
         </div>
@@ -95,13 +95,13 @@ export default function CableForm() {
           </div>
         </div>
         <div className="mt-4">
-          <label className={label} htmlFor="cb-notes">Notes <span className="font-normal text-[#52647F]">(optional)</span></label>
+          <label className={label} htmlFor="cb-notes">Notes <span className="font-normal text-[#62626F]">(optional)</span></label>
           <textarea id="cb-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Spare for a critical axis, connector angle, cable entry direction…" />
         </div>
-        <div className="mt-4 flex items-start gap-3 rounded-2xl border border-dashed border-[#C9D7E8] bg-[#F9FBFE] p-3.5 text-[13px]">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><Camera size={17} aria-hidden="true" /></span>
-          <span className="text-[#52647F]">
-            <b className="block text-[#0B1A3C]">Connector photos and pinout</b>
+        <div className="mt-4 flex items-start gap-3 rounded-2xl border border-dashed border-[#E6CBCF] bg-[#FBFBFC] p-3.5 text-[13px]">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Camera size={17} aria-hidden="true" /></span>
+          <span className="text-[#62626F]">
+            <b className="block text-[#131316]">Connector photos and pinout</b>
             After you send this, reply to our email with photos of both connectors (straight on, showing the pins) and the pinout if you have one.
           </span>
         </div>

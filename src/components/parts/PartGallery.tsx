@@ -13,8 +13,8 @@ export default function PartGallery({ images, title }: { images: PartImage[]; ti
   return (
     <div className="flex h-full flex-col">
       {/* Main photo box is 4:3 on every screen: a 1600×1200 photo fills it edge to edge; other shapes sit on white, never cropped. */}
-      <div className={`relative aspect-4/3 overflow-hidden rounded-[24px] border border-[#E3EAF3] shadow-[0_30px_70px_-50px_rgba(11,26,60,0.55)] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#EEF4FB_55%,#E2ECF8_100%)]"}`}>
-        {!img && <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(11,26,60,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(11,26,60,0.035)_1px,transparent_1px)] bg-size-[28px_28px]" />}
+      <div className={`relative aspect-4/3 overflow-hidden rounded-[24px] border border-[#EAEAEC] shadow-[0_30px_70px_-50px_rgba(19, 19, 22,0.55)] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]"}`}>
+        {!img && <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(19, 19, 22,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(19, 19, 22,0.035)_1px,transparent_1px)] bg-size-[28px_28px]" />}
         {img ? (
           <Image
             src={img.src}
@@ -26,13 +26,13 @@ export default function PartGallery({ images, title }: { images: PartImage[]; ti
             className="object-contain"
           />
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[#5B6B84]">
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[#696976]">
             <ImageIcon size={34} aria-hidden="true" />
             <span className="text-[13px] font-semibold">Photo coming soon</span>
           </div>
         )}
         {img?.generic && (
-          <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#4A5B76] ring-1 ring-[#E3EAF3] backdrop-blur">
+          <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#5A5A66] ring-1 ring-[#EAEAEC] backdrop-blur">
             Representative image
           </span>
         )}
@@ -54,7 +54,7 @@ export default function PartGallery({ images, title }: { images: PartImage[]; ti
         </div>
       )}
       {images.length > 0 && (
-        <p className="mt-2.5 text-[12px] leading-relaxed text-[#5B6B84]">
+        <p className="mt-2.5 text-[12px] leading-relaxed text-[#696976]">
           *Photo for reference only. You&rsquo;ll receive the exact part number you ordered; refurbished units may show signs of use.
         </p>
       )}

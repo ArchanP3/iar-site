@@ -16,7 +16,7 @@ export default function Page({ searchParams }: PageProps<"/shop">) {
   return (
     <>
       <PageExtras path="/shop" />
-      <Suspense fallback={<div className="min-h-screen bg-[#F4F7FB]" />}>
+      <Suspense fallback={<div className="min-h-screen bg-[#F7F7F8]" />}>
         <Content searchParams={searchParams} />
       </Suspense>
     </>

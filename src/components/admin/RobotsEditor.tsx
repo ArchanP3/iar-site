@@ -15,7 +15,7 @@ export default function RobotsEditor({ current, fallback }: { current: string; f
   return (
     <div className="grid gap-5 xl:grid-cols-[1.2fr_1fr]">
       <form action={action} className="flex flex-col gap-3">
-        <textarea name="robots" value={txt} onChange={(e) => setTxt(e.target.value)} rows={14} spellCheck={false} className="min-h-65 w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] leading-relaxed text-[#CFE3FF] outline-none" />
+        <textarea name="robots" value={txt} onChange={(e) => setTxt(e.target.value)} rows={14} spellCheck={false} className="min-h-65 w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none" />
         {wholeSite && <Alert tone="bad" icon={<XCircle size={16} />}>This rule hides the whole website from Google. Saving will be blocked.</Alert>}
         {state?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert>}
         {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}

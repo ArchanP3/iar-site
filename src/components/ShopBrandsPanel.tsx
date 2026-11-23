@@ -30,8 +30,8 @@ export default function ShopBrandsPanel() {
     <div className="aq-bpanel p-5 sm:p-7 lg:p-9">
       <div className="relative grid gap-7 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-10">
         <div className="flex flex-col">
-          <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#4DB8FF] sm:text-[12px]">
-            <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#0066FF] to-[#00B0FF]" />
+          <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FF5A6E] sm:text-[12px]">
+            <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />
             Shop by Brand
           </p>
           <h3 className="mt-3 text-[26px] font-extrabold leading-[1.12] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[34px]">
@@ -41,12 +41,12 @@ export default function ShopBrandsPanel() {
             New, surplus, refurbished and obsolete parts from the brands that run your line.
           </p>
           <p className="mt-4 flex items-center gap-2 text-[13px] font-semibold text-white/85">
-            <ShieldCheck size={16} className="shrink-0 text-[#4DB8FF]" />
+            <ShieldCheck size={16} className="shrink-0 text-[#FF5A6E]" />
             Every part tested before it ships
           </p>
           <Link
             href="/shop/brands"
-            className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(0,176,255,0.8)] transition hover:-translate-y-0.5"
+            className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255, 59, 85,0.8)] transition hover:-translate-y-0.5"
           >
             Shop all brands
             <ArrowRight size={17} />
@@ -63,7 +63,7 @@ export default function ShopBrandsPanel() {
               >
                 <span
                   aria-hidden="true"
-                  className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white shadow-[0_10px_20px_-10px_rgba(0,102,255,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
+                  className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_20px_-10px_rgba(200, 16, 46,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
                 >
                   <span className={`font-extrabold tracking-tight ${b.initials.length > 2 ? "text-[12px] sm:text-[13px]" : "text-[15px] sm:text-[17px]"}`}>
                     {b.initials}
@@ -71,10 +71,10 @@ export default function ShopBrandsPanel() {
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="flex items-start justify-between gap-1.5">
-                    <h4 className="text-[13px] font-bold leading-snug text-white transition-colors group-hover:text-[#4DB8FF] sm:text-[14px]">
+                    <h4 className="text-[13px] font-bold leading-snug text-white transition-colors group-hover:text-[#FF5A6E] sm:text-[14px]">
                       {b.name}
                     </h4>
-                    <ArrowUpRight size={14} className="mt-0.5 hidden shrink-0 text-[#00B0FF] opacity-0 transition duration-300 group-hover:opacity-100 sm:block" />
+                    <ArrowUpRight size={14} className="mt-0.5 hidden shrink-0 text-[#FF3B55] opacity-0 transition duration-300 group-hover:opacity-100 sm:block" />
                   </span>
                   <span className="mt-0.5 hidden text-[12px] leading-[1.4] text-white/55 sm:line-clamp-2">{b.series}</span>
                 </span>
@@ -89,7 +89,7 @@ export default function ShopBrandsPanel() {
           <span className="font-semibold text-white">Don&apos;t see your brand?</span> We source parts from 1,000+
           brands.
         </p>
-        <Link href="/request-quote" className="group inline-flex items-center gap-1.5 font-semibold text-[#4DB8FF] hover:text-white">
+        <Link href="/request-quote" className="group inline-flex items-center gap-1.5 font-semibold text-[#FF5A6E] hover:text-white">
           Send us the part number
           <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
         </Link>

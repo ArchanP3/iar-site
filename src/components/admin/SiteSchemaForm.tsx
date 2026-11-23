@@ -15,7 +15,7 @@ export default function SiteSchemaForm({ value, sample }: { value: string; sampl
   return (
     <form action={action} className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-2"><button type="button" onClick={() => setTxt(sample)} className={b("light", true)}>Start from Organization template</button></div>
-      <textarea name="site" value={txt} onChange={(e) => setTxt(e.target.value)} rows={14} spellCheck={false} placeholder="Optional. JSON-LD added to every page." className="w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] leading-relaxed text-[#CFE3FF] outline-none placeholder:text-[#6F82A3]" />
+      <textarea name="site" value={txt} onChange={(e) => setTxt(e.target.value)} rows={14} spellCheck={false} placeholder="Optional. JSON-LD added to every page." className="w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none placeholder:text-[#828290]" />
       {txt.trim() && (err ? <Alert tone="bad" icon={<TriangleAlert size={16} />}><b>Not valid JSON yet:</b> {err}</Alert> : <Alert tone="ok" icon={<CheckCircle2 size={16} />}>Valid JSON-LD.</Alert>)}
       {state?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert>}
       {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}

@@ -37,7 +37,7 @@ export default function RepairForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="repair" subject="New repair request: AutomIQ website" />
       <input type="hidden" name="_item" />
 
@@ -49,14 +49,14 @@ export default function RepairForm() {
             <datalist id="rr-brands">{brands.map((b) => <option key={b} value={b} />)}</datalist>
           </div>
           <div>
-            <label className={label} htmlFor="rr-part">Part / model number {need === "unsure" ? <span className="font-normal text-[#52647F]">(if you have it)</span> : "*"}</label>
+            <label className={label} htmlFor="rr-part">Part / model number {need === "unsure" ? <span className="font-normal text-[#62626F]">(if you have it)</span> : "*"}</label>
             <div className="relative">
-              <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#005AE0]" aria-hidden="true" />
+              <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#B30E29]" aria-hidden="true" />
               <input id="rr-part" name="Part number" required={need !== "unsure"} className={`${input} pl-9 font-mono`} placeholder="6SL3120-1TE21-0AA3" />
             </div>
           </div>
           <div>
-            <label className={label} htmlFor="rr-serial">Serial number <span className="font-normal text-[#52647F]">(optional)</span></label>
+            <label className={label} htmlFor="rr-serial">Serial number <span className="font-normal text-[#62626F]">(optional)</span></label>
             <input id="rr-serial" name="Serial number" className={input} placeholder="From the nameplate" />
           </div>
           <div>
@@ -68,11 +68,11 @@ export default function RepairForm() {
             <textarea id="rr-fault" name="Fault" rows={3} className={`${input} h-auto py-2.5`} placeholder="Fault code on the display, symptoms, when it fails…" />
           </div>
           {uploadsOn && (
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#C9D7E8] bg-[#F9FBFE] p-3.5 transition hover:border-[#0066FF] sm:col-span-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><Camera size={17} aria-hidden="true" /></span>
+            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#E6CBCF] bg-[#FBFBFC] p-3.5 transition hover:border-[#C8102E] sm:col-span-2">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Camera size={17} aria-hidden="true" /></span>
               <span className="text-[13px]">
-                <span className="block font-semibold text-[#0B1A3C]">{files ? `${files} photo${files > 1 ? "s" : ""} added` : "Add photos"} <span className="font-normal text-[#52647F]">(optional)</span></span>
-                <span className="text-[#56677F]">Nameplate and fault display · JPG, PNG or PDF</span>
+                <span className="block font-semibold text-[#131316]">{files ? `${files} photo${files > 1 ? "s" : ""} added` : "Add photos"} <span className="font-normal text-[#62626F]">(optional)</span></span>
+                <span className="text-[#646471]">Nameplate and fault display · JPG, PNG or PDF</span>
               </span>
               <input type="file" name="Photos" multiple accept="image/*,.pdf" className="sr-only" onChange={(e) => setFiles(e.target.files?.length ?? 0)} />
             </label>
@@ -96,12 +96,12 @@ export default function RepairForm() {
             { v: "pickup", t: "Request a pickup", d: "From your facility with FedEx, Purolator, UPS or DHL", icon: Truck },
           ]} />
         {ship === "pickup" && (
-          <div className="mt-4 space-y-4 rounded-2xl border border-[#E3EAF3] bg-[#F9FBFE] p-4">
-            <p className="text-[13px] font-extrabold text-[#0B1A3C]">Pickup address</p>
+          <div className="mt-4 space-y-4 rounded-2xl border border-[#EAEAEC] bg-[#FBFBFC] p-4">
+            <p className="text-[13px] font-extrabold text-[#131316]">Pickup address</p>
             <AddressFields prefix="rr-pu" />
-            <div className="border-t border-[#E3EAF3] pt-4"><CarrierPicker prefix="rr-pu" value={carrier} onChange={setCarrier} /></div>
-            <div className="border-t border-[#E3EAF3] pt-4">
-              <p className="mb-3 text-[13px] font-extrabold text-[#0B1A3C]">Package &amp; pickup time</p>
+            <div className="border-t border-[#EAEAEC] pt-4"><CarrierPicker prefix="rr-pu" value={carrier} onChange={setCarrier} /></div>
+            <div className="border-t border-[#EAEAEC] pt-4">
+              <p className="mb-3 text-[13px] font-extrabold text-[#131316]">Package &amp; pickup time</p>
               <PackageFields prefix="rr-pu" />
             </div>
           </div>

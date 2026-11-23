@@ -10,7 +10,7 @@ import { BusinessForm } from "@/components/admin/SettingsForms";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Locations />
     </Suspense>
   );
@@ -29,10 +29,10 @@ async function Locations() {
       <Card title="Location pages" pad={false}>
         <Table head={["Page", "Type", "Status"]}>
           {areas.map((a) => (
-            <tr key={a.slug}><td><a href={areaAbs(a)} target="_blank" className="font-bold hover:text-[#0052CC]">{a.city}, {a.regionCode}</a><div className="font-mono text-[12px] text-[#8494AB]">{areaUrl(a.slug)}</div></td><td>Built into the site{a.country === "US" ? " · USA site" : " · Canada site"}</td><td><Pill tone="ok">Live</Pill></td></tr>
+            <tr key={a.slug}><td><a href={areaAbs(a)} target="_blank" className="font-bold hover:text-[#A50D25]">{a.city}, {a.regionCode}</a><div className="font-mono text-[12px] text-[#91919E]">{areaUrl(a.slug)}</div></td><td>Built into the site{a.country === "US" ? " · USA site" : " · Canada site"}</td><td><Pill tone="ok">Live</Pill></td></tr>
           ))}
           {pages.map((p) => (
-            <tr key={p.id}><td><Link href={`/admin/landing/${p.id}`} className="font-bold hover:text-[#0052CC]">{p.name}</Link><div className="font-mono text-[12px] text-[#8494AB]">{p.path}</div></td><td>Landing page</td><td><Pill tone={p.status === "published" ? "ok" : "warn"}>{p.status === "published" ? "Live" : "Draft"}</Pill></td></tr>
+            <tr key={p.id}><td><Link href={`/admin/landing/${p.id}`} className="font-bold hover:text-[#A50D25]">{p.name}</Link><div className="font-mono text-[12px] text-[#91919E]">{p.path}</div></td><td>Landing page</td><td><Pill tone={p.status === "published" ? "ok" : "warn"}>{p.status === "published" ? "Live" : "Draft"}</Pill></td></tr>
           ))}
         </Table>
       </Card>

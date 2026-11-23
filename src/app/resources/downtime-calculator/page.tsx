@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DowntimeCalculator from "@/components/resources/DowntimeCalculator";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
@@ -46,12 +46,12 @@ const schema = {
 
 export default function DowntimeCalculatorPage() {
   return (
-    <main className={`${montserrat.className} min-h-screen bg-[#F4F7FB] text-[#0B1A3C]`}>
+    <main className={`${brandFont.className} min-h-screen bg-[#F7F7F8] text-[#131316]`}>
       <PageExtras path="/resources/downtime-calculator" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header />
-      <section className="relative overflow-hidden bg-[#050B18] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.5),transparent)] blur-2xl" />
+      <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
         <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(248,113,113,0.25),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
@@ -78,26 +78,26 @@ export default function DowntimeCalculatorPage() {
         <section aria-labelledby="dc-faq" className="mt-12 grid gap-8 lg:grid-cols-[1fr_380px]">
           <div>
             <h2 id="dc-faq" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">How this calculator works</h2>
-            <div className="mt-5 divide-y divide-[#E3EAF3] overflow-hidden rounded-[22px] border border-[#E3EAF3] bg-white">
+            <div className="mt-5 divide-y divide-[#EAEAEC] overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white">
               {faqs.map(([q, a]) => (
                 <details key={q} className="group px-5 py-4 [&_summary::-webkit-details-marker]:hidden">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-bold">
                     {q}
-                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-lg bg-[#F1F5FA] text-[#005AE0] transition group-open:rotate-45" aria-hidden="true">+</span>
+                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-lg bg-[#F5F5F6] text-[#B30E29] transition group-open:rotate-45" aria-hidden="true">+</span>
                   </summary>
-                  <p className="mt-2.5 text-[14px] leading-relaxed text-[#52647F]">{a}</p>
+                  <p className="mt-2.5 text-[14px] leading-relaxed text-[#62626F]">{a}</p>
                 </details>
               ))}
             </div>
           </div>
-          <div className="rounded-[22px] border border-[#E3EAF3] bg-white p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#005AE0]">Every repair includes</p>
-            <ul className="mt-3 space-y-2.5 text-[14px] text-[#3E4F68]">
+          <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">Every repair includes</p>
+            <ul className="mt-3 space-y-2.5 text-[14px] text-[#4E4E58]">
               {["Free evaluation", "Written quote before any work starts", "Tested on our own jigs", "Test report with every unit", "12-month warranty on repairs"].map((x) => (
-                <li key={x} className="flex gap-2"><span className="mt-1.75 h-1.5 w-1.5 flex-none rounded-full bg-[#00B0FF]" aria-hidden="true" />{x}</li>
+                <li key={x} className="flex gap-2"><span className="mt-1.75 h-1.5 w-1.5 flex-none rounded-full bg-[#FF3B55]" aria-hidden="true" />{x}</li>
               ))}
             </ul>
-            <Link href="/request-repair" className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-xl bg-[#0B1A3C] text-[14px] font-semibold text-white hover:bg-[#0066FF]">Request a Repair</Link>
+            <Link href="/request-repair" className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-xl bg-[#131316] text-[14px] font-semibold text-white hover:bg-[#C8102E]">Request a Repair</Link>
           </div>
         </section>
       </div>

@@ -11,7 +11,7 @@ type Props = { searchParams: Promise<{ first?: string; setup2fa?: string; twoste
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Account {...props} />
     </Suspense>
   );
@@ -26,7 +26,7 @@ async function Account({ searchParams }: Props) {
     readSetting("security"),
   ]);
   const pending = !u.totpOn && row?.totp_secret ? row.totp_secret : null;
-  const qr = pending ? await QRCode.toDataURL(totpUri(pending, u.email), { margin: 1, width: 200, color: { dark: "#0B1A3C", light: "#FFFFFF" } }) : null;
+  const qr = pending ? await QRCode.toDataURL(totpUri(pending, u.email), { margin: 1, width: 200, color: { dark: "#131316", light: "#FFFFFF" } }) : null;
   return (
     <>
       <PageHead title="My account" sub={`${u.email} · ${roleLabel[u.role]}`} />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 
 /* The CMS lives at /admin. It is never indexed by search engines. */
 export const metadata: Metadata = {
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AdminRoot({ children }: { children: React.ReactNode }) {
-  return <div className={`${montserrat.className} min-h-screen bg-[#F4F7FB] text-[13.5px] text-[#0B1A3C] antialiased`}>{children}</div>;
+  return <div className={`${brandFont.className} min-h-screen bg-[#F7F7F8] text-[13.5px] text-[#131316] antialiased`}>{children}</div>;
 }

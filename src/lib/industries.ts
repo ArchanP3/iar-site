@@ -26,7 +26,7 @@ export type Industry = {
 
 export const industries: Industry[] = [
   {
-    slug: "automotive", name: "Automotive", color: "#3B82F6", image: "/industries/automotive.jpg", zoom: true, icon: "Car", core: true,
+    slug: "automotive", name: "Automotive", color: "#EA2946", image: "/industries/automotive.jpg", zoom: true, icon: "Car", core: true,
     short: "Body shop robots, press lines, paint and assembly.",
     intro: "Automotive plants run on servo drives, robots and PLCs that can't stop. We repair the drives, motors, controllers and HMIs on body shop, press, paint and final assembly lines.",
     equipment: ["Body shop and welding robots", "Transfer presses and press lines", "Paint shop conveyors and robots", "Final assembly conveyors", "Welding controllers", "Torque and fastening systems"],
@@ -54,7 +54,7 @@ export const industries: Industry[] = [
     services: ["vfd-repair", "servo-drive-repair", "industrial-motor-repair", "pump-fan-motor-repair", "plc-repair", "hmi-repair"],
   },
   {
-    slug: "metalworking", name: "Metalworking & CNC", color: "#06B6D4", image: "/industries/metalworking.jpg", zoom: true, icon: "Cog", core: true,
+    slug: "metalworking", name: "Metalworking & CNC", color: "#B60F28", image: "/industries/metalworking.jpg", zoom: true, icon: "Cog", core: true,
     short: "Machining centers, lathes, grinders and press brakes.",
     intro: "CNC machining centers, lathes and grinders rely on spindle drives, servo amplifiers and CNC controls. We repair Siemens, Fanuc, Indramat and other CNC systems and rebuild spindle motors.",
     equipment: ["CNC machining centers", "CNC lathes", "Grinders", "Press brakes and punch presses", "Laser and plasma cutters", "Spindle motors and drives"],
@@ -82,7 +82,7 @@ export const industries: Industry[] = [
     services: ["vfd-repair", "industrial-motor-repair", "gearbox-repair", "brake-repair", "plc-repair", "soft-starter-repair"],
   },
   {
-    slug: "steel-metals", name: "Steel & Metal Processing", color: "#94A3B8", image: "/industries/steel-metals.webp", icon: "Anvil",
+    slug: "steel-metals", name: "Steel & Metal Processing", color: "#A1A1AB", image: "/industries/steel-metals.webp", icon: "Anvil",
     short: "Rolling mills, coil processing and furnaces.",
     intro: "Steel and metal processing uses large drives, DC motors and heavy-duty controls. We repair AC and DC drives, motors, power supplies and induction heating controls.",
     equipment: ["Rolling mills", "Coil processing and slitting lines", "Cut-to-length lines", "Induction heating", "Furnaces", "Cranes"],
@@ -110,7 +110,7 @@ export const industries: Industry[] = [
     services: ["cnc-repair", "spindle-rebuild", "servo-drive-repair", "servo-motor-repair", "vfd-repair", "hmi-repair"],
   },
   {
-    slug: "aerospace", name: "Aerospace", color: "#38BDF8", image: "/industries/aerospace.webp", icon: "Plane",
+    slug: "aerospace", name: "Aerospace", color: "#FF5A6E", image: "/industries/aerospace.webp", icon: "Plane",
     short: "Precision machining, composites and test stands.",
     intro: "Aerospace manufacturing relies on precision CNC machines, composite equipment and test stands. We repair the CNC controls, spindles, servo drives and motors with a test report on every unit.",
     equipment: ["5-axis machining centers", "Composite layup and cutting", "Test stands", "Riveting and drilling systems", "Spindles", "Coordinate measuring machines"],
@@ -124,7 +124,7 @@ export const industries: Industry[] = [
     services: ["servo-drive-repair", "stepper-motor-repair", "linear-motor-repair", "power-supply-repair", "industrial-pc-repair", "controller-card-repair"],
   },
   {
-    slug: "water-wastewater", name: "Water & Wastewater", color: "#0EA5E9", image: "/industries/water-wastewater.webp", icon: "Droplets",
+    slug: "water-wastewater", name: "Water & Wastewater", color: "#C81631", image: "/industries/water-wastewater.webp", icon: "Droplets",
     short: "Pump stations, blowers and treatment plants.",
     intro: "Water and wastewater plants run pumps and blowers on VFDs and soft starters. We repair the drives, motors, soft starters and PLCs that keep stations running.",
     equipment: ["Pump stations", "Aeration blowers", "Clarifiers and mixers", "Lift stations", "SCADA panels and PLCs", "Soft starters"],
@@ -145,7 +145,7 @@ export const industries: Industry[] = [
     services: ["vfd-repair", "industrial-motor-repair", "pump-fan-motor-repair", "soft-starter-repair", "ups-inverter-repair", "plc-repair"],
   },
   {
-    slug: "glass", name: "Glass", color: "#67E8F9", image: "/industries/glass.webp", icon: "GlassWater",
+    slug: "glass", name: "Glass", color: "#F26E82", image: "/industries/glass.webp", icon: "GlassWater",
     short: "Forming machines, lehrs and cutting lines.",
     intro: "Glass plants use servo-driven forming machines, conveyors and cutting lines. We repair the servo drives, motors, controllers and temperature controls.",
     equipment: ["Forming machines", "Annealing lehrs", "Cutting and breaking lines", "Conveyors", "Robots and handling", "Temperature controllers"],
@@ -159,7 +159,7 @@ export const industries: Industry[] = [
     services: ["vfd-repair", "servo-drive-repair", "industrial-motor-repair", "encoder-repair", "plc-repair", "hmi-repair"],
   },
   {
-    slug: "machine-builders", name: "Machine Builders & OEMs", color: "#0066FF", image: "/industries/machine-builders.webp", icon: "Wrench",
+    slug: "machine-builders", name: "Machine Builders & OEMs", color: "#C8102E", image: "/industries/machine-builders.webp", icon: "Wrench",
     short: "Repair, spares and support for machines you build.",
     intro: "Machine builders and integrators need fast repairs and spares for the machines they support. We repair drives, motors, PLCs and HMIs from every major brand and can back up parameters and programs.",
     equipment: ["Special machines", "Assembly cells", "Test equipment", "Robot cells", "Retrofits", "Spare parts programs"],

@@ -98,15 +98,15 @@ const THEMES: Record<'dark' | 'light', Record<string, string>> = {
   dark: {
     '--rc-base': '#1d1c22',
     '--rc-shadow': '0 22px 44px -20px rgba(0, 0, 0, 0.8), 0 6px 16px -8px rgba(0, 0, 0, 0.5)',
-    '--rc-ink': '#f4f4f5',
+    '--rc-ink': '#F4F4F5',
     '--rc-muted': 'rgba(244, 244, 245, 0.6)',
     '--rc-rim': 'rgba(255, 255, 255, 0.07)',
     '--rc-rim-highlight': 'rgba(255, 255, 255, 0.1)'
   },
   light: {
-    '--rc-base': '#e7e7ea',
+    '--rc-base': '#E7E7EA',
     '--rc-shadow': '0 22px 44px -22px rgba(24, 24, 27, 0.3), 0 6px 16px -10px rgba(24, 24, 27, 0.16)',
-    '--rc-ink': '#18181b',
+    '--rc-ink': '#18181B',
     '--rc-muted': 'rgba(24, 24, 27, 0.6)',
     '--rc-rim': 'rgba(24, 24, 27, 0.08)',
     '--rc-rim-highlight': 'rgba(255, 255, 255, 0.8)'

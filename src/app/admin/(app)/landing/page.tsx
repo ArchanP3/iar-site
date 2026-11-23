@@ -9,7 +9,7 @@ type Props = { searchParams: Promise<{ tab?: string }> };
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <List {...props} />
     </Suspense>
   );
@@ -41,30 +41,30 @@ async function List({ searchParams }: Props) {
         {tab === "pages" ? (
           <Table head={["Page", "Status", "Made from", "Sitemap", "Updated"]}>
             {rows.map((r) => (
-              <tr key={r.id} className="hover:bg-[#F8FAFD]">
-                <td className="max-w-105"><Link href={`/admin/landing/${r.id}`} className="block truncate font-bold hover:text-[#0052CC]">{r.name}</Link><span className="font-mono text-[12px] text-[#8494AB]">{r.path}</span></td>
+              <tr key={r.id} className="hover:bg-[#FAFAFB]">
+                <td className="max-w-105"><Link href={`/admin/landing/${r.id}`} className="block truncate font-bold hover:text-[#A50D25]">{r.name}</Link><span className="font-mono text-[12px] text-[#91919E]">{r.path}</span></td>
                 <td><Pill tone={r.status === "published" ? "ok" : "warn"}>{r.status === "published" ? "Live" : "Draft"}</Pill></td>
-                <td>{r.tname ? <Link href={`/admin/landing/${r.template_id}`} className="font-semibold text-[#0052CC]">{r.tname}</Link> : "Custom"}</td>
+                <td>{r.tname ? <Link href={`/admin/landing/${r.template_id}`} className="font-semibold text-[#A50D25]">{r.tname}</Link> : "Custom"}</td>
                 <td className="capitalize">{r.in_sitemap}</td>
-                <td className="whitespace-nowrap text-[#5B6B84]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
+                <td className="whitespace-nowrap text-[#696976]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
               </tr>
             ))}
           </Table>
         ) : (
           <Table head={["Template", "URL pattern", "Pages using it", "Updated"]}>
             {rows.map((r) => (
-              <tr key={r.id} className="hover:bg-[#F8FAFD]">
-                <td><Link href={`/admin/landing/${r.id}`} className="font-bold hover:text-[#0052CC]">{r.name}</Link></td>
-                <td className="font-mono text-[12px] text-[#5B6B84]">{r.vars?.path_pattern || "—"}</td>
+              <tr key={r.id} className="hover:bg-[#FAFAFB]">
+                <td><Link href={`/admin/landing/${r.id}`} className="font-bold hover:text-[#A50D25]">{r.name}</Link></td>
+                <td className="font-mono text-[12px] text-[#696976]">{r.vars?.path_pattern || "—"}</td>
                 <td>{r.used}</td>
-                <td className="whitespace-nowrap text-[#5B6B84]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
+                <td className="whitespace-nowrap text-[#696976]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
               </tr>
             ))}
           </Table>
         )}
         {!rows.length && (
-          <div className="flex flex-col items-center gap-2 p-10 text-center text-[#5B6B84]">
-            {tab === "pages" ? <LayoutTemplate size={26} className="text-[#8494AB]" /> : <MapPin size={26} className="text-[#8494AB]" />}
+          <div className="flex flex-col items-center gap-2 p-10 text-center text-[#696976]">
+            {tab === "pages" ? <LayoutTemplate size={26} className="text-[#91919E]" /> : <MapPin size={26} className="text-[#91919E]" />}
             {tab === "pages" ? "No landing pages yet. Start a new page, or make a template and create city pages from it." : "No templates yet. A template is one layout you can reuse for many cities."}
           </div>
         )}

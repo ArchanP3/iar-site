@@ -20,8 +20,8 @@ function Field({ id, label, hint, children }: { id: string; label: string; hint?
   return (
     <div>
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="text-[13.5px] font-bold text-[#0B1A3C]">{label}</label>
-        {hint && <span className="text-[12px] text-[#5B6B84]">{hint}</span>}
+        <label htmlFor={id} className="text-[13.5px] font-bold text-[#131316]">{label}</label>
+        {hint && <span className="text-[12px] text-[#696976]">{hint}</span>}
       </div>
       <div className="mt-2">{children}</div>
     </div>
@@ -33,9 +33,9 @@ function Slider({ id, value, min, max, step, onChange, suffix }: { id: string; v
   return (
     <div className="flex items-center gap-3">
       <input id={id} type="range" min={min} max={max} step={step} value={value} onChange={(e) => onChange(Number(e.target.value))}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[#0066FF]"
-        style={{ background: `linear-gradient(90deg, #0066FF ${pct}%, #E3EAF3 ${pct}%)` }} />
-      <span className="w-21.5 flex-none rounded-lg bg-[#F1F5FA] px-2 py-1.5 text-center text-[13.5px] font-bold tabular-nums text-[#0B1A3C]">{value} {suffix}</span>
+        className="h-2 w-full cursor-pointer appearance-none rounded-full accent-[#C8102E]"
+        style={{ background: `linear-gradient(90deg, #C8102E ${pct}%, #EAEAEC ${pct}%)` }} />
+      <span className="w-21.5 flex-none rounded-lg bg-[#F5F5F6] px-2 py-1.5 text-center text-[13.5px] font-bold tabular-nums text-[#131316]">{value} {suffix}</span>
     </div>
   );
 }
@@ -64,7 +64,7 @@ export default function DowntimeCalculator() {
   const max = Math.max(r.newUnit.cost, r.repair.cost, r.exchange.cost, 1);
   const scenarios = [
     { key: "new", icon: Clock, t: "Wait for a new unit", d: `${plural(r.newUnit.days, "day")} until it arrives`, v: r.newUnit, bar: "from-[#F87171] to-[#FB923C]" },
-    { key: "repair", icon: Wrench, t: "Repair with AutomIQ", d: `72 hr repair + ${plural(ship, "day")} shipping each way`, v: r.repair, bar: "from-[#0066FF] to-[#00B0FF]" },
+    { key: "repair", icon: Wrench, t: "Repair with AutomIQ", d: `72 hr repair + ${plural(ship, "day")} shipping each way`, v: r.repair, bar: "from-[#C8102E] to-[#FF3B55]" },
     { key: "exchange", icon: RefreshCw, t: "AutomIQ exchange unit", d: `Your unit to us + 1–2 business days + ${plural(ship, "day")} back`, v: r.exchange, bar: "from-[#10B981] to-[#34D399]" },
   ];
 
@@ -81,19 +81,19 @@ export default function DowntimeCalculator() {
       const doc = new jsPDF({ unit: "pt", format: "letter" });
       const W = doc.internal.pageSize.getWidth();
       const M = 48;
-      doc.setFillColor(5, 11, 24); doc.rect(0, 0, W, 96, "F");
+      doc.setFillColor(10, 10, 12); doc.rect(0, 0, W, 96, "F");
       try {
-        const blob = await (await fetch("/automiq-logo-white-v2.png")).blob();
+        const blob = await (await fetch("/iar-logo-white.png")).blob();
         const data = await new Promise<string>((ok) => { const fr = new FileReader(); fr.onload = () => ok(String(fr.result)); fr.readAsDataURL(blob); });
-        doc.addImage(data, "PNG", M, 30, 193, 36);
+        doc.addImage(data, "PNG", M, 18, 132, 60);
       } catch { /* logo is optional */ }
       doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(18);
       doc.text("Downtime cost summary", W - M, 50, { align: "right" });
-      doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(180, 200, 230);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(228, 182, 189);
       doc.text(new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }), W - M, 68, { align: "right" });
 
       let y = 132;
-      doc.setTextColor(11, 26, 60);
+      doc.setTextColor(19, 19, 22);
       if (part.trim()) { doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.text(`Part / machine: ${part.trim()}`, M, y); y += 26; }
       doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.text("Your numbers", M, y); y += 18;
       doc.setFont("helvetica", "normal"); doc.setFontSize(11);
@@ -104,32 +104,32 @@ export default function DowntimeCalculator() {
         ["Wait for a new unit", `${wait} ${waitUnit}`],
         ["Shipping time each way", plural(ship, "day")],
       ];
-      for (const [k, v] of inputs) { doc.setTextColor(82, 100, 127); doc.text(k, M, y); doc.setTextColor(11, 26, 60); doc.text(v, W - M, y, { align: "right" }); y += 18; }
+      for (const [k, v] of inputs) { doc.setTextColor(98, 98, 111); doc.text(k, M, y); doc.setTextColor(19, 19, 22); doc.text(v, W - M, y, { align: "right" }); y += 18; }
 
-      y += 14; doc.setDrawColor(227, 234, 243); doc.line(M, y, W - M, y); y += 26;
+      y += 14; doc.setDrawColor(234, 234, 236); doc.line(M, y, W - M, y); y += 26;
       doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.text("Estimated cost of downtime", M, y); y += 22;
-      const colors: [number, number, number][] = [[248, 113, 113], [0, 102, 255], [16, 185, 129]];
+      const colors: [number, number, number][] = [[248, 113, 113], [200, 16, 46], [16, 185, 129]];
       scenarios.forEach((s, i) => {
-        doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(11, 26, 60); doc.text(s.t, M, y);
+        doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(19, 19, 22); doc.text(s.t, M, y);
         doc.text(usd(s.v.cost), W - M, y, { align: "right" });
-        doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(122, 139, 163);
+        doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(136, 136, 149);
         doc.text(`${s.d} · ${Math.round(s.v.hours)} production hours lost`, M, y + 14);
-        doc.setFillColor(241, 245, 250); doc.roundedRect(M, y + 22, W - 2 * M, 8, 4, 4, "F");
+        doc.setFillColor(245, 245, 246); doc.roundedRect(M, y + 22, W - 2 * M, 8, 4, 4, "F");
         doc.setFillColor(...colors[i]); doc.roundedRect(M, y + 22, Math.max(8, (W - 2 * M) * (s.v.cost / max)), 8, 4, 4, "F");
         y += 52;
       });
 
-      y += 6; doc.setFillColor(240, 247, 255); doc.roundedRect(M, y, W - 2 * M, 64, 10, 10, "F");
-      doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(0, 82, 204);
+      y += 6; doc.setFillColor(247, 247, 248); doc.roundedRect(M, y, W - 2 * M, 64, 10, 10, "F");
+      doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(165, 13, 37);
       doc.text(`Repair instead of waiting: save about ${usd(r.saveRepair)}`, M + 16, y + 26);
       doc.setTextColor(5, 150, 105); doc.text(`Exchange unit instead of waiting: save about ${usd(r.saveExchange)}`, M + 16, y + 46);
       y += 92;
 
-      doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(122, 139, 163);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(136, 136, 149);
       const note = "Estimate based on the numbers entered above. Repair uses 72 hours, the top of our typical 24 to 72 hour turnaround once a quote is approved; times are typical, not guaranteed. Exchange uses 2 business days after your unit arrives, the top of our usual 1–2 days; some units take longer. Rush handling is available for an extra fee. Free evaluation and a written quote before any work starts. 12-month warranty on repairs.";
       doc.text(doc.splitTextToSize(note, W - 2 * M), M, y);
       y += 52;
-      doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(11, 26, 60);
+      doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(19, 19, 22);
       const site = window.location.origin.replace(/^https?:\/\//, "");
       doc.text(["AutomIQ Automation & Drive Services · Mississauga, Ontario · Canada & USA", [site, contact.phone, contact.email].filter(Boolean).join(" · ")], M, y);
       doc.save(`downtime-cost-${part.trim().replace(/[^a-z0-9]+/gi, "-") || "summary"}.pdf`);
@@ -138,25 +138,25 @@ export default function DowntimeCalculator() {
     }
   }
 
-  const num = "h-11 w-full rounded-xl border border-[#D9E4F1] bg-[#F9FBFE] px-3.5 text-[15px] font-semibold text-[#0B1A3C] outline-none focus:border-[#0066FF] focus:bg-white focus:ring-4 focus:ring-[#0066FF]/10";
+  const num = "h-11 w-full rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 text-[15px] font-semibold text-[#131316] outline-none focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
 
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       {/* ---------- Inputs ---------- */}
-      <section aria-label="Your numbers" className="rounded-[24px] border border-[#E3EAF3] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)] sm:p-7">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#005AE0]">Your numbers</p>
+      <section aria-label="Your numbers" className="rounded-[24px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-7">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">Your numbers</p>
         <div className="mt-5 space-y-6">
           <Field id="dc-cost" label="What does one hour of downtime cost you?" hint="Lost output, labour, penalties">
-            <div className="flex h-12 items-center rounded-xl border border-[#D9E4F1] bg-[#F9FBFE] px-3.5 focus-within:border-[#0066FF] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#0066FF]/10">
-              <span className="text-[16px] font-bold text-[#5B6B84]">$</span>
+            <div className="flex h-12 items-center rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 focus-within:border-[#C8102E] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#C8102E]/10">
+              <span className="text-[16px] font-bold text-[#696976]">$</span>
               <input id="dc-cost" type="number" inputMode="numeric" min={0} step={50} value={cost} onChange={(e) => setCost(Math.max(0, Number(e.target.value) || 0))}
-                className="w-full bg-transparent pl-1.5 text-[18px] font-extrabold tabular-nums text-[#0B1A3C] outline-none" />
-              <span className="whitespace-nowrap text-[13px] font-semibold text-[#5B6B84]">USD / hour</span>
+                className="w-full bg-transparent pl-1.5 text-[18px] font-extrabold tabular-nums text-[#131316] outline-none" />
+              <span className="whitespace-nowrap text-[13px] font-semibold text-[#696976]">USD / hour</span>
             </div>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {[250, 500, 1000, 2500, 5000, 10000].map((v) => (
                 <button key={v} type="button" onClick={() => setCost(v)} aria-pressed={cost === v}
-                  className={`rounded-lg px-2.5 py-1 text-[12.5px] font-semibold transition ${cost === v ? "bg-[#0066FF] text-white" : "bg-[#F1F5FA] text-[#4A5B76] hover:bg-[#E6EEF8]"}`}>{usd(v)}</button>
+                  className={`rounded-lg px-2.5 py-1 text-[12.5px] font-semibold transition ${cost === v ? "bg-[#C8102E] text-white" : "bg-[#F5F5F6] text-[#5A5A66] hover:bg-[#EEEEF0]"}`}>{usd(v)}</button>
               ))}
             </div>
           </Field>
@@ -165,10 +165,10 @@ export default function DowntimeCalculator() {
           <Field id="dc-wait" label="How long would a new unit take?" hint="Your supplier's lead time">
             <div className="flex gap-2">
               <input id="dc-wait" type="number" inputMode="numeric" min={0} value={wait} onChange={(e) => setWait(Math.max(0, Number(e.target.value) || 0))} className={`${num.replace("w-full ", "")} w-24 flex-none`} />
-              <div className="grid h-11 min-w-0 flex-1 grid-cols-2 gap-1.5 rounded-xl bg-[#F1F5FA] p-1">
+              <div className="grid h-11 min-w-0 flex-1 grid-cols-2 gap-1.5 rounded-xl bg-[#F5F5F6] p-1">
                 {(["days", "weeks"] as const).map((u) => (
                   <button key={u} type="button" onClick={() => setWaitUnit(u)} aria-pressed={waitUnit === u}
-                    className={`rounded-lg text-[13.5px] font-semibold capitalize transition ${waitUnit === u ? "bg-white text-[#0052CC] shadow-sm ring-1 ring-[#0066FF]/20" : "text-[#4A5B76]"}`}>{u}</button>
+                    className={`rounded-lg text-[13.5px] font-semibold capitalize transition ${waitUnit === u ? "bg-white text-[#A50D25] shadow-sm ring-1 ring-[#C8102E]/20" : "text-[#5A5A66]"}`}>{u}</button>
                 ))}
               </div>
             </div>
@@ -182,9 +182,9 @@ export default function DowntimeCalculator() {
 
       {/* ---------- Results ---------- */}
       <section aria-label="Results" aria-live="polite" className="lg:sticky lg:top-28">
-        <div className="relative overflow-hidden rounded-[24px] bg-[#050B18] p-5 text-white shadow-[0_40px_80px_-40px_rgba(0,102,255,0.7)] sm:p-7">
+        <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-5 text-white shadow-[0_40px_80px_-40px_rgba(200, 16, 46,0.7)] sm:p-7">
           <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(248,113,113,0.35),transparent)] blur-xl" />
-          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.45),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)] blur-xl" />
           <p className="relative text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FCA5A5]">Waiting for a new unit costs you</p>
           <p className="relative mt-2 text-[40px] font-extrabold leading-none tracking-[-0.03em] tabular-nums sm:text-[54px]">{usd(r.newUnit.cost)}</p>
           <p className="relative mt-2 text-[13.5px] text-white/65">{Math.round(r.newUnit.hours).toLocaleString("en-US")} production hours lost over {plural(r.newUnit.days, "day")}</p>
@@ -207,8 +207,8 @@ export default function DowntimeCalculator() {
           </ul>
 
           <div className="relative mt-6 grid gap-2.5 sm:grid-cols-2">
-            <div className="rounded-2xl bg-[#0066FF]/15 p-4 ring-1 ring-[#0066FF]/30">
-              <p className="flex items-center gap-1.5 text-[12px] font-semibold text-[#7FD3FF]"><TrendingDown size={14} aria-hidden="true" /> Repair saves about</p>
+            <div className="rounded-2xl bg-[#C8102E]/15 p-4 ring-1 ring-[#C8102E]/30">
+              <p className="flex items-center gap-1.5 text-[12px] font-semibold text-[#FF8A99]"><TrendingDown size={14} aria-hidden="true" /> Repair saves about</p>
               <p className="mt-1 text-[24px] font-extrabold tabular-nums">{usd(r.saveRepair)}</p>
             </div>
             <div className="rounded-2xl bg-emerald-400/10 p-4 ring-1 ring-emerald-400/30">
@@ -218,10 +218,10 @@ export default function DowntimeCalculator() {
           </div>
 
           <div className="relative mt-5 grid gap-2.5 sm:grid-cols-2">
-            <Link href={q({})} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white text-[14.5px] font-semibold text-[#0B1A3C] transition hover:-translate-y-0.5">
+            <Link href={q({})} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white text-[14.5px] font-semibold text-[#131316] transition hover:-translate-y-0.5">
               <Wrench size={16} aria-hidden="true" /> Request a Repair
             </Link>
-            <Link href={q({ service: "exchange" })} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[14.5px] font-semibold transition hover:-translate-y-0.5">
+            <Link href={q({ service: "exchange" })} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[14.5px] font-semibold transition hover:-translate-y-0.5">
               <RefreshCw size={16} aria-hidden="true" /> Ask About Exchange
             </Link>
           </div>
@@ -232,8 +232,8 @@ export default function DowntimeCalculator() {
           <p className="relative mt-2 text-center text-[12px] text-white/50">Send it to your manager or purchasing team.</p>
         </div>
 
-        <p className="mt-3 flex items-start gap-2 px-1 text-[12px] leading-relaxed text-[#5B6B84]">
-          <Truck size={14} className="mt-0.5 flex-none text-[#005AE0]" aria-hidden="true" />
+        <p className="mt-3 flex items-start gap-2 px-1 text-[12px] leading-relaxed text-[#696976]">
+          <Truck size={14} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />
           Estimate only, based on your numbers. Repair uses 72 hr, the top of our typical 24–72 hr turnaround once a quote is approved. Exchange uses 2 business days after your unit arrives. Need it sooner? Rush handling is available for an extra fee.
         </p>
       </section>

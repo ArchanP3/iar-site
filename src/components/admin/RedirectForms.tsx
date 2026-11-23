@@ -16,7 +16,7 @@ export function RedirectForm({ initial }: { initial?: Editing }) {
       {initial?.id && <input type="hidden" name="id" value={initial.id} />}
       <div className="grid items-end gap-3 lg:grid-cols-[1.2fr_auto_1.2fr_190px_170px_auto]">
         <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">From</span><input name="from" required defaultValue={initial?.from} placeholder="/old-page" className={cx(input, "font-mono text-[12.8px]")} /></label>
-        <span className="hidden pb-3 text-[#8494AB] lg:block"><ArrowRightLeft size={18} /></span>
+        <span className="hidden pb-3 text-[#91919E] lg:block"><ArrowRightLeft size={18} /></span>
         <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">To</span><input name="to" defaultValue={initial?.to} disabled={code === 410} placeholder={code === 410 ? "Removed page (410 Gone)" : "/new-page or https://…"} className={cx(input, "font-mono text-[12.8px]")} /></label>
         <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Type</span>
           <select name="code" value={code} onChange={(e) => setCode(Number(e.target.value))} className={input}>
@@ -29,8 +29,8 @@ export function RedirectForm({ initial }: { initial?: Editing }) {
         <button disabled={pending} className={b("primary")}>{pending ? "Saving…" : initial?.id ? "Update" : "Save"}</button>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
-        <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Note <span className="font-semibold text-[#8494AB]">optional</span></span><input name="note" defaultValue={initial?.note ?? ""} placeholder="Why this redirect exists" className={input} /></label>
-        <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Ends on <span className="font-semibold text-[#8494AB]">optional, for temporary promos</span></span><input type="date" name="expires" defaultValue={initial?.expires ?? ""} className={input} /></label>
+        <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Note <span className="font-semibold text-[#91919E]">optional</span></span><input name="note" defaultValue={initial?.note ?? ""} placeholder="Why this redirect exists" className={input} /></label>
+        <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Ends on <span className="font-semibold text-[#91919E]">optional, for temporary promos</span></span><input type="date" name="expires" defaultValue={initial?.expires ?? ""} className={input} /></label>
       </div>
       {state?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert>}
       {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok} Chains and loops are checked automatically.</Alert>}
@@ -42,9 +42,9 @@ export function RowActions({ id, active }: { id: number; active: boolean }) {
   const [pending, start] = useTransition();
   const router = useRouter();
   return (
-    <span className="flex items-center gap-1 text-[#8494AB]">
-      <a href={`/admin/redirects?edit=${id}#form`} className="rounded p-1 hover:text-[#0052CC]" title="Edit"><Pencil size={15} /></a>
-      <button disabled={pending} onClick={() => start(async () => { await toggleRedirect(id, !active); router.refresh(); })} className="rounded p-1 hover:text-[#0052CC]" title={active ? "Pause" : "Turn on"}>{active ? <Pause size={15} /> : <Play size={15} />}</button>
+    <span className="flex items-center gap-1 text-[#91919E]">
+      <a href={`/admin/redirects?edit=${id}#form`} className="rounded p-1 hover:text-[#A50D25]" title="Edit"><Pencil size={15} /></a>
+      <button disabled={pending} onClick={() => start(async () => { await toggleRedirect(id, !active); router.refresh(); })} className="rounded p-1 hover:text-[#A50D25]" title={active ? "Pause" : "Turn on"}>{active ? <Pause size={15} /> : <Play size={15} />}</button>
       <button disabled={pending} onClick={() => confirm("Delete this redirect?") && start(async () => { await deleteRedirect(id); router.refresh(); })} className="rounded p-1 hover:text-[#B42318]" title="Delete"><Trash2 size={15} /></button>
     </span>
   );

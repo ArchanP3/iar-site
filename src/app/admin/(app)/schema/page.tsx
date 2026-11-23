@@ -10,7 +10,7 @@ import SiteSchemaForm from "@/components/admin/SiteSchemaForm";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Schema />
     </Suspense>
   );
@@ -29,7 +29,7 @@ async function Schema() {
     readSetting("schema"), readSetting("business"), readSetting("site"),
   ]);
   const sample = JSON.stringify({
-    "@context": "https://schema.org", "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: biz.name, url: SITE_URL, logo: `${SITE_URL}/automiq-logo-v2.png`,
+    "@context": "https://schema.org", "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: biz.name, url: SITE_URL, logo: `${SITE_URL}/iar-logo.png`,
     ...(biz.phone ? { telephone: biz.phone } : {}), email: biz.email, sameAs: Object.values(site.social).filter(Boolean),
   }, null, 2);
   const typeOf = (s: string) => { try { const v = JSON.parse(s); return (Array.isArray(v) ? v : [v]).map((x) => x?.["@type"]).filter(Boolean).join(", "); } catch { return "invalid"; } };
@@ -44,12 +44,12 @@ async function Schema() {
       <div className="grid items-start gap-5 xl:grid-cols-[340px_1fr]">
         <Card title="Automatic schema found" icon={<CheckCircle2 size={17} />}>
           {types.length ? types.map((t) => (
-            <div key={t.t} className="flex items-center gap-2.5 border-b border-[#EEF3F9] py-2.5 last:border-0">
+            <div key={t.t} className="flex items-center gap-2.5 border-b border-[#F3F3F4] py-2.5 last:border-0">
               <CheckCircle2 size={16} className="text-[#12B76A]" />
-              <div className="min-w-0 flex-1"><b className="text-[13px]">{t.t}</b><div className="text-[12px] text-[#8494AB]">{WHERE[t.t] ?? "Detected on the site"}</div></div>
+              <div className="min-w-0 flex-1"><b className="text-[13px]">{t.t}</b><div className="text-[12px] text-[#91919E]">{WHERE[t.t] ?? "Detected on the site"}</div></div>
               <Pill>{t.n} pages</Pill>
             </div>
-          )) : <p className="text-[#8494AB]">Run a site scan (Dashboard or Pages) to list the schema on every page.</p>}
+          )) : <p className="text-[#91919E]">Run a site scan (Dashboard or Pages) to list the schema on every page.</p>}
         </Card>
         <div className="flex flex-col gap-5">
           <Card title="Custom schema on pages" icon={<Braces size={17} />} right={<Link href="/admin/pages" className={b("light", true)}><Pencil size={13} /> Add to a page</Link>} pad={false}>
@@ -59,12 +59,12 @@ async function Schema() {
                   <tr key={c.path}>
                     <td className="font-mono text-[12.5px]">{c.path}</td>
                     <td><Pill tone={typeOf(c.schema_json) === "invalid" ? "bad" : "blue"}>{typeOf(c.schema_json) || "—"}</Pill></td>
-                    <td className="text-[#5B6B84]">{ago(c.updated_at)}{c.updated_by ? ` · ${c.updated_by}` : ""}</td>
+                    <td className="text-[#696976]">{ago(c.updated_at)}{c.updated_by ? ` · ${c.updated_by}` : ""}</td>
                     <td className="text-right"><Link href={`/admin/pages/edit?path=${encodeURIComponent(c.path)}`} className={b("light", true)}>Edit</Link></td>
                   </tr>
                 ))}
               </Table>
-            ) : <p className="p-6 text-[#8494AB]">No custom schema yet. Open a page in Pages, then the <b>Schema</b> tab, to add JSON-LD with templates and live validation.</p>}
+            ) : <p className="p-6 text-[#91919E]">No custom schema yet. Open a page in Pages, then the <b>Schema</b> tab, to add JSON-LD with templates and live validation.</p>}
           </Card>
           <Card title="Site-wide schema" icon={<Globe size={17} />}>
             <SiteSchemaForm value={schema.site} sample={sample} />

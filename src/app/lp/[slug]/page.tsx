@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { onThisSite, SITE_URL } from "@/lib/site";
 import { landingByPath, landingTemplate, type CmsLanding } from "@/lib/cms/content";
 import { PageExtras, withSeo } from "@/lib/cms/seo";
@@ -57,7 +57,7 @@ async function Content({ params }: Props) {
             "@type": "LocalBusiness",
             name: "AutomIQ Automation & Drive Services",
             url: SITE_URL,
-            image: `${SITE_URL}/automiq-logo-v2.png`,
+            image: `${SITE_URL}/iar-logo.png`,
             ...(c.phone ? { telephone: c.phone } : {}),
             email: c.email,
             address: { "@type": "PostalAddress", ...(c.street ? { streetAddress: c.street } : {}), addressLocality: c.city || "Mississauga", addressRegion: c.region || "ON", addressCountry: "CA" },
@@ -68,7 +68,7 @@ async function Content({ params }: Props) {
     ],
   };
   return (
-    <main className={`${montserrat.className} min-h-screen bg-[#F4F7FB] text-[#0B1A3C]`}>
+    <main className={`${brandFont.className} min-h-screen bg-[#F7F7F8] text-[#131316]`}>
       <PageExtras path={d.page.path} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld).replace(/</g, "\\u003c") }} />
       <Header />

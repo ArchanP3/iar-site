@@ -12,7 +12,7 @@ type Props = { searchParams: Promise<{ days?: string }> };
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading Google data…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading Google data…</p>}>
       <Perf {...props} />
     </Suspense>
   );
@@ -33,7 +33,7 @@ function Rows({ rows, page }: { rows: GscRow[]; page?: boolean }) {
     <Table head={[page ? "Page" : "Search term", "Clicks", "Impressions", "CTR", "Position"]}>
       {rows.map((r) => (
         <tr key={r.keys[0]}>
-          <td className="max-w-90 truncate font-semibold">{page ? <a href={r.keys[0]} target="_blank" className="font-mono text-[12px] hover:text-[#0052CC]">{short(r.keys[0])}</a> : r.keys[0]}</td>
+          <td className="max-w-90 truncate font-semibold">{page ? <a href={r.keys[0]} target="_blank" className="font-mono text-[12px] hover:text-[#A50D25]">{short(r.keys[0])}</a> : r.keys[0]}</td>
           <td>{r.clicks.toLocaleString()}</td><td>{r.impressions.toLocaleString()}</td><td>{pct(r.ctr)}</td><td>{r.position.toFixed(1)}</td>
         </tr>
       ))}
@@ -60,12 +60,12 @@ async function Perf({ searchParams }: Props) {
       {s.configured && (
         <>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {tiles.map(([l, n, d]) => <Card key={l}><div className="text-[12.5px] font-semibold text-[#5B6B84]">{l}</div><div className="mt-1 flex items-baseline gap-2"><span className="text-[26px] font-extrabold">{n}</span>{d}</div><div className="text-[11.5px] text-[#8494AB]">vs previous {days} days</div></Card>)}
+            {tiles.map(([l, n, d]) => <Card key={l}><div className="text-[12.5px] font-semibold text-[#696976]">{l}</div><div className="mt-1 flex items-baseline gap-2"><span className="text-[26px] font-extrabold">{n}</span>{d}</div><div className="text-[11.5px] text-[#91919E]">vs previous {days} days</div></Card>)}
           </div>
           <Card title="Clicks and impressions"><LineChart a={s.daily.map((d) => d.clicks)} b={s.daily.map((d) => d.impressions)} labels={s.daily.map((d) => d.date.slice(5))} /></Card>
           {!!s.opportunities.length && (
             <Card title="Quick wins: terms on page 1–2 of Google" icon={<Lightbulb size={17} />} pad={false}>
-              <p className="px-5 pb-2 pt-3 text-[12.5px] text-[#5B6B84]">People already see the site for these, ranked 8–25. A better title, a paragraph that answers the search, or an internal link can move them to the top of page 1.</p>
+              <p className="px-5 pb-2 pt-3 text-[12.5px] text-[#696976]">People already see the site for these, ranked 8–25. A better title, a paragraph that answers the search, or an internal link can move them to the top of page 1.</p>
               <Rows rows={s.opportunities} />
             </Card>
           )}
@@ -77,7 +77,7 @@ async function Perf({ searchParams }: Props) {
       )}
       <div className="grid items-start gap-5 xl:grid-cols-2">
         <Card title="Visitors by channel (Google Analytics)">
-          {!ga.configured ? <p className="text-[12.5px] text-[#5B6B84]">Add the GA4 Property ID in the Google connection box to see where visitors come from.</p> : ga.error ? <Alert tone="bad">{ga.error}</Alert> : (
+          {!ga.configured ? <p className="text-[12.5px] text-[#696976]">Add the GA4 Property ID in the Google connection box to see where visitors come from.</p> : ga.error ? <Alert tone="bad">{ga.error}</Alert> : (
             <div className="flex flex-col gap-3">
               <p className="text-[13px]"><b>{ga.sessions?.toLocaleString()}</b> visits · <b>{ga.users?.toLocaleString()}</b> people in the last {days} days</p>
               {ga.channels?.slice(0, 8).map((c) => <div key={c.name}><div className="mb-1 flex text-[12.5px]"><span className="font-semibold">{c.name}</span><b className="ml-auto">{c.sessions.toLocaleString()}</b></div><Bar pct={(c.sessions / (ga.channels?.[0]?.sessions || 1)) * 100} color="#7C3AED" /></div>)}
@@ -85,12 +85,12 @@ async function Perf({ searchParams }: Props) {
           )}
         </Card>
         <Card title="Speed (Core Web Vitals, mobile)" icon={<Gauge size={17} />}>
-          {!v.ok ? <p className="text-[12.5px] text-[#5B6B84]">{v.error && !/fetch failed|ENOTFOUND|ECONN/i.test(v.error) ? v.error : "Couldn't reach Google PageSpeed right now. Try again later."}</p> : (
+          {!v.ok ? <p className="text-[12.5px] text-[#696976]">{v.error && !/fetch failed|ENOTFOUND|ECONN/i.test(v.error) ? v.error : "Couldn't reach Google PageSpeed right now. Try again later."}</p> : (
             <div className="grid grid-cols-2 gap-4 text-[13px] sm:grid-cols-4">
               {[["Score", v.score != null ? String(v.score) : "—", (v.score ?? 0) >= 90], ["LCP", v.lcp != null ? `${(v.lcp / 1000).toFixed(1)} s` : "—", (v.lcp ?? 9e9) <= 2500], ["INP", v.inp != null ? `${v.inp} ms` : "—", (v.inp ?? 9e9) <= 200], ["CLS", v.cls != null ? v.cls.toFixed(2) : "—", (v.cls ?? 9) <= 0.1]].map(([l, n, ok]) => (
-                <div key={String(l)}><div className="text-[12px] font-semibold text-[#5B6B84]">{l}</div><div className={`text-[22px] font-extrabold ${ok ? "text-[#067647]" : "text-[#B45309]"}`}>{n}</div></div>
+                <div key={String(l)}><div className="text-[12px] font-semibold text-[#696976]">{l}</div><div className={`text-[22px] font-extrabold ${ok ? "text-[#067647]" : "text-[#B45309]"}`}>{n}</div></div>
               ))}
-              <p className="col-span-full text-[11.5px] text-[#8494AB]">{v.field ? "From real visitors in Chrome (last 28 days)." : "Lab test. Real-visitor data appears once the site has enough traffic."} Home page.</p>
+              <p className="col-span-full text-[11.5px] text-[#91919E]">{v.field ? "From real visitors in Chrome (last 28 days)." : "Lab test. Real-visitor data appears once the site has enough traffic."} Home page.</p>
             </div>
           )}
         </Card>

@@ -25,7 +25,7 @@ async function Preview({ params }: Props) {
   const tpl = page.template_id ? await one<CmsLanding>(`SELECT * FROM cms.cms_landing WHERE id = $1`, [page.template_id]) : null;
   const vars = { ...(tpl?.vars ?? {}), ...page.vars };
   return (
-    <div className="min-h-screen bg-[#F4F7FB] text-[#0B1A3C]">
+    <div className="min-h-screen bg-[#F7F7F8] text-[#131316]">
       <div className="sticky top-0 z-70 bg-[#F59E0B] px-4 py-2 text-center text-[13px] font-bold text-[#3B2500]">
         Preview{page.kind === "template" ? ` of template with sample city: ${vars.city ?? ""}` : page.status !== "published" ? " — this draft is not live yet" : ""}
       </div>

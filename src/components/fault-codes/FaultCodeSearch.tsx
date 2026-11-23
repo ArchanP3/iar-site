@@ -90,13 +90,13 @@ export default function FaultCodeSearch({
     >
       <form
         role="search"
-        className="flex items-center gap-2 rounded-2xl border border-white/15 bg-white/8 p-1.5 pl-4 shadow-[0_24px_60px_-30px_rgba(0,102,255,0.9)]"
+        className="flex items-center gap-2 rounded-2xl border border-white/15 bg-white/8 p-1.5 pl-4 shadow-[0_24px_60px_-30px_rgba(200, 16, 46,0.9)]"
         onSubmit={(e) => {
           e.preventDefault();
           go(hits[active]);
         }}
       >
-        <Search size={19} className="shrink-0 text-[#7FD3FF]" aria-hidden="true" />
+        <Search size={19} className="shrink-0 text-[#FF8A99]" aria-hidden="true" />
         <label htmlFor={inputId} className="sr-only">
           Search fault codes
         </label>
@@ -124,14 +124,14 @@ export default function FaultCodeSearch({
         />
         <button
           type="submit"
-          className={`inline-flex ${h} shrink-0 items-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-4 text-[14.5px] font-semibold text-white sm:px-5`}
+          className={`inline-flex ${h} shrink-0 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-4 text-[14.5px] font-semibold text-white sm:px-5`}
         >
           {button} <ArrowRight size={16} aria-hidden="true" />
         </button>
       </form>
 
       {open && (hits.length > 0 || noMatch) && (
-        <ul className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#0E1C3F] text-white shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)]">
+        <ul className="absolute inset-x-0 top-full z-30 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#242429] text-white shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)]">
           {hits.map((r, i) => (
             <li key={r[3]} className={i ? "border-t border-white/6" : ""}>
               <Link
@@ -151,7 +151,7 @@ export default function FaultCodeSearch({
           {noMatch && (
             <li className="px-4 py-3 text-[13.5px] text-white/75">
               No match yet.{" "}
-              <Link href={`/request-repair?service=question&fault=${encodeURIComponent(q.trim())}`} className="font-semibold text-[#4DB8FF]">
+              <Link href={`/request-repair?service=question&fault=${encodeURIComponent(q.trim())}`} className="font-semibold text-[#FF5A6E]">
                 Send the code to a technician
               </Link>{" "}
               and we&apos;ll tell you what it means.

@@ -32,25 +32,25 @@ export default function BrandFinder({
   return (
     <div className="relative">
       <label htmlFor={id} className="sr-only">{placeholder}</label>
-      <Search size={15} className="pointer-events-none absolute left-3 top-5.5 -translate-y-1/2 text-[#005AE0]" aria-hidden="true" />
+      <Search size={15} className="pointer-events-none absolute left-3 top-5.5 -translate-y-1/2 text-[#B30E29]" aria-hidden="true" />
       <input
         id={id}
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder={placeholder}
         autoComplete="off"
-        className="h-11 w-full rounded-xl border border-[#D9E4F1] bg-white pl-9 pr-3 text-[16px] text-[#0B1A3C] outline-none placeholder:text-[#7A8BA3] focus:border-[#0066FF] sm:text-[14px]"
+        className="h-11 w-full rounded-xl border border-[#F0DADD] bg-white pl-9 pr-3 text-[16px] text-[#131316] outline-none placeholder:text-[#888895] focus:border-[#C8102E] sm:text-[14px]"
       />
       {t && (
-        <ul className="absolute inset-x-0 top-full z-20 mt-1.5 max-h-80 overflow-y-auto rounded-xl border border-[#E3EAF3] bg-white shadow-[0_24px_48px_-24px_rgba(11,26,60,0.45)]" aria-label="Matching manufacturers">
+        <ul className="absolute inset-x-0 top-full z-20 mt-1.5 max-h-80 overflow-y-auto rounded-xl border border-[#EAEAEC] bg-white shadow-[0_24px_48px_-24px_rgba(19, 19, 22,0.45)]" aria-label="Matching manufacturers">
           {hits.map((b) => (
             <li key={b.slug}>
-              <Link href={`${prefix}${b.slug}`} onClick={onPick} rel={prefix.includes("?") ? "nofollow" : undefined} className="block px-3 py-2.5 text-[14px] font-semibold text-[#0B1A3C] hover:bg-[#F4F7FB] hover:text-[#005AE0]">
+              <Link href={`${prefix}${b.slug}`} onClick={onPick} rel={prefix.includes("?") ? "nofollow" : undefined} className="block px-3 py-2.5 text-[14px] font-semibold text-[#131316] hover:bg-[#F7F7F8] hover:text-[#B30E29]">
                 {b.name}
               </Link>
             </li>
           ))}
-          {!hits.length && <li className="px-3 py-2.5 text-[13.5px] text-[#5B6B84]">No manufacturer matches &ldquo;{q.trim()}&rdquo;.</li>}
+          {!hits.length && <li className="px-3 py-2.5 text-[13.5px] text-[#696976]">No manufacturer matches &ldquo;{q.trim()}&rdquo;.</li>}
         </ul>
       )}
     </div>

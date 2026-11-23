@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/request/QuoteForm";
 import NextSteps from "@/components/request/NextSteps";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-quote", {
@@ -44,14 +44,14 @@ const schema = {
 
 export default function RequestQuotePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   return (
-    <main className={`${montserrat.className} min-h-screen bg-[#F4F7FB]`}>
+    <main className={`${brandFont.className} min-h-screen bg-[#F7F7F8]`}>
       <PageExtras path="/request-quote" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Header />
 
-      <section className="relative overflow-hidden bg-[#050B18] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(0,176,255,0.3),transparent)] blur-2xl" />
+      <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -61,7 +61,7 @@ export default function RequestQuotePage({ searchParams }: { searchParams: Promi
             </ol>
           </nav>
           <h1 className="mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">
-            Request a <span className="bg-linear-to-r from-[#7FD3FF] to-[#00B0FF] bg-clip-text text-transparent">Quote</span>
+            Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Quote</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
             New, surplus, refurbished and obsolete automation parts. Send the part number and get price, condition and lead time.
@@ -77,27 +77,27 @@ export default function RequestQuotePage({ searchParams }: { searchParams: Promi
 
       <section aria-label="Quote tips and questions" className="mx-auto grid max-w-310 gap-5 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_360px]">
         <div>
-          <h2 className="text-[20px] font-extrabold text-[#0B1A3C]">Tips for a fast quote</h2>
+          <h2 className="text-[20px] font-extrabold text-[#131316]">Tips for a fast quote</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-3">
             {tips.map(([t, d, Icon]) => (
-              <li key={t} className="rounded-2xl border border-[#E3EAF3] bg-white p-4">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><Icon size={17} aria-hidden="true" /></span>
-                <h3 className="mt-2.5 text-[14px] font-bold text-[#0B1A3C]">{t}</h3>
-                <p className="mt-0.5 text-[12.5px] leading-[1.55] text-[#56677F]">{d}</p>
+              <li key={t} className="rounded-2xl border border-[#EAEAEC] bg-white p-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Icon size={17} aria-hidden="true" /></span>
+                <h3 className="mt-2.5 text-[14px] font-bold text-[#131316]">{t}</h3>
+                <p className="mt-0.5 text-[12.5px] leading-[1.55] text-[#646471]">{d}</p>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h2 className="text-[20px] font-extrabold text-[#0B1A3C]">Quick answers</h2>
-          <div className="mt-3 divide-y divide-[#E3EAF3] rounded-2xl border border-[#E3EAF3] bg-white">
+          <h2 className="text-[20px] font-extrabold text-[#131316]">Quick answers</h2>
+          <div className="mt-3 divide-y divide-[#EAEAEC] rounded-2xl border border-[#EAEAEC] bg-white">
             {faqs.map(([q, a], i) => (
               <details key={q} className="group px-4" open={i === 0}>
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                  <h3 className="text-[13.5px] font-bold text-[#0B1A3C]">{q}</h3>
-                  <Plus size={15} className="shrink-0 text-[#005AE0] transition group-open:rotate-45" aria-hidden="true" />
+                  <h3 className="text-[13.5px] font-bold text-[#131316]">{q}</h3>
+                  <Plus size={15} className="shrink-0 text-[#B30E29] transition group-open:rotate-45" aria-hidden="true" />
                 </summary>
-                <p className="-mt-1 pb-3 text-[12.5px] leading-[1.6] text-[#56677F]">{a}</p>
+                <p className="-mt-1 pb-3 text-[12.5px] leading-[1.6] text-[#646471]">{a}</p>
               </details>
             ))}
           </div>

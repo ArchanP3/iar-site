@@ -65,17 +65,17 @@ export default function InternationalPage() {
       <PageExtras path="/international" />
 
       {/* For Canada & USA buyers */}
-      <div className="flex flex-col gap-3 rounded-[22px] border border-[#BFD8FF] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(0,82,204,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div className="flex flex-col gap-3 rounded-[22px] border border-[#FCC2CB] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165, 13, 37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex items-start gap-3">
-          <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><ShoppingCart size={19} aria-hidden="true" /></span>
+          <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><ShoppingCart size={19} aria-hidden="true" /></span>
           <div>
             <p className="text-[15px] font-extrabold">In Canada or the USA? You don&apos;t need a quote.</p>
-            <p className="text-[13.5px] text-[#52647F]">Buy parts online with Buy Now and check out directly, or request a repair.</p>
+            <p className="text-[13.5px] text-[#62626F]">Buy parts online with Buy Now and check out directly, or request a repair.</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link href="/shop" className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#0B1A3C] px-4 text-[13.5px] font-semibold text-white hover:bg-[#0052CC]"><ShoppingCart size={15} aria-hidden="true" /> Shop Parts</Link>
-          <Link href="/request-repair" className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#D9E4F1] px-4 text-[13.5px] font-semibold hover:border-[#0066FF] hover:text-[#0052CC]"><Wrench size={15} aria-hidden="true" /> Request a Repair</Link>
+          <Link href="/shop" className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#131316] px-4 text-[13.5px] font-semibold text-white hover:bg-[#A50D25]"><ShoppingCart size={15} aria-hidden="true" /> Shop Parts</Link>
+          <Link href="/request-repair" className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#F0DADD] px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Wrench size={15} aria-hidden="true" /> Request a Repair</Link>
         </div>
       </div>
 
@@ -83,13 +83,13 @@ export default function InternationalPage() {
       <div id="quote" className="mt-6 grid scroll-mt-28 items-start gap-5 lg:grid-cols-[minmax(0,1fr)_360px]">
         <InternationalQuoteForm />
         <aside className="space-y-3 lg:sticky lg:top-28">
-          <div className="relative overflow-hidden rounded-[24px] bg-[#050B18] p-6 text-white">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.55),transparent)] blur-xl" />
-            <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7FD3FF]">How international orders work</p>
+          <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">How international orders work</p>
             <ol className="relative mt-4 space-y-3.5">
               {steps.map(([t, Icon], i) => (
                 <li key={t} className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15"><Icon size={16} className="text-[#7FD3FF]" aria-hidden="true" /></span>
+                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15"><Icon size={16} className="text-[#FF8A99]" aria-hidden="true" /></span>
                   <span className="text-[13.5px] font-semibold"><span className="mr-1.5 text-white/60">0{i + 1}</span>{t}</span>
                 </li>
               ))}
@@ -108,14 +108,14 @@ export default function InternationalPage() {
       </div>
 
       {/* Where we ship */}
-      <section aria-labelledby="where" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10 bg-[#050B18] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(0,102,255,0.75)]">
+      <section aria-labelledby="where" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.4),transparent)] blur-2xl" />
-          <span className="absolute inset-0 bg-[linear-gradient(rgba(127,211,255,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(127,211,255,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
+          <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.4),transparent)] blur-2xl" />
+          <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
         </div>
         <div className="relative grid items-center gap-6 p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-10">
           <div className="min-w-0">
-            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7FD3FF]"><Globe2 size={15} aria-hidden="true" /> Where we ship</p>
+            <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]"><Globe2 size={15} aria-hidden="true" /> Where we ship</p>
             <h2 id="where" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[32px]">From Mississauga to plants across three continents</h2>
             <div className="mt-6 space-y-4">
               {regions.map(([r, list]) => (
@@ -143,10 +143,10 @@ export default function InternationalPage() {
         <h2 id="know" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">Good to know before you order</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {good.map(([Icon, t, d]) => (
-            <li key={t} className="rounded-[22px] border border-[#E3EAF3] bg-white p-5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><Icon size={20} aria-hidden="true" /></span>
+            <li key={t} className="rounded-[22px] border border-[#EAEAEC] bg-white p-5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Icon size={20} aria-hidden="true" /></span>
               <h3 className="mt-3 text-[15.5px] font-extrabold">{t}</h3>
-              <p className="mt-1 text-[13px] leading-relaxed text-[#52647F]">{d}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-[#62626F]">{d}</p>
             </li>
           ))}
         </ul>
@@ -156,23 +156,23 @@ export default function InternationalPage() {
       <section aria-labelledby="ifaq" className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
         <div>
           <h2 id="ifaq" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">International questions</h2>
-          <div className="mt-4 divide-y divide-[#E3EAF3] overflow-hidden rounded-[22px] border border-[#E3EAF3] bg-white">
+          <div className="mt-4 divide-y divide-[#EAEAEC] overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white">
             {faqs.map(([q, a], i) => (
               <details key={q} className="group px-5 py-4" open={i === 0}>
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
                   <h3 className="text-[15px] font-bold">{q}</h3>
-                  <Plus size={16} className="flex-none text-[#005AE0] transition group-open:rotate-45" aria-hidden="true" />
+                  <Plus size={16} className="flex-none text-[#B30E29] transition group-open:rotate-45" aria-hidden="true" />
                 </summary>
-                <p className="mt-2 text-[14px] leading-relaxed text-[#52647F]">{a}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[#62626F]">{a}</p>
               </details>
             ))}
           </div>
         </div>
-        <div className="self-start rounded-[22px] bg-linear-to-br from-[#0B1A3C] to-[#0A2A6E] p-6 text-white">
-          <Truck size={22} className="text-[#7FD3FF]" aria-hidden="true" />
+        <div className="self-start rounded-[22px] bg-linear-to-br from-[#131316] to-[#5E0D1A] p-6 text-white">
+          <Truck size={22} className="text-[#FF8A99]" aria-hidden="true" />
           <p className="mt-3 text-[18px] font-extrabold">Ready for a quote?</p>
           <p className="mt-1 text-[13.5px] text-white/70">Send your part numbers. No payment until you confirm the quote.</p>
-          <a href="#quote" className="mt-4 inline-flex h-11 items-center gap-2 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#0B1A3C]">Request a Quote <ArrowRight size={15} aria-hidden="true" /></a>
+          <a href="#quote" className="mt-4 inline-flex h-11 items-center gap-2 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#131316]">Request a Quote <ArrowRight size={15} aria-hidden="true" /></a>
           <p className="mt-4 flex items-center gap-1.5 text-[12.5px] text-white/60"><PackageCheck size={14} aria-hidden="true" /> <Link href="/resources/shipping" className="hover:text-white">Shipping guide</Link></p>
         </div>
       </section>

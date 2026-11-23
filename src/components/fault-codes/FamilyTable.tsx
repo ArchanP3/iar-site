@@ -25,14 +25,14 @@ function rowsHtml(rows: TableRow[]) {
    FamilyFilter, a small client script, only shows/hides rows. */
 const tableStyles = [
   "w-full table-fixed border-collapse text-left text-[14px]",
-  "[&_tbody_tr]:border-t [&_tbody_tr]:border-[#EEF3F9] [&_tbody_tr:nth-child(even)]:bg-[#F9FBFE]",
+  "[&_tbody_tr]:border-t [&_tbody_tr]:border-[#F3F3F4] [&_tbody_tr:nth-child(even)]:bg-[#FBFBFC]",
   "[&_td]:px-2 [&_td]:py-3 [&_td]:align-top",
   "[&_td:first-child]:pl-4 [&_td:first-child]:font-mono [&_td:first-child]:text-[13.5px] [&_td:first-child]:font-bold",
   "[&_td:nth-child(2)]:font-medium",
-  "[&_td:nth-child(3)]:hidden [&_td:nth-child(3)]:text-[13px] [&_td:nth-child(3)]:text-[#52647F] md:[&_td:nth-child(3)]:table-cell",
+  "[&_td:nth-child(3)]:hidden [&_td:nth-child(3)]:text-[13px] [&_td:nth-child(3)]:text-[#62626F] md:[&_td:nth-child(3)]:table-cell",
   "[&_td:last-child]:pr-4 [&_td:last-child]:text-right",
-  "[&_td_a]:inline-flex [&_td_a]:rounded-lg [&_td_a]:bg-[#0066FF]/8 [&_td_a]:px-2.5 [&_td_a]:py-1 [&_td_a]:text-[12.5px] [&_td_a]:font-semibold [&_td_a]:text-[#0052CC] [&_td_a:hover]:bg-[#0066FF]/[0.14]",
-  "[&_td_button]:text-[12.5px] [&_td_button]:text-[#56677F] [&_td_button:hover]:text-[#005AE0]",
+  "[&_td_a]:inline-flex [&_td_a]:rounded-lg [&_td_a]:bg-[#C8102E]/8 [&_td_a]:px-2.5 [&_td_a]:py-1 [&_td_a]:text-[12.5px] [&_td_a]:font-semibold [&_td_a]:text-[#A50D25] [&_td_a:hover]:bg-[#C8102E]/[0.14]",
+  "[&_td_button]:text-[12.5px] [&_td_button]:text-[#646471] [&_td_button:hover]:text-[#B30E29]",
 ].join(" ");
 
 export default function FamilyTable({ rows, label, askHref }: { rows: TableRow[]; label: string; askHref: string }) {
@@ -45,10 +45,10 @@ export default function FamilyTable({ rows, label, askHref }: { rows: TableRow[]
     <div>
       <FamilyFilter tableId={id} label={label} total={rows.length} areas={areas} page={PAGE} askHref={askHref} />
 
-      <div className="mt-4 overflow-hidden rounded-2xl border border-[#E3EAF3]">
+      <div className="mt-4 overflow-hidden rounded-2xl border border-[#EAEAEC]">
         <table id={id} className={tableStyles}>
           <caption className="sr-only">{label} fault codes</caption>
-          <thead className="bg-[#0B1A3C] text-[11.5px] font-semibold uppercase tracking-[0.12em] text-white/80">
+          <thead className="bg-[#131316] text-[11.5px] font-semibold uppercase tracking-[0.12em] text-white/80">
             <tr>
               <th scope="col" className="w-23 px-4 py-3 sm:w-27.5">Code</th>
               <th scope="col" className="px-2 py-3">Name</th>
@@ -58,12 +58,12 @@ export default function FamilyTable({ rows, label, askHref }: { rows: TableRow[]
           </thead>
           <tbody dangerouslySetInnerHTML={{ __html: rowsHtml(rows) }} />
         </table>
-        <div className="flex items-center justify-between gap-3 border-t border-[#E3EAF3] bg-[#F7FAFE] px-4 py-3 text-[13px] text-[#52647F]">
+        <div className="flex items-center justify-between gap-3 border-t border-[#EAEAEC] bg-[#FAFAFB] px-4 py-3 text-[13px] text-[#62626F]">
           <span id={`${id}-status`}>
             Showing {Math.min(PAGE, rows.length)} of {rows.length.toLocaleString("en-US")} codes
           </span>
           {rows.length > PAGE && (
-            <button id={`${id}-more`} type="button" className="font-semibold text-[#005AE0] hover:underline">
+            <button id={`${id}-more`} type="button" className="font-semibold text-[#B30E29] hover:underline">
               Show all
             </button>
           )}

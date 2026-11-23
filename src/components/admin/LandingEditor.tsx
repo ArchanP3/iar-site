@@ -61,14 +61,14 @@ export default function LandingEditor({ page, isNew, templates, services, brands
       {picker !== null && <MediaPicker onClose={() => setPicker(null)} onPick={(m) => { set(picker, { image: m.url, alt: m.alt } as Partial<Block>); setPicker(null); }} />}
 
       <Card title="Add a block">
-        {fromTemplate ? <p className="text-[12.5px] text-[#5B6B84]">This page uses the <b>{tName}</b> template. Edit the template to change the layout of every page made from it.</p> : (
+        {fromTemplate ? <p className="text-[12.5px] text-[#696976]">This page uses the <b>{tName}</b> template. Edit the template to change the layout of every page made from it.</p> : (
           <div className="flex flex-col gap-2">
             {LIB.map((l) => (
-              <button type="button" key={l.type} onClick={() => { setBlocks([...blocks, l.make(isTemplate)]); setOpen(blocks.length); }} className="flex items-center gap-2.5 rounded-[10px] border border-[#E3EAF3] bg-white px-2.5 py-2 text-left text-[12.8px] font-semibold hover:border-[#0066FF]">
-                <l.icon size={15} className="text-[#5B6B84]" />{l.label}<Plus size={14} className="ml-auto text-[#8494AB]" />
+              <button type="button" key={l.type} onClick={() => { setBlocks([...blocks, l.make(isTemplate)]); setOpen(blocks.length); }} className="flex items-center gap-2.5 rounded-[10px] border border-[#EAEAEC] bg-white px-2.5 py-2 text-left text-[12.8px] font-semibold hover:border-[#C8102E]">
+                <l.icon size={15} className="text-[#696976]" />{l.label}<Plus size={14} className="ml-auto text-[#91919E]" />
               </button>
             ))}
-            <p className="mt-1 text-[11.5px] text-[#8494AB]">Blocks use the website&apos;s own design, so new pages always match the brand.</p>
+            <p className="mt-1 text-[11.5px] text-[#91919E]">Blocks use the website&apos;s own design, so new pages always match the brand.</p>
           </div>
         )}
       </Card>
@@ -82,21 +82,21 @@ export default function LandingEditor({ page, isNew, templates, services, brands
               ))}
             </div>
           </Card>
-        ) : blocks.length === 0 ? <Card><p className="py-8 text-center text-[#8494AB]">Add blocks from the left to build the page.</p></Card> : blocks.map((bl, i) => {
+        ) : blocks.length === 0 ? <Card><p className="py-8 text-center text-[#91919E]">Add blocks from the left to build the page.</p></Card> : blocks.map((bl, i) => {
           const L = LIB.find((l) => l.type === bl.type)!;
           const isOpen = open === i;
           return (
-            <div key={i} className={cx("overflow-hidden rounded-2xl border bg-white", isOpen ? "border-[#0066FF]" : "border-[#E3EAF3]")}>
+            <div key={i} className={cx("overflow-hidden rounded-2xl border bg-white", isOpen ? "border-[#C8102E]" : "border-[#EAEAEC]")}>
               <div className="flex items-center gap-2 px-4 py-2.5">
                 <button type="button" onClick={() => setOpen(isOpen ? null : i)} className="flex min-w-0 flex-1 items-center gap-2 text-left">
-                  {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}<L.icon size={15} className="text-[#0066FF]" /><b className="text-[13px]">{L.label}</b>
-                  <span className="truncate text-[12.5px] text-[#8494AB]">{"heading" in bl && bl.heading ? fill(bl.heading) : ""}</span>
+                  {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}<L.icon size={15} className="text-[#C8102E]" /><b className="text-[13px]">{L.label}</b>
+                  <span className="truncate text-[12.5px] text-[#91919E]">{"heading" in bl && bl.heading ? fill(bl.heading) : ""}</span>
                 </button>
-                <button type="button" disabled={i === 0} onClick={() => move(i, -1)} className="rounded p-1 text-[#8494AB] hover:text-[#0B1A3C] disabled:opacity-30"><ArrowUp size={15} /></button>
-                <button type="button" disabled={i === blocks.length - 1} onClick={() => move(i, 1)} className="rounded p-1 text-[#8494AB] hover:text-[#0B1A3C] disabled:opacity-30"><ArrowDown size={15} /></button>
-                <button type="button" onClick={() => { setBlocks(blocks.filter((_, k) => k !== i)); setOpen(null); }} className="rounded p-1 text-[#8494AB] hover:text-[#B42318]"><Trash2 size={15} /></button>
+                <button type="button" disabled={i === 0} onClick={() => move(i, -1)} className="rounded p-1 text-[#91919E] hover:text-[#131316] disabled:opacity-30"><ArrowUp size={15} /></button>
+                <button type="button" disabled={i === blocks.length - 1} onClick={() => move(i, 1)} className="rounded p-1 text-[#91919E] hover:text-[#131316] disabled:opacity-30"><ArrowDown size={15} /></button>
+                <button type="button" onClick={() => { setBlocks(blocks.filter((_, k) => k !== i)); setOpen(null); }} className="rounded p-1 text-[#91919E] hover:text-[#B42318]"><Trash2 size={15} /></button>
               </div>
-              {isOpen && <div className="border-t border-[#E3EAF3] bg-[#FAFCFE] p-4"><BlockFields b={bl} set={(p) => set(i, p)} services={services} brands={brands} pickImage={() => setPicker(i)} /></div>}
+              {isOpen && <div className="border-t border-[#EAEAEC] bg-[#FCFCFC] p-4"><BlockFields b={bl} set={(p) => set(i, p)} services={services} brands={brands} pickImage={() => setPicker(i)} /></div>}
             </div>
           );
         })}
@@ -106,7 +106,7 @@ export default function LandingEditor({ page, isNew, templates, services, brands
       <div className="flex flex-col gap-5 xl:sticky xl:top-20">
         <Card title={isTemplate ? "Template" : "Publish"} right={!isTemplate && live && <Pill tone={live.status === "published" ? "ok" : "warn"}>{live.status === "published" ? "Live" : "Draft"}</Pill>}>
           <div className="flex flex-col gap-3">
-            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Name <span className="font-semibold text-[#8494AB]">(for the CMS)</span></span><input name="name" defaultValue={page?.name ?? ""} required className={input} /></label>
+            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Name <span className="font-semibold text-[#91919E]">(for the CMS)</span></span><input name="name" defaultValue={page?.name ?? ""} required className={input} /></label>
             {isTemplate ? (
               <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">URL pattern for new pages</span><input value={vars.path_pattern ?? ""} onChange={(e) => setVars({ ...vars, path_pattern: e.target.value })} className={cx(input, "font-mono text-[12.5px]")} /></label>
             ) : (
@@ -122,29 +122,29 @@ export default function LandingEditor({ page, isNew, templates, services, brands
               </>
             )}
             {live && <a href={`/admin/preview/landing/${live.id}`} target="_blank" className={b("light", true)}><Eye size={13} /> Preview{isTemplate ? " with sample city" : ""}</a>}
-            {page && !isTemplate && page.status === "published" && <a href={page.path} target="_blank" className="truncate text-[12.5px] font-semibold text-[#0052CC]">View live: {page.path}</a>}
+            {page && !isTemplate && page.status === "published" && <a href={page.path} target="_blank" className="truncate text-[12.5px] font-semibold text-[#A50D25]">View live: {page.path}</a>}
           </div>
         </Card>
         <Card title="SEO">
           <div className="flex flex-col gap-3">
             <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">SEO title <span className="ml-auto" style={{ color: lenColor(tl, 30, 60) }}>{tl} / 60</span></span><input name="seo_title" value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} placeholder={isTemplate ? "Servo Drive Repair in {city}, {province} | AutomIQ" : ""} className={input} /><Bar pct={(tl / 60) * 100} color={lenColor(tl, 30, 60)} /></label>
             <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">Meta description <span className="ml-auto" style={{ color: lenColor(dl, 70, 160) }}>{dl} / 160</span></span><textarea name="seo_description" value={seoDesc} onChange={(e) => setSeoDesc(e.target.value)} rows={3} className={input} /><Bar pct={(dl / 160) * 100} color={lenColor(dl, 70, 160)} /></label>
-            {fromTemplate && !seoTitle && <p className="text-[11.5px] text-[#8494AB]">Empty = the template&apos;s title, filled in for this city.</p>}
-            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Show on</span><select name="site" defaultValue={page?.site ?? "both"} className={input}>{SITE_CHOICES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>{isTemplate && <span className="text-[11.5px] text-[#8494AB]">Pages made from this template get the same setting.</span>}</label>
+            {fromTemplate && !seoTitle && <p className="text-[11.5px] text-[#91919E]">Empty = the template&apos;s title, filled in for this city.</p>}
+            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Show on</span><select name="site" defaultValue={page?.site ?? "both"} className={input}>{SITE_CHOICES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>{isTemplate && <span className="text-[11.5px] text-[#91919E]">Pages made from this template get the same setting.</span>}</label>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Sitemap</span><select name="in_sitemap" defaultValue={page?.in_sitemap ?? (isTemplate ? "locations" : "pages")} className={input}><option value="pages">Pages sitemap</option><option value="locations">Locations sitemap</option></select></label>
-            <div className="rounded-xl border border-[#E3EAF3] p-3 font-[Arial,sans-serif]">
-              <div className="text-[11.5px] text-[#4D5156]">{site.replace(/^https?:\/\//, "")}{isTemplate ? fill((vars.path_pattern ?? "").replace("{city_slug}", (vars.city ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "-"))) : path}</div>
-              <div className="mt-1 text-[16px] leading-tight text-[#1A0DAB]">{fill(seoTitle) || page?.name || "Page title"}</div>
-              <div className="mt-0.5 text-[12.5px] text-[#4D5156]">{fill(seoDesc) || "Add a meta description."}</div>
+            <div className="rounded-xl border border-[#EAEAEC] p-3 font-[Arial,sans-serif]">
+              <div className="text-[11.5px] text-[#4D4D56]">{site.replace(/^https?:\/\//, "")}{isTemplate ? fill((vars.path_pattern ?? "").replace("{city_slug}", (vars.city ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "-"))) : path}</div>
+              <div className="mt-1 text-[16px] leading-tight text-[#931326]">{fill(seoTitle) || page?.name || "Page title"}</div>
+              <div className="mt-0.5 text-[12.5px] text-[#4D4D56]">{fill(seoDesc) || "Add a meta description."}</div>
             </div>
           </div>
         </Card>
         {isTemplate && live && (
           <Card title="Create pages from this template" icon={<MapPin size={16} />}>
             <div className="flex flex-col gap-2.5">
-              <p className="text-[12.5px] text-[#5B6B84]">One per line: <b>City, Province</b>. {usedBy > 0 && `${usedBy} pages already use this template.`}</p>
+              <p className="text-[12.5px] text-[#696976]">One per line: <b>City, Province</b>. {usedBy > 0 && `${usedBy} pages already use this template.`}</p>
               <textarea form="gen" name="lines" rows={5} placeholder={"Burlington, ON\nGuelph, ON\nColumbus, OH"} className={input} />
-              <label className="flex items-center gap-2 text-[12.5px]"><input form="gen" type="checkbox" name="publish" className="h-4 w-4 accent-[#0066FF]" /> Publish right away</label>
+              <label className="flex items-center gap-2 text-[12.5px]"><input form="gen" type="checkbox" name="publish" className="h-4 w-4 accent-[#C8102E]" /> Publish right away</label>
               <button form="gen" disabled={generating} className={b("dark")}>{generating ? "Creating…" : "Create pages"}</button>
               {gen?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{gen.ok}</Alert>}
               {gen?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{gen.error}</Alert>}
@@ -164,7 +164,7 @@ function GenForm({ id, action }: { id: number; action: (fd: FormData) => void })
 }
 
 function F({ label, children }: { label: string; children: React.ReactNode }) {
-  return <label className="flex flex-col gap-1.5"><span className="text-[12px] font-bold text-[#33445F]">{label}</span>{children}</label>;
+  return <label className="flex flex-col gap-1.5"><span className="text-[12px] font-bold text-[#45454D]">{label}</span>{children}</label>;
 }
 
 function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; set: (p: Partial<Block>) => void; services: { slug: string; title: string }[]; brands: { slug: string; name: string }[]; pickImage: () => void }) {
@@ -183,9 +183,9 @@ function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; se
     case "text":
       return <div className="grid gap-3"><F label="Heading">{t("heading", bl.heading)}</F><F label="Text (Markdown)">{t("body", bl.body, true, 8)}</F></div>;
     case "services":
-      return <div className="grid gap-3"><F label="Heading">{t("heading", bl.heading)}</F><div className="grid max-h-56 grid-cols-2 gap-1.5 overflow-y-auto rounded-xl border border-[#E3EAF3] bg-white p-2">{services.map((s) => <label key={s.slug} className="flex items-center gap-2 text-[12.5px]"><input type="checkbox" checked={bl.items.includes(s.slug)} onChange={(e) => set({ items: e.target.checked ? [...bl.items, s.slug] : bl.items.filter((x) => x !== s.slug) })} className="accent-[#0066FF]" />{s.title}</label>)}</div></div>;
+      return <div className="grid gap-3"><F label="Heading">{t("heading", bl.heading)}</F><div className="grid max-h-56 grid-cols-2 gap-1.5 overflow-y-auto rounded-xl border border-[#EAEAEC] bg-white p-2">{services.map((s) => <label key={s.slug} className="flex items-center gap-2 text-[12.5px]"><input type="checkbox" checked={bl.items.includes(s.slug)} onChange={(e) => set({ items: e.target.checked ? [...bl.items, s.slug] : bl.items.filter((x) => x !== s.slug) })} className="accent-[#C8102E]" />{s.title}</label>)}</div></div>;
     case "brands":
-      return <div className="grid gap-3"><F label="Heading">{t("heading", bl.heading)}</F><div className="grid max-h-56 grid-cols-3 gap-1.5 overflow-y-auto rounded-xl border border-[#E3EAF3] bg-white p-2">{brands.map((s) => <label key={s.slug} className="flex items-center gap-2 text-[12.5px]"><input type="checkbox" checked={bl.items.includes(s.slug)} onChange={(e) => set({ items: e.target.checked ? [...bl.items, s.slug] : bl.items.filter((x) => x !== s.slug) })} className="accent-[#0066FF]" />{s.name}</label>)}</div></div>;
+      return <div className="grid gap-3"><F label="Heading">{t("heading", bl.heading)}</F><div className="grid max-h-56 grid-cols-3 gap-1.5 overflow-y-auto rounded-xl border border-[#EAEAEC] bg-white p-2">{brands.map((s) => <label key={s.slug} className="flex items-center gap-2 text-[12.5px]"><input type="checkbox" checked={bl.items.includes(s.slug)} onChange={(e) => set({ items: e.target.checked ? [...bl.items, s.slug] : bl.items.filter((x) => x !== s.slug) })} className="accent-[#C8102E]" />{s.name}</label>)}</div></div>;
     case "steps":
     case "trust":
       return (
@@ -195,7 +195,7 @@ function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; se
             <div key={i} className="grid grid-cols-[1fr_1.6fr_auto] gap-2">
               <input value={it.t} onChange={(e) => set({ items: bl.items.map((x, k) => (k === i ? { ...x, t: e.target.value } : x)) })} placeholder="Title" className={input} />
               <input value={it.d} onChange={(e) => set({ items: bl.items.map((x, k) => (k === i ? { ...x, d: e.target.value } : x)) })} placeholder="Text" className={input} />
-              <button type="button" onClick={() => set({ items: bl.items.filter((_, k) => k !== i) })} className="text-[#8494AB]"><Trash2 size={15} /></button>
+              <button type="button" onClick={() => set({ items: bl.items.filter((_, k) => k !== i) })} className="text-[#91919E]"><Trash2 size={15} /></button>
             </div>
           ))}
           <button type="button" onClick={() => set({ items: [...bl.items, { t: "", d: "" }] })} className={b("light", true)}><Plus size={13} /> Add item</button>
@@ -206,8 +206,8 @@ function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; se
         <div className="grid gap-2.5">
           <F label="Heading">{t("heading", bl.heading)}</F>
           {bl.items.map(([q, a], i) => (
-            <div key={i} className="grid gap-1.5 rounded-xl border border-[#E3EAF3] bg-white p-2.5">
-              <div className="flex gap-2"><input value={q} onChange={(e) => set({ items: bl.items.map((x, k) => (k === i ? [e.target.value, x[1]] as [string, string] : x)) })} placeholder="Question" className={input} /><button type="button" onClick={() => set({ items: bl.items.filter((_, k) => k !== i) })} className="text-[#8494AB]"><Trash2 size={15} /></button></div>
+            <div key={i} className="grid gap-1.5 rounded-xl border border-[#EAEAEC] bg-white p-2.5">
+              <div className="flex gap-2"><input value={q} onChange={(e) => set({ items: bl.items.map((x, k) => (k === i ? [e.target.value, x[1]] as [string, string] : x)) })} placeholder="Question" className={input} /><button type="button" onClick={() => set({ items: bl.items.filter((_, k) => k !== i) })} className="text-[#91919E]"><Trash2 size={15} /></button></div>
               <textarea value={a} rows={2} onChange={(e) => set({ items: bl.items.map((x, k) => (k === i ? [x[0], e.target.value] as [string, string] : x)) })} placeholder="Answer" className={input} />
             </div>
           ))}
@@ -219,7 +219,7 @@ function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; se
         <div className="grid gap-3">
           <F label="Heading">{t("heading", bl.heading)}</F>
           <F label="Text (Markdown)">{t("body", bl.body, true, 5)}</F>
-          <div className="flex items-center gap-3">{bl.image ? /* eslint-disable-next-line @next/next/no-img-element */ <img src={bl.image} alt="" className="h-16 w-24 rounded-lg border border-[#E3EAF3] object-contain" /> : null}<button type="button" onClick={pickImage} className={b("light", true)}><ImageIcon size={13} /> {bl.image ? "Change image" : "Choose image"}</button></div>
+          <div className="flex items-center gap-3">{bl.image ? /* eslint-disable-next-line @next/next/no-img-element */ <img src={bl.image} alt="" className="h-16 w-24 rounded-lg border border-[#EAEAEC] object-contain" /> : null}<button type="button" onClick={pickImage} className={b("light", true)}><ImageIcon size={13} /> {bl.image ? "Change image" : "Choose image"}</button></div>
           <F label="Image alt text">{t("alt", bl.alt)}</F>
           <F label="Image side"><select value={bl.side ?? "left"} onChange={(e) => set({ side: e.target.value as "left" | "right" })} className={input}><option value="left">Left</option><option value="right">Right</option></select></F>
         </div>

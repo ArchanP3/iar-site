@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import {
   ArrowRight,
   BadgeCheck,
@@ -103,10 +103,10 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 /* Colour of each "Step 01–06" label */
 const stepColors = [
-  "from-[#7DB7FF] to-[#2F7BFF]", // blue
+  "from-[#F88495] to-[#F31D3D]", // blue
   "from-[#D4A5FF] to-[#9B5CF6]", // purple
   "from-[#FF8FA0] to-[#F43F5E]", // pink-red
-  "from-[#B8C2FF] to-[#6A6CF6]", // indigo
+  "from-[#FBBCC5] to-[#EF7184]", // indigo
   "from-[#FFD27A] to-[#FF8A3D]", // orange
   "from-[#7FF0C0] to-[#22C55E]", // green
 ];
@@ -121,7 +121,7 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
       {/* soft shade so the text is always readable over the reflection */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-linear-to-t from-[#030817]/80 via-[#030817]/35 to-transparent"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-linear-to-t from-[#060607]/80 via-[#060607]/35 to-transparent"
       />
       <div className="relative flex items-center gap-3 text-[12px] leading-5">
         <span className="inline-flex items-center gap-1.5 font-semibold text-white">
@@ -150,7 +150,7 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
         <ul className="mt-2 space-y-1">
           {s.points.map((pt) => (
             <li key={pt} className="flex items-center gap-2 text-[12.5px] font-medium text-white/90">
-              <Check size={14} strokeWidth={2.4} className="shrink-0 text-[#5CC8FF]" />
+              <Check size={14} strokeWidth={2.4} className="shrink-0 text-[#F7647A]" />
               {pt}
             </li>
           ))}
@@ -176,7 +176,7 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
       <ReflectiveCard
         videoSrc="/videos/test-bench.mp4"
         theme="dark"
-        tint="#5AB4FF"
+        tint="#F76279"
         grayscale={0.6}
         metalness={1}
         roughness={0.3}
@@ -194,10 +194,10 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
   }
 
   return (
-    <div className="relative flex min-h-71.25 w-full flex-col overflow-hidden rounded-[18px] bg-[radial-gradient(90%_70%_at_45%_0%,#1E4C8A_0%,transparent_70%),linear-gradient(160deg,#121A2C_0%,#0E1626_55%,#0A101C_100%)] p-4 text-white shadow-[0_22px_44px_-20px_rgba(0,40,120,0.6)] ring-1 ring-inset ring-white/10">
+    <div className="relative flex min-h-71.25 w-full flex-col overflow-hidden rounded-[18px] bg-[radial-gradient(90%_70%_at_45%_0%,#77202D_0%,transparent_70%),linear-gradient(160deg,#1D1D21_0%,#18181C_55%,#121214_100%)] p-4 text-white shadow-[0_22px_44px_-20px_rgba(103, 5, 20,0.6)] ring-1 ring-inset ring-white/10">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_25%,rgba(120,170,230,0.14)_42%,transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_25%,rgba(224, 126, 140,0.14)_42%,transparent_60%)]"
       />
       {content}
     </div>
@@ -217,7 +217,7 @@ export default function HowWeWork() {
     <section
       id="how-we-work"
       aria-labelledby="how-we-work-heading"
-      className={`${montserrat.className} relative bg-[#F7FAFE] py-10 sm:py-12 lg:py-14`}
+      className={`${brandFont.className} relative bg-[#FAFAFB] py-10 sm:py-12 lg:py-14`}
     >
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
@@ -225,22 +225,22 @@ export default function HowWeWork() {
         {/* ---------- Heading + buttons ---------- */}
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-195">
-            <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#005AE0] sm:text-[12px]">
-              <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#0066FF] to-[#00B0FF]" />
+            <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#B30E29] sm:text-[12px]">
+              <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />
               How We Work
             </p>
             <h2
               id="how-we-work-heading"
-              className="mt-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#0B1A3C] sm:text-[36px] lg:text-[40px]"
+              className="mt-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#131316] sm:text-[36px] lg:text-[40px]"
             >
               How Our Repair Process Works
             </h2>
-            <p className="mt-3 text-[14px] leading-[1.65] text-[#52647F] sm:text-[16px]">
+            <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               A free evaluation and a written quote before any work starts. Every servo drive, servo
               motor and industrial electronics repair at our Mississauga, Ontario repair centre is tracked step by
               step, from pickup to tested return.
             </p>
-            <p className="mt-2 hidden text-[14px] leading-[1.65] text-[#52647F] sm:block sm:text-[16px]">
+            <p className="mt-2 hidden text-[14px] leading-[1.65] text-[#62626F] sm:block sm:text-[16px]">
               Whether it&apos;s a failed VFD, a spindle motor or an obsolete CNC control, you get photos at check-in, a
               clear repair quote, component-level repair, operational testing on our jigs and a test report with
               every unit, backed by a 12-month warranty.
@@ -249,7 +249,7 @@ export default function HowWeWork() {
           <div className="flex shrink-0 flex-col gap-2.5 sm:flex-row">
             <Link
               href="/request-repair"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-6 text-[15px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(0,176,255,0.8)] transition hover:-translate-y-0.5"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255, 59, 85,0.8)] transition hover:-translate-y-0.5"
             >
               <Wrench size={17} />
               Request a Repair
@@ -257,7 +257,7 @@ export default function HowWeWork() {
             </Link>
             <Link
               href="/request-pickup"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#C9D7E8] bg-white px-6 text-[15px] font-semibold text-[#0B1A3C] transition hover:border-[#0066FF] hover:text-[#005AE0]"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#E6CBCF] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29]"
             >
               <Truck size={17} />
               Request a Pickup
@@ -267,20 +267,20 @@ export default function HowWeWork() {
 
         {/* ---------- How your unit reaches us ---------- */}
         <div className="mt-7">
-          <h3 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#005AE0]">How your unit reaches us</h3>
+          <h3 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">How your unit reaches us</h3>
           <ul className="mt-3 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
             {ways.map(({ icon: Icon, t, d, href }, i) => (
               <li key={t}>
                 <Link
                   href={href}
-                  className="group flex h-full flex-col gap-2 rounded-2xl border border-[#E3EAF3] bg-white p-3.5 transition hover:-translate-y-0.5 hover:border-[#0066FF]/40 hover:shadow-[0_16px_30px_-22px_rgba(0,102,255,0.6)] sm:flex-row sm:items-start sm:gap-3 sm:p-4"
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-[#EAEAEC] bg-white p-3.5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_16px_30px_-22px_rgba(200, 16, 46,0.6)] sm:flex-row sm:items-start sm:gap-3 sm:p-4"
                 >
-                  <span className={`flex h-10 w-10 flex-none items-center justify-center rounded-xl ${i === 0 ? "bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white shadow-[0_10px_22px_-10px_rgba(0,102,255,0.9)]" : "bg-[#EEF4FB] text-[#005AE0]"}`}>
+                  <span className={`flex h-10 w-10 flex-none items-center justify-center rounded-xl ${i === 0 ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(200, 16, 46,0.9)]" : "bg-[#F4F4F5] text-[#B30E29]"}`}>
                     <Icon size={18} aria-hidden="true" />
                   </span>
                   <span>
-                    <span className="block text-[14px] font-extrabold leading-snug text-[#0B1A3C] group-hover:text-[#0052CC]">{t}</span>
-                    <span className="mt-0.5 block text-[12.5px] leading-snug text-[#52647F]">{d}</span>
+                    <span className="block text-[14px] font-extrabold leading-snug text-[#131316] group-hover:text-[#A50D25]">{t}</span>
+                    <span className="mt-0.5 block text-[12.5px] leading-snug text-[#62626F]">{d}</span>
                   </span>
                 </Link>
               </li>
@@ -298,8 +298,8 @@ export default function HowWeWork() {
         </ol>
 
         {/* ---------- Trust strip ---------- */}
-        <div className="mt-8 rounded-2xl border border-[#E3EAF3] bg-white px-5 py-4 sm:px-7">
-          <h3 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#005AE0]">
+        <div className="mt-8 rounded-2xl border border-[#EAEAEC] bg-white px-5 py-4 sm:px-7">
+          <h3 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">
             Why Manufacturers Choose AutomIQ
           </h3>
           <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
@@ -307,10 +307,10 @@ export default function HowWeWork() {
               const Icon = f.icon;
               return (
                 <li key={f.label} className="flex items-start gap-2.5">
-                  <Icon size={17} className="mt-0.5 shrink-0 text-[#005AE0]" />
+                  <Icon size={17} className="mt-0.5 shrink-0 text-[#B30E29]" />
                   <span>
-                    <span className="block text-[11.5px] text-[#5B6B84]">{f.label}</span>
-                    <span className="block text-[13px] font-bold leading-snug text-[#0B1A3C]">{f.value}</span>
+                    <span className="block text-[11.5px] text-[#696976]">{f.label}</span>
+                    <span className="block text-[13px] font-bold leading-snug text-[#131316]">{f.value}</span>
                   </span>
                 </li>
               );

@@ -8,7 +8,7 @@ import { Card, PageHead, Pill, Table, ago, b } from "@/components/admin/ui";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Blog />
     </Suspense>
   );
@@ -27,27 +27,27 @@ async function Blog() {
       <Card pad={false}>
         <Table head={["Title", "Status", "Category", "Author", "Words", "Updated"]}>
           {rows.map((r) => (
-            <tr key={r.id} className="hover:bg-[#F8FAFD]">
-              <td className="max-w-105"><Link href={`/admin/blog/${r.id}`} className="block truncate font-bold hover:text-[#0052CC]">{r.title}</Link><span className="font-mono text-[12px] text-[#8494AB]">{postUrl(r.slug)}</span></td>
+            <tr key={r.id} className="hover:bg-[#FAFAFB]">
+              <td className="max-w-105"><Link href={`/admin/blog/${r.id}`} className="block truncate font-bold hover:text-[#A50D25]">{r.title}</Link><span className="font-mono text-[12px] text-[#91919E]">{postUrl(r.slug)}</span></td>
               <td><Pill tone={tone[r.status] ?? "gray"}>{r.status === "scheduled" && r.publish_at ? `Scheduled · ${new Date(r.publish_at).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}` : r.status[0].toUpperCase() + r.status.slice(1)}</Pill></td>
               <td>{r.category || "—"}</td>
               <td>{r.author_name || "—"}</td>
               <td>{r.body.split(/\s+/).filter(Boolean).length.toLocaleString()}</td>
-              <td className="whitespace-nowrap text-[#5B6B84]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
+              <td className="whitespace-nowrap text-[#696976]">{ago(r.updated_at)}{r.updated_by ? ` · ${r.updated_by}` : ""}</td>
             </tr>
           ))}
           {codePosts.map((p) => (
-            <tr key={p.slug} className="bg-[#FAFCFE]">
-              <td className="max-w-105"><a href={postUrl(p.slug)} target="_blank" className="block truncate font-bold">{p.title}</a><span className="font-mono text-[12px] text-[#8494AB]">{postUrl(p.slug)}</span></td>
+            <tr key={p.slug} className="bg-[#FCFCFC]">
+              <td className="max-w-105"><a href={postUrl(p.slug)} target="_blank" className="block truncate font-bold">{p.title}</a><span className="font-mono text-[12px] text-[#91919E]">{postUrl(p.slug)}</span></td>
               <td><Pill tone="ok">Published</Pill></td>
               <td>{p.tag}</td>
               <td>AutomIQ team</td>
               <td>—</td>
-              <td className="text-[#8494AB]"><span className="inline-flex items-center gap-1"><Lock size={12} /> Built into the site · SEO in <Link href={`/admin/pages/edit?path=${encodeURIComponent(postUrl(p.slug))}`} className="font-semibold text-[#0052CC]">Pages</Link></span></td>
+              <td className="text-[#91919E]"><span className="inline-flex items-center gap-1"><Lock size={12} /> Built into the site · SEO in <Link href={`/admin/pages/edit?path=${encodeURIComponent(postUrl(p.slug))}`} className="font-semibold text-[#A50D25]">Pages</Link></span></td>
             </tr>
           ))}
         </Table>
-        {!rows.length && <p className="flex items-center justify-center gap-2 border-t border-[#E3EAF3] p-5 text-[#5B6B84]"><Newspaper size={15} /> Your first CMS post will appear above the built-in guides.</p>}
+        {!rows.length && <p className="flex items-center justify-center gap-2 border-t border-[#EAEAEC] p-5 text-[#696976]"><Newspaper size={15} /> Your first CMS post will appear above the built-in guides.</p>}
       </Card>
     </>
   );

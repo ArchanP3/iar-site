@@ -16,7 +16,7 @@ type SP = Promise<{ path?: string }>;
 
 export default function Page({ searchParams }: { searchParams: SP }) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Edit searchParams={searchParams} />
     </Suspense>
   );
@@ -55,12 +55,12 @@ async function Edit({ searchParams }: { searchParams: SP }) {
   return (
     <>
       <PageHead
-        crumb={<><Link href="/admin/pages" className="hover:text-[#0052CC]">Pages</Link><ChevronRight size={13} /><span>{groupLabel[info.group]}</span></>}
+        crumb={<><Link href="/admin/pages" className="hover:text-[#A50D25]">Pages</Link><ChevronRight size={13} /><span>{groupLabel[info.group]}</span></>}
         title={cr?.headings.find((h) => h[0] === 1)?.[1] ?? (o?.title || cr?.title || path)}
         sub={
           <span className="flex flex-wrap items-center gap-2">
             {o ? <Pill tone="blue">Edited in CMS</Pill> : <Pill tone="ok">Website defaults</Pill>}
-            <a href={shown} target="_blank" className="inline-flex items-center gap-1 font-mono text-[12.5px] hover:text-[#0052CC]">{SITE_URL.replace(/^https?:\/\//, "")}{shown} <ExternalLink size={12} /></a>
+            <a href={shown} target="_blank" className="inline-flex items-center gap-1 font-mono text-[12.5px] hover:text-[#A50D25]">{SITE_URL.replace(/^https?:\/\//, "")}{shown} <ExternalLink size={12} /></a>
           </span>
         }
       />

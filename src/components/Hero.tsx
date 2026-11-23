@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import PartSuggest from "@/components/search/PartSuggest";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
@@ -26,9 +26,9 @@ import BorderGlow from "./BorderGlow";
 /* ------------------------------------------------------------------ */
 /*  Brand tokens (AutomIQ Automation & Drive Services)                              */
 /* ------------------------------------------------------------------ */
-/*  Primary Blue  #0066FF   Accent Blue  #00B0FF                       */
-/*  Navy          #0B1A3C   Deep Navy    #050C22 (panel base)          */
-/*  Light         #F4F7FB   Text muted   #52647F                       */
+/*  Primary Blue  #C8102E   Accent Blue  #FF3B55                       */
+/*  Navy          #131316   Deep Navy    #121215 (panel base)          */
+/*  Light         #F7F7F8   Text muted   #62626F                       */
 
 /** How long each scene stays on screen (ms). Also drives the progress bar. */
 const SCENE_DURATION = 3500;
@@ -103,21 +103,21 @@ const benefits = [
 
 const heroCss = `
 /* AutomIQ — Hero animations & decorative layers
-   Brand: #0066FF primary · #00B0FF accent · #0B1A3C navy · #050C22 deep navy */
+   Brand: #C8102E primary · #FF3B55 accent · #131316 navy · #121215 deep navy */
 
 .aq-hero {
-  --aq-blue: #0066ff;
-  --aq-cyan: #00b0ff;
-  --aq-navy: #0b1a3c;
-  --aq-deep: #050c22;
+  --aq-blue: #C8102E;
+  --aq-cyan: #FF3B55;
+  --aq-navy: #131316;
+  --aq-deep: #121215;
   --aq-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ---------- Background detail ---------- */
 .aq-grid {
   background-image:
-    linear-gradient(rgba(127, 211, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(127, 211, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255, 138, 153, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 138, 153, 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, #000 0%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, #000 0%, transparent 75%);
@@ -125,7 +125,7 @@ const heroCss = `
 
 /* Moving gradient on the headline message */
 .aq-shimmer {
-  background-image: linear-gradient(90deg, #00b0ff 0%, #7fd3ff 25%, #ffffff 45%, #7fd3ff 60%, #0a84ff 100%);
+  background-image: linear-gradient(90deg, #FF3B55 0%, #FF8A99 25%, #ffffff 45%, #FF8A99 60%, #E30C2C 100%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -209,7 +209,7 @@ const heroCss = `
   width: 62%;
   aspect-ratio: 1;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(0, 176, 255, 0.4) 0%, rgba(0, 102, 255, 0.18) 40%, rgba(0, 102, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 59, 85, 0.4) 0%, rgba(200, 16, 46, 0.18) 40%, rgba(200, 16, 46, 0) 70%);
   translate: calc(var(--aq-tx, 0) * 40px) calc(var(--aq-ty, 0) * 30px);
   animation: aqPulse 5s ease-in-out infinite;
 }
@@ -227,13 +227,13 @@ const heroCss = `
   height: 34px;
   transform: translateX(-50%);
   border-radius: 9999px;
-  background: radial-gradient(ellipse at center, rgba(0, 176, 255, 0.6) 0%, rgba(0, 102, 255, 0.2) 45%, transparent 72%);
+  background: radial-gradient(ellipse at center, rgba(255, 59, 85, 0.6) 0%, rgba(200, 16, 46, 0.2) 45%, transparent 72%);
   pointer-events: none;
 }
 
 /* Still image of the waves: shows instantly, and stays on devices that skip live 3D */
 .aq-waves-still {
-  background: #030817;
+  background: #060607;
 }
 .aq-waves-still img {
   width: 100%;
@@ -290,10 +290,10 @@ const heroCss = `
   padding: 0 1.5rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, var(--aq-blue) 0%, #0a7bff 55%, var(--aq-cyan) 130%);
+  background: linear-gradient(135deg, var(--aq-blue) 0%, #E30C2C 55%, var(--aq-cyan) 130%);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 14px 30px -12px rgba(0, 102, 255, 0.65);
+    0 14px 30px -12px rgba(200, 16, 46, 0.65);
   transition: transform 0.3s var(--aq-ease), box-shadow 0.3s var(--aq-ease);
 }
 .aq-cta::after {
@@ -308,7 +308,7 @@ const heroCss = `
   transform: translateY(-2px);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 20px 38px -12px rgba(0, 102, 255, 0.75);
+    0 20px 38px -12px rgba(200, 16, 46, 0.75);
 }
 .aq-cta:hover::after {
   transform: translateX(120%);
@@ -410,7 +410,7 @@ export default function Hero() {
       <style dangerouslySetInnerHTML={{ __html: heroCss }} />
       <section
         ref={heroRef}
-        className={`${montserrat.className} aq-hero relative overflow-hidden bg-[#030817] text-white`}
+        className={`${brandFont.className} aq-hero relative overflow-hidden bg-[#060607] text-white`}
         onMouseMove={(e) => {
           const r = e.currentTarget.getBoundingClientRect();
           setTilt((e.clientX - r.left) / r.width - 0.5, (e.clientY - r.top) / r.height - 0.5);
@@ -428,10 +428,10 @@ export default function Hero() {
           <div className={`aq-waves absolute inset-0 ${waves.on ? "is-on" : ""}`}>
           {waves.on && (
           <GradientWaves
-            backgroundColor="#030817"
-            horizonColor="#0047FF"
-            waveColor="#1677FF"
-            crestColor="#A8E6FF"
+            backgroundColor="#060607"
+            horizonColor="#DA0B2A"
+            waveColor="#ED0C2E"
+            crestColor="#FBACB8"
             speed={0.15}
             amplitude={2.6}
             waveScale={0.6}
@@ -460,8 +460,8 @@ export default function Hero() {
           )}
           </div>
           {/* readability: darker on the left where the text sits, fade at top */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#030817]/85 via-[#030817]/35 to-transparent" />
-          <div className="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-[#030817] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#060607]/85 via-[#060607]/35 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-48 bg-linear-to-b from-[#060607] to-transparent" />
           <div className="aq-grid absolute inset-0" />
         </div>
 
@@ -470,7 +470,7 @@ export default function Hero() {
           {/* ================= LEFT ================= */}
           <div className="relative z-20 min-w-0 lg:pr-8">
             <div className="mb-5 flex items-center gap-4">
-              <span className="h-0.75 w-10 shrink-0 rounded-full bg-linear-to-r from-[#0066FF] to-[#00B0FF]" />
+              <span className="h-0.75 w-10 shrink-0 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />
               {/* Main page heading for Google (fixed, never changes) */}
               <h1 className="text-[13px] font-semibold leading-snug tracking-[0.01em] text-white/90 sm:text-[15px]">
                 Servo Drive, Motor &amp; Industrial Electronics Repair in Canada &amp; USA
@@ -499,8 +499,8 @@ export default function Hero() {
                     className={`aq-stack ${leaving ? "aq-copy-exit" : "aq-copy-enter"}`}
                     aria-hidden={leaving}
                   >
-                    <p className="aq-rise aq-d0 mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#0B1A3C]/60 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7FD3FF]">
-                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00B0FF] shadow-[0_0_10px_2px_rgba(0,176,255,0.8)]" />
+                    <p className="aq-rise aq-d0 mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#131316]/60 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FF3B55] shadow-[0_0_10px_2px_rgba(255, 59, 85,0.8)]" />
                       Buy · Repair · Exchange
                     </p>
 
@@ -509,7 +509,7 @@ export default function Hero() {
                       <span className="aq-rise aq-d2 aq-shimmer mt-1 block pb-1">{s.message}</span>
                     </p>
 
-                    <p className="aq-rise aq-d3 mt-5 max-w-130 text-[14px] leading-[1.7] text-[#B7C6E0] sm:text-[15px]">
+                    <p className="aq-rise aq-d3 mt-5 max-w-130 text-[14px] leading-[1.7] text-[#C8C8CF] sm:text-[15px]">
                       {s.description}
                     </p>
                   </div>
@@ -519,8 +519,8 @@ export default function Hero() {
 
             {/* Search (glass) */}
             <div className="mt-6 max-w-140">
-              <form action="/search" method="get" role="search" aria-label="Find a part" data-suggest-anchor className="flex items-center gap-2 rounded-2xl border border-white/15 bg-[#0B1A3C]/70 p-1.5 pl-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.7)] transition focus-within:border-[#00B0FF]/60 focus-within:bg-[#0B1A3C]/85 focus-within:shadow-[0_0_0_4px_rgba(0,176,255,0.15)]">
-                <Search size={19} className="shrink-0 text-[#7FD3FF]" />
+              <form action="/search" method="get" role="search" aria-label="Find a part" data-suggest-anchor className="flex items-center gap-2 rounded-2xl border border-white/15 bg-[#131316]/70 p-1.5 pl-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.7)] transition focus-within:border-[#FF3B55]/60 focus-within:bg-[#131316]/85 focus-within:shadow-[0_0_0_4px_rgba(255, 59, 85,0.15)]">
+                <Search size={19} className="shrink-0 text-[#FF8A99]" />
                 <PartSuggest
                   name="part"
                   required
@@ -531,7 +531,7 @@ export default function Hero() {
                 <button
                   type="submit"
                   aria-label="Search Parts"
-                  className="inline-flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-[#0B1A3C] sm:px-5"
+                  className="inline-flex h-10 shrink-0 items-center gap-2 rounded-xl bg-white px-4 text-sm font-semibold text-[#131316] sm:px-5"
                 >
                   <span className="hidden sm:inline">Search Parts</span>
                   <ArrowRight size={16} />
@@ -551,7 +551,7 @@ export default function Hero() {
               </a>
               <a
                 href="/request-quote"
-                className="group inline-flex min-h-11.5 w-full items-center justify-center gap-3 rounded-xl border border-white/20 bg-[#0B1A3C]/55 px-6 font-semibold text-white transition hover:border-[#00B0FF] hover:bg-[#0B1A3C]/80 sm:w-auto"
+                className="group inline-flex min-h-11.5 w-full items-center justify-center gap-3 rounded-xl border border-white/20 bg-[#131316]/55 px-6 font-semibold text-white transition hover:border-[#FF3B55] hover:bg-[#131316]/80 sm:w-auto"
               >
                 <FileText size={18} />
                 Request a Quote
@@ -578,7 +578,7 @@ export default function Hero() {
                       className="group relative h-6 cursor-pointer"
                     >
                       <span className="absolute inset-x-0 top-1/2 h-0.75 -translate-y-1/2 overflow-hidden rounded-full bg-white/15 transition group-hover:bg-white/30">
-                        {i < current && <span className="absolute inset-0 bg-[#00B0FF]/50" />}
+                        {i < current && <span className="absolute inset-0 bg-[#FF3B55]/50" />}
                         {i === current && (
                           <span
                             key={`bar-${current}`}
@@ -608,7 +608,7 @@ export default function Hero() {
                 stops,
                 <br />
                 we start.
-                <span className="mt-2 ml-auto block h-0.5 w-8 bg-[#00B0FF]" />
+                <span className="mt-2 ml-auto block h-0.5 w-8 bg-[#FF3B55]" />
               </p>
 
               {/* Glow + rings */}
@@ -659,12 +659,12 @@ export default function Hero() {
 
               {/* Floating scene chip */}
               <div className="absolute bottom-2 left-2 z-20 hidden sm:block lg:bottom-8 lg:left-6">
-                <div className="flex items-center gap-3 rounded-2xl border border-white/15 bg-[#0B1A3C]/75 px-4 py-3 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] font-mono text-xs font-bold">
+                <div className="flex items-center gap-3 rounded-2xl border border-white/15 bg-[#131316]/75 px-4 py-3 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.7)]">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] font-mono text-xs font-bold">
                     {pad(current + 1)}
                   </span>
                   <div className="leading-tight">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7FD3FF]">Now showing</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Now showing</p>
                     <p className="text-sm font-semibold">{scene.title}</p>
                   </div>
                 </div>
@@ -682,7 +682,7 @@ export default function Hero() {
                     onClick={() => goTo(i)}
                     className="flex h-7 min-w-6 items-center justify-center"
                   >
-                    <span className={`block h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-6 bg-[#00B0FF]" : "w-1.5 bg-white/30"}`} />
+                    <span className={`block h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-6 bg-[#FF3B55]" : "w-1.5 bg-white/30"}`} />
                   </button>
                 ))}
               </div>
@@ -703,17 +703,17 @@ export default function Hero() {
         />
 
         {/* Soft fade into the benefits strip */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#00B0FF]/70 to-transparent" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#FF3B55]/70 to-transparent" />
       </section>
       {/* ---------- BENEFITS STRIP ---------- */}
-      <section className={`${montserrat.className} relative z-10 border-b border-[#E3EAF3] bg-white`}>
+      <section className={`${brandFont.className} relative z-10 border-b border-[#EAEAEC] bg-white`}>
         <div className="mx-auto max-w-360 px-5 pb-6 pt-5 sm:px-8 sm:pb-7 sm:pt-6 lg:px-12">
           <div className="mb-4 flex items-center justify-center gap-4">
-            <span className="h-px w-10 bg-linear-to-r from-transparent to-[#0066FF]" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#005AE0] sm:text-[12px] sm:tracking-[0.32em]">
+            <span className="h-px w-10 bg-linear-to-r from-transparent to-[#C8102E]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29] sm:text-[12px] sm:tracking-[0.32em]">
               The AutomIQ Commitment
             </p>
-            <span className="h-px w-10 bg-linear-to-l from-transparent to-[#0066FF]" />
+            <span className="h-px w-10 bg-linear-to-l from-transparent to-[#C8102E]" />
           </div>
 
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5 xl:grid-cols-6">
@@ -725,7 +725,7 @@ export default function Hero() {
                   className="group h-full"
                   backgroundColor="#FFFFFF"
                   glowColor="230 100 62"
-                  colors={["#0066FF", "#00D4FF", "#7C5CFF"]}
+                  colors={["#C8102E", "#DA0B2A", "#7C5CFF"]}
                   borderRadius={12}
                   glowRadius={45}
                   glowIntensity={3}
@@ -733,13 +733,13 @@ export default function Hero() {
                   coneSpread={40}
                   fillOpacity={0.7}
                 >
-                  <div className="flex h-full items-center gap-2.5 rounded-[12px] bg-linear-to-br from-[#E4EDFF]/90 via-[#ECEEFF]/90 to-[#F1E6FF]/90 px-2.5 py-2.5 sm:px-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[9px] bg-white text-[#005AE0] ring-1 ring-[#0066FF]/10 transition duration-300 group-hover:bg-[#0066FF] group-hover:text-white group-hover:shadow-[0_10px_24px_-8px_rgba(0,102,255,0.6)]">
+                  <div className="flex h-full items-center gap-2.5 rounded-[12px] bg-linear-to-br from-[#F1F1F2]/90 via-[#F5F5F6]/90 to-[#F1E6FF]/90 px-2.5 py-2.5 sm:px-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[9px] bg-white text-[#B30E29] ring-1 ring-[#C8102E]/10 transition duration-300 group-hover:bg-[#C8102E] group-hover:text-white group-hover:shadow-[0_10px_24px_-8px_rgba(200, 16, 46,0.6)]">
                       <Icon size={18} strokeWidth={1.9} />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-[12.5px] font-bold leading-tight text-[#0B1A3C] sm:text-[13px]">{item.title}</p>
-                      <p className="mt-0.5 text-[11px] leading-snug text-[#5B6B84] sm:text-[11.5px]">{item.detail}</p>
+                      <p className="text-[12.5px] font-bold leading-tight text-[#131316] sm:text-[13px]">{item.title}</p>
+                      <p className="mt-0.5 text-[11px] leading-snug text-[#696976] sm:text-[11.5px]">{item.detail}</p>
                     </div>
                   </div>
                 </BorderGlow>

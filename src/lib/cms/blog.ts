@@ -6,7 +6,7 @@ import { onThisSite } from "@/lib/site";
 /* Blog cards for listings: the posts written in code plus the ones written in the CMS, newest first. */
 export type PostCard = Pick<Post, "slug" | "title" | "description" | "date" | "minutes" | "tag" | "color" | "image">;
 
-const COLORS = ["#0066FF", "#7C3AED", "#0EA5E9", "#14B8A6", "#F59E0B", "#EC4899"];
+const COLORS = ["#C8102E", "#7C3AED", "#C81631", "#14B8A6", "#F59E0B", "#EC4899"];
 const colorFor = (s: string) => COLORS[[...s].reduce((a, c) => a + c.charCodeAt(0), 0) % COLORS.length];
 
 export async function allPostCards(): Promise<PostCard[]> {

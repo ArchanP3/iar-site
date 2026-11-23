@@ -18,7 +18,7 @@ export default function SurplusForm() {
   const toggle = (c: string) => setCond((x) => (x.includes(c) ? x.filter((y) => y !== c) : [...x, c]));
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="surplus" subject="Surplus offer: AutomIQ website" />
 
       <Step n={1} title="What are you selling?">
@@ -36,23 +36,23 @@ export default function SurplusForm() {
             <textarea id="sp-list" name="Parts list" required rows={5} className={`${input} h-auto py-2.5 font-mono`} placeholder={"6SL3120-1TE21-0AA3 × 2\n1FK7063-5AF71-1AG0 × 1\nKollmorgen AKD-P00606 × 4"} />
           </div>
           <div>
-            <p className={label}>Condition <span className="font-normal text-[#52647F]">(choose all that apply)</span></p>
+            <p className={label}>Condition <span className="font-normal text-[#62626F]">(choose all that apply)</span></p>
             <input type="hidden" name="Condition" value={cond.join(", ")} />
             <div className="flex flex-wrap gap-2">
               {conditions.map((c) => (
                 <button key={c} type="button" aria-pressed={cond.includes(c)} onClick={() => toggle(c)}
-                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${cond.includes(c) ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${cond.includes(c) ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
                   {c}
                 </button>
               ))}
             </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <div><label className={label} htmlFor="sp-where">Where is it? <span className="font-normal text-[#52647F]">(city, province or state)</span></label><input id="sp-where" name="Location" className={input} placeholder="e.g. Brampton, ON" /></div>
-            <div><label className={label} htmlFor="sp-price">Asking price <span className="font-normal text-[#52647F]">(optional)</span></label><input id="sp-price" name="Asking price" className={input} placeholder="Leave blank and we make an offer" /></div>
+            <div><label className={label} htmlFor="sp-where">Where is it? <span className="font-normal text-[#62626F]">(city, province or state)</span></label><input id="sp-where" name="Location" className={input} placeholder="e.g. Brampton, ON" /></div>
+            <div><label className={label} htmlFor="sp-price">Asking price <span className="font-normal text-[#62626F]">(optional)</span></label><input id="sp-price" name="Asking price" className={input} placeholder="Leave blank and we make an offer" /></div>
           </div>
           <div>
-            <label className={label} htmlFor="sp-notes">Notes <span className="font-normal text-[#52647F]">(optional)</span></label>
+            <label className={label} htmlFor="sp-notes">Notes <span className="font-normal text-[#62626F]">(optional)</span></label>
             <textarea id="sp-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Original boxes, date codes, deadline to clear the space…" />
           </div>
         </div>

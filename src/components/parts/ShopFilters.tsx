@@ -20,13 +20,13 @@ export function shopHref(category?: string, brand?: string) {
 export type FilterState = { category?: string; brand?: BrandOption };
 
 const row = "flex min-h-11 lg:min-h-9 items-center gap-2.5 rounded-xl px-2.5 text-[14px] font-semibold transition";
-const on = "bg-[#0066FF]/[0.08] text-[#0052CC]";
-const off = "text-[#33415C] hover:bg-[#F4F7FB] hover:text-[#005AE0]";
+const on = "bg-[#C8102E]/[0.08] text-[#A50D25]";
+const off = "text-[#43434C] hover:bg-[#F7F7F8] hover:text-[#B30E29]";
 
 function Dot({ checked }: { checked: boolean }) {
   return (
-    <span aria-hidden="true" className={`flex h-4.5 w-4.5 flex-none items-center justify-center rounded-full border-2 ${checked ? "border-[#0066FF]" : "border-[#B8C6D8]"}`}>
-      {checked && <span className="h-2 w-2 rounded-full bg-[#0066FF]" />}
+    <span aria-hidden="true" className={`flex h-4.5 w-4.5 flex-none items-center justify-center rounded-full border-2 ${checked ? "border-[#C8102E]" : "border-[#C5C5CB]"}`}>
+      {checked && <span className="h-2 w-2 rounded-full bg-[#C8102E]" />}
     </span>
   );
 }
@@ -37,9 +37,9 @@ export function FilterPanel({ state, brands }: { state: FilterState; brands: Bra
   const top = [...(brand ? [brand] : []), ...brands.filter((b) => b.slug !== brand?.slug)].slice(0, 8);
   const nofollow = (both: boolean) => (both ? "nofollow" : undefined);
   return (
-    <div className="divide-y divide-[#EEF3F9]">
+    <div className="divide-y divide-[#F3F3F4]">
       <nav aria-label="Filter by category" className="py-4">
-        <p className="mb-2 px-1 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#5B6B84]">Category</p>
+        <p className="mb-2 px-1 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#696976]">Category</p>
         <ul className="grid gap-0.5">
           <li>
             <Link href={shopHref(undefined, brand?.slug)} aria-current={!category ? "true" : undefined} className={`${row} ${!category ? on : off}`}>
@@ -53,7 +53,7 @@ export function FilterPanel({ state, brands }: { state: FilterState; brands: Bra
               <li key={c.slug}>
                 <Link href={shopHref(c.slug, brand?.slug)} rel={nofollow(Boolean(brand))} aria-current={checked ? "true" : undefined} className={`${row} ${checked ? on : off}`}>
                   <Dot checked={checked} />
-                  <Icon size={16} className="flex-none text-[#005AE0]" aria-hidden="true" />
+                  <Icon size={16} className="flex-none text-[#B30E29]" aria-hidden="true" />
                   {c.name}
                 </Link>
               </li>
@@ -63,7 +63,7 @@ export function FilterPanel({ state, brands }: { state: FilterState; brands: Bra
       </nav>
 
       <nav aria-label="Filter by manufacturer" className="py-4">
-        <p className="mb-2 px-1 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#5B6B84]">Manufacturer</p>
+        <p className="mb-2 px-1 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#696976]">Manufacturer</p>
         <BrandFinder brands={brands} prefix={category ? `/shop/${category}?brand=` : "/shop/brands/"} />
         <ul className="mt-2 grid gap-0.5">
           <li>
@@ -82,7 +82,7 @@ export function FilterPanel({ state, brands }: { state: FilterState; brands: Bra
             );
           })}
         </ul>
-        <Link href="/shop/brands" className="mt-2 inline-flex min-h-11 items-center gap-1.5 px-2.5 text-[13.5px] font-bold text-[#005AE0] hover:underline">
+        <Link href="/shop/brands" className="mt-2 inline-flex min-h-11 items-center gap-1.5 px-2.5 text-[13.5px] font-bold text-[#B30E29] hover:underline">
           All manufacturers A–Z <ArrowRight size={14} aria-hidden="true" />
         </Link>
       </nav>
@@ -95,7 +95,7 @@ export function ActiveFilters({ state }: { state: FilterState }) {
   const { category, brand } = state;
   const cat = getCategory(category);
   if (!cat && !brand) return null;
-  const chip = "inline-flex h-9 items-center gap-1.5 rounded-full bg-[#0B1A3C] pl-3.5 pr-2.5 text-[13px] font-semibold text-white transition hover:bg-[#0066FF]";
+  const chip = "inline-flex h-9 items-center gap-1.5 rounded-full bg-[#131316] pl-3.5 pr-2.5 text-[13px] font-semibold text-white transition hover:bg-[#C8102E]";
   return (
     <ul className="flex flex-wrap items-center gap-2" aria-label="Active filters">
       {cat && (

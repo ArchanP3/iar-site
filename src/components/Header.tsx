@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useContact } from "@/components/cms/ContactProvider";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { WhatsAppIcon, WhatsAppTrigger } from "@/components/WhatsAppButton";
 import { contact, phoneHref } from "@/lib/contact";
 import PartSuggest from "@/components/search/PartSuggest";
@@ -43,7 +43,7 @@ import {
   HardHat,
   HandCoins,
   Globe2,
-  Download, Binary } from "lucide-react";
+  Binary } from "lucide-react";
 import { cartCount, useCart } from "@/lib/cart";
 import FaultCodeSearch from "@/components/fault-codes/FaultCodeSearch";
 import { categoryIcon } from "@/components/parts/categoryIcons";
@@ -302,62 +302,54 @@ export default function Header() {
     const body = (
       <>
         {Icon && (
-          <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#F4F7FB] ring-1 ring-[#0066FF]/10 transition ${l.soon ? "text-[#5B6B84]" : "text-[#005AE0] group-hover:bg-[#0066FF] group-hover:text-white"}`}>
+          <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#F7F7F8] ring-1 ring-[#C8102E]/10 transition ${l.soon ? "text-[#696976]" : "text-[#B30E29] group-hover:bg-[#C8102E] group-hover:text-white"}`}>
             <Icon size={19} />
           </span>
         )}
         <span className="min-w-0">
-          <span className={`flex items-center gap-2 text-[15px] font-semibold ${l.soon ? "text-[#5B6B84]" : "text-[#0B1A3C] group-hover:text-[#005AE0]"}`}>
+          <span className={`flex items-center gap-2 text-[15px] font-semibold ${l.soon ? "text-[#696976]" : "text-[#131316] group-hover:text-[#B30E29]"}`}>
             {l.label}
-            {l.soon && <span className="rounded-full bg-[#F1F5FA] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#5B6B84]">Soon</span>}
+            {l.soon && <span className="rounded-full bg-[#F5F5F6] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#696976]">Soon</span>}
           </span>
-          {l.note && <span className="block text-[13px] text-[#5B6B84]">{l.note}</span>}
+          {l.note && <span className="block text-[13px] text-[#696976]">{l.note}</span>}
         </span>
       </>
     );
     return l.soon ? (
       <div key={l.label} className="flex cursor-default items-center gap-3.5 rounded-xl px-3 py-2.5" aria-disabled="true">{body}</div>
     ) : (
-      <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="group flex items-center gap-3.5 rounded-xl px-3 py-2.5 transition hover:bg-[#F4F7FB]">
+      <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="group flex items-center gap-3.5 rounded-xl px-3 py-2.5 transition hover:bg-[#F7F7F8]">
         {body}
       </Link>
     );
   };
 
   return (
-    <header className={`${montserrat.className} sticky top-0 z-50`}>
+    <header className={`${brandFont.className} sticky top-0 z-50`}>
       {/* ---------- TOP STRIP ---------- */}
-      <div className="hidden bg-[#030817] text-[12.5px] text-white/70 md:block">
+      <div className="hidden bg-[#060607] text-[12.5px] text-white/70 md:block">
         <div className="mx-auto flex h-10 max-w-360 items-center justify-between px-5 sm:px-8 lg:px-12">
           <p className="mr-6 hidden items-center gap-2 whitespace-nowrap min-[1400px]:flex">
-            {strip && <MapPin size={14} className="text-[#00B0FF]" />}
+            {strip && <MapPin size={14} className="text-[#FF3B55]" />}
             {strip}
           </p>
           <div className="ml-auto flex items-center gap-5 whitespace-nowrap">
             <a href={`mailto:${mail}`} className="flex items-center gap-1.5 font-medium text-white/80 transition hover:text-white">
-              <Mail size={13} className="text-[#00B0FF]" aria-hidden="true" />
+              <Mail size={13} className="text-[#FF3B55]" aria-hidden="true" />
               {mail}
             </a>
             {phone && (
               <a href={phoneHref(phone)} className="flex items-center gap-1.5 font-medium text-white/80 transition hover:text-white">
-                <Phone size={13} className="text-[#00B0FF]" aria-hidden="true" />
+                <Phone size={13} className="text-[#FF3B55]" aria-hidden="true" />
                 {phone}
               </a>
             )}
             <WhatsAppTrigger topic="A question from the website" label="Chat on WhatsApp" className="-mx-1 grid size-7 place-items-center rounded-md transition hover:bg-white/10">
               <WhatsAppIcon size={16} className="text-[#25D366]" />
             </WhatsAppTrigger>
-            <a href="/downloads/AutomIQ-Brochure.pdf" download className="flex items-center gap-1.5 font-medium text-white/80 transition hover:text-white">
-              <Download size={13} className="text-[#00B0FF]" aria-hidden="true" />
-              Brochure
-            </a>
-            <a href="/downloads/AutomIQ-Line-Card.pdf" download className="flex items-center gap-1.5 font-medium text-white/80 transition hover:text-white">
-              <Download size={13} className="text-[#00B0FF]" aria-hidden="true" />
-              Line Card
-            </a>
             <span className="hidden h-3.5 w-px bg-white/15 xl:block" aria-hidden="true" />
             <span className="hidden items-center gap-2 xl:flex">
-              <ShieldCheck size={14} className="text-[#00B0FF]" />
+              <ShieldCheck size={14} className="text-[#FF3B55]" />
               Free evaluation on every repair
             </span>
           </div>
@@ -368,7 +360,7 @@ export default function Header() {
       <div
         className={`relative border-b transition-all duration-300 ${
           scrolled
-            ? "border-[#E3EAF3] bg-white shadow-[0_10px_30px_-18px_rgba(11,26,60,0.35)]"
+            ? "border-[#EAEAEC] bg-white shadow-[0_10px_30px_-18px_rgba(19, 19, 22,0.35)]"
             : "border-transparent bg-white"
         }`}
         onMouseLeave={closeSoon}
@@ -393,12 +385,12 @@ export default function Header() {
             }}
           >
             <Image
-              src="/automiq-logo-v2.png"
+              src="/iar-logo.png"
               alt="AutomIQ Automation & Drive Services"
-              width={1100}
-              height={206}
-              sizes="(max-width: 640px) 210px, 310px"
-              className={`h-auto transition-all duration-300 ${scrolled ? "w-[min(12rem,calc(100vw-12rem))] sm:w-62.5 lg:w-72 xl:w-53 min-[1440px]:w-72" : "w-[min(13rem,calc(100vw-12rem))] sm:w-67 lg:w-77 xl:w-57.5 min-[1440px]:w-77"}`}
+              width={988}
+              height={448}
+              sizes="(max-width: 640px) 120px, 150px"
+              className={`h-auto transition-all duration-300 ${scrolled ? "w-24 sm:w-28 lg:w-30" : "w-28 sm:w-32 lg:w-36"}`}
               priority
             />
           </Link>
@@ -414,7 +406,7 @@ export default function Header() {
                     aria-expanded={isOpen}
                     onClick={() => setOpen(isOpen ? null : g.label)}
                     className={`group relative flex h-full items-center gap-1.5 whitespace-nowrap px-2 text-[14.5px] font-semibold xl:px-1.5 transition-colors min-[1440px]:px-3 min-[1440px]:text-[15px] ${
-                      isOpen ? "text-[#005AE0]" : "text-[#0B1A3C] hover:text-[#005AE0]"
+                      isOpen ? "text-[#B30E29]" : "text-[#131316] hover:text-[#B30E29]"
                     }`}
                   >
                     {g.label}
@@ -423,7 +415,7 @@ export default function Header() {
                       className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                     />
                     <span
-                      className={`absolute inset-x-2 bottom-0 h-0.75 rounded-t-full bg-linear-to-r from-[#0066FF] to-[#00B0FF] transition-transform duration-300 ${
+                      className={`absolute inset-x-2 bottom-0 h-0.75 rounded-t-full bg-linear-to-r from-[#C8102E] to-[#FF3B55] transition-transform duration-300 ${
                         isOpen ? "scale-x-100" : "scale-x-0"
                       }`}
                     />
@@ -436,10 +428,10 @@ export default function Header() {
                 key={l.label}
                 href={l.href}
                 onMouseEnter={closeSoon}
-                className="group relative flex h-full items-center whitespace-nowrap px-2 text-[14.5px] font-semibold xl:px-1.5 text-[#0B1A3C] transition-colors hover:text-[#005AE0] min-[1440px]:px-3 min-[1440px]:text-[15px]"
+                className="group relative flex h-full items-center whitespace-nowrap px-2 text-[14.5px] font-semibold xl:px-1.5 text-[#131316] transition-colors hover:text-[#B30E29] min-[1440px]:px-3 min-[1440px]:text-[15px]"
               >
                 {l.label}
-                <span className="absolute inset-x-2 bottom-0 h-0.75 origin-left scale-x-0 rounded-t-full bg-linear-to-r from-[#0066FF] to-[#00B0FF] transition-transform duration-300 group-hover:scale-x-100" />
+                <span className="absolute inset-x-2 bottom-0 h-0.75 origin-left scale-x-0 rounded-t-full bg-linear-to-r from-[#C8102E] to-[#FF3B55] transition-transform duration-300 group-hover:scale-x-100" />
               </Link>
             ))}
           </nav>
@@ -450,7 +442,7 @@ export default function Header() {
               type="button"
               onClick={() => setSearchOpen((v) => !v)}
               aria-label="Search parts"
-              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#0B1A3C] transition hover:bg-[#F4F7FB] hover:text-[#005AE0]"
+              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#131316] transition hover:bg-[#F7F7F8] hover:text-[#B30E29]"
             >
               {searchOpen ? <X size={21} /> : <Search size={21} />}
             </button>
@@ -459,11 +451,11 @@ export default function Header() {
             <Link
               href="/cart"
               aria-label={count ? `Cart, ${count} item${count === 1 ? "" : "s"}` : "Cart"}
-              className="relative flex h-11 w-11 items-center justify-center rounded-xl text-[#0B1A3C] transition hover:bg-[#F4F7FB] hover:text-[#005AE0]"
+              className="relative flex h-11 w-11 items-center justify-center rounded-xl text-[#131316] transition hover:bg-[#F7F7F8] hover:text-[#B30E29]"
             >
               <ShoppingCart size={21} />
               {count > 0 && (
-                <span className="absolute right-0.5 top-0.5 flex h-4.75 min-w-4.75 items-center justify-center rounded-full bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-1 text-[11px] font-bold text-white ring-2 ring-white">
+                <span className="absolute right-0.5 top-0.5 flex h-4.75 min-w-4.75 items-center justify-center rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-1 text-[11px] font-bold text-white ring-2 ring-white">
                   {count > 99 ? "99+" : count}
                 </span>
               )}
@@ -471,7 +463,7 @@ export default function Header() {
 
             <Link
               href="/request-quote"
-              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-[#C9D7E8] px-5 text-[15px] font-semibold text-[#0B1A3C] transition hover:border-[#0066FF] hover:text-[#005AE0] lg:inline-flex xl:hidden min-[1720px]:inline-flex"
+              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-[#E6CBCF] px-5 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29] lg:inline-flex xl:hidden min-[1720px]:inline-flex"
             >
               <FileText size={17} />
               Request a Quote
@@ -479,7 +471,7 @@ export default function Header() {
 
             <Link
               href="/request-repair"
-              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl bg-linear-to-br from-[#0066FF] to-[#0A84FF] px-5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(0,102,255,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-10px_rgba(0,102,255,0.8)] sm:inline-flex"
+              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#E30C2C] px-5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(200, 16, 46,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-10px_rgba(200, 16, 46,0.8)] sm:inline-flex"
             >
               <Wrench size={17} />
               <span>
@@ -492,7 +484,7 @@ export default function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={menuOpen}
-              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#0B1A3C] transition hover:bg-[#F4F7FB] xl:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#131316] transition hover:bg-[#F7F7F8] xl:hidden"
             >
               <Menu size={26} />
             </button>
@@ -508,20 +500,20 @@ export default function Header() {
           onMouseLeave={closeSoon}
         >
           {active && (
-            <div className="border-b border-[#E3EAF3] bg-white shadow-[0_30px_60px_-30px_rgba(11,26,60,0.35)]">
+            <div className="border-b border-[#EAEAEC] bg-white shadow-[0_30px_60px_-30px_rgba(19, 19, 22,0.35)]">
               <div className="mx-auto grid max-w-360 grid-cols-[1fr_320px] gap-10 px-12 py-9">
                 <div>
-                  <div className="mb-6 flex items-end justify-between border-b border-[#EEF2F7] pb-5">
+                  <div className="mb-6 flex items-end justify-between border-b border-[#F2F2F3] pb-5">
                     <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#005AE0]">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">
                         {active.label}
                       </p>
-                      <p className="mt-1.5 text-[15px] text-[#52647F]">{active.intro}</p>
+                      <p className="mt-1.5 text-[15px] text-[#62626F]">{active.intro}</p>
                     </div>
                     <Link
                       href={active.href}
                       onClick={() => setOpen(null)}
-                      className="group flex items-center gap-1.5 text-sm font-semibold text-[#0B1A3C] hover:text-[#005AE0]"
+                      className="group flex items-center gap-1.5 text-sm font-semibold text-[#131316] hover:text-[#B30E29]"
                     >
                       View all
                       <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
@@ -531,27 +523,27 @@ export default function Header() {
                   {active.brands ? (
                     <div className="grid grid-cols-[1.55fr_1fr] gap-x-8">
                       <div>
-                        <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5B6B84]">Shop by category</p>
+                        <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#696976]">Shop by category</p>
                         <div className="grid grid-cols-2 gap-x-2">
                           {active.links.map((l) => {
                             const Icon = l.icon;
                             return (
-                              <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="group flex items-center gap-3 rounded-xl px-3 py-2 transition hover:bg-[#F4F7FB]">
-                                {Icon && <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F4F7FB] text-[#005AE0] ring-1 ring-[#0066FF]/10 transition group-hover:bg-[#0066FF] group-hover:text-white"><Icon size={16} /></span>}
-                                <span className="text-[14.5px] font-semibold text-[#0B1A3C] group-hover:text-[#005AE0]">{l.label}</span>
+                              <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="group flex items-center gap-3 rounded-xl px-3 py-2 transition hover:bg-[#F7F7F8]">
+                                {Icon && <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F7F7F8] text-[#B30E29] ring-1 ring-[#C8102E]/10 transition group-hover:bg-[#C8102E] group-hover:text-white"><Icon size={16} /></span>}
+                                <span className="text-[14.5px] font-semibold text-[#131316] group-hover:text-[#B30E29]">{l.label}</span>
                               </Link>
                             );
                           })}
                         </div>
                       </div>
-                      <div className="border-l border-[#EEF2F7] pl-8">
-                        <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5B6B84]">Shop by manufacturer</p>
+                      <div className="border-l border-[#F2F2F3] pl-8">
+                        <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#696976]">Shop by manufacturer</p>
                         <div className="grid grid-cols-2 gap-x-2">
                           {active.brands.links.map((l) => (
-                            <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="rounded-xl px-3 py-2.5 text-[14.5px] font-semibold text-[#0B1A3C] transition hover:bg-[#F4F7FB] hover:text-[#005AE0]">{l.label}</Link>
+                            <Link key={l.label} href={l.href} onClick={() => setOpen(null)} className="rounded-xl px-3 py-2.5 text-[14.5px] font-semibold text-[#131316] transition hover:bg-[#F7F7F8] hover:text-[#B30E29]">{l.label}</Link>
                           ))}
                         </div>
-                        <Link href={active.brands.all.href} onClick={() => setOpen(null)} className="group mt-2 inline-flex items-center gap-1.5 px-3 text-sm font-bold text-[#005AE0]">
+                        <Link href={active.brands.all.href} onClick={() => setOpen(null)} className="group mt-2 inline-flex items-center gap-1.5 px-3 text-sm font-bold text-[#B30E29]">
                           {active.brands.all.label}
                           <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
                         </Link>
@@ -561,7 +553,7 @@ export default function Header() {
                     <div className="grid grid-cols-3 gap-x-6">
                       {active.sections.map((sec) => (
                         <div key={sec.title}>
-                          <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5B6B84]">{sec.title}</p>
+                          <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#696976]">{sec.title}</p>
                           <div className="grid gap-y-1">{sec.links.map(menuItem)}</div>
                         </div>
                       ))}
@@ -575,36 +567,36 @@ export default function Header() {
 
                 {/* Feature card */}
                 {active.feature.partSearch ? (
-                  <div className="relative flex flex-col justify-end rounded-2xl bg-[#030817] p-7 text-white">
+                  <div className="relative flex flex-col justify-end rounded-2xl bg-[#060607] p-7 text-white">
                     <span aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-                      <span className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#0066FF_0%,#0A2A6E_40%,transparent_75%)] opacity-90" />
+                      <span className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#C8102E_0%,#5E0D1A_40%,transparent_75%)] opacity-90" />
                       <span className="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-white/10" />
                     </span>
-                    <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7FD3FF]">{active.feature.eyebrow}</span>
+                    <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF8A99]">{active.feature.eyebrow}</span>
                     <span className="relative mt-2 text-2xl font-extrabold leading-tight">{active.feature.title}</span>
                     <span className="relative mt-2 text-sm leading-relaxed text-white/70">{active.feature.text}</span>
                     <form action="/shop" method="get" role="search" onSubmit={() => setOpen(null)} className="relative mt-4 flex gap-2">
                       <label htmlFor="menu-part-search" className="sr-only">Part number or name</label>
-                      <input id="menu-part-search" name="q" required minLength={2} placeholder="Part number or name" autoComplete="off" className="h-11 min-w-0 flex-1 rounded-xl bg-white px-3 text-[15px] text-[#0B1A3C] outline-none placeholder:text-[#7A8BA3]" />
-                      <button type="submit" className="h-11 rounded-xl bg-[#0066FF] px-4 text-sm font-bold transition hover:bg-[#2F8BFF]">Go</button>
+                      <input id="menu-part-search" name="q" required minLength={2} placeholder="Part number or name" autoComplete="off" className="h-11 min-w-0 flex-1 rounded-xl bg-white px-3 text-[15px] text-[#131316] outline-none placeholder:text-[#888895]" />
+                      <button type="submit" className="h-11 rounded-xl bg-[#C8102E] px-4 text-sm font-bold transition hover:bg-[#F31D3D]">Go</button>
                     </form>
-                    <Link href={active.feature.href} onClick={() => setOpen(null)} className="relative mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:text-[#7FD3FF]">
+                    <Link href={active.feature.href} onClick={() => setOpen(null)} className="relative mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:text-[#FF8A99]">
                       {active.feature.cta} <ArrowUpRight size={16} />
                     </Link>
                   </div>
                 ) : active.feature.search ? (
-                  <div className="relative flex flex-col justify-end rounded-2xl bg-[#030817] p-7 text-white">
+                  <div className="relative flex flex-col justify-end rounded-2xl bg-[#060607] p-7 text-white">
                     <span aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-                      <span className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#0066FF_0%,#0A2A6E_40%,transparent_75%)] opacity-90" />
+                      <span className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#C8102E_0%,#5E0D1A_40%,transparent_75%)] opacity-90" />
                       <span className="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-white/10" />
                     </span>
-                    <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7FD3FF]">{active.feature.eyebrow}</span>
+                    <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF8A99]">{active.feature.eyebrow}</span>
                     <span className="relative mt-2 text-2xl font-extrabold leading-tight">{active.feature.title}</span>
                     <span className="relative mt-2 text-sm leading-relaxed text-white/70">{active.feature.text}</span>
                     <div className="relative mt-4">
                       <FaultCodeSearch inputId="menu-fault-code-search" placeholder="e.g. F30001" button="Go" compact />
                     </div>
-                    <Link href={active.feature.href} onClick={() => setOpen(null)} className="relative mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:text-[#7FD3FF]">
+                    <Link href={active.feature.href} onClick={() => setOpen(null)} className="relative mt-4 inline-flex items-center gap-2 text-sm font-semibold hover:text-[#FF8A99]">
                       {active.feature.cta} <ArrowUpRight size={16} />
                     </Link>
                   </div>
@@ -612,17 +604,17 @@ export default function Header() {
                 <Link
                   href={active.feature.href}
                   onClick={() => setOpen(null)}
-                  className="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-[#030817] p-7 text-white"
+                  className="group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-[#060607] p-7 text-white"
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#0066FF_0%,#0A2A6E_40%,transparent_75%)] opacity-90 transition-opacity duration-500 group-hover:opacity-100"
+                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_100%_100%,#C8102E_0%,#5E0D1A_40%,transparent_75%)] opacity-90 transition-opacity duration-500 group-hover:opacity-100"
                   />
                   <span
                     aria-hidden="true"
                     className="absolute -right-10 -top-10 h-40 w-40 rounded-full border border-white/10"
                   />
-                  <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7FD3FF]">
+                  <span className="relative text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF8A99]">
                     {active.feature.eyebrow}
                   </span>
                   <span className="relative mt-2 text-2xl font-extrabold leading-tight">{active.feature.title}</span>
@@ -640,7 +632,7 @@ export default function Header() {
 
         {/* ---------- SEARCH PANEL ---------- */}
         <div
-          className={`absolute inset-x-0 top-full overflow-hidden border-b border-[#E3EAF3] bg-white transition-all duration-300 ${
+          className={`absolute inset-x-0 top-full overflow-hidden border-b border-[#EAEAEC] bg-white transition-all duration-300 ${
             searchOpen ? "max-h-40 opacity-100" : "max-h-0 border-transparent opacity-0"
           }`}
         >
@@ -649,18 +641,18 @@ export default function Header() {
             className="mx-auto flex max-w-225 items-center gap-3 px-5 py-6"
             onSubmit={() => setSearchOpen(false)}
           >
-            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#D9E4F1] bg-[#F7FAFE] px-5 focus-within:border-[#0066FF]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(0,102,255,0.1)]">
-              <Search size={20} className="shrink-0 text-[#005AE0]" />
+            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] px-5 focus-within:border-[#C8102E]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(200, 16, 46,0.1)]">
+              <Search size={20} className="shrink-0 text-[#B30E29]" />
               <PartSuggest
                 ref={searchRef}
                 name="part"
                 placeholder="Search manufacturer, model or part number"
-                className="h-14 w-full bg-transparent text-base text-[#0B1A3C] outline-none placeholder:text-[#8CA0B9]"
+                className="h-14 w-full bg-transparent text-base text-[#131316] outline-none placeholder:text-[#9D9DA8]"
               />
             </div>
             <button
               type="submit"
-              className="h-14 rounded-2xl bg-[#0B1A3C] px-6 font-semibold text-white transition hover:bg-[#0066FF]"
+              className="h-14 rounded-2xl bg-[#131316] px-6 font-semibold text-white transition hover:bg-[#C8102E]"
             >
               Search
             </button>
@@ -674,7 +666,7 @@ export default function Header() {
         aria-hidden={!menuOpen}
       >
         <div
-          className={`absolute inset-0 bg-[#030817]/60 transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 bg-[#060607]/60 transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0"}`}
           onClick={() => setMenuOpen(false)}
         />
         <nav
@@ -683,13 +675,13 @@ export default function Header() {
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex h-19 items-center justify-between border-b border-[#EEF2F7] px-5">
-            <Image src="/automiq-logo-v2.png" alt="AutomIQ Automation & Drive Services" width={1100} height={206} sizes="224px" className="h-auto w-56" />
+          <div className="flex h-19 items-center justify-between border-b border-[#F2F2F3] px-5">
+            <Image src="/iar-logo.png" alt="AutomIQ Automation & Drive Services" width={988} height={448} sizes="140px" className="h-auto w-32" />
             <button
               type="button"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
-              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#0B1A3C] hover:bg-[#F4F7FB]"
+              className="flex h-11 w-11 items-center justify-center rounded-xl text-[#131316] hover:bg-[#F7F7F8]"
             >
               <X size={26} />
             </button>
@@ -699,7 +691,7 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between border-b border-[#EEF2F7] py-4 text-[17px] font-semibold text-[#0B1A3C]"
+              className="flex items-center justify-between border-b border-[#F2F2F3] py-4 text-[17px] font-semibold text-[#131316]"
             >
               Home
             </Link>
@@ -707,17 +699,17 @@ export default function Header() {
             {groups.map((g) => {
               const isOpen = mobileGroup === g.label;
               return (
-                <div key={g.label} className="border-b border-[#EEF2F7]">
+                <div key={g.label} className="border-b border-[#F2F2F3]">
                   <button
                     type="button"
                     onClick={() => setMobileGroup(isOpen ? null : g.label)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between py-4 text-left text-[17px] font-semibold text-[#0B1A3C]"
+                    className="flex w-full items-center justify-between py-4 text-left text-[17px] font-semibold text-[#131316]"
                   >
                     {g.label}
                     <ChevronDown
                       size={20}
-                      className={`text-[#5B6B84] transition-transform duration-300 ${isOpen ? "rotate-180 text-[#005AE0]" : ""}`}
+                      className={`text-[#696976] transition-transform duration-300 ${isOpen ? "rotate-180 text-[#B30E29]" : ""}`}
                     />
                   </button>
                   <div
@@ -728,29 +720,29 @@ export default function Header() {
                     <div className="min-h-0">
                       {g.sections?.map((sec) => (
                         <div key={sec.title} className="mb-2">
-                          <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5B6B84]">{sec.title}</p>
+                          <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#696976]">{sec.title}</p>
                           {sec.links.map((l) =>
                             l.soon ? (
-                              <span key={l.label} className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[15px] text-[#5B6B84]">
+                              <span key={l.label} className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-[15px] text-[#696976]">
                                 {l.label}
-                                <span className="rounded-full bg-[#F1F5FA] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em]">Soon</span>
+                                <span className="rounded-full bg-[#F5F5F6] px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em]">Soon</span>
                               </span>
                             ) : (
-                              <Link key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-[#52647F] hover:bg-[#F4F7FB] hover:text-[#005AE0]">
+                              <Link key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-[15px] text-[#62626F] hover:bg-[#F7F7F8] hover:text-[#B30E29]">
                                 {l.label}
                               </Link>
                             ),
                           )}
                         </div>
                       ))}
-                      {g.brands && <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5B6B84]">Shop by category</p>}
+                      {g.brands && <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#696976]">Shop by category</p>}
                       <div className={`grid gap-1 ${g.columns === 4 || g.brands ? "grid-cols-2" : "grid-cols-1"}`}>
                         {g.links.map((l) => (
                           <Link
                             key={l.label}
                             href={l.href}
                             onClick={() => setMenuOpen(false)}
-                            className="rounded-lg px-3 py-2.5 text-[15px] text-[#52647F] hover:bg-[#F4F7FB] hover:text-[#005AE0]"
+                            className="rounded-lg px-3 py-2.5 text-[15px] text-[#62626F] hover:bg-[#F7F7F8] hover:text-[#B30E29]"
                           >
                             {l.label}
                           </Link>
@@ -758,10 +750,10 @@ export default function Header() {
                       </div>
                       {g.brands && (
                         <div className="mt-2">
-                          <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5B6B84]">Shop by manufacturer</p>
+                          <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#696976]">Shop by manufacturer</p>
                           <div className="grid grid-cols-2 gap-1">
                             {[...g.brands.links, g.brands.all].map((l) => (
-                              <Link key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2.5 text-[15px] text-[#52647F] hover:bg-[#F4F7FB] hover:text-[#005AE0]">
+                              <Link key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2.5 text-[15px] text-[#62626F] hover:bg-[#F7F7F8] hover:text-[#B30E29]">
                                 {l.label}
                               </Link>
                             ))}
@@ -771,7 +763,7 @@ export default function Header() {
                       <Link
                         href={g.href}
                         onClick={() => setMenuOpen(false)}
-                        className="mt-2 inline-flex items-center gap-1.5 px-3 text-sm font-semibold text-[#005AE0]"
+                        className="mt-2 inline-flex items-center gap-1.5 px-3 text-sm font-semibold text-[#B30E29]"
                       >
                         View all {g.label.toLowerCase()}
                         <ArrowRight size={15} />
@@ -787,18 +779,18 @@ export default function Header() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between border-b border-[#EEF2F7] py-4 text-[17px] font-semibold text-[#0B1A3C]"
+                className="flex items-center justify-between border-b border-[#F2F2F3] py-4 text-[17px] font-semibold text-[#131316]"
               >
                 {l.label}
               </Link>
             ))}
           </div>
 
-          <div className="grid gap-3 border-t border-[#EEF2F7] p-5">
+          <div className="grid gap-3 border-t border-[#F2F2F3] p-5">
             <Link
               href="/request-repair"
               onClick={() => setMenuOpen(false)}
-              className="flex h-13 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#0A84FF] font-semibold text-white"
+              className="flex h-13 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#E30C2C] font-semibold text-white"
             >
               <Wrench size={18} />
               Request a Repair
@@ -806,7 +798,7 @@ export default function Header() {
             <Link
               href="/request-quote"
               onClick={() => setMenuOpen(false)}
-              className="flex h-13 items-center justify-center gap-2 rounded-xl border border-[#C9D7E8] font-semibold text-[#0B1A3C]"
+              className="flex h-13 items-center justify-center gap-2 rounded-xl border border-[#E6CBCF] font-semibold text-[#131316]"
             >
               <FileText size={18} />
               Request a Quote

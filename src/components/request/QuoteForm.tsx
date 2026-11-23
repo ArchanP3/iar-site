@@ -34,7 +34,7 @@ export default function QuoteForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type={offer ? "offer" : "quote"} subject={offer ? "New offer on parts: AutomIQ website" : "New parts quote request: AutomIQ website"} />
       <input type="hidden" name="_item" />
 
@@ -43,7 +43,7 @@ export default function QuoteForm() {
           <div>
             <label className={label} htmlFor="rq-part">Part / model number *</label>
             <div className="relative">
-              <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#005AE0]" aria-hidden="true" />
+              <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#B30E29]" aria-hidden="true" />
               <input id="rq-part" name="Part number" required className={`${input} pl-9 font-mono`} placeholder="6SL3120-1TE21-0AA3" />
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function QuoteForm() {
         <div className="flex flex-wrap gap-2">
           {conditions.map((c) => (
             <button key={c} type="button" aria-pressed={condition === c} onClick={() => setCondition(c)}
-              className={`rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${condition === c ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+              className={`rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${condition === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c === "Any" ? "Any condition" : c}
             </button>
           ))}
@@ -74,7 +74,7 @@ export default function QuoteForm() {
           </div>
         )}
         <div className="mt-4">
-          <label className={label} htmlFor="rq-notes">Notes <span className="font-normal text-[#52647F]">(optional)</span></label>
+          <label className={label} htmlFor="rq-notes">Notes <span className="font-normal text-[#62626F]">(optional)</span></label>
           <textarea id="rq-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Firmware version, alternates you accept, more part numbers…" />
         </div>
       </Step>

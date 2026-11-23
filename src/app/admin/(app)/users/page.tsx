@@ -12,7 +12,7 @@ type Props = { searchParams: Promise<{ msg?: string; who?: string; kind?: string
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <UsersPage {...props} />
     </Suspense>
   );
@@ -56,7 +56,7 @@ async function UsersPage({ searchParams }: Props) {
               <Table head={["Name", "Role", "Two-step", "Last active", ""]}>
                 {users.map((x) => (
                   <tr key={x.id} className={x.disabled ? "opacity-55" : ""}>
-                    <td><b>{x.name}</b>{x.id === me.id && <span className="ml-1.5 text-[12px] text-[#8494AB]">(you)</span>}<div className="text-[12.5px] text-[#5B6B84]">{x.email}</div></td>
+                    <td><b>{x.name}</b>{x.id === me.id && <span className="ml-1.5 text-[12px] text-[#91919E]">(you)</span>}<div className="text-[12.5px] text-[#696976]">{x.email}</div></td>
                     <td>
                       <form action={updateUser} className="flex items-center gap-1.5">
                         <input type="hidden" name="id" value={x.id} /><input type="hidden" name="op" value="role" />
@@ -65,7 +65,7 @@ async function UsersPage({ searchParams }: Props) {
                       </form>
                     </td>
                     <td>{x.totp_on ? <Pill tone="ok">On</Pill> : <Pill>Off</Pill>}</td>
-                    <td className="whitespace-nowrap text-[12.5px] text-[#5B6B84]">{x.disabled ? "Turned off" : x.must_change_password ? "Not signed in yet" : x.last_active ? ago(x.last_active) : "—"}</td>
+                    <td className="whitespace-nowrap text-[12.5px] text-[#696976]">{x.disabled ? "Turned off" : x.must_change_password ? "Not signed in yet" : x.last_active ? ago(x.last_active) : "—"}</td>
                     <td>
                       <div className="flex flex-wrap justify-end gap-1.5">
                         <ResetPasswordButton id={x.id} />
@@ -80,10 +80,10 @@ async function UsersPage({ searchParams }: Props) {
             <div className="flex flex-col gap-5">
               <InviteForm canOwner={superAdmin} />
               <Card title="What each role can do" icon={<ShieldCheck size={17} />}>
-                <dl className="flex flex-col gap-2.5 text-[12.8px]">{ROLE_HELP.map(([r, d]) => <div key={r}><dt className="font-bold">{roleLabel[r]}</dt><dd className="text-[#5B6B84]">{d}</dd></div>)}</dl>
+                <dl className="flex flex-col gap-2.5 text-[12.8px]">{ROLE_HELP.map(([r, d]) => <div key={r}><dt className="font-bold">{roleLabel[r]}</dt><dd className="text-[#696976]">{d}</dd></div>)}</dl>
               </Card>
               {can(me.role, "backup") && <Card title="Backup" icon={<DatabaseBackup size={17} />}>
-                <p className="text-[12.8px] text-[#5B6B84]">Download everything in the CMS (page SEO, redirects, posts, landing pages, settings, leads, activity) as one file. Keep a copy each month.</p>
+                <p className="text-[12.8px] text-[#696976]">Download everything in the CMS (page SEO, redirects, posts, landing pages, settings, leads, activity) as one file. Keep a copy each month.</p>
                 <a href="/admin/export/backup" className={`${b("light")} mt-3`}><Download size={15} /> Download backup</a>
               </Card>}
             </div>
@@ -97,12 +97,12 @@ async function UsersPage({ searchParams }: Props) {
           <button className={b("light", true)}>Filter</button>
         </form>
       }>
-        {!activity.length && <p className="p-6 text-center text-[#8494AB]">No changes yet.</p>}
+        {!activity.length && <p className="p-6 text-center text-[#91919E]">No changes yet.</p>}
         {activity.map((a) => (
-          <div key={a.id} className="flex items-center gap-3 border-b border-[#EEF3F9] px-5 py-2.5 last:border-0">
-            <div className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-full bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[11px] font-bold text-white">{who(a.user_name).split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase()}</div>
-            <div className="min-w-0 flex-1 text-[13px] leading-snug"><b>{who(a.user_name)}</b> <span className="text-[#5B6B84]">{a.action}</span> <span className="break-all font-mono text-[12px]">{what(a.target)}</span>{a.undone && <span className="ml-2"><Pill>Undone</Pill></span>}</div>
-            <span className="whitespace-nowrap text-[12px] text-[#8494AB]" title={new Date(a.created_at).toLocaleString("en-CA")}>{ago(a.created_at)}</span>
+          <div key={a.id} className="flex items-center gap-3 border-b border-[#F3F3F4] px-5 py-2.5 last:border-0">
+            <div className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[11px] font-bold text-white">{who(a.user_name).split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase()}</div>
+            <div className="min-w-0 flex-1 text-[13px] leading-snug"><b>{who(a.user_name)}</b> <span className="text-[#696976]">{a.action}</span> <span className="break-all font-mono text-[12px]">{what(a.target)}</span>{a.undone && <span className="ml-2"><Pill>Undone</Pill></span>}</div>
+            <span className="whitespace-nowrap text-[12px] text-[#91919E]" title={new Date(a.created_at).toLocaleString("en-CA")}>{ago(a.created_at)}</span>
             {canUndo(a as never) ? <form action={undo}><input type="hidden" name="id" value={a.id} /><button className={b("light", true)}><Undo2 size={13} /> Undo</button></form> : <span className="w-17" />}
           </div>
         ))}

@@ -18,7 +18,7 @@ type Props = { searchParams: Promise<{ q?: string; page?: string; cat?: string; 
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Parts {...props} />
     </Suspense>
   );
@@ -65,7 +65,7 @@ async function Parts({ searchParams }: Props) {
     { key: "settings", label: "Import & info", icon: <Settings2 size={15} /> },
   ];
   const countTone = (t: (typeof tabs)[number], on: boolean) =>
-    on ? "bg-white/18 text-white" : t.tone === "red" && t.count ? "bg-[#FEF3F2] text-[#B42318]" : t.tone === "amber" && t.count ? "bg-[#FFFAEB] text-[#B45309]" : "bg-[#EEF3F9] text-[#5B6B84]";
+    on ? "bg-white/18 text-white" : t.tone === "red" && t.count ? "bg-[#FEF3F2] text-[#B42318]" : t.tone === "amber" && t.count ? "bg-[#FFFAEB] text-[#B45309]" : "bg-[#F3F3F4] text-[#696976]";
 
   const samples = list.items.slice(0, 3).map((p) => ({ label: `${p.manufacturer} ${p.partNumber}`, vars: partVars(p) }));
   const filtered = Boolean(q || cat);
@@ -77,23 +77,23 @@ async function Parts({ searchParams }: Props) {
   const listCard = rows && (
     <Card pad={false} className="overflow-hidden">
       {/* Category chips */}
-      <nav aria-label="Category" className="flex gap-1.5 overflow-x-auto border-b border-[#E3EAF3] px-4 py-2.5 text-[12.5px] [scrollbar-width:none]">
+      <nav aria-label="Category" className="flex gap-1.5 overflow-x-auto border-b border-[#EAEAEC] px-4 py-2.5 text-[12.5px] [scrollbar-width:none]">
         {[{ slug: undefined as string | undefined, name: "All categories" }, ...categoryOptions, { slug: "none", name: "No category" }].map((c) => {
           const on = cat === c.slug;
           return (
-            <Link key={c.slug ?? "all"} href={href({ cat: c.slug })} aria-current={on ? "true" : undefined} className={cx("shrink-0 whitespace-nowrap rounded-full border px-3 py-1 font-semibold transition", on ? "border-[#0B1A3C] bg-[#0B1A3C] text-white" : "border-[#E3EAF3] bg-white text-[#5B6B84] hover:border-[#0066FF] hover:text-[#0052CC]")}>
+            <Link key={c.slug ?? "all"} href={href({ cat: c.slug })} aria-current={on ? "true" : undefined} className={cx("shrink-0 whitespace-nowrap rounded-full border px-3 py-1 font-semibold transition", on ? "border-[#131316] bg-[#131316] text-white" : "border-[#EAEAEC] bg-white text-[#696976] hover:border-[#C8102E] hover:text-[#A50D25]")}>
               {c.name}
             </Link>
           );
         })}
       </nav>
       {tab === "price" && (
-        <div className="border-b border-[#E3EAF3] bg-[#FFFBFA] px-4 py-2.5 text-[12.5px] text-[#7A271A]">
+        <div className="border-b border-[#EAEAEC] bg-[#FFFBFA] px-4 py-2.5 text-[12.5px] text-[#7A271A]">
           Listings priced under their category&apos;s minimum, cheapest first. They may be typos: click a price to fix it.
         </div>
       )}
       {tab === "edited" && (
-        <div className="border-b border-[#E3EAF3] bg-[#FFFDF5] px-4 py-2.5 text-[12.5px] text-[#7A2E0E]">
+        <div className="border-b border-[#EAEAEC] bg-[#FFFDF5] px-4 py-2.5 text-[12.5px] text-[#7A2E0E]">
           Fields changed here are <Lock size={11} className="inline text-[#B45309]" /> locked, so imports won&apos;t overwrite them. Unlock a field to let imports update it again.
         </div>
       )}
@@ -118,8 +118,8 @@ async function Parts({ searchParams }: Props) {
         empty={empty}
         showLocks={tab === "edited"}
       />
-      <div className="flex flex-wrap items-center gap-3 border-t border-[#E3EAF3] px-4 py-3 text-[12.5px] text-[#5B6B84]">
-        <span className="font-semibold text-[#0B1A3C]">Page {page}</span>
+      <div className="flex flex-wrap items-center gap-3 border-t border-[#EAEAEC] px-4 py-3 text-[12.5px] text-[#696976]">
+        <span className="font-semibold text-[#131316]">Page {page}</span>
         {page > 1 && <Link href={href({ page: page - 1 })} className={b("light", true)}>Previous</Link>}
         {rows.hasNext && <Link href={href({ page: page + 1 })} className={b("light", true)}>Next</Link>}
         <span className="ml-auto max-sm:w-full">Click a price to change it. Tick rows to change {isAdmin ? "prices or categories" : "categories"} together.</span>
@@ -131,7 +131,7 @@ async function Parts({ searchParams }: Props) {
     <>
       <SlashFocus target="parts-q" />
       <PageHead
-        crumb={<><span>CMS</span><span>/</span><span className="text-[#5B6B84]">Parts Catalog</span></>}
+        crumb={<><span>CMS</span><span>/</span><span className="text-[#696976]">Parts Catalog</span></>}
         title="Parts Catalog"
         sub={<>{list.total.toLocaleString()} part pages on .com and .ca · {indexable.toLocaleString()} in the parts sitemaps</>}
         actions={<a href="/shop" target="_blank" rel="noopener" className={b("light")}><ExternalLink size={14} /> View shop</a>}
@@ -143,7 +143,7 @@ async function Parts({ searchParams }: Props) {
         {cat && listTab && <input type="hidden" name="cat" value={cat} />}
         <label className="relative flex-1">
           <span className="sr-only">Search parts</span>
-          <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#8494AB]" />
+          <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#91919E]" />
           <input
             id="parts-q"
             name="q"
@@ -151,9 +151,9 @@ async function Parts({ searchParams }: Props) {
             defaultValue={q ?? ""}
             placeholder="Search part number, brand or title"
             autoComplete="off"
-            className="h-12 w-full rounded-xl border border-[#D9E3EF] bg-white pl-11 pr-14 text-[14.5px] font-medium text-[#0B1A3C] shadow-[0_1px_2px_rgba(11,26,60,0.05)] outline-none transition placeholder:text-[#8494AB] focus:border-[#0066FF] focus:ring-4 focus:ring-[#0066FF]/12"
+            className="h-12 w-full rounded-xl border border-[#EEDADD] bg-white pl-11 pr-14 text-[14.5px] font-medium text-[#131316] shadow-[0_1px_2px_rgba(19, 19, 22,0.05)] outline-none transition placeholder:text-[#91919E] focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/12"
           />
-          <kbd className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 grid h-6 min-w-6 place-items-center rounded-md border border-[#E3EAF3] bg-[#F7FAFD] px-1.5 text-[11.5px] font-bold text-[#8494AB] max-sm:hidden">/</kbd>
+          <kbd className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 grid h-6 min-w-6 place-items-center rounded-md border border-[#EAEAEC] bg-[#FAFAFA] px-1.5 text-[11.5px] font-bold text-[#91919E] max-sm:hidden">/</kbd>
         </label>
         <button className={cx(b("dark"), "h-12! px-6")}>Search</button>
         {filtered && listTab && <Link href={href({ q: "", cat: "" })} className={cx(b("light"), "h-12!")}>Clear</Link>}
@@ -170,10 +170,10 @@ async function Parts({ searchParams }: Props) {
               aria-current={on ? "page" : undefined}
               className={cx(
                 "inline-flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-xl px-3.5 text-[13px] font-bold transition",
-                on ? "bg-[#0B1A3C] text-white shadow-[0_10px_24px_-14px_rgba(11,26,60,0.9)]" : "text-[#5B6B84] hover:bg-white hover:text-[#0B1A3C]",
+                on ? "bg-[#131316] text-white shadow-[0_10px_24px_-14px_rgba(19, 19, 22,0.9)]" : "text-[#696976] hover:bg-white hover:text-[#131316]",
               )}
             >
-              <span className={on ? "text-[#7CC4FF]" : "text-[#8494AB]"}>{t.icon}</span>
+              <span className={on ? "text-[#F88394]" : "text-[#91919E]"}>{t.icon}</span>
               {t.label}
               {t.count != null && <span className={cx("rounded-full px-2 py-0.5 text-[11px] font-extrabold tabular-nums", countTone(t, on))}>{t.count.toLocaleString()}</span>}
             </Link>
@@ -191,7 +191,7 @@ async function Parts({ searchParams }: Props) {
             {listCard}
             {isAdmin ? (
               <Card title="Minimum price per category" icon={<TriangleAlert size={16} />}>
-                <p className="mb-3 text-[12.5px] text-[#5B6B84]">Listings under these go on the Price check list. Leave empty for no minimum.</p>
+                <p className="mb-3 text-[12.5px] text-[#696976]">Listings under these go on the Price check list. Leave empty for no minimum.</p>
                 <MinPricesForm cats={categoryOptions} mins={mins} />
               </Card>
             ) : (
@@ -204,7 +204,7 @@ async function Parts({ searchParams }: Props) {
               <div className="flex flex-col items-start gap-2">
                 <TriangleAlert size={22} className="text-[#B42318]" />
                 <h2 className="text-[16px] font-extrabold">Catch prices that look wrong</h2>
-                <p className="text-[13px] text-[#5B6B84]">Set a minimum price for each category. Any listing priced under it shows up here, cheapest first, so typos like $12 instead of $1,200 are easy to spot.</p>
+                <p className="text-[13px] text-[#696976]">Set a minimum price for each category. Any listing priced under it shows up here, cheapest first, so typos like $12 instead of $1,200 are easy to spot.</p>
               </div>
             </Card>
             <Card title="Minimum price per category" icon={<TriangleAlert size={16} />}>
@@ -220,9 +220,9 @@ async function Parts({ searchParams }: Props) {
       {tab === "settings" && (
         <>
           <div className="grid gap-5 lg:grid-cols-3">
-            <Card><div className="flex items-center gap-3"><Package size={22} className="text-[#0066FF]" /><div><div className="text-[24px] font-extrabold">{list.total.toLocaleString()}</div><div className="text-[12.5px] text-[#5B6B84]">part pages</div></div></div></Card>
-            <Card><div className="flex items-center gap-3"><Search size={22} className="text-[#12B76A]" /><div><div className="text-[24px] font-extrabold">{indexable.toLocaleString()}</div><div className="text-[12.5px] text-[#5B6B84]">in the parts sitemaps</div></div></div></Card>
-            <Card><div className="flex items-center gap-3"><Database size={22} className="text-[#7C3AED]" /><div><div className="text-[15px] font-extrabold">Supabase catalog</div><div className="text-[12.5px] text-[#5B6B84]">Bulk import, plus edits here</div></div></div></Card>
+            <Card><div className="flex items-center gap-3"><Package size={22} className="text-[#C8102E]" /><div><div className="text-[24px] font-extrabold">{list.total.toLocaleString()}</div><div className="text-[12.5px] text-[#696976]">part pages</div></div></div></Card>
+            <Card><div className="flex items-center gap-3"><Search size={22} className="text-[#12B76A]" /><div><div className="text-[24px] font-extrabold">{indexable.toLocaleString()}</div><div className="text-[12.5px] text-[#696976]">in the parts sitemaps</div></div></div></Card>
+            <Card><div className="flex items-center gap-3"><Database size={22} className="text-[#7C3AED]" /><div><div className="text-[15px] font-extrabold">Supabase catalog</div><div className="text-[12.5px] text-[#696976]">Bulk import, plus edits here</div></div></div></Card>
           </div>
           <Alert tone="blue" icon={<Database size={16} />}>Part numbers are imported in bulk by your developer. Prices, stock and details can be changed here: a changed field is locked, so the next import keeps your change. Use Unlock on the edit page or the Edited in CMS tab to let imports update it again.</Alert>
         </>

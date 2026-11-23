@@ -13,7 +13,7 @@ type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ saved?: 
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Edit {...props} />
     </Suspense>
   );
@@ -31,7 +31,7 @@ async function Edit({ params, searchParams }: Props) {
   const categories = [...new Set(["Fault codes & troubleshooting", "Repair guides", "Decision guide", "How we work", "Industry", ...cats.map((c) => c.category)])];
   return (
     <>
-      <PageHead crumb={<><Link href="/admin/blog" className="hover:text-[#0052CC]">Blog</Link><ChevronRight size={13} /><span>{post ? post.status : "New post"}</span></>} title={post?.title || "New blog post"} />
+      <PageHead crumb={<><Link href="/admin/blog" className="hover:text-[#A50D25]">Blog</Link><ChevronRight size={13} /><span>{post ? post.status : "New post"}</span></>} title={post?.title || "New blog post"} />
       <PostEditor
         post={post ? { ...post, publish_at: post.publish_at ? new Date(post.publish_at).toISOString() : null, created_at: String(post.created_at), updated_at: String(post.updated_at) } : null}
         categories={categories}

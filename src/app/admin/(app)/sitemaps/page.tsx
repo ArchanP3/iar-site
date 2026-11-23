@@ -12,7 +12,7 @@ import { saveSitemapToggles } from "./actions";
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Sitemaps />
     </Suspense>
   );
@@ -45,21 +45,21 @@ async function Sitemaps() {
           <a href={`https://search.google.com/search-console/sitemaps?resource_id=sc-domain:${gscHost}`} target="_blank" rel="noopener" className={b("primary")}><ExternalLink size={15} /> Submit in Search Console</a>
         </>}
       />
-      <Card title="XML sitemaps" icon={<MapIcon size={17} />} right={<span className="text-[12px] text-[#8494AB]">Index: /sitemap.xml</span>} pad={false}>
+      <Card title="XML sitemaps" icon={<MapIcon size={17} />} right={<span className="text-[12px] text-[#91919E]">Index: /sitemap.xml</span>} pad={false}>
         <form action={saveSitemapToggles}>
           <Table head={["File", "Contains", "Size", "Published"]}>
             {rows.map((r) => (
               <tr key={r.key}>
-                <td className="font-mono text-[12.5px] font-bold">{r.key === "parts" ? r.file : <a href={r.file} target="_blank" className="hover:text-[#0052CC]">{r.file}</a>}</td>
-                <td className="text-[#5B6B84]">{r.what}</td>
+                <td className="font-mono text-[12.5px] font-bold">{r.key === "parts" ? r.file : <a href={r.file} target="_blank" className="hover:text-[#A50D25]">{r.file}</a>}</td>
+                <td className="text-[#696976]">{r.what}</td>
                 <td>{r.n}</td>
-                <td><label className="inline-flex items-center gap-2"><input type="checkbox" name={r.key} defaultChecked={site.sitemaps[r.key]} className="h-4 w-4 accent-[#0066FF]" /> <Pill tone={site.sitemaps[r.key] ? "ok" : "gray"}>{site.sitemaps[r.key] ? "On" : "Off"}</Pill></label></td>
+                <td><label className="inline-flex items-center gap-2"><input type="checkbox" name={r.key} defaultChecked={site.sitemaps[r.key]} className="h-4 w-4 accent-[#C8102E]" /> <Pill tone={site.sitemaps[r.key] ? "ok" : "gray"}>{site.sitemaps[r.key] ? "On" : "Off"}</Pill></label></td>
               </tr>
             ))}
           </Table>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#E3EAF3] px-4.5 py-3.5 text-[12.8px]">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#EAEAEC] px-4.5 py-3.5 text-[12.8px]">
             <b>Always left out:</b>
-            {["Drafts", "Noindex pages", "Redirected URLs", "Pages with a canonical pointing elsewhere", "404 / 410 pages"].map((t) => <span key={t} className="text-[#5B6B84]">✓ {t}</span>)}
+            {["Drafts", "Noindex pages", "Redirected URLs", "Pages with a canonical pointing elsewhere", "404 / 410 pages"].map((t) => <span key={t} className="text-[#696976]">✓ {t}</span>)}
             <span className="flex-1" />
             <button className={b("dark", true)}><Save size={13} /> Save</button>
           </div>

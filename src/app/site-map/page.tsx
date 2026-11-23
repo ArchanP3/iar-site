@@ -2,7 +2,7 @@ import Link from "next/link";
 import { BookOpen, Building2, ChevronRight, Factory, FileText, MapPin, Package, Search, Wrench } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { SITE_URL } from "@/lib/site";
 import { allServices, serviceUrl } from "@/lib/services";
 import { brands, brandUrl } from "@/lib/brands";
@@ -52,12 +52,12 @@ const groups: Group[] = [
 export default function SiteMapPage() {
   const total = groups.reduce((n, g) => n + g.links.length + (g.href ? 1 : 0), 0);
   return (
-    <main className={`${montserrat.className} min-h-screen bg-[#F4F7FB] text-[#0B1A3C]`}>
+    <main className={`${brandFont.className} min-h-screen bg-[#F7F7F8] text-[#131316]`}>
       <PageExtras path="/site-map" />
       <Header />
-      <section className="relative overflow-hidden bg-[#050B18] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(0,176,255,0.3),transparent)] blur-2xl" />
+      <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -67,15 +67,15 @@ export default function SiteMapPage() {
             </ol>
           </nav>
           <h1 className="mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[44px]">
-            Site<span className="bg-linear-to-r from-[#7FD3FF] to-[#00B0FF] bg-clip-text text-transparent">map</span>
+            Site<span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">map</span>
           </h1>
           <p className="mt-3 max-w-160 text-[14.5px] leading-[1.65] text-white/75 sm:text-[16px]">
             Every main page on our website in one place: {total} pages across repairs, parts, brands, industries and fault codes.
           </p>
-          <form action="/search" className="mt-6 flex max-w-140 items-center gap-2 rounded-2xl bg-white/[0.07] p-1.5 ring-1 ring-white/15 focus-within:ring-[#00B0FF]/60">
-            <Search size={18} className="ml-3 flex-none text-[#7FD3FF]" aria-hidden="true" />
+          <form action="/search" className="mt-6 flex max-w-140 items-center gap-2 rounded-2xl bg-white/[0.07] p-1.5 ring-1 ring-white/15 focus-within:ring-[#FF3B55]/60">
+            <Search size={18} className="ml-3 flex-none text-[#FF8A99]" aria-hidden="true" />
             <input name="part" type="search" aria-label="Search parts" placeholder="Search a part number" className="h-11 min-w-0 flex-1 bg-transparent text-[15px] text-white outline-none placeholder:text-white/60" />
-            <button type="submit" className="h-11 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#0B1A3C] hover:bg-[#E6F4FF]">Search</button>
+            <button type="submit" className="h-11 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#131316] hover:bg-[#F2F2F3]">Search</button>
           </form>
         </div>
       </section>
@@ -83,19 +83,19 @@ export default function SiteMapPage() {
       <div className="relative mx-auto -mt-14 max-w-310 px-5 pb-14 sm:px-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {groups.map(({ title, icon: Icon, href, links, wide }) => (
-            <section key={title} aria-labelledby={`sm-${title}`} className={`min-w-0 rounded-[22px] border border-[#E3EAF3] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(11,26,60,0.5)] sm:p-6 ${wide ? "md:col-span-2 lg:col-span-4" : ""}`}>
-              <div className="flex items-center justify-between gap-3 border-b border-[#EEF3F9] pb-3">
+            <section key={title} aria-labelledby={`sm-${title}`} className={`min-w-0 rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)] sm:p-6 ${wide ? "md:col-span-2 lg:col-span-4" : ""}`}>
+              <div className="flex items-center justify-between gap-3 border-b border-[#F3F3F4] pb-3">
                 <h2 id={`sm-${title}`} className="flex items-center gap-2.5 text-[17px] font-extrabold">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white"><Icon size={17} aria-hidden="true" /></span>
-                  {href ? <Link href={href} className="hover:text-[#005AE0]">{title}</Link> : title}
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><Icon size={17} aria-hidden="true" /></span>
+                  {href ? <Link href={href} className="hover:text-[#B30E29]">{title}</Link> : title}
                 </h2>
-                <span className="rounded-full bg-[#F1F5FA] px-2.5 py-0.5 text-[12px] font-bold text-[#5B6B84]">{links.length}</span>
+                <span className="rounded-full bg-[#F5F5F6] px-2.5 py-0.5 text-[12px] font-bold text-[#696976]">{links.length}</span>
               </div>
               <ul className={`mt-3 grid gap-x-6 gap-y-0.5 ${wide ? "sm:grid-cols-2 lg:grid-cols-4" : ""}`}>
                 {links.map(([label, to]) => (
                   <li key={to}>
-                    <Link href={to} className="group flex items-start gap-1.5 rounded-lg py-1.5 text-[14px] leading-snug text-[#3E4F68] transition hover:text-[#005AE0]">
-                      <ChevronRight size={13} className="mt-[3px] flex-none text-[#B5C3D6] transition group-hover:translate-x-0.5 group-hover:text-[#005AE0]" aria-hidden="true" />
+                    <Link href={to} className="group flex items-start gap-1.5 rounded-lg py-1.5 text-[14px] leading-snug text-[#4E4E58] transition hover:text-[#B30E29]">
+                      <ChevronRight size={13} className="mt-[3px] flex-none text-[#C2C2C9] transition group-hover:translate-x-0.5 group-hover:text-[#B30E29]" aria-hidden="true" />
                       <span className="min-w-0">{label}</span>
                     </Link>
                   </li>
@@ -104,8 +104,8 @@ export default function SiteMapPage() {
             </section>
           ))}
         </div>
-        <p className="mt-6 text-center text-[12.5px] text-[#5B6B84]">
-          Individual part and fault code pages are listed in our <a href="/sitemap.xml" className="font-semibold text-[#0052CC] hover:underline">XML sitemap</a> for search engines.
+        <p className="mt-6 text-center text-[12.5px] text-[#696976]">
+          Individual part and fault code pages are listed in our <a href="/sitemap.xml" className="font-semibold text-[#A50D25] hover:underline">XML sitemap</a> for search engines.
         </p>
       </div>
       <Footer />

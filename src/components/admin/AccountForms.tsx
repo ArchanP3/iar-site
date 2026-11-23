@@ -30,7 +30,7 @@ export default function AccountForms({ name, mustChange, totpOn, required, pendi
         <Card title="Password" icon={<KeyRound size={17} />}>
           <form action={pwAction} className="flex flex-col gap-3">
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">{mustChange ? "Temporary password" : "Current password"}</span><input name="current" type="password" autoComplete="current-password" required className={input} /></label>
-            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">New password</span><input name="password" type="password" autoComplete="new-password" required minLength={10} className={input} /><span className="text-[11.5px] text-[#8494AB]">At least 10 characters, with letters and a number.</span></label>
+            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">New password</span><input name="password" type="password" autoComplete="new-password" required minLength={10} className={input} /><span className="text-[11.5px] text-[#91919E]">At least 10 characters, with letters and a number.</span></label>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">New password again</span><input name="confirm" type="password" autoComplete="new-password" required className={input} /></label>
             <Status s={pw} />
             <div><button disabled={pwPending} className={b("primary")}>{pwPending ? "Saving…" : "Change password"}</button></div>
@@ -50,15 +50,15 @@ export default function AccountForms({ name, mustChange, totpOn, required, pendi
             </form>
           ) : pendingSecret && qr ? (
             <form action={tcAction} className="flex flex-col gap-3">
-              <ol className="list-decimal space-y-1 pl-5 text-[12.8px] text-[#33445F]">
+              <ol className="list-decimal space-y-1 pl-5 text-[12.8px] text-[#45454D]">
                 <li>Open Google Authenticator or Microsoft Authenticator on your phone.</li>
                 <li>Tap <b>+</b> and scan this code.</li>
                 <li>Type the 6-digit code it shows.</li>
               </ol>
               <div className="flex flex-wrap items-center gap-4">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={qr} alt="QR code for the authenticator app" width={168} height={168} className="rounded-xl border border-[#E3EAF3]" />
-                <div className="text-[12px] text-[#5B6B84]">Can&apos;t scan? Enter this key:<div className="mt-1 select-all break-all font-mono text-[12.5px] text-[#0B1A3C]">{pendingSecret.match(/.{1,4}/g)?.join(" ")}</div></div>
+                <img src={qr} alt="QR code for the authenticator app" width={168} height={168} className="rounded-xl border border-[#EAEAEC]" />
+                <div className="text-[12px] text-[#696976]">Can&apos;t scan? Enter this key:<div className="mt-1 select-all break-all font-mono text-[12.5px] text-[#131316]">{pendingSecret.match(/.{1,4}/g)?.join(" ")}</div></div>
               </div>
               <input name="code" inputMode="numeric" autoComplete="one-time-code" maxLength={7} placeholder="123456" className={cx(input, "max-w-45 text-center font-mono text-[18px] tracking-[0.3em]")} />
               <Status s={tc} />
@@ -66,7 +66,7 @@ export default function AccountForms({ name, mustChange, totpOn, required, pendi
             </form>
           ) : (
             <div className="flex flex-col gap-3">
-              <p className="text-[12.8px] text-[#5B6B84]">Protect your account with a code from your phone, so a stolen password alone can&apos;t get in.</p>
+              <p className="text-[12.8px] text-[#696976]">Protect your account with a code from your phone, so a stolen password alone can&apos;t get in.</p>
               <form action={startTwoStep}><button className={b("primary")}><ShieldCheck size={15} /> Set up two-step sign-in</button></form>
             </div>
           )}
@@ -79,7 +79,7 @@ export default function AccountForms({ name, mustChange, totpOn, required, pendi
           </form>
         </Card>
         <Card title="Devices" icon={<LogOut size={17} />}>
-          <p className="text-[12.8px] text-[#5B6B84]">Signed in on a shared or lost computer? Sign out everywhere except here.</p>
+          <p className="text-[12.8px] text-[#696976]">Signed in on a shared or lost computer? Sign out everywhere except here.</p>
           <form action={signOutOthers} className="mt-3"><button className={b("light")}>Sign out other devices</button></form>
         </Card>
       </div>

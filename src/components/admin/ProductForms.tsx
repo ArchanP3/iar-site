@@ -31,16 +31,16 @@ export function PriceCell({ id, price, display, locked }: { id: number; price: s
     });
   if (!editing)
     return (
-      <button type="button" onClick={() => setEditing(true)} className="group inline-flex items-center gap-1.5 rounded-md px-1.5 py-1 text-left hover:bg-[#F0F6FF]" title="Change price" aria-label={`Change price, now ${shown}`}>
-        <span className={cx("text-[13px] font-bold", price == null && "font-semibold text-[#5B6B84]")}>{shown}</span>
+      <button type="button" onClick={() => setEditing(true)} className="group inline-flex items-center gap-1.5 rounded-md px-1.5 py-1 text-left hover:bg-[#FDF1F3]" title="Change price" aria-label={`Change price, now ${shown}`}>
+        <span className={cx("text-[13px] font-bold", price == null && "font-semibold text-[#696976]")}>{shown}</span>
         {locked && <Lock size={11} className="text-[#B45309]" aria-label="Edited in the CMS: imports won't change it" />}
-        <Pencil size={11} className="text-[#8494AB] opacity-0 group-hover:opacity-100" />
+        <Pencil size={11} className="text-[#91919E] opacity-0 group-hover:opacity-100" />
       </button>
     );
   return (
     <div className="flex flex-col gap-1">
       <div className="flex items-center gap-1">
-        <span className="text-[12px] font-semibold text-[#5B6B84]">US$</span>
+        <span className="text-[12px] font-semibold text-[#696976]">US$</span>
         <input
           ref={ref}
           autoFocus
@@ -55,9 +55,9 @@ export function PriceCell({ id, price, display, locked }: { id: number; price: s
           className={cx(input, "h-8! w-24! py-1! text-[12.8px] font-semibold")}
         />
         <button type="button" disabled={pending} onClick={save} className="flex h-7 w-7 items-center justify-center rounded-md bg-[#12B76A] text-white disabled:opacity-50" title="Save" aria-label="Save price"><Check size={14} /></button>
-        <button type="button" onClick={() => { setEditing(false); setErr(undefined); }} className="flex h-7 w-7 items-center justify-center rounded-md bg-[#EEF2F7] text-[#5B6B84]" title="Cancel" aria-label="Cancel"><X size={14} /></button>
+        <button type="button" onClick={() => { setEditing(false); setErr(undefined); }} className="flex h-7 w-7 items-center justify-center rounded-md bg-[#F2F2F3] text-[#696976]" title="Cancel" aria-label="Cancel"><X size={14} /></button>
       </div>
-      <span className={cx("max-w-56 text-[11.5px]", err ? "font-semibold text-[#B42318]" : "text-[#8494AB]")}>{err ?? "Enter to save · empty = Request Quote"}</span>
+      <span className={cx("max-w-56 text-[11.5px]", err ? "font-semibold text-[#B42318]" : "text-[#91919E]")}>{err ?? "Enter to save · empty = Request Quote"}</span>
     </div>
   );
 }
@@ -123,7 +123,7 @@ export function ProductEditor({ p, cats }: { p: EditorProduct; cats: { slug: str
       {locked.has(f) && <LockMark id={p.id} field={f} />}
     </span>
   );
-  const hint = (t: string) => <span className="text-[11.5px] text-[#8494AB]">{t}</span>;
+  const hint = (t: string) => <span className="text-[11.5px] text-[#91919E]">{t}</span>;
   const withCurrent = (opts: string[], cur: string | null) => (cur && !opts.includes(cur) ? [cur, ...opts] : opts);
   // After a save the page gets the new values; remounting the fields shows them (inputs keep
   // their first defaultValue otherwise). The success message lives outside, so it stays.
@@ -180,7 +180,7 @@ export function ProductEditor({ p, cats }: { p: EditorProduct; cats: { slug: str
       {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}
       <div className="flex flex-wrap items-center gap-3">
         <button disabled={pending} className={b("primary")}>{pending ? "Saving…" : "Save changes"}</button>
-        <span className="text-[12.5px] text-[#5B6B84]">Fields you change get a <Lock size={11} className="inline text-[#B45309]" /> lock, so the CSV and catalog imports won&apos;t overwrite them.</span>
+        <span className="text-[12.5px] text-[#696976]">Fields you change get a <Lock size={11} className="inline text-[#B45309]" /> lock, so the CSV and catalog imports won&apos;t overwrite them.</span>
       </div>
     </form>
   );
@@ -193,10 +193,10 @@ export function MinPricesForm({ cats, mins }: { cats: { slug: string; name: stri
     <form action={action} className="flex flex-col gap-3">
       <div className="flex flex-col">
         {cats.map((c) => (
-          <label key={c.slug} className="flex items-center justify-between gap-3 border-t border-[#EEF3F9] py-2 text-[13px] font-semibold first:border-t-0">
+          <label key={c.slug} className="flex items-center justify-between gap-3 border-t border-[#F3F3F4] py-2 text-[13px] font-semibold first:border-t-0">
             <span className="min-w-0">{c.name}</span>
             <span className="flex shrink-0 items-center gap-1.5">
-              <span className="text-[11.5px] font-semibold text-[#8494AB]">US$</span>
+              <span className="text-[11.5px] font-semibold text-[#91919E]">US$</span>
               <input name={`min_${c.slug}`} defaultValue={mins[c.slug] ?? ""} inputMode="decimal" placeholder="None" aria-label={`Minimum price for ${c.name}`} className={cx(input, "h-8! w-24! py-1! text-right font-bold")} />
             </span>
           </label>

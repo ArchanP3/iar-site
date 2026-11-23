@@ -11,7 +11,7 @@ type Props = { searchParams: Promise<{ q?: string }> };
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Searching…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Searching…</p>}>
       <Results {...props} />
     </Suspense>
   );
@@ -41,15 +41,15 @@ async function Results({ searchParams }: Props) {
   return (
     <>
       <PageHead title={term ? `Results for “${term}”` : "Search"} />
-      <form className="flex max-w-140 items-center gap-2.5 rounded-[11px] border border-[#E3EAF3] bg-white px-3.5"><Search size={16} className="text-[#8494AB]" /><input name="q" defaultValue={term} autoFocus placeholder="Search pages, posts, redirects, images…" className="h-11 flex-1 bg-transparent outline-none" /></form>
-      {term && !found.length && <p className="text-[#5B6B84]">Nothing found. Try a part of a URL, a word from a title, or a file name.</p>}
+      <form className="flex max-w-140 items-center gap-2.5 rounded-[11px] border border-[#EAEAEC] bg-white px-3.5"><Search size={16} className="text-[#91919E]" /><input name="q" defaultValue={term} autoFocus placeholder="Search pages, posts, redirects, images…" className="h-11 flex-1 bg-transparent outline-none" /></form>
+      {term && !found.length && <p className="text-[#696976]">Nothing found. Try a part of a URL, a word from a title, or a file name.</p>}
       <div className="grid items-start gap-5 xl:grid-cols-2">
         {found.map((g) => (
           <Card key={g.label} title={`${g.label} (${g.hits.length})`} icon={g.icon} pad={false}>
             {g.hits.map((h) => (
-              <Link key={h.href + h.title} href={h.href} className="block border-b border-[#EEF3F9] px-5 py-2.5 last:border-0 hover:bg-[#F8FAFD]">
+              <Link key={h.href + h.title} href={h.href} className="block border-b border-[#F3F3F4] px-5 py-2.5 last:border-0 hover:bg-[#FAFAFB]">
                 <div className="truncate text-[13.5px] font-bold">{h.title}</div>
-                <div className="truncate font-mono text-[12px] text-[#8494AB]">{h.sub}</div>
+                <div className="truncate font-mono text-[12px] text-[#91919E]">{h.sub}</div>
               </Link>
             ))}
           </Card>

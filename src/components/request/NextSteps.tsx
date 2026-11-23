@@ -27,14 +27,14 @@ export default async function NextSteps({
   const phone = { label: contact.phone, href: contact.phone ? phoneHref(contact.phone) : "" };
   return (
     <aside className="space-y-3 lg:sticky lg:top-28 lg:self-start">
-      <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#050B18] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]">
-        <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.55),transparent)] blur-xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(0,176,255,0.3),transparent)] blur-xl" />
-        <h2 className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7FD3FF]">{title}</h2>
+      <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#0A0A0C] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]">
+        <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-xl" />
+        <h2 className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">{title}</h2>
         <ol className="relative mt-4 space-y-3.5">
           {steps.map(([t, Icon], i) => (
             <li key={t} className="flex items-center gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/[0.07]"><Icon size={16} className="text-[#7FD3FF]" aria-hidden="true" /></span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/[0.07]"><Icon size={16} className="text-[#FF8A99]" aria-hidden="true" /></span>
               <span className="text-[13.5px] font-semibold leading-snug"><span className="mr-1.5 text-white/50">0{i + 1}</span>{t}</span>
             </li>
           ))}
@@ -54,12 +54,12 @@ export default async function NextSteps({
         </p>
       </div>
       {/* walk-in drop-off */}
-      <div className="flex items-center gap-3 rounded-2xl border border-[#CFE0FA] bg-[#F5F9FF] p-4">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white"><MapPin size={18} aria-hidden="true" /></span>
-        <p className="text-[13px] leading-snug text-[#3A4B66]">
-          <b className="block text-[14px] text-[#0B1A3C]">Prefer to drop it off?</b>
+      <div className="flex items-center gap-3 rounded-2xl border border-[#F8D1D7] bg-[#FFF6F7] p-4">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><MapPin size={18} aria-hidden="true" /></span>
+        <p className="text-[13px] leading-snug text-[#4B4B55]">
+          <b className="block text-[14px] text-[#131316]">Prefer to drop it off?</b>
           {fullAddress(contact)} · business hours, no appointment.{" "}
-          <a href={directionsUrl} target="_blank" rel="noopener" className="font-bold text-[#0052CC] hover:underline">Directions</a>
+          <a href={directionsUrl} target="_blank" rel="noopener" className="font-bold text-[#A50D25] hover:underline">Directions</a>
         </p>
       </div>
       {/* for people who would rather not fill in a long form */}

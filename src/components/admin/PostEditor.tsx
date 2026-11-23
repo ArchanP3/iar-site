@@ -118,30 +118,30 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
       {picker && <MediaPicker onClose={() => setPicker(null)} onPick={(m) => { if (picker === "cover") { setCover(m.url); if (!coverAlt) setCoverAlt(m.alt); } else wrap(`![${m.alt || "Describe the image"}](${m.url})`); setPicker(null); }} />}
 
       <Card pad={false}>
-        <div className="flex flex-wrap items-center gap-0.5 border-b border-[#E3EAF3] px-3 py-2">
+        <div className="flex flex-wrap items-center gap-0.5 border-b border-[#EAEAEC] px-3 py-2">
           {/* eslint-disable-next-line react-hooks/refs -- toolbar buttons only read the textarea when clicked */}
-          {tools.map(([Icon, label, fn]) => <button type="button" key={label} title={label} onClick={fn} disabled={preview} className="rounded-lg p-2 text-[#5B6B84] hover:bg-[#F1F5FA] hover:text-[#0B1A3C] disabled:opacity-40"><Icon size={17} /></button>)}
+          {tools.map(([Icon, label, fn]) => <button type="button" key={label} title={label} onClick={fn} disabled={preview} className="rounded-lg p-2 text-[#696976] hover:bg-[#F5F5F6] hover:text-[#131316] disabled:opacity-40"><Icon size={17} /></button>)}
           <span className="flex-1" />
-          <span className="inline-flex rounded-[9px] bg-[#EEF2F7] p-0.75">
-            <button type="button" onClick={() => setPreview(false)} className={cx("rounded-md px-3 py-1 text-[12px] font-semibold", !preview ? "bg-white shadow" : "text-[#5B6B84]")}>Write</button>
-            <button type="button" onClick={showPreview} className={cx("flex items-center gap-1 rounded-md px-3 py-1 text-[12px] font-semibold", preview ? "bg-white shadow" : "text-[#5B6B84]")}><Eye size={13} /> Preview</button>
+          <span className="inline-flex rounded-[9px] bg-[#F2F2F3] p-0.75">
+            <button type="button" onClick={() => setPreview(false)} className={cx("rounded-md px-3 py-1 text-[12px] font-semibold", !preview ? "bg-white shadow" : "text-[#696976]")}>Write</button>
+            <button type="button" onClick={showPreview} className={cx("flex items-center gap-1 rounded-md px-3 py-1 text-[12px] font-semibold", preview ? "bg-white shadow" : "text-[#696976]")}><Eye size={13} /> Preview</button>
           </span>
         </div>
         <div className="flex flex-col gap-4 px-5 py-6 sm:px-10">
-          <input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Post title" className="w-full border-0 text-[26px] font-extrabold leading-tight tracking-[-0.02em] outline-none placeholder:text-[#C5D1E0] sm:text-[28px]" />
-          <textarea name="excerpt" value={excerpt} onChange={(e) => setExcerpt(e.target.value)} rows={2} placeholder="One or two sentences shown under the title and on the blog list" className="w-full resize-none border-0 text-[15px] leading-relaxed text-[#5B6B84] outline-none placeholder:text-[#C5D1E0]" />
+          <input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Post title" className="w-full border-0 text-[26px] font-extrabold leading-tight tracking-[-0.02em] outline-none placeholder:text-[#D0D0D5] sm:text-[28px]" />
+          <textarea name="excerpt" value={excerpt} onChange={(e) => setExcerpt(e.target.value)} rows={2} placeholder="One or two sentences shown under the title and on the blog list" className="w-full resize-none border-0 text-[15px] leading-relaxed text-[#696976] outline-none placeholder:text-[#D0D0D5]" />
           {preview ? (
-            <div className="min-h-105 space-y-3 text-[15.5px] leading-[1.8] text-[#3E4F68] [&_a]:font-semibold [&_a]:text-[#0052CC] [&_blockquote]:rounded-r-xl [&_blockquote]:border-l-4 [&_blockquote]:border-[#00B0FF] [&_blockquote]:bg-[#F5F9FF] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_h2]:mt-6 [&_h2]:text-[22px] [&_h2]:font-extrabold [&_h2]:text-[#0B1A3C] [&_h3]:mt-4 [&_h3]:text-[18px] [&_h3]:font-bold [&_img]:max-h-90 [&_img]:rounded-xl [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_td]:border-b [&_td]:py-1.5 [&_th]:text-left [&_ul]:list-disc [&_ul]:pl-5" dangerouslySetInnerHTML={{ __html: html }} />
+            <div className="min-h-105 space-y-3 text-[15.5px] leading-[1.8] text-[#4E4E58] [&_a]:font-semibold [&_a]:text-[#A50D25] [&_blockquote]:rounded-r-xl [&_blockquote]:border-l-4 [&_blockquote]:border-[#FF3B55] [&_blockquote]:bg-[#FFF6F7] [&_blockquote]:px-4 [&_blockquote]:py-2 [&_h2]:mt-6 [&_h2]:text-[22px] [&_h2]:font-extrabold [&_h2]:text-[#131316] [&_h3]:mt-4 [&_h3]:text-[18px] [&_h3]:font-bold [&_img]:max-h-90 [&_img]:rounded-xl [&_ol]:list-decimal [&_ol]:pl-5 [&_table]:w-full [&_td]:border-b [&_td]:py-1.5 [&_th]:text-left [&_ul]:list-disc [&_ul]:pl-5" dangerouslySetInnerHTML={{ __html: html }} />
           ) : (
-            <textarea ref={ta} value={body} onChange={(e) => setBody(e.target.value)} rows={24} spellCheck className="min-h-105 w-full resize-y rounded-xl border border-[#E3EAF3] bg-[#FAFCFE] p-4 font-mono text-[13.5px] leading-relaxed outline-none focus:border-[#0066FF]" />
+            <textarea ref={ta} value={body} onChange={(e) => setBody(e.target.value)} rows={24} spellCheck className="min-h-105 w-full resize-y rounded-xl border border-[#EAEAEC] bg-[#FCFCFC] p-4 font-mono text-[13.5px] leading-relaxed outline-none focus:border-[#C8102E]" />
           )}
-          <p className="text-[12px] text-[#8494AB]">Markdown: <b>## Heading</b>, <b>**bold**</b>, <b>- list</b>, <b>[text](/link)</b>. The toolbar adds these for you.</p>
+          <p className="text-[12px] text-[#91919E]">Markdown: <b>## Heading</b>, <b>**bold**</b>, <b>- list</b>, <b>[text](/link)</b>. The toolbar adds these for you.</p>
 
-          <div className="mt-2 rounded-2xl border border-dashed border-[#CFE0FF] bg-[#FAFCFE] p-4">
-            <div className="flex items-center gap-2"><CircleHelp size={17} className="text-[#0066FF]" /><b>FAQ</b><span className="text-[12.5px] text-[#5B6B84]">Shown at the end of the post and added to FAQ schema automatically.</span></div>
+          <div className="mt-2 rounded-2xl border border-dashed border-[#FDD1D8] bg-[#FCFCFC] p-4">
+            <div className="flex items-center gap-2"><CircleHelp size={17} className="text-[#C8102E]" /><b>FAQ</b><span className="text-[12.5px] text-[#696976]">Shown at the end of the post and added to FAQ schema automatically.</span></div>
             {faq.map(([qq, a], i) => (
-              <div key={i} className="mt-3 grid gap-2 rounded-xl border border-[#E3EAF3] bg-white p-3">
-                <div className="flex gap-2"><input value={qq} onChange={(e) => setFaq(faq.map((f, k) => (k === i ? [e.target.value, f[1]] : f)))} placeholder="Question" className={input} /><button type="button" onClick={() => setFaq(faq.filter((_, k) => k !== i))} className="text-[#8494AB] hover:text-[#B42318]"><Trash2 size={16} /></button></div>
+              <div key={i} className="mt-3 grid gap-2 rounded-xl border border-[#EAEAEC] bg-white p-3">
+                <div className="flex gap-2"><input value={qq} onChange={(e) => setFaq(faq.map((f, k) => (k === i ? [e.target.value, f[1]] : f)))} placeholder="Question" className={input} /><button type="button" onClick={() => setFaq(faq.filter((_, k) => k !== i))} className="text-[#91919E] hover:text-[#B42318]"><Trash2 size={16} /></button></div>
                 <textarea value={a} onChange={(e) => setFaq(faq.map((f, k) => (k === i ? [f[0], e.target.value] : f)))} rows={2} placeholder="Answer" className={input} />
               </div>
             ))}
@@ -170,19 +170,19 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
             <button name="intent" value="draft" disabled={pending} className={b("light")}>{pending ? "Saving…" : post?.status === "published" ? "Save changes" : "Save draft"}</button>
             {post?.status === "published" && canPublish && <button name="intent" value="unpublish" disabled={pending} className={b("light", true)}>Unpublish</button>}
           </div>
-          {post?.status === "published" && <a href={`/resources/blog/${post.slug}`} target="_blank" className="mt-3 block truncate text-[12.5px] font-semibold text-[#0052CC]">View live post →</a>}
-          <p className="mt-2 text-[11.5px] text-[#8494AB]">{post ? `Last saved ${new Date(post.updated_at).toLocaleString("en-CA", { dateStyle: "medium", timeStyle: "short" })}${post.updated_by ? ` by ${post.updated_by}` : ""}` : `Author: ${me}`}</p>
+          {post?.status === "published" && <a href={`/resources/blog/${post.slug}`} target="_blank" className="mt-3 block truncate text-[12.5px] font-semibold text-[#A50D25]">View live post →</a>}
+          <p className="mt-2 text-[11.5px] text-[#91919E]">{post ? `Last saved ${new Date(post.updated_at).toLocaleString("en-CA", { dateStyle: "medium", timeStyle: "short" })}${post.updated_by ? ` by ${post.updated_by}` : ""}` : `Author: ${me}`}</p>
         </Card>
 
         <Card title="SEO" right={<Pill tone={score >= 85 ? "ok" : score >= 60 ? "warn" : "bad"}>{score}</Pill>}>
           <div className="flex flex-col gap-3">
-            <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">URL <span className="ml-auto font-mono text-[11px] font-semibold text-[#8494AB]">/resources/blog/</span></span><input value={effSlug} onChange={(e) => { setSlugTouched(true); setSlug(typingSlug(e.target.value)); }} className={cx(input, "font-mono text-[12.5px]")} /></label>
+            <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">URL <span className="ml-auto font-mono text-[11px] font-semibold text-[#91919E]">/resources/blog/</span></span><input value={effSlug} onChange={(e) => { setSlugTouched(true); setSlug(typingSlug(e.target.value)); }} className={cx(input, "font-mono text-[12.5px]")} /></label>
             <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">SEO title <span className="ml-auto" style={{ color: lenColor(effTitle.length, 30, 60) }}>{effTitle.length} / 60</span></span><input name="seo_title" value={seoTitle} onChange={(e) => setSeoTitle(e.target.value)} placeholder={effTitle || "Same as the post title"} className={input} /><Bar pct={(effTitle.length / 60) * 100} color={lenColor(effTitle.length, 30, 60)} /></label>
             <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">Meta description <span className="ml-auto" style={{ color: lenColor(effDesc.length, 70, 160) }}>{effDesc.length} / 160</span></span><textarea name="seo_description" value={seoDesc} onChange={(e) => setSeoDesc(e.target.value)} rows={3} placeholder={excerpt || "Defaults to the summary"} className={input} /><Bar pct={(effDesc.length / 160) * 100} color={lenColor(effDesc.length, 70, 160)} /></label>
-            <div className="rounded-xl border border-[#E3EAF3] p-3 font-[Arial,sans-serif]">
-              <div className="text-[11.5px] text-[#4D5156]">{site.replace(/^https?:\/\//, "")} › resources › blog</div>
-              <div className="mt-1 text-[16px] leading-tight text-[#1A0DAB]">{(effTitle || "Post title").slice(0, 62)}</div>
-              <div className="mt-0.5 text-[12.5px] text-[#4D5156]">{(effDesc || "Add a summary so Google shows your words.").slice(0, 158)}</div>
+            <div className="rounded-xl border border-[#EAEAEC] p-3 font-[Arial,sans-serif]">
+              <div className="text-[11.5px] text-[#4D4D56]">{site.replace(/^https?:\/\//, "")} › resources › blog</div>
+              <div className="mt-1 text-[16px] leading-tight text-[#931326]">{(effTitle || "Post title").slice(0, 62)}</div>
+              <div className="mt-0.5 text-[12.5px] text-[#4D4D56]">{(effDesc || "Add a summary so Google shows your words.").slice(0, 158)}</div>
             </div>
             <div>
               {checks.map(([ok, t], i) => <div key={i} className="flex items-start gap-2 py-1 text-[12.5px]"><span style={{ color: ok ? "#12B76A" : "#F59E0B" }}>{ok ? <CheckCircle2 size={14} /> : <TriangleAlert size={14} />}</span>{t}</div>)}
@@ -195,20 +195,20 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
             <div className="flex flex-col gap-1.5">
               <span className="text-[12.5px] font-bold">Cover image</span>
               {cover ? (
-                <div className="relative flex h-32 items-center justify-center rounded-xl border border-[#E3EAF3] bg-[#EEF4FB]">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={cover} alt="" className="max-h-[85%] max-w-[85%] object-contain" /><button type="button" onClick={() => setCover("")} className="absolute right-2 top-2 rounded-lg bg-white p-1 text-[#8494AB] shadow"><Trash2 size={14} /></button></div>
+                <div className="relative flex h-32 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[#F4F4F5]">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={cover} alt="" className="max-h-[85%] max-w-[85%] object-contain" /><button type="button" onClick={() => setCover("")} className="absolute right-2 top-2 rounded-lg bg-white p-1 text-[#91919E] shadow"><Trash2 size={14} /></button></div>
               ) : <button type="button" onClick={() => setPicker("cover")} className={b("light")}><ImagePlus size={15} /> Choose from Media Library</button>}
               {cover && <input name="cover_alt" value={coverAlt} onChange={(e) => setCoverAlt(e.target.value)} placeholder="Alt text for the cover" className={input} />}
             </div>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Show on</span><select name="site" defaultValue={post?.site ?? "both"} className={input}>{SITE_CHOICES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Category</span><input name="category" list="cats" defaultValue={post?.category ?? ""} placeholder="e.g. Repair guides" className={input} /><datalist id="cats">{categories.map((c) => <option key={c} value={c} />)}</datalist></label>
-            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Tags <span className="font-semibold text-[#8494AB]">comma separated</span></span><input name="tags" defaultValue={post?.tags?.join(", ") ?? ""} placeholder="SINAMICS S120, F30001, Siemens" className={input} /></label>
+            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Tags <span className="font-semibold text-[#91919E]">comma separated</span></span><input name="tags" defaultValue={post?.tags?.join(", ") ?? ""} placeholder="SINAMICS S120, F30001, Siemens" className={input} /></label>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Author</span><input name="author_name" defaultValue={post?.author_name ?? me} className={input} /></label>
             <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Author role</span><input name="author_role" defaultValue={post?.author_role ?? ""} placeholder="e.g. Repair technician, 15 years on Siemens drives" className={input} /></label>
-            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Author bio <span className="font-semibold text-[#8494AB]">shows real expertise to Google</span></span><textarea name="author_bio" defaultValue={post?.author_bio ?? ""} rows={3} className={input} /></label>
+            <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Author bio <span className="font-semibold text-[#91919E]">shows real expertise to Google</span></span><textarea name="author_bio" defaultValue={post?.author_bio ?? ""} rows={3} className={input} /></label>
             <div className="flex flex-col gap-1.5">
               <span className="text-[12.5px] font-bold">Related links</span>
               {related.map(([t, h], i) => (
-                <div key={i} className="flex gap-1.5"><input value={t} onChange={(e) => setRelated(related.map((r, k) => (k === i ? [e.target.value, r[1]] : r)))} placeholder="Label" className={cx(input, "py-1.5")} /><input value={h} onChange={(e) => setRelated(related.map((r, k) => (k === i ? [r[0], e.target.value] : r)))} placeholder="/services/..." className={cx(input, "py-1.5 font-mono text-[12px]")} /><button type="button" onClick={() => setRelated(related.filter((_, k) => k !== i))} className="text-[#8494AB]"><Trash2 size={15} /></button></div>
+                <div key={i} className="flex gap-1.5"><input value={t} onChange={(e) => setRelated(related.map((r, k) => (k === i ? [e.target.value, r[1]] : r)))} placeholder="Label" className={cx(input, "py-1.5")} /><input value={h} onChange={(e) => setRelated(related.map((r, k) => (k === i ? [r[0], e.target.value] : r)))} placeholder="/services/..." className={cx(input, "py-1.5 font-mono text-[12px]")} /><button type="button" onClick={() => setRelated(related.filter((_, k) => k !== i))} className="text-[#91919E]"><Trash2 size={15} /></button></div>
               ))}
               <button type="button" onClick={() => setRelated([...related, ["", ""]])} className={b("light", true)}><Plus size={13} /> Add link</button>
             </div>

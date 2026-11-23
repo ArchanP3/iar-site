@@ -22,18 +22,18 @@ export default function BrandDirectory() {
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h2 id="more" className="text-[22px] font-extrabold sm:text-[26px]">More brands we repair</h2>
-          <p className="mt-1 text-[14px] text-[#52647F]">{brands.length} brands listed. We repair 1,000+. Name any brand and we&apos;ll repair it.</p>
+          <p className="mt-1 text-[14px] text-[#62626F]">{brands.length} brands listed. We repair 1,000+. Name any brand and we&apos;ll repair it.</p>
         </div>
-        <label className="flex w-full items-center gap-2 rounded-2xl border border-[#D9E4F1] bg-white px-4 lg:w-85">
-          <Search size={17} className="text-[#005AE0]" aria-hidden="true" />
+        <label className="flex w-full items-center gap-2 rounded-2xl border border-[#F0DADD] bg-white px-4 lg:w-85">
+          <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Find a brand</span>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a brand or series…" className="h-11 w-full bg-transparent text-[14px] outline-none placeholder:text-[#5B6B84]" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a brand or series…" className="h-11 w-full bg-transparent text-[14px] outline-none placeholder:text-[#696976]" />
         </label>
       </div>
       <div className="-mx-5 mt-4 flex gap-2 overflow-x-auto px-5 scrollbar-none sm:mx-0 sm:flex-wrap sm:px-0">
         {[{ key: "all", label: "All" }, ...groups].map((x) => (
           <button key={x.key} type="button" aria-pressed={g === x.key} onClick={() => setG(x.key)}
-            className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${g === x.key ? "border-transparent bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+            className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${g === x.key ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
             {x.label}
           </button>
         ))}
@@ -41,10 +41,10 @@ export default function BrandDirectory() {
       <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
         {list.map((b) => (
           <li key={b.slug} className="relative">
-            <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(0,20,60,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0B1020 0%, #121a33 50%, ${b.color}40 100%)` }}>
+            <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
               <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${b.color}77, transparent)` }} />
               <span className="relative flex items-start justify-between">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl text-[12px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-[14px]" style={{ background: `linear-gradient(145deg, ${b.color}, #0B1A3C)` }}>{b.initials}</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl text-[12px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-[14px]" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
                 <ArrowUpRight size={18} style={{ color: b.color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </span>
               <span className="relative mt-3 block min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[18px]">{b.name} Repair</span>
@@ -54,7 +54,7 @@ export default function BrandDirectory() {
           </li>
         ))}
       </ul>
-      {list.length === 0 && <p className="mt-4 rounded-2xl border border-dashed border-[#C9D7E8] p-5 text-[14px] text-[#52647F]">Not listed? We still repair it. Send us the part number below.</p>}
+      {list.length === 0 && <p className="mt-4 rounded-2xl border border-dashed border-[#E6CBCF] p-5 text-[14px] text-[#62626F]">Not listed? We still repair it. Send us the part number below.</p>}
     </section>
   );
 }

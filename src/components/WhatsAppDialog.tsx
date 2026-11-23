@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, FileText, HelpCircle, Loader2, Lock, ShoppingCart, Wrench, X } from "lucide-react";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { contact } from "@/lib/contact";
 import { sendLead } from "@/components/request/FormParts";
 import { WA_EVENT, WhatsAppIcon, type WhatsAppAsk } from "@/components/WhatsAppButton";
@@ -89,17 +89,17 @@ export default function WhatsAppDialog() {
     setState(delivered ? "sent" : "error");
   }
 
-  const field = "h-12 w-full rounded-xl border border-[#D6E1EE] bg-[#F7FAFD] px-4 text-[15px] text-[#0B1A3C] outline-none transition placeholder:text-[#7C8BA1] focus:border-[#0066FF] focus:bg-white focus:ring-4 focus:ring-[#0066FF]/10";
-  const lab = "mb-1.5 block text-[12px] font-bold uppercase tracking-[0.12em] text-[#3A4B66]";
+  const field = "h-12 w-full rounded-xl border border-[#EDD7DA] bg-[#FAFAFA] px-4 text-[15px] text-[#131316] outline-none transition placeholder:text-[#888895] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
+  const lab = "mb-1.5 block text-[12px] font-bold uppercase tracking-[0.12em] text-[#4B4B55]";
 
   return (
-    <div className={`${montserrat.className} fixed inset-0 z-[90] flex items-end justify-center sm:items-center sm:p-6`}>
-      <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 bg-[#030817]/70 backdrop-blur-sm" />
+    <div className={`${brandFont.className} fixed inset-0 z-[90] flex items-end justify-center sm:items-center sm:p-6`}>
+      <button type="button" aria-label="Close" onClick={close} className="absolute inset-0 bg-[#060607]/70 backdrop-blur-sm" />
       <div role="dialog" aria-modal="true" aria-labelledby="wa-title" className="relative flex max-h-[calc(100dvh-0.75rem)] w-full max-w-[460px] flex-col overflow-hidden rounded-t-[24px] bg-white sm:max-h-[calc(100dvh-3rem)] shadow-[0_50px_120px_-30px_rgba(0,0,0,0.75)] sm:rounded-[28px]">
         {/* header */}
-        <div className="relative flex-none overflow-hidden bg-[#030817] px-5 pt-4 pb-4 text-white sm:px-6 sm:pt-6 sm:pb-5">
+        <div className="relative flex-none overflow-hidden bg-[#060607] px-5 pt-4 pb-4 text-white sm:px-6 sm:pt-6 sm:pb-5">
           <span aria-hidden="true" className="pointer-events-none absolute -top-24 -right-16 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(37,211,102,0.35),transparent)]" />
-          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-20 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(0,102,255,0.45),transparent)]" />
+          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-20 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)]" />
           <div className="relative flex items-center gap-3 sm:items-start sm:gap-4">
             <span className="relative grid size-11 flex-none place-items-center rounded-xl sm:size-13 sm:rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] shadow-[0_12px_28px_-10px_rgba(37,211,102,0.8)]">
               <WhatsAppIcon size={23} className="text-white" />
@@ -113,7 +113,7 @@ export default function WhatsAppDialog() {
             </button>
           </div>
           <div className="relative mt-3 flex items-center gap-2 rounded-xl border sm:mt-4 border-white/10 bg-white/6 px-3 py-2">
-            <span className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#7FD3FF]">About</span>
+            <span className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#FF8A99]">About</span>
             <span className="min-w-0 truncate text-[13.5px] font-semibold">{ask.topic}</span>
           </div>
         </div>
@@ -121,11 +121,11 @@ export default function WhatsAppDialog() {
         {state === "sent" ? (
           <div className="overflow-y-auto px-6 py-10 text-center">
             <span className="mx-auto grid size-14 place-items-center rounded-full bg-emerald-50 text-emerald-600"><CheckCircle2 size={30} aria-hidden="true" /></span>
-            <p className="mt-4 text-[19px] font-extrabold text-[#0B1A3C]">{number ? "WhatsApp is opening" : "Request received"}</p>
-            <p className="mx-auto mt-2 max-w-80 text-[14px] leading-relaxed text-[#52647F]">
+            <p className="mt-4 text-[19px] font-extrabold text-[#131316]">{number ? "WhatsApp is opening" : "Request received"}</p>
+            <p className="mx-auto mt-2 max-w-80 text-[14px] leading-relaxed text-[#62626F]">
               {number ? "Your details are saved with us too, so we can follow up by email if the chat doesn't connect." : "Thank you. A member of our team will reply by email."}
             </p>
-            <button type="button" onClick={close} className="mt-6 inline-flex h-11 items-center rounded-xl border border-[#D9E4F1] px-5 text-[14px] font-semibold text-[#0B1A3C] hover:border-[#0066FF]">Done</button>
+            <button type="button" onClick={close} className="mt-6 inline-flex h-11 items-center rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">Done</button>
           </div>
         ) : (
           <form onSubmit={submit} className="flex min-h-0 flex-1 flex-col">
@@ -134,7 +134,7 @@ export default function WhatsAppDialog() {
               <legend className={lab}>I need</legend>
               <div className="grid grid-cols-4 gap-1.5">
                 {NEEDS.map(({ v, icon: I }) => (
-                  <label key={v} className={`flex cursor-pointer flex-col items-center gap-1 rounded-xl border px-1 py-2.5 text-[12px] font-semibold transition has-focus-visible:ring-2 has-focus-visible:ring-[#0066FF] ${need === v ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC]" : "border-[#D6E1EE] text-[#3A4B66] hover:border-[#0066FF]/50"}`}>
+                  <label key={v} className={`flex cursor-pointer flex-col items-center gap-1 rounded-xl border px-1 py-2.5 text-[12px] font-semibold transition has-focus-visible:ring-2 has-focus-visible:ring-[#C8102E] ${need === v ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25]" : "border-[#EDD7DA] text-[#4B4B55] hover:border-[#C8102E]/50"}`}>
                     <input type="radio" name="Need" value={v} checked={need === v} onChange={() => setNeed(v)} className="sr-only" />
                     <I size={17} aria-hidden="true" /> {v}
                   </label>
@@ -147,7 +147,7 @@ export default function WhatsAppDialog() {
                 <input ref={first} id="wa-name" name="Name" required autoComplete="name" value={me.name} onChange={(e) => setMe({ ...me, name: e.target.value })} className={field} />
               </div>
               <div>
-                <label htmlFor="wa-company" className={lab}>Company <span className="font-medium normal-case tracking-normal text-[#7C8BA1]">optional</span></label>
+                <label htmlFor="wa-company" className={lab}>Company <span className="font-medium normal-case tracking-normal text-[#888895]">optional</span></label>
                 <input id="wa-company" name="Company" autoComplete="organization" value={me.company} onChange={(e) => setMe({ ...me, company: e.target.value })} className={field} />
               </div>
             </div>
@@ -157,7 +157,7 @@ export default function WhatsAppDialog() {
                 <input id="wa-email" type="email" required autoComplete="email" value={me.email} onChange={(e) => setMe({ ...me, email: e.target.value })} className={field} />
               </div>
               <div>
-                <label htmlFor="wa-phone" className={lab}>Phone <span className="font-medium normal-case tracking-normal text-[#7C8BA1]">optional</span></label>
+                <label htmlFor="wa-phone" className={lab}>Phone <span className="font-medium normal-case tracking-normal text-[#888895]">optional</span></label>
                 <input id="wa-phone" type="tel" autoComplete="tel" value={me.phone} onChange={(e) => setMe({ ...me, phone: e.target.value })} className={field} />
               </div>
             </div>
@@ -177,12 +177,12 @@ export default function WhatsAppDialog() {
 
             </div>
             {/* always on screen, above the phone's browser bar */}
-            <div className="flex-none border-t border-[#EEF3F9] bg-white px-5 pt-3 pb-[max(0.875rem,env(safe-area-inset-bottom))] sm:border-0 sm:px-6 sm:pt-2 sm:pb-6">
+            <div className="flex-none border-t border-[#F3F3F4] bg-white px-5 pt-3 pb-[max(0.875rem,env(safe-area-inset-bottom))] sm:border-0 sm:px-6 sm:pt-2 sm:pb-6">
             <button type="submit" disabled={state === "sending"} className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl sm:h-13 bg-linear-to-br from-[#25D366] to-[#1DA851] text-[16px] font-bold text-white shadow-[0_16px_34px_-14px_rgba(29,168,81,0.9)] transition hover:-translate-y-0.5 disabled:opacity-70">
               {state === "sending" ? <Loader2 size={19} className="animate-spin" aria-hidden="true" /> : <WhatsAppIcon size={20} />}
               {number ? "Continue on WhatsApp" : "Send to our team"} {state !== "sending" && <ArrowRight size={17} aria-hidden="true" />}
             </button>
-            <p className="mt-2 flex items-center justify-center gap-1.5 text-[12px] text-[#5B6B84]">
+            <p className="mt-2 flex items-center justify-center gap-1.5 text-[12px] text-[#696976]">
               <Lock size={12} aria-hidden="true" /> Used only to reply to this request.
             </p>
             </div>

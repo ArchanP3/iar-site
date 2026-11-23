@@ -84,25 +84,25 @@ export default function FamilyFilter({
       onClick={() => setArea(a)}
       className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${
         a === area
-          ? "border-transparent bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white"
-          : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"
+          ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"
+          : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"
       }`}
     >
-      {a} <span className={a === area ? "text-white/75" : "text-[#52647F]"}>· {c.toLocaleString("en-US")}</span>
+      {a} <span className={a === area ? "text-white/75" : "text-[#62626F]"}>· {c.toLocaleString("en-US")}</span>
     </button>
   );
 
   return (
     <div className="space-y-3">
-      <label className="flex items-center gap-2 rounded-2xl border border-[#D9E4F1] bg-[#F7FAFE] p-1.5 pl-4">
-        <Search size={17} className="text-[#005AE0]" aria-hidden="true" />
+      <label className="flex items-center gap-2 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] p-1.5 pl-4">
+        <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
         <span className="sr-only">Search {label} codes</span>
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={`Search ${label} codes…`}
           autoComplete="off"
-          className="h-10 w-full min-w-0 bg-transparent text-[14.5px] outline-none placeholder:text-[#52647F]"
+          className="h-10 w-full min-w-0 bg-transparent text-[14.5px] outline-none placeholder:text-[#62626F]"
         />
       </label>
       <div className="-mx-5 flex items-center gap-2 overflow-x-auto px-5 pb-1 scrollbar-none sm:mx-0 sm:flex-wrap sm:px-0">
@@ -114,7 +114,7 @@ export default function FamilyFilter({
             value={rest.some(([a]) => a === area) ? area : ""}
             onChange={(e) => setArea(e.target.value || "All")}
             className={`h-9.5 shrink-0 rounded-xl border px-3 text-[13px] font-semibold outline-none ${
-              rest.some(([a]) => a === area) ? "border-[#0066FF] text-[#005AE0]" : "border-[#D9E4F1] text-[#0B1A3C]"
+              rest.some(([a]) => a === area) ? "border-[#C8102E] text-[#B30E29]" : "border-[#F0DADD] text-[#131316]"
             } bg-white`}
           >
             <option value="">More areas ({rest.length})</option>

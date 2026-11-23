@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MessageCircle, X } from "lucide-react";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 
 /* The chat window's code downloads only when someone opens it (or hovers the button). */
 const loadPanel = () => import("./ChatPanel");
@@ -48,7 +48,7 @@ export default function ChatLauncher() {
         onFocus={() => void loadPanel()}
         aria-label={open ? "Close chat" : "Need help? Chat with AutomIQ"}
         aria-expanded={open}
-        className={`${montserrat.className} fixed right-4 ${lift} z-50 inline-flex size-13 items-center justify-center gap-2 rounded-full bg-[#0066FF] sm:h-14 sm:w-auto sm:pl-4 sm:pr-5 text-[14.5px] font-semibold text-white shadow-[0_14px_34px_-12px_rgba(0,102,255,0.9)] transition hover:bg-[#005AE0] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] print:hidden sm:right-5 ${open ? "max-sm:hidden" : ""}`}
+        className={`${brandFont.className} fixed right-4 ${lift} z-50 inline-flex size-13 items-center justify-center gap-2 rounded-full bg-[#C8102E] sm:h-14 sm:w-auto sm:pl-4 sm:pr-5 text-[14.5px] font-semibold text-white shadow-[0_14px_34px_-12px_rgba(200, 16, 46,0.9)] transition hover:bg-[#B30E29] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D91C38] print:hidden sm:right-5 ${open ? "max-sm:hidden" : ""}`}
       >
         {open ? <X size={20} aria-hidden="true" /> : <MessageCircle size={20} aria-hidden="true" />}
         {/* phones: a round icon, so it doesn't cover the page */}

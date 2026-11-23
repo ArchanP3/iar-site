@@ -56,10 +56,10 @@ export default function OnSitePage() {
         <h2 id="work" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">What we do on site</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {work.map(([Icon, t, d]) => (
-            <li key={t} className="rounded-[22px] border border-[#E3EAF3] bg-white p-5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0]"><Icon size={20} aria-hidden="true" /></span>
+            <li key={t} className="rounded-[22px] border border-[#EAEAEC] bg-white p-5">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Icon size={20} aria-hidden="true" /></span>
               <h3 className="mt-3 text-[15.5px] font-extrabold">{t}</h3>
-              <p className="mt-1 text-[13px] leading-relaxed text-[#52647F]">{d}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-[#62626F]">{d}</p>
             </li>
           ))}
         </ul>
@@ -68,28 +68,28 @@ export default function OnSitePage() {
       <section aria-labelledby="faq" className="mt-12 grid gap-6 lg:grid-cols-[1fr_360px]">
         <div>
           <h2 id="faq" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">Questions about on-site service</h2>
-          <div className="mt-4 divide-y divide-[#E3EAF3] overflow-hidden rounded-[22px] border border-[#E3EAF3] bg-white">
+          <div className="mt-4 divide-y divide-[#EAEAEC] overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white">
             {faqs.map(([q, a], i) => (
               <details key={q} className="group px-5 py-4" open={i === 0}>
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
                   <h3 className="text-[15px] font-bold">{q}</h3>
-                  <Plus size={16} className="flex-none text-[#005AE0] transition group-open:rotate-45" aria-hidden="true" />
+                  <Plus size={16} className="flex-none text-[#B30E29] transition group-open:rotate-45" aria-hidden="true" />
                 </summary>
-                <p className="mt-2 text-[14px] leading-relaxed text-[#52647F]">{a}</p>
+                <p className="mt-2 text-[14px] leading-relaxed text-[#62626F]">{a}</p>
               </details>
             ))}
           </div>
         </div>
         <div className="space-y-3 self-start">
-          <div className="rounded-[22px] border border-[#E3EAF3] bg-white p-5">
-            <p className="flex items-center gap-2 text-[15px] font-extrabold"><ClipboardCheck size={17} className="text-[#005AE0]" aria-hidden="true" /> Unit can travel?</p>
-            <p className="mt-1 text-[13.5px] text-[#52647F]">A bench repair is usually faster and costs less. Ship it in or book a pickup.</p>
-            <Link href="/request-repair" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#0052CC] hover:underline">Request a repair <ArrowRight size={14} aria-hidden="true" /></Link>
+          <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5">
+            <p className="flex items-center gap-2 text-[15px] font-extrabold"><ClipboardCheck size={17} className="text-[#B30E29]" aria-hidden="true" /> Unit can travel?</p>
+            <p className="mt-1 text-[13.5px] text-[#62626F]">A bench repair is usually faster and costs less. Ship it in or book a pickup.</p>
+            <Link href="/request-repair" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#A50D25] hover:underline">Request a repair <ArrowRight size={14} aria-hidden="true" /></Link>
           </div>
-          <div className="rounded-[22px] border border-[#E3EAF3] bg-white p-5">
-            <p className="flex items-center gap-2 text-[15px] font-extrabold"><MapPin size={17} className="text-[#005AE0]" aria-hidden="true" /> Where we work</p>
-            <p className="mt-1 text-[13.5px] text-[#52647F]">Manufacturers in every province and state.</p>
-            <Link href="/service-areas" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#0052CC] hover:underline">Service areas <ArrowRight size={14} aria-hidden="true" /></Link>
+          <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5">
+            <p className="flex items-center gap-2 text-[15px] font-extrabold"><MapPin size={17} className="text-[#B30E29]" aria-hidden="true" /> Where we work</p>
+            <p className="mt-1 text-[13.5px] text-[#62626F]">Manufacturers in every province and state.</p>
+            <Link href="/service-areas" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#A50D25] hover:underline">Service areas <ArrowRight size={14} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

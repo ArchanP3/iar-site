@@ -15,7 +15,7 @@ type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ saved?: 
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Edit {...props} />
     </Suspense>
   );
@@ -41,7 +41,7 @@ async function Edit({ params, searchParams }: Props) {
   return (
     <>
       <PageHead
-        crumb={<><Link href={`/admin/landing${kind === "template" ? "?tab=templates" : ""}`} className="hover:text-[#0052CC]">Landing Pages</Link><ChevronRight size={13} /><span>{label}</span></>}
+        crumb={<><Link href={`/admin/landing${kind === "template" ? "?tab=templates" : ""}`} className="hover:text-[#A50D25]">Landing Pages</Link><ChevronRight size={13} /><span>{label}</span></>}
         title={row?.name || (kind === "template" ? "New city template" : "New landing page")}
       />
       <LandingEditor

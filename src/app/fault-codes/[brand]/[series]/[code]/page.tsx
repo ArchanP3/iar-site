@@ -97,7 +97,7 @@ async function CodePageContent({ params }: Props) {
               <span className="inline-flex items-center gap-1.5 rounded-lg bg-amber-100 px-2.5 py-1 font-mono text-[15px] font-bold text-amber-700">
                 <AlertTriangle size={15} aria-hidden="true" /> {c.code}
               </span>
-              <span className="rounded-lg bg-[#F1F5FB] px-2.5 py-1 text-[12.5px] font-semibold text-[#52647F]">
+              <span className="rounded-lg bg-[#F5F5F7] px-2.5 py-1 text-[12.5px] font-semibold text-[#62626F]">
                 {c.type} · {c.area}
               </span>
               {/^yes/i.test(c.repairable ?? "") && (
@@ -105,47 +105,47 @@ async function CodePageContent({ params }: Props) {
               )}
             </div>
             <h1 className="mt-4 text-[28px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">{heading}</h1>
-            {c.also && <p className="mt-2 text-[13px] text-[#56677F]">Also shown as: {c.also}</p>}
+            {c.also && <p className="mt-2 text-[13px] text-[#646471]">Also shown as: {c.also}</p>}
 
-            <div className="mt-5 rounded-2xl border-l-4 border-[#0066FF] bg-[#F4F8FF] p-5">
-              <h2 className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#005AE0]">What {c.code} means</h2>
+            <div className="mt-5 rounded-2xl border-l-4 border-[#C8102E] bg-[#F9F9FA] p-5">
+              <h2 className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#B30E29]">What {c.code} means</h2>
               <p className="mt-2 text-[15.5px] leading-[1.65] sm:text-[16px]">{c.meaning}</p>
             </div>
 
             <div className="mt-4 grid gap-3 md:grid-cols-2">
-              <section className="rounded-2xl border border-[#E3EAF3] p-5">
+              <section className="rounded-2xl border border-[#EAEAEC] p-5">
                 <h2 className="flex items-center gap-2 text-[17px] font-extrabold">
-                  <Stethoscope size={18} className="text-[#005AE0]" aria-hidden="true" /> Symptoms
+                  <Stethoscope size={18} className="text-[#B30E29]" aria-hidden="true" /> Symptoms
                 </h2>
-                <p className="mt-2 text-[14px] leading-[1.6] text-[#52647F]">{c.symptoms}</p>
+                <p className="mt-2 text-[14px] leading-[1.6] text-[#62626F]">{c.symptoms}</p>
               </section>
-              <section className="rounded-2xl border border-[#E3EAF3] p-5">
+              <section className="rounded-2xl border border-[#EAEAEC] p-5">
                 <h2 className="flex items-center gap-2 text-[17px] font-extrabold">
-                  <Wrench size={18} className="text-[#005AE0]" aria-hidden="true" /> Is it repairable?
+                  <Wrench size={18} className="text-[#B30E29]" aria-hidden="true" /> Is it repairable?
                 </h2>
-                <p className="mt-2 text-[14px] leading-[1.6] text-[#52647F]">{c.repairable}</p>
+                <p className="mt-2 text-[14px] leading-[1.6] text-[#62626F]">{c.repairable}</p>
               </section>
-              <section className="rounded-2xl border border-[#E3EAF3] p-5">
+              <section className="rounded-2xl border border-[#EAEAEC] p-5">
                 <h2 className="flex items-center gap-2 text-[17px] font-extrabold">
-                  <ClipboardList size={18} className="text-[#005AE0]" aria-hidden="true" /> Common causes
+                  <ClipboardList size={18} className="text-[#B30E29]" aria-hidden="true" /> Common causes
                 </h2>
                 <ul className="mt-2 space-y-1.5">
                   {toList(c.causes).map((x) => (
-                    <li key={x} className="flex gap-2 text-[14px] leading-normal text-[#52647F]">
-                      <Check size={15} className="mt-0.5 shrink-0 text-[#005AE0]" aria-hidden="true" />
+                    <li key={x} className="flex gap-2 text-[14px] leading-normal text-[#62626F]">
+                      <Check size={15} className="mt-0.5 shrink-0 text-[#B30E29]" aria-hidden="true" />
                       {x}
                     </li>
                   ))}
                 </ul>
               </section>
-              <section className="rounded-2xl border border-[#E3EAF3] p-5">
+              <section className="rounded-2xl border border-[#EAEAEC] p-5">
                 <h2 className="flex items-center gap-2 text-[17px] font-extrabold">
-                  <Search size={18} className="text-[#005AE0]" aria-hidden="true" /> Safe checks
+                  <Search size={18} className="text-[#B30E29]" aria-hidden="true" /> Safe checks
                 </h2>
                 <ol className="mt-2 space-y-1.5">
                   {toList(c.checks).map((x, i) => (
-                    <li key={x} className="flex gap-2 text-[14px] leading-normal text-[#52647F]">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0066FF] text-[11px] font-bold text-white">
+                    <li key={x} className="flex gap-2 text-[14px] leading-normal text-[#62626F]">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C8102E] text-[11px] font-bold text-white">
                         {i + 1}
                       </span>
                       {x}
@@ -159,8 +159,8 @@ async function CodePageContent({ params }: Props) {
               <SafetyNote />
             </div>
 
-            <p className="mt-4 flex items-start gap-2 text-[12.5px] text-[#56677F]">
-              <BadgeCheck size={15} className="mt-0.5 shrink-0 text-[#005AE0]" aria-hidden="true" />
+            <p className="mt-4 flex items-start gap-2 text-[12.5px] text-[#646471]">
+              <BadgeCheck size={15} className="mt-0.5 shrink-0 text-[#B30E29]" aria-hidden="true" />
               Reviewed by AutomIQ repair technicians. Code and name from the {f.source}.
             </p>
 
@@ -172,15 +172,15 @@ async function CodePageContent({ params }: Props) {
                     <li key={x.code}>
                       <Link
                         href={codeUrl(f, x)}
-                        className="inline-flex items-center gap-2 rounded-xl border border-[#E3EAF3] px-3 py-2 text-[13px] transition hover:border-[#0066FF]/40"
+                        className="inline-flex items-center gap-2 rounded-xl border border-[#EAEAEC] px-3 py-2 text-[13px] transition hover:border-[#C8102E]/40"
                       >
                         <span className="font-mono font-bold">{x.code}</span>
-                        <span className="text-[#52647F]">{x.name.replace(/^(Power unit|Drive|Inverter|Converter): /, "")}</span>
+                        <span className="text-[#62626F]">{x.name.replace(/^(Power unit|Drive|Inverter|Converter): /, "")}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
-                <Link href={familyUrl(f)} className="mt-4 inline-flex items-center gap-1 text-[13.5px] font-semibold text-[#005AE0]">
+                <Link href={familyUrl(f)} className="mt-4 inline-flex items-center gap-1 text-[13.5px] font-semibold text-[#B30E29]">
                   All {f.codes.length.toLocaleString("en-US")} {f.short} codes <ArrowRight size={14} aria-hidden="true" />
                 </Link>
               </>
@@ -188,9 +188,9 @@ async function CodePageContent({ params }: Props) {
           </article>
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(150deg,#0B1A3C_0%,#0A1530_60%,#071026_100%)] p-6 text-white">
-              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(0,102,255,0.45),transparent_65%)]" />
-              <p className="relative text-[12px] font-semibold uppercase tracking-[0.2em] text-[#7FD3FF]">Still showing {c.code}?</p>
+            <div className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] p-6 text-white">
+              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
+              <p className="relative text-[12px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Still showing {c.code}?</p>
               <p className="relative mt-1 text-[22px] font-extrabold leading-tight">{f.repairLabel}</p>
               <ul className="relative mt-4 space-y-2 text-[13.5px] text-white/85">
                 {["Free evaluation and written quote", "Component-level repair", "Tested under power on our jigs", "12-month warranty"].map((t) => (
@@ -202,7 +202,7 @@ async function CodePageContent({ params }: Props) {
               </ul>
               <Link
                 href={`/request-repair?fault=${encodeURIComponent(c.code)}`}
-                className="relative mt-5 flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[15px] font-semibold"
+                className="relative mt-5 flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold"
               >
                 <Wrench size={17} aria-hidden="true" /> Send this unit in
               </Link>
@@ -214,8 +214,8 @@ async function CodePageContent({ params }: Props) {
               </Link>
             </div>
             {services.length > 0 && (
-              <p className="mt-3 px-1 text-[12.5px] text-[#56677F]">
-                Related services: <span className="font-semibold text-[#0B1A3C]">{services.join(" · ")}</span>
+              <p className="mt-3 px-1 text-[12.5px] text-[#646471]">
+                Related services: <span className="font-semibold text-[#131316]">{services.join(" · ")}</span>
               </p>
             )}
           </aside>

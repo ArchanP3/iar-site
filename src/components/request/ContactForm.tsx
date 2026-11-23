@@ -13,7 +13,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="contact" subject="New message: AutomIQ website contact page" />
 
       <Step n={1} title="What is it about?">
@@ -28,11 +28,11 @@ export default function ContactForm() {
       <Step n={2} title="Your message">
         <div className="grid gap-3 sm:grid-cols-[1fr_1fr]">
           <div>
-            <label className={label} htmlFor="ct-part">Part / model number <span className="font-normal text-[#52647F]">(optional)</span></label>
+            <label className={label} htmlFor="ct-part">Part / model number <span className="font-normal text-[#62626F]">(optional)</span></label>
             <input id="ct-part" name="Part number" className={`${input} font-mono`} placeholder="6SL3120-1TE21-0AA3" />
           </div>
           <div>
-            <label className={label} htmlFor="ct-order">Order or quote number <span className="font-normal text-[#52647F]">(optional)</span></label>
+            <label className={label} htmlFor="ct-order">Order or quote number <span className="font-normal text-[#62626F]">(optional)</span></label>
             <input id="ct-order" name="Order or quote number" className={input} />
           </div>
           <div className="sm:col-span-2">

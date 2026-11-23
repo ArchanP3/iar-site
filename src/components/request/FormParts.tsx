@@ -6,19 +6,19 @@ import { ArrowRight, Check, CheckCircle2, Loader2, Minus, Plus, ShieldCheck } fr
 import { submitServiceRequest } from "@/lib/requests";
 
 export const input =
-  "h-11 w-full rounded-xl border border-[#D9E4F1] bg-[#F9FBFE] px-3.5 text-[14px] text-[#0B1A3C] outline-none transition placeholder:text-[#8293AA] focus:border-[#0066FF] focus:bg-white focus:ring-4 focus:ring-[#0066FF]/10";
-export const label = "mb-1.5 block text-[12.5px] font-semibold text-[#0B1A3C]";
+  "h-11 w-full rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 text-[14px] text-[#131316] outline-none transition placeholder:text-[#90909C] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
+export const label = "mb-1.5 block text-[12.5px] font-semibold text-[#131316]";
 export const brands = ["Siemens", "Rexroth Indramat", "Allen-Bradley", "Fanuc", "Yaskawa", "Mitsubishi", "Kollmorgen", "Schneider Electric", "Omron", "ABB", "Other"];
 
 export function Step({ n, title, hint, children }: { n: number; title: string; hint?: string; children: React.ReactNode }) {
   return (
-    <fieldset className="border-t border-[#EEF3F9] px-5 py-5 first:border-t-0 sm:px-7">
+    <fieldset className="border-t border-[#F3F3F4] px-5 py-5 first:border-t-0 sm:px-7">
       <legend className="sr-only">{title}</legend>
       <div className="mb-4 flex items-center gap-3">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[12px] font-bold text-white">{n}</span>
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[12px] font-bold text-white">{n}</span>
         <div>
-          <p className="text-[15.5px] font-extrabold text-[#0B1A3C]">{title}</p>
-          {hint && <p className="text-[12.5px] text-[#56677F]">{hint}</p>}
+          <p className="text-[15.5px] font-extrabold text-[#131316]">{title}</p>
+          {hint && <p className="text-[12.5px] text-[#646471]">{hint}</p>}
         </div>
       </div>
       {children}
@@ -34,16 +34,16 @@ export function Choice({ name, options, value, onChange, cols = 3 }: { name: str
       {options.map(({ v, t, d, icon: Icon }) => {
         const on = value === v;
         return (
-          <label key={v} className={`relative flex cursor-pointer gap-3 rounded-2xl border p-3.5 transition has-focus-visible:ring-4 has-focus-visible:ring-[#0066FF]/25 ${on ? "border-[#0066FF] bg-[#0066FF]/5 ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] hover:border-[#0066FF]/40"}`}>
+          <label key={v} className={`relative flex cursor-pointer gap-3 rounded-2xl border p-3.5 transition has-focus-visible:ring-4 has-focus-visible:ring-[#C8102E]/25 ${on ? "border-[#C8102E] bg-[#C8102E]/5 ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] hover:border-[#C8102E]/40"}`}>
             <input type="radio" name={name} value={t} checked={on} onChange={() => onChange(v)} className="sr-only" />
-            <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${on ? "bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-white" : "bg-[#0066FF]/8 text-[#005AE0]"}`}>
+            <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${on ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "bg-[#C8102E]/8 text-[#B30E29]"}`}>
               <Icon size={17} aria-hidden="true" />
             </span>
             <span className="min-w-0 pr-4">
-              <span className="block text-[13.5px] font-bold text-[#0B1A3C]">{t}</span>
-              <span className="block text-[12px] leading-snug text-[#56677F]">{d}</span>
+              <span className="block text-[13.5px] font-bold text-[#131316]">{t}</span>
+              <span className="block text-[12px] leading-snug text-[#646471]">{d}</span>
             </span>
-            {on && <Check size={15} className="absolute right-3 top-3 text-[#005AE0]" aria-hidden="true" />}
+            {on && <Check size={15} className="absolute right-3 top-3 text-[#B30E29]" aria-hidden="true" />}
           </label>
         );
       })}
@@ -79,7 +79,7 @@ export function AddressFields({ prefix }: { prefix: string }) {
   return (
     <div className="grid gap-3 sm:grid-cols-6">
       <div className="sm:col-span-4"><label className={label} htmlFor={f("street")}>Street address *</label><input id={f("street")} name="Pickup street" required className={input} autoComplete="address-line1" /></div>
-      <div className="sm:col-span-2"><label className={label} htmlFor={f("suite")}>Unit / dock <span className="font-normal text-[#52647F]">(optional)</span></label><input id={f("suite")} name="Pickup unit or dock" className={input} autoComplete="address-line2" /></div>
+      <div className="sm:col-span-2"><label className={label} htmlFor={f("suite")}>Unit / dock <span className="font-normal text-[#62626F]">(optional)</span></label><input id={f("suite")} name="Pickup unit or dock" className={input} autoComplete="address-line2" /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("city")}>City *</label><input id={f("city")} name="Pickup city" required className={input} autoComplete="address-level2" /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("region")}>Province / State *</label><input id={f("region")} name="Pickup province or state" required className={input} autoComplete="address-level1" /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("postal")}>Postal / ZIP *</label><input id={f("postal")} name="Pickup postal code" required className={input} autoComplete="postal-code" /></div>
@@ -103,7 +103,7 @@ export function CarrierPicker({ prefix, value, onChange }: { prefix: string; val
         <div className="flex flex-wrap gap-2">
           {carriers.map((c) => (
             <button key={c} type="button" aria-pressed={value === c} onClick={() => onChange(c)}
-              className={`min-w-24 rounded-xl border px-4 py-2.5 text-[13.5px] font-bold transition ${value === c ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+              className={`min-w-24 rounded-xl border px-4 py-2.5 text-[13.5px] font-bold transition ${value === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c}
             </button>
           ))}
@@ -111,7 +111,7 @@ export function CarrierPicker({ prefix, value, onChange }: { prefix: string; val
       </div>
       {value !== "No preference" && (
         <div className="max-w-90">
-          <label className={label} htmlFor={`${prefix}-acct`}>Your {value} account number <span className="font-normal text-[#52647F]">(optional)</span></label>
+          <label className={label} htmlFor={`${prefix}-acct`}>Your {value} account number <span className="font-normal text-[#62626F]">(optional)</span></label>
           <input id={`${prefix}-acct`} name="Carrier account number" className={input} placeholder="If you want it billed to your account" />
         </div>
       )}
@@ -176,11 +176,11 @@ export function FormMeta({ type, subject }: { type: RequestType; subject: string
 
 export function Thanks({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[24px] border border-[#E3EAF3] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)] sm:p-10">
+    <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-10">
       <CheckCircle2 size={48} className="mx-auto text-emerald-500" aria-hidden="true" />
-      <h2 className="mt-4 text-[24px] font-extrabold text-[#0B1A3C]">{title}</h2>
-      <p className="mx-auto mt-2 max-w-115 text-[14.5px] leading-[1.6] text-[#52647F]">{text}</p>
-      <Link href="/" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#D9E4F1] px-5 text-[14px] font-semibold text-[#0B1A3C] hover:border-[#0066FF]">
+      <h2 className="mt-4 text-[24px] font-extrabold text-[#131316]">{title}</h2>
+      <p className="mx-auto mt-2 max-w-115 text-[14.5px] leading-[1.6] text-[#62626F]">{text}</p>
+      <Link href="/" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
         Back to home <ArrowRight size={15} aria-hidden="true" />
       </Link>
     </div>
@@ -195,14 +195,14 @@ export function SubmitBar({ status, label: text, note }: { status: SendStatus; l
           Sorry, your request could not be sent. Please try again in a minute.
         </p>
       )}
-      <div className="flex flex-col gap-3 border-t border-[#EEF3F9] bg-[#F7FAFE] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
-        <p className="flex items-center gap-2 text-[12.5px] text-[#56677F]">
-          <ShieldCheck size={15} className="shrink-0 text-[#005AE0]" aria-hidden="true" /> {note}
+      <div className="flex flex-col gap-3 border-t border-[#F3F3F4] bg-[#FAFAFB] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+        <p className="flex items-center gap-2 text-[12.5px] text-[#646471]">
+          <ShieldCheck size={15} className="shrink-0 text-[#B30E29]" aria-hidden="true" /> {note}
         </p>
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(0,102,255,0.9)] transition hover:-translate-y-0.5 disabled:opacity-70"
+          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5 disabled:opacity-70"
         >
           {status === "sending" ? <><Loader2 size={16} className="animate-spin" aria-hidden="true" /> Sending…</> : <>{text} <ArrowRight size={16} aria-hidden="true" /></>}
         </button>
@@ -228,21 +228,21 @@ export function PackageFields({ prefix }: { prefix: string }) {
       <div>
         <p className={label}>Boxes</p>
         <input type="hidden" name="Boxes" value={boxes} />
-        <div className="flex h-11 items-center justify-between rounded-xl border border-[#D9E4F1] bg-[#F9FBFE] px-1.5">
-          <button type="button" aria-label="Fewer boxes" onClick={() => setBoxes((b) => Math.max(1, b - 1))} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#0B1A3C] ring-1 ring-[#E3EAF3]"><Minus size={14} /></button>
-          <span className="text-[14px] font-bold text-[#0B1A3C]">{boxes}</span>
-          <button type="button" aria-label="More boxes" onClick={() => setBoxes((b) => b + 1)} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#0B1A3C] ring-1 ring-[#E3EAF3]"><Plus size={14} /></button>
+        <div className="flex h-11 items-center justify-between rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-1.5">
+          <button type="button" aria-label="Fewer boxes" onClick={() => setBoxes((b) => Math.max(1, b - 1))} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#131316] ring-1 ring-[#EAEAEC]"><Minus size={14} /></button>
+          <span className="text-[14px] font-bold text-[#131316]">{boxes}</span>
+          <button type="button" aria-label="More boxes" onClick={() => setBoxes((b) => b + 1)} className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#131316] ring-1 ring-[#EAEAEC]"><Plus size={14} /></button>
         </div>
       </div>
       <div>
-        <label className={label} htmlFor={f("weight")}>Total weight <span className="font-normal text-[#52647F]">(approx.)</span></label>
+        <label className={label} htmlFor={f("weight")}>Total weight <span className="font-normal text-[#62626F]">(approx.)</span></label>
         <div className="flex gap-2">
           <input id={f("weight")} name="Weight" inputMode="decimal" className={input} placeholder="e.g. 12" />
           <select name="Weight unit" aria-label="Weight unit" className={narrow}><option>kg</option><option>lb</option></select>
         </div>
       </div>
       <div>
-        <label className={label} htmlFor={f("size")}>Box size <span className="font-normal text-[#52647F]">(L × W × H)</span></label>
+        <label className={label} htmlFor={f("size")}>Box size <span className="font-normal text-[#62626F]">(L × W × H)</span></label>
         <div className="flex gap-2">
           <input id={f("size")} name="Box size" className={input} placeholder="e.g. 40 × 30 × 20" />
           <select name="Box size unit" aria-label="Size unit" className={narrow}><option>cm</option><option>in</option></select>
@@ -258,21 +258,21 @@ export function PackageFields({ prefix }: { prefix: string }) {
         <div className="flex flex-wrap items-center gap-2">
           {["Morning 8–12", "Afternoon 12–5", "Anytime", "Exact time"].map((t) => (
             <button key={t} type="button" aria-pressed={slot === t} onClick={() => setSlot(t)}
-              className={`rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${slot === t ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+              className={`rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${slot === t ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {t}
             </button>
           ))}
           {slot === "Exact time" && (
             <span className="flex items-center gap-2">
               <input name="From" type="time" aria-label="From" className={`${input.replace("w-full ", "")} w-32.5`} />
-              <span className="text-[13px] text-[#56677F]">to</span>
+              <span className="text-[13px] text-[#646471]">to</span>
               <input name="To" type="time" aria-label="To" className={`${input.replace("w-full ", "")} w-32.5`} />
             </span>
           )}
         </div>
       </div>
       <div className="sm:col-span-3">
-        <label className={label} htmlFor={f("dock")}>Dock / driver notes <span className="font-normal text-[#52647F]">(optional)</span></label>
+        <label className={label} htmlFor={f("dock")}>Dock / driver notes <span className="font-normal text-[#62626F]">(optional)</span></label>
         <input id={f("dock")} name="Dock notes" className={input} placeholder="e.g. Shipping door 3, call on arrival" />
       </div>
     </div>

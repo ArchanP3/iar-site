@@ -15,7 +15,7 @@ export default async function RelatedParts({ p }: { p: Part }) {
     <section aria-labelledby="related" className="mt-12">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
         <h2 id="related" className="shrink-0 text-[22px] font-extrabold sm:text-[26px]">Related parts</h2>
-        <Link href={cat ? categoryUrl(cat.slug) : "/shop"} className="inline-flex items-center gap-1 text-[14px] font-semibold text-[#0052CC] hover:underline">
+        <Link href={cat ? categoryUrl(cat.slug) : "/shop"} className="inline-flex items-center gap-1 text-[14px] font-semibold text-[#A50D25] hover:underline">
           View all {cat?.name ?? "parts"} <ArrowRight size={15} aria-hidden="true" />
         </Link>
       </div>

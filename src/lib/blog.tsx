@@ -29,7 +29,7 @@ export const posts: Post[] = [
     date: "2026-10-26",
     minutes: 6,
     tag: "Decision guide",
-    color: "#0066FF",
+    color: "#C8102E",
     image: "/hero/servo-drives.webp",
     related: [["Downtime Cost Calculator", "/resources/downtime-calculator"], ["Servo drive repair", "/services/servo-drive-repair"], ["Exchange program", "/services/exchange"]],
     sections: [

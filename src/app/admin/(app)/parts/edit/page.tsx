@@ -13,7 +13,7 @@ type Props = { searchParams: Promise<{ id?: string }> };
 
 export default function Page(props: Props) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Edit {...props} />
     </Suspense>
   );
@@ -29,7 +29,7 @@ async function Edit({ searchParams }: Props) {
   return (
     <>
       <PageHead
-        crumb={<><Link href="/admin/parts" className="hover:text-[#0052CC]">Parts Catalog</Link><span>/</span><span>Edit</span></>}
+        crumb={<><Link href="/admin/parts" className="hover:text-[#A50D25]">Parts Catalog</Link><span>/</span><span>Edit</span></>}
         title={<span className="font-mono">{p.manufacturer} {p.part_number}</span>}
         sub={<>{(p.category_slug && getCategory(p.category_slug)?.name) || p.category || "No category"} · {p.status === "published" ? <Pill tone="ok">Published</Pill> : p.status === "draft" ? <Pill tone="warn">Draft</Pill> : <Pill>Hidden</Pill>}</>}
         actions={<a href={partUrl(p.slug)} target="_blank" rel="noopener" className={b("light")}><ExternalLink size={15} /> View on site</a>}
@@ -54,11 +54,11 @@ async function Edit({ searchParams }: Props) {
                 ))}
               </ul>
             ) : (
-              <p className="text-[13px] text-[#5B6B84]">Nothing yet. Any field you change here gets locked, so the CSV and catalog imports keep your version.</p>
+              <p className="text-[13px] text-[#696976]">Nothing yet. Any field you change here gets locked, so the CSV and catalog imports keep your version.</p>
             )}
           </Card>
           <Alert tone="blue">Changes show on automiqautomation.com and .ca straight away, and every change is in Users &amp; Activity with Undo.</Alert>
-          <div className="text-[12px] text-[#8494AB]">Part number, brand and photos can&apos;t be changed here yet.</div>
+          <div className="text-[12px] text-[#91919E]">Part number, brand and photos can&apos;t be changed here yet.</div>
         </div>
       </div>
     </>

@@ -31,19 +31,19 @@ export default function FaultCodesPage() {
       />
 
       {/* ---------- Top: heading + search ---------- */}
-      <section className="relative bg-[linear-gradient(150deg,#0B1A3C_0%,#0A1530_60%,#071026_100%)] text-white">
+      <section className="relative bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-          <span className="absolute -right-40 -top-40 h-130 w-130 rounded-full bg-[radial-gradient(circle,rgba(0,102,255,0.45),transparent_65%)]" />
-          <span className="absolute inset-0 bg-[linear-gradient(rgba(127,211,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(127,211,255,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
+          <span className="absolute -right-40 -top-40 h-130 w-130 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
+          <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
         </div>
         <div className="relative mx-auto max-w-310 px-5 pb-12 pt-8 sm:px-8 lg:pb-14">
           <Breadcrumbs items={crumbs} dark />
-          <p className="mt-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.28em] text-[#4DB8FF]">
-            <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#0066FF] to-[#00B0FF]" /> Fault Code Library
+          <p className="mt-6 flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.28em] text-[#FF5A6E]">
+            <span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" /> Fault Code Library
           </p>
           <h1 className="mt-3 max-w-205 text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-[46px]">
             Servo Drive &amp; CNC Fault Codes,{" "}
-            <span className="bg-linear-to-r from-[#4DB8FF] to-[#00B0FF] bg-clip-text text-transparent">Explained by Repair Technicians</span>
+            <span className="bg-linear-to-r from-[#FF5A6E] to-[#FF3B55] bg-clip-text text-transparent">Explained by Repair Technicians</span>
           </h1>
           <p className="mt-4 max-w-175 text-[15px] leading-[1.65] text-white/70 sm:text-[15.5px]">
             Look up your alarm, see what it means and the likely cause, then decide: reset it, fix it on site, or send the unit in for repair.
@@ -75,29 +75,29 @@ export default function FaultCodesPage() {
             <li key={f.seriesSlug} className="min-w-0">
               <Link
                 href={familyUrl(f)}
-                className="group flex items-center gap-4 rounded-2xl border border-[#E3EAF3] bg-[#F7FAFE] p-4 transition hover:-translate-y-0.5 hover:border-[#0066FF]/30 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgba(0,102,255,0.6)]"
+                className="group flex items-center gap-4 rounded-2xl border border-[#EAEAEC] bg-[#FAFAFB] p-4 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgba(200, 16, 46,0.6)]"
               >
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[18px] font-extrabold text-white shadow-[0_10px_22px_-10px_rgba(0,102,255,0.8)]">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[18px] font-extrabold text-white shadow-[0_10px_22px_-10px_rgba(200, 16, 46,0.8)]">
                   {f.initials}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[17px] font-extrabold">{f.brand}</span>
-                  <span className="block line-clamp-2 text-[13px] text-[#52647F]">{f.series}</span>
+                  <span className="block line-clamp-2 text-[13px] text-[#62626F]">{f.series}</span>
                 </span>
                 <span className="text-right">
-                  <span className="block text-[18px] font-extrabold text-[#005AE0]">{f.codes.length.toLocaleString("en-US")}</span>
-                  <span className="block text-[11px] text-[#56677F]">codes</span>
+                  <span className="block text-[18px] font-extrabold text-[#B30E29]">{f.codes.length.toLocaleString("en-US")}</span>
+                  <span className="block text-[11px] text-[#646471]">codes</span>
                 </span>
               </Link>
             </li>
           ))}
-          <li className="flex items-center gap-4 rounded-2xl border border-dashed border-[#C9D7E8] p-4">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#0B1A3C] text-white">
+          <li className="flex items-center gap-4 rounded-2xl border border-dashed border-[#E6CBCF] p-4">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#131316] text-white">
               <Phone size={20} aria-hidden="true" />
             </span>
-            <p className="text-[13.5px] leading-snug text-[#52647F]">
-              <b className="text-[#0B1A3C]">Drive not listed?</b>{" "}
-              <Link href="/request-repair?service=question" className="font-semibold text-[#005AE0] hover:underline">
+            <p className="text-[13.5px] leading-snug text-[#62626F]">
+              <b className="text-[#131316]">Drive not listed?</b>{" "}
+              <Link href="/request-repair?service=question" className="font-semibold text-[#B30E29] hover:underline">
                 Send us the code and model.
               </Link>{" "}
               A technician will tell you what it means.
@@ -112,18 +112,18 @@ export default function FaultCodesPage() {
             <li key={f.seriesSlug + c.code}>
               <Link
                 href={codeUrl(f, c)}
-                className="group flex h-full flex-col rounded-2xl border border-[#E3EAF3] bg-white p-4 transition hover:border-[#0066FF]/40 hover:shadow-[0_18px_40px_-26px_rgba(0,102,255,0.6)]"
+                className="group flex h-full flex-col rounded-2xl border border-[#EAEAEC] bg-white p-4 transition hover:border-[#C8102E]/40 hover:shadow-[0_18px_40px_-26px_rgba(200, 16, 46,0.6)]"
               >
                 <span className="flex items-center justify-between gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-lg bg-amber-100 px-2 py-0.5 font-mono text-[13.5px] font-bold text-amber-700">
                     <AlertTriangle size={13} aria-hidden="true" />
                     {c.code}
                   </span>
-                  <span className="text-[11.5px] font-semibold text-[#56677F]">{f.short}</span>
+                  <span className="text-[11.5px] font-semibold text-[#646471]">{f.short}</span>
                 </span>
                 <span className="mt-3 text-[15px] font-bold leading-snug">{c.name}</span>
-                <span className="mt-1 text-[12.5px] text-[#52647F]">{c.area}</span>
-                <span className="mt-auto inline-flex items-center gap-1 pt-3 text-[13px] font-semibold text-[#005AE0]">
+                <span className="mt-1 text-[12.5px] text-[#62626F]">{c.area}</span>
+                <span className="mt-auto inline-flex items-center gap-1 pt-3 text-[13px] font-semibold text-[#B30E29]">
                   Read the guide <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
               </Link>
@@ -133,7 +133,7 @@ export default function FaultCodesPage() {
 
         {/* ---------- Repair + safety ---------- */}
         <div className="mt-12 grid gap-3 lg:grid-cols-[1.6fr_1fr]">
-          <div className="flex flex-col justify-between gap-5 rounded-[22px] bg-[linear-gradient(135deg,#0066FF,#00B0FF)] p-6 text-white sm:flex-row sm:items-center">
+          <div className="flex flex-col justify-between gap-5 rounded-[22px] bg-[linear-gradient(135deg,#C8102E,#FF3B55)] p-6 text-white sm:flex-row sm:items-center">
             <div>
               <p className="text-[22px] font-extrabold">Fault won&apos;t clear?</p>
               <p className="mt-1 text-[14.5px] text-white/85">
@@ -142,7 +142,7 @@ export default function FaultCodesPage() {
             </div>
             <Link
               href="/request-repair"
-              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 text-[15px] font-semibold text-[#0B1A3C] transition hover:-translate-y-0.5"
+              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:-translate-y-0.5"
             >
               <Wrench size={17} aria-hidden="true" /> Start a Repair
             </Link>

@@ -17,7 +17,7 @@ type Task = { id: string; title: string; why: string; how: string; href: string;
 
 export default function Page() {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Building this week&apos;s list…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Building this week&apos;s list…</p>}>
       <Checklist />
     </Suspense>
   );
@@ -61,9 +61,9 @@ async function Checklist() {
       <PageHead title="Weekly checklist" sub="The SEO jobs that matter most this week, in plain English, picked from your own website and Google data. Only Super Admins and Admins see this screen. The list starts fresh every Monday." />
       <Card>
         <div className="flex flex-wrap items-center gap-4">
-          <ClipboardCheck size={22} className="text-[#0066FF]" />
+          <ClipboardCheck size={22} className="text-[#C8102E]" />
           <div className="min-w-50 flex-1"><b className="text-[15px]">{finished} of {total} done this week</b><div className="mt-1.5"><Bar pct={total ? (finished / total) * 100 : 100} color="#12B76A" /></div></div>
-          <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[#5B6B84]"><Clock size={14} /> about {Math.round(t.filter((x) => !done.has(x.id)).reduce((s, x) => s + x.mins, 0) / 5) * 5} minutes left</span>
+          <span className="inline-flex items-center gap-1.5 text-[12.5px] text-[#696976]"><Clock size={14} /> about {Math.round(t.filter((x) => !done.has(x.id)).reduce((s, x) => s + x.mins, 0) / 5) * 5} minutes left</span>
         </div>
       </Card>
       <div className="flex flex-col gap-3">
@@ -71,12 +71,12 @@ async function Checklist() {
         {t.map((x) => {
           const on = done.has(x.id);
           return (
-            <div key={x.id} className={`flex gap-4 rounded-2xl border bg-white p-4 sm:p-5 ${on ? "border-[#E3EAF3] opacity-60" : "border-[#E3EAF3]"}`}>
-              <form action={toggleTask}><input type="hidden" name="id" value={x.id} /><button aria-label={on ? "Mark not done" : "Mark done"} className="mt-0.5 text-[#12B76A]">{on ? <CheckCircle2 size={22} /> : <Circle size={22} className="text-[#B8C4D6]" />}</button></form>
+            <div key={x.id} className={`flex gap-4 rounded-2xl border bg-white p-4 sm:p-5 ${on ? "border-[#EAEAEC] opacity-60" : "border-[#EAEAEC]"}`}>
+              <form action={toggleTask}><input type="hidden" name="id" value={x.id} /><button aria-label={on ? "Mark not done" : "Mark done"} className="mt-0.5 text-[#12B76A]">{on ? <CheckCircle2 size={22} /> : <Circle size={22} className="text-[#C4C4CA]" />}</button></form>
               <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2"><b className={`text-[14.5px] ${on ? "line-through" : ""}`}>{x.title}</b><Pill tone={priLabel[x.pri][1]}>{priLabel[x.pri][0]}</Pill><span className="text-[12px] text-[#8494AB]">~{x.mins} min</span></div>
-                <p className="mt-1.5 text-[13px] text-[#33445F]"><b>Why:</b> {x.why}</p>
-                <p className="mt-1 text-[13px] text-[#33445F]"><b>How:</b> {x.how}</p>
+                <div className="flex flex-wrap items-center gap-2"><b className={`text-[14.5px] ${on ? "line-through" : ""}`}>{x.title}</b><Pill tone={priLabel[x.pri][1]}>{priLabel[x.pri][0]}</Pill><span className="text-[12px] text-[#91919E]">~{x.mins} min</span></div>
+                <p className="mt-1.5 text-[13px] text-[#45454D]"><b>Why:</b> {x.why}</p>
+                <p className="mt-1 text-[13px] text-[#45454D]"><b>How:</b> {x.how}</p>
               </div>
               <Link href={x.href} className={`${b("light", true)} self-start`}>{x.cta}</Link>
             </div>
@@ -84,7 +84,7 @@ async function Checklist() {
         })}
       </div>
       <Card title="SEO in five sentences" icon={<BookOpen size={17} />}>
-        <ol className="list-decimal space-y-1.5 pl-5 text-[13px] text-[#33445F]">
+        <ol className="list-decimal space-y-1.5 pl-5 text-[13px] text-[#45454D]">
           <li>Each page should answer one search well: one clear topic, said in its title, H1 and first paragraph.</li>
           <li>The SEO title (under 60 characters) and description (under 160) are your ad in Google. Make people want to click.</li>
           <li>Never delete or rename a page without a redirect; this CMS adds one automatically when you change a URL.</li>

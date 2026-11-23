@@ -13,7 +13,7 @@ function Status({ s }: { s?: { ok?: string; error?: string } }) {
   return null;
 }
 const F = ({ label, hint, children, wide }: { label: string; hint?: string; children: React.ReactNode; wide?: boolean }) => (
-  <label className={cx("flex flex-col gap-1.5", wide && "sm:col-span-2")}><span className="text-[12.5px] font-bold">{label}</span>{children}{hint && <span className="text-[11.5px] text-[#8494AB]">{hint}</span>}</label>
+  <label className={cx("flex flex-col gap-1.5", wide && "sm:col-span-2")}><span className="text-[12.5px] font-bold">{label}</span>{children}{hint && <span className="text-[11.5px] text-[#91919E]">{hint}</span>}</label>
 );
 
 export function BusinessForm({ b: biz }: { b: Business }) {
@@ -41,11 +41,11 @@ export function BusinessForm({ b: biz }: { b: Business }) {
               <div key={i} className="grid grid-cols-[1fr_1.3fr_auto] gap-2">
                 <input name="h_days" value={d} onChange={(e) => setHours(hours.map((h, k) => (k === i ? [e.target.value, h[1]] : h)))} placeholder="Mon – Fri" className={input} />
                 <input name="h_time" value={t} onChange={(e) => setHours(hours.map((h, k) => (k === i ? [h[0], e.target.value] : h)))} placeholder="8:00 am – 5:00 pm" className={input} />
-                <button type="button" onClick={() => setHours(hours.filter((_, k) => k !== i))} className="text-[#8494AB] hover:text-[#B42318]"><Trash2 size={15} /></button>
+                <button type="button" onClick={() => setHours(hours.filter((_, k) => k !== i))} className="text-[#91919E] hover:text-[#B42318]"><Trash2 size={15} /></button>
               </div>
             ))}
             <button type="button" onClick={() => setHours([...hours, ["", ""]])} className={b("light", true)}><Plus size={13} /> Add a row</button>
-            <p className="text-[11.5px] text-[#8494AB]">Rows with an empty time are not shown. No rows = the hours card on Contact is hidden.</p>
+            <p className="text-[11.5px] text-[#91919E]">Rows with an empty time are not shown. No rows = the hours card on Contact is hidden.</p>
           </div>
         </Card>
         <Card title="Customer notes">
@@ -73,16 +73,16 @@ export function SiteForm({ s, sec, owner }: { s: SiteSettings; sec: Security; ow
       <div className="flex flex-col gap-5">
         <Card title="Top bar message" icon={<Megaphone size={17} />}>
           <div className="flex flex-col gap-3">
-            <label className="flex items-center gap-2.5 text-[13px] font-semibold"><input type="checkbox" name="announcement_on" checked={on} onChange={(e) => setOn(e.target.checked)} className="h-4 w-4 accent-[#0066FF]" /> Show a message in the dark bar above the menu (desktop)</label>
+            <label className="flex items-center gap-2.5 text-[13px] font-semibold"><input type="checkbox" name="announcement_on" checked={on} onChange={(e) => setOn(e.target.checked)} className="h-4 w-4 accent-[#C8102E]" /> Show a message in the dark bar above the menu (desktop)</label>
             <input name="announcement" value={text} onChange={(e) => setText(e.target.value)} maxLength={140} className={input} />
-            <div className="rounded-lg bg-[#030817] px-3 py-2 text-[12.5px] text-white/70">{on ? text : <span className="opacity-50">(no message)</span>}</div>
+            <div className="rounded-lg bg-[#060607] px-3 py-2 text-[12.5px] text-white/70">{on ? text : <span className="opacity-50">(no message)</span>}</div>
           </div>
         </Card>
         <Card title="Default share image" icon={<ImageIcon size={17} />}>
           <div className="flex flex-col gap-3">
-            <div className="flex aspect-1200/630 items-center justify-center rounded-xl bg-[#0B1A3C] bg-cover bg-center text-[13px] text-white/60" style={og ? { backgroundImage: `url(${og})` } : undefined}>{!og && "No default image"}</div>
+            <div className="flex aspect-1200/630 items-center justify-center rounded-xl bg-[#131316] bg-cover bg-center text-[13px] text-white/60" style={og ? { backgroundImage: `url(${og})` } : undefined}>{!og && "No default image"}</div>
             <div className="flex gap-2"><input name="ogImage" value={og} onChange={(e) => setOg(e.target.value)} placeholder="/media/share-image.webp" className={cx(input, "font-mono text-[12.5px]")} /><button type="button" onClick={() => setPick(true)} className={b("light")}>Choose</button></div>
-            <p className="text-[11.5px] text-[#8494AB]">Shown on LinkedIn, WhatsApp, email and so on when a page has no image of its own. Best size 1200 × 630.</p>
+            <p className="text-[11.5px] text-[#91919E]">Shown on LinkedIn, WhatsApp, email and so on when a page has no image of its own. Best size 1200 × 630.</p>
           </div>
         </Card>
       </div>
@@ -92,12 +92,12 @@ export function SiteForm({ s, sec, owner }: { s: SiteSettings; sec: Security; ow
             {(["linkedin", "youtube", "facebook", "instagram", "x"] as const).map((k) => (
               <F key={k} label={k === "x" ? "X (Twitter)" : k[0].toUpperCase() + k.slice(1)}><input name={k} defaultValue={s.social[k]} placeholder="https://" className={input} /></F>
             ))}
-            <p className="text-[11.5px] text-[#8494AB]">Added to the Organization schema (sameAs), which helps Google connect your profiles to the website.</p>
+            <p className="text-[11.5px] text-[#91919E]">Added to the Organization schema (sameAs), which helps Google connect your profiles to the website.</p>
           </div>
         </Card>
         {owner && (
           <Card title="Security" icon={<ShieldCheck size={17} />}>
-            <label className="flex items-start gap-2.5 text-[13px]"><input type="checkbox" name="require2fa" defaultChecked={sec.require2fa} className="mt-0.5 h-4 w-4 accent-[#0066FF]" /><span><b>Require two-step sign-in for everyone</b><br /><span className="text-[#5B6B84]">Each person uses an authenticator app (Google Authenticator, Microsoft Authenticator) with their password.</span></span></label>
+            <label className="flex items-start gap-2.5 text-[13px]"><input type="checkbox" name="require2fa" defaultChecked={sec.require2fa} className="mt-0.5 h-4 w-4 accent-[#C8102E]" /><span><b>Require two-step sign-in for everyone</b><br /><span className="text-[#696976]">Each person uses an authenticator app (Google Authenticator, Microsoft Authenticator) with their password.</span></span></label>
           </Card>
         )}
         <Status s={state} />

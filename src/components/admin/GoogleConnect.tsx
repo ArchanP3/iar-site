@@ -18,12 +18,12 @@ export default function GoogleConnect({ cfg, email, compact }: { cfg: GoogleCfg;
           {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}
           <div><button disabled={pending} className={b("primary")}>{pending ? "Saving…" : "Save"}</button></div>
         </div>
-        <div className="rounded-xl bg-[#F8FAFD] p-4 text-[12.8px] leading-[1.65] text-[#33445F]">
+        <div className="rounded-xl bg-[#FAFAFB] p-4 text-[12.8px] leading-[1.65] text-[#45454D]">
           {email ? (
             <>
               <b>Give the website read access</b>
               <ol className="mt-1.5 list-decimal space-y-1 pl-5">
-                <li>Search Console → Settings → Users and permissions → Add user: <code className="break-all rounded bg-white px-1 text-[#0052CC]">{email}</code> as <b>Restricted</b>.</li>
+                <li>Search Console → Settings → Users and permissions → Add user: <code className="break-all rounded bg-white px-1 text-[#A50D25]">{email}</code> as <b>Restricted</b>.</li>
                 <li>Google Analytics → Admin → Property access management → add the same email as <b>Viewer</b>.</li>
                 <li>Enter the property names on the left and save.</li>
               </ol>

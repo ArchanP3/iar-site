@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import { COUNTRY_SITES, SITE_COUNTRY } from "@/lib/site";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 
 /* ------------------------------------------------------------------ */
 /*  .ca / .com: a visitor on the "wrong" country site sees a bar that   */
@@ -40,7 +40,7 @@ export default function CountrySuggest() {
   };
 
   return (
-    <div role="region" aria-label="Country site suggestion" className={`${montserrat.className} relative z-60 bg-[#0B1A3C] text-white`}>
+    <div role="region" aria-label="Country site suggestion" className={`${brandFont.className} relative z-60 bg-[#131316] text-white`}>
       <div className="mx-auto flex max-w-360 flex-wrap items-center gap-x-4 gap-y-2 px-5 py-2.5 pr-12 text-[13.5px] sm:px-8 lg:px-12">
         <p className="min-w-0">
           {toCa ? (
@@ -50,7 +50,7 @@ export default function CountrySuggest() {
           )}
         </p>
         <span className="flex items-center gap-2">
-          <a href={target} hrefLang={toCa ? "en-CA" : "en-US"} className="inline-flex h-8 items-center rounded-lg bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-3.5 text-[13px] font-semibold">
+          <a href={target} hrefLang={toCa ? "en-CA" : "en-US"} className="inline-flex h-8 items-center rounded-lg bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-3.5 text-[13px] font-semibold">
             Go to {toCa ? "automiqautomation.ca" : "automiqautomation.com"}
           </a>
           <button type="button" onClick={hide} className="h-8 rounded-lg px-3 text-[13px] font-semibold text-white/75 hover:text-white">

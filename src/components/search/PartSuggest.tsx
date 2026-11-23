@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowRight, Cog, Factory, FileText, Search, Wrench } from "lucide-react";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 
 /* Search box with live part-number suggestions (from 3 characters).
    Drop-in replacement for <input name="part">: the form still submits to /search.
@@ -30,7 +30,7 @@ function Mark({ text, q }: { text: string; q: string }) {
       k++;
     }
     if (k === n.length) {
-      return <>{text.slice(0, s)}<mark className="rounded-[3px] bg-[#0066FF]/12 px-px text-[#0052CC]">{text.slice(s, i)}</mark>{text.slice(i)}</>;
+      return <>{text.slice(0, s)}<mark className="rounded-[3px] bg-[#C8102E]/12 px-px text-[#A50D25]">{text.slice(s, i)}</mark>{text.slice(i)}</>;
     }
   }
   return <>{text}</>;
@@ -152,26 +152,26 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
             id={listId}
             role="listbox"
             style={{ position: "fixed", left: box.left, top: box.top, width: Math.max(box.width, 300) }}
-            className={`${montserrat.className} z-80 overflow-hidden rounded-2xl border border-[#E3EAF3] bg-white text-left text-[#0B1A3C] shadow-[0_30px_70px_-20px_rgba(11,26,60,0.45)]`}
+            className={`${brandFont.className} z-80 overflow-hidden rounded-2xl border border-[#EAEAEC] bg-white text-left text-[#131316] shadow-[0_30px_70px_-20px_rgba(19, 19, 22,0.45)]`}
             onMouseDown={(e) => e.preventDefault()}
           >
-            <div className="flex items-center justify-between gap-3 border-b border-[#EEF3F9] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#5B6B84]">
+            <div className="flex items-center justify-between gap-3 border-b border-[#F3F3F4] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#696976]">
               <span>{busy && !items.length && !pages.length ? "Searching…" : items.length ? "Matching parts" : pages.length ? "Repair services" : "No match in our online catalogue yet"}</span>
               {total > items.length && <span className="normal-case tracking-normal">{total.toLocaleString("en-US")} results</span>}
             </div>
             {pages.length > 0 && (
-              <ul className={`py-1 ${items.length ? "border-b border-[#EEF3F9]" : ""}`}>
+              <ul className={`py-1 ${items.length ? "border-b border-[#F3F3F4]" : ""}`}>
                 {pages.map((pg, i) => {
                   const I = pg.kind === "brand" ? Wrench : pg.kind === "industry" ? Factory : Cog;
                   return (
                     <li key={pg.href} id={`${listId}-${i}`} role="option" aria-selected={i === active}>
-                      <a href={pg.href} onMouseEnter={() => setActive(i)} className={`flex items-center gap-3 px-3 py-2.5 transition ${i === active ? "bg-[#F1F6FD]" : ""}`}>
-                        <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#0066FF]/8 text-[#005AE0] ring-1 ring-[#D6E4F7]"><I size={18} aria-hidden="true" /></span>
+                      <a href={pg.href} onMouseEnter={() => setActive(i)} className={`flex items-center gap-3 px-3 py-2.5 transition ${i === active ? "bg-[#F7F7F7]" : ""}`}>
+                        <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] ring-1 ring-[#F5D8DC]"><I size={18} aria-hidden="true" /></span>
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[14px] font-bold">{pg.label}</span>
-                          <span className="block truncate text-[12px] text-[#52647F]">{pg.note}</span>
+                          <span className="block truncate text-[12px] text-[#62626F]">{pg.note}</span>
                         </span>
-                        <ArrowRight size={15} className="flex-none text-[#005AE0]" aria-hidden="true" />
+                        <ArrowRight size={15} className="flex-none text-[#B30E29]" aria-hidden="true" />
                       </a>
                     </li>
                   );
@@ -184,27 +184,27 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
                   const i = j + pages.length;
                   return (
                   <li key={it.href} id={`${listId}-${i}`} role="option" aria-selected={i === active}>
-                    <a href={it.href} onMouseEnter={() => setActive(i)} className={`flex items-center gap-3 px-3 py-2.5 transition ${i === active ? "bg-[#F1F6FD]" : ""}`}>
-                      <span className="flex h-11 w-11 flex-none items-center justify-center overflow-hidden rounded-xl bg-[#F4F7FB] ring-1 ring-[#E3EAF3]">
+                    <a href={it.href} onMouseEnter={() => setActive(i)} className={`flex items-center gap-3 px-3 py-2.5 transition ${i === active ? "bg-[#F7F7F7]" : ""}`}>
+                      <span className="flex h-11 w-11 flex-none items-center justify-center overflow-hidden rounded-xl bg-[#F7F7F8] ring-1 ring-[#EAEAEC]">
                         {it.image ? (
                           <Image src={it.image} alt="" aria-hidden="true" width={44} height={44} className="h-9 w-9 object-contain" unoptimized={it.image.startsWith("http")} />
                         ) : (
-                          <Search size={16} className="text-[#5B6B84]" />
+                          <Search size={16} className="text-[#696976]" />
                         )}
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-mono text-[14px] font-bold"><Mark text={it.partNumber} q={q} /></span>
-                        <span className="block truncate text-[12px] text-[#52647F]">
-                          <span className="font-semibold uppercase tracking-[0.04em] text-[#3E4F68]">{it.manufacturer}</span> · {it.name}
+                        <span className="block truncate text-[12px] text-[#62626F]">
+                          <span className="font-semibold uppercase tracking-[0.04em] text-[#4E4E58]">{it.manufacturer}</span> · {it.name}
                         </span>
                       </span>
                       {it.price != null ? (
                         <span className="flex-none text-right text-[13px] font-extrabold">
                           {usd(it.price)}
-                          <span className="block text-[10.5px] font-medium text-[#5B6B84]">Refurbished</span>
+                          <span className="block text-[10.5px] font-medium text-[#696976]">Refurbished</span>
                         </span>
                       ) : (
-                        <span className="flex-none rounded-lg bg-[#F1F5FA] px-2 py-1 text-[11px] font-semibold text-[#4A5B76]">Quote</span>
+                        <span className="flex-none rounded-lg bg-[#F5F5F6] px-2 py-1 text-[11px] font-semibold text-[#5A5A66]">Quote</span>
                       )}
                     </a>
                   </li>
@@ -212,12 +212,12 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
                 })}
               </ul>
             )}
-            <div className="grid border-t border-[#EEF3F9] sm:grid-cols-2">
-              <a href={`/search?part=${encodeURIComponent(q.trim())}`} className="flex items-center gap-2 px-4 py-3 text-[13px] font-semibold text-[#0052CC] hover:bg-[#F7FAFE]">
+            <div className="grid border-t border-[#F3F3F4] sm:grid-cols-2">
+              <a href={`/search?part=${encodeURIComponent(q.trim())}`} className="flex items-center gap-2 px-4 py-3 text-[13px] font-semibold text-[#A50D25] hover:bg-[#FAFAFB]">
                 <Search size={14} aria-hidden="true" /> <span className="truncate">All results for “{q.trim()}”</span> <ArrowRight size={13} className="ml-auto flex-none" aria-hidden="true" />
               </a>
-              <a href={`/request-quote?${new URLSearchParams({ part: q.trim(), from: "search", q: q.trim() })}`} className="flex items-center gap-2 border-t border-[#EEF3F9] px-4 py-3 text-[13px] font-semibold text-[#0B1A3C] hover:bg-[#F7FAFE] sm:border-l sm:border-t-0">
-                <FileText size={14} className="text-[#005AE0]" aria-hidden="true" /> Not listed? Request a quote
+              <a href={`/request-quote?${new URLSearchParams({ part: q.trim(), from: "search", q: q.trim() })}`} className="flex items-center gap-2 border-t border-[#F3F3F4] px-4 py-3 text-[13px] font-semibold text-[#131316] hover:bg-[#FAFAFB] sm:border-l sm:border-t-0">
+                <FileText size={14} className="text-[#B30E29]" aria-hidden="true" /> Not listed? Request a quote
               </a>
             </div>
           </div>,

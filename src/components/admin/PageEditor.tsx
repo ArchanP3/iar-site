@@ -108,9 +108,9 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
       <input type="hidden" name="noindex" value={index ? "" : "on"} />
       <input type="hidden" name="nofollow" value={follow ? "" : "on"} />
       <Card pad={false}>
-        <div className="flex gap-1 overflow-x-auto border-b border-[#E3EAF3] px-4">
+        <div className="flex gap-1 overflow-x-auto border-b border-[#EAEAEC] px-4">
           {tabs.map(([k, l, Icon]) => (
-            <button type="button" key={k} onClick={() => setTab(k)} className={cx("flex items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold", tab === k ? "border-[#0066FF] text-[#0066FF]" : "border-transparent text-[#5B6B84] hover:text-[#0B1A3C]")}>
+            <button type="button" key={k} onClick={() => setTab(k)} className={cx("flex items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-3 text-[13px] font-semibold", tab === k ? "border-[#C8102E] text-[#C8102E]" : "border-transparent text-[#696976] hover:text-[#131316]")}>
               <Icon size={15} /> {l}
             </button>
           ))}
@@ -118,8 +118,8 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
 
         {/* SEO */}
         <div className={cx("flex flex-col gap-5 p-5 sm:p-6", tab !== "seo" && "hidden")}>
-          <Field label={<>Focus keyword <span className="font-semibold text-[#8494AB]">· the search you want this page to rank for</span></>}>
-            <div className="relative"><Tag size={15} className="absolute left-3 top-3 text-[#8494AB]" /><input name="focus_keyword" value={focus} onChange={(e) => setFocus(e.target.value)} placeholder="e.g. servo drive repair" className={cx(input, "pl-9")} /></div>
+          <Field label={<>Focus keyword <span className="font-semibold text-[#91919E]">· the search you want this page to rank for</span></>}>
+            <div className="relative"><Tag size={15} className="absolute left-3 top-3 text-[#91919E]" /><input name="focus_keyword" value={focus} onChange={(e) => setFocus(e.target.value)} placeholder="e.g. servo drive repair" className={cx(input, "pl-9")} /></div>
           </Field>
           <Field label="SEO title" right={<span style={{ color: lenColor(tl, 30, 60) }}>{tl} / 60{tl > 60 ? " · Too long" : tl && tl < 30 ? " · Too short" : tl ? " · Good length" : ""}</span>}>
             <input name="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder={live?.title || "Page title"} className={input} />
@@ -130,8 +130,8 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             <textarea name="description" value={desc} onChange={(e) => setDesc(e.target.value)} rows={3} placeholder={live?.description || "Short summary shown under the title in Google"} className={input} />
             <Bar pct={(dl / 160) * 100} color={lenColor(dl, 70, 160)} />
           </Field>
-          <details open={!!(caTitle || caDesc)} className="rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] p-4">
-            <summary className="cursor-pointer text-[13px] font-bold">Canada site (automiqautomation.ca) <span className="font-semibold text-[#8494AB]">· optional: different title and description for Canada</span></summary>
+          <details open={!!(caTitle || caDesc)} className="rounded-xl border border-[#EAEAEC] bg-[#FAFAFB] p-4">
+            <summary className="cursor-pointer text-[13px] font-bold">Canada site (automiqautomation.ca) <span className="font-semibold text-[#91919E]">· optional: different title and description for Canada</span></summary>
             <div className="mt-3 flex flex-col gap-4">
               <Field label="Canada SEO title" right={<span style={{ color: lenColor(caTitle.length, 30, 60) }}>{caTitle.length} / 60</span>}>
                 <input name="ca_title" value={caTitle} onChange={(e) => setCaTitle(e.target.value)} placeholder={title || live?.title || "Same as the SEO title"} className={input} />
@@ -161,18 +161,18 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             </Field>
           </div>
           <Field label="Google preview" right={
-            <span className="inline-flex rounded-[9px] bg-[#EEF2F7] p-0.75">
-              <button type="button" onClick={() => setDevice("desktop")} className={cx("flex items-center gap-1 rounded-md px-2.5 py-1 text-[12px] font-semibold", device === "desktop" ? "bg-white shadow" : "text-[#5B6B84]")}><Monitor size={13} /> Desktop</button>
-              <button type="button" onClick={() => setDevice("mobile")} className={cx("flex items-center gap-1 rounded-md px-2.5 py-1 text-[12px] font-semibold", device === "mobile" ? "bg-white shadow" : "text-[#5B6B84]")}><Smartphone size={13} /> Mobile</button>
+            <span className="inline-flex rounded-[9px] bg-[#F2F2F3] p-0.75">
+              <button type="button" onClick={() => setDevice("desktop")} className={cx("flex items-center gap-1 rounded-md px-2.5 py-1 text-[12px] font-semibold", device === "desktop" ? "bg-white shadow" : "text-[#696976]")}><Monitor size={13} /> Desktop</button>
+              <button type="button" onClick={() => setDevice("mobile")} className={cx("flex items-center gap-1 rounded-md px-2.5 py-1 text-[12px] font-semibold", device === "mobile" ? "bg-white shadow" : "text-[#696976]")}><Smartphone size={13} /> Mobile</button>
             </span>
           }>
-            <div className={cx("rounded-[14px] border border-[#E3EAF3] bg-white px-4.5 py-4 font-[Arial,sans-serif]", device === "mobile" && "max-w-95")}>
-              <div className="flex items-center gap-2 text-[12.5px] text-[#202124]">
-                <span className="flex h-6.5 w-6.5 items-center justify-center rounded-full bg-[#F1F3F4] text-[11px] font-bold text-[#0066FF]">A</span>
-                <div className="leading-tight"><div className="text-[13.5px]">AutomIQ Automation &amp; Drive Services</div><div className="text-[#4D5156]">{site} {crumbs && `› ${crumbs}`}</div></div>
+            <div className={cx("rounded-[14px] border border-[#EAEAEC] bg-white px-4.5 py-4 font-[Arial,sans-serif]", device === "mobile" && "max-w-95")}>
+              <div className="flex items-center gap-2 text-[12.5px] text-[#202024]">
+                <span className="flex h-6.5 w-6.5 items-center justify-center rounded-full bg-[#F2F2F3] text-[11px] font-bold text-[#C8102E]">A</span>
+                <div className="leading-tight"><div className="text-[13.5px]">AutomIQ Automation &amp; Drive Services</div><div className="text-[#4D4D56]">{site} {crumbs && `› ${crumbs}`}</div></div>
               </div>
-              <div className={cx("mt-2 mb-1 leading-tight text-[#1A0DAB]", device === "mobile" ? "text-[17px]" : "text-[19px]")}>{trim(effTitle || "Page title", device === "mobile" ? 70 : 60)}</div>
-              <div className="text-[13.5px] leading-normal text-[#4D5156]">{trim(effDesc || "Add a meta description so Google shows your words here.", device === "mobile" ? 120 : 158)}</div>
+              <div className={cx("mt-2 mb-1 leading-tight text-[#931326]", device === "mobile" ? "text-[17px]" : "text-[19px]")}>{trim(effTitle || "Page title", device === "mobile" ? 70 : 60)}</div>
+              <div className="text-[13.5px] leading-normal text-[#4D4D56]">{trim(effDesc || "Add a meta description so Google shows your words here.", device === "mobile" ? 120 : 158)}</div>
             </div>
           </Field>
         </div>
@@ -183,31 +183,31 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
           <Field label="Share title"><input name="og_title" value={ogTitle} onChange={(e) => setOgTitle(e.target.value)} placeholder={effTitle} className={input} /></Field>
           <Field label="Share description"><textarea name="og_description" value={ogDesc} onChange={(e) => setOgDesc(e.target.value)} rows={2} placeholder={effDesc} className={input} /></Field>
           <Field label="Share image URL"><input name="og_image" value={ogImage} onChange={(e) => setOgImage(e.target.value)} placeholder="/media/your-image.webp (from the Media Library) — empty = site default" className={input} /><Hint>Best size: 1200 × 630 pixels.</Hint></Field>
-          <div className="max-w-130 overflow-hidden rounded-xl border border-[#E3EAF3]">
-            <div className="flex aspect-1200/630 items-center justify-center bg-[#0B1A3C] bg-cover bg-center text-[13px] font-semibold text-white/60" style={ogImage ? { backgroundImage: `url(${ogImage})` } : undefined}>{!ogImage && "Default share image"}</div>
-            <div className="bg-[#F2F3F5] px-3.5 py-2.5"><div className="text-[11px] uppercase text-[#65676B]">{host}</div><div className="font-bold">{trim(ogTitle || effTitle, 90)}</div><div className="text-[12.5px] text-[#65676B]">{trim(ogDesc || effDesc, 110)}</div></div>
+          <div className="max-w-130 overflow-hidden rounded-xl border border-[#EAEAEC]">
+            <div className="flex aspect-1200/630 items-center justify-center bg-[#131316] bg-cover bg-center text-[13px] font-semibold text-white/60" style={ogImage ? { backgroundImage: `url(${ogImage})` } : undefined}>{!ogImage && "Default share image"}</div>
+            <div className="bg-[#F3F3F4] px-3.5 py-2.5"><div className="text-[11px] uppercase text-[#65656B]">{host}</div><div className="font-bold">{trim(ogTitle || effTitle, 90)}</div><div className="text-[12.5px] text-[#65656B]">{trim(ogDesc || effDesc, 110)}</div></div>
           </div>
         </div>
 
         {/* Schema */}
         <div className={cx("flex flex-col gap-4 p-5 sm:p-6", tab !== "schema" && "hidden")}>
           <div className="flex flex-wrap items-center gap-2 text-[12.5px]">
-            <span className="font-semibold text-[#5B6B84]">Already on this page:</span>
-            {live?.ld.length ? live.ld.map((t) => <Pill key={t} tone="ok">{t}</Pill>) : <span className="text-[#8494AB]">{live ? "none" : "scan the site to see"}</span>}
+            <span className="font-semibold text-[#696976]">Already on this page:</span>
+            {live?.ld.length ? live.ld.map((t) => <Pill key={t} tone="ok">{t}</Pill>) : <span className="text-[#91919E]">{live ? "none" : "scan the site to see"}</span>}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[12.5px] font-semibold text-[#5B6B84]">Start from a template:</span>
+            <span className="text-[12.5px] font-semibold text-[#696976]">Start from a template:</span>
             {Object.keys(SCHEMA_TEMPLATES).map((k) => (
               <button type="button" key={k} onClick={() => setSchema(JSON.stringify(SCHEMA_TEMPLATES[k](`${site}${originalUrl}`), null, 2))} className={b("light", true)}>{k}</button>
             ))}
           </div>
-          <textarea name="schema_json" value={schema} onChange={(e) => setSchema(e.target.value)} rows={16} spellCheck={false} placeholder='{ "@context": "https://schema.org", "@type": "Service", ... }' className="w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] leading-relaxed text-[#CFE3FF] outline-none placeholder:text-[#6F82A3]" />
+          <textarea name="schema_json" value={schema} onChange={(e) => setSchema(e.target.value)} rows={16} spellCheck={false} placeholder='{ "@context": "https://schema.org", "@type": "Service", ... }' className="w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none placeholder:text-[#828290]" />
           {schema.trim() && (schemaErr
             ? <Alert tone="bad" icon={<AlertTriangle size={16} />}><b>Not valid JSON yet:</b> {schemaErr}</Alert>
             : <Alert tone="ok" icon={<CheckCircle2 size={16} />}><b>Valid JSON-LD.</b> {schemaType ? `${schemaType} schema recognised.` : ""} It is added to this page when you save. Test it with Google&apos;s Rich Results Test after publishing.</Alert>)}
-          <details open={!!caSchema} className="rounded-xl border border-[#E3EAF3] bg-[#F8FAFD] p-4">
-            <summary className="cursor-pointer text-[13px] font-bold">Canada site schema (automiqautomation.ca) <span className="font-semibold text-[#8494AB]">· optional</span></summary>
-            <textarea name="ca_schema_json" value={caSchema} onChange={(e) => setCaSchema(e.target.value)} rows={10} spellCheck={false} placeholder="Empty = the schema above on both sites. Filled in = used instead of it on automiqautomation.ca." className="mt-3 w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] leading-relaxed text-[#CFE3FF] outline-none placeholder:text-[#6F82A3]" />
+          <details open={!!caSchema} className="rounded-xl border border-[#EAEAEC] bg-[#FAFAFB] p-4">
+            <summary className="cursor-pointer text-[13px] font-bold">Canada site schema (automiqautomation.ca) <span className="font-semibold text-[#91919E]">· optional</span></summary>
+            <textarea name="ca_schema_json" value={caSchema} onChange={(e) => setCaSchema(e.target.value)} rows={10} spellCheck={false} placeholder="Empty = the schema above on both sites. Filled in = used instead of it on automiqautomation.ca." className="mt-3 w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none placeholder:text-[#828290]" />
           </details>
         </div>
 
@@ -217,20 +217,20 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             <h3 className="mb-2 font-bold">Heading outline</h3>
             {live ? live.headings.length ? live.headings.map(([l, t], i) => (
               <div key={i} className="flex items-center gap-2 py-1 text-[12.5px]" style={{ paddingLeft: (l - 1) * 16 }}>
-                <span className={cx("rounded px-1.5 text-[10.5px] font-bold", l === 1 ? "bg-[#E8F1FF] text-[#0052CC]" : "bg-[#EEF2F7] text-[#4A5B76]")}>H{l}</span>{t}
+                <span className={cx("rounded px-1.5 text-[10.5px] font-bold", l === 1 ? "bg-[#FBE7EA] text-[#A50D25]" : "bg-[#F2F2F3] text-[#5A5A66]")}>H{l}</span>{t}
               </div>
-            )) : <p className="text-[#8494AB]">No headings found.</p> : <p className="text-[#8494AB]">Scan the site to see the headings.</p>}
+            )) : <p className="text-[#91919E]">No headings found.</p> : <p className="text-[#91919E]">Scan the site to see the headings.</p>}
             <Hint>Headings come from the page design. Each page should have one H1, then H2 sections and H3 sub-sections.</Hint>
           </div>
           <div>
             <h3 className="mb-2 font-bold">Internal links</h3>
-            <p className="text-[12.8px] text-[#5B6B84]">{live ? <><b className="text-[#0B1A3C]">{live.inbound}</b> pages link here. {live.words.toLocaleString()} words on the page.</> : "Scan the site to count links."}</p>
+            <p className="text-[12.8px] text-[#696976]">{live ? <><b className="text-[#131316]">{live.inbound}</b> pages link here. {live.words.toLocaleString()} words on the page.</> : "Scan the site to count links."}</p>
             {suggestions.length > 0 && (
               <>
                 <p className="mt-3 text-[12.5px] font-bold">Related pages that don&apos;t link here yet</p>
                 {suggestions.map((s) => (
-                  <a key={s.path} href={`/admin/pages/edit?path=${encodeURIComponent(s.path)}`} className="mt-1.5 flex items-center gap-2 rounded-lg border border-[#E3EAF3] px-3 py-2 text-[12.5px] hover:border-[#0066FF]">
-                    <Link2 size={14} className="text-[#8494AB]" /><span className="truncate">{s.title || s.path}</span>
+                  <a key={s.path} href={`/admin/pages/edit?path=${encodeURIComponent(s.path)}`} className="mt-1.5 flex items-center gap-2 rounded-lg border border-[#EAEAEC] px-3 py-2 text-[12.5px] hover:border-[#C8102E]">
+                    <Link2 size={14} className="text-[#91919E]" /><span className="truncate">{s.title || s.path}</span>
                   </a>
                 ))}
                 <Hint>Adding a link from these pages helps Google find and rank this one. Blog posts and landing pages can link here directly.</Hint>
@@ -243,20 +243,20 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
         {canScripts && (
           <div className={cx("flex flex-col gap-4 p-5 sm:p-6", tab !== "scripts" && "hidden")}>
             <Alert tone="warn" icon={<AlertTriangle size={16} />}>Only for this page, e.g. a conversion event on a thank-you page. Site-wide tags go in Tracking &amp; Code.</Alert>
-            <Field label="Head (loads early)"><textarea name="head_html" value={head} onChange={(e) => setHead(e.target.value)} rows={6} spellCheck={false} className="w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] text-[#CFE3FF] outline-none" /></Field>
-            <Field label="Body (end of page)"><textarea name="body_html" value={body} onChange={(e) => setBody(e.target.value)} rows={6} spellCheck={false} className="w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] text-[#CFE3FF] outline-none" /></Field>
+            <Field label="Head (loads early)"><textarea name="head_html" value={head} onChange={(e) => setHead(e.target.value)} rows={6} spellCheck={false} className="w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] text-[#F7D3D9] outline-none" /></Field>
+            <Field label="Body (end of page)"><textarea name="body_html" value={body} onChange={(e) => setBody(e.target.value)} rows={6} spellCheck={false} className="w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] text-[#F7D3D9] outline-none" /></Field>
           </div>
         )}
       </Card>
 
       <div className="flex flex-col gap-5 xl:sticky xl:top-20">
         <Card title="SEO score" right={<Pill tone={scoreTone}>{score >= 85 ? "Great" : score >= 65 ? "Good" : "Needs work"}</Pill>}>
-          <div className="flex items-center gap-4"><Score value={score} /><p className="text-[12.8px] text-[#5B6B84]">{scored.filter((c) => c[0]).length} of {scored.length} checks pass.{!fk && " Add a focus keyword for more checks."}</p></div>
+          <div className="flex items-center gap-4"><Score value={score} /><p className="text-[12.8px] text-[#696976]">{scored.filter((c) => c[0]).length} of {scored.length} checks pass.{!fk && " Add a focus keyword for more checks."}</p></div>
           <div className="mt-3">
             {checks.map(([ok, t], i) => (
               <div key={i} className="flex items-start gap-2 py-1.25 text-[12.8px]">
-                <span className="mt-px" style={{ color: ok === null ? "#C5D1E0" : ok ? "#12B76A" : "#F59E0B" }}>{ok === false ? <AlertTriangle size={15} /> : <CheckCircle2 size={15} />}</span>
-                <span className={ok === null ? "text-[#8494AB]" : ""}>{t}</span>
+                <span className="mt-px" style={{ color: ok === null ? "#D0D0D5" : ok ? "#12B76A" : "#F59E0B" }}>{ok === false ? <AlertTriangle size={15} /> : <CheckCircle2 size={15} />}</span>
+                <span className={ok === null ? "text-[#91919E]" : ""}>{t}</span>
               </div>
             ))}
           </div>
@@ -270,8 +270,8 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
               <RotateCcw size={14} /> Reset to website defaults
             </button>
           )}
-          <p className="mt-3 flex items-start gap-1.5 text-[12px] text-[#8494AB]"><Info size={13} className="mt-0.5 flex-none" /> Changes go live within seconds and are saved in the activity log, where they can be undone.{saved?.updated_by && ` Last edit: ${saved.updated_by}.`}</p>
-          <p className="mt-1 text-[11.5px] text-[#8494AB]">Type: {group}{live && ` · Scanned ${new Date(live.crawledAt).toLocaleString("en-CA", { dateStyle: "medium", timeStyle: "short" })}`}</p>
+          <p className="mt-3 flex items-start gap-1.5 text-[12px] text-[#91919E]"><Info size={13} className="mt-0.5 flex-none" /> Changes go live within seconds and are saved in the activity log, where they can be undone.{saved?.updated_by && ` Last edit: ${saved.updated_by}.`}</p>
+          <p className="mt-1 text-[11.5px] text-[#91919E]">Type: {group}{live && ` · Scanned ${new Date(live.crawledAt).toLocaleString("en-CA", { dateStyle: "medium", timeStyle: "short" })}`}</p>
         </Card>
       </div>
     </form>
@@ -289,13 +289,13 @@ function Field({ label, right, children }: { label: React.ReactNode; right?: Rea
   );
 }
 function Hint({ children, bad }: { children: React.ReactNode; bad?: boolean }) {
-  return <p className={cx("flex items-start gap-1.5 text-[12px]", bad ? "text-[#B42318]" : "text-[#5B6B84]")}><Info size={13} className="mt-0.5 flex-none" />{children}</p>;
+  return <p className={cx("flex items-start gap-1.5 text-[12px]", bad ? "text-[#B42318]" : "text-[#696976]")}><Info size={13} className="mt-0.5 flex-none" />{children}</p>;
 }
 function Toggle({ on, set, label }: { on: boolean; set: (v: boolean) => void; label: string }) {
   return (
-    <button type="button" onClick={() => set(!on)} className="flex h-10 items-center justify-between rounded-[10px] border border-[#D9E3EF] bg-white px-3 text-[13px]">
+    <button type="button" onClick={() => set(!on)} className="flex h-10 items-center justify-between rounded-[10px] border border-[#EEDADD] bg-white px-3 text-[13px]">
       {label}
-      <span className={cx("relative h-5.25 w-9 rounded-full transition", on ? "bg-[#0066FF]" : "bg-[#D0D9E6]")}><span className={cx("absolute top-0.75 h-3.75 w-3.75 rounded-full bg-white shadow transition-all", on ? "left-4.5" : "left-0.75")} /></span>
+      <span className={cx("relative h-5.25 w-9 rounded-full transition", on ? "bg-[#C8102E]" : "bg-[#D9D9DD]")}><span className={cx("absolute top-0.75 h-3.75 w-3.75 rounded-full bg-white shadow transition-all", on ? "left-4.5" : "left-0.75")} /></span>
     </button>
   );
 }

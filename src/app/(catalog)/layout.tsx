@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { montserrat } from "@/lib/font";
+import { brandFont } from "@/lib/font";
 import { site } from "@/lib/site";
 
 // Shared shell for the parts catalog (/shop, /parts, /search). The marketing
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function CatalogLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`${montserrat.className} flex min-h-screen flex-col bg-white text-ink`}>
+    <div className={`${brandFont.className} flex min-h-screen flex-col bg-white text-ink`}>
       <Header />
       <main id="main" className="flex-1">
         {children}

@@ -41,9 +41,9 @@ const link = (path: string, params: Record<string, string | number | undefined>)
 };
 
 const primary =
-  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-linear-to-br from-[#0066FF] to-[#00B0FF] px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-white shadow-[0_14px_30px_-14px_rgba(0,140,255,0.9)] transition hover:-translate-y-0.5";
+  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218, 11, 42,0.9)] transition hover:-translate-y-0.5";
 const secondary =
-  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-[#D9E4F1] bg-white px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-[#0B1A3C] transition hover:border-[#0066FF]/50 hover:text-[#0052CC]";
+  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-[#F0DADD] bg-white px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]";
 
 
 /* Selling rules live in src/lib/parts/rules.ts:
@@ -91,7 +91,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
       ? { dot: "bg-[#22C55E]", text: "24–72 hr typical turnaround once your quote is approved" }
       : priced
         ? { dot: "bg-[#22C55E]", text: o.stock ? `In stock · ${o.stock} available` : "In stock" }
-        : { dot: "bg-[#94A3B8]", text: "Ask for current availability" };
+        : { dot: "bg-[#A1A1AB]", text: "Ask for current availability" };
 
   // Buy Now: put the unit in the cart and open the cart
   const buyNow = () => {
@@ -108,8 +108,8 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
         : link("/request-quote", { ...base, condition: label, qty });
 
   return (
-    <div id="buy" className="relative scroll-mt-28 rounded-[22px] border border-[#E3EAF3] bg-white p-4 shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)] sm:p-4.5">
-      <div role="tablist" aria-label="Choose how you want it" className="grid grid-cols-4 gap-1 rounded-xl bg-[#F1F5FA] p-1">
+    <div id="buy" className="relative scroll-mt-28 rounded-[22px] border border-[#EAEAEC] bg-white p-4 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-4.5">
+      <div role="tablist" aria-label="Choose how you want it" className="grid grid-cols-4 gap-1 rounded-xl bg-[#F5F5F6] p-1">
         {offers.map((x) => {
           const on = x.condition === sel;
           return (
@@ -123,7 +123,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
                 setOffering(false);
                 setDetails(false);
               }}
-              className={`h-9 rounded-lg text-[12.5px] font-semibold transition sm:text-[13px] ${on ? "bg-white text-[#0052CC] shadow-[0_6px_16px_-8px_rgba(11,26,60,0.45)] ring-1 ring-[#0066FF]/25" : "text-[#4A5B76] hover:text-[#0B1A3C]"}`}
+              className={`h-9 rounded-lg text-[12.5px] font-semibold transition sm:text-[13px] ${on ? "bg-white text-[#A50D25] shadow-[0_6px_16px_-8px_rgba(19, 19, 22,0.45)] ring-1 ring-[#C8102E]/25" : "text-[#5A5A66] hover:text-[#131316]"}`}
             >
               {conditionLabel[x.condition]}
             </button>
@@ -135,39 +135,39 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
         {/* Price row: same height for every option */}
         <div className="flex min-h-14.5 items-center justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-[11.5px] font-semibold text-[#5B6B84]">{priced ? `${label} price` : `${label} · price on request`}</p>
+            <p className="text-[11.5px] font-semibold text-[#696976]">{priced ? `${label} price` : `${label} · price on request`}</p>
             {priced ? (
-              <p className="text-[27px] font-extrabold leading-tight tracking-[-0.02em] text-[#0B1A3C]">
-                {usd(price)} <span className="text-[13px] font-bold text-[#5B6B84]">USD</span>
+              <p className="text-[27px] font-extrabold leading-tight tracking-[-0.02em] text-[#131316]">
+                {usd(price)} <span className="text-[13px] font-bold text-[#696976]">USD</span>
               </p>
             ) : (
-              <p className="text-[24px] font-extrabold leading-tight text-[#0B1A3C]">Request a Quote</p>
+              <p className="text-[24px] font-extrabold leading-tight text-[#131316]">Request a Quote</p>
             )}
           </div>
           {o.condition !== "repair" && (
-            <div className="flex h-10 flex-none items-center rounded-xl border border-[#D9E4F1]" aria-label="Quantity">
-              <button type="button" aria-label="Less" onClick={() => setQty((q) => Math.max(1, q - 1))} className="flex h-full w-9 items-center justify-center text-[#4A5B76] hover:text-[#005AE0]"><Minus size={14} /></button>
+            <div className="flex h-10 flex-none items-center rounded-xl border border-[#F0DADD]" aria-label="Quantity">
+              <button type="button" aria-label="Less" onClick={() => setQty((q) => Math.max(1, q - 1))} className="flex h-full w-9 items-center justify-center text-[#5A5A66] hover:text-[#B30E29]"><Minus size={14} /></button>
               <span className="w-7 text-center text-[14.5px] font-semibold tabular-nums" aria-live="polite">{qty}</span>
-              <button type="button" aria-label="More" onClick={() => setQty((q) => Math.min(999, q + 1))} className="flex h-full w-9 items-center justify-center text-[#4A5B76] hover:text-[#005AE0]"><Plus size={14} /></button>
+              <button type="button" aria-label="More" onClick={() => setQty((q) => Math.min(999, q + 1))} className="flex h-full w-9 items-center justify-center text-[#5A5A66] hover:text-[#B30E29]"><Plus size={14} /></button>
             </div>
           )}
         </div>
 
-        <p className="mt-1 flex items-center gap-2 text-[12.5px] font-medium text-[#0B1A3C]">
+        <p className="mt-1 flex items-center gap-2 text-[12.5px] font-medium text-[#131316]">
           <span className={`h-2 w-2 flex-none rounded-full ${status.dot}`} aria-hidden="true" />
           {status.text}
         </p>
 
         {offering && priced ? (
-          <div className="mt-4"><div className="rounded-2xl border border-[#0066FF]/20 bg-[#F5F9FF] p-4">
+          <div className="mt-4"><div className="rounded-2xl border border-[#C8102E]/20 bg-[#FFF6F7] p-4">
             <div className="flex items-center justify-between">
-              <label htmlFor="offer-amount" className="text-[14px] font-bold text-[#0B1A3C]">Your offer per unit</label>
-              <button type="button" onClick={() => setOffering(false)} className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[#0052CC] hover:underline">
+              <label htmlFor="offer-amount" className="text-[14px] font-bold text-[#131316]">Your offer per unit</label>
+              <button type="button" onClick={() => setOffering(false)} className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[#A50D25] hover:underline">
                 <ArrowLeft size={13} aria-hidden="true" /> Back
               </button>
             </div>
-            <span className="mt-2 flex h-12 items-center rounded-xl border border-[#D9E4F1] bg-white px-3 focus-within:border-[#0066FF] focus-within:ring-4 focus-within:ring-[#0066FF]/10">
-              <span className="text-[15px] font-semibold text-[#5B6B84]">US$</span>
+            <span className="mt-2 flex h-12 items-center rounded-xl border border-[#F0DADD] bg-white px-3 focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/10">
+              <span className="text-[15px] font-semibold text-[#696976]">US$</span>
               <input
                 id="offer-amount"
                 type="number"
@@ -183,7 +183,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
               />
             </span>
             {qty > 1 && offerEach > 0 && (
-              <p className="mt-2 text-[13px] text-[#0B1A3C]">{qty} units = <strong>{usd(offerTotal)}</strong></p>
+              <p className="mt-2 text-[13px] text-[#131316]">{qty} units = <strong>{usd(offerTotal)}</strong></p>
             )}
             {priced && offerEach > price && (
               <p className="mt-2 text-[12.5px] font-semibold text-[#B45309]">Your offer is above our price. Use Buy Now instead.</p>
@@ -207,22 +207,22 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
                 <Send size={17} aria-hidden="true" /> Send Offer
               </span>
             )}
-            <p className="mt-2 text-[12px] text-[#5B6B84]">We review every offer and reply to accept, counter or decline. No payment is taken with an offer.</p>
+            <p className="mt-2 text-[12px] text-[#696976]">We review every offer and reply to accept, counter or decline. No payment is taken with an offer.</p>
           </div></div>
         ) : (
           <>
             {/* Info: title + 3 short points, same size for every option */}
-            <div className="relative mt-2.5 rounded-xl bg-[#F5F9FF] px-3.5 py-2.5 ring-1 ring-[#0066FF]/12">
-              <button type="button" onClick={() => setDetails(true)} aria-expanded={details} className="absolute right-2.5 top-2 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[11.5px] font-semibold text-[#0052CC] hover:bg-white">
+            <div className="relative mt-2.5 rounded-xl bg-[#FFF6F7] px-3.5 py-2.5 ring-1 ring-[#C8102E]/12">
+              <button type="button" onClick={() => setDetails(true)} aria-expanded={details} className="absolute right-2.5 top-2 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-[11.5px] font-semibold text-[#A50D25] hover:bg-white">
                 <Info size={13} aria-hidden="true" /> <span className="max-[419px]:sr-only">Details</span>
               </button>
               <ul className="space-y-1 pr-8 min-[420px]:pr-16">
                 {info[o.condition].lines.map((t, i) => (
-                  <li key={t} className="flex items-center gap-2 text-[12.5px] text-[#0B1A3C]">
+                  <li key={t} className="flex items-center gap-2 text-[12.5px] text-[#131316]">
                     {info[o.condition].steps ? (
-                      <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full bg-[#0066FF] text-[9.5px] font-bold text-white">{i + 1}</span>
+                      <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full bg-[#C8102E] text-[9.5px] font-bold text-white">{i + 1}</span>
                     ) : (
-                      <BadgeCheck size={14} className="flex-none text-[#005AE0]" aria-hidden="true" />
+                      <BadgeCheck size={14} className="flex-none text-[#B30E29]" aria-hidden="true" />
                     )}
                     <span className="min-w-0 sm:truncate">{t}</span>
                   </li>
@@ -249,42 +249,42 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
 
             {/* Details: opens over the box, so the box keeps its size */}
             {details && (
-              <div role="dialog" aria-label={`${label} details`} className="absolute inset-0 z-20 flex flex-col overflow-y-auto rounded-[22px] bg-white p-4 shadow-[0_30px_70px_-30px_rgba(11,26,60,0.6)] ring-1 ring-[#E3EAF3] sm:p-4.5">
+              <div role="dialog" aria-label={`${label} details`} className="absolute inset-0 z-20 flex flex-col overflow-y-auto rounded-[22px] bg-white p-4 shadow-[0_30px_70px_-30px_rgba(19, 19, 22,0.6)] ring-1 ring-[#EAEAEC] sm:p-4.5">
                 <div className="flex items-center justify-between">
-                  <p className="text-[15px] font-extrabold text-[#0B1A3C]">{info[o.condition].title}</p>
-                  <button type="button" onClick={() => setDetails(false)} aria-label="Close details" className="flex h-8 w-8 items-center justify-center rounded-lg text-[#4A5B76] hover:bg-[#F1F5FA]"><X size={17} /></button>
+                  <p className="text-[15px] font-extrabold text-[#131316]">{info[o.condition].title}</p>
+                  <button type="button" onClick={() => setDetails(false)} aria-label="Close details" className="flex h-8 w-8 items-center justify-center rounded-lg text-[#5A5A66] hover:bg-[#F5F5F6]"><X size={17} /></button>
                 </div>
                 <ul className="mt-2 space-y-1.5">
                   {info[o.condition].lines.map((t, i) => (
-                    <li key={t} className="flex items-start gap-2.5 text-[13.5px] text-[#0B1A3C]">
+                    <li key={t} className="flex items-start gap-2.5 text-[13.5px] text-[#131316]">
                       {info[o.condition].steps ? (
-                        <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[#0066FF] text-[10.5px] font-bold text-white">{i + 1}</span>
+                        <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[#C8102E] text-[10.5px] font-bold text-white">{i + 1}</span>
                       ) : (
-                        <BadgeCheck size={16} className="mt-0.5 flex-none text-[#005AE0]" aria-hidden="true" />
+                        <BadgeCheck size={16} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />
                       )}
                       {t}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-3 rounded-xl bg-[#F5F9FF] px-3.5 py-2.5 text-[12.5px] leading-relaxed text-[#4A5B76] ring-1 ring-[#0066FF]/12">
-                  <strong className="text-[#0B1A3C]">Note:</strong> {details_note[o.condition]}
+                <p className="mt-3 rounded-xl bg-[#FFF6F7] px-3.5 py-2.5 text-[12.5px] leading-relaxed text-[#5A5A66] ring-1 ring-[#C8102E]/12">
+                  <strong className="text-[#131316]">Note:</strong> {details_note[o.condition]}
                 </p>
-                <div className="mt-auto border-t border-[#EEF3F9] pt-3">
-                  <p className="flex items-center gap-1.5 text-[13px] font-semibold text-[#0B1A3C]"><Zap size={15} className="text-[#F59E0B]" aria-hidden="true" /> Need it sooner? Call or email us about rush service.</p>
+                <div className="mt-auto border-t border-[#F3F3F4] pt-3">
+                  <p className="flex items-center gap-1.5 text-[13px] font-semibold text-[#131316]"><Zap size={15} className="text-[#F59E0B]" aria-hidden="true" /> Need it sooner? Call or email us about rush service.</p>
                   <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[13px] font-semibold">
-                    {contact.email && <a href={`mailto:${contact.email}?subject=${encodeURIComponent(`${label}: ${manufacturer} ${partNumber}`)}`} className="inline-flex items-center gap-1.5 text-[#0052CC] hover:underline"><Mail size={14} aria-hidden="true" />{contact.email}</a>}
-                    {contact.phone && <a href={phoneHref(contact.phone)} className="inline-flex items-center gap-1.5 text-[#0052CC] hover:underline"><Phone size={14} aria-hidden="true" />{contact.phone}</a>}
+                    {contact.email && <a href={`mailto:${contact.email}?subject=${encodeURIComponent(`${label}: ${manufacturer} ${partNumber}`)}`} className="inline-flex items-center gap-1.5 text-[#A50D25] hover:underline"><Mail size={14} aria-hidden="true" />{contact.email}</a>}
+                    {contact.phone && <a href={phoneHref(contact.phone)} className="inline-flex items-center gap-1.5 text-[#A50D25] hover:underline"><Phone size={14} aria-hidden="true" />{contact.phone}</a>}
                   </div>
                 </div>
               </div>
             )}
 
             {/* One-line footnote */}
-            <p className="mt-2.5 flex items-center gap-1.5 text-[11.5px] text-[#5B6B84]">
+            <p className="mt-2.5 flex items-center gap-1.5 text-[11.5px] text-[#696976]">
               <Clock size={13} className="flex-none self-start mt-px" aria-hidden="true" />
               <span className="line-clamp-2 sm:line-clamp-1">{info[o.condition].note}{" "}
                 <Zap size={12} className="mb-0.5 inline text-[#F59E0B]" aria-hidden="true" /> Rush?{" "}
-                {contact.email ? <a href={`mailto:${contact.email}?subject=${encodeURIComponent(`Rush: ${manufacturer} ${partNumber}`)}`} className="font-semibold text-[#0052CC] hover:underline">Email us</a> : "Contact us"}
+                {contact.email ? <a href={`mailto:${contact.email}?subject=${encodeURIComponent(`Rush: ${manufacturer} ${partNumber}`)}`} className="font-semibold text-[#A50D25] hover:underline">Email us</a> : "Contact us"}
               </span>
             </p>
           </>

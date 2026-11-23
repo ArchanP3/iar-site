@@ -17,7 +17,7 @@ function CardStrip({ items }: { items: Item[] }) {
   return (
     <ul className="flex h-full items-center gap-3 overflow-x-auto px-4 scrollbar-none snap-x snap-mandatory scroll-px-4 sm:px-6 sm:scroll-px-6">
       {items.map((i) => (
-        <li key={i.key} className="shrink-0 snap-start overflow-hidden rounded-[16px] ring-1 ring-white/15 transition hover:ring-[#7FD3FF]/60">
+        <li key={i.key} className="shrink-0 snap-start overflow-hidden rounded-[16px] ring-1 ring-white/15 transition hover:ring-[#FF8A99]/60">
           <Link href={i.href} aria-label={`${i.name} repair`} className="block">
           <Image
             src={`/industries/${i.key}.jpg`}

@@ -27,7 +27,7 @@ export default function TrackingForm({ t }: { t: Tracking }) {
             <label key={k} className="flex flex-col gap-1.5">
               <span className="flex items-center gap-2 text-[12.5px] font-bold">{label}{t[k] && <span className="ml-auto inline-flex items-center gap-1 text-[11.5px] font-bold text-[#067647]"><CheckCircle2 size={13} /> Active</span>}</span>
               <input name={k} defaultValue={t[k]} placeholder={ph} className={cx(input, "font-mono text-[12.5px]")} />
-              <span className="text-[11.5px] text-[#8494AB]">{hint}</span>
+              <span className="text-[11.5px] text-[#91919E]">{hint}</span>
             </label>
           ))}
           <Alert tone="ok" icon={<ShieldCheck size={16} />}>Tags load after the page is visible, so tracking never slows the site or hurts Core Web Vitals. They never run inside the CMS.</Alert>
@@ -35,19 +35,19 @@ export default function TrackingForm({ t }: { t: Tracking }) {
       </Card>
       <div className="flex flex-col gap-5">
         <Card title="Custom site-wide code" icon={<Code size={17} />} right={
-          <span className="inline-flex rounded-[9px] bg-[#EEF2F7] p-0.75">
-            {(["head", "body"] as const).map((w) => <button type="button" key={w} onClick={() => setWhere(w)} className={cx("rounded-md px-3 py-1 text-[12px] font-semibold", where === w ? "bg-white shadow" : "text-[#5B6B84]")}>{w === "head" ? "Header" : "Footer"}</button>)}
+          <span className="inline-flex rounded-[9px] bg-[#F2F2F3] p-0.75">
+            {(["head", "body"] as const).map((w) => <button type="button" key={w} onClick={() => setWhere(w)} className={cx("rounded-md px-3 py-1 text-[12px] font-semibold", where === w ? "bg-white shadow" : "text-[#696976]")}>{w === "head" ? "Header" : "Footer"}</button>)}
           </span>
         }>
-          <textarea name="headHtml" defaultValue={t.headHtml} rows={12} spellCheck={false} placeholder="<!-- e.g. a verification meta tag or a chat widget script -->" className={cx("w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] text-[#CFE3FF] outline-none placeholder:text-[#6F82A3]", where !== "head" && "hidden")} />
-          <textarea name="bodyHtml" defaultValue={t.bodyHtml} rows={12} spellCheck={false} placeholder="<!-- Loaded at the end of every page -->" className={cx("w-full rounded-xl bg-[#0B1A3C] p-4 font-mono text-[12.5px] text-[#CFE3FF] outline-none placeholder:text-[#6F82A3]", where !== "body" && "hidden")} />
-          <p className="mt-2 text-[12px] text-[#5B6B84]">Runs on every page of the website. For one page only, use the Page scripts tab in that page&apos;s editor.</p>
+          <textarea name="headHtml" defaultValue={t.headHtml} rows={12} spellCheck={false} placeholder="<!-- e.g. a verification meta tag or a chat widget script -->" className={cx("w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] text-[#F7D3D9] outline-none placeholder:text-[#828290]", where !== "head" && "hidden")} />
+          <textarea name="bodyHtml" defaultValue={t.bodyHtml} rows={12} spellCheck={false} placeholder="<!-- Loaded at the end of every page -->" className={cx("w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] text-[#F7D3D9] outline-none placeholder:text-[#828290]", where !== "body" && "hidden")} />
+          <p className="mt-2 text-[12px] text-[#696976]">Runs on every page of the website. For one page only, use the Page scripts tab in that page&apos;s editor.</p>
         </Card>
         <Card>
           {state?.error && <div className="mb-3"><Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert></div>}
           {state?.ok && <div className="mb-3"><Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert></div>}
           <button disabled={pending} className={cx(b("primary"), "w-full")}><Save size={15} /> {pending ? "Saving…" : "Save"}</button>
-          <p className="mt-2 text-[12px] text-[#8494AB]">Only roles with Tracking access can see this screen. Every change is logged and can be undone.</p>
+          <p className="mt-2 text-[12px] text-[#91919E]">Only roles with Tracking access can see this screen. Every change is logged and can be undone.</p>
         </Card>
       </div>
     </form>

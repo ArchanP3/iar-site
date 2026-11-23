@@ -29,7 +29,7 @@ export default function InternationalQuoteForm() {
   }
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="international" subject="International quote request: AutomIQ website" />
 
       <Step n={1} title="The parts you need" hint="Part number and quantity on each line. Copy the full number from the nameplate.">
@@ -67,7 +67,7 @@ export default function InternationalQuoteForm() {
             <div className="flex flex-wrap gap-2">
               {couriers.map((c) => (
                 <button key={c} type="button" aria-pressed={courier === c} onClick={() => setCourier(c)}
-                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${courier === c ? "border-[#0066FF] bg-[#0066FF]/6 text-[#0052CC] ring-4 ring-[#0066FF]/10" : "border-[#D9E4F1] bg-white text-[#0B1A3C] hover:border-[#0066FF]/40"}`}>
+                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${courier === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
                   {c}
                 </button>
               ))}
@@ -85,8 +85,8 @@ export default function InternationalQuoteForm() {
           <div><label className={label} htmlFor="iq-name">Contact name *</label><input id="iq-name" name="Name" required className={input} autoComplete="name" /></div>
           <div><label className={label} htmlFor="iq-email">Work email *</label><input id="iq-email" name="Email" type="email" required className={input} autoComplete="email" /></div>
           <div><label className={label} htmlFor="iq-phone">Phone, with country code *</label><input id="iq-phone" name="Phone" type="tel" required className={input} autoComplete="tel" placeholder="+49 …" /></div>
-          <div className="sm:col-span-2"><label className={label} htmlFor="iq-tax">VAT / tax or importer number <span className="font-normal text-[#52647F]">(optional)</span></label><input id="iq-tax" name="Tax or importer number" className={input} placeholder="Helps your customs clearance" /></div>
-          <div className="sm:col-span-2"><label className={label} htmlFor="iq-notes">Notes <span className="font-normal text-[#52647F]">(optional)</span></label><textarea id="iq-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Deadline, machine model, anything else" /></div>
+          <div className="sm:col-span-2"><label className={label} htmlFor="iq-tax">VAT / tax or importer number <span className="font-normal text-[#62626F]">(optional)</span></label><input id="iq-tax" name="Tax or importer number" className={input} placeholder="Helps your customs clearance" /></div>
+          <div className="sm:col-span-2"><label className={label} htmlFor="iq-notes">Notes <span className="font-normal text-[#62626F]">(optional)</span></label><textarea id="iq-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Deadline, machine model, anything else" /></div>
         </div>
       </Step>
 

@@ -53,17 +53,17 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
   return (
     <>
       <div className="flex flex-wrap items-center gap-2.5">
-        <div className="inline-flex flex-wrap rounded-[10px] bg-[#EEF2F7] p-0.75">
+        <div className="inline-flex flex-wrap rounded-[10px] bg-[#F2F2F3] p-0.75">
           {([["all", `All ${items.length}`], ["noalt", `Missing alt ${counts.noalt}`], ["unused", `Not used ${counts.unused}`], ["big", `Over 200 KB ${counts.big}`]] as const).map(([k, l]) => (
-            <button key={k} type="button" onClick={() => setFilter(k)} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", filter === k ? "bg-white shadow-[0_1px_3px_rgba(11,26,60,0.12)]" : "text-[#5B6B84]")}>{l}</button>
+            <button key={k} type="button" onClick={() => setFilter(k)} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", filter === k ? "bg-white shadow-[0_1px_3px_rgba(19, 19, 22,0.12)]" : "text-[#696976]")}>{l}</button>
           ))}
         </div>
-        <select value={folder} onChange={(e) => setFolder(e.target.value)} className="h-8 rounded-[9px] border border-[#E3EAF3] bg-white px-2 text-[12.5px]">
+        <select value={folder} onChange={(e) => setFolder(e.target.value)} className="h-8 rounded-[9px] border border-[#EAEAEC] bg-white px-2 text-[12.5px]">
           <option value="">All folders</option>{folders.map((f) => <option key={f}>{f}</option>)}
         </select>
         <span className="flex-1" />
         <form ref={formRef} action={upAction} className="flex items-center gap-2">
-          <input list="folders" name="folder" defaultValue={folder || "General"} className="h-9.5 w-36 rounded-[10px] border border-[#D9E3EF] px-2.5 text-[12.5px]" title="Folder" />
+          <input list="folders" name="folder" defaultValue={folder || "General"} className="h-9.5 w-36 rounded-[10px] border border-[#EEDADD] px-2.5 text-[12.5px]" title="Folder" />
           <datalist id="folders">{folders.map((f) => <option key={f} value={f} />)}</datalist>
           <input ref={fileRef} type="file" name="files" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,application/pdf" onChange={onPick} className="hidden" />
           <button type="button" disabled={uploading || prep} onClick={() => fileRef.current?.click()} className={b("primary")}><Upload size={15} /> {prep ? "Preparing…" : uploading ? "Uploading…" : "Upload"}</button>
@@ -76,23 +76,23 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
         {list.length ? (
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
             {list.map((i) => (
-              <button type="button" key={i.id} onClick={() => setSelId(i.id)} className={cx("overflow-hidden rounded-2xl border bg-white text-left", sel?.id === i.id ? "border-[#0066FF] ring-2 ring-[#0066FF]/30" : "border-[#E3EAF3] hover:border-[#B9CCE4]")}>
-                <div className="relative flex h-30 items-center justify-center border-b border-[#E3EAF3] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#EEF4FB_55%,#E2ECF8_100%)]">
-                  {i.mime.startsWith("image/") ? <img src={`/media/${i.filename}`} alt="" loading="lazy" className="max-h-[78%] max-w-[78%] object-contain" /> : <FileText size={34} className="text-[#8494AB]" />}
+              <button type="button" key={i.id} onClick={() => setSelId(i.id)} className={cx("overflow-hidden rounded-2xl border bg-white text-left", sel?.id === i.id ? "border-[#C8102E] ring-2 ring-[#C8102E]/30" : "border-[#EAEAEC] hover:border-[#E2BBC1]")}>
+                <div className="relative flex h-30 items-center justify-center border-b border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]">
+                  {i.mime.startsWith("image/") ? <img src={`/media/${i.filename}`} alt="" loading="lazy" className="max-h-[78%] max-w-[78%] object-contain" /> : <FileText size={34} className="text-[#91919E]" />}
                   {!i.alt && i.mime.startsWith("image/") && <span className="absolute left-2 top-2"><Pill tone="bad"><TriangleAlert size={11} /> No alt</Pill></span>}
                 </div>
-                <div className="px-2.5 py-2"><div className="truncate font-mono text-[11.5px]">{i.filename}</div><div className="mt-0.5 text-[11px] text-[#8494AB]">{i.mime.split("/")[1].toUpperCase()} · {kb(i.bytes)}</div></div>
+                <div className="px-2.5 py-2"><div className="truncate font-mono text-[11.5px]">{i.filename}</div><div className="mt-0.5 text-[11px] text-[#91919E]">{i.mime.split("/")[1].toUpperCase()} · {kb(i.bytes)}</div></div>
               </button>
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-[#CFE0FF] bg-white py-16 text-center text-[#5B6B84]">
-            <ImageIcon size={30} className="text-[#8494AB]" /><b className="text-[#0B1A3C]">{items.length ? "Nothing matches this filter" : "No images yet"}</b>
+          <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-[#FDD1D8] bg-white py-16 text-center text-[#696976]">
+            <ImageIcon size={30} className="text-[#91919E]" /><b className="text-[#131316]">{items.length ? "Nothing matches this filter" : "No images yet"}</b>
             <span className="max-w-sm text-[13px]">Upload photos and they are resized, compressed and converted to WebP automatically.</span>
           </div>
         )}
         {sel ? <Details key={sel.id} m={sel} close={() => setSelId(null)} canDelete={canDelete} /> : (
-          <div className="hidden rounded-2xl border border-[#E3EAF3] bg-white p-5 text-[13px] text-[#5B6B84] xl:block">Click an image to edit its alt text, caption and file name.</div>
+          <div className="hidden rounded-2xl border border-[#EAEAEC] bg-white p-5 text-[13px] text-[#696976] xl:block">Click an image to edit its alt text, caption and file name.</div>
         )}
       </div>
     </>
@@ -108,20 +108,20 @@ function Details({ m, close, canDelete }: { m: MediaItem; close: () => void; can
   const nonDescriptive = /^(img|dsc|image|photo|screenshot|pxl|whatsapp)[-_ ]?\d*/i.test(base) || /^\d+$/.test(base);
   useEffect(() => { if (state?.ok) router.refresh(); }, [state, router]);
   return (
-    <form action={action} className="flex flex-col gap-3.5 rounded-2xl border border-[#E3EAF3] bg-white p-4.5 xl:sticky xl:top-20">
+    <form action={action} className="flex flex-col gap-3.5 rounded-2xl border border-[#EAEAEC] bg-white p-4.5 xl:sticky xl:top-20">
       <input type="hidden" name="id" value={m.id} />
-      <div className="flex items-center"><b className="text-[14.5px]">Image details</b><button type="button" onClick={close} className="ml-auto text-[#8494AB]"><X size={16} /></button></div>
-      <div className="flex h-37.5 items-center justify-center rounded-xl border border-[#E3EAF3] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#EEF4FB_55%,#E2ECF8_100%)]">
-        {m.mime.startsWith("image/") ? <img src={`/media/${m.filename}`} alt="" className="max-h-[80%] max-w-[80%] object-contain" /> : <FileText size={40} className="text-[#8494AB]" />}
+      <div className="flex items-center"><b className="text-[14.5px]">Image details</b><button type="button" onClick={close} className="ml-auto text-[#91919E]"><X size={16} /></button></div>
+      <div className="flex h-37.5 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]">
+        {m.mime.startsWith("image/") ? <img src={`/media/${m.filename}`} alt="" className="max-h-[80%] max-w-[80%] object-contain" /> : <FileText size={40} className="text-[#91919E]" />}
       </div>
-      <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">File name {nonDescriptive && <span className="ml-auto text-[12px] text-[#B45309]">Not descriptive</span>}</span><input name="filename" defaultValue={base} className={cx(input, "font-mono text-[12.5px]")} /><span className="flex gap-1.5 text-[11.5px] text-[#5B6B84]"><Sparkles size={13} /> Describe the photo, e.g. siemens-sinamics-s120-repair. Renaming keeps the old link working.</span></label>
+      <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">File name {nonDescriptive && <span className="ml-auto text-[12px] text-[#B45309]">Not descriptive</span>}</span><input name="filename" defaultValue={base} className={cx(input, "font-mono text-[12.5px]")} /><span className="flex gap-1.5 text-[11.5px] text-[#696976]"><Sparkles size={13} /> Describe the photo, e.g. siemens-sinamics-s120-repair. Renaming keeps the old link working.</span></label>
       {m.mime.startsWith("image/") && <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">Alt text {!m.alt && <span className="ml-auto text-[12px] text-[#B42318]">Required</span>}</span><textarea name="alt" defaultValue={m.alt} rows={2} placeholder="What is in the picture, in a few words" className={input} /></label>}
-      <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">Caption <span className="ml-auto text-[12px] font-semibold text-[#8494AB]">Optional</span></span><input name="caption" defaultValue={m.caption} className={input} /></label>
+      <label className="flex flex-col gap-1.5"><span className="flex text-[12.5px] font-bold">Caption <span className="ml-auto text-[12px] font-semibold text-[#91919E]">Optional</span></span><input name="caption" defaultValue={m.caption} className={input} /></label>
       <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Folder</span><input name="folder" defaultValue={m.folder} className={input} /></label>
       <div className="flex flex-col gap-1 text-[12.5px]">
-        {m.original_bytes ? <div className="flex justify-between"><span className="text-[#5B6B84]">Original</span><b>{kb(m.original_bytes)}{m.original_name ? ` · ${m.original_name.split(".").pop()?.toUpperCase()}` : ""}</b></div> : null}
-        <div className="flex justify-between"><span className="text-[#5B6B84]">Optimized</span><b className="text-[#067647]">{kb(m.bytes)} {m.mime.split("/")[1].toUpperCase()}{m.width ? ` · ${m.width}×${m.height}` : ""}</b></div>
-        <div className="flex justify-between gap-3"><span className="text-[#5B6B84]">Used on</span><b className="text-right">{m.used.length ? m.used.slice(0, 3).join(", ") + (m.used.length > 3 ? "…" : "") : "Not used yet"}</b></div>
+        {m.original_bytes ? <div className="flex justify-between"><span className="text-[#696976]">Original</span><b>{kb(m.original_bytes)}{m.original_name ? ` · ${m.original_name.split(".").pop()?.toUpperCase()}` : ""}</b></div> : null}
+        <div className="flex justify-between"><span className="text-[#696976]">Optimized</span><b className="text-[#067647]">{kb(m.bytes)} {m.mime.split("/")[1].toUpperCase()}{m.width ? ` · ${m.width}×${m.height}` : ""}</b></div>
+        <div className="flex justify-between gap-3"><span className="text-[#696976]">Used on</span><b className="text-right">{m.used.length ? m.used.slice(0, 3).join(", ") + (m.used.length > 3 ? "…" : "") : "Not used yet"}</b></div>
       </div>
       {state?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert>}
       {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}

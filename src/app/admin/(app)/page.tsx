@@ -18,7 +18,7 @@ type SP = Promise<{ welcome?: string; denied?: string }>;
 
 export default function Page({ searchParams }: { searchParams: SP }) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading dashboard…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading dashboard…</p>}>
       <Dashboard searchParams={searchParams} />
     </Suspense>
   );
@@ -26,11 +26,11 @@ export default function Page({ searchParams }: { searchParams: SP }) {
 
 const fmt = (n: number) => (n >= 10_000 ? `${(n / 1000).toFixed(1)}K` : n.toLocaleString("en-US"));
 function Delta({ now, before, invert, suffix = "%" }: { now: number; before: number; invert?: boolean; suffix?: string }) {
-  if (!before) return <span className="text-[12px] text-[#8494AB]">vs previous period</span>;
+  if (!before) return <span className="text-[12px] text-[#91919E]">vs previous period</span>;
   const d = suffix === "%" ? ((now - before) / before) * 100 : before - now;
   const good = invert ? d > 0 : d >= 0;
   const Icon = good ? TrendingUp : TrendingDown;
-  return <span className={`inline-flex items-center gap-1 text-[12px] font-bold ${good ? "text-[#12B76A]" : "text-[#EF4444]"}`}><Icon size={13} /> {d >= 0 ? "+" : ""}{d.toFixed(1)}{suffix === "%" ? "%" : ""} <span className="font-semibold text-[#8494AB]">vs previous 28 days</span></span>;
+  return <span className={`inline-flex items-center gap-1 text-[12px] font-bold ${good ? "text-[#12B76A]" : "text-[#EF4444]"}`}><Icon size={13} /> {d >= 0 ? "+" : ""}{d.toFixed(1)}{suffix === "%" ? "%" : ""} <span className="font-semibold text-[#91919E]">vs previous 28 days</span></span>;
 }
 
 async function Dashboard({ searchParams }: { searchParams: SP }) {
@@ -64,19 +64,19 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
         ) : (
           <Card className="sm:col-span-2 xl:col-span-3">
             <div className="flex flex-wrap items-center gap-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E8F1FF] text-[#0066FF]"><TrendingUp size={20} /></div>
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FBE7EA] text-[#C8102E]"><TrendingUp size={20} /></div>
               <div className="min-w-0 flex-1">
                 <b>{gsc.error ? "Google Search Console needs attention" : "Connect Google Search Console"}</b>
-                <p className="text-[12.8px] text-[#5B6B84]">{gsc.error ?? "Clicks, impressions, rankings and keyword opportunities from Google appear here once it's connected. It's free."}</p>
+                <p className="text-[12.8px] text-[#696976]">{gsc.error ?? "Clicks, impressions, rankings and keyword opportunities from Google appear here once it's connected. It's free."}</p>
               </div>
               {can(u.role, "performance") && <Link href="/admin/performance" className={b("dark")}>Set up</Link>}
             </div>
           </Card>
         )}
         {leads ? (
-          <Kpi icon={<Inbox size={15} />} label="Leads (28 days)" value={String(leads.month)} delta={<span className="text-[12px] font-semibold text-[#8494AB]">{leads.fresh} not opened · {leads.prev} the 28 days before</span>} />
+          <Kpi icon={<Inbox size={15} />} label="Leads (28 days)" value={String(leads.month)} delta={<span className="text-[12px] font-semibold text-[#91919E]">{leads.fresh} not opened · {leads.prev} the 28 days before</span>} />
         ) : (
-          <Kpi icon={<SearchCheck size={15} />} label="SEO health" value={scanned ? String(audit.score) : "—"} delta={<span className="text-[12px] font-semibold text-[#8494AB]">{scanned ? `${audit.summary.crawled} pages scanned` : "Run the first scan"}</span>} />
+          <Kpi icon={<SearchCheck size={15} />} label="SEO health" value={scanned ? String(audit.score) : "—"} delta={<span className="text-[12px] font-semibold text-[#91919E]">{scanned ? `${audit.summary.crawled} pages scanned` : "Run the first scan"}</span>} />
         )}
       </div>
 
@@ -84,16 +84,16 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
         <Card title="SEO health" icon={<SearchCheck size={17} />} right={can(u.role, "audit") && <Link href="/admin/audit" className={b("light", true)}>Open full audit</Link>} pad={false}>
           {scanned ? (
             <>
-              <div className="flex flex-wrap items-center gap-5 border-b border-[#E3EAF3] p-4.5">
+              <div className="flex flex-wrap items-center gap-5 border-b border-[#EAEAEC] p-4.5">
                 <Score value={audit.score} />
                 <div className="min-w-50 flex-1">
                   <b className="text-[15px]">{audit.score >= 85 ? "Healthy" : audit.score >= 65 ? "Good, with quick wins available" : "Needs work"}</b>
-                  <p className="mt-0.5 text-[#5B6B84]">{audit.summary.crawled} pages scanned. Fix the issues below, top first.</p>
+                  <p className="mt-0.5 text-[#696976]">{audit.summary.crawled} pages scanned. Fix the issues below, top first.</p>
                 </div>
                 <div className="flex gap-5 text-center">
-                  <div><b className="block text-[18px] text-[#EF4444]">{audit.summary.critical}</b><span className="text-[11.5px] text-[#8494AB]">Critical</span></div>
-                  <div><b className="block text-[18px] text-[#F59E0B]">{audit.summary.warnings}</b><span className="text-[11.5px] text-[#8494AB]">Warnings</span></div>
-                  <div><b className="block text-[18px] text-[#12B76A]">{audit.summary.healthy}</b><span className="text-[11.5px] text-[#8494AB]">Healthy pages</span></div>
+                  <div><b className="block text-[18px] text-[#EF4444]">{audit.summary.critical}</b><span className="text-[11.5px] text-[#91919E]">Critical</span></div>
+                  <div><b className="block text-[18px] text-[#F59E0B]">{audit.summary.warnings}</b><span className="text-[11.5px] text-[#91919E]">Warnings</span></div>
+                  <div><b className="block text-[18px] text-[#12B76A]">{audit.summary.healthy}</b><span className="text-[11.5px] text-[#91919E]">Healthy pages</span></div>
                 </div>
               </div>
               <Table head={["Severity", "Issue", "Pages", ""]}>
@@ -109,17 +109,17 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
               {!audit.issues.length && <p className="p-6 text-center text-[#067647]">No issues found. Nice work.</p>}
             </>
           ) : (
-            <div className="p-6 text-center text-[#5B6B84]">No scan yet. Press <b>Scan site now</b> at the top to check every page.</div>
+            <div className="p-6 text-center text-[#696976]">No scan yet. Press <b>Scan site now</b> at the top to check every page.</div>
           )}
         </Card>
-        <Card title="Recent activity" icon={<History size={17} />} right={can(u.role, "activity") && <Link href="/admin/users#activity" className="text-[12.5px] font-semibold text-[#5B6B84]">View all</Link>}>
+        <Card title="Recent activity" icon={<History size={17} />} right={can(u.role, "activity") && <Link href="/admin/users#activity" className="text-[12.5px] font-semibold text-[#696976]">View all</Link>}>
           {activity.length ? activity.map((a, i) => (
-            <div key={i} className="flex items-center gap-2.5 border-b border-[#EEF3F9] py-2.5 last:border-0">
-              <div className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-full bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[11px] font-bold text-white">{who(a.user_name).split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase()}</div>
-              <div className="min-w-0 flex-1 leading-snug"><b>{who(a.user_name)}</b> <span className="text-[#5B6B84]">{a.action}</span><div className="truncate font-mono text-[12px] text-[#5B6B84]">{what(a.target)}</div></div>
-              <span className="whitespace-nowrap text-[12px] text-[#8494AB]">{ago(a.created_at)}</span>
+            <div key={i} className="flex items-center gap-2.5 border-b border-[#F3F3F4] py-2.5 last:border-0">
+              <div className="flex h-7.5 w-7.5 flex-none items-center justify-center rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[11px] font-bold text-white">{who(a.user_name).split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase()}</div>
+              <div className="min-w-0 flex-1 leading-snug"><b>{who(a.user_name)}</b> <span className="text-[#696976]">{a.action}</span><div className="truncate font-mono text-[12px] text-[#696976]">{what(a.target)}</div></div>
+              <span className="whitespace-nowrap text-[12px] text-[#91919E]">{ago(a.created_at)}</span>
             </div>
-          )) : <p className="text-[#8494AB]">Nothing yet. Changes made in the CMS show here.</p>}
+          )) : <p className="text-[#91919E]">Nothing yet. Changes made in the CMS show here.</p>}
         </Card>
       </div>
 
@@ -131,10 +131,10 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
                 <tr key={r.keys[0]}><td className="font-bold">{r.keys[0]}</td><td>{r.clicks}</td><td>{fmt(r.impressions)}</td><td>{r.position.toFixed(1)}</td></tr>
               ))}
             </Table>
-          ) : <p className="p-6 text-center text-[#8494AB]">{gsc.configured ? "No search data for this period yet." : "Connect Search Console to see what people search to find you."}</p>}
+          ) : <p className="p-6 text-center text-[#91919E]">{gsc.configured ? "No search data for this period yet." : "Connect Search Console to see what people search to find you."}</p>}
         </Card>
         <div className="flex flex-col gap-5">
-          <Suspense fallback={<Card title="Core Web Vitals" icon={<Gauge size={17} />}><p className="text-[#8494AB]">Checking with Google…</p></Card>}>
+          <Suspense fallback={<Card title="Core Web Vitals" icon={<Gauge size={17} />}><p className="text-[#91919E]">Checking with Google…</p></Card>}>
             <Vitals />
           </Suspense>
           <Card title="Quick actions" icon={<Sparkles size={17} />}>
@@ -154,7 +154,7 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
 function Kpi({ icon, label, value, delta, spark }: { icon: React.ReactNode; label: string; value: string; delta: React.ReactNode; spark?: number[] }) {
   return (
     <Card>
-      <div className="flex items-center gap-1.5 text-[12px] font-semibold text-[#5B6B84]">{icon}{label}</div>
+      <div className="flex items-center gap-1.5 text-[12px] font-semibold text-[#696976]">{icon}{label}</div>
       <div className="mt-1.5 flex items-center"><span className="text-[26px] font-extrabold tracking-[-0.02em]">{value}</span><span className="flex-1" />{spark && <Spark values={spark} />}</div>
       <div className="mt-1">{delta}</div>
     </Card>
@@ -164,7 +164,7 @@ function Kpi({ icon, label, value, delta, spark }: { icon: React.ReactNode; labe
 async function Vitals() {
   const v = await vitals(SITE_URL);
   const row = (k: string, name: string, val: string, good: boolean) => (
-    <div className="flex items-center gap-2 py-2"><b className="w-10">{k}</b><span className="text-[12.5px] text-[#5B6B84]">{name}</span><span className="flex-1" /><b>{val}</b><Pill tone={good ? "ok" : "warn"}>{good ? "Good" : "Improve"}</Pill></div>
+    <div className="flex items-center gap-2 py-2"><b className="w-10">{k}</b><span className="text-[12.5px] text-[#696976]">{name}</span><span className="flex-1" /><b>{val}</b><Pill tone={good ? "ok" : "warn"}>{good ? "Good" : "Improve"}</Pill></div>
   );
   return (
     <Card title="Core Web Vitals" icon={<Gauge size={17} />} right={v.ok && <Pill tone={(v.score ?? 0) >= 90 ? "ok" : "warn"}>Score {v.score}</Pill>}>
@@ -173,9 +173,9 @@ async function Vitals() {
           {row("LCP", "Largest Contentful Paint", `${v.lcp?.toFixed(1)} s`, (v.lcp ?? 9) <= 2.5)}
           {v.field ? row("INP", "Interaction to Next Paint", `${v.inp ?? "—"} ms`, (v.inp ?? 999) <= 200) : row("TBT", "Total Blocking Time", `${Math.round(v.inp ?? 0)} ms`, (v.inp ?? 999) <= 200)}
           {row("CLS", "Cumulative Layout Shift", (v.cls ?? 0).toFixed(2), (v.cls ?? 1) <= 0.1)}
-          <p className="mt-1 text-[11.5px] text-[#8494AB]">Mobile · {v.field ? "real visitors (Chrome data)" : "lab test"} · from Google PageSpeed Insights</p>
+          <p className="mt-1 text-[11.5px] text-[#91919E]">Mobile · {v.field ? "real visitors (Chrome data)" : "lab test"} · from Google PageSpeed Insights</p>
         </>
-      ) : <p className="text-[12.8px] text-[#8494AB]">Google PageSpeed couldn&apos;t check the site right now{v.error ? ` (${v.error})` : ""}. It runs again automatically.</p>}
+      ) : <p className="text-[12.8px] text-[#91919E]">Google PageSpeed couldn&apos;t check the site right now{v.error ? ` (${v.error})` : ""}. It runs again automatically.</p>}
     </Card>
   );
 }

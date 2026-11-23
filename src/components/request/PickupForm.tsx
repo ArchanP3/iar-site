@@ -21,7 +21,7 @@ export default function PickupForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#E3EAF3] bg-white shadow-[0_30px_70px_-45px_rgba(11,26,60,0.45)]">
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
       <FormMeta type="pickup" subject="New pickup request: AutomIQ website" />
 
       <Step n={1} title="Your company"><DetailsFields prefix="pu" location={false} /></Step>
@@ -38,7 +38,7 @@ export default function PickupForm() {
           </div>
           <PackageFields prefix="pu" />
           <div>
-            <label className={label} htmlFor="pu-notes">Fault or notes <span className="font-normal text-[#52647F]">(optional)</span></label>
+            <label className={label} htmlFor="pu-notes">Fault or notes <span className="font-normal text-[#62626F]">(optional)</span></label>
             <textarea id="pu-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Fault code, symptoms, anything the driver should know…" />
           </div>
         </div>

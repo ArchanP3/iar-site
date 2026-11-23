@@ -22,7 +22,7 @@ const siteLd = {
     { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: "AutomIQ", alternateName: ["AutomIQ Automation & Drive Services", "AutomIQ Automation"], publisher: { "@id": `${SITE_URL}/#organization` }, inLanguage: "en" },
     {
       "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "AutomIQ Automation & Drive Services", alternateName: "AutomIQ", url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/automiq-logo-v2.png` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` },
       ...(contact.email ? { email: contact.email } : {}), ...(contact.phone ? { telephone: contact.phone } : {}),
       address: postalAddress, geo, openingHoursSpecification: openingHours,
       areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
@@ -38,7 +38,7 @@ export default function Home() {
   preload("/hero-waves-phone.webp", { as: "image", media: "(max-width: 640px)", fetchPriority: "high" });
   preload("/hero-waves-desk.webp", { as: "image", media: "(min-width: 641px)", fetchPriority: "high" });
   return (
-    <main className="min-h-screen bg-[#F4F7FB]">
+    <main className="min-h-screen bg-[#F7F7F8]">
       <PageExtras path="/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd).replace(/</g, "\\u003c") }} />
       <Header />

@@ -16,7 +16,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 }
 
 function Loading() {
-  return <div className="flex min-h-screen items-center justify-center text-[#8494AB]">Loading…</div>;
+  return <div className="flex min-h-screen items-center justify-center text-[#91919E]">Loading…</div>;
 }
 
 async function counts(u: User) {
@@ -86,14 +86,14 @@ async function Frame({ children }: { children: React.ReactNode }) {
     <div className="lg:grid lg:grid-cols-[248px_minmax(0,1fr)]">
       <Sidebar groups={groups} user={{ name: u.name, role: roleLabel[u.role] }} />
       <main className="min-w-0">
-        <div className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-[#E3EAF3] bg-white/95 pl-16 pr-4 backdrop-blur sm:pr-7 lg:pl-7">
-          <form action="/admin/search" className="flex h-10 min-w-0 max-w-130 flex-1 items-center gap-2.5 rounded-[11px] border border-[#E3EAF3] bg-[#F8FAFD] px-3.5 text-[#8494AB] focus-within:border-[#0066FF]">
+        <div className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-[#EAEAEC] bg-white/95 pl-16 pr-4 backdrop-blur sm:pr-7 lg:pl-7">
+          <form action="/admin/search" className="flex h-10 min-w-0 max-w-130 flex-1 items-center gap-2.5 rounded-[11px] border border-[#EAEAEC] bg-[#FAFAFB] px-3.5 text-[#91919E] focus-within:border-[#C8102E]">
             <Search size={16} />
-            <input name="q" placeholder="Search pages, posts, redirects…" className="h-full min-w-0 flex-1 bg-transparent text-[13.5px] text-[#0B1A3C] outline-none placeholder:text-[#8494AB]" />
+            <input name="q" placeholder="Search pages, posts, redirects…" className="h-full min-w-0 flex-1 bg-transparent text-[13.5px] text-[#131316] outline-none placeholder:text-[#91919E]" />
           </form>
           <div className="flex-1" />
-          <Link href="/" target="_blank" className="hidden items-center gap-1.5 text-[13px] font-semibold text-[#0B1A3C] hover:text-[#0052CC] sm:inline-flex"><ExternalLink size={15} /> View site</Link>
-          <Link href="/admin/account" className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-[#0066FF] to-[#00B0FF] text-[12px] font-bold text-white" title="My account">{initials}</Link>
+          <Link href="/" target="_blank" className="hidden items-center gap-1.5 text-[13px] font-semibold text-[#131316] hover:text-[#A50D25] sm:inline-flex"><ExternalLink size={15} /> View site</Link>
+          <Link href="/admin/account" className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[12px] font-bold text-white" title="My account">{initials}</Link>
         </div>
         <div className="flex flex-col gap-5 px-4 pb-10 pt-6 sm:px-7">{children}</div>
       </main>

@@ -11,7 +11,7 @@ type SP = Promise<{ edit?: string; q?: string }>;
 
 export default function Page({ searchParams }: { searchParams: SP }) {
   return (
-    <Suspense fallback={<p className="text-[#8494AB]">Loading…</p>}>
+    <Suspense fallback={<p className="text-[#91919E]">Loading…</p>}>
       <Redirects searchParams={searchParams} />
     </Suspense>
   );
@@ -56,29 +56,29 @@ async function Redirects({ searchParams }: { searchParams: SP }) {
         </div>
       </Card>
 
-      <Card title="404 monitor" icon={<TriangleAlert size={17} />} right={<><Pill tone={nf.length ? "bad" : "ok"}>{nf.length} to fix</Pill><span className="text-[12px] text-[#8494AB]">Pages visitors tried to open that don&apos;t exist</span></>} pad={false}>
+      <Card title="404 monitor" icon={<TriangleAlert size={17} />} right={<><Pill tone={nf.length ? "bad" : "ok"}>{nf.length} to fix</Pill><span className="text-[12px] text-[#91919E]">Pages visitors tried to open that don&apos;t exist</span></>} pad={false}>
         {nf.length ? (
           <Table head={["Missing URL", "Hits", "Last seen", "Came from", "Fix"]}>
             {nf.map((r) => (
               <tr key={r.path}>
                 <td className="max-w-65 truncate font-mono text-[12.5px]">{r.path}</td>
                 <td className="font-bold">{r.hits}</td>
-                <td className="whitespace-nowrap text-[#5B6B84]">{ago(r.last_seen)}</td>
-                <td className="max-w-50 truncate text-[12px] text-[#8494AB]">{r.referrer || "direct / unknown"}</td>
+                <td className="whitespace-nowrap text-[#696976]">{ago(r.last_seen)}</td>
+                <td className="max-w-50 truncate text-[12px] text-[#91919E]">{r.referrer || "direct / unknown"}</td>
                 <td><Fix404 path={r.path} suggestion={suggest(r.path)} /></td>
               </tr>
             ))}
           </Table>
-        ) : <p className="p-6 text-center text-[#8494AB]">No broken links visited in the last weeks.</p>}
+        ) : <p className="p-6 text-center text-[#91919E]">No broken links visited in the last weeks.</p>}
       </Card>
 
-      <Card title="Redirects" right={<><Pill>{list.length}</Pill><form><input name="q" defaultValue={sp.q} placeholder="Search" className="h-8 w-40 rounded-[9px] border border-[#E3EAF3] px-2.5 text-[12.5px] outline-none" /></form></>} pad={false}>
+      <Card title="Redirects" right={<><Pill>{list.length}</Pill><form><input name="q" defaultValue={sp.q} placeholder="Search" className="h-8 w-40 rounded-[9px] border border-[#EAEAEC] px-2.5 text-[12.5px] outline-none" /></form></>} pad={false}>
         {list.length ? (
           <Table head={["From", "", "To", "Type", "Source", "Hits", ""]}>
             {list.map((r) => (
               <tr key={r.id} className={r.active ? "" : "opacity-50"}>
-                <td className="font-mono text-[12.5px]">{r.from_path}{r.match === "prefix" && <span className="text-[#8494AB]">{"/*"}</span>}</td>
-                <td className="text-[#8494AB]"><ChevronRight size={14} /></td>
+                <td className="font-mono text-[12.5px]">{r.from_path}{r.match === "prefix" && <span className="text-[#91919E]">{"/*"}</span>}</td>
+                <td className="text-[#91919E]"><ChevronRight size={14} /></td>
                 <td className="font-mono text-[12.5px]">{r.code === 410 ? "—" : r.to_path}</td>
                 <td><Pill tone={r.code === 410 ? "bad" : r.code === 301 || r.code === 308 ? "ok" : "warn"}>{r.code}</Pill></td>
                 <td><Pill tone={r.source === "slug change" ? "blue" : "gray"}>{r.source === "slug change" ? "Auto · URL change" : r.source[0].toUpperCase() + r.source.slice(1)}{r.expires_at ? ` · ends ${new Date(r.expires_at).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}` : ""}</Pill></td>
@@ -87,7 +87,7 @@ async function Redirects({ searchParams }: { searchParams: SP }) {
               </tr>
             ))}
           </Table>
-        ) : <p className="flex items-center justify-center gap-2 p-6 text-[#8494AB]"><Info size={15} /> No redirects yet.</p>}
+        ) : <p className="flex items-center justify-center gap-2 p-6 text-[#91919E]"><Info size={15} /> No redirects yet.</p>}
       </Card>
     </>
   );
