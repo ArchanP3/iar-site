@@ -49,11 +49,11 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
           const c = colorOf(a);
           return (
             <li key={a.slug} hidden={!shown.has(a.slug)}>
-              <Link href={urls[a.slug]} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${c}40 100%)` }}>
-                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${c}77, transparent)` }} />
+              <Link href={urls[a.slug]} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E77, transparent)` }} />
                 <span className="relative flex items-start justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-[14px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:text-[15px]" style={{ background: `linear-gradient(145deg, ${c}, #131316)` }}>{initials(a.city)}</span>
-                  <ArrowUpRight size={18} style={{ color: c }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-[14px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:text-[15px]" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}>{initials(a.city)}</span>
+                  <ArrowUpRight size={18} className="text-[#FF5A6E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
                 <span className="relative mt-3 block text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[18px]">{a.city}</span>
                 <span className="relative block text-[11.5px] text-white/55 sm:text-[12.5px]">{a.region} · {a.country === "CA" ? "Canada" : "USA"}</span>

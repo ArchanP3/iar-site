@@ -80,8 +80,8 @@ export default function ConditionCompare({ offers }: { offers: Offer[] }) {
               <th scope="col" className="w-[17%] p-4"><span className="sr-only">Compare</span></th>
               {conds.map((c) => (
                 <th key={c} scope="col" className="p-3 align-top">
-                  <div className="relative flex min-h-21 flex-col justify-center overflow-hidden rounded-2xl p-3.5 text-white" style={{ background: `linear-gradient(150deg, #0F0F10 0%, #1A1A1E 55%, ${COLOR[c]}55 100%)` }}>
-                    <span aria-hidden="true" className="absolute -right-8 -top-8 h-24 w-24 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${COLOR[c]}88, transparent)` }} />
+                  <div className="hexcard relative flex min-h-21 flex-col justify-center overflow-hidden rounded-2xl p-3.5 text-white">
+                    <span aria-hidden="true" className="absolute -right-8 -top-8 h-24 w-24 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, #C8102E88, transparent)` }} />
                     <span className="relative block text-[17px] font-extrabold">{conditionLabel[c]}</span>
                     <span className="relative mt-0.5 flex items-start gap-1.5 text-[13px] font-semibold leading-snug text-white/85"><Tag size={13} style={{ color: COLOR[c] }} className="mt-0.5 flex-none" aria-hidden="true" />{priceOf(c)}</span>
                   </div>
@@ -119,7 +119,7 @@ export default function ConditionCompare({ offers }: { offers: Offer[] }) {
         {conds.map((c) => (
           <li key={c} className="w-[82%] shrink-0 snap-start sm:w-auto">
             <div className="flex h-full flex-col overflow-hidden rounded-[20px] border border-[#EAEAEC] bg-white">
-              <div className="relative overflow-hidden p-4 text-white" style={{ background: `linear-gradient(150deg, #0F0F10 0%, #1A1A1E 55%, ${COLOR[c]}55 100%)` }}>
+              <div className="hexcard relative overflow-hidden p-4 text-white">
                 <span className="block text-[17px] font-extrabold">{conditionLabel[c]}</span>
                 <span className="mt-0.5 flex items-center gap-1.5 text-[13px] font-semibold text-white/85"><Tag size={13} style={{ color: COLOR[c] }} aria-hidden="true" />{priceOf(c)}</span>
               </div>

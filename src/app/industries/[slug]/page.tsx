@@ -74,7 +74,7 @@ export default async function IndustryPage({ params }: Props) {
       <Header />
 
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-14 pt-8 text-white sm:pb-16">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full blur-2xl" style={{ background: `radial-gradient(closest-side, ${i.color}66, transparent)` }} />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full blur-2xl" style={{ background: `radial-gradient(closest-side, #C8102E66, transparent)` }} />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb"><ol className="flex flex-wrap items-center gap-1.5 text-[12.5px] text-white/60">
             <li><Link href="/" className="hover:text-white">Home</Link></li><li aria-hidden="true"><ChevronRight size={13} /></li>
@@ -92,7 +92,7 @@ export default async function IndustryPage({ params }: Props) {
                 <WhatsAppCta topic={i.name} kind="brand" />
               </div>
             </div>
-            <div className="relative aspect-4/3 overflow-hidden rounded-[26px] border border-white/10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.8)]" style={{ background: `linear-gradient(150deg, #0F0F10 0%, #1A1A1E 55%, ${i.color}55 100%)` }}>
+            <div className="hexcard relative aspect-4/3 overflow-hidden rounded-[26px] border border-white/10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.8)]">
               {i.image ? (
                 <Image src={i.image} alt={`${i.name} production line`} fill priority sizes="(min-width: 1024px) 520px, 100vw" className={i.zoom ? "scale-110 object-cover object-[50%_35%]" : "object-cover"} />
               ) : (
@@ -121,7 +121,7 @@ export default async function IndustryPage({ params }: Props) {
             </ul>
           </div>
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${i.color}88, transparent)` }} />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, #C8102E88, transparent)` }} />
             <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Every repair</p>
             <ul className="relative mt-4 space-y-3 text-[14.5px] text-white/85">
               {steps.map((s) => <li key={s} className="flex gap-2.5"><BadgeCheck size={18} className="mt-0.5 flex-none text-[#FF5A6E]" aria-hidden="true" />{s}</li>)}
@@ -136,7 +136,7 @@ export default async function IndustryPage({ params }: Props) {
           <ul className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3">
             {services.map((s) => (
               <li key={s.slug} className="max-sm:odd:last:col-span-2">
-                <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col items-start gap-2.5 overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white sm:flex-row sm:items-center sm:gap-3 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:p-4" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 55%, ${s.color}40 100%)` }}>
+                <Link href={serviceUrl(s.slug)} className="hexcard group relative flex h-full flex-col items-start gap-2.5 overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white sm:flex-row sm:items-center sm:gap-3 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:p-4">
                   <span className="relative flex h-12 w-12 flex-none items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/15 sm:h-14 sm:w-14">
                     {s.icon ? <Image src={s.icon} alt="" aria-hidden="true" fill sizes="56px" className="object-contain p-1.5" /> : <ServiceIcon name={s.lucide} color={s.color} size={48} />}
                   </span>

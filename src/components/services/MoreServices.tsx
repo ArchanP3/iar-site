@@ -65,11 +65,11 @@ export default function MoreServices() {
         <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {list.map((s) => (
             <li key={s.slug} className="relative">
-              <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${s.color}40 100%)` }}>
-                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${s.color}77, transparent)` }} />
+              <Link href={serviceUrl(s.slug)} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E77, transparent)` }} />
                 <span className="relative flex items-start justify-between">
                   <ServiceIcon name={s.lucide} color={s.color} size={44} />
-                  <ArrowUpRight size={18} style={{ color: s.color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                  <ArrowUpRight size={18} className="text-[#FF5A6E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
                 <span className="relative mt-3 block min-h-[2lh] text-[14.5px] font-extrabold leading-snug sm:mt-4 sm:text-[17px]">{s.title}</span>
                 <span className="relative mt-1 hidden min-h-[3lh] text-[13px] leading-normal text-white/70 sm:block">{s.short}</span>

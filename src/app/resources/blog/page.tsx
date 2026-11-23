@@ -19,7 +19,7 @@ export default async function BlogIndex() {
       text="Practical, plain-English guides from our repair bench: how to decide, what to check and how we work.">
       <PageExtras path="/resources/blog" />
       <Link href={postUrl(first.slug)} className="group relative block overflow-hidden rounded-[26px] bg-[#131316] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200,16,46,0.8)] transition hover:-translate-y-0.5 sm:p-9">
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${first.color}88, transparent)` }} />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, #C8102E88, transparent)` }} />
         <span className="relative inline-flex rounded-full bg-white/10 px-3 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-[#FF8A99]">Featured · {first.tag}</span>
         <h2 className="relative mt-4 max-w-190 text-[26px] font-extrabold leading-tight sm:text-[36px]">{first.title}</h2>
         <p className="relative mt-3 max-w-170 text-[15px] leading-relaxed text-white/75">{first.description}</p>

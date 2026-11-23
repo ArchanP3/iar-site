@@ -67,14 +67,14 @@ export default function ServicesPage() {
         <ul className="grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {services.map((s) => (
             <li key={s.slug} className="relative">
-              <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${s.color}40 100%)` }}>
-                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${s.color}77, transparent)` }} />
+              <Link href={serviceUrl(s.slug)} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E77, transparent)` }} />
                 <span className="relative flex items-start justify-between">
                   <span className="relative flex h-21 w-21 items-center justify-center rounded-2xl bg-white/6 ring-1 ring-white/15 sm:h-26 sm:w-26">
-                    <span aria-hidden="true" className="absolute inset-2 rounded-full blur-lg" style={{ background: `radial-gradient(closest-side, ${s.color}66, transparent)` }} />
+                    <span aria-hidden="true" className="absolute inset-2 rounded-full blur-lg" style={{ background: `radial-gradient(closest-side, #C8102E66, transparent)` }} />
                     <Image src={s.icon} alt={`${s.title} at Industrial Automation Repair Inc.`} width={180} height={180} className="relative h-17.5 w-auto object-contain drop-shadow-[0_12px_16px_rgba(0,0,0,0.6)] transition duration-500 group-hover:scale-110 sm:h-22" />
                   </span>
-                  <ArrowUpRight size={18} style={{ color: s.color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                  <ArrowUpRight size={18} className="text-[#FF5A6E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
                 <h2 className="relative mt-3 min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[19px]">{s.title}</h2>
                 <p className="relative mt-1 hidden min-h-[3lh] text-[13px] leading-[1.55] text-white/70 sm:block">{s.short}</p>

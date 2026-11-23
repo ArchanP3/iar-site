@@ -148,10 +148,10 @@ export default function ServiceAreasPage() {
         <ul className={`grid grid-cols-2 gap-2.5 sm:gap-3 ${ways.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {ways.map(({ icon: Icon, t, d, cta, href, color }) => (
             <li key={t}>
-              <Link href={href} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-4 text-white shadow-[0_26px_50px_-24px_rgba(28,28,32,0.85)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${color}48 100%)` }}>
-                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${color}80, transparent)` }} />
+              <Link href={href} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-4 text-white shadow-[0_26px_50px_-24px_rgba(28,28,32,0.85)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E80, transparent)` }} />
                 <span className="relative flex items-start justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/20 sm:h-12 sm:w-12" style={{ background: `linear-gradient(145deg, ${color}, #131316)` }}><Icon size={20} aria-hidden="true" /></span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/20 sm:h-12 sm:w-12" style={{ background: `linear-gradient(145deg, #C8102E, #131316)` }}><Icon size={20} aria-hidden="true" /></span>
                   <ArrowUpRight size={18} style={{ color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
                 <span className="relative mt-3.5 text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[18px]">{t}</span>
