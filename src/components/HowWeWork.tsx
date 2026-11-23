@@ -106,7 +106,7 @@ const stepColors = [
   "from-[#F88495] to-[#F31D3D]", // blue
   "from-[#D4A5FF] to-[#9B5CF6]", // purple
   "from-[#FF8FA0] to-[#F43F5E]", // pink-red
-  "from-[#FBBCC5] to-[#EF7184]", // indigo
+  "from-[#D9D9DE] to-[#EF7184]", // indigo
   "from-[#FFD27A] to-[#FF8A3D]", // orange
   "from-[#7FF0C0] to-[#22C55E]", // green
 ];
@@ -257,7 +257,7 @@ export default function HowWeWork() {
             </Link>
             <Link
               href="/request-pickup"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#E6CBCF] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29]"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#D6D6DB] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29]"
             >
               <Truck size={17} />
               Request a Pickup

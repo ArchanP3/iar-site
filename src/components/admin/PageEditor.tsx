@@ -293,7 +293,7 @@ function Hint({ children, bad }: { children: React.ReactNode; bad?: boolean }) {
 }
 function Toggle({ on, set, label }: { on: boolean; set: (v: boolean) => void; label: string }) {
   return (
-    <button type="button" onClick={() => set(!on)} className="flex h-10 items-center justify-between rounded-[10px] border border-[#EEDADD] bg-white px-3 text-[13px]">
+    <button type="button" onClick={() => set(!on)} className="flex h-10 items-center justify-between rounded-[10px] border border-[#E2E2E6] bg-white px-3 text-[13px]">
       {label}
       <span className={cx("relative h-5.25 w-9 rounded-full transition", on ? "bg-[#C8102E]" : "bg-[#D9D9DD]")}><span className={cx("absolute top-0.75 h-3.75 w-3.75 rounded-full bg-white shadow transition-all", on ? "left-4.5" : "left-0.75")} /></span>
     </button>

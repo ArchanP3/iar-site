@@ -431,7 +431,7 @@ export default function Hero() {
             backgroundColor="#060607"
             horizonColor="#DA0B2A"
             waveColor="#ED0C2E"
-            crestColor="#FBACB8"
+            crestColor="#D1D1D6"
             speed={0.15}
             amplitude={2.6}
             waveScale={0.6}

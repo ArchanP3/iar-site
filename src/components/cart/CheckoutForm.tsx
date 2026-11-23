@@ -55,7 +55,7 @@ export default function CheckoutForm() {
           ))}
           <li className="flex justify-between py-2.5 font-bold"><span>Subtotal</span><span>{usd(placed.subtotal)}</span></li>
         </ul>
-        <Link href="/shop" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
+        <Link href="/shop" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
           Continue shopping
         </Link>
       </div>
@@ -93,7 +93,7 @@ export default function CheckoutForm() {
           <AddressBlock prefix="co-ship" name="Ship" section="shipping" country={shipCountry} onCountry={setShipCountry} />
           {!abroad && <div className="mt-5"><CarrierPicker prefix="co" value={carrier} onChange={setCarrier} /></div>}
           {abroad && (
-            <div className="mt-4 overflow-hidden rounded-2xl border border-[#FCC2CB] bg-[#FFF6F7]">
+            <div className="mt-4 overflow-hidden rounded-2xl border border-[#DDDDE1] bg-[#FFF6F7]">
               <div className="flex items-start gap-3.5 p-4 sm:p-5">
                 <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><Globe2 size={20} aria-hidden="true" /></span>
                 <div>
@@ -106,7 +106,7 @@ export default function CheckoutForm() {
                   </ul>
                 </div>
               </div>
-              <div className="flex flex-col gap-2 border-t border-[#FDD8DE] bg-white/70 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
+              <div className="flex flex-col gap-2 border-t border-[#E9E9EC] bg-white/70 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
                 <span className="text-[12.5px] text-[#62626F]">{count} item{count === 1 ? "" : "s"} · {usd(subtotal)} USD before shipping</span>
                 <Link href={quoteHref} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
                   Request an International Quote <ArrowRight size={15} aria-hidden="true" />
@@ -121,7 +121,7 @@ export default function CheckoutForm() {
         {/* Only for shipments to the USA: who clears US customs */}
         {toUS && (
           <Step n={3} title="US customs" hint="Parts ship from Canada, so US customs needs your company's tax number.">
-            <div className="overflow-hidden rounded-2xl border border-[#F0DADD]">
+            <div className="overflow-hidden rounded-2xl border border-[#E3E3E7]">
               <div className="grid gap-4 p-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:p-5">
                 <div>
                   <label className={label} htmlFor="co-ein">Business EIN (IRS number) *</label>
@@ -153,7 +153,7 @@ export default function CheckoutForm() {
         )}
 
         <Step n={3 + (toUS ? 1 : 0) + (hasExchange ? 1 : 0)} title="Billing and order details">
-          <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 py-3 text-[14px] font-semibold text-[#131316]">
+          <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 py-3 text-[14px] font-semibold text-[#131316]">
             <input type="checkbox" checked={sameBilling} onChange={(e) => { setSameBilling(e.target.checked); setBillCountry(shipCountry); }} className="h-4 w-4 accent-[#C8102E]" />
             Billing address is the same as shipping
           </label>

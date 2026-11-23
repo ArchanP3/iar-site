@@ -103,7 +103,7 @@ export default function PartChecker() {
                   </ul>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <Link href={`/parts/${p.slug}`} className="inline-flex h-10 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-4 text-[13.5px] font-semibold text-white"><ShoppingCart size={15} aria-hidden="true" /> View options</Link>
-                    <Link href={`/request-repair?part=${encodeURIComponent(p.partNumber)}&brand=${encodeURIComponent(p.manufacturer)}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#F0DADD] px-4 text-[13.5px] font-semibold hover:border-[#C8102E]"><Wrench size={15} aria-hidden="true" /> Repair mine</Link>
+                    <Link href={`/request-repair?part=${encodeURIComponent(p.partNumber)}&brand=${encodeURIComponent(p.manufacturer)}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#E3E3E7] px-4 text-[13.5px] font-semibold hover:border-[#C8102E]"><Wrench size={15} aria-hidden="true" /> Repair mine</Link>
                   </div>
                 </li>
               ))}
@@ -117,8 +117,8 @@ export default function PartChecker() {
             <p className="mt-1.5 text-[14px] leading-relaxed text-[#62626F]">We repair every major brand and source parts from our stock and suppliers. Send us the part number and we&apos;ll reply with your options.</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link href={`/request-quote?part=${part}`} className="inline-flex h-11 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white"><FileText size={16} aria-hidden="true" /> Get a quote for {q.trim().slice(0, 24)}</Link>
-              <Link href={`/request-repair?part=${part}`} className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold hover:border-[#C8102E]"><Wrench size={16} aria-hidden="true" /> Request a Repair</Link>
-              <Link href={`/request-repair?part=${part}&service=exchange`} className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold hover:border-[#C8102E]"><RefreshCw size={16} aria-hidden="true" /> Ask About Exchange</Link>
+              <Link href={`/request-repair?part=${part}`} className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold hover:border-[#C8102E]"><Wrench size={16} aria-hidden="true" /> Request a Repair</Link>
+              <Link href={`/request-repair?part=${part}&service=exchange`} className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold hover:border-[#C8102E]"><RefreshCw size={16} aria-hidden="true" /> Ask About Exchange</Link>
             </div>
           </div>
         )}

@@ -67,7 +67,7 @@ export default function InternationalQuoteForm() {
             <div className="flex flex-wrap gap-2">
               {couriers.map((c) => (
                 <button key={c} type="button" aria-pressed={courier === c} onClick={() => setCourier(c)}
-                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${courier === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+                  className={`rounded-xl border px-3.5 py-2.5 text-[13px] font-semibold transition ${courier === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
                   {c}
                 </button>
               ))}

@@ -132,7 +132,7 @@ export default function ServicePage({ s }: { s: Service }) {
               <h2 id="answer" className="mt-1.5 text-[22px] font-extrabold sm:text-[26px]">{s.answerQ}</h2>
               <p className="mt-2 max-w-205 text-[15px] leading-[1.7] text-[#62626F] sm:text-[16px]">{s.answer}</p>
             </div>
-            <Link href={isCable ? "/request-cable" : isEx ? "/request-repair?service=exchange" : kind === "service" ? "/request-repair?service=question" : "/request-repair"} className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#E6CBCF] px-5 text-[14.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
+            <Link href={isCable ? "/request-cable" : isEx ? "/request-repair?service=exchange" : kind === "service" ? "/request-repair?service=question" : "/request-repair"} className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#D6D6DB] px-5 text-[14.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
               {isCable ? "Send cable details" : isEx ? "Check exchange stock" : kind === "service" ? "Ask a technician" : "Get a free evaluation"} <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>

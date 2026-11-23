@@ -54,7 +54,7 @@ export default async function NextSteps({
         </p>
       </div>
       {/* walk-in drop-off */}
-      <div className="flex items-center gap-3 rounded-2xl border border-[#F8D1D7] bg-[#FFF6F7] p-4">
+      <div className="flex items-center gap-3 rounded-2xl border border-[#E3E3E6] bg-[#FFF6F7] p-4">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><MapPin size={18} aria-hidden="true" /></span>
         <p className="text-[13px] leading-snug text-[#4B4B55]">
           <b className="block text-[14px] text-[#131316]">Prefer to drop it off?</b>

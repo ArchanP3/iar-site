@@ -166,7 +166,7 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
                   return (
                     <li key={pg.href} id={`${listId}-${i}`} role="option" aria-selected={i === active}>
                       <a href={pg.href} onMouseEnter={() => setActive(i)} className={`flex items-center gap-3 px-3 py-2.5 transition ${i === active ? "bg-[#F7F7F7]" : ""}`}>
-                        <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] ring-1 ring-[#F5D8DC]"><I size={18} aria-hidden="true" /></span>
+                        <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] ring-1 ring-[#E5E5E8]"><I size={18} aria-hidden="true" /></span>
                         <span className="min-w-0 flex-1">
                           <span className="block truncate text-[14px] font-bold">{pg.label}</span>
                           <span className="block truncate text-[12px] text-[#62626F]">{pg.note}</span>

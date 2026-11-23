@@ -72,7 +72,7 @@ export default async function BlogTeaser() {
             {rest.map((p) => (
               <article key={p.slug} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-48px_rgba(19,19,22,0.6)] transition hover:-translate-y-0.5 hover:border-[#C8102E]/35 hover:shadow-[0_34px_70px_-44px_rgba(165,13,37,0.5)]">
                 <Link href={postUrl(p.slug)} className="group grid h-full sm:grid-cols-[200px_minmax(0,1fr)]">
-                  <div className="relative flex min-h-37.5 items-center justify-center overflow-hidden bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_60%,#F7E3E6_100%)] p-4">
+                  <div className="relative flex min-h-37.5 items-center justify-center overflow-hidden bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_60%,#ECECEE_100%)] p-4">
                     <span aria-hidden="true" className="absolute inset-x-6 bottom-3 h-6 rounded-full bg-[#131316]/10 blur-md" />
                     <Image src={p.image} alt="" aria-hidden="true" width={1700} height={925} sizes="200px" className="relative h-auto w-full max-w-52.5 object-contain transition duration-500 group-hover:scale-105" />
                   </div>

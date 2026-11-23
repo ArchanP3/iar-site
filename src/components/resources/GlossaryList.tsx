@@ -15,7 +15,7 @@ export default function GlossaryList({ terms }: { terms: Term[] }) {
   return (
     <div>
       <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:flex-row sm:items-center sm:p-4">
-        <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
+        <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Search the glossary</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${terms.length} terms, e.g. encoder`} className="h-12 w-full bg-transparent text-[15px] outline-none placeholder:text-[#696976]" />
@@ -47,7 +47,7 @@ export default function GlossaryList({ terms }: { terms: Term[] }) {
           </dl>
         </section>
       ))}
-      {!list.length && <p className="mt-8 rounded-2xl border border-dashed border-[#E6CBCF] bg-white p-6 text-[14.5px] text-[#62626F]">No term matches that yet. <Link href="/contact" className="font-semibold text-[#A50D25] hover:underline">Ask us</Link> and we&apos;ll explain it.</p>}
+      {!list.length && <p className="mt-8 rounded-2xl border border-dashed border-[#D6D6DB] bg-white p-6 text-[14.5px] text-[#62626F]">No term matches that yet. <Link href="/contact" className="font-semibold text-[#A50D25] hover:underline">Ask us</Link> and we&apos;ll explain it.</p>}
     </div>
   );
 }

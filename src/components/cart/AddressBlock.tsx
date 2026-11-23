@@ -43,7 +43,7 @@ export default function AddressBlock({ prefix, name, section, country, onCountry
         <div className={`grid gap-2 ${options.length === 3 ? "max-w-140 grid-cols-3" : "max-w-105 grid-cols-2"}`} role="radiogroup" aria-label={`${name === "Ship" ? "Shipping" : "Billing"} country`}>
           {options.map((c) => (
             <button key={c} type="button" role="radio" aria-checked={country === c} onClick={() => onCountry(c)}
-              className={`h-11 rounded-xl border text-[14px] font-bold transition ${country === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+              className={`h-11 rounded-xl border text-[14px] font-bold transition ${country === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c === "Canada" ? "Canada" : c === "United States" ? "USA" : "Other country"}
             </button>
           ))}

@@ -463,7 +463,7 @@ export default function Header() {
 
             <Link
               href="/request-quote"
-              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-[#E6CBCF] px-5 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29] lg:inline-flex xl:hidden min-[1720px]:inline-flex"
+              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl border border-[#D6D6DB] px-5 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E] hover:text-[#B30E29] lg:inline-flex xl:hidden min-[1720px]:inline-flex"
             >
               <FileText size={17} />
               Request a Quote
@@ -641,7 +641,7 @@ export default function Header() {
             className="mx-auto flex max-w-225 items-center gap-3 px-5 py-6"
             onSubmit={() => setSearchOpen(false)}
           >
-            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] px-5 focus-within:border-[#C8102E]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(200,16,46,0.1)]">
+            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#E3E3E7] bg-[#FAFAFB] px-5 focus-within:border-[#C8102E]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(200,16,46,0.1)]">
               <Search size={20} className="shrink-0 text-[#B30E29]" />
               <PartSuggest
                 ref={searchRef}
@@ -798,7 +798,7 @@ export default function Header() {
             <Link
               href="/request-quote"
               onClick={() => setMenuOpen(false)}
-              className="flex h-13 items-center justify-center gap-2 rounded-xl border border-[#E6CBCF] font-semibold text-[#131316]"
+              className="flex h-13 items-center justify-center gap-2 rounded-xl border border-[#D6D6DB] font-semibold text-[#131316]"
             >
               <FileText size={18} />
               Request a Quote

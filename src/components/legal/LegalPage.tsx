@@ -102,7 +102,7 @@ export default function LegalPage({ crumb, title, accent, intro, sections, path,
               <p className="text-[13.5px] text-[#62626F]">Questions about this page?</p>
               <div className="flex flex-wrap gap-2">
                 {contact.email && (
-                  <a href={`mailto:${contact.email}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#F0DADD] bg-white px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#B30E29]"><Mail size={15} aria-hidden="true" />{contact.email}</a>
+                  <a href={`mailto:${contact.email}`} className="inline-flex h-10 items-center gap-2 rounded-xl border border-[#E3E3E7] bg-white px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#B30E29]"><Mail size={15} aria-hidden="true" />{contact.email}</a>
                 )}
                 <Link href="/contact" className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#131316] px-4 text-[13.5px] font-semibold text-white hover:bg-[#C8102E]"><MessageSquare size={15} aria-hidden="true" /> Contact us</Link>
               </div>

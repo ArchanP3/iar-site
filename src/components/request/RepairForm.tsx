@@ -68,7 +68,7 @@ export default function RepairForm() {
             <textarea id="rr-fault" name="Fault" rows={3} className={`${input} h-auto py-2.5`} placeholder="Fault code on the display, symptoms, when it fails…" />
           </div>
           {uploadsOn && (
-            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#E6CBCF] bg-[#FBFBFC] p-3.5 transition hover:border-[#C8102E] sm:col-span-2">
+            <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[#D6D6DB] bg-[#FBFBFC] p-3.5 transition hover:border-[#C8102E] sm:col-span-2">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Camera size={17} aria-hidden="true" /></span>
               <span className="text-[13px]">
                 <span className="block font-semibold text-[#131316]">{files ? `${files} photo${files > 1 ? "s" : ""} added` : "Add photos"} <span className="font-normal text-[#62626F]">(optional)</span></span>

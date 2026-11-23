@@ -133,7 +133,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
                 </div>
                 <div className="flex flex-none gap-2">
                   <Link href="/contact" className="inline-flex h-10 items-center gap-1.5 rounded-xl bg-[#131316] px-4 text-[13.5px] font-semibold text-white hover:bg-[#A50D25]">Contact Us</Link>
-                  <Link href={`/request-quote?${quote}`} className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#F0DADD] bg-white px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]">Get a Quote</Link>
+                  <Link href={`/request-quote?${quote}`} className="inline-flex h-10 items-center gap-1.5 rounded-xl border border-[#E3E3E7] bg-white px-4 text-[13.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]">Get a Quote</Link>
                 </div>
               </div>
             }
@@ -192,7 +192,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
                 </ol>
                 <div className="mt-5 flex flex-col gap-2 sm:flex-row">
                   <Link href={`/request-repair?${quote}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)]"><Wrench size={17} aria-hidden="true" /> Request a Repair Quote</Link>
-                  <Link href={`/request-pickup?part=${encodeURIComponent(p.partNumber)}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] px-6 text-[14.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Truck size={17} aria-hidden="true" /> Request a Pickup</Link>
+                  <Link href={`/request-pickup?part=${encodeURIComponent(p.partNumber)}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#E3E3E7] px-6 text-[14.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Truck size={17} aria-hidden="true" /> Request a Pickup</Link>
                 </div>
               </div>
             )}

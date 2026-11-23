@@ -231,7 +231,7 @@ export default function RepairServices() {
               </Link>
               <Link
                 href="/request-repair?service=exchange"
-                className="group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] border border-[#FDD1D8] bg-white px-5 text-[15px] font-bold text-[#131316] transition duration-300 hover:-translate-y-0.5 hover:border-[#C8102E] hover:shadow-[0_12px_24px_-16px_rgba(200,16,46,0.6)] lg:flex-none"
+                className="group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] border border-[#E6E6E8] bg-white px-5 text-[15px] font-bold text-[#131316] transition duration-300 hover:-translate-y-0.5 hover:border-[#C8102E] hover:shadow-[0_12px_24px_-16px_rgba(200,16,46,0.6)] lg:flex-none"
               >
                 <span aria-hidden="true" className="relative flex h-2.25 w-2.25 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#12B76A] opacity-60 motion-reduce:animate-none" />

@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import HeroShowcase from "@/components/iar/HeroShowcase";
+import TrustStrip from "@/components/iar/TrustStrip";
+import BrandLogos from "@/components/iar/BrandLogos";
 import RepairServices from "@/components/RepairServices";
 import PartsSection from "@/components/PartsSection";
 import HowWeWork from "@/components/HowWeWork";
@@ -13,7 +15,6 @@ import Footer from "@/components/Footer";
 import { PageExtras, seo } from "@/lib/cms/seo";
 import { SITE_URL } from "@/lib/site";
 import { contact, geo, openingHours, postalAddress } from "@/lib/contact";
-import { preload } from "react-dom";
 
 /* Tells Google the site's name (shown above results) and the company behind it, with its logo. */
 const siteLd = {
@@ -34,15 +35,15 @@ const siteLd = {
 export const generateMetadata = seo("/", {});
 
 export default function Home() {
-  // The hero background is the largest thing on the first screen: start loading it right away
-  preload("/hero-waves-phone.webp", { as: "image", media: "(max-width: 640px)", fetchPriority: "high" });
-  preload("/hero-waves-desk.webp", { as: "image", media: "(min-width: 641px)", fetchPriority: "high" });
   return (
     <main className="min-h-screen bg-[#F7F7F8]">
       <PageExtras path="/" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd).replace(/</g, "\\u003c") }} />
       <Header />
-      <Hero />
+      {/* IAR hero (rotating repair categories), trust strip and manufacturer logo strip */}
+      <HeroShowcase />
+      <TrustStrip />
+      <BrandLogos />
       {/* Sections below the first screen are only laid out when scrolled near (faster first load, same look) */}
       <div className="cv-auto"><RepairServices /></div>
       <div className="cv-auto"><PartsSection /></div>

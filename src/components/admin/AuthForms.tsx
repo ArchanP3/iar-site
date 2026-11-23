@@ -5,7 +5,7 @@ import { ChevronRight, Eye, EyeOff, KeyRound, Lock, Mail, ShieldCheck, User } fr
 import { createOwner, signIn, verifyTwoStep, type FormState } from "@/app/admin/actions";
 
 const box = "w-full max-w-105 rounded-[22px] border border-[#EAEAEC] bg-white p-7 shadow-[0_40px_80px_-40px_rgba(19,19,22,0.35)] sm:p-8.5";
-const field = "flex h-11 items-center gap-2 rounded-[10px] border border-[#EEDADD] bg-white px-3 focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/12";
+const field = "flex h-11 items-center gap-2 rounded-[10px] border border-[#E2E2E6] bg-white px-3 focus-within:border-[#C8102E] focus-within:ring-4 focus-within:ring-[#C8102E]/12";
 const inp = "h-full min-w-0 flex-1 bg-transparent text-[14px] outline-none placeholder:text-[#91919E]";
 const submit = "mt-5 flex h-11 w-full items-center justify-center gap-1.5 rounded-[10px] bg-linear-to-br from-[#C8102E] to-[#DA0B2A] text-[14px] font-semibold text-white shadow-[0_12px_26px_-14px_rgba(200,16,46,0.9)] disabled:opacity-60";
 

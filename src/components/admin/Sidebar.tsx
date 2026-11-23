@@ -46,7 +46,7 @@ export default function Sidebar({ groups, user }: { groups: NavGroup[]; user: { 
                   key={i.href}
                   href={i.href}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center gap-2.75 rounded-[10px] px-2.5 py-[8.5px] text-[13px] font-semibold ${on ? "bg-linear-to-r from-[#C8102E]/95 to-[#DA0B2A]/75 text-white shadow-[0_10px_24px_-12px_rgba(200,16,46,0.9)]" : "text-[#E6CBCF] hover:bg-white/6 hover:text-white"}`}
+                  className={`flex items-center gap-2.75 rounded-[10px] px-2.5 py-[8.5px] text-[13px] font-semibold ${on ? "bg-linear-to-r from-[#C8102E]/95 to-[#DA0B2A]/75 text-white shadow-[0_10px_24px_-12px_rgba(200,16,46,0.9)]" : "text-[#D6D6DB] hover:bg-white/6 hover:text-white"}`}
                 >
                   <Icon size={17} className={on ? "text-white" : "text-[#9494A0]"} aria-hidden="true" />
                   <span>{i.label}</span>

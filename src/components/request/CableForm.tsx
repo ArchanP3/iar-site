@@ -6,7 +6,7 @@ import { DetailsFields, FormMeta, Step, SubmitBar, Thanks, brands, fill, input, 
 
 const types = ["Feedback / encoder", "Motor power", "Brake", "Hybrid (power + feedback)", "Communication", "Other"];
 const chip = (on: boolean) =>
-  `rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${on ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`;
+  `rounded-xl border px-3 py-2.5 text-[13px] font-semibold transition ${on ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`;
 
 /* Custom / spare cable order. Links can pre-fill: ?drive=…  ?motor=…  ?type=… */
 export default function CableForm() {
@@ -98,7 +98,7 @@ export default function CableForm() {
           <label className={label} htmlFor="cb-notes">Notes <span className="font-normal text-[#62626F]">(optional)</span></label>
           <textarea id="cb-notes" name="Notes" rows={2} className={`${input} h-auto py-2.5`} placeholder="Spare for a critical axis, connector angle, cable entry direction…" />
         </div>
-        <div className="mt-4 flex items-start gap-3 rounded-2xl border border-dashed border-[#E6CBCF] bg-[#FBFBFC] p-3.5 text-[13px]">
+        <div className="mt-4 flex items-start gap-3 rounded-2xl border border-dashed border-[#D6D6DB] bg-[#FBFBFC] p-3.5 text-[13px]">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Camera size={17} aria-hidden="true" /></span>
           <span className="text-[#62626F]">
             <b className="block text-[#131316]">Connector photos and pinout</b>

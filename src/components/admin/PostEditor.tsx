@@ -137,7 +137,7 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
           )}
           <p className="text-[12px] text-[#91919E]">Markdown: <b>## Heading</b>, <b>**bold**</b>, <b>- list</b>, <b>[text](/link)</b>. The toolbar adds these for you.</p>
 
-          <div className="mt-2 rounded-2xl border border-dashed border-[#FDD1D8] bg-[#FCFCFC] p-4">
+          <div className="mt-2 rounded-2xl border border-dashed border-[#E6E6E8] bg-[#FCFCFC] p-4">
             <div className="flex items-center gap-2"><CircleHelp size={17} className="text-[#C8102E]" /><b>FAQ</b><span className="text-[12.5px] text-[#696976]">Shown at the end of the post and added to FAQ schema automatically.</span></div>
             {faq.map(([qq, a], i) => (
               <div key={i} className="mt-3 grid gap-2 rounded-xl border border-[#EAEAEC] bg-white p-3">

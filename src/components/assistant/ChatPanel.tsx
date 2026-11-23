@@ -125,7 +125,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
       role="dialog"
       aria-modal="false"
       aria-label="IAR assistant"
-      className={`${brandFont.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F7F7F8] text-[#131316] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#F0DADD] sm:shadow-[0_40px_90px_-30px_rgba(6,6,7,0.55)] print:hidden`}
+      className={`${brandFont.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F7F7F8] text-[#131316] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#E3E3E7] sm:shadow-[0_40px_90px_-30px_rgba(6,6,7,0.55)] print:hidden`}
     >
       {/* header */}
       <div className="relative flex items-center gap-3 overflow-hidden bg-[#060607] px-4 py-3.5 text-white">
@@ -143,11 +143,11 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
       {/* contact strip */}
       <div className="flex gap-2 border-b border-[#EAEAEC] bg-white px-3 py-2">
           {contact.phone && (
-            <a href={phoneHref(contact.phone)} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Phone size={13} aria-hidden="true" /> Call</a>
+            <a href={phoneHref(contact.phone)} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#E3E3E7] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Phone size={13} aria-hidden="true" /> Call</a>
           )}
-          <button type="button" onClick={() => window.dispatchEvent(new CustomEvent(WA_EVENT, { detail: { topic: "A question from the website chat" } }))} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#25D366]"><WhatsAppIcon size={13} className="text-[#1DA851]" /> WhatsApp</button>
+          <button type="button" onClick={() => window.dispatchEvent(new CustomEvent(WA_EVENT, { detail: { topic: "A question from the website chat" } }))} className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-[#E3E3E7] px-2.5 text-[12.5px] font-semibold hover:border-[#25D366]"><WhatsAppIcon size={13} className="text-[#1DA851]" /> WhatsApp</button>
           {contact.email && (
-            <a href={`mailto:${contact.email}`} className="inline-flex h-8 min-w-0 items-center gap-1.5 rounded-lg border border-[#F0DADD] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Mail size={13} aria-hidden="true" /> <span className="truncate">Email</span></a>
+            <a href={`mailto:${contact.email}`} className="inline-flex h-8 min-w-0 items-center gap-1.5 rounded-lg border border-[#E3E3E7] px-2.5 text-[12.5px] font-semibold hover:border-[#C8102E]"><Mail size={13} aria-hidden="true" /> <span className="truncate">Email</span></a>
           )}
         </div>
 
@@ -194,7 +194,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
                   {m.chips.map((a) => {
                     const I = actionIcon[a];
                     return (
-                      <button key={a} type="button" onClick={() => choose(a)} className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[#EACBCF] bg-white px-3 text-[12.5px] font-semibold text-[#131316] hover:border-[#C8102E] hover:text-[#B30E29]">
+                      <button key={a} type="button" onClick={() => choose(a)} className="inline-flex h-8 items-center gap-1.5 rounded-full border border-[#D8D8DD] bg-white px-3 text-[12.5px] font-semibold text-[#131316] hover:border-[#C8102E] hover:text-[#B30E29]">
                         <I size={13} aria-hidden="true" /> {actionLabel[a]}
                       </button>
                     );
@@ -222,7 +222,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
           maxLength={300}
           autoComplete="off"
           placeholder="Part number, fault code, question…"
-          className="h-11 min-w-0 flex-1 rounded-xl border border-[#F0DADD] bg-[#FAFAFA] px-3.5 text-[14px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]"
+          className="h-11 min-w-0 flex-1 rounded-xl border border-[#E3E3E7] bg-[#FAFAFA] px-3.5 text-[14px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]"
         />
         <button type="submit" disabled={busy || !text.trim()} aria-label="Send" className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#C8102E] text-white hover:bg-[#B30E29] disabled:opacity-50">
           <Send size={17} aria-hidden="true" />
@@ -236,7 +236,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
 function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean; onDone: () => void; page: string }) {
   const contact = useContact();
   const [state, setState] = useState<"idle" | "sending" | "error" | "closed">("idle");
-  const field = "h-10 w-full rounded-lg border border-[#F0DADD] bg-white px-3 text-[13.5px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]";
+  const field = "h-10 w-full rounded-lg border border-[#E3E3E7] bg-white px-3 text-[13.5px] outline-none placeholder:text-[#696976] focus:border-[#C8102E]";
   const lab = "mb-1 block text-[12px] font-semibold text-[#4B4B55]";
   const fid = (n: string) => `aqc-${kind}-${n}`;
 
@@ -258,7 +258,7 @@ function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean;
   }
 
   return (
-    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#F0DADD] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(19,19,22,0.6)]">
+    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#E3E3E7] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(19,19,22,0.6)]">
       <p className="text-[14px] font-bold">{title[kind]}</p>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid grid-cols-2 gap-2">

@@ -138,7 +138,7 @@ export default function DowntimeCalculator() {
     }
   }
 
-  const num = "h-11 w-full rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 text-[15px] font-semibold text-[#131316] outline-none focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
+  const num = "h-11 w-full rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 text-[15px] font-semibold text-[#131316] outline-none focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
 
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
@@ -147,7 +147,7 @@ export default function DowntimeCalculator() {
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">Your numbers</p>
         <div className="mt-5 space-y-6">
           <Field id="dc-cost" label="What does one hour of downtime cost you?" hint="Lost output, labour, penalties">
-            <div className="flex h-12 items-center rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-3.5 focus-within:border-[#C8102E] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#C8102E]/10">
+            <div className="flex h-12 items-center rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 focus-within:border-[#C8102E] focus-within:bg-white focus-within:ring-4 focus-within:ring-[#C8102E]/10">
               <span className="text-[16px] font-bold text-[#696976]">$</span>
               <input id="dc-cost" type="number" inputMode="numeric" min={0} step={50} value={cost} onChange={(e) => setCost(Math.max(0, Number(e.target.value) || 0))}
                 className="w-full bg-transparent pl-1.5 text-[18px] font-extrabold tabular-nums text-[#131316] outline-none" />

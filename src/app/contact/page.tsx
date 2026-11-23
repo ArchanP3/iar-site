@@ -258,7 +258,7 @@ export default async function ContactPage() {
                   <li key={b} className="flex gap-2 text-[13px] text-[#131316]"><span className="mt-1.75 h-1.5 w-1.5 flex-none rounded-full bg-[#FF3B55]" aria-hidden="true" />{b}</li>
                 ))}
               </ul>
-              <Link href={href} className="group mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] text-[14px] font-semibold transition hover:border-[#C8102E] hover:bg-[#C8102E] hover:text-white">
+              <Link href={href} className="group mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-[#E3E3E7] text-[14px] font-semibold transition hover:border-[#C8102E] hover:bg-[#C8102E] hover:text-white">
                 {cta} <ArrowRight size={15} className="transition group-hover:translate-x-0.5" aria-hidden="true" />
               </Link>
             </li>
@@ -360,7 +360,7 @@ export default async function ContactPage() {
           <ul className="mt-5 flex flex-wrap gap-2">
             {quick.map(({ t, href, icon: Icon }) => (
               <li key={href}>
-                <Link href={href} className="inline-flex h-11 items-center gap-2 rounded-full border border-[#F0DADD] bg-white px-4 text-[13.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
+                <Link href={href} className="inline-flex h-11 items-center gap-2 rounded-full border border-[#E3E3E7] bg-white px-4 text-[13.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
                   <Icon size={15} className="text-[#B30E29]" aria-hidden="true" /> {t}
                 </Link>
               </li>
@@ -370,7 +370,7 @@ export default async function ContactPage() {
             <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:flex-1 lg:flex-none from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
               <Wrench size={16} aria-hidden="true" /> Request a Repair
             </Link>
-            <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border sm:flex-1 lg:flex-none border-[#F0DADD] bg-white text-[15px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
+            <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border sm:flex-1 lg:flex-none border-[#E3E3E7] bg-white text-[15px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
               <FileText size={16} aria-hidden="true" /> Request a Quote
             </Link>
           </div>

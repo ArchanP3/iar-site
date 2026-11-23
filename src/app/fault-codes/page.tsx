@@ -91,7 +91,7 @@ export default function FaultCodesPage() {
               </Link>
             </li>
           ))}
-          <li className="flex items-center gap-4 rounded-2xl border border-dashed border-[#E6CBCF] p-4">
+          <li className="flex items-center gap-4 rounded-2xl border border-dashed border-[#D6D6DB] p-4">
             <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[#131316] text-white">
               <Phone size={20} aria-hidden="true" />
             </span>

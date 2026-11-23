@@ -62,7 +62,7 @@ export default function QuoteForm() {
         <div className="flex flex-wrap gap-2">
           {conditions.map((c) => (
             <button key={c} type="button" aria-pressed={condition === c} onClick={() => setCondition(c)}
-              className={`rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${condition === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#F0DADD] text-[#131316] hover:border-[#C8102E]/40"}`}>
+              className={`rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${condition === c ? "border-[#C8102E] bg-[#C8102E]/6 text-[#A50D25] ring-4 ring-[#C8102E]/10" : "border-[#E3E3E7] text-[#131316] hover:border-[#C8102E]/40"}`}>
               {c === "Any" ? "Any condition" : c}
             </button>
           ))}

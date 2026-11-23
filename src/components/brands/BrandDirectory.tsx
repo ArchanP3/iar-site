@@ -24,7 +24,7 @@ export default function BrandDirectory() {
           <h2 id="more" className="text-[22px] font-extrabold sm:text-[26px]">More brands we repair</h2>
           <p className="mt-1 text-[14px] text-[#62626F]">{brands.length} brands listed. Name any brand and we&apos;ll repair it.</p>
         </div>
-        <label className="flex w-full items-center gap-2 rounded-2xl border border-[#F0DADD] bg-white px-4 lg:w-85">
+        <label className="flex w-full items-center gap-2 rounded-2xl border border-[#E3E3E7] bg-white px-4 lg:w-85">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Find a brand</span>
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find a brand or series…" className="h-11 w-full bg-transparent text-[14px] outline-none placeholder:text-[#696976]" />
@@ -33,7 +33,7 @@ export default function BrandDirectory() {
       <div className="-mx-5 mt-4 flex gap-2 overflow-x-auto px-5 scrollbar-none sm:mx-0 sm:flex-wrap sm:px-0">
         {[{ key: "all", label: "All" }, ...groups].map((x) => (
           <button key={x.key} type="button" aria-pressed={g === x.key} onClick={() => setG(x.key)}
-            className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${g === x.key ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
+            className={`shrink-0 rounded-xl border px-3.5 py-2 text-[13px] font-semibold transition ${g === x.key ? "border-transparent bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border-[#E3E3E7] bg-white text-[#131316] hover:border-[#C8102E]/40"}`}>
             {x.label}
           </button>
         ))}
@@ -54,7 +54,7 @@ export default function BrandDirectory() {
           </li>
         ))}
       </ul>
-      {list.length === 0 && <p className="mt-4 rounded-2xl border border-dashed border-[#E6CBCF] p-5 text-[14px] text-[#62626F]">Not listed? We still repair it. Send us the part number below.</p>}
+      {list.length === 0 && <p className="mt-4 rounded-2xl border border-dashed border-[#D6D6DB] p-5 text-[14px] text-[#62626F]">Not listed? We still repair it. Send us the part number below.</p>}
     </section>
   );
 }

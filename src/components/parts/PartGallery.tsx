@@ -13,7 +13,7 @@ export default function PartGallery({ images, title }: { images: PartImage[]; ti
   return (
     <div className="flex h-full flex-col">
       {/* Main photo box is 4:3 on every screen: a 1600×1200 photo fills it edge to edge; other shapes sit on white, never cropped. */}
-      <div className={`relative aspect-4/3 overflow-hidden rounded-[24px] border border-[#EAEAEC] shadow-[0_30px_70px_-50px_rgba(19,19,22,0.55)] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#F7E3E6_100%)]"}`}>
+      <div className={`relative aspect-4/3 overflow-hidden rounded-[24px] border border-[#EAEAEC] shadow-[0_30px_70px_-50px_rgba(19,19,22,0.55)] ${img ? "bg-white" : "bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#ECECEE_100%)]"}`}>
         {!img && <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(19,19,22,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(19,19,22,0.035)_1px,transparent_1px)] bg-size-[28px_28px]" />}
         {img ? (
           <Image

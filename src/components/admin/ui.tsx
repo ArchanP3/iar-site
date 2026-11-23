@@ -16,7 +16,7 @@ export const btn = {
 export const b = (kind: "primary" | "dark" | "light" | "danger" = "light", sm = false) => cx(btn.base, btn[kind], sm && btn.sm);
 
 export const input =
-  "w-full rounded-[10px] border border-[#EEDADD] bg-white px-3 py-2.5 text-[13.5px] text-[#131316] outline-none transition placeholder:text-[#91919E] focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/12";
+  "w-full rounded-[10px] border border-[#E2E2E6] bg-white px-3 py-2.5 text-[13.5px] text-[#131316] outline-none transition placeholder:text-[#91919E] focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/12";
 export const mono = "font-mono text-[12.5px]";
 
 export function PageHead({ title, sub, crumb, actions }: { title: ReactNode; sub?: ReactNode; crumb?: ReactNode; actions?: ReactNode }) {
@@ -60,7 +60,7 @@ export function Pill({ tone = "gray", children }: { tone?: keyof typeof pillTone
 }
 
 export function Alert({ tone = "blue", icon, children }: { tone?: "blue" | "warn" | "ok" | "bad"; icon?: ReactNode; children: ReactNode }) {
-  const t = { blue: "border-[#FDD1D8] bg-[#FDF1F3] text-[#78101F]", warn: "border-[#FEDF89] bg-[#FFFAEB] text-[#93370D]", ok: "border-[#ABEFC6] bg-[#ECFDF3] text-[#05603A]", bad: "border-[#FECDCA] bg-[#FEF3F2] text-[#912018]" }[tone];
+  const t = { blue: "border-[#E6E6E8] bg-[#FDF1F3] text-[#78101F]", warn: "border-[#FEDF89] bg-[#FFFAEB] text-[#93370D]", ok: "border-[#ABEFC6] bg-[#ECFDF3] text-[#05603A]", bad: "border-[#FECDCA] bg-[#FEF3F2] text-[#912018]" }[tone];
   return <div className={cx("flex items-start gap-2.5 rounded-xl border px-3.5 py-3 text-[12.8px] leading-relaxed", t)}>{icon}<div className="min-w-0">{children}</div></div>;
 }
 
