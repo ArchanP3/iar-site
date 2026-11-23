@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight, BadgeCheck, Bot, Check, ChevronRight, Circuit
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
-import { brandFaqs, brandMakes, brands, brandUrl, type Brand } from "@/lib/brands";
+import { brandFaqs, brandLogo, brandMakes, brands, brandUrl, type Brand } from "@/lib/brands";
 import { services, serviceUrl } from "@/lib/services";
 import { familyBySeries } from "@/lib/decoder/families";
 
@@ -88,6 +88,12 @@ export default function BrandPage({ b }: { b: Brand }) {
                 <li className="text-white/85">{b.name}</li>
               </ol>
             </nav>
+            {brandLogo(b.slug) && (
+              <span className="mt-5 flex h-14 w-36 items-center justify-center rounded-2xl bg-white px-3 lg:hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={brandLogo(b.slug)} alt={`${b.name} logo`} className="max-h-9 w-full object-contain" />
+              </span>
+            )}
             <h1 className="mt-5 text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">
               {b.name} <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair</span>
             </h1>
@@ -115,9 +121,16 @@ export default function BrandPage({ b }: { b: Brand }) {
               <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255,59,85,0.12)_100%)]" />
               <div className="relative flex h-42.5 items-center justify-center">
                 <span aria-hidden="true" className="absolute h-40 w-40 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${b.color}88, transparent)` }} />
-                <span className="relative flex h-28 w-28 items-center justify-center rounded-[28px] text-[34px] font-extrabold tracking-[-0.02em] text-white shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>
-                  {b.initials}
-                </span>
+                {brandLogo(b.slug) ? (
+                  <span className="relative flex h-32 w-64 items-center justify-center rounded-[24px] bg-white px-6 shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={brandLogo(b.slug)} alt={`${b.name} logo`} className="max-h-20 w-full object-contain" />
+                  </span>
+                ) : (
+                  <span className="relative flex h-28 w-28 items-center justify-center rounded-[28px] text-[34px] font-extrabold tracking-[-0.02em] text-white shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>
+                    {b.initials}
+                  </span>
+                )}
               </div>
               {b.core && <p className="relative mx-auto mt-1 w-fit rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em]">Core specialty</p>}
               <p className="relative mt-4 border-t border-white/10 pt-4 text-center text-[12.5px] leading-relaxed text-white/70">{b.card}</p>
@@ -238,7 +251,14 @@ export default function BrandPage({ b }: { b: Brand }) {
                 {others.map((o) => (
                   <li key={o.slug}>
                     <Link href={brandUrl(o.slug)} className="group flex items-center gap-3 rounded-xl p-2 transition hover:bg-[#F7F7F8]">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-lg text-[12px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, ${o.color}, #131316)` }}>{o.initials}</span>
+                      {brandLogo(o.slug) ? (
+                        <span className="flex h-10 w-16 flex-none items-center justify-center rounded-lg border border-[#EAEAEC] bg-white px-1.5">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={brandLogo(o.slug)} alt="" className="max-h-7 w-full object-contain" />
+                        </span>
+                      ) : (
+                        <span className="flex h-10 w-10 items-center justify-center rounded-lg text-[12px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, ${o.color}, #131316)` }}>{o.initials}</span>
+                      )}
                       <span className="flex-1 text-[14px] font-semibold">{o.name} Repair</span>
                       <ArrowRight size={15} className="text-[#B30E29] transition group-hover:translate-x-0.5" aria-hidden="true" />
                     </Link>

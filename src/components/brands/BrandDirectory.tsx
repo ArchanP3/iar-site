@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { brands, brandUrl, groups } from "@/lib/brands";
+import { brandLogo, brands, brandUrl, groups } from "@/lib/brands";
 
 /* Searchable brand list. All links are in the HTML, so Google sees every brand. */
 export default function BrandDirectory() {
@@ -44,7 +44,14 @@ export default function BrandDirectory() {
             <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
               <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${b.color}77, transparent)` }} />
               <span className="relative flex items-start justify-between">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl text-[12px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-[14px]" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
+                {brandLogo(b.slug) ? (
+                  <span className="flex h-10 w-20 items-center justify-center rounded-xl bg-white px-1.5 ring-1 ring-white/20 sm:h-12 sm:w-24 sm:rounded-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={brandLogo(b.slug)} alt="" className="max-h-[70%] w-full object-contain" />
+                  </span>
+                ) : (
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl text-[12px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-[14px]" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
+                )}
                 <ArrowUpRight size={18} style={{ color: b.color }} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </span>
               <span className="relative mt-3 block min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[18px]">{b.name} Repair</span>

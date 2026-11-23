@@ -4,6 +4,22 @@
 /* ------------------------------------------------------------------ */
 
 export type Group = "drives" | "motors" | "cnc" | "controls" | "robots";
+/* Manufacturer logos in /public/brands, by brand slug. Brands without one show their initials. */
+const LOGOS: Record<string, string> = {
+  siemens: "siemens.svg", "rexroth-indramat": "bosch-rexroth.svg", "allen-bradley": "allen-bradley.svg", fanuc: "fanuc.svg",
+  yaskawa: "yaskawa.svg", mitsubishi: "mitsubishi-electric.svg", abb: "abb.svg", schneider: "schneider.webp", kollmorgen: "kollmorgen.png",
+  beckhoff: "beckhoff.svg", parker: "parker.svg", lenze: "lenze.svg", "sew-eurodrive": "sew-eurodrive.svg", omron: "omron.svg",
+  baldor: "baldor.svg", danfoss: "danfoss.svg", delta: "delta.svg", "fuji-electric": "fuji-electric.svg", hitachi: "hitachi.svg",
+  aeg: "aeg.svg", toshiba: "toshiba.svg", keb: "keb.svg", "control-techniques": "control-techniques.svg", emerson: "emerson.svg",
+  eaton: "eaton.svg", bosch: "bosch.webp", baumuller: "baumuller.svg", magnetek: "magnetek.svg", festo: "festo.svg",
+  "leroy-somer": "leroy-somer.svg", heidenhain: "heidenhain.svg", panasonic: "panasonic.svg", "oriental-motor": "oriental-motor.svg",
+  okuma: "okuma.svg", mazak: "mazak.svg", fagor: "fagor.svg", beijer: "beijer.svg", "phoenix-contact": "phoenix-contact.svg",
+  honeywell: "honeywell.svg", yokogawa: "yokogawa.svg", idec: "idec.svg", kuka: "kuka.svg", kawasaki: "kawasaki.svg",
+  keba: "keba.svg", teco: "teco.svg", renishaw: "renishaw.svg", wago: "wago.svg", hurco: "hurco.svg",
+};
+/** Logo path for a brand, or undefined to show initials. */
+export const brandLogo = (slug: string) => (LOGOS[slug] ? `/brands/${LOGOS[slug]}` : undefined);
+
 export const groups: { key: Group; label: string }[] = [
   { key: "drives", label: "Drives & motion" },
   { key: "motors", label: "Motors & feedback" },
