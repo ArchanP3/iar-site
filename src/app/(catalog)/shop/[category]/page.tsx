@@ -14,6 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/shop/[category]">): Promise<Metadata> {
   const c = getCategory((await params).category);
   if (!c) return { title: "Category not found", robots: { index: false } };
+  if (process.env.PREVIEW_NO_DB === "1") return { title: c.name, robots: { index: false } }; // PREVIEW BRANCH ONLY
   return withSeo(`/shop/${c.slug}`, {
     title: `${c.name} | Quote & Repair`,
     description: clip(`${c.intro} Request a quote for new, refurbished or exchange units, or have yours repaired. Canada & USA.`),
@@ -32,6 +33,7 @@ export default function Page({ params, searchParams }: PageProps<"/shop/[categor
 }
 
 async function Content({ params, searchParams }: PageProps<"/shop/[category]">) {
+  if (process.env.PREVIEW_NO_DB === "1") return null; // PREVIEW BRANCH ONLY
   const c = getCategory((await params).category);
   if (!c) notFound();
   return (

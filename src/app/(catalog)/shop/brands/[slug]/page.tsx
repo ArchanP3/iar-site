@@ -7,6 +7,7 @@ import { clip } from "@/lib/seo";
 import { PageExtras, withSeo } from "@/lib/cms/seo";
 
 export async function generateStaticParams() {
+  if (process.env.PREVIEW_NO_DB === "1") return brands.map((b) => ({ slug: b.slug })); // PREVIEW BRANCH ONLY
   const top = [...(await getManufacturers())].sort((a, b) => b.product_count - a.product_count).slice(0, 20);
   return [...new Set([...top.map((m) => m.slug), ...brands.map((b) => b.slug)])].map((slug) => ({ slug }));
 }
@@ -22,6 +23,7 @@ async function resolveBrand(slug: string) {
 }
 
 export async function generateMetadata({ params }: PageProps<"/shop/brands/[slug]">): Promise<Metadata> {
+  if (process.env.PREVIEW_NO_DB === "1") return { title: "Shop", robots: { index: false } }; // PREVIEW BRANCH ONLY
   const b = await resolveBrand((await params).slug);
   return withSeo(`/shop/brands/${b.slug}`, {
     title: `${b.name} Parts | Quote & Repair`,
@@ -41,6 +43,7 @@ export default function Page({ params, searchParams }: PageProps<"/shop/brands/[
 }
 
 async function Content({ params, searchParams }: PageProps<"/shop/brands/[slug]">) {
+  if (process.env.PREVIEW_NO_DB === "1") return null; // PREVIEW BRANCH ONLY
   const b = await resolveBrand((await params).slug);
   return (
     <>

@@ -6,6 +6,7 @@ export function generateStaticParams() {
 }
 
 export async function GET(_: Request, { params }: { params: Promise<{ name: string }> }) {
+  if (process.env.PREVIEW_NO_DB === "1") return new Response("Not available in preview", { status: 404 }); // PREVIEW BRANCH ONLY
   const n = (await params).name.replace(/\.xml$/, "") as SitemapName;
   const xml = SITEMAPS.includes(n) ? await sitemapXml(n) : null;
   if (!xml) return new Response("Not found", { status: 404 });

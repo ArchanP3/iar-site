@@ -24,6 +24,7 @@ export default function Page({ searchParams }: PageProps<"/shop">) {
 }
 
 async function Content({ searchParams }: Pick<PageProps<"/shop">, "searchParams">) {
+  if (process.env.PREVIEW_NO_DB === "1") return null; // PREVIEW BRANCH ONLY
   const sp = await searchParams;
   const listing = ["q", "page", "category", "brand"].some((k) => sp[k] !== undefined);
   if (!listing) return <ShopHub />;

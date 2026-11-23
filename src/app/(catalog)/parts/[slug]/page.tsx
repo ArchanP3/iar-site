@@ -14,10 +14,13 @@ import { setting } from "@/lib/cms/settings";
    renders on its first visit and is then cached, so 1,000,000+ parts never
    slow down the build. */
 export async function generateStaticParams() {
+  // PREVIEW BRANCH ONLY: no database yet, so pre-build no part pages.
+  if (process.env.PREVIEW_NO_DB === "1") return [{ slug: "preview" }];
   return (await getPrerenderProductSlugs(20)).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/parts/[slug]">): Promise<Metadata> {
+  if (process.env.PREVIEW_NO_DB === "1") return { title: "Part pages connect to the database", robots: { index: false } }; // PREVIEW BRANCH ONLY
   const p = await getPart((await params).slug);
   if (!p) return { title: "Part not found", robots: { index: false } };
   const t = await setting("partsSeo");
@@ -34,6 +37,7 @@ export default function Page({ params }: PageProps<"/parts/[slug]">) {
 }
 
 async function Content({ params }: Pick<PageProps<"/parts/[slug]">, "params">) {
+  if (process.env.PREVIEW_NO_DB === "1") return <PreviewNotice />; // PREVIEW BRANCH ONLY
   const p = await getPart((await params).slug);
   if (!p) notFound();
   // Related parts stream in on their own, so the part shows after one lookup instead of two.
@@ -79,5 +83,15 @@ function PartSkeleton() {
         </div>
       </div>
     </div>
+  );
+}
+
+/* PREVIEW BRANCH ONLY: shown on part pages until the database is connected. */
+function PreviewNotice() {
+  return (
+    <main className="mx-auto max-w-3xl px-5 py-24 text-center">
+      <h1 className="text-3xl font-extrabold">Part pages are coming soon</h1>
+      <p className="mt-3 text-[#5A5A66]">This preview is not connected to the parts database yet. Call 1-877-904-6155 or request a quote for any part number.</p>
+    </main>
   );
 }

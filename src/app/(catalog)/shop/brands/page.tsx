@@ -15,6 +15,7 @@ const initialsOf = (name: string) =>
   name.split(/[\s-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]!.toUpperCase()).join("") || "?";
 
 export default async function ShopBrandsPage() {
+  if (process.env.PREVIEW_NO_DB === "1") return null; // PREVIEW BRANCH ONLY
   // Our brand list, plus every other manufacturer that has parts in the catalog.
   const known = new Set(brands.map((b) => b.slug));
   const list = [
