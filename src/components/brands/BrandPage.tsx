@@ -28,8 +28,8 @@ const catIcon: Record<string, React.ElementType> = {
 const facts = [
   ["Free evaluation", ShieldCheck],
   ["24–72 hr typical", Clock],
-  ["12-month warranty", BadgeCheck],
-  ["Tested on our jigs", Gauge],
+  ["1-year warranty", BadgeCheck],
+  ["Load tested on our benches", Gauge],
 ] as const;
 
 function Eyebrow({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
@@ -58,7 +58,7 @@ export default function BrandPage({ b }: { b: Brand }) {
       name: `${b.name} repair`,
       serviceType: `${b.name} drive, motor and control repair`,
       description: answer,
-      provider: { "@type": "LocalBusiness", name: "AutomIQ Automation & Drive Services", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
+      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
       areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
     },
     {
@@ -75,7 +75,7 @@ export default function BrandPage({ b }: { b: Brand }) {
 
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
         <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full blur-2xl" style={{ background: `radial-gradient(closest-side, ${b.color}55, transparent)` }} />
         <div className="relative mx-auto grid max-w-310 gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>
@@ -100,7 +100,7 @@ export default function BrandPage({ b }: { b: Brand }) {
               ))}
             </ul>
             <div className="mt-6 grid grid-cols-[1fr_auto] gap-3 sm:flex sm:flex-wrap">
-              <Link href={repairHref} className="col-span-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:col-span-1 from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5">
+              <Link href={repairHref} className="col-span-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:col-span-1 from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5">
                 <Wrench size={17} aria-hidden="true" /> Request a Repair <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link href={`/request-quote?brand=${encodeURIComponent(b.name)}`} className="inline-flex h-12 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-white/20 bg-white/6 px-4 text-[14px] sm:px-6 sm:text-[15px] font-semibold transition hover:border-white/40">
@@ -111,8 +111,8 @@ export default function BrandPage({ b }: { b: Brand }) {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-30px_rgba(200, 16, 46,0.9)] backdrop-blur-xl">
-              <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255, 59, 85,0.12)_100%)]" />
+            <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-30px_rgba(200,16,46,0.9)] backdrop-blur-xl">
+              <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255,59,85,0.12)_100%)]" />
               <div className="relative flex h-42.5 items-center justify-center">
                 <span aria-hidden="true" className="absolute h-40 w-40 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, ${b.color}88, transparent)` }} />
                 <span className="relative flex h-28 w-28 items-center justify-center rounded-[28px] text-[34px] font-extrabold tracking-[-0.02em] text-white shadow-[0_24px_40px_-16px_rgba(0,0,0,0.7)] ring-1 ring-white/20" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>
@@ -128,7 +128,7 @@ export default function BrandPage({ b }: { b: Brand }) {
 
       <div className="relative mx-auto -mt-20 max-w-310 space-y-14 px-5 pb-16 sm:px-8">
         {/* ---------- Short answer ---------- */}
-        <section aria-labelledby="answer" className="rounded-[24px] border border-[#EAEAEC] bg-white p-6 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-8">
+        <section aria-labelledby="answer" className="rounded-[24px] border border-[#EAEAEC] bg-white p-6 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-8">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">Short answer</p>
           <h2 id="answer" className="mt-1.5 text-[22px] font-extrabold sm:text-[26px]">{q}</h2>
           <p className="mt-2 max-w-225 text-[15px] leading-[1.7] text-[#62626F] sm:text-[16px]">{answer}</p>
@@ -142,7 +142,7 @@ export default function BrandPage({ b }: { b: Brand }) {
           <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {cats.map((s) => (
               <li key={s.slug} className="max-sm:odd:last:col-span-2">
-                <Link href={serviceUrl(s.slug)} className="group flex h-full flex-col items-start gap-2.5 rounded-2xl border border-[#EAEAEC] bg-white p-3.5 transition lg:flex-row lg:items-center lg:gap-3 lg:p-3 hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:shadow-[0_18px_40px_-26px_rgba(200, 16, 46,0.6)]">
+                <Link href={serviceUrl(s.slug)} className="group flex h-full flex-col items-start gap-2.5 rounded-2xl border border-[#EAEAEC] bg-white p-3.5 transition lg:flex-row lg:items-center lg:gap-3 lg:p-3 hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:shadow-[0_18px_40px_-26px_rgba(200,16,46,0.6)]">
                   {(() => {
                     const I = catIcon[s.slug] ?? Cpu;
                     return (
@@ -188,7 +188,7 @@ export default function BrandPage({ b }: { b: Brand }) {
         {/* ---------- Fault codes ---------- */}
         {b.faultLibrary && (
           <section aria-labelledby="codes" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <Eyebrow dark>Fault code library</Eyebrow>
@@ -261,7 +261,7 @@ export default function BrandPage({ b }: { b: Brand }) {
             <div>
               <h2 className="text-[26px] font-extrabold leading-tight sm:text-[32px]">{b.name} unit down? Let&apos;s get it running again.</h2>
               <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[14px] text-white/85">
-                {["Free evaluation", "No work without your approval", "12-month warranty"].map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
+                {["Free evaluation", "No work without your approval", "1-year warranty"].map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
               </p>
             </div>
             <div className="grid gap-3 sm:flex sm:flex-wrap lg:flex-nowrap">

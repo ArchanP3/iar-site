@@ -3,8 +3,8 @@
 /*  Have a lawyer review these pages before launch.                     */
 /* ------------------------------------------------------------------ */
 export const legal = {
-  /** Registered legal name. Update when the business is registered (e.g. "AutomIQ Automation & Drive Services Inc."). */
-  name: "AutomIQ Automation & Drive Services",
+  /** Registered legal name. Update when the business is registered (e.g. "Industrial Automation Repair Inc."). */
+  name: "Industrial Automation Repair Inc.",
   /** Laws that apply to the Terms */
   law: "the Province of Ontario and the federal laws of Canada that apply there",
   /** Shown as "Last updated" on every legal page. Change it whenever the wording changes. */

@@ -55,14 +55,14 @@ const steps = [
   {
     icon: Gauge,
     title: "Operational Testing",
-    text: "Run under power on our test jigs before it leaves the bench.",
+    text: "Run under power on our test benches before it leaves the bench.",
     points: ["Drives tested with a motor", "Motors tested under drive control", "Encoder alignment checked"],
   },
   {
     icon: PackageCheck,
     title: "Return with Test Report",
     text: "Packed securely and shipped back, ready to install.",
-    points: ["Test report included", "Secure, protective packing", "12-month warranty"],
+    points: ["Test report included", "Secure, protective packing", "1-year warranty"],
   },
 ];
 
@@ -77,7 +77,7 @@ const ways = [
 /* Trust strip */
 const facts = [
   { icon: MapPin, label: "Repair centre", value: "Mississauga, Ontario, Canada" },
-  { icon: BadgeCheck, label: "Experience", value: "20+ years" },
+  { icon: BadgeCheck, label: "Warranty", value: "1-year, every repair" },
   { icon: Clock, label: "Turnaround", value: "24–72 hr typical" },
   { icon: PackageCheck, label: "Shipping", value: "Ship It or Request a Pickup" },
   { icon: Truck, label: "Exchange units", value: "Once we receive yours" },
@@ -88,9 +88,9 @@ const facts = [
 const schema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: "How the AutomIQ Automation & Drive Services repair process works",
+  name: "How the Industrial Automation Repair Inc. repair process works",
   description:
-    "Servo drive, servo motor and industrial electronics repair process: shipping or pickup, check-in, free evaluation and quote, component-level repair, operational testing and return with a test report.",
+    "Servo drive, servo motor and industrial electronics repair process: shipping or pickup, check-in, free evaluation and quote, component-level repair, load testing and return with a test report.",
   step: steps.map((s, i) => ({
     "@type": "HowToStep",
     position: i + 1,
@@ -159,7 +159,7 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
 
       <div className="relative mt-3 flex items-end justify-between gap-4">
         <div className="flex min-w-0 flex-col gap-0.5">
-          <span className="text-[11.5px] text-white/55">AutomIQ repair</span>
+          <span className="text-[11.5px] text-white/55">IAR repair</span>
           <span className="font-mono text-[13px] tracking-[0.04em] text-white">
             RMA · {pad(index + 1)} / {pad(steps.length)}
           </span>
@@ -194,10 +194,10 @@ function StepCard({ index, rich }: { index: number; rich: boolean }) {
   }
 
   return (
-    <div className="relative flex min-h-71.25 w-full flex-col overflow-hidden rounded-[18px] bg-[radial-gradient(90%_70%_at_45%_0%,#77202D_0%,transparent_70%),linear-gradient(160deg,#1D1D21_0%,#18181C_55%,#121214_100%)] p-4 text-white shadow-[0_22px_44px_-20px_rgba(103, 5, 20,0.6)] ring-1 ring-inset ring-white/10">
+    <div className="relative flex min-h-71.25 w-full flex-col overflow-hidden rounded-[18px] bg-[radial-gradient(90%_70%_at_45%_0%,#77202D_0%,transparent_70%),linear-gradient(160deg,#1D1D21_0%,#18181C_55%,#121214_100%)] p-4 text-white shadow-[0_22px_44px_-20px_rgba(103,5,20,0.6)] ring-1 ring-inset ring-white/10">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_25%,rgba(224, 126, 140,0.14)_42%,transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(125deg,transparent_25%,rgba(224,126,140,0.14)_42%,transparent_60%)]"
       />
       {content}
     </div>
@@ -242,14 +242,14 @@ export default function HowWeWork() {
             </p>
             <p className="mt-2 hidden text-[14px] leading-[1.65] text-[#62626F] sm:block sm:text-[16px]">
               Whether it&apos;s a failed VFD, a spindle motor or an obsolete CNC control, you get photos at check-in, a
-              clear repair quote, component-level repair, operational testing on our jigs and a test report with
-              every unit, backed by a 12-month warranty.
+              clear repair quote, component-level repair, load testing on our test benches and a test report with
+              every unit, backed by a 1-year warranty.
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-2.5 sm:flex-row">
             <Link
               href="/request-repair"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255, 59, 85,0.8)] transition hover:-translate-y-0.5"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255,59,85,0.8)] transition hover:-translate-y-0.5"
             >
               <Wrench size={17} />
               Request a Repair
@@ -273,9 +273,9 @@ export default function HowWeWork() {
               <li key={t}>
                 <Link
                   href={href}
-                  className="group flex h-full flex-col gap-2 rounded-2xl border border-[#EAEAEC] bg-white p-3.5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_16px_30px_-22px_rgba(200, 16, 46,0.6)] sm:flex-row sm:items-start sm:gap-3 sm:p-4"
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-[#EAEAEC] bg-white p-3.5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_16px_30px_-22px_rgba(200,16,46,0.6)] sm:flex-row sm:items-start sm:gap-3 sm:p-4"
                 >
-                  <span className={`flex h-10 w-10 flex-none items-center justify-center rounded-xl ${i === 0 ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(200, 16, 46,0.9)]" : "bg-[#F4F4F5] text-[#B30E29]"}`}>
+                  <span className={`flex h-10 w-10 flex-none items-center justify-center rounded-xl ${i === 0 ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(200,16,46,0.9)]" : "bg-[#F4F4F5] text-[#B30E29]"}`}>
                     <Icon size={18} aria-hidden="true" />
                   </span>
                   <span>
@@ -300,7 +300,7 @@ export default function HowWeWork() {
         {/* ---------- Trust strip ---------- */}
         <div className="mt-8 rounded-2xl border border-[#EAEAEC] bg-white px-5 py-4 sm:px-7">
           <h3 className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">
-            Why Manufacturers Choose AutomIQ
+            Why Manufacturers Choose IAR
           </h3>
           <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
             {facts.map((f) => {

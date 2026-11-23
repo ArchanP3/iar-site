@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/downtime-calculator", {
-  title: "Downtime Cost Calculator: Repair vs New | AutomIQ",
+  title: "Downtime Cost Calculator: Repair vs New | IAR",
   description: "Work out what a failed servo drive, motor or control costs you while you wait, and how much a 24–72 hr repair or an exchange unit saves. Free PDF summary.",
   alternates: { canonical: `${SITE_URL}/resources/downtime-calculator` },
 });
@@ -30,7 +30,7 @@ const schema = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL },
+      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL },
     },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
     {
@@ -51,7 +51,7 @@ export default function DowntimeCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
         <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(248,113,113,0.25),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
@@ -93,7 +93,7 @@ export default function DowntimeCalculatorPage() {
           <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">Every repair includes</p>
             <ul className="mt-3 space-y-2.5 text-[14px] text-[#4E4E58]">
-              {["Free evaluation", "Written quote before any work starts", "Tested on our own jigs", "Test report with every unit", "12-month warranty on repairs"].map((x) => (
+              {["Free evaluation", "Written quote before any work starts", "Load tested on OEM-standard equipment", "Test report with every unit", "1-year warranty on repairs"].map((x) => (
                 <li key={x} className="flex gap-2"><span className="mt-1.75 h-1.5 w-1.5 flex-none rounded-full bg-[#FF3B55]" aria-hidden="true" />{x}</li>
               ))}
             </ul>

@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/international", {
-  title: "International Orders: Parts Shipped Worldwide | AutomIQ",
+  title: "International Orders: Parts Shipped Worldwide | IAR",
   description: "Servo drives, motors, PLCs, HMIs and CNC parts shipped by air from Canada to Mexico, Europe and Asia. Get price, shipping and lead time for your country.",
   alternates: { canonical: `${SITE_URL}/international` },
 });
@@ -32,7 +32,7 @@ const good = [
   [Plane, "Air freight & express courier", "Shipped by air with DHL, FedEx or UPS, or on your own courier account."],
   [FileText, "Commercial invoice included", "Every shipment travels with a commercial invoice for your customs clearance."],
   [Landmark, "Duties & import charges", "You pay all duties, import taxes, brokerage and other import charges in your country."],
-  [BadgeCheck, "Tested before it ships", "Refurbished units are tested on our own jigs before they leave our bench."],
+  [BadgeCheck, "Tested before it ships", "Refurbished units are load tested on OEM-standard equipment before they leave our bench."],
 ] as const;
 
 const faqs: [string, string][] = [
@@ -40,7 +40,7 @@ const faqs: [string, string][] = [
   ["Why can't I check out online from my country?", "Online checkout is for Canada and the USA. Shipping charges, lead times and customs rules change by country, so we quote international orders individually."],
   ["Who pays duties and import taxes?", "You do. All duties, import taxes, brokerage fees and other import charges in your country are paid by the buyer."],
   ["How long does international shipping take?", "Parts usually ship from us in 1–2 business days; some units take 5–10 business days to test, prepare or bring in from our warehouse. Transit time depends on your country and courier, and we include it in your quote."],
-  ["Can you repair units from outside Canada and the USA?", "Our repair service is for customers in Canada and the USA. Outside North America we supply parts, including refurbished units tested on our own jigs."],
+  ["Can you repair units from outside Canada and the USA?", "Our repair service is for customers in Canada and the USA. Outside North America we supply parts, including refurbished units load tested on OEM-standard equipment."],
 ];
 
 const schema = {
@@ -52,7 +52,7 @@ const schema = {
       serviceType: "Industrial automation parts export",
       url: `${SITE_URL}/international`,
       areaServed: [...new Set(abroad.map((d) => d.country))].map((c) => ({ "@type": "Country", name: c })),
-      provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
+      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
     },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
@@ -65,7 +65,7 @@ export default function InternationalPage() {
       <PageExtras path="/international" />
 
       {/* For Canada & USA buyers */}
-      <div className="flex flex-col gap-3 rounded-[22px] border border-[#FCC2CB] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165, 13, 37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div className="flex flex-col gap-3 rounded-[22px] border border-[#FCC2CB] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165,13,37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><ShoppingCart size={19} aria-hidden="true" /></span>
           <div>
@@ -84,7 +84,7 @@ export default function InternationalPage() {
         <InternationalQuoteForm />
         <aside className="space-y-3 lg:sticky lg:top-28">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">How international orders work</p>
             <ol className="relative mt-4 space-y-3.5">
               {steps.map(([t, Icon], i) => (
@@ -95,7 +95,7 @@ export default function InternationalPage() {
               ))}
             </ol>
             <ul className="relative mt-5 grid grid-cols-2 gap-2 border-t border-white/10 pt-4 text-[12px] text-white/75">
-              {["Shipped by air", "Quote per country", "No payment to quote", "1,000+ brands"].map((p) => (
+              {["Shipped by air", "Quote per country", "No payment to quote", "Every major brand"].map((p) => (
                 <li key={p} className="flex items-center gap-1.5"><BadgeCheck size={13} className="flex-none text-[#34D399]" aria-hidden="true" />{p}</li>
               ))}
             </ul>
@@ -108,10 +108,10 @@ export default function InternationalPage() {
       </div>
 
       {/* Where we ship */}
-      <section aria-labelledby="where" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)]">
+      <section aria-labelledby="where" className="relative mt-12 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200,16,46,0.75)]">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.4),transparent)] blur-2xl" />
-          <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
+          <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.4),transparent)] blur-2xl" />
+          <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
         </div>
         <div className="relative grid items-center gap-6 p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-10">
           <div className="min-w-0">

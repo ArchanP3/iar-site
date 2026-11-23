@@ -15,7 +15,7 @@ export async function saveBusiness(_: FormState, fd: FormData): Promise<FormStat
   const times = fd.getAll("h_time").map(String);
   const hours = days.map((d, i) => [d.trim().slice(0, 40), (times[i] ?? "").trim().slice(0, 60)] as [string, string]).filter(([d, t]) => d && t);
   const b: Business = {
-    name: v(fd, "name") || "AutomIQ Automation & Drive Services", street: v(fd, "street"), city: v(fd, "city"), region: v(fd, "region", 40), postal: v(fd, "postal", 20), country: v(fd, "country", 2).toUpperCase() || "CA",
+    name: v(fd, "name") || "Industrial Automation Repair Inc.", street: v(fd, "street"), city: v(fd, "city"), region: v(fd, "region", 40), postal: v(fd, "postal", 20), country: v(fd, "country", 2).toUpperCase() || "CA",
     phone: v(fd, "phone", 40), email: v(fd, "email"), hours, gbp: v(fd, "gbp", 500), dropOff: v(fd, "dropOff", 300), serviceArea: v(fd, "serviceArea", 300),
   };
   if (b.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email)) return { error: "That email address doesn't look right." };

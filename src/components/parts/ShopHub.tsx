@@ -62,8 +62,8 @@ export function ShopHubView({ data }: { data: HubData }) {
   return (
     <div className="bg-[#F7F7F8] text-[#131316]">
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-10 pt-7 text-white sm:pb-14">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.22),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.22),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-4 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -133,7 +133,7 @@ export function ShopHubView({ data }: { data: HubData }) {
               const n = catCounts[c.slug];
               return (
                 <li key={c.slug}>
-                  <Link href={categoryUrl(c.slug)} className="group flex h-full items-center gap-2.5 rounded-2xl border border-[#EAEAEC] bg-white p-3 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200, 16, 46,0.6)] sm:p-4 lg:flex-col lg:items-start lg:gap-3">
+                  <Link href={categoryUrl(c.slug)} className="group flex h-full items-center gap-2.5 rounded-2xl border border-[#EAEAEC] bg-white p-3 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200,16,46,0.6)] sm:p-4 lg:flex-col lg:items-start lg:gap-3">
                     <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-[#C8102E]/[0.08] sm:h-11 sm:w-11 text-[#C8102E] transition group-hover:bg-[#C8102E] group-hover:text-white"><Icon size={21} aria-hidden="true" /></span>
                     <span className="min-w-0">
                       <span className="block text-[13.5px] font-extrabold leading-tight sm:text-[15px]">{c.name}</span>
@@ -170,7 +170,7 @@ export function ShopHubView({ data }: { data: HubData }) {
           <ul className="mt-5 grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4 lg:grid-cols-6">
             {topBrands.map((b) => (
               <li key={b.slug}>
-                <Link href={`/shop/brands/${b.slug}`} className="group flex h-full flex-col justify-center rounded-2xl border border-[#EAEAEC] bg-white px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200, 16, 46,0.6)]">
+                <Link href={`/shop/brands/${b.slug}`} className="group flex h-full flex-col justify-center rounded-2xl border border-[#EAEAEC] bg-white px-4 py-3.5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200,16,46,0.6)]">
                   <span className="block truncate text-[15px] font-extrabold group-hover:text-[#B30E29]">{b.name}</span>
                   <span className="block text-[12.5px] text-[#696976]">{fmt(b.count)} parts</span>
                 </Link>

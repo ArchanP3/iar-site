@@ -11,7 +11,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 const PATH = "/resources/model-code-decoder";
 
 export const generateMetadata = seo(PATH, {
-  title: "Servo Model Code Decoder: MKD, 1FK7, MPL, Yaskawa SGDV | AutomIQ",
+  title: "Servo Model Code Decoder: MKD, 1FK7, MPL, Yaskawa SGDV | IAR",
   description: "Decode a servo motor or drive model code from the nameplate. Covers Rexroth MKD, Siemens 1FK7, Allen-Bradley MPL and Yaskawa Sigma-5 drives and motors.",
   alternates: { canonical: `${SITE_URL}${PATH}` },
 });
@@ -26,7 +26,7 @@ const schema = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL },
+      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL },
     },
     {
       "@type": "BreadcrumbList",
@@ -133,7 +133,7 @@ export default function ModelCodeDecoderPage() {
 
       <p className="mt-12 border-t border-[#EAEAEC] pt-5 text-[12px] leading-relaxed text-[#696976]">
         Explanations are based on the manufacturers&apos; published type codes, written in our own words. When planning a new installation, always check the manufacturer&apos;s current documentation.
-        AutomIQ is an independent repair and parts provider, not affiliated with or authorized by the manufacturers listed. Brand names identify compatible equipment.
+        IAR is an independent repair and parts provider, not affiliated with or authorized by the manufacturers listed. Brand names identify compatible equipment.
       </p>
     </ResourceShell>
   );

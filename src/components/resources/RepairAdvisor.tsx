@@ -68,12 +68,12 @@ function advise(a: A) {
   if (a.history === "repeat") {
     why.push("This position has failed before: check the motor, cable and supply too, as the cause may be outside the unit. Tell us the history and we will look for it.");
   }
-  if (a.state === "fault") why.push("Intermittent faults are often a component starting to fail. Our test jigs run the unit under power to find it.");
+  if (a.state === "fault") why.push("Intermittent faults are often a component starting to fail. Our test benches run the unit under power to find it.");
   return { primary, backup, why };
 }
 
 const info = {
-  repair: { icon: Wrench, t: "Repair your unit", d: "Free evaluation, written quote first, 24–72 hr typical turnaround once approved, 12-month warranty.", cta: "Request a Repair", href: "/request-repair", color: "from-[#C8102E] to-[#FF3B55]" },
+  repair: { icon: Wrench, t: "Repair your unit", d: "Free evaluation, written quote first, 24–72 hr typical turnaround once approved, 1-year warranty.", cta: "Request a Repair", href: "/request-repair", color: "from-[#C8102E] to-[#FF3B55]" },
   exchange: { icon: RefreshCw, t: "Get an exchange unit", d: "A tested replacement, usually shipped within 1–2 business days of receiving your failed unit. Rush available on request.", cta: "Ask About Exchange", href: "/request-repair?service=exchange", color: "from-[#059669] to-[#10B981]" },
   evaluate: { icon: BadgeCheck, t: "Start with a free evaluation", d: "We find out what failed and whether it is worth repairing, then quote you before any work starts.", cta: "Request a Free Evaluation", href: "/request-repair", color: "from-[#C8102E] to-[#FF3B55]" },
   refurbished: { icon: ShoppingCart, t: "Buy a refurbished unit", d: "Inspected, repaired and tested stock, with Buy Now when we have it.", cta: "Check refurbished stock", href: "/resources/part-checker", color: "" },
@@ -103,8 +103,8 @@ export default function RepairAdvisor() {
     };
     return (
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-        <div className="relative overflow-hidden rounded-[26px] bg-[#0A0A0C] p-6 text-white shadow-[0_40px_80px_-40px_rgba(200, 16, 46,0.7)] sm:p-8">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.45),transparent)] blur-xl" />
+        <div className="relative overflow-hidden rounded-[26px] bg-[#0A0A0C] p-6 text-white shadow-[0_40px_80px_-40px_rgba(200,16,46,0.7)] sm:p-8">
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.45),transparent)] blur-xl" />
           <p className="relative text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Our recommendation</p>
           <div className="relative mt-3 flex items-center gap-3">
             <span className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br ${P.color}`}><P.icon size={22} aria-hidden="true" /></span>
@@ -148,7 +148,7 @@ export default function RepairAdvisor() {
 
   const cur = questions[step];
   return (
-    <div className="mx-auto max-w-190 rounded-[26px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-8">
+    <div className="mx-auto max-w-190 rounded-[26px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-8">
       <div className="flex items-center justify-between gap-3">
         <p className="text-[12.5px] font-bold text-[#B30E29]">Question {step + 1} of {questions.length}</p>
         {step > 0 && (

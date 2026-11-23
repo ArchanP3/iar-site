@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = getPost(slug);
   if (p) {
     return withSeo(postUrl(p.slug), {
-      title: { absolute: fitTitle(`${p.title} | AutomIQ`) },
+      title: { absolute: fitTitle(`${p.title} | IAR`) },
       description: p.description,
       alternates: { canonical: `${SITE_URL}${postUrl(p.slug)}` },
       openGraph: { type: "article", title: p.title, description: p.description, publishedTime: p.date, images: [{ url: `${SITE_URL}${p.image}`, alt: p.title }] },
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const d = await postBySlug(slug);
   if (!d || !onThisSite(d.site)) return {};
-  const title = d.seo_title || `${d.title} | AutomIQ`;
+  const title = d.seo_title || `${d.title} | IAR`;
   const description = d.seo_description || d.excerpt;
   return withSeo(postUrl(d.slug), {
     title: { absolute: title },
@@ -70,20 +70,20 @@ async function Content({ params }: Props) {
     datePublished: p.date,
     dateModified: p.date,
     mainEntityOfPage: url,
-    author: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL },
-    publisher: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` } },
+    author: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Industrial Automation Repair Inc.", logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` } },
   };
   const others = (await allPostCards()).filter((x) => x.slug !== p.slug).slice(0, 6);
 
   return (
     <ResourceShell wide={false} crumb={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blog" }, { label: p.tag }]} title={p.title} accent="" text={p.description} schema={schema}>
       <PageExtras path={postUrl(p.slug)} />
-      <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+      <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-[#F3F3F4] px-6 py-4 text-[13px] text-[#696976] sm:px-10">
           <span className="rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em]" style={{ background: `${p.color}14`, color: tagInk(p.color) }}>{p.tag}</span>
           <span>{prettyDate(p.date)}</span>
           <span className="flex items-center gap-1.5"><Clock size={13} aria-hidden="true" />{p.minutes} min read</span>
-          <span>By the AutomIQ repair team</span>
+          <span>By the IAR repair team</span>
         </div>
         <div className="px-6 py-8 sm:px-10">
           {p.sections.map((s) => (
@@ -105,7 +105,7 @@ function Cta() {
     <div className="flex flex-col gap-3 rounded-b-[24px] bg-linear-to-br from-[#131316] to-[#5E0D1A] px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10">
       <div>
         <p className="text-[18px] font-extrabold">Need this unit looked at?</p>
-        <p className="text-[13.5px] text-white/70">Free evaluation, written quote first, 12-month warranty.</p>
+        <p className="text-[13.5px] text-white/70">Free evaluation, written quote first, 1-year warranty.</p>
       </div>
       <Link href="/request-repair" className="inline-flex h-11 items-center gap-2 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#131316]"><Wrench size={16} aria-hidden="true" /> Request a Repair</Link>
     </div>
@@ -154,8 +154,8 @@ async function CmsPostView({ d }: { d: CmsPost }) {
         dateModified: new Date(d.updated_at).toISOString(),
         mainEntityOfPage: url,
         ...(d.cover ? { image: d.cover.startsWith("http") ? d.cover : `${SITE_URL}${d.cover}` } : {}),
-        author: d.author_name ? { "@type": "Person", name: d.author_name, ...(d.author_role ? { jobTitle: d.author_role } : {}), worksFor: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" } } : { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL },
-        publisher: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` } },
+        author: d.author_name ? { "@type": "Person", name: d.author_name, ...(d.author_role ? { jobTitle: d.author_role } : {}), worksFor: { "@type": "Organization", name: "Industrial Automation Repair Inc." } } : { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL },
+        publisher: { "@type": "Organization", name: "Industrial Automation Repair Inc.", logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` } },
         ...(d.tags.length ? { keywords: d.tags.join(", ") } : {}),
       },
       ...(faq.length ? [{ "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }] : []),
@@ -175,12 +175,12 @@ async function CmsPostView({ d }: { d: CmsPost }) {
   return (
     <ResourceShell wide={false} crumb={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blog" }, { label: d.category || "Guide" }]} title={d.title} accent="" text={d.excerpt} schema={schema}>
       <PageExtras path={postUrl(d.slug)} />
-      <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+      <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-[#F3F3F4] px-6 py-4 text-[13px] text-[#696976] sm:px-10">
           <span className="rounded-full bg-[#C8102E]/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[#A50D25]">{d.category || "Guide"}</span>
           <span>{date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
           <span className="flex items-center gap-1.5"><Clock size={13} aria-hidden="true" />{readMinutes(d.body)} min read</span>
-          <span>{d.author_name ? `By ${d.author_name}${d.author_role ? `, ${d.author_role}` : ""}` : "By the AutomIQ repair team"}</span>
+          <span>{d.author_name ? `By ${d.author_name}${d.author_role ? `, ${d.author_role}` : ""}` : "By the IAR repair team"}</span>
         </div>
         {d.cover && (
           // eslint-disable-next-line @next/next/no-img-element

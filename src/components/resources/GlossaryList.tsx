@@ -14,7 +14,7 @@ export default function GlossaryList({ terms }: { terms: Term[] }) {
 
   return (
     <div>
-      <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)] sm:flex-row sm:items-center sm:p-4">
+      <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:flex-row sm:items-center sm:p-4">
         <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Search the glossary</span>

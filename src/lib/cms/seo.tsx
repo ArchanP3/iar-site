@@ -14,7 +14,7 @@ export type PageSeo = {
   path: string; title: string | null; description: string | null; canonical: string | null; noindex: boolean; nofollow: boolean;
   og_title: string | null; og_description: string | null; og_image: string | null; focus_keyword: string | null;
   schema_json: string | null; head_html: string | null; body_html: string | null; public_path: string | null; updated_at: Date; updated_by: string | null;
-  /** Canada-only SEO (automiqautomation.ca). Empty = the normal fields above, on .ca too. */
+  /** Canada-only SEO (industrialautomationrepair.com). Empty = the normal fields above, on .ca too. */
   ca_title?: string | null; ca_description?: string | null; ca_schema_json?: string | null;
 };
 

@@ -50,9 +50,9 @@ async function Dashboard({ searchParams }: { searchParams: SP }) {
 
   return (
     <>
-      {sp.welcome && <Alert tone="ok" icon={<PartyPopper size={16} />}><b>Welcome to the AutomIQ CMS.</b> Start with <b>Scan site now</b> so every screen fills with your pages. Then add your team under Users &amp; Activity.</Alert>}
+      {sp.welcome && <Alert tone="ok" icon={<PartyPopper size={16} />}><b>Welcome to the IAR CMS.</b> Start with <b>Scan site now</b> so every screen fills with your pages. Then add your team under Users &amp; Activity.</Alert>}
       {sp.denied && <Alert tone="warn" icon={<Info size={16} />}>Your role doesn&apos;t include that screen. Ask a Super Admin or Admin if you need access.</Alert>}
-      <PageHead title={`${greet}, ${first}`} sub="How automiqautomation.com is doing on Google and what needs attention." actions={can(u.role, "audit") ? <ScanButton /> : undefined} />
+      <PageHead title={`${greet}, ${first}`} sub="How industrialautomationrepair.com is doing on Google and what needs attention." actions={can(u.role, "audit") ? <ScanButton /> : undefined} />
 
       <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {gsc.configured && !gsc.error ? (

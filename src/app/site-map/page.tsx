@@ -14,8 +14,8 @@ import { areasHere, areaHref } from "@/lib/serviceAreas";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/site-map", {
-  title: "Sitemap | AutomIQ",
-  description: "Every page on the AutomIQ Automation & Drive Services website: repair services, brands, industries, parts, fault codes and company pages.",
+  title: "Sitemap | IAR",
+  description: "Every page on the Industrial Automation Repair Inc. website: repair services, brands, industries, parts, fault codes and company pages.",
   alternates: { canonical: `${SITE_URL}/site-map` },
 });
 
@@ -56,8 +56,8 @@ export default function SiteMapPage() {
       <PageExtras path="/site-map" />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -83,7 +83,7 @@ export default function SiteMapPage() {
       <div className="relative mx-auto -mt-14 max-w-310 px-5 pb-14 sm:px-8">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {groups.map(({ title, icon: Icon, href, links, wide }) => (
-            <section key={title} aria-labelledby={`sm-${title}`} className={`min-w-0 rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)] sm:p-6 ${wide ? "md:col-span-2 lg:col-span-4" : ""}`}>
+            <section key={title} aria-labelledby={`sm-${title}`} className={`min-w-0 rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:p-6 ${wide ? "md:col-span-2 lg:col-span-4" : ""}`}>
               <div className="flex items-center justify-between gap-3 border-b border-[#F3F3F4] pb-3">
                 <h2 id={`sm-${title}`} className="flex items-center gap-2.5 text-[17px] font-extrabold">
                   <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><Icon size={17} aria-hidden="true" /></span>

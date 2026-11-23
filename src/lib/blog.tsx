@@ -97,8 +97,8 @@ export const posts: Post[] = [
   },
   {
     slug: "how-we-test-servo-motors-and-drives",
-    title: "How we test servo motors and drives on our own jigs",
-    description: "A repair is only as good as its test. How every unit is checked in, evaluated and run under power on our own test jigs before it leaves our Mississauga bench.",
+    title: "How we test servo motors and drives on our test benches",
+    description: "A repair is only as good as its test. How every unit is checked in, evaluated and run under power on our test benches before it leaves our Mississauga bench.",
     date: "2026-10-26",
     minutes: 5,
     tag: "Inside our repair centre",
@@ -131,10 +131,10 @@ export const posts: Post[] = [
         ),
       },
       {
-        h: "4. Testing on our own jigs",
+        h: "4. Testing on our test benches",
         body: (
           <>
-            <p>We have test jigs for most units, including Fanuc, Yaskawa, Siemens, Rexroth Indramat and Allen-Bradley, and we build custom jigs when a job needs one.</p>
+            <p>We have test benches for most units, including Fanuc, Yaskawa, Siemens, Rexroth Indramat and Allen-Bradley, and we build custom test benches when a job needs one.</p>
             <ul>
               <li><strong>Servo drives</strong> are tested with a motor, so the drive is proven under real current, not just powered on.</li>
               <li><strong>Servo motors</strong> are tested under drive control, so we see how they actually run.</li>
@@ -146,7 +146,7 @@ export const posts: Post[] = [
       {
         h: "5. Test report and warranty",
         body: (
-          <p>Every repaired unit ships with a test report showing how it was tested, and is covered by our 12-month warranty. Typical turnaround is 24 to 72 hours once your quote is approved. <A href="/warranty">Read our warranty</A>.</p>
+          <p>Every repaired unit ships with a test report showing how it was tested, and is covered by our 1-year warranty. Typical turnaround is 24 to 72 hours once your quote is approved. <A href="/warranty">Read our warranty</A>.</p>
         ),
       },
     ],
@@ -212,7 +212,7 @@ export const posts: Post[] = [
       {
         h: "How we handle it",
         body: (
-          <p>Every servo motor we repair has its encoder alignment checked, and the motor is tested under drive control on our own jigs before it ships with a test report and 12-month warranty. <A href="/services/encoder-repair">Encoder repair & alignment</A>.</p>
+          <p>Every servo motor we repair has its encoder alignment checked, and the motor is tested under drive control on our test benches before it ships with a test report and 1-year warranty. <A href="/services/encoder-repair">Encoder repair & alignment</A>.</p>
         ),
       },
     ],
@@ -270,7 +270,7 @@ export const posts: Post[] = [
       {
         h: "Repair or replace?",
         body: (
-          <p>1FT5 motors and SIMODRIVE 611 drives are discontinued, but both are repairable. We check the resolver and its alignment, the windings and bearings, and test the motor under drive control on our own jigs before it ships with a test report and 12-month warranty. If the fault is in the drive, we repair the control card too. <A href="/services/servo-motor-repair">Servo motor repair</A> · <A href="/request-repair">Request a repair</A>.</p>
+          <p>1FT5 motors and SIMODRIVE 611 drives are discontinued, but both are repairable. We check the resolver and its alignment, the windings and bearings, and test the motor under drive control on our test benches before it ships with a test report and 1-year warranty. If the fault is in the drive, we repair the control card too. <A href="/services/servo-motor-repair">Servo motor repair</A> · <A href="/request-repair">Request a repair</A>.</p>
         ),
       },
     ],

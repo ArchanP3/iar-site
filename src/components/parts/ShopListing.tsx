@@ -26,8 +26,8 @@ export default function ShopListing({ cat, brand, title, searchParams }: { cat?:
   return (
     <div className="bg-[#F7F7F8] text-[#131316]">
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-7 text-white sm:pb-28">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.22),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.22),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-4 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -84,7 +84,7 @@ export default function ShopListing({ cat, brand, title, searchParams }: { cat?:
 export function CantFind() {
   return (
   <section aria-labelledby="cant-find" className="relative mt-12 overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
-    <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
+    <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
     <div className="relative grid gap-6 lg:grid-cols-[1fr_520px] lg:items-center">
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Any part number</p>
@@ -186,7 +186,7 @@ async function Results({ cat, brand, base, searchParams }: { cat?: PartCategory;
     return (
       <section aria-label="Parts" className="relative">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(list) }} />
-        <div className="flex flex-wrap items-center gap-3 rounded-[20px] border border-[#EAEAEC] bg-white px-4 py-3 shadow-[0_20px_45px_-38px_rgba(19, 19, 22,0.6)] sm:px-5">
+        <div className="flex flex-wrap items-center gap-3 rounded-[20px] border border-[#EAEAEC] bg-white px-4 py-3 shadow-[0_20px_45px_-38px_rgba(19,19,22,0.6)] sm:px-5">
           {count}
           <Link href="/shop" className="ml-auto inline-flex h-10 items-center gap-1.5 text-[13.5px] font-bold text-[#B30E29] hover:underline">Browse by category or brand <ArrowRight size={14} aria-hidden="true" /></Link>
         </div>
@@ -197,13 +197,13 @@ async function Results({ cat, brand, base, searchParams }: { cat?: PartCategory;
 
   return (
     <div className="relative grid gap-5 lg:grid-cols-[272px_1fr] lg:items-start">
-      <aside aria-label="Filters" className="hidden rounded-[20px] border border-[#EAEAEC] bg-white px-3 shadow-[0_20px_45px_-38px_rgba(19, 19, 22,0.6)] lg:block">
+      <aside aria-label="Filters" className="hidden rounded-[20px] border border-[#EAEAEC] bg-white px-3 shadow-[0_20px_45px_-38px_rgba(19,19,22,0.6)] lg:block">
         <FilterPanel state={state} brands={options} />
       </aside>
       <section aria-label="Parts" className="min-w-0">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(list) }} />
         {/* Phones and tablets: count + Filters button stay in reach while scrolling. */}
-        <div className="sticky top-18 z-30 -mx-4 border-b border-[#EAEAEC] bg-white/95 px-4 py-2.5 backdrop-blur sm:mx-0 sm:rounded-[20px] sm:border md:top-28 lg:static lg:rounded-[20px] lg:border lg:px-5 lg:py-3.5 lg:shadow-[0_20px_45px_-38px_rgba(19, 19, 22,0.6)]">
+        <div className="sticky top-18 z-30 -mx-4 border-b border-[#EAEAEC] bg-white/95 px-4 py-2.5 backdrop-blur sm:mx-0 sm:rounded-[20px] sm:border md:top-28 lg:static lg:rounded-[20px] lg:border lg:px-5 lg:py-3.5 lg:shadow-[0_20px_45px_-38px_rgba(19,19,22,0.6)]">
           <div className="flex items-center gap-3">
             <div className="min-w-0 flex-1">{count}</div>
             <div className="flex w-36 lg:hidden">

@@ -65,7 +65,7 @@ export default function WhatsAppDialog() {
         : ask.kind === "part"
           ? { Repair: `a repair for ${t}`, Buy: `to buy ${t}`, Quote: `a quote for ${t}`, Question: `to ask about ${t}` }
           : { Repair: "help with a repair", Buy: "to buy a part", Quote: "a quote", Question: "to ask a question" };
-  const greeting = `Hi AutomIQ, I'm ${me.name || "…"}${me.company ? ` from ${me.company}` : ""}. I'd like ${want[need]}.`;
+  const greeting = `Hi IAR, I'm ${me.name || "…"}${me.company ? ` from ${me.company}` : ""}. I'd like ${want[need]}.`;
   /* link to the part / brand / service page: WhatsApp shows its photo and title as a preview card */
   const pageLink = ask.kind ? new URL(ask.url || location.pathname, location.origin).href : "";
   const message = pageLink ? `${greeting}\n${pageLink}` : greeting;
@@ -99,7 +99,7 @@ export default function WhatsAppDialog() {
         {/* header */}
         <div className="relative flex-none overflow-hidden bg-[#060607] px-5 pt-4 pb-4 text-white sm:px-6 sm:pt-6 sm:pb-5">
           <span aria-hidden="true" className="pointer-events-none absolute -top-24 -right-16 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(37,211,102,0.35),transparent)]" />
-          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-20 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)]" />
+          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-20 size-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.45),transparent)]" />
           <div className="relative flex items-center gap-3 sm:items-start sm:gap-4">
             <span className="relative grid size-11 flex-none place-items-center rounded-xl sm:size-13 sm:rounded-2xl bg-linear-to-br from-[#25D366] to-[#128C7E] shadow-[0_12px_28px_-10px_rgba(37,211,102,0.8)]">
               <WhatsAppIcon size={23} className="text-white" />

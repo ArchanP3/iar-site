@@ -9,8 +9,8 @@ import BrandDirectory from "@/components/brands/BrandDirectory";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/brands", {
-  title: "Brands We Repair | Siemens, Indramat, Fanuc & More | AutomIQ",
-  description: "We repair every automation brand: Siemens, Indramat, Allen-Bradley, Fanuc, Yaskawa, Danfoss, KUKA and 1,000+ more. Drives, motors, controls, HMIs and boards.",
+  title: "Brands We Repair | Siemens, Indramat, Fanuc & More | IAR",
+  description: "We repair every automation brand: Siemens, Indramat, Allen-Bradley, Fanuc, Yaskawa, Danfoss, KUKA and many more. Drives, motors, controls, HMIs and boards.",
 });
 
 export default function BrandsPage() {
@@ -22,7 +22,7 @@ export default function BrandsPage() {
   };
   const Card = ({ b, big = false }: { b: (typeof brands)[number]; big?: boolean }) => (
     <div className="relative h-full">
-    <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:rounded-[22px] sm:p-5 sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
+    <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:rounded-[22px] sm:p-5 sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
       <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${b.color}77, transparent)` }} />
       <div className="relative flex items-start justify-between">
         <span className={`flex items-center justify-center rounded-2xl font-extrabold ring-1 ring-white/20 ${big ? "h-14 w-14 text-[18px]" : "h-12 w-12 text-[15px]"}`} style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
@@ -41,15 +41,15 @@ export default function BrandsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(list) }} />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb"><ol className="flex items-center gap-1.5 text-[12.5px] text-white/60"><li><Link href="/" className="hover:text-white">Home</Link></li><li aria-hidden="true"><ChevronRight size={13} /></li><li className="text-white/85">Brands</li></ol></nav>
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-190">
               <h1 className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">Every brand. <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Every part.</span></h1>
-              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">We repair drives, motors, controller cards, CNC controls, HMIs, PLCs, power supplies and circuit boards from 1,000+ automation brands, current or obsolete. Name any brand and we&apos;ll repair it.</p>
+              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">We repair drives, motors, controller cards, CNC controls, HMIs, PLCs, power supplies and circuit boards from every major automation brand, current or obsolete. Name any brand and we&apos;ll repair it.</p>
             </div>
-            <Link href="/request-repair" className="inline-flex h-12 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
+            <Link href="/request-repair" className="inline-flex h-12 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
           </div>
         </div>
       </section>
@@ -60,11 +60,11 @@ export default function BrandsPage() {
         <BrandDirectory />
 
         <section aria-labelledby="any" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-7 text-white sm:p-10">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
-          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-xl" />
           <div className="relative grid gap-6 lg:grid-cols-[1fr_520px] lg:items-center">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">1,000+ brands</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Every major brand</p>
               <h2 id="any" className="mt-2 text-[28px] font-extrabold leading-tight sm:text-[36px]">Name any brand. <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">We repair it.</span></h2>
               <p className="mt-2 text-[15px] leading-[1.7] text-white/70">Drives, motors, controller cards, HMIs, power supplies and circuit boards from any manufacturer, current or obsolete. Send the part number and we&apos;ll confirm.</p>
             </div>

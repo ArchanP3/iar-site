@@ -8,7 +8,7 @@ import { surplusFaqs } from "@/lib/faqs";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/sell-surplus", {
-  title: "Sell Your Surplus Automation Parts | AutomIQ",
+  title: "Sell Your Surplus Automation Parts | IAR",
   description: "Sell surplus servo drives, motors, PLCs, HMIs and CNC parts. Send your list, get an offer, and we can arrange the pickup. Canada & USA.",
   alternates: { canonical: `${SITE_URL}/sell-surplus` },
 });
@@ -19,7 +19,7 @@ const steps = [
   ["You accept, and we arrange the pickup", PackageCheck],
   ["We check the units when they arrive", FileText],
 ] as const;
-const points = ["Single parts or full lots", "Pickup across Canada & USA", "No obligation", "1,000+ brands"];
+const points = ["Single parts or full lots", "Pickup across Canada & USA", "No obligation", "Every major brand"];
 
 const buy = [
   [Settings2, "Servo drives & motors", "Siemens, Rexroth Indramat, Kollmorgen, Yaskawa and more"],
@@ -33,7 +33,7 @@ const faqs: [string, string][] = surplusFaqs.map((f) => [f.q, f.a]);
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Service", name: "Surplus industrial automation parts buying", serviceType: "Surplus equipment purchase", url: `${SITE_URL}/sell-surplus`, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL } },
+    { "@type": "Service", name: "Surplus industrial automation parts buying", serviceType: "Surplus equipment purchase", url: `${SITE_URL}/sell-surplus`, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL } },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
 };
@@ -41,7 +41,7 @@ const schema = {
 export default function SellSurplusPage() {
   return (
     <ResourceShell crumb={[{ label: "Shop", href: "/shop" }, { label: "Sell Your Surplus" }]} title="Sell your" accent="surplus parts."
-      text="Spare drives on the shelf? A line being removed? Send us the list. We make an offer on surplus automation parts from 1,000+ brands and can arrange the pickup anywhere in Canada and the USA." schema={schema}>
+      text="Spare drives on the shelf? A line being removed? Send us the list. We make an offer on surplus automation parts from every major brand and can arrange the pickup anywhere in Canada and the USA." schema={schema}>
       <PageExtras path="/sell-surplus" />
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         <SurplusForm />

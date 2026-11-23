@@ -35,7 +35,7 @@ async function Edit({ params, searchParams }: Props) {
   const page = row
     ? { ...row, updated_at: String(row.updated_at) }
     : kind === "template"
-      ? { id: 0, path: "", name: "", kind: "template" as const, blocks: [], vars: { city: "Burlington", province: "ON", path_pattern: "/servo-drive-repair-{city_slug}" }, template_id: null, status: "template", seo_title: "Servo Drive Repair in {city}, {province} | AutomIQ", seo_description: null, in_sitemap: "locations", site: "both" as const, updated_at: "" }
+      ? { id: 0, path: "", name: "", kind: "template" as const, blocks: [], vars: { city: "Burlington", province: "ON", path_pattern: "/servo-drive-repair-{city_slug}" }, template_id: null, status: "template", seo_title: "Servo Drive Repair in {city}, {province} | IAR", seo_description: null, in_sitemap: "locations", site: "both" as const, updated_at: "" }
       : null;
   const label = kind === "template" ? "Templates" : "Pages";
   return (

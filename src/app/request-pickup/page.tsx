@@ -8,7 +8,7 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-pickup", {
-  title: "Request a Pickup | Servo Drive & Motor Repair | AutomIQ",
+  title: "Request a Pickup | Servo Drive & Motor Repair | IAR",
   description:
     "Book a pickup for your servo drive, motor or industrial electronics repair with FedEx, Purolator, UPS or DHL. Free evaluation. Canada & USA.",
 });
@@ -19,7 +19,7 @@ const pickupSteps = [
   ["You get the pickup confirmation", CalendarCheck],
   ["Free evaluation when it arrives", FileText],
 ] as const;
-const pickupPoints = ["FedEx · Purolator · UPS · DHL", "Canada & USA", "Free evaluation", "12-month warranty"];
+const pickupPoints = ["FedEx · Purolator · UPS · DHL", "Canada & USA", "Free evaluation", "1-year warranty"];
 
 const tips = [
   ["Pack it well", "Anti-static bag for electronics, at least 5 cm of padding on every side, sturdy box.", PackageOpen],
@@ -47,8 +47,8 @@ export default function RequestPickupPage() {
       <Header />
 
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">

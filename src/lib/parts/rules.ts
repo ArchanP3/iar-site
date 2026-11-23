@@ -10,7 +10,7 @@ import type { Condition, Offer } from "./types";
 /*  the customer pays: no payment is taken online.                      */
 /* ------------------------------------------------------------------ */
 
-export const WARRANTY = "12-month warranty";
+export const WARRANTY = "1-year warranty";
 
 /** The catalog fields that make a part an inventory item. */
 export type Stock = { price: number | null; currency?: string | null; condition?: string | null; availability?: string | null; stock_qty?: number | null };

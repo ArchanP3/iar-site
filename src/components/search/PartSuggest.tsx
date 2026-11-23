@@ -152,7 +152,7 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
             id={listId}
             role="listbox"
             style={{ position: "fixed", left: box.left, top: box.top, width: Math.max(box.width, 300) }}
-            className={`${brandFont.className} z-80 overflow-hidden rounded-2xl border border-[#EAEAEC] bg-white text-left text-[#131316] shadow-[0_30px_70px_-20px_rgba(19, 19, 22,0.45)]`}
+            className={`${brandFont.className} z-80 overflow-hidden rounded-2xl border border-[#EAEAEC] bg-white text-left text-[#131316] shadow-[0_30px_70px_-20px_rgba(19,19,22,0.45)]`}
             onMouseDown={(e) => e.preventDefault()}
           >
             <div className="flex items-center justify-between gap-3 border-b border-[#F3F3F4] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#696976]">

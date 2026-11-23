@@ -15,12 +15,12 @@ import { getContact, type Contact } from "@/lib/cms/business";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 /* Contact page. Confirmed facts only: Mississauga ON repair centre, Canada & USA incl. on-site,
-   20+ years, 1,000+ brands, free evaluation, written quote first, 24–72 hr typical
-   turnaround once approved, 12-month warranty on repairs, test report, tested on our own jigs.
+   free evaluation, written quote first, 24–72 hr typical
+   turnaround once approved, 1-year warranty on repairs, test report, load tested on OEM-standard equipment.
    Phone, email and hours come from src/lib/contact.ts and stay hidden until they are filled in. */
 
 export const generateMetadata = seo("/contact", {
-  title: "Contact AutomIQ | Industrial Repair in Mississauga, Ontario",
+  title: "Contact IAR | Industrial Repair in Mississauga, Ontario",
   description:
     "Contact our Mississauga, Ontario repair centre about servo drive, motor and industrial electronics repair, parts and exchange units. Serving Canada & USA.",
   alternates: { canonical: `${SITE_URL}/contact` },
@@ -61,7 +61,7 @@ const after = [
   { icon: MessageSquare, t: "We review your message", d: "Our team looks at your unit or part and replies with next steps." },
   { icon: ClipboardCheck, t: "Free evaluation", d: "For repairs we evaluate your unit for free and find the fault." },
   { icon: FileText, t: "Written quote first", d: "You approve the price before any work starts." },
-  { icon: BadgeCheck, t: "Tested and returned", d: "24–72 hr typical turnaround, test report and 12-month warranty." },
+  { icon: BadgeCheck, t: "Tested and returned", d: "24–72 hr typical turnaround, test report and 1-year warranty." },
 ];
 
 const quick = [
@@ -78,7 +78,7 @@ const faqs = [
   ["How long does a repair take?", "Typical turnaround is 24 to 72 hours once you approve the quote. If you need it faster, ask about an exchange unit."],
   ["Do you cover the USA as well as Canada?", "Yes. We repair units for customers across Canada and the USA from our Mississauga, Ontario repair centre, and offer on-site service in both countries."],
   ["How do I send you my unit?", "Ship it to us with any carrier, such as FedEx, Purolator, UPS or DHL, or request a pickup and we arrange collection from your site."],
-  ["What warranty do repairs come with?", "Every repaired unit is tested on our own jigs, comes with a test report and is covered by a 12-month warranty."],
+  ["What warranty do repairs come with?", "Every repaired unit is load tested on OEM-standard equipment, comes with a test report and is covered by a 1-year warranty."],
 ];
 
 const schemaFor = (contact: Contact) => ({
@@ -87,10 +87,10 @@ const schemaFor = (contact: Contact) => ({
     {
       "@type": "ContactPage",
       url: `${SITE_URL}/contact`,
-      name: "Contact AutomIQ Automation & Drive Services",
+      name: "Contact Industrial Automation Repair Inc.",
       about: {
         "@type": "Organization",
-        name: "AutomIQ Automation & Drive Services",
+        name: "Industrial Automation Repair Inc.",
         url: SITE_URL,
         address: postalAddress, geo, openingHoursSpecification: openingHours,
         areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
@@ -127,8 +127,8 @@ export default async function ContactPage() {
 
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.28),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.28),transparent)] blur-2xl" />
         <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-size-[44px_44px] mask-[radial-gradient(ellipse_at_30%_0%,black,transparent_70%)]" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
@@ -156,7 +156,7 @@ export default async function ContactPage() {
           {cards.map(({ icon: Icon, k, v, note, href, wa }) => {
             const inner = (
               <>
-                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${wa ? "bg-linear-to-br from-[#25D366] to-[#128C7E] shadow-[0_12px_24px_-12px_rgba(37,211,102,0.9)]" : "bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_12px_24px_-12px_rgba(200, 16, 46,0.9)]"}`}>
+                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl text-white ${wa ? "bg-linear-to-br from-[#25D366] to-[#128C7E] shadow-[0_12px_24px_-12px_rgba(37,211,102,0.9)]" : "bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_12px_24px_-12px_rgba(200,16,46,0.9)]"}`}>
                   <Icon size={21} aria-hidden="true" />
                 </span>
                 <span className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[#696976]">{k}</span>
@@ -167,7 +167,7 @@ export default async function ContactPage() {
                 {(href || wa) && <ArrowRight size={17} className="absolute right-5 top-6 text-[#C2C2C9] transition group-hover:translate-x-0.5 group-hover:text-[#B30E29]" aria-hidden="true" />}
               </>
             );
-            const cls = "group relative block h-full rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)] transition";
+            const cls = "group relative block h-full rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] transition";
             return (
               <li key={k}>
                 {wa ? (
@@ -198,7 +198,7 @@ export default async function ContactPage() {
         <h2 id="visit-h" className="mt-2 text-[26px] font-extrabold tracking-[-0.015em] sm:text-[32px]">Our repair centre in Mississauga</h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-[400px_1fr]">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white sm:p-7">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55]"><MapPin size={21} aria-hidden="true" /></span>
             <p className="relative mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Address</p>
             <address className="relative mt-1 text-[19px] font-extrabold not-italic leading-snug sm:text-[20px]">
@@ -221,7 +221,7 @@ export default async function ContactPage() {
               </div>
             )}
             <div className="relative mt-5 grid gap-2.5">
-              <a href={directionsUrl} target="_blank" rel="noopener" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5"><MapPin size={17} aria-hidden="true" /> Get directions</a>
+              <a href={directionsUrl} target="_blank" rel="noopener" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><MapPin size={17} aria-hidden="true" /> Get directions</a>
               <div className="grid grid-cols-2 gap-2.5">
                 {contact.phone && <a href={phoneHref(contact.phone)} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 text-[15px] font-semibold transition hover:border-white/40"><Phone size={16} aria-hidden="true" /> Call us</a>}
                 <WhatsAppTrigger topic="A question from the contact page" className={`inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-[#25D366] text-[15px] font-semibold transition hover:bg-[#1FC15B] ${contact.phone ? "" : "col-span-2"}`}><WhatsAppIcon size={17} /> WhatsApp</WhatsAppTrigger>
@@ -230,13 +230,13 @@ export default async function ContactPage() {
           </div>
           <div className="relative min-h-80 overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-[#EEEEF0] sm:min-h-105">
             <iframe
-              title={`Map: AutomIQ repair centre, ${place.address}`}
+              title={`Map: IAR repair centre, ${place.address}`}
               src={mapEmbedUrl}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0 h-full w-full border-0"
             />
-            <a href={mapsUrl} target="_blank" rel="noopener" className="absolute bottom-4 right-4 inline-flex h-10 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[13.5px] font-bold text-[#A50D25] shadow-[0_14px_30px_-14px_rgba(19, 19, 22,0.6)] hover:bg-[#FFF6F7]">Open in Google Maps <ArrowRight size={14} aria-hidden="true" /></a>
+            <a href={mapsUrl} target="_blank" rel="noopener" className="absolute bottom-4 right-4 inline-flex h-10 items-center gap-1.5 rounded-xl bg-white px-3.5 text-[13.5px] font-bold text-[#A50D25] shadow-[0_14px_30px_-14px_rgba(19,19,22,0.6)] hover:bg-[#FFF6F7]">Open in Google Maps <ArrowRight size={14} aria-hidden="true" /></a>
           </div>
         </div>
       </section>
@@ -274,7 +274,7 @@ export default async function ContactPage() {
           <ContactForm />
           <aside className="space-y-3 lg:sticky lg:top-28">
             <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
-              <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+              <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
               {/* coverage graphic: Mississauga hub reaching Canada & USA */}
               <svg aria-hidden="true" viewBox="0 0 320 120" className="relative h-auto w-full">
                 <defs>
@@ -309,7 +309,7 @@ export default async function ContactPage() {
             <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-5">
               <p className="flex items-center gap-2 text-[15px] font-extrabold"><ShieldCheck size={17} className="text-[#B30E29]" aria-hidden="true" /> Our promise</p>
               <ul className="mt-3 space-y-2 text-[13.5px] text-[#5A5A66]">
-                {["Free evaluation on every repair", "Written quote before any work", "Tested on our own jigs", "12-month warranty and test report"].map((x) => (
+                {["Free evaluation on every repair", "Written quote before any work", "Load tested on OEM-standard equipment", "1-year warranty and test report"].map((x) => (
                   <li key={x} className="flex gap-2"><BadgeCheck size={16} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />{x}</li>
                 ))}
               </ul>
@@ -328,7 +328,7 @@ export default async function ContactPage() {
           <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-8.5 hidden h-px bg-linear-to-r from-[#C8102E]/0 via-[#C8102E]/40 to-[#C8102E]/0 lg:block" />
           {after.map(({ icon: Icon, t, d }, i) => (
             <li key={t} className="relative rounded-[22px] border border-[#EAEAEC] bg-white p-5 text-center">
-              <span className="relative mx-auto flex h-13 w-13 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_14px_28px_-14px_rgba(200, 16, 46,0.9)]">
+              <span className="relative mx-auto flex h-13 w-13 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_14px_28px_-14px_rgba(200,16,46,0.9)]">
                 <Icon size={22} aria-hidden="true" />
                 <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-[#131316] text-[11px] font-bold ring-2 ring-white">{String(i + 1).padStart(2, "0")}</span>
               </span>
@@ -367,7 +367,7 @@ export default async function ContactPage() {
             ))}
           </ul>
           <div className="mt-5 flex flex-col gap-2.5 sm:flex-row lg:flex-col">
-            <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:flex-1 lg:flex-none from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5">
+            <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:flex-1 lg:flex-none from-[#C8102E] to-[#FF3B55] text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
               <Wrench size={16} aria-hidden="true" /> Request a Repair
             </Link>
             <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border sm:flex-1 lg:flex-none border-[#F0DADD] bg-white text-[15px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">

@@ -176,7 +176,7 @@ export function FormMeta({ type, subject }: { type: RequestType; subject: string
 
 export function Thanks({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-10">
+    <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-10">
       <CheckCircle2 size={48} className="mx-auto text-emerald-500" aria-hidden="true" />
       <h2 className="mt-4 text-[24px] font-extrabold text-[#131316]">{title}</h2>
       <p className="mx-auto mt-2 max-w-115 text-[14.5px] leading-[1.6] text-[#62626F]">{text}</p>
@@ -202,7 +202,7 @@ export function SubmitBar({ status, label: text, note }: { status: SendStatus; l
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5 disabled:opacity-70"
+          className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5 disabled:opacity-70"
         >
           {status === "sending" ? <><Loader2 size={16} className="animate-spin" aria-hidden="true" /> Sending…</> : <>{text} <ArrowRight size={16} aria-hidden="true" /></>}
         </button>

@@ -14,7 +14,7 @@ import ServiceIcon from "./ServiceIcon";
 const repairIcons = [Zap, Gauge, Cpu, Radio, CircuitBoard, RefreshCw];
 const testIcons = [Camera, ScanSearch, Gauge, FileCheck2];
 const factSets = {
-  repair: [["Free evaluation", ShieldCheck], ["24–72 hr typical", Clock], ["12-month warranty", BadgeCheck], ["Tested on our jigs", Gauge]],
+  repair: [["Free evaluation", ShieldCheck], ["24–72 hr typical", Clock], ["1-year warranty", BadgeCheck], ["Load tested on our benches", Gauge]],
   service: [["Every brand", BadgeCheck], ["Canada & USA", ShieldCheck], ["Repair centre in Mississauga", Gauge]],
   cable: [["Any brand", BadgeCheck], ["Built to your length", Gauge], ["Canada & USA", ShieldCheck]],
 } as const;
@@ -48,7 +48,7 @@ export default function ServicePage({ s }: { s: Service }) {
       name: s.h1,
       serviceType: s.h1,
       description: s.answer,
-      provider: { "@type": "LocalBusiness", name: "AutomIQ Automation & Drive Services", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
+      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
       areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
     },
     s.faqs?.length && {
@@ -66,8 +66,8 @@ export default function ServicePage({ s }: { s: Service }) {
 
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.32),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-24 top-10 h-95 w-120 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.32),transparent)] blur-2xl" />
         <div className="relative mx-auto grid max-w-310 gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_400px] lg:items-center">
           <div>
             <nav aria-label="Breadcrumb">
@@ -91,7 +91,7 @@ export default function ServicePage({ s }: { s: Service }) {
               ))}
             </ul>
             <div className="mt-6 grid grid-cols-[1fr_auto] gap-3 sm:flex sm:flex-wrap">
-              <Link href={isCable ? "/request-cable" : isEx ? "/request-repair?service=exchange" : "/request-repair"} className="col-span-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:col-span-1 from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5">
+              <Link href={isCable ? "/request-cable" : isEx ? "/request-repair?service=exchange" : "/request-repair"} className="col-span-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br sm:col-span-1 from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5">
                 {isEx ? <Zap size={17} aria-hidden="true" /> : <Wrench size={17} aria-hidden="true" />} {isCable ? "Order a Custom Cable" : isEx ? "Get an Exchange Unit" : kind === "service" ? "Talk to a Technician" : "Request a Repair"} <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link href={isEx ? "/request-repair" : "/request-repair?service=exchange"} className="inline-flex h-12 min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-white/20 bg-white/6 px-4 text-[14px] sm:px-6 sm:text-[15px] font-semibold transition hover:border-white/40">
@@ -102,12 +102,12 @@ export default function ServicePage({ s }: { s: Service }) {
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-30px_rgba(200, 16, 46,0.9)] backdrop-blur-xl">
-              <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255, 59, 85,0.12)_100%)]" />
+            <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_30px_60px_-30px_rgba(200,16,46,0.9)] backdrop-blur-xl">
+              <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_32%,transparent_70%,rgba(255,59,85,0.12)_100%)]" />
               <div className="relative flex h-55 items-center justify-center">
-                <span aria-hidden="true" className="absolute h-44 w-44 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.45),transparent)] blur-lg" />
+                <span aria-hidden="true" className="absolute h-44 w-44 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.45),transparent)] blur-lg" />
                 {s.icon ? (
-                  <Image src={s.icon} alt={`${s.h1} at AutomIQ Automation & Drive Services`} width={260} height={260} priority className="relative h-50 w-auto object-contain drop-shadow-[0_24px_30px_rgba(0,0,0,0.5)]" />
+                  <Image src={s.icon} alt={`${s.h1} at Industrial Automation Repair Inc.`} width={260} height={260} priority className="relative h-50 w-auto object-contain drop-shadow-[0_24px_30px_rgba(0,0,0,0.5)]" />
                 ) : (
                   <ServiceIcon name={s.lucide} color={s.color} size={120} className="relative" />
                 )}
@@ -125,7 +125,7 @@ export default function ServicePage({ s }: { s: Service }) {
 
       <div className="relative mx-auto -mt-20 max-w-310 space-y-14 px-5 pb-16 sm:px-8">
         {/* ---------- Short answer (AEO) ---------- */}
-        <section aria-labelledby="answer" className="rounded-[24px] border border-[#EAEAEC] bg-white p-6 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-8">
+        <section aria-labelledby="answer" className="rounded-[24px] border border-[#EAEAEC] bg-white p-6 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-8">
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">Short answer</p>
@@ -147,7 +147,7 @@ export default function ServicePage({ s }: { s: Service }) {
               {s.repairs.map((r, i) => {
                 const I = repairIcons[i % repairIcons.length];
                 return (
-                  <li key={r.t} className="group rounded-2xl border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:shadow-[0_18px_40px_-26px_rgba(200, 16, 46,0.6)]">
+                  <li key={r.t} className="group rounded-2xl border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:shadow-[0_18px_40px_-26px_rgba(200,16,46,0.6)]">
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] transition group-hover:bg-linear-to-br group-hover:from-[#C8102E] group-hover:to-[#FF3B55] group-hover:text-white"><I size={18} aria-hidden="true" /></span>
                       <h3 className="text-[16px] font-bold">{r.t}</h3>
@@ -194,8 +194,8 @@ export default function ServicePage({ s }: { s: Service }) {
         {/* ---------- How we test (dark liquid card) ---------- */}
         {s.testing && (
           <section aria-labelledby="test" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
-            <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.28),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.28),transparent)] blur-xl" />
             <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
                 <Eyebrow dark>Quality</Eyebrow>
@@ -238,10 +238,10 @@ export default function ServicePage({ s }: { s: Service }) {
               ))}
               {!isEx && (
                 <li className="relative overflow-hidden rounded-2xl bg-[#0A0A0C] p-5 text-white">
-                  <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 h-40 w-40 rounded-full bg-[radial-gradient(closest-side,rgba(218, 11, 42,0.6),transparent)] blur-lg" />
+                  <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-12 h-40 w-40 rounded-full bg-[radial-gradient(closest-side,rgba(218,11,42,0.6),transparent)] blur-lg" />
                   <h3 className="relative text-[16px] font-extrabold">Any brand. Any model.</h3>
                   <p className="relative mt-1.5 text-[13px] leading-[1.6] text-white/70">
-                    {(s.brands.find((b) => b.name === "And more")?.series ?? []).concat("1,000+ brands").join(" · ")}
+                    {(s.brands.find((b) => b.name === "And more")?.series ?? []).concat("every major brand").join(" · ")}
                   </p>
                   <Link href="/request-repair?service=question" className="relative mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#FF8A99]">
                     Don&apos;t see yours? Ask a technician <ArrowRight size={14} aria-hidden="true" />
@@ -262,9 +262,9 @@ export default function ServicePage({ s }: { s: Service }) {
             {[
               { t: "Repair your unit", tag: "Best value", d: "Your original unit, repaired at component level and tested. Usually a fraction of the price of new.", href: "/request-repair", cta: "Request a Repair", on: true },
               { t: "Exchange unit", tag: "Fastest", d: "A tested replacement at a lower price. Ship us your unit and we ship the replacement once it arrives.", href: "/request-repair?service=exchange", cta: "Ask About Exchange" },
-              { t: "Replacement part", tag: "Hard to find", d: "New, surplus or refurbished, sourced from 1,000+ brands, including discontinued parts.", href: "/request-quote", cta: "Request a Quote" },
+              { t: "Replacement part", tag: "Hard to find", d: "New, surplus or refurbished, sourced from every major brand, including discontinued parts.", href: "/request-quote", cta: "Request a Quote" },
             ].map((o) => (
-              <div key={o.t} className={`flex flex-col rounded-[22px] border p-6 ${o.on ? "border-[#C8102E]/40 bg-white shadow-[0_24px_50px_-30px_rgba(200, 16, 46,0.7)] ring-4 ring-[#C8102E]/6" : "border-[#EAEAEC] bg-white"}`}>
+              <div key={o.t} className={`flex flex-col rounded-[22px] border p-6 ${o.on ? "border-[#C8102E]/40 bg-white shadow-[0_24px_50px_-30px_rgba(200,16,46,0.7)] ring-4 ring-[#C8102E]/6" : "border-[#EAEAEC] bg-white"}`}>
                 <span className={`w-fit rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em] ${o.on ? "bg-linear-to-r from-[#C8102E] to-[#FF3B55] text-white" : "bg-[#F7F7F8] text-[#62626F]"}`}>{o.tag}</span>
                 <h3 className="mt-3 text-[19px] font-extrabold">{o.t}</h3>
                 <p className="mt-1.5 flex-1 text-[14px] leading-[1.6] text-[#62626F]">{o.d}</p>
@@ -325,7 +325,7 @@ export default function ServicePage({ s }: { s: Service }) {
             <div>
               <h2 className="text-[26px] font-extrabold leading-tight sm:text-[32px]">{isCable ? "Need a cable? We'll build it to match." : kind === "service" ? "Let's keep your line running." : `${isEx ? "Line" : Noun} down? Let's get it running again.`}</h2>
               <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[14px] text-white/85">
-                {(kind === "repair" ? ["Free evaluation", "No work without your approval", "12-month warranty"] : ["Any brand", "Canada & USA", "We confirm details before we start"]).map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
+                {(kind === "repair" ? ["Free evaluation", "No work without your approval", "1-year warranty"] : ["Any brand", "Canada & USA", "We confirm details before we start"]).map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
               </p>
             </div>
             <div className="grid gap-3 sm:flex sm:flex-wrap lg:flex-nowrap">

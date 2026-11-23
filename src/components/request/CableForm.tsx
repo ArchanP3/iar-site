@@ -29,8 +29,8 @@ export default function CableForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="cable" subject="New custom cable request: AutomIQ website" />
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="cable" subject="New custom cable request: IAR website" />
 
       <Step n={1} title="What it connects" hint="The drive and motor model numbers tell us the connectors and pinout.">
         <div className="grid gap-3 sm:grid-cols-2">

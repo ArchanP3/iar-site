@@ -22,7 +22,7 @@ export default function BrandDirectory() {
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h2 id="more" className="text-[22px] font-extrabold sm:text-[26px]">More brands we repair</h2>
-          <p className="mt-1 text-[14px] text-[#62626F]">{brands.length} brands listed. We repair 1,000+. Name any brand and we&apos;ll repair it.</p>
+          <p className="mt-1 text-[14px] text-[#62626F]">{brands.length} brands listed. Name any brand and we&apos;ll repair it.</p>
         </div>
         <label className="flex w-full items-center gap-2 rounded-2xl border border-[#F0DADD] bg-white px-4 lg:w-85">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
@@ -41,7 +41,7 @@ export default function BrandDirectory() {
       <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
         {list.map((b) => (
           <li key={b.slug} className="relative">
-            <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
+            <Link href={brandUrl(b.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${b.color}40 100%)` }}>
               <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${b.color}77, transparent)` }} />
               <span className="relative flex items-start justify-between">
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl text-[12px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:rounded-2xl sm:text-[14px]" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>

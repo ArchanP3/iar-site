@@ -11,7 +11,7 @@ import { contact } from "@/lib/contact";
 export type Tracking = {
   gtm: string; ga4: string; gscVerification: string; bingVerification: string; clarity: string; linkedin: string;
   headHtml: string; bodyHtml: string;
-  /** Search Console HTML-tag code for automiqautomation.ca (gscVerification is the .com one). */
+  /** Search Console HTML-tag code for industrialautomationrepair.com (gscVerification is the .com one). */
   gscVerificationCa?: string;
 };
 export type Business = {
@@ -34,14 +34,14 @@ export type PartsMinPrice = Record<string, number>;
 export const DEFAULTS = {
   tracking: { gtm: "", ga4: "", gscVerification: "", gscVerificationCa: "", bingVerification: "", clarity: "", linkedin: "", headHtml: "", bodyHtml: "" } as Tracking,
   business: {
-    name: "AutomIQ Automation & Drive Services", street: "", city: "Mississauga", region: "ON", postal: "", country: "CA",
+    name: "Industrial Automation Repair Inc.", street: "", city: "Mississauga", region: "ON", postal: "", country: "CA",
     phone: contact.phone, email: contact.email, hours: contact.hours, gbp: "", dropOff: "Drop off during business hours, no appointment needed.",
     serviceArea: "Repairs across Canada and the USA. Parts shipped worldwide by air.",
   } as Business,
   site: {
     announcement: { on: true, text: "Repairs in Canada & USA · Parts shipped worldwide" },
     social: { linkedin: "", youtube: "", facebook: "", instagram: "", x: "" },
-    titleSuffix: "AutomIQ",
+    titleSuffix: "IAR",
     ogImage: "",
     sitemaps: { pages: true, posts: true, locations: true, faultCodes: true, images: true, parts: true },
   } as SiteSettings,

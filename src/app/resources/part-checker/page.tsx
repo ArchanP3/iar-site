@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/part-checker", {
-  title: "Part Number Checker: Stock, Exchange & Repair | AutomIQ",
+  title: "Part Number Checker: Stock, Exchange & Repair | IAR",
   description: "Type any automation part number to see refurbished stock and price, exchange and repair options, or get a quote if it is not listed yet.",
   alternates: { canonical: `${SITE_URL}/resources/part-checker` },
 });

@@ -29,7 +29,7 @@ export default function Sidebar({ groups, user }: { groups: NavGroup[]; user: { 
     <>
       <div className="flex items-center gap-2.5 px-2 pb-4">
         <a href="/" target="_blank" rel="noopener" title="Open the website in a new tab" className="transition hover:opacity-85">
-          <Image src="/iar-logo-white.png" alt="AutomIQ — open the website" width={66} height={30} className="h-7.5 w-auto" priority />
+          <Image src="/iar-logo-white.png" alt="IAR — open the website" width={66} height={30} className="h-7.5 w-auto" priority />
         </a>
         <span className="rounded-md border border-[#FF8A99]/35 px-1.5 py-0.5 text-[10px] font-bold tracking-[0.14em] text-[#FF8A99]">CMS</span>
         <button type="button" onClick={() => setOpen(false)} className="ml-auto rounded-lg p-1 text-[#9494A0] lg:hidden" aria-label="Close menu"><X size={20} /></button>
@@ -46,7 +46,7 @@ export default function Sidebar({ groups, user }: { groups: NavGroup[]; user: { 
                   key={i.href}
                   href={i.href}
                   onClick={() => setOpen(false)}
-                  className={`flex items-center gap-2.75 rounded-[10px] px-2.5 py-[8.5px] text-[13px] font-semibold ${on ? "bg-linear-to-r from-[#C8102E]/95 to-[#DA0B2A]/75 text-white shadow-[0_10px_24px_-12px_rgba(200, 16, 46,0.9)]" : "text-[#E6CBCF] hover:bg-white/6 hover:text-white"}`}
+                  className={`flex items-center gap-2.75 rounded-[10px] px-2.5 py-[8.5px] text-[13px] font-semibold ${on ? "bg-linear-to-r from-[#C8102E]/95 to-[#DA0B2A]/75 text-white shadow-[0_10px_24px_-12px_rgba(200,16,46,0.9)]" : "text-[#E6CBCF] hover:bg-white/6 hover:text-white"}`}
                 >
                   <Icon size={17} className={on ? "text-white" : "text-[#9494A0]"} aria-hidden="true" />
                   <span>{i.label}</span>
@@ -74,7 +74,7 @@ export default function Sidebar({ groups, user }: { groups: NavGroup[]; user: { 
     <>
       <button type="button" onClick={() => setOpen(true)} className="fixed left-3 top-3 z-40 rounded-xl bg-[#131316] p-2.5 text-white shadow-lg lg:hidden" aria-label="Open menu"><Menu size={20} /></button>
       <aside className={`fixed inset-y-0 left-0 z-50 flex w-62 flex-col overflow-hidden bg-linear-to-b from-[#131316] to-[#1B1B1F] px-3.5 py-5 transition-transform lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-28 h-75 w-75 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.35),transparent_65%)]" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-28 h-75 w-75 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.35),transparent_65%)]" />
         <div className="relative flex min-h-0 flex-1 flex-col">{body}</div>
       </aside>
       {open && <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="fixed inset-0 z-40 bg-black/40 lg:hidden" />}

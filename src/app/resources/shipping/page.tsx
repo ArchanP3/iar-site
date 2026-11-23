@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/shipping", {
-  title: "How to Ship Us a Unit for Repair | Packing Guide | AutomIQ",
+  title: "How to Ship Us a Unit for Repair | Packing Guide | IAR",
   description: "How to pack and ship a servo drive, servo motor, HMI or circuit board for repair: packing checklist, carriers, pickups and cross-border paperwork for the USA.",
   alternates: { canonical: `${SITE_URL}/resources/shipping` },
 });
@@ -38,7 +38,7 @@ const avoid = [
 const schema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  name: "How to ship a unit to AutomIQ for repair",
+  name: "How to ship a unit to IAR for repair",
   description: "Pack and ship a servo drive, servo motor, HMI or circuit board for repair.",
   step: steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.t, text: s.d })),
 };
@@ -54,7 +54,7 @@ export default function ShippingGuidePage() {
           { icon: Truck, t: "Ship it yourself", d: "Send it with FedEx, Purolator, UPS, DHL or any carrier you use. Use the address in your repair confirmation.", cta: "Request a Repair", href: "/request-repair" },
           { icon: PackageCheck, t: "Request a pickup", d: "Tell us where and when. We send a waybill and arrange collection from your dock, billed to your invoice or your carrier account.", cta: "Request a Pickup", href: "/request-pickup" },
         ].map(({ icon: Icon, t, d, cta, href }, i) => (
-          <div key={t} className={`rounded-[24px] p-6 sm:p-7 ${i ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]"}`}>
+          <div key={t} className={`rounded-[24px] p-6 sm:p-7 ${i ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]"}`}>
             <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${i ? "bg-white/15 ring-1 ring-white/25" : "bg-[#C8102E]/8 text-[#B30E29]"}`}><Icon size={22} aria-hidden="true" /></span>
             <h2 className="mt-4 text-[22px] font-extrabold">{t}</h2>
             <p className={`mt-1.5 text-[14.5px] leading-relaxed ${i ? "text-white/85" : "text-[#62626F]"}`}>{d}</p>

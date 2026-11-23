@@ -115,7 +115,7 @@ export async function submitServiceRequest(fields: Record<string, string>): Prom
 /** At most 10 requests per network per 10 minutes (public.request_allowed in the database). */
 async function allowed() {
   const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  const key = createHash("sha256").update(`automiq:${ip}`).digest("hex").slice(0, 32);
+  const key = createHash("sha256").update(`iar:${ip}`).digest("hex").slice(0, 32);
   const { data, error } = await supabase.rpc("request_allowed", { key });
   return error ? true : data !== false; // never block real requests because the check failed
 }

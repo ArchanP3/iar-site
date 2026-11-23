@@ -3,7 +3,7 @@ import CartView from "@/components/cart/CartView";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/cart", {
-  title: "Your Cart | AutomIQ",
+  title: "Your Cart | IAR",
   robots: { index: false, follow: true },
 });
 

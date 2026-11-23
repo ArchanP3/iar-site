@@ -2,13 +2,13 @@ import { absoluteFor, hrefFor, onThisSite } from "./site";
 
 /* ------------------------------------------------------------------ */
 /*  Service area pages: /service-areas/<slug>.                          */
-/*  AutomIQ has ONE repair centre, in Mississauga, Ontario. These pages */
+/*  IAR has ONE repair centre, in Mississauga, Ontario. These pages */
 /*  never claim a local shop: they explain how units from each city     */
 /*  reach Mississauga (drop-off, pickup, ship-in) and what we repair.   */
 /*  dropOff = close enough that dropping a unit off is practical.       */
 /*  industries = slugs from src/lib/industries.ts                       */
-/*  country = which site the page lives on: CA -> automiqautomation.ca, */
-/*  US -> automiqautomation.com. The other site links to it and 301s.   */
+/*  country = which site the page lives on: CA -> industrialautomationrepair.com, */
+/*  US -> industrialautomationrepair.com. The other site links to it and 301s.   */
 /* ------------------------------------------------------------------ */
 
 export type Area = {

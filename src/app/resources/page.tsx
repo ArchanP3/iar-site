@@ -16,7 +16,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 const faqCount = [...faqGroups, ...moreFaqGroups].reduce((n, g) => n + g.items.length, 0);
 
 export const generateMetadata = seo("/resources", {
-  title: "Resources: Fault Codes, Guides & Tools | AutomIQ",
+  title: "Resources: Fault Codes, Guides & Tools | IAR",
   description: `Free resources from our repair technicians: ${totalCodes.toLocaleString("en-US")} fault codes explained, a downtime cost calculator, repair guides and our policies.`,
   alternates: { canonical: `${SITE_URL}/resources` },
 });
@@ -24,7 +24,7 @@ export const generateMetadata = seo("/resources", {
 /* One live tile linking to a Resources page */
 function Tile({ icon: Icon, t, d, href, accent = false }: { icon: React.ElementType; t: string; d: string; href: string; accent?: boolean }) {
   return (
-    <Link href={href} className="group flex h-full flex-col rounded-[22px] border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_24px_48px_-32px_rgba(200, 16, 46,0.6)]">
+    <Link href={href} className="group flex h-full flex-col rounded-[22px] border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_24px_48px_-32px_rgba(200,16,46,0.6)]">
       <div className="flex items-start justify-between">
         <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${accent ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "bg-[#C8102E]/8 text-[#B30E29]"}`}><Icon size={20} aria-hidden="true" /></span>
         <ArrowUpRight size={18} className="text-[#C2C2C9] transition group-hover:text-[#B30E29]" aria-hidden="true" />
@@ -41,8 +41,8 @@ export default function ResourcesPage() {
       <PageExtras path="/resources" />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -63,9 +63,9 @@ export default function ResourcesPage() {
       <div className="relative mx-auto -mt-14 max-w-310 space-y-10 px-5 pb-14 sm:px-8">
         {/* ---------- Featured: fault codes + calculator ---------- */}
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="relative rounded-[26px] bg-[#131316] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200, 16, 46,0.8)] sm:p-8">
+          <div className="relative rounded-[26px] bg-[#131316] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200,16,46,0.8)] sm:p-8">
             <span aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[26px]">
-              <span className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.45),transparent)] blur-xl" />
+              <span className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.45),transparent)] blur-xl" />
               <span className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-size-[36px_36px] mask-[radial-gradient(ellipse_at_20%_0%,black,transparent_70%)]" />
             </span>
             <div className="relative flex items-center gap-3">
@@ -80,7 +80,7 @@ export default function ResourcesPage() {
             </Link>
           </div>
 
-          <Link href="/resources/downtime-calculator" className="group relative overflow-hidden rounded-[26px] bg-linear-to-br from-[#C8102E] to-[#FF3B55] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5 sm:p-8">
+          <Link href="/resources/downtime-calculator" className="group relative overflow-hidden rounded-[26px] bg-linear-to-br from-[#C8102E] to-[#FF3B55] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5 sm:p-8">
             <span aria-hidden="true" className="pointer-events-none absolute -bottom-20 -right-16 h-72 w-72 rounded-full border border-white/20" />
             <span aria-hidden="true" className="pointer-events-none absolute -bottom-8 -right-4 h-44 w-44 rounded-full border border-white/15" />
             <div className="relative flex items-center justify-between">

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const f = getFamily(brand, series);
   if (!f) return {};
   return withSeo(familyUrl(f), {
-    title: `${f.short} Fault Codes & Alarms List | AutomIQ`,
+    title: `${f.short} Fault Codes & Alarms List | IAR`,
     description: clip(`All ${f.codes.length.toLocaleString("en-US")} ${f.brand} ${f.series} fault and alarm codes in plain English, from repair technicians. ${f.short} repair in Mississauga.`),
   });
 }
@@ -60,7 +60,7 @@ async function FamilyPageContent({ params }: Props) {
           description: f.intro,
           // Not "Product": Google treats any Product block as a listing and wants a price, reviews or ratings.
           about: { "@type": "Thing", name: `${f.brand} ${f.series}` },
-          publisher: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" },
+          publisher: { "@type": "Organization", name: "Industrial Automation Repair Inc." },
           hasPart: guides.map((c) => ({ "@type": "TechArticle", name: `${f.short} ${c.code}: ${c.name}`, url: `${SITE_URL}${codeUrl(f, c)}` })),
         }}
       />
@@ -69,7 +69,7 @@ async function FamilyPageContent({ params }: Props) {
         <Breadcrumbs items={crumbs} />
 
         <div className="mt-6 flex items-start gap-4">
-          <span className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[22px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(200, 16, 46,0.8)] sm:flex">
+          <span className="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[22px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(200,16,46,0.8)] sm:flex">
             {f.initials}
           </span>
           <div>
@@ -83,16 +83,16 @@ async function FamilyPageContent({ params }: Props) {
         <div className="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-[1fr_320px]">
           <div className="min-w-0">
             <FamilyTable rows={rows} label={f.short} askHref="/request-repair" />
-            <p className="mt-3 text-[12px] text-[#62626F]">Codes and names from the {f.source}. Guides written and reviewed by AutomIQ repair technicians.</p>
+            <p className="mt-3 text-[12px] text-[#62626F]">Codes and names from the {f.source}. Guides written and reviewed by IAR repair technicians.</p>
           </div>
 
           <aside className="space-y-3 lg:sticky lg:top-28 lg:self-start">
             <div className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] p-5 text-white">
-              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
+              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.45),transparent_65%)]" />
               <p className="relative text-[12px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">{f.short} repair</p>
               <p className="relative mt-1 text-[20px] font-extrabold leading-tight">{f.repairLabel}</p>
               <ul className="relative mt-3 space-y-1.5 text-[13px] text-white/85">
-                {["Free evaluation and written quote", "Tested on our own test jigs", "Exchange units when in stock"].map((t) => (
+                {["Free evaluation and written quote", "Tested on our test benches", "Exchange units when in stock"].map((t) => (
                   <li key={t} className="flex items-center gap-2">
                     <Check size={14} className="text-emerald-400" aria-hidden="true" />
                     {t}

@@ -18,7 +18,7 @@ export default function ShopBrandDirectory({ brands }: { brands: B[] }) {
 
   return (
     <div>
-      <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)] sm:flex-row sm:items-center sm:p-4">
+      <div className="flex flex-col gap-3 rounded-[22px] border border-[#EAEAEC] bg-white p-3 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)] sm:flex-row sm:items-center sm:p-4">
         <label className="flex flex-1 items-center gap-2 rounded-xl border border-[#F0DADD] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Find a brand</span>
@@ -39,7 +39,7 @@ export default function ShopBrandDirectory({ brands }: { brands: B[] }) {
           <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {g.map((b) => (
               <li key={b.slug} className="relative">
-                <Link href={`/shop/brands/${b.slug}`} className="group flex h-full items-center gap-3.5 rounded-2xl border border-[#EAEAEC] bg-white p-4 pr-16 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200, 16, 46,0.6)]">
+                <Link href={`/shop/brands/${b.slug}`} className="group flex h-full items-center gap-3.5 rounded-2xl border border-[#EAEAEC] bg-white p-4 pr-16 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40 hover:shadow-[0_20px_40px_-28px_rgba(200,16,46,0.6)]">
                   <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl text-[13px] font-extrabold text-white" style={{ background: `linear-gradient(145deg, ${b.color}, #131316)` }}>{b.initials}</span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-[15.5px] font-extrabold text-[#131316] group-hover:text-[#B30E29]">{b.name}</span>

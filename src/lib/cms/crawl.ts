@@ -91,7 +91,7 @@ export function parse(html: string, origin: string) {
 async function fetchPage(origin: string, path: string) {
   const t0 = Date.now();
   try {
-    const res = await fetch(origin + path, { redirect: "manual", headers: { "user-agent": "AutomIQ-CMS-Audit/1.0", accept: "text/html" }, signal: AbortSignal.timeout(20_000), cache: "no-store" });
+    const res = await fetch(origin + path, { redirect: "manual", headers: { "user-agent": "IAR-CMS-Audit/1.0", accept: "text/html" }, signal: AbortSignal.timeout(20_000), cache: "no-store" });
     const html = res.status === 200 ? await res.text() : "";
     return { status: res.status, html, ms: Date.now() - t0, location: res.headers.get("location") ?? "" };
   } catch {

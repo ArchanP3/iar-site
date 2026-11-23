@@ -38,7 +38,7 @@ function greeting(path: string): { text: string[]; chips: Action[] } {
   if (path.startsWith("/brands/") && h1) return { text: [`Need help with ${h1.replace(/ Repair$/i, "")} equipment? Type a part number or fault code, or start a request.`], chips: ["repair", "quote", "fault"] };
   if (path.startsWith("/fault-codes")) return { text: ["Stuck on a fault? Type the code shown on the drive (for example F30001) and I'll find it."], chips: ["fault", "repair", "callback"] };
   return {
-    text: ["Hi, I'm the AutomIQ assistant. I can find a part, look up a fault code, or start a repair or quote for you.", "Type a question or pick an option."],
+    text: ["Hi, I'm the IAR assistant. I can find a part, look up a fault code, or start a repair or quote for you.", "Type a question or pick an option."],
     chips: ["repair", "quote", "part", "fault", "callback"],
   };
 }
@@ -124,15 +124,15 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
     <div
       role="dialog"
       aria-modal="false"
-      aria-label="AutomIQ assistant"
-      className={`${brandFont.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F7F7F8] text-[#131316] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#F0DADD] sm:shadow-[0_40px_90px_-30px_rgba(6, 6, 7,0.55)] print:hidden`}
+      aria-label="IAR assistant"
+      className={`${brandFont.className} ${open ? "flex" : "hidden"} fixed inset-x-0 top-0 h-dvh z-[60] flex-col bg-[#F7F7F8] text-[#131316] sm:inset-auto sm:top-auto sm:right-5 sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[390px] sm:overflow-hidden sm:rounded-[22px] sm:border sm:border-[#F0DADD] sm:shadow-[0_40px_90px_-30px_rgba(6,6,7,0.55)] print:hidden`}
     >
       {/* header */}
       <div className="relative flex items-center gap-3 overflow-hidden bg-[#060607] px-4 py-3.5 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -top-16 -left-10 size-48 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)]" />
+        <span aria-hidden="true" className="pointer-events-none absolute -top-16 -left-10 size-48 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)]" />
         <span className="relative grid size-10 place-items-center rounded-xl bg-[#C8102E]"><Cpu size={20} aria-hidden="true" /></span>
         <div className="relative min-w-0 flex-1">
-          <p className="text-[15px] font-bold leading-tight">AutomIQ Assistant</p>
+          <p className="text-[15px] font-bold leading-tight">IAR Assistant</p>
           <p className="flex items-center gap-1.5 text-[12px] text-white/70"><span className="size-1.5 rounded-full bg-emerald-400" aria-hidden="true" /> Parts, fault codes, repairs and quotes</p>
         </div>
         <button type="button" onClick={onClose} aria-label="Close chat" className="relative grid size-9 place-items-center rounded-lg text-white/80 hover:bg-white/10 hover:text-white">
@@ -258,7 +258,7 @@ function RequestCard({ kind, done, onDone, page }: { kind: Card; done?: boolean;
   }
 
   return (
-    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#F0DADD] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(19, 19, 22,0.6)]">
+    <form onSubmit={submit} className="max-w-[96%] space-y-2.5 rounded-2xl border border-[#F0DADD] bg-white p-3.5 shadow-[0_14px_30px_-24px_rgba(19,19,22,0.6)]">
       <p className="text-[14px] font-bold">{title[kind]}</p>
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       <div className="grid grid-cols-2 gap-2">

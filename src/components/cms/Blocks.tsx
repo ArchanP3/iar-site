@@ -23,7 +23,7 @@ function Btn({ link, primary, dark }: { link?: { label: string; href: string }; 
   if (!link?.label || !link.href) return null;
   return (
     <Link href={link.href} className={primary
-      ? "inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:brightness-110"
+      ? "inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:brightness-110"
       : `inline-flex h-12 items-center gap-2 rounded-xl border px-6 text-[15px] font-semibold transition ${dark ? "border-white/25 text-white hover:bg-white/10" : "border-[#F0DADD] bg-white text-[#131316] hover:border-[#C8102E]"}`}>
       {link.label} {primary && <ArrowRight size={16} aria-hidden="true" />}
     </Link>
@@ -49,7 +49,7 @@ async function Section({ b, vars, H }: { b: Block; vars: Record<string, string>;
       const dark = b.tone !== "light";
       return (
         <section className={`relative overflow-hidden ${dark ? "bg-[#0A0A0C] text-white" : "bg-white text-[#131316]"}`}>
-          {dark && <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_80%_at_15%_0%,rgba(200, 16, 46,0.45),transparent_60%),radial-gradient(50%_60%_at_100%_100%,rgba(255, 59, 85,0.2),transparent_60%)]" />}
+          {dark && <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_80%_at_15%_0%,rgba(200,16,46,0.45),transparent_60%),radial-gradient(50%_60%_at_100%_100%,rgba(255,59,85,0.2),transparent_60%)]" />}
           <div className={`${wrap} relative py-16 sm:py-20`}>
             {b.eyebrow && <p className={`flex items-center gap-3 text-[12px] font-bold uppercase tracking-[0.24em] ${dark ? "text-[#FF8A99]" : "text-[#C8102E]"}`}><span className="h-0.75 w-8 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />{f(b.eyebrow)}</p>}
             <H className="mt-4 max-w-205 text-[34px] font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-[48px]">{f(b.heading)}</H>
@@ -159,12 +159,12 @@ async function Section({ b, vars, H }: { b: Block; vars: Record<string, string>;
       return (
         <section className={`${wrap} py-12`}>
           <div className="relative overflow-hidden rounded-[28px] bg-linear-to-br from-[#131316] to-[#5E0D1A] p-8 text-white sm:p-12">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.45),transparent)]" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.45),transparent)]" />
             <H className="relative max-w-170 text-[28px] font-extrabold leading-tight sm:text-[36px]">{f(b.heading)}</H>
             {b.text && <p className="relative mt-3 max-w-155 text-[15.5px] text-white/75">{f(b.text)}</p>}
             <div className="relative mt-7 flex flex-wrap gap-3"><Btn link={{ label: f(b.primary?.label), href: f(b.primary?.href) }} primary /><Btn link={b.secondary && { label: f(b.secondary.label), href: f(b.secondary.href) }} dark /></div>
             <ul className="relative mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px] text-white/80">
-              {["Free evaluation", "12-month warranty", "Canada & USA"].map((t) => <li key={t} className="flex items-center gap-1.5"><CheckCircle2 size={15} className="text-[#FF8A99]" aria-hidden="true" />{t}</li>)}
+              {["Free evaluation", "1-year warranty", "Canada & USA"].map((t) => <li key={t} className="flex items-center gap-1.5"><CheckCircle2 size={15} className="text-[#FF8A99]" aria-hidden="true" />{t}</li>)}
             </ul>
           </div>
         </section>

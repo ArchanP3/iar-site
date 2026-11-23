@@ -6,8 +6,8 @@ import { legal } from "@/lib/legal";
 import { contact, fullAddress } from "@/lib/contact";
 
 export const generateMetadata = seo("/privacy", {
-  title: "Privacy Policy | AutomIQ",
-  description: "How AutomIQ Automation & Drive Services collects, uses and protects the information you share through our website, quotes, orders and repairs.",
+  title: "Privacy Policy | IAR",
+  description: "How Industrial Automation Repair Inc. collects, uses and protects the information you share through our website, quotes, orders and repairs.",
   alternates: { canonical: `${SITE_URL}/privacy` },
 });
 

@@ -13,8 +13,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="contact" subject="New message: AutomIQ website contact page" />
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="contact" subject="New message: IAR website contact page" />
 
       <Step n={1} title="What is it about?">
         <Choice name="Topic" value={topic} onChange={setTopic} cols={2} options={[

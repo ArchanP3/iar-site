@@ -44,14 +44,14 @@ export default function CountrySuggest() {
       <div className="mx-auto flex max-w-360 flex-wrap items-center gap-x-4 gap-y-2 px-5 py-2.5 pr-12 text-[13.5px] sm:px-8 lg:px-12">
         <p className="min-w-0">
           {toCa ? (
-            <>Looks like you&apos;re in Canada. Visit our Canadian site, <b>automiqautomation.ca</b>.</>
+            <>Looks like you&apos;re in Canada. Visit our Canadian site, <b>industrialautomationrepair.com</b>.</>
           ) : (
-            <>Looks like you&apos;re outside Canada. Visit <b>automiqautomation.com</b>, our site for the USA and international customers.</>
+            <>Looks like you&apos;re outside Canada. Visit <b>industrialautomationrepair.com</b>, our site for the USA and international customers.</>
           )}
         </p>
         <span className="flex items-center gap-2">
           <a href={target} hrefLang={toCa ? "en-CA" : "en-US"} className="inline-flex h-8 items-center rounded-lg bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-3.5 text-[13px] font-semibold">
-            Go to {toCa ? "automiqautomation.ca" : "automiqautomation.com"}
+            Go to {toCa ? "industrialautomationrepair.com" : "industrialautomationrepair.com"}
           </a>
           <button type="button" onClick={hide} className="h-8 rounded-lg px-3 text-[13px] font-semibold text-white/75 hover:text-white">
             Stay here

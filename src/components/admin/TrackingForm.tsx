@@ -9,8 +9,8 @@ import { Alert, Card, b, cx, input } from "./ui";
 const FIELDS: [keyof Tracking, string, string, string][] = [
   ["gtm", "Google Tag Manager", "GTM-XXXXXXX", "Container ID from tagmanager.google.com"],
   ["ga4", "Google Analytics 4", "G-XXXXXXXXXX", "Measurement ID (Admin → Data streams). Skip if GA4 is set up inside Tag Manager."],
-  ["gscVerification", "Search Console verification (automiqautomation.com)", "google-site-verification=… or the content value", "HTML tag method. Paste the whole tag or just the code."],
-  ["gscVerificationCa", "Search Console verification (automiqautomation.ca)", "google-site-verification=… or the content value", "Same, for the Canadian site. Each site shows only its own code."],
+  ["gscVerification", "Search Console verification (industrialautomationrepair.com)", "google-site-verification=… or the content value", "HTML tag method. Paste the whole tag or just the code."],
+  ["gscVerificationCa", "Search Console verification (industrialautomationrepair.com)", "google-site-verification=… or the content value", "Same, for the Canadian site. Each site shows only its own code."],
   ["bingVerification", "Bing Webmaster verification", "msvalidate.01 code", "Meta tag method."],
   ["clarity", "Microsoft Clarity (free heatmaps)", "Project ID", "From clarity.microsoft.com → Settings."],
   ["linkedin", "LinkedIn Insight Tag", "Partner ID", "Numbers only, from Campaign Manager."],

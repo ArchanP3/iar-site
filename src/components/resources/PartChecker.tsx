@@ -51,7 +51,7 @@ export default function PartChecker() {
 
   return (
     <div>
-      <div className="rounded-[24px] bg-[#131316] p-4 shadow-[0_40px_80px_-45px_rgba(200, 16, 46,0.8)] sm:p-6">
+      <div className="rounded-[24px] bg-[#131316] p-4 shadow-[0_40px_80px_-45px_rgba(200,16,46,0.8)] sm:p-6">
         <label htmlFor="pc-q" className="text-[13px] font-semibold text-[#FF8A99]">Part or model number</label>
         <div className="mt-2 flex items-center gap-2 rounded-2xl border border-white/15 bg-white/8 p-1.5 pl-4 focus-within:border-[#FF3B55]/60">
           <ScanSearch size={20} className="flex-none text-[#FF8A99]" aria-hidden="true" />
@@ -114,7 +114,7 @@ export default function PartChecker() {
         {items && items.length === 0 && !loading && (
           <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-6 sm:p-7">
             <p className="text-[18px] font-extrabold">Not in our online catalogue yet</p>
-            <p className="mt-1.5 text-[14px] leading-relaxed text-[#62626F]">We repair 1,000+ brands and source parts from our stock and suppliers. Send us the part number and we&apos;ll reply with your options.</p>
+            <p className="mt-1.5 text-[14px] leading-relaxed text-[#62626F]">We repair every major brand and source parts from our stock and suppliers. Send us the part number and we&apos;ll reply with your options.</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Link href={`/request-quote?part=${part}`} className="inline-flex h-11 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white"><FileText size={16} aria-hidden="true" /> Get a quote for {q.trim().slice(0, 24)}</Link>
               <Link href={`/request-repair?part=${part}`} className="inline-flex h-11 items-center gap-2 rounded-xl border border-[#F0DADD] px-5 text-[14px] font-semibold hover:border-[#C8102E]"><Wrench size={16} aria-hidden="true" /> Request a Repair</Link>

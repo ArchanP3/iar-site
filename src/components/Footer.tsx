@@ -71,15 +71,15 @@ export default async function Footer() {
     <footer id="footer" className={`${brandFont.className} relative overflow-hidden bg-[#0A0A0C] text-white`}>
       {/* liquid colour blobs */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <span className="absolute -left-32 -top-40 h-105 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)] blur-2xl" />
-        <span className="absolute -right-24 top-10 h-90 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.28),transparent)] blur-2xl" />
-        <span className="absolute -bottom-45 left-1/3 h-90 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(245, 74, 99,0.22),transparent)] blur-2xl" />
+        <span className="absolute -left-32 -top-40 h-105 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.45),transparent)] blur-2xl" />
+        <span className="absolute -right-24 top-10 h-90 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.28),transparent)] blur-2xl" />
+        <span className="absolute -bottom-45 left-1/3 h-90 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(245,74,99,0.22),transparent)] blur-2xl" />
       </div>
 
       <div className="relative mx-auto max-w-360 px-5 pb-5 pt-8 sm:px-8 lg:px-12">
         {/* ---------- Glass panel ---------- */}
-        <div className="relative overflow-hidden rounded-[22px] border border-white/15 bg-white/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_50px_-30px_rgba(200, 16, 46,0.8)] backdrop-blur-xl">
-          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_28%,transparent_70%,rgba(255, 59, 85,0.10)_100%)]" />
+        <div className="relative overflow-hidden rounded-[22px] border border-white/15 bg-white/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_50px_-30px_rgba(200,16,46,0.8)] backdrop-blur-xl">
+          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_28%,transparent_70%,rgba(255,59,85,0.10)_100%)]" />
           <div className="relative grid gap-5 p-5 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:px-8">
             <div>
               <p className="text-[20px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[24px]">
@@ -139,8 +139,8 @@ export default async function Footer() {
         {/* ---------- Links ---------- */}
         <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
-            <Link href="/" aria-label="AutomIQ Automation & Drive Services home" className="inline-flex">
-              <Image src="/iar-logo-white.png" alt="AutomIQ Automation & Drive Services" width={988} height={448} sizes="180px" className="h-auto w-44" />
+            <Link href="/" aria-label="Industrial Automation Repair Inc. home" className="inline-flex">
+              <Image src="/iar-logo-white.png" alt="Industrial Automation Repair Inc." width={988} height={448} sizes="180px" className="h-auto w-44" />
             </Link>
             <p className="mt-3 max-w-70 text-[12.5px] leading-[1.6] text-white/55">
               Servo drive, motor and industrial electronics repair for Canada and the USA.
@@ -188,7 +188,7 @@ export default async function Footer() {
         {/* ---------- Bottom bar ---------- */}
         <div className="mt-7 border-t border-white/10 pt-4 text-[11.5px] text-white/60">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 AutomIQ Automation & Drive Services</p>
+            <p>© 2026 Industrial Automation Repair Inc.</p>
             <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-1">
               {[["Privacy", "/privacy"], ["Terms", "/terms"], ["Warranty", "/warranty"], ["Sitemap", "/site-map"]].map(([l, h]) => (
                 <Link key={h} href={h} className="hover:text-white">{l}</Link>
@@ -199,7 +199,7 @@ export default async function Footer() {
             </nav>
           </div>
           <p className="mt-2 leading-[1.55] text-white/60">
-            AutomIQ Automation & Drive Services is an independent repair and surplus parts provider. We are not affiliated with, authorized
+            Industrial Automation Repair Inc. is an independent repair and surplus parts provider. We are not affiliated with, authorized
             by, or endorsed by any manufacturer named on this site, and we are not an authorized distributor or service centre
             unless stated. All brand names, logos, model numbers and trademarks belong to their respective owners and are used
             only to identify compatible equipment. New and surplus parts sold by us may not include the manufacturer&apos;s

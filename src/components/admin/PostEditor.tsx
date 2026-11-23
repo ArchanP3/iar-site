@@ -52,7 +52,7 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
   const ta = useRef<HTMLTextAreaElement>(null);
 
   const effSlug = slugTouched ? slug : slugify(title);
-  const effTitle = seoTitle || (title ? `${title} | AutomIQ` : "");
+  const effTitle = seoTitle || (title ? `${title} | IAR` : "");
   const effDesc = seoDesc || excerpt;
   const words = body.split(/\s+/).filter(Boolean).length;
   const h2 = (body.match(/^##\s/gm) ?? []).length;
@@ -66,7 +66,7 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
     [effDesc.length >= 70 && effDesc.length <= 160, `Description ${effDesc.length} characters (70–160)`],
     [words >= 600, `${words.toLocaleString()} words (600+ ranks better)`],
     [h2 >= 2, `${h2} section headings (H2)`],
-    [links >= 2, `${links} links to other AutomIQ pages`],
+    [links >= 2, `${links} links to other IAR pages`],
     [Boolean(cover) && Boolean(coverAlt), cover ? (coverAlt ? "Cover image with alt text" : "Cover image needs alt text") : "Add a cover image"],
     [noAlt === 0, noAlt ? `${noAlt} images in the text have no alt text` : "Images in the text have alt text"],
     [faq.length > 0, faq.length ? `${faq.length} FAQ (shown in Google)` : "Add an FAQ for rich results"],

@@ -111,7 +111,7 @@ export async function importRedirects(_: FormState, fd: FormData): Promise<FormS
     const cols = line.split(/[,;\t]/).map((c) => c.trim().replace(/^"|"$/g, ""));
     if (!cols[0] || /^from/i.test(cols[0])) continue;
     const from = normPath(cols[0].replace(/^https?:\/\/[^/]+/, ""));
-    const to = (cols[1] ?? "").replace(/^https?:\/\/(www\.)?automiqautomation\.com/, "") || "/";
+    const to = (cols[1] ?? "").replace(/^https?:\/\/(www\.)?industrialautomationrepair\.com/, "") || "/";
     const code = [301, 302, 410].includes(Number(cols[2])) ? Number(cols[2]) : 301;
     const err = await check(from, to, code);
     if (err) {

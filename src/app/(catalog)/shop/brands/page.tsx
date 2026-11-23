@@ -7,7 +7,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/shop/brands", {
   title: "Shop Parts by Brand",
-  description: "Shop new, surplus and refurbished automation parts by brand: Siemens, Allen-Bradley, Fanuc, Rexroth Indramat, Yaskawa and 1,000+ more. Canada & USA.",
+  description: "Shop new, surplus and refurbished automation parts by brand: Siemens, Allen-Bradley, Fanuc, Rexroth Indramat, Yaskawa and many more. Canada & USA.",
   alternates: { canonical: "/shop/brands" },
 });
 
@@ -27,8 +27,8 @@ export default async function ShopBrandsPage() {
     <div className="bg-[#F7F7F8] text-[#131316]">
       <PageExtras path="/shop/brands" />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-[420px] w-[560px] rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-[320px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-[420px] w-[560px] rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-[320px] w-[420px] rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">

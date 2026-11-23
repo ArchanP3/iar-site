@@ -5,8 +5,8 @@ import { SITE_URL } from "@/lib/site";
 import { legal } from "@/lib/legal";
 
 export const generateMetadata = seo("/terms", {
-  title: "Terms & Conditions | AutomIQ",
-  description: "Terms for repairs, parts orders, exchange units, shipping, returns and use of the AutomIQ Automation & Drive Services website.",
+  title: "Terms & Conditions | IAR",
+  description: "Terms for repairs, parts orders, exchange units, shipping, returns and use of the Industrial Automation Repair Inc. website.",
   alternates: { canonical: `${SITE_URL}/terms` },
 });
 

@@ -37,8 +37,8 @@ export default function RepairForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="repair" subject="New repair request: AutomIQ website" />
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="repair" subject="New repair request: IAR website" />
       <input type="hidden" name="_item" />
 
       <Step n={1} title="Your unit" hint="The full part number from the nameplate helps us quote faster.">

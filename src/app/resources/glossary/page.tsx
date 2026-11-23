@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/glossary", {
-  title: "Industrial Automation Glossary | AutomIQ",
+  title: "Industrial Automation Glossary | IAR",
   description: `${glossary.length} industrial automation terms in plain English: servo drive, encoder alignment, IGBT, DC link, resolver, line module, VFD and more.`,
   alternates: { canonical: `${SITE_URL}/resources/glossary` },
 });

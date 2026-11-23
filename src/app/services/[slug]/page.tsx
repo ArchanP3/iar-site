@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return withSeo(`/services/${s.slug}`, {
     title: { absolute: fitTitle(s.metaTitle) },
     description: s.metaDescription,
-    openGraph: { type: "website", url: `${SHARE_URL}/services/${s.slug}`, title: fitTitle(s.metaTitle), description: s.metaDescription, siteName: "AutomIQ Automation & Drive Services", images: [{ url: shareImage(s.icon || undefined), alt: s.title }] },
+    openGraph: { type: "website", url: `${SHARE_URL}/services/${s.slug}`, title: fitTitle(s.metaTitle), description: s.metaDescription, siteName: "Industrial Automation Repair Inc.", images: [{ url: shareImage(s.icon || undefined), alt: s.title }] },
   });
 }
 

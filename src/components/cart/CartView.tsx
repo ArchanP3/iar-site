@@ -25,7 +25,7 @@ export default function CartView() {
 
   if (!items.length) {
     return (
-      <div className="rounded-[24px] border border-[#EAEAEC] bg-white px-6 py-14 text-center shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+      <div className="rounded-[24px] border border-[#EAEAEC] bg-white px-6 py-14 text-center shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
         <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E]/10 to-[#FF3B55]/10 text-[#B30E29] ring-1 ring-[#C8102E]/15">
           <ShoppingCart size={28} aria-hidden="true" />
         </span>
@@ -34,7 +34,7 @@ export default function CartView() {
           Find an in-stock part and press Buy Now, or send us a part number and we will quote it.
         </p>
         <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-          <Link href="/shop" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5">
+          <Link href="/shop" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
             Shop Parts <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]">
@@ -52,7 +52,7 @@ export default function CartView() {
         {items.map((i) => {
           const b = badge[i.condition];
           return (
-            <article key={i.id} className="rounded-[22px] border border-[#EAEAEC] bg-white p-4 shadow-[0_24px_60px_-48px_rgba(19, 19, 22,0.5)] sm:p-5">
+            <article key={i.id} className="rounded-[22px] border border-[#EAEAEC] bg-white p-4 shadow-[0_24px_60px_-48px_rgba(19,19,22,0.5)] sm:p-5">
               <div className="flex gap-4">
                 <Link href={partUrl(i.slug)} className="relative h-24 w-24 flex-none overflow-hidden rounded-2xl bg-[#F7F7F8] ring-1 ring-[#EAEAEC] sm:h-28 sm:w-28">
                   {i.image ? (
@@ -116,7 +116,7 @@ export default function CartView() {
 
       {/* ---------- Summary ---------- */}
       <aside aria-label="Order summary" className="lg:sticky lg:top-28">
-        <div className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+        <div className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
           <div className="p-5 sm:p-6">
             <div className="flex items-center justify-between">
               <h2 className="text-[20px] font-extrabold text-[#131316]">Order summary</h2>
@@ -133,13 +133,13 @@ export default function CartView() {
             </div>
             <p className="mt-1 text-right text-[12px] text-[#696976]">plus shipping and tax</p>
 
-            <Link href="/checkout" className="mt-5 flex h-13.5 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[16px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218, 11, 42,0.9)] transition hover:-translate-y-0.5">
+            <Link href="/checkout" className="mt-5 flex h-13.5 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[16px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5">
               <Lock size={17} aria-hidden="true" /> Proceed to Checkout
             </Link>
           </div>
           <ul className="space-y-2.5 border-t border-[#F3F3F4] bg-[#FAFAFB] px-5 py-4 text-[12.5px] text-[#5A5A66] sm:px-6">
             <li className="flex items-start gap-2"><ShieldCheck size={15} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />We confirm stock, shipping and your invoice before you pay.</li>
-            <li className="flex items-start gap-2"><Wrench size={15} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />Tested on our own jigs before it ships.</li>
+            <li className="flex items-start gap-2"><Wrench size={15} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />Load tested on OEM-standard equipment before it ships.</li>
             <li className="flex items-start gap-2"><Truck size={15} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />{handling.short}. Shipping across Canada and the USA.</li>
           </ul>
         </div>

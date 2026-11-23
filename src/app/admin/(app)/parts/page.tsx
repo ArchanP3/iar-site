@@ -151,7 +151,7 @@ async function Parts({ searchParams }: Props) {
             defaultValue={q ?? ""}
             placeholder="Search part number, brand or title"
             autoComplete="off"
-            className="h-12 w-full rounded-xl border border-[#EEDADD] bg-white pl-11 pr-14 text-[14.5px] font-medium text-[#131316] shadow-[0_1px_2px_rgba(19, 19, 22,0.05)] outline-none transition placeholder:text-[#91919E] focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/12"
+            className="h-12 w-full rounded-xl border border-[#EEDADD] bg-white pl-11 pr-14 text-[14.5px] font-medium text-[#131316] shadow-[0_1px_2px_rgba(19,19,22,0.05)] outline-none transition placeholder:text-[#91919E] focus:border-[#C8102E] focus:ring-4 focus:ring-[#C8102E]/12"
           />
           <kbd className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 grid h-6 min-w-6 place-items-center rounded-md border border-[#EAEAEC] bg-[#FAFAFA] px-1.5 text-[11.5px] font-bold text-[#91919E] max-sm:hidden">/</kbd>
         </label>
@@ -170,7 +170,7 @@ async function Parts({ searchParams }: Props) {
               aria-current={on ? "page" : undefined}
               className={cx(
                 "inline-flex h-10 shrink-0 items-center gap-2 whitespace-nowrap rounded-xl px-3.5 text-[13px] font-bold transition",
-                on ? "bg-[#131316] text-white shadow-[0_10px_24px_-14px_rgba(19, 19, 22,0.9)]" : "text-[#696976] hover:bg-white hover:text-[#131316]",
+                on ? "bg-[#131316] text-white shadow-[0_10px_24px_-14px_rgba(19,19,22,0.9)]" : "text-[#696976] hover:bg-white hover:text-[#131316]",
               )}
             >
               <span className={on ? "text-[#F88394]" : "text-[#91919E]"}>{t.icon}</span>

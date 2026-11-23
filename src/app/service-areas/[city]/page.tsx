@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getArea((await params).city);
   if (!a || !areaHere(a)) return {};
   return withSeo(areaUrl(a.slug), {
-    title: { absolute: fitTitle(`Servo Drive & Motor Repair for ${place(a)} | AutomIQ`) },
-    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Mississauga, ON centre. ${a.country === "US" ? "Pickup and customs help." : "Pickup or ship-in."} Free evaluation, 12-month warranty.`,
+    title: { absolute: fitTitle(`Servo Drive & Motor Repair for ${place(a)} | IAR`) },
+    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Mississauga, ON centre. ${a.country === "US" ? "Pickup and customs help." : "Pickup or ship-in."} Free evaluation, 1-year warranty.`,
     // City pages are on one country site only, so no .ca/.com hreflang pair.
     alternates: { canonical: `${SITE_URL}${areaUrl(a.slug)}`, languages: {} },
   });
@@ -41,7 +41,7 @@ function faqs(a: Area): [string, string][] {
     us
       ? [`Do I need customs paperwork to send a unit from ${a.city}?`, "Yes, the unit crosses into Canada. Add a commercial invoice marked for repair and return, and we help you with the waybill and the paperwork. For the return shipment, US customs needs your business EIN or your customs broker."]
       : [`Can a technician come to our plant in ${a.city}?`, "Yes. Our technicians provide on-site service calls across Canada and the United States. Tell us about the machine and we will plan the visit."],
-    ["Is the evaluation free?", "Yes. Every repair starts with a free evaluation and a written quote. No work starts until you approve it, and every repair comes with a test report and a 12-month warranty."],
+    ["Is the evaluation free?", "Yes. Every repair starts with a free evaluation and a written quote. No work starts until you approve it, and every repair comes with a test report and a 1-year warranty."],
   ];
 }
 
@@ -83,7 +83,7 @@ async function Content({ params }: Props) {
         areaServed: { "@type": "City", name: a.city, containedInPlace: { "@type": us ? "State" : "AdministrativeArea", name: a.region } },
         provider: {
           "@type": "Organization",
-          name: "AutomIQ Automation & Drive Services",
+          name: "Industrial Automation Repair Inc.",
           url: SITE_URL,
           address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" },
         },
@@ -107,7 +107,7 @@ async function Content({ params }: Props) {
       {/* How it gets to us */}
       <div className={`grid gap-3 sm:grid-cols-2 ${ways.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
         {ways.map(({ icon: Icon, t, d, href }, i) => (
-          <div key={t} className={`rounded-[22px] p-5 ${i === 0 ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_30px_60px_-35px_rgba(200, 16, 46,0.9)]" : "border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)]"}`}>
+          <div key={t} className={`rounded-[22px] p-5 ${i === 0 ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_30px_60px_-35px_rgba(200,16,46,0.9)]" : "border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)]"}`}>
             <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${i === 0 ? "bg-white/15 ring-1 ring-white/25" : "bg-[#C8102E]/8 text-[#B30E29]"}`}><Icon size={20} aria-hidden="true" /></span>
             <p className="mt-4 text-[16.5px] font-extrabold">{t}</p>
             <p className={`mt-1 text-[13.5px] leading-relaxed ${i === 0 ? "text-white/85" : "text-[#62626F]"}`}>{d}</p>
@@ -121,7 +121,7 @@ async function Content({ params }: Props) {
           {/* Local industry */}
           <section aria-labelledby="local">
             <h2 id="local" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">Keeping {a.city} lines running</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-[#4E4E58]">{a.local} When a servo drive, motor or control fails, we repair it at component level, test it on our own jigs and send it back with a test report.</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[#4E4E58]">{a.local} When a servo drive, motor or control fails, we repair it at component level, test it on our test benches and send it back with a test report.</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {inds.map((i) => (
                 <li key={i.slug}>
@@ -146,7 +146,7 @@ async function Content({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-[13.5px] text-[#62626F]">From 1,000+ brands, including Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa. <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">See all brands</Link>.</p>
+            <p className="mt-3 text-[13.5px] text-[#62626F]">From every major brand, including Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa. <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">See all brands</Link>.</p>
           </section>
 
           {us && (
@@ -180,12 +180,12 @@ async function Content({ params }: Props) {
 
         <aside className="space-y-3 lg:sticky lg:top-28">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <p className="relative flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]"><Building2 size={14} aria-hidden="true" /> Our repair centre</p>
             <p className="relative mt-2 text-[20px] font-extrabold">Mississauga, Ontario</p>
             <p className="relative mt-1 text-[13.5px] leading-relaxed text-white/70">Serving {a.city} and every city in {countryName(a.country) === "Canada" ? "Canada" : "the USA"}.</p>
             <ul className="relative mt-4 space-y-2 text-[13.5px] text-white/85">
-              {[[BadgeCheck, "Free evaluation"], [FileText, "Written quote before any work"], [ClipboardCheck, "Test report with every unit"], [BadgeCheck, "12-month warranty"]].map(([I, t]) => {
+              {[[BadgeCheck, "Free evaluation"], [FileText, "Written quote before any work"], [ClipboardCheck, "Test report with every unit"], [BadgeCheck, "1-year warranty"]].map(([I, t]) => {
                 const Icon = I as React.ElementType;
                 return <li key={t as string} className="flex items-center gap-2"><Icon size={15} className="text-[#34D399]" aria-hidden="true" />{t as string}</li>;
               })}

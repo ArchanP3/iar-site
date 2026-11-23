@@ -146,8 +146,8 @@ export default function PartsSection() {
       <div className="mx-auto max-w-360 px-5 sm:px-8 lg:px-12">
         {/* ---------- Navy panel: heading + part number search ---------- */}
         <div className="aq-shop-hero relative isolate overflow-hidden rounded-3xl bg-linear-to-br from-[#131316] to-[#060607] p-5 text-white sm:p-8 lg:p-10">
-          <span aria-hidden="true" className="aq-shop-glow pointer-events-none absolute -right-40 -top-56 -z-10 h-105 w-170 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.65),transparent)]" />
-          <span aria-hidden="true" className="aq-shop-glow aq-shop-glow--b pointer-events-none absolute -bottom-52 -left-44 -z-10 h-75 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)]" />
+          <span aria-hidden="true" className="aq-shop-glow pointer-events-none absolute -right-40 -top-56 -z-10 h-105 w-170 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.65),transparent)]" />
+          <span aria-hidden="true" className="aq-shop-glow aq-shop-glow--b pointer-events-none absolute -bottom-52 -left-44 -z-10 h-75 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)]" />
           <span aria-hidden="true" className="aq-shop-grid pointer-events-none absolute inset-0 -z-10" />
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-center lg:gap-10">
@@ -166,10 +166,10 @@ export default function PartsSection() {
                 Hard-to-find parts for current and legacy machines · Tested before it ships
               </p>
               <p className="mt-3 text-[14px] leading-[1.7] text-[#C6C6CD] sm:text-[15px]">
-                AutomIQ Automation & Drive Services supplies new, surplus, refurbished and obsolete industrial automation parts for
+                Industrial Automation Repair Inc. supplies new, surplus, refurbished and obsolete industrial automation parts for
                 manufacturers across Canada and the United States, including servo drives, servo motors, encoders, PLCs,
                 HMIs, CNC controls, power supplies, sensors and gearboxes. Send a part number for price, condition and lead
-                time, or let our team source hard-to-find and discontinued parts from 1,000+ brands.
+                time, or let our team source hard-to-find and discontinued parts from every major brand.
               </p>
             </div>
 
@@ -180,11 +180,11 @@ export default function PartsSection() {
                 <Search size={21} className="shrink-0 text-[#B30E29]" />
                 <PartSuggest id="part-search" name="part" required placeholder="e.g. 6SL3120-1TE21-0AA3" className="h-14 w-full min-w-0 bg-transparent font-mono text-[16.5px] text-[#131316] outline-none placeholder:font-sans placeholder:text-[#696976]" />
               </div>
-              <button type="submit" className="aq-shine mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[16px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5">
+              <button type="submit" className="aq-shine mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[16px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5">
                 Check Availability <ArrowRight size={18} />
               </button>
               <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[12.5px] text-white/75">
-                {([["Price, condition & lead time", BadgeCheck], ["Obsolete & discontinued sourced", Radar], ["1,000+ brands", Factory]] as const).map(([t, I]) => (
+                {([["Price, condition & lead time", BadgeCheck], ["Obsolete & discontinued sourced", Radar], ["Every major brand", Factory]] as const).map(([t, I]) => (
                   <li key={t} className="flex items-center gap-1.5"><I size={14} className="shrink-0 text-[#FF8A99]" />{t}</li>
                 ))}
               </ul>
@@ -229,7 +229,7 @@ export default function PartsSection() {
                     {c.icon ? (
                       <Image
                         src={c.icon}
-                        alt={`${c.title} — industrial automation parts, AutomIQ Automation & Drive Services`}
+                        alt={`${c.title} — industrial automation parts, Industrial Automation Repair Inc.`}
                         fill
                         sizes="(max-width: 639px) 45vw, (max-width: 1279px) 30vw, 200px"
                         className="object-contain p-2.5"
@@ -264,7 +264,7 @@ export default function PartsSection() {
               Critical, spare and rush parts for all major brands
             </p>
             <p className="text-[13px] font-semibold text-[#62626F] sm:text-[14px]">
-              Sourcing from <span className="text-[#B30E29]">1,000+ brands</span>
+              Sourcing from <span className="text-[#B30E29]">every major brand</span>
             </p>
           </div>
 
@@ -317,7 +317,7 @@ export default function PartsSection() {
                 href={href}
                 className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/4 p-3 text-center sm:flex-row sm:items-start sm:gap-3 sm:p-3.5 sm:text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition hover:-translate-y-0.5 hover:border-[#FF3B55]/50 hover:bg-white/[0.07]"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(255, 59, 85,0.9)]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_22px_-10px_rgba(255,59,85,0.9)]">
                   <I size={18} />
                 </span>
                 <span className="min-w-0 flex-1">
@@ -332,12 +332,12 @@ export default function PartsSection() {
             ))}
 
             {/* Can't find it? */}
-            <form action="/request-quote" method="get" className="rounded-2xl border border-[#FF3B55]/30 bg-[linear-gradient(135deg,rgba(200, 16, 46,0.22),rgba(255, 59, 85,0.08))] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] col-span-2 lg:col-span-1">
+            <form action="/request-quote" method="get" className="rounded-2xl border border-[#FF3B55]/30 bg-[linear-gradient(135deg,rgba(200,16,46,0.22),rgba(255,59,85,0.08))] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] col-span-2 lg:col-span-1">
               <p className="flex items-center gap-2 text-[15px] font-bold text-white">
                 <Radar size={17} className="text-[#FF8A99]" />
                 Can&apos;t find your part? We&apos;ll source it.
               </p>
-              <p className="mt-0.5 text-[12.5px] text-white/65">Our team searches 1,000+ brands and surplus stock for you.</p>
+              <p className="mt-0.5 text-[12.5px] text-white/65">Our team searches our supplier network and surplus stock for you.</p>
               <div className="mt-2.5 flex items-center gap-2 rounded-xl border border-white/15 bg-[#060607]/60 p-1 pl-3">
                 <label htmlFor="source-part" className="sr-only">Part number</label>
                 <input id="source-part" name="part" placeholder="Part number or model" className="h-9 w-full min-w-0 bg-transparent text-[13.5px] text-white outline-none placeholder:text-white/60" />

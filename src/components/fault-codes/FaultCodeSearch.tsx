@@ -90,7 +90,7 @@ export default function FaultCodeSearch({
     >
       <form
         role="search"
-        className="flex items-center gap-2 rounded-2xl border border-white/15 bg-white/8 p-1.5 pl-4 shadow-[0_24px_60px_-30px_rgba(200, 16, 46,0.9)]"
+        className="flex items-center gap-2 rounded-2xl border border-white/15 bg-white/8 p-1.5 pl-4 shadow-[0_24px_60px_-30px_rgba(200,16,46,0.9)]"
         onSubmit={(e) => {
           e.preventDefault();
           go(hits[active]);

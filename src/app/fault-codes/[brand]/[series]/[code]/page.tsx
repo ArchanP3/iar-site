@@ -71,8 +71,8 @@ async function CodePageContent({ params }: Props) {
           "@type": "TechArticle",
           headline: heading,
           about: `${f.brand} ${f.series} fault ${c.code}`,
-          author: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" },
-          publisher: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" },
+          author: { "@type": "Organization", name: "Industrial Automation Repair Inc." },
+          publisher: { "@type": "Organization", name: "Industrial Automation Repair Inc." },
           description: c.meaning,
         }}
       />
@@ -161,7 +161,7 @@ async function CodePageContent({ params }: Props) {
 
             <p className="mt-4 flex items-start gap-2 text-[12.5px] text-[#646471]">
               <BadgeCheck size={15} className="mt-0.5 shrink-0 text-[#B30E29]" aria-hidden="true" />
-              Reviewed by AutomIQ repair technicians. Code and name from the {f.source}.
+              Reviewed by IAR repair technicians. Code and name from the {f.source}.
             </p>
 
             {related.length > 0 && (
@@ -189,11 +189,11 @@ async function CodePageContent({ params }: Props) {
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative overflow-hidden rounded-[22px] bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] p-6 text-white">
-              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
+              <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.45),transparent_65%)]" />
               <p className="relative text-[12px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Still showing {c.code}?</p>
               <p className="relative mt-1 text-[22px] font-extrabold leading-tight">{f.repairLabel}</p>
               <ul className="relative mt-4 space-y-2 text-[13.5px] text-white/85">
-                {["Free evaluation and written quote", "Component-level repair", "Tested under power on our jigs", "12-month warranty"].map((t) => (
+                {["Free evaluation and written quote", "Component-level repair", "Tested under power on our test benches", "1-year warranty"].map((t) => (
                   <li key={t} className="flex items-center gap-2">
                     <Check size={15} className="text-emerald-400" aria-hidden="true" />
                     {t}

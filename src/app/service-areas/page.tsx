@@ -14,7 +14,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
    the other site's list. Before the split (no NEXT_PUBLIC_SITE_COUNTRY) it lists both countries. */
 const text = {
   CA: {
-    title: "Service Areas: Industrial Repair Across Canada | AutomIQ",
+    title: "Service Areas: Industrial Repair Across Canada | IAR",
     description: "One repair centre in Mississauga, Ontario serving manufacturers across Canada: drop-off, pickup, ship-in and on-site service.",
     accent: "All of Canada.",
     intro: "Every repair is done at our repair centre in Mississauga, Ontario. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax.",
@@ -24,7 +24,7 @@ const text = {
     other: { q: "In the USA?", label: "See our US service areas", href: `${COUNTRY_SITES.US}/service-areas` },
   },
   US: {
-    title: "Service Areas: Industrial Repair for US Manufacturers | AutomIQ",
+    title: "Service Areas: Industrial Repair for US Manufacturers | IAR",
     description: "Servo drive, motor and industrial electronics repair for US manufacturers: pickup from your plant with customs paperwork help, repaired at our centre in Mississauga, Ontario.",
     accent: "Serving the USA.",
     intro: "Every repair is done at our repair centre in Mississauga, Ontario. We arrange the pickup from your plant and help with the customs paperwork, from Chicago to Pittsburgh and across the USA.",
@@ -37,7 +37,7 @@ const text = {
 const split = SITE_COUNTRY !== null;
 
 export const generateMetadata = seo("/service-areas", {
-  title: split ? text.title : "Service Areas: Industrial Repair Across Canada & USA | AutomIQ",
+  title: split ? text.title : "Service Areas: Industrial Repair Across Canada & USA | IAR",
   description: split ? text.description : "One repair centre in Mississauga, Ontario serving manufacturers across Canada and the USA: drop-off, pickup, ship-in and on-site service.",
   alternates: { canonical: `${SITE_URL}/service-areas` },
 });
@@ -47,8 +47,8 @@ const ca = areas.filter((a) => a.country === "CA").length;
 const us = areas.filter((a) => a.country === "US").length;
 const regionCount = new Set(areas.map((a) => a.regionCode)).size;
 const stats: [string, string][] = split
-  ? [[`${regionCount}`, text.stats[0][1]], [`${areas.length}`, text.stats[1][1]], ["24–72 hr", "typical turnaround"], ["12-month", "warranty"]]
-  : [[`${ca}`, "Canadian cities"], [`${us}`, "US cities"], ["24–72 hr", "typical turnaround"], ["12-month", "warranty"]];
+  ? [[`${regionCount}`, text.stats[0][1]], [`${areas.length}`, text.stats[1][1]], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]]
+  : [[`${ca}`, "Canadian cities"], [`${us}`, "US cities"], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]];
 const regions = regionsIn(areas);
 
 const dropOff = { icon: MapPin, t: "Drop-off in Mississauga", d: "Walk in during business hours. No appointment needed.", cta: "Contact us", href: "/contact", color: "#FF3B55" };
@@ -64,7 +64,7 @@ const steps = [
   { icon: Truck, t: "Book the pickup", d: "Tell us what's failed and where it is. Pickup from your plant, or ship it in with any carrier." },
   { icon: ClipboardCheck, t: "We send the waybill", d: "We arrange the collection and send the paperwork. US shipments get customs paperwork help." },
   { icon: FileText, t: "Free evaluation & quote", d: "Root cause found and a written quote sent before any work starts." },
-  { icon: ShieldCheck, t: "Tested & returned", d: "Repaired, tested on our jigs and shipped back with a test report and a 12-month warranty." },
+  { icon: ShieldCheck, t: "Tested & returned", d: "Repaired, load tested on our benches and shipped back with a test report and a 1-year warranty." },
 ];
 
 const schema = {
@@ -88,9 +88,9 @@ export default function ServiceAreasPage() {
       {/* ---------- Hero with the animated map ---------- */}
       <section className="relative overflow-hidden bg-[#0A0A0C] text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <span className="absolute -left-40 -top-48 h-140 w-180 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)] blur-2xl" />
-          <span className="absolute -right-32 top-1/3 h-120 w-160 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.22),transparent)] blur-2xl" />
-          <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.04)_1px,transparent_1px)] bg-size-[44px_44px] mask-[radial-gradient(90%_80%_at_60%_40%,#000,transparent)]" />
+          <span className="absolute -left-40 -top-48 h-140 w-180 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.45),transparent)] blur-2xl" />
+          <span className="absolute -right-32 top-1/3 h-120 w-160 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.22),transparent)] blur-2xl" />
+          <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.04)_1px,transparent_1px)] bg-size-[44px_44px] mask-[radial-gradient(90%_80%_at_60%_40%,#000,transparent)]" />
         </div>
         <div className="relative mx-auto grid max-w-360 items-center gap-8 px-5 pb-28 pt-8 sm:px-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-6 lg:px-12 lg:pb-32 lg:pt-10">
           <div>
@@ -114,7 +114,7 @@ export default function ServiceAreasPage() {
                 : "Every repair is done at our repair centre in Mississauga, Ontario. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax and Chicago to Pittsburgh."}
             </p>
             <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
-              <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_16px_34px_-14px_rgba(218, 11, 42,0.9)] transition hover:-translate-y-0.5">
+              <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_16px_34px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5">
                 <Truck size={17} aria-hidden="true" /> Request a Pickup <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 text-[15px] font-semibold text-white backdrop-blur transition hover:border-white/45">
@@ -148,7 +148,7 @@ export default function ServiceAreasPage() {
         <ul className={`grid grid-cols-2 gap-2.5 sm:gap-3 ${ways.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {ways.map(({ icon: Icon, t, d, cta, href, color }) => (
             <li key={t}>
-              <Link href={href} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-4 text-white shadow-[0_26px_50px_-24px_rgba(28, 28, 32,0.85)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${color}48 100%)` }}>
+              <Link href={href} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-4 text-white shadow-[0_26px_50px_-24px_rgba(28,28,32,0.85)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${color}48 100%)` }}>
                 <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${color}80, transparent)` }} />
                 <span className="relative flex items-start justify-between">
                   <span className="flex h-11 w-11 items-center justify-center rounded-2xl ring-1 ring-white/20 sm:h-12 sm:w-12" style={{ background: `linear-gradient(145deg, ${color}, #131316)` }}><Icon size={20} aria-hidden="true" /></span>
@@ -185,10 +185,10 @@ export default function ServiceAreasPage() {
 
       {/* ---------- How a pickup works ---------- */}
       <section aria-labelledby="pickup-heading" className="mx-auto max-w-360 px-5 pt-14 sm:px-8 lg:px-12 lg:pt-16">
-        <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)] sm:p-9">
+        <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200,16,46,0.75)] sm:p-9">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.4),transparent)] blur-2xl" />
-            <span className="absolute -right-24 -bottom-30 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.22),transparent)] blur-2xl" />
+            <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.4),transparent)] blur-2xl" />
+            <span className="absolute -right-24 -bottom-30 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.22),transparent)] blur-2xl" />
           </div>
           <div className="relative flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
@@ -201,7 +201,7 @@ export default function ServiceAreasPage() {
             {steps.map(({ icon: Icon, t, d }, i) => (
               <li key={t} className="relative rounded-2xl border border-white/10 bg-white/5 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_10px_24px_-10px_rgba(218, 11, 42,0.9)]"><Icon size={18} aria-hidden="true" /></span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_10px_24px_-10px_rgba(218,11,42,0.9)]"><Icon size={18} aria-hidden="true" /></span>
                   <span aria-hidden="true" data-n={String(i + 1).padStart(2, "0")} className="deco-num font-mono text-[28px] font-bold leading-none text-white/12" />
                 </div>
                 <p className="mt-4 text-[16px] font-extrabold">{t}</p>
@@ -214,7 +214,7 @@ export default function ServiceAreasPage() {
 
       {/* ---------- City not listed ---------- */}
       <section className="mx-auto max-w-360 px-5 pb-16 pt-14 sm:px-8 lg:px-12 lg:pb-20 lg:pt-16">
-        <div className="relative overflow-hidden rounded-[28px] bg-linear-to-br from-[#C8102E] via-[#E30C2C] to-[#FF3B55] p-6 text-white shadow-[0_40px_80px_-40px_rgba(200, 16, 46,0.9)] sm:p-9">
+        <div className="relative overflow-hidden rounded-[28px] bg-linear-to-br from-[#C8102E] via-[#E30C2C] to-[#FF3B55] p-6 text-white shadow-[0_40px_80px_-40px_rgba(200,16,46,0.9)] sm:p-9">
           <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-24 h-80 w-80 rounded-full border-[36px] border-white/8" />
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 right-40 h-64 w-64 rounded-full border-[28px] border-white/6" />
           <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

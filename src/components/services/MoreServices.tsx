@@ -22,8 +22,8 @@ export default function MoreServices() {
     <section aria-labelledby="more-svc" className="space-y-10">
       {/* Custom cables feature band */}
       <div className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(217, 28, 56,0.5),transparent)] blur-xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.35),transparent)] blur-xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(217,28,56,0.5),transparent)] blur-xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-1/4 h-72 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.35),transparent)] blur-xl" />
         <div className="relative grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]"><Cable size={15} aria-hidden="true" /> Custom cables for every brand</p>
@@ -36,7 +36,7 @@ export default function MoreServices() {
             </ul>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/request-cable" className="inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5">Order a Custom Cable <ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link href="/request-cable" className="inline-flex h-12 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5">Order a Custom Cable <ArrowRight size={16} aria-hidden="true" /></Link>
             <Link href={serviceUrl("custom-cables")} className="inline-flex h-12 items-center rounded-xl border border-white/20 px-6 text-[15px] font-semibold transition hover:border-white/40">Learn more</Link>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function MoreServices() {
         <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
           {list.map((s) => (
             <li key={s.slug} className="relative">
-              <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${s.color}40 100%)` }}>
+              <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 text-white sm:pb-17 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${s.color}40 100%)` }}>
                 <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${s.color}77, transparent)` }} />
                 <span className="relative flex items-start justify-between">
                   <ServiceIcon name={s.lucide} color={s.color} size={44} />

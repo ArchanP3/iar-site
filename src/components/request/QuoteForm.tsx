@@ -34,8 +34,8 @@ export default function QuoteForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type={offer ? "offer" : "quote"} subject={offer ? "New offer on parts: AutomIQ website" : "New parts quote request: AutomIQ website"} />
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type={offer ? "offer" : "quote"} subject={offer ? "New offer on parts: IAR website" : "New parts quote request: IAR website"} />
       <input type="hidden" name="_item" />
 
       <Step n={1} title={offer ? "Make an offer" : "The part you need"} hint={offer ? "Surplus and bulk orders: tell us the part and the price you want to pay." : "Copy the full part number from the nameplate or your BOM."}>

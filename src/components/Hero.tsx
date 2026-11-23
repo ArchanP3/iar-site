@@ -24,7 +24,7 @@ import { canRun3D } from "@/lib/gpu";
 import BorderGlow from "./BorderGlow";
 
 /* ------------------------------------------------------------------ */
-/*  Brand tokens (AutomIQ Automation & Drive Services)                              */
+/*  Brand tokens (Industrial Automation Repair Inc.)                              */
 /* ------------------------------------------------------------------ */
 /*  Primary Blue  #C8102E   Accent Blue  #FF3B55                       */
 /*  Navy          #131316   Deep Navy    #121215 (panel base)          */
@@ -39,7 +39,7 @@ const scenes = [
     message: "From Fault Code to Full Power.",
     image: "/hero/servo-drives.webp",
     description:
-      "Component-level servo drive repair, replacement drives and exchange solutions for Siemens, Allen-Bradley, Fanuc and more. Operational testing on our own test jigs before return.",
+      "Component-level servo drive repair, replacement drives and exchange solutions for Siemens, Allen-Bradley, Fanuc and more. Load testing on our test benches before return.",
   },
   {
     title: "Servo Motor",
@@ -67,7 +67,7 @@ const scenes = [
     message: "The Brain of Your Line, Restored.",
     image: "/hero/plcs.webp",
     description:
-      "Industrial PLC repair, replacement modules and sourcing for CPUs, I/O and communication cards, with operational testing appropriate to the equipment.",
+      "Industrial PLC repair, replacement modules and sourcing for CPUs, I/O and communication cards, with load testing appropriate to the equipment.",
   },
   {
     title: "Industrial Controls",
@@ -93,7 +93,7 @@ const scenes = [
 ];
 
 const benefits = [
-  { icon: ShieldCheck, title: "12-Month Warranty", detail: "Confidence in Every Repair" },
+  { icon: ShieldCheck, title: "1-Year Warranty", detail: "Confidence in Every Repair" },
   { icon: Clock, title: "24–72 Hr Turnaround", detail: "Fast Repair Solutions" },
   { icon: Headphones, title: "24/7 Support", detail: "We're Here When You Need Us" },
   { icon: CircuitBoard, title: "Component-Level Repair", detail: "Precision Repairs. Less Waste." },
@@ -102,7 +102,7 @@ const benefits = [
 ];
 
 const heroCss = `
-/* AutomIQ — Hero animations & decorative layers
+/* IAR — Hero animations & decorative layers
    Brand: #C8102E primary · #FF3B55 accent · #131316 navy · #121215 deep navy */
 
 .aq-hero {
@@ -116,8 +116,8 @@ const heroCss = `
 /* ---------- Background detail ---------- */
 .aq-grid {
   background-image:
-    linear-gradient(rgba(255, 138, 153, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 138, 153, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255,138,153, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,138,153, 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, #000 0%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 35%, #000 0%, transparent 75%);
@@ -209,7 +209,7 @@ const heroCss = `
   width: 62%;
   aspect-ratio: 1;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(255, 59, 85, 0.4) 0%, rgba(200, 16, 46, 0.18) 40%, rgba(200, 16, 46, 0) 70%);
+  background: radial-gradient(circle, rgba(255,59,85, 0.4) 0%, rgba(200,16,46, 0.18) 40%, rgba(200,16,46, 0) 70%);
   translate: calc(var(--aq-tx, 0) * 40px) calc(var(--aq-ty, 0) * 30px);
   animation: aqPulse 5s ease-in-out infinite;
 }
@@ -227,7 +227,7 @@ const heroCss = `
   height: 34px;
   transform: translateX(-50%);
   border-radius: 9999px;
-  background: radial-gradient(ellipse at center, rgba(255, 59, 85, 0.6) 0%, rgba(200, 16, 46, 0.2) 45%, transparent 72%);
+  background: radial-gradient(ellipse at center, rgba(255,59,85, 0.6) 0%, rgba(200,16,46, 0.2) 45%, transparent 72%);
   pointer-events: none;
 }
 
@@ -292,23 +292,23 @@ const heroCss = `
   color: #fff;
   background: linear-gradient(135deg, var(--aq-blue) 0%, #E30C2C 55%, var(--aq-cyan) 130%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 14px 30px -12px rgba(200, 16, 46, 0.65);
+    inset 0 1px 0 rgba(255,255,255, 0.25),
+    0 14px 30px -12px rgba(200,16,46, 0.65);
   transition: transform 0.3s var(--aq-ease), box-shadow 0.3s var(--aq-ease);
 }
 .aq-cta::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255, 0.35) 50%, transparent 70%);
   transform: translateX(-120%);
   transition: transform 0.8s var(--aq-ease);
 }
 .aq-cta:hover {
   transform: translateY(-2px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    0 20px 38px -12px rgba(200, 16, 46, 0.75);
+    inset 0 1px 0 rgba(255,255,255, 0.25),
+    0 20px 38px -12px rgba(200,16,46, 0.75);
 }
 .aq-cta:hover::after {
   transform: translateX(120%);
@@ -416,7 +416,7 @@ export default function Hero() {
           setTilt((e.clientX - r.left) / r.width - 0.5, (e.clientY - r.top) / r.height - 0.5);
         }}
         onMouseLeave={() => setTilt(0, 0)}
-        aria-label="AutomIQ Automation & Drive Services: industrial repair and parts"
+        aria-label="Industrial Automation Repair Inc.: industrial repair and parts"
       >
         {/* ---------- FULL-WIDTH WAVE BACKGROUND ---------- */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
@@ -500,7 +500,7 @@ export default function Hero() {
                     aria-hidden={leaving}
                   >
                     <p className="aq-rise aq-d0 mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#131316]/60 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">
-                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FF3B55] shadow-[0_0_10px_2px_rgba(255, 59, 85,0.8)]" />
+                      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#FF3B55] shadow-[0_0_10px_2px_rgba(255,59,85,0.8)]" />
                       Buy · Repair · Exchange
                     </p>
 
@@ -519,7 +519,7 @@ export default function Hero() {
 
             {/* Search (glass) */}
             <div className="mt-6 max-w-140">
-              <form action="/search" method="get" role="search" aria-label="Find a part" data-suggest-anchor className="flex items-center gap-2 rounded-2xl border border-white/15 bg-[#131316]/70 p-1.5 pl-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.7)] transition focus-within:border-[#FF3B55]/60 focus-within:bg-[#131316]/85 focus-within:shadow-[0_0_0_4px_rgba(255, 59, 85,0.15)]">
+              <form action="/search" method="get" role="search" aria-label="Find a part" data-suggest-anchor className="flex items-center gap-2 rounded-2xl border border-white/15 bg-[#131316]/70 p-1.5 pl-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.7)] transition focus-within:border-[#FF3B55]/60 focus-within:bg-[#131316]/85 focus-within:shadow-[0_0_0_4px_rgba(255,59,85,0.15)]">
                 <Search size={19} className="shrink-0 text-[#FF8A99]" />
                 <PartSuggest
                   name="part"
@@ -632,7 +632,7 @@ export default function Hero() {
                       <div className="aq-float relative h-full w-full">
                         <Image
                           src={s.image}
-                          alt={`${s.title} repair and replacement — AutomIQ Automation & Drive Services`}
+                          alt={`${s.title} repair and replacement — Industrial Automation Repair Inc.`}
                           fill
                           priority={i === 0}
                           sizes="(max-width: 640px) 320px, (max-width: 1024px) 60vw, 480px"
@@ -711,7 +711,7 @@ export default function Hero() {
           <div className="mb-4 flex items-center justify-center gap-4">
             <span className="h-px w-10 bg-linear-to-r from-transparent to-[#C8102E]" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29] sm:text-[12px] sm:tracking-[0.32em]">
-              The AutomIQ Commitment
+              The IAR Commitment
             </p>
             <span className="h-px w-10 bg-linear-to-l from-transparent to-[#C8102E]" />
           </div>
@@ -734,7 +734,7 @@ export default function Hero() {
                   fillOpacity={0.7}
                 >
                   <div className="flex h-full items-center gap-2.5 rounded-[12px] bg-linear-to-br from-[#F1F1F2]/90 via-[#F5F5F6]/90 to-[#F1E6FF]/90 px-2.5 py-2.5 sm:px-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[9px] bg-white text-[#B30E29] ring-1 ring-[#C8102E]/10 transition duration-300 group-hover:bg-[#C8102E] group-hover:text-white group-hover:shadow-[0_10px_24px_-8px_rgba(200, 16, 46,0.6)]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[9px] bg-white text-[#B30E29] ring-1 ring-[#C8102E]/10 transition duration-300 group-hover:bg-[#C8102E] group-hover:text-white group-hover:shadow-[0_10px_24px_-8px_rgba(200,16,46,0.6)]">
                       <Icon size={18} strokeWidth={1.9} />
                     </span>
                     <div className="min-w-0">

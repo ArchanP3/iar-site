@@ -29,8 +29,8 @@ export default function InternationalQuoteForm() {
   }
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="international" subject="International quote request: AutomIQ website" />
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="international" subject="International quote request: IAR website" />
 
       <Step n={1} title="The parts you need" hint="Part number and quantity on each line. Copy the full number from the nameplate.">
         <div className="space-y-4">
@@ -40,7 +40,7 @@ export default function InternationalQuoteForm() {
           </div>
           <Choice name="Condition wanted" value={cond} onChange={setCond} options={[
             { v: "any", t: "Best option", d: "New, refurbished or surplus", icon: Boxes },
-            { v: "refurb", t: "Refurbished", d: "Tested on our jigs", icon: Wrench },
+            { v: "refurb", t: "Refurbished", d: "Load tested on our benches", icon: Wrench },
             { v: "new", t: "New", d: "Factory new where available", icon: PackageCheck },
           ]} />
         </div>

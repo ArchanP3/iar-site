@@ -23,7 +23,7 @@ export const hasOffer = (p: Pick<PartSummary, "offers">, c: Offer["condition"]) 
 const fullName = (p: Part) => (p.name === "Repair service" ? partLabel(p) : `${partLabel(p)} ${p.name}`);
 
 export function partTitle(p: Part) {
-  // The (catalog) layout appends " | AutomIQ Drive Services".
+  // The (catalog) layout appends " | Industrial Automation Repair".
   const base = fullName(p);
   const tail = " Repair & Parts";
   return base.length + tail.length <= 50 ? base + tail : base;
@@ -54,7 +54,7 @@ export function partMetadata(p: Part, tpl?: { title: string; description: string
   const description = tpl?.description ? clip(fillPart(tpl.description, p)) : partDescription(p);
   const image = p.images[0];
   return {
-    // A CMS pattern is the whole title, as its Google preview shows (no " | AutomIQ…" suffix).
+    // A CMS pattern is the whole title, as its Google preview shows (no " | IAR…" suffix).
     title: tpl?.title ? { absolute: title } : title,
     description,
     alternates: { canonical: url },

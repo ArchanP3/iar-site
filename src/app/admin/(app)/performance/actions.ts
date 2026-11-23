@@ -10,7 +10,7 @@ export async function saveGoogle(_: FormState, fd: FormData): Promise<FormState>
   const u = await assertUser("performance");
   const gscSite = String(fd.get("gscSite") ?? "").trim().slice(0, 200);
   const ga4Property = String(fd.get("ga4Property") ?? "").trim().replace(/^properties\//, "").slice(0, 40);
-  if (gscSite && !/^(sc-domain:[a-z0-9.-]+|https?:\/\/[^\s]+\/)$/.test(gscSite)) return { error: "Search Console property is sc-domain:automiqautomation.com or a full URL ending with /." };
+  if (gscSite && !/^(sc-domain:[a-z0-9.-]+|https?:\/\/[^\s]+\/)$/.test(gscSite)) return { error: "Search Console property is sc-domain:industrialautomationrepair.com or a full URL ending with /." };
   if (ga4Property && !/^\d{6,12}$/.test(ga4Property)) return { error: "GA4 Property ID is numbers only (Admin → Property details). It is not the G-… Measurement ID." };
   const before = await readSetting("google");
   await writeSetting("google", { gscSite, ga4Property }, u.name);

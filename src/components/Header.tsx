@@ -360,7 +360,7 @@ export default function Header() {
       <div
         className={`relative border-b transition-all duration-300 ${
           scrolled
-            ? "border-[#EAEAEC] bg-white shadow-[0_10px_30px_-18px_rgba(19, 19, 22,0.35)]"
+            ? "border-[#EAEAEC] bg-white shadow-[0_10px_30px_-18px_rgba(19,19,22,0.35)]"
             : "border-transparent bg-white"
         }`}
         onMouseLeave={closeSoon}
@@ -373,7 +373,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="AutomIQ Home"
+            aria-label="IAR Home"
             className="shrink-0"
             onMouseEnter={closeSoon}
             onClick={(e) => {
@@ -386,7 +386,7 @@ export default function Header() {
           >
             <Image
               src="/iar-logo.png"
-              alt="AutomIQ Automation & Drive Services"
+              alt="Industrial Automation Repair Inc."
               width={988}
               height={448}
               sizes="(max-width: 640px) 120px, 150px"
@@ -471,7 +471,7 @@ export default function Header() {
 
             <Link
               href="/request-repair"
-              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#E30C2C] px-5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(200, 16, 46,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-10px_rgba(200, 16, 46,0.8)] sm:inline-flex"
+              className="hidden h-11 items-center gap-2 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#E30C2C] px-5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(200,16,46,0.7)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-10px_rgba(200,16,46,0.8)] sm:inline-flex"
             >
               <Wrench size={17} />
               <span>
@@ -500,7 +500,7 @@ export default function Header() {
           onMouseLeave={closeSoon}
         >
           {active && (
-            <div className="border-b border-[#EAEAEC] bg-white shadow-[0_30px_60px_-30px_rgba(19, 19, 22,0.35)]">
+            <div className="border-b border-[#EAEAEC] bg-white shadow-[0_30px_60px_-30px_rgba(19,19,22,0.35)]">
               <div className="mx-auto grid max-w-360 grid-cols-[1fr_320px] gap-10 px-12 py-9">
                 <div>
                   <div className="mb-6 flex items-end justify-between border-b border-[#F2F2F3] pb-5">
@@ -641,7 +641,7 @@ export default function Header() {
             className="mx-auto flex max-w-225 items-center gap-3 px-5 py-6"
             onSubmit={() => setSearchOpen(false)}
           >
-            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] px-5 focus-within:border-[#C8102E]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(200, 16, 46,0.1)]">
+            <div data-suggest-anchor className="flex flex-1 items-center gap-3 rounded-2xl border border-[#F0DADD] bg-[#FAFAFB] px-5 focus-within:border-[#C8102E]/60 focus-within:bg-white focus-within:shadow-[0_0_0_4px_rgba(200,16,46,0.1)]">
               <Search size={20} className="shrink-0 text-[#B30E29]" />
               <PartSuggest
                 ref={searchRef}
@@ -676,7 +676,7 @@ export default function Header() {
           }`}
         >
           <div className="flex h-19 items-center justify-between border-b border-[#F2F2F3] px-5">
-            <Image src="/iar-logo.png" alt="AutomIQ Automation & Drive Services" width={988} height={448} sizes="140px" className="h-auto w-32" />
+            <Image src="/iar-logo.png" alt="Industrial Automation Repair Inc." width={988} height={448} sizes="140px" className="h-auto w-32" />
             <button
               type="button"
               onClick={() => setMenuOpen(false)}

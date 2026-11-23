@@ -35,16 +35,16 @@ export async function GET(_: Request, { params }: { params: Promise<{ kind: stri
              c.canonical, CASE WHEN s.noindex THEN 'noindex' ELSE 'index' END AS indexing, s.focus_keyword, c.words, c.images, c.images_noalt AS images_missing_alt,
              c.inbound AS internal_links_in, array_to_string(c.ld_types, ' ') AS schema_types, c.ms AS load_ms, CASE WHEN s.path IS NULL THEN 'default' ELSE 'edited' END AS seo, c.crawled_at
         FROM cms.cms_crawl c LEFT JOIN cms.cms_page_seo s ON s.path = c.path ORDER BY c.path`);
-    return file(`automiq-pages-${day}.csv`, csv(rows));
+    return file(`iar-pages-${day}.csv`, csv(rows));
   }
-  if (kind === "redirects") return file(`automiq-redirects-${day}.csv`, csv(await q(`SELECT from_path AS "from", to_path AS "to", code, match, active, hits, last_hit, source, note, created_by, created_at FROM cms.cms_redirects ORDER BY from_path`)));
-  if (kind === "404s") return file(`automiq-404s-${day}.csv`, csv(await q(`SELECT path, hits, referrer, first_seen, last_seen, ignored FROM cms.cms_404 ORDER BY hits DESC`)));
-  if (kind === "leads") return file(`automiq-leads-${day}.csv`, csv(await q(`SELECT id, created_at, form, status, summary, source, landing, page, referrer, notes, data FROM (${LEADS}) l ORDER BY created_at DESC`)));
+  if (kind === "redirects") return file(`iar-redirects-${day}.csv`, csv(await q(`SELECT from_path AS "from", to_path AS "to", code, match, active, hits, last_hit, source, note, created_by, created_at FROM cms.cms_redirects ORDER BY from_path`)));
+  if (kind === "404s") return file(`iar-404s-${day}.csv`, csv(await q(`SELECT path, hits, referrer, first_seen, last_seen, ignored FROM cms.cms_404 ORDER BY hits DESC`)));
+  if (kind === "leads") return file(`iar-leads-${day}.csv`, csv(await q(`SELECT id, created_at, form, status, summary, source, landing, page, referrer, notes, data FROM (${LEADS}) l ORDER BY created_at DESC`)));
 
   const tables = ["cms.cms_page_seo", "cms.cms_redirects", "cms.cms_settings", "cms.cms_posts", "cms.cms_landing", "cms.lead_notes", "cms.cms_activity"];
-  const out: Record<string, unknown> = { exported_at: new Date().toISOString(), note: "AutomIQ CMS backup. Images are kept in the database (cms.cms_media) and are listed here without their file data." };
+  const out: Record<string, unknown> = { exported_at: new Date().toISOString(), note: "IAR CMS backup. Images are kept in the database (cms.cms_media) and are listed here without their file data." };
   for (const t of tables) out[t] = await q(`SELECT * FROM ${t}`);
   out.cms_media = await q(`SELECT id, filename, mime, width, height, bytes, alt, caption, folder, created_at, created_by FROM cms.cms_media`);
   out.cms_users = await q(`SELECT id, email, name, role, disabled, created_at FROM cms.cms_users`);
-  return file(`automiq-cms-backup-${day}.json`, JSON.stringify(out, null, 1), "application/json");
+  return file(`iar-cms-backup-${day}.json`, JSON.stringify(out, null, 1), "application/json");
 }

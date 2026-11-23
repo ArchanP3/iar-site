@@ -15,7 +15,7 @@ export default function IndustryCard({ i, big = false }: { i: Industry; big?: bo
   return (
     <Link
       href={industryUrl(i.slug)}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:rounded-[22px] sm:p-5"
       style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${i.color}40 100%)` }}
     >
       <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${i.color}77, transparent)` }} />

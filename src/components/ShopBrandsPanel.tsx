@@ -46,7 +46,7 @@ export default function ShopBrandsPanel() {
           </p>
           <Link
             href="/shop/brands"
-            className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255, 59, 85,0.8)] transition hover:-translate-y-0.5"
+            className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255,59,85,0.8)] transition hover:-translate-y-0.5"
           >
             Shop all brands
             <ArrowRight size={17} />
@@ -63,7 +63,7 @@ export default function ShopBrandsPanel() {
               >
                 <span
                   aria-hidden="true"
-                  className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_20px_-10px_rgba(200, 16, 46,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
+                  className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_20px_-10px_rgba(200,16,46,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
                 >
                   <span className={`font-extrabold tracking-tight ${b.initials.length > 2 ? "text-[12px] sm:text-[13px]" : "text-[15px] sm:text-[17px]"}`}>
                     {b.initials}
@@ -86,7 +86,7 @@ export default function ShopBrandsPanel() {
 
       <div className="relative mt-6 flex flex-col gap-2 border-t border-white/10 pt-5 text-[13.5px] text-white/70 sm:flex-row sm:items-center sm:justify-between">
         <p>
-          <span className="font-semibold text-white">Don&apos;t see your brand?</span> We source parts from 1,000+
+          <span className="font-semibold text-white">Don&apos;t see your brand?</span> We source parts from every major
           brands.
         </p>
         <Link href="/request-quote" className="group inline-flex items-center gap-1.5 font-semibold text-[#FF5A6E] hover:text-white">

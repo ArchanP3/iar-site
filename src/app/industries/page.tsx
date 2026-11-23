@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/industries", {
-  title: { absolute: "Industries We Serve | Industrial Repair | AutomIQ" },
+  title: { absolute: "Industries We Serve | Industrial Repair | IAR" },
   description: "Servo drive, motor, PLC, HMI and CNC repair for automotive, packaging, plastics, food, metalworking, printing, pharma and 12 more industries. Canada & USA.",
   alternates: { canonical: `${SITE_URL}/industries` },
 });
@@ -30,7 +30,7 @@ export default function IndustriesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(list).replace(/</g, "\\u003c") }} />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-28 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-115 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb"><ol className="flex items-center gap-1.5 text-[12.5px] text-white/60"><li><Link href="/" className="hover:text-white">Home</Link></li><li aria-hidden="true"><ChevronRight size={13} /></li><li className="text-white/85" aria-current="page">Industries</li></ol></nav>
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -39,7 +39,7 @@ export default function IndustriesPage() {
               <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">Every plant runs on drives, motors and controls. We repair them for manufacturers across Canada and the USA, whatever you make.</p>
             </div>
             <div className="flex gap-3">
-            <Link href="/request-repair" className="inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap sm:flex-none rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
+            <Link href="/request-repair" className="inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap sm:flex-none rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
             <WhatsAppButton tone="dark" size="lg" topic="A question from the Industries page" label="Chat on WhatsApp" />
             </div>
           </div>
@@ -60,10 +60,10 @@ export default function IndustriesPage() {
         </section>
 
         <section aria-labelledby="any" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-7 text-white sm:p-10">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
           <div className="relative grid gap-6 lg:grid-cols-[1fr_520px] lg:items-center">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">1,000+ brands</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Every major brand</p>
               <h2 id="any" className="mt-2 text-[28px] font-extrabold leading-tight sm:text-[36px]">Don&apos;t see your industry? <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">We repair everything.</span></h2>
               <p className="mt-2 text-[15px] leading-[1.7] text-white/70">Send the part number of the drive, motor or control and we&apos;ll confirm.</p>
             </div>

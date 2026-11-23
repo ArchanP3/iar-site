@@ -55,7 +55,7 @@ export default function MediaLibrary({ items, folders, canDelete }: { items: Med
       <div className="flex flex-wrap items-center gap-2.5">
         <div className="inline-flex flex-wrap rounded-[10px] bg-[#F2F2F3] p-0.75">
           {([["all", `All ${items.length}`], ["noalt", `Missing alt ${counts.noalt}`], ["unused", `Not used ${counts.unused}`], ["big", `Over 200 KB ${counts.big}`]] as const).map(([k, l]) => (
-            <button key={k} type="button" onClick={() => setFilter(k)} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", filter === k ? "bg-white shadow-[0_1px_3px_rgba(19, 19, 22,0.12)]" : "text-[#696976]")}>{l}</button>
+            <button key={k} type="button" onClick={() => setFilter(k)} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", filter === k ? "bg-white shadow-[0_1px_3px_rgba(19,19,22,0.12)]" : "text-[#696976]")}>{l}</button>
           ))}
         </div>
         <select value={folder} onChange={(e) => setFolder(e.target.value)} className="h-8 rounded-[9px] border border-[#EAEAEC] bg-white px-2 text-[12.5px]">

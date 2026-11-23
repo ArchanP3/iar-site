@@ -12,9 +12,9 @@ const repairSteps: StepList = [
   ["We confirm your request and shipping", Truck],
   ["Free evaluation and written quote", ClipboardCheck],
   ["Component-level repair after you approve", Wrench],
-  ["Tested on our jigs, returned with a test report", RefreshCw],
+  ["Load tested on our benches, returned with a test report", RefreshCw],
 ];
-const repairPoints = ["12-month warranty", "24–72 hr typical", "Free evaluation", "Canada & USA"];
+const repairPoints = ["1-year warranty", "24–72 hr typical", "Free evaluation", "Canada & USA"];
 
 export default async function NextSteps({
   title = "What happens next",
@@ -28,8 +28,8 @@ export default async function NextSteps({
   return (
     <aside className="space-y-3 lg:sticky lg:top-28 lg:self-start">
       <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-[#0A0A0C] p-6 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]">
-        <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-xl" />
         <h2 className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">{title}</h2>
         <ol className="relative mt-4 space-y-3.5">
           {steps.map(([t, Icon], i) => (

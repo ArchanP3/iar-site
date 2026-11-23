@@ -3,7 +3,7 @@ import { brandFont } from "@/lib/font";
 
 /* The CMS lives at /admin. It is never indexed by search engines. */
 export const metadata: Metadata = {
-  title: { absolute: "AutomIQ CMS" },
+  title: { absolute: "IAR CMS" },
   robots: { index: false, follow: false, nocache: true },
 };
 

@@ -47,9 +47,9 @@ async function Pages({ searchParams }: { searchParams: SP }) {
       />
       <div className="flex flex-wrap items-center gap-2.5">
         <div className="inline-flex flex-wrap rounded-[10px] bg-[#F2F2F3] p-0.75">
-          <Link href={qs({ g: undefined })} className={`rounded-lg px-3 py-1.5 text-[12.5px] font-semibold ${!sp.g ? "bg-white shadow-[0_1px_3px_rgba(19, 19, 22,0.12)]" : "text-[#696976]"}`}>All {rows.length}</Link>
+          <Link href={qs({ g: undefined })} className={`rounded-lg px-3 py-1.5 text-[12.5px] font-semibold ${!sp.g ? "bg-white shadow-[0_1px_3px_rgba(19,19,22,0.12)]" : "text-[#696976]"}`}>All {rows.length}</Link>
           {groups.map((g) => (
-            <Link key={g} href={qs({ g })} className={`rounded-lg px-3 py-1.5 text-[12.5px] font-semibold ${sp.g === g ? "bg-white shadow-[0_1px_3px_rgba(19, 19, 22,0.12)]" : "text-[#696976]"}`}>
+            <Link key={g} href={qs({ g })} className={`rounded-lg px-3 py-1.5 text-[12.5px] font-semibold ${sp.g === g ? "bg-white shadow-[0_1px_3px_rgba(19,19,22,0.12)]" : "text-[#696976]"}`}>
               {groupLabel[g]} {rows.filter((r) => r.group === g).length}
             </Link>
           ))}

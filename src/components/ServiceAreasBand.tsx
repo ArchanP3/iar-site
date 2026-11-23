@@ -46,17 +46,17 @@ export default function ServiceAreasBand() {
           </div>
           <Link
             href="/service-areas"
-            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19, 19, 22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
+            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19,19,22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
           >
             View all service areas <ArrowRight size={16} className="transition group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
         </div>
 
-        <div className="relative mt-7 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)]">
+        <div className="relative mt-7 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200,16,46,0.75)]">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <span className="absolute -left-32 -top-40 h-115 w-160 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.38),transparent)] blur-2xl" />
-            <span className="absolute -right-24 top-1/3 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.2),transparent)] blur-2xl" />
-            <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.04)_1px,transparent_1px)] bg-size-[44px_44px]" />
+            <span className="absolute -left-32 -top-40 h-115 w-160 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.38),transparent)] blur-2xl" />
+            <span className="absolute -right-24 top-1/3 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.2),transparent)] blur-2xl" />
+            <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.04)_1px,transparent_1px)] bg-size-[44px_44px]" />
           </div>
           <div className="relative grid lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">
             {/* Map */}
@@ -76,7 +76,7 @@ export default function ServiceAreasBand() {
                     <stop offset="1" stopColor="#FF3B55" stopOpacity="0" />
                   </radialGradient>
                 </defs>
-                <path d={NA_DOTS} stroke="rgba(255, 138, 153,0.24)" strokeWidth="5.2" strokeLinecap="round" fill="none" />
+                <path d={NA_DOTS} stroke="rgba(255,138,153,0.24)" strokeWidth="5.2" strokeLinecap="round" fill="none" />
                 <circle cx={hx} cy={hy} r="120" fill="url(#sa-hub)" />
                 {pts.map(({ a, p: [x, y] }, i) => {
                   const mx = (hx + x) / 2, my = (hy + y) / 2 - Math.min(140, Math.hypot(x - hx, y - hy) * 0.28);
@@ -135,7 +135,7 @@ export default function ServiceAreasBand() {
               ))}
               <p className="text-[13px] text-white/60">City not listed? We serve every city in {where === "Canada & the USA" ? "Canada and the USA" : where}.</p>
               <div className="mt-auto grid gap-2 pt-4 sm:grid-cols-2">
-                <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5">
+                <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
                   <Truck size={17} aria-hidden="true" /> Request a Pickup
                 </Link>
                 <Link href="/on-site-service" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 text-[14.5px] font-semibold text-white transition hover:border-white/45">

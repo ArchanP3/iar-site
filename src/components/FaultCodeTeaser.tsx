@@ -41,17 +41,17 @@ export default function FaultCodeTeaser() {
           </div>
           <Link
             href="/fault-codes"
-            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19, 19, 22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
+            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19,19,22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
           >
             Browse all fault codes <ArrowRight size={16} className="transition group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
         </div>
 
         {/* Dark panel: search + drive families */}
-        <div className="relative mt-7 rounded-[24px] bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] p-6 text-white shadow-[0_30px_60px_-36px_rgba(200, 16, 46,0.7)] sm:p-8 lg:p-10">
+        <div className="relative mt-7 rounded-[24px] bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] p-6 text-white shadow-[0_30px_60px_-36px_rgba(200,16,46,0.7)] sm:p-8 lg:p-10">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-            <span className="absolute -right-32 -top-32 h-105 w-105 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
-            <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
+            <span className="absolute -right-32 -top-32 h-105 w-105 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.45),transparent_65%)]" />
+            <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
           </div>
 
           <div className="relative grid grid-cols-1 gap-7 lg:grid-cols-[1fr_1.05fr] lg:items-center">

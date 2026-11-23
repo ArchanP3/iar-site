@@ -6,9 +6,9 @@ import { SITE_URL } from "@/lib/site";
 import { legal } from "@/lib/legal";
 
 export const generateMetadata = seo("/warranty", {
-  title: "12-Month Warranty on Repairs & Parts | AutomIQ",
+  title: "1-Year Warranty on Repairs & Parts | IAR",
   description:
-    "Every repair, refurbished part and exchange unit from AutomIQ is tested and covered by a 12-month warranty. What is covered and how to make a claim.",
+    "Every repair, refurbished part and exchange unit from IAR is tested and covered by a 1-year warranty. What is covered and how to make a claim.",
   alternates: { canonical: `${SITE_URL}/warranty` },
 });
 
@@ -104,7 +104,7 @@ const sections: LegalSection[] = [
 const highlights = [
   { icon: ShieldCheck, t: `${m}-month warranty`, d: "On repairs, refurbished parts and exchange units." },
   { icon: ClipboardCheck, t: "Test report included", d: "Every repaired unit ships with its test report." },
-  { icon: BadgeCheck, t: "Tested on our own jigs", d: "Drives with a motor, motors under drive control." },
+  { icon: BadgeCheck, t: "Load tested on OEM-standard equipment", d: "Drives with a motor, motors under drive control." },
   { icon: RefreshCw, t: "Free warranty evaluation", d: "We check any claim free and tell you first." },
 ];
 

@@ -88,7 +88,7 @@ export default function MobileBuyBar({ slug, name, image, manufacturer, partNumb
           <div
             role="dialog" aria-modal="true" aria-labelledby="bo-title"
             style={{ transform: `translateY(${drag}px)` }}
-            className="absolute inset-x-0 bottom-0 max-h-[88dvh] overflow-y-auto overscroll-contain rounded-t-[26px] bg-white px-4 pt-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-30px_60px_-20px_rgba(6, 6, 7,0.5)] transition-transform duration-150"
+            className="absolute inset-x-0 bottom-0 max-h-[88dvh] overflow-y-auto overscroll-contain rounded-t-[26px] bg-white px-4 pt-2.5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_-30px_60px_-20px_rgba(6,6,7,0.5)] transition-transform duration-150"
           >
             <div
               className="-mx-4 -mt-2.5 px-4 pt-2.5 pb-2"

@@ -55,7 +55,7 @@ async function Content({ params }: Props) {
       ...(d.vars.city
         ? [{
             "@type": "LocalBusiness",
-            name: "AutomIQ Automation & Drive Services",
+            name: "Industrial Automation Repair Inc.",
             url: SITE_URL,
             image: `${SITE_URL}/iar-logo.png`,
             ...(c.phone ? { telephone: c.phone } : {}),

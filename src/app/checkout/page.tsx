@@ -3,7 +3,7 @@ import CheckoutForm from "@/components/cart/CheckoutForm";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/checkout", {
-  title: "Checkout | AutomIQ",
+  title: "Checkout | IAR",
   robots: { index: false, follow: false },
 });
 

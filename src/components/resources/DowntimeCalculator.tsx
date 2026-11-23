@@ -6,7 +6,7 @@ import { Clock, Download, Loader2, RefreshCw, TrendingDown, Truck, Wrench } from
 import { useContact } from "@/components/cms/ContactProvider";
 
 /* Downtime Cost Calculator.
-   Uses only the visitor's own numbers plus confirmed AutomIQ facts:
+   Uses only the visitor's own numbers plus confirmed IAR facts:
    repair 24–72 hr typical once the quote is approved (we use 72 hr to stay conservative),
    exchange units usually ship 1–2 business days after the failed unit arrives (we use 2).
    Shipping time is entered by the visitor. */
@@ -64,8 +64,8 @@ export default function DowntimeCalculator() {
   const max = Math.max(r.newUnit.cost, r.repair.cost, r.exchange.cost, 1);
   const scenarios = [
     { key: "new", icon: Clock, t: "Wait for a new unit", d: `${plural(r.newUnit.days, "day")} until it arrives`, v: r.newUnit, bar: "from-[#F87171] to-[#FB923C]" },
-    { key: "repair", icon: Wrench, t: "Repair with AutomIQ", d: `72 hr repair + ${plural(ship, "day")} shipping each way`, v: r.repair, bar: "from-[#C8102E] to-[#FF3B55]" },
-    { key: "exchange", icon: RefreshCw, t: "AutomIQ exchange unit", d: `Your unit to us + 1–2 business days + ${plural(ship, "day")} back`, v: r.exchange, bar: "from-[#10B981] to-[#34D399]" },
+    { key: "repair", icon: Wrench, t: "Repair with IAR", d: `72 hr repair + ${plural(ship, "day")} shipping each way`, v: r.repair, bar: "from-[#C8102E] to-[#FF3B55]" },
+    { key: "exchange", icon: RefreshCw, t: "IAR exchange unit", d: `Your unit to us + 1–2 business days + ${plural(ship, "day")} back`, v: r.exchange, bar: "from-[#10B981] to-[#34D399]" },
   ];
 
   const summary = `Downtime estimate: waiting for a new unit ${usd(r.newUnit.cost)}, repair ${usd(r.repair.cost)}, exchange ${usd(r.exchange.cost)} (at ${usd(cost)}/hr)`;
@@ -126,12 +126,12 @@ export default function DowntimeCalculator() {
       y += 92;
 
       doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor(136, 136, 149);
-      const note = "Estimate based on the numbers entered above. Repair uses 72 hours, the top of our typical 24 to 72 hour turnaround once a quote is approved; times are typical, not guaranteed. Exchange uses 2 business days after your unit arrives, the top of our usual 1–2 days; some units take longer. Rush handling is available for an extra fee. Free evaluation and a written quote before any work starts. 12-month warranty on repairs.";
+      const note = "Estimate based on the numbers entered above. Repair uses 72 hours, the top of our typical 24 to 72 hour turnaround once a quote is approved; times are typical, not guaranteed. Exchange uses 2 business days after your unit arrives, the top of our usual 1–2 days; some units take longer. Rush handling is available for an extra fee. Free evaluation and a written quote before any work starts. 1-year warranty on repairs.";
       doc.text(doc.splitTextToSize(note, W - 2 * M), M, y);
       y += 52;
       doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(19, 19, 22);
       const site = window.location.origin.replace(/^https?:\/\//, "");
-      doc.text(["AutomIQ Automation & Drive Services · Mississauga, Ontario · Canada & USA", [site, contact.phone, contact.email].filter(Boolean).join(" · ")], M, y);
+      doc.text(["Industrial Automation Repair Inc. · Mississauga, Ontario · Canada & USA", [site, contact.phone, contact.email].filter(Boolean).join(" · ")], M, y);
       doc.save(`downtime-cost-${part.trim().replace(/[^a-z0-9]+/gi, "-") || "summary"}.pdf`);
     } finally {
       setBusy(false);
@@ -143,7 +143,7 @@ export default function DowntimeCalculator() {
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       {/* ---------- Inputs ---------- */}
-      <section aria-label="Your numbers" className="rounded-[24px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-7">
+      <section aria-label="Your numbers" className="rounded-[24px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-7">
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B30E29]">Your numbers</p>
         <div className="mt-5 space-y-6">
           <Field id="dc-cost" label="What does one hour of downtime cost you?" hint="Lost output, labour, penalties">
@@ -182,9 +182,9 @@ export default function DowntimeCalculator() {
 
       {/* ---------- Results ---------- */}
       <section aria-label="Results" aria-live="polite" className="lg:sticky lg:top-28">
-        <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-5 text-white shadow-[0_40px_80px_-40px_rgba(200, 16, 46,0.7)] sm:p-7">
+        <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-5 text-white shadow-[0_40px_80px_-40px_rgba(200,16,46,0.7)] sm:p-7">
           <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(248,113,113,0.35),transparent)] blur-xl" />
-          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.45),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.45),transparent)] blur-xl" />
           <p className="relative text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FCA5A5]">Waiting for a new unit costs you</p>
           <p className="relative mt-2 text-[40px] font-extrabold leading-none tracking-[-0.03em] tabular-nums sm:text-[54px]">{usd(r.newUnit.cost)}</p>
           <p className="relative mt-2 text-[13.5px] text-white/65">{Math.round(r.newUnit.hours).toLocaleString("en-US")} production hours lost over {plural(r.newUnit.days, "day")}</p>

@@ -20,15 +20,15 @@ const geistMono = Geist_Mono({
 
 const base: Metadata = {
   metadataBase: new URL(SHARE_URL),
-  title: "Servo Drive & Motor Repair Canada & USA | AutomIQ",
+  title: "Servo Drive & Motor Repair Canada & USA | IAR",
   description:
-    "Servo drive, motor and electronics repair for Siemens, Indramat, Allen-Bradley, Fanuc and more. Free evaluation, jig-tested, 12-month warranty. Canada & USA.",
-  applicationName: "AutomIQ Automation & Drive Services",
+    "Servo drive, motor and electronics repair for Siemens, Indramat, Allen-Bradley, Fanuc and more. Free evaluation, test bench-tested, 1-year warranty. Canada & USA.",
+  applicationName: "Industrial Automation Repair Inc.",
   openGraph: {
-    title: "Servo Drive & Motor Repair Canada & USA | AutomIQ",
+    title: "Servo Drive & Motor Repair Canada & USA | IAR",
     description:
-      "Free evaluation, written quote first, 12-month warranty.",
-    siteName: "AutomIQ Automation & Drive Services",
+      "Free evaluation, written quote first, 1-year warranty.",
+    siteName: "Industrial Automation Repair Inc.",
     locale: LOCALE === "en" ? "en_CA" : LOCALE.replace("-", "_"),
     type: "website",
   },

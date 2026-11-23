@@ -42,7 +42,7 @@ export default function BrandFinder({
         className="h-11 w-full rounded-xl border border-[#F0DADD] bg-white pl-9 pr-3 text-[16px] text-[#131316] outline-none placeholder:text-[#888895] focus:border-[#C8102E] sm:text-[14px]"
       />
       {t && (
-        <ul className="absolute inset-x-0 top-full z-20 mt-1.5 max-h-80 overflow-y-auto rounded-xl border border-[#EAEAEC] bg-white shadow-[0_24px_48px_-24px_rgba(19, 19, 22,0.45)]" aria-label="Matching manufacturers">
+        <ul className="absolute inset-x-0 top-full z-20 mt-1.5 max-h-80 overflow-y-auto rounded-xl border border-[#EAEAEC] bg-white shadow-[0_24px_48px_-24px_rgba(19,19,22,0.45)]" aria-label="Matching manufacturers">
           {hits.map((b) => (
             <li key={b.slug}>
               <Link href={`${prefix}${b.slug}`} onClick={onPick} rel={prefix.includes("?") ? "nofollow" : undefined} className="block px-3 py-2.5 text-[14px] font-semibold text-[#131316] hover:bg-[#F7F7F8] hover:text-[#B30E29]">

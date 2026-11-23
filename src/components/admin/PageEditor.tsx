@@ -12,13 +12,13 @@ import { Alert, Bar, Card, Pill, Score, b, cx, input, lenColor } from "./ui";
 type Live = { title: string; description: string; canonical: string; headings: [number, string][]; images: number; noalt: number; inbound: number; ld: string[]; words: number; crawledAt: string } | null;
 
 export const SCHEMA_TEMPLATES: Record<string, (url: string) => object> = {
-  Service: (url) => ({ "@context": "https://schema.org", "@type": "Service", name: "", serviceType: "", url, provider: { "@type": "LocalBusiness", name: "AutomIQ Automation & Drive Services" }, areaServed: ["CA", "US"] }),
+  Service: (url) => ({ "@context": "https://schema.org", "@type": "Service", name: "", serviceType: "", url, provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc." }, areaServed: ["CA", "US"] }),
   Product: (url) => ({ "@context": "https://schema.org", "@type": "Product", name: "", brand: { "@type": "Brand", name: "" }, mpn: "", url, offers: { "@type": "Offer", priceCurrency: "USD", price: "", availability: "https://schema.org/InStock" } }),
   FAQ: () => ({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "", acceptedAnswer: { "@type": "Answer", text: "" } }] }),
   HowTo: () => ({ "@context": "https://schema.org", "@type": "HowTo", name: "", step: [{ "@type": "HowToStep", name: "", text: "" }] }),
   Video: (url) => ({ "@context": "https://schema.org", "@type": "VideoObject", name: "", description: "", thumbnailUrl: "", uploadDate: "", contentUrl: "", embedUrl: "", url }),
   Event: () => ({ "@context": "https://schema.org", "@type": "Event", name: "", startDate: "", location: { "@type": "Place", name: "", address: "" } }),
-  LocalBusiness: (url) => ({ "@context": "https://schema.org", "@type": "LocalBusiness", name: "AutomIQ Automation & Drive Services", url, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } }),
+  LocalBusiness: (url) => ({ "@context": "https://schema.org", "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", url, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } }),
 };
 
 export default function PageEditor({ path, group, site, saved, live, otherTitles, suggestions, canScripts }: {
@@ -131,7 +131,7 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             <Bar pct={(dl / 160) * 100} color={lenColor(dl, 70, 160)} />
           </Field>
           <details open={!!(caTitle || caDesc)} className="rounded-xl border border-[#EAEAEC] bg-[#FAFAFB] p-4">
-            <summary className="cursor-pointer text-[13px] font-bold">Canada site (automiqautomation.ca) <span className="font-semibold text-[#91919E]">· optional: different title and description for Canada</span></summary>
+            <summary className="cursor-pointer text-[13px] font-bold">Canada site (industrialautomationrepair.com) <span className="font-semibold text-[#91919E]">· optional: different title and description for Canada</span></summary>
             <div className="mt-3 flex flex-col gap-4">
               <Field label="Canada SEO title" right={<span style={{ color: lenColor(caTitle.length, 30, 60) }}>{caTitle.length} / 60</span>}>
                 <input name="ca_title" value={caTitle} onChange={(e) => setCaTitle(e.target.value)} placeholder={title || live?.title || "Same as the SEO title"} className={input} />
@@ -139,7 +139,7 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
               <Field label="Canada meta description" right={<span style={{ color: lenColor(caDesc.length, 70, 160) }}>{caDesc.length} / 160</span>}>
                 <textarea name="ca_description" value={caDesc} onChange={(e) => setCaDesc(e.target.value)} rows={2} placeholder={desc || live?.description || "Same as the meta description"} className={input} />
               </Field>
-              <Hint>Used on automiqautomation.ca only. Empty = the SEO title and meta description above, on both sites. automiqautomation.com always uses the fields above.</Hint>
+              <Hint>Used on industrialautomationrepair.com only. Empty = the SEO title and meta description above, on both sites. industrialautomationrepair.com always uses the fields above.</Hint>
             </div>
           </details>
           <Field label="Page URL">
@@ -169,7 +169,7 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             <div className={cx("rounded-[14px] border border-[#EAEAEC] bg-white px-4.5 py-4 font-[Arial,sans-serif]", device === "mobile" && "max-w-95")}>
               <div className="flex items-center gap-2 text-[12.5px] text-[#202024]">
                 <span className="flex h-6.5 w-6.5 items-center justify-center rounded-full bg-[#F2F2F3] text-[11px] font-bold text-[#C8102E]">A</span>
-                <div className="leading-tight"><div className="text-[13.5px]">AutomIQ Automation &amp; Drive Services</div><div className="text-[#4D4D56]">{site} {crumbs && `› ${crumbs}`}</div></div>
+                <div className="leading-tight"><div className="text-[13.5px]">Industrial Automation Repair Inc.</div><div className="text-[#4D4D56]">{site} {crumbs && `› ${crumbs}`}</div></div>
               </div>
               <div className={cx("mt-2 mb-1 leading-tight text-[#931326]", device === "mobile" ? "text-[17px]" : "text-[19px]")}>{trim(effTitle || "Page title", device === "mobile" ? 70 : 60)}</div>
               <div className="text-[13.5px] leading-normal text-[#4D4D56]">{trim(effDesc || "Add a meta description so Google shows your words here.", device === "mobile" ? 120 : 158)}</div>
@@ -206,8 +206,8 @@ export default function PageEditor({ path, group, site, saved, live, otherTitles
             ? <Alert tone="bad" icon={<AlertTriangle size={16} />}><b>Not valid JSON yet:</b> {schemaErr}</Alert>
             : <Alert tone="ok" icon={<CheckCircle2 size={16} />}><b>Valid JSON-LD.</b> {schemaType ? `${schemaType} schema recognised.` : ""} It is added to this page when you save. Test it with Google&apos;s Rich Results Test after publishing.</Alert>)}
           <details open={!!caSchema} className="rounded-xl border border-[#EAEAEC] bg-[#FAFAFB] p-4">
-            <summary className="cursor-pointer text-[13px] font-bold">Canada site schema (automiqautomation.ca) <span className="font-semibold text-[#91919E]">· optional</span></summary>
-            <textarea name="ca_schema_json" value={caSchema} onChange={(e) => setCaSchema(e.target.value)} rows={10} spellCheck={false} placeholder="Empty = the schema above on both sites. Filled in = used instead of it on automiqautomation.ca." className="mt-3 w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none placeholder:text-[#828290]" />
+            <summary className="cursor-pointer text-[13px] font-bold">Canada site schema (industrialautomationrepair.com) <span className="font-semibold text-[#91919E]">· optional</span></summary>
+            <textarea name="ca_schema_json" value={caSchema} onChange={(e) => setCaSchema(e.target.value)} rows={10} spellCheck={false} placeholder="Empty = the schema above on both sites. Filled in = used instead of it on industrialautomationrepair.com." className="mt-3 w-full rounded-xl bg-[#131316] p-4 font-mono text-[12.5px] leading-relaxed text-[#F7D3D9] outline-none placeholder:text-[#828290]" />
           </details>
         </div>
 

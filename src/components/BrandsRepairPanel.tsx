@@ -36,7 +36,7 @@ const schema = {
       "@type": "Service",
       name: `${b.name} repair`,
       description: `${b.name} repair: ${b.repairs}.`,
-      provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" },
+      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc." },
     },
   })),
 };
@@ -64,11 +64,11 @@ export default function BrandsRepairPanel() {
             </p>
             <p className="mt-4 flex items-center gap-2 text-[13px] font-semibold text-white/85">
               <ShieldCheck size={16} className="shrink-0 text-[#FF5A6E]" />
-              12-month warranty on every repair
+              1-year warranty on every repair
             </p>
             <Link
               href="/brands"
-              className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255, 59, 85,0.8)] transition hover:-translate-y-0.5"
+              className="mt-5 inline-flex h-11 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14.5px] font-semibold text-white shadow-[0_12px_28px_-12px_rgba(255,59,85,0.8)] transition hover:-translate-y-0.5"
             >
               View all brands we repair
               <ArrowRight size={17} />
@@ -85,7 +85,7 @@ export default function BrandsRepairPanel() {
                 >
                   <span
                     aria-hidden="true"
-                    className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_20px_-10px_rgba(200, 16, 46,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
+                    className="aq-btile__mark flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white shadow-[0_10px_20px_-10px_rgba(200,16,46,0.9),inset_0_1px_0_rgba(255,255,255,0.3)] sm:h-11 sm:w-11"
                   >
                     <span className={`font-extrabold tracking-tight ${b.initials.length > 2 ? "text-[12px] sm:text-[13px]" : "text-[15px] sm:text-[17px]"}`}>
                       {b.initials}
@@ -108,7 +108,7 @@ export default function BrandsRepairPanel() {
 
         <div className="relative mt-6 flex flex-col gap-2 border-t border-white/10 pt-5 text-[13.5px] text-white/70 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            <span className="font-semibold text-white">We repair 1,000+ brands.</span> Name any brand and we&apos;ll
+            <span className="font-semibold text-white">We repair every major brand.</span> Name any brand and we&apos;ll
             repair it.
           </p>
           <Link href="/request-repair?service=question" className="group inline-flex items-center gap-1.5 font-semibold text-[#FF5A6E] hover:text-white">

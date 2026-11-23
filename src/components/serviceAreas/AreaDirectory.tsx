@@ -30,7 +30,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
             return (
               <button key={x.key} type="button" onClick={() => setG(x.key)} aria-pressed={act}
                 style={act ? { background: x.key === "all" ? "#131316" : `linear-gradient(135deg, ${x.color}, #131316)`, borderColor: "transparent" } : undefined}
-                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[13.5px] font-semibold transition ${act ? "text-white shadow-[0_10px_22px_-12px_rgba(19, 19, 22,0.9)]" : "border-[#F1DDE0] bg-white text-[#4E4E58] hover:border-[#E2BBC1]"}`}>
+                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[13.5px] font-semibold transition ${act ? "text-white shadow-[0_10px_22px_-12px_rgba(19,19,22,0.9)]" : "border-[#F1DDE0] bg-white text-[#4E4E58] hover:border-[#E2BBC1]"}`}>
                 {x.key !== "all" && <span className="h-2.5 w-2.5 rounded-full" style={{ background: x.color, boxShadow: `0 0 0 3px ${x.color}33` }} aria-hidden="true" />}
                 {x.label}
                 <span className={`rounded-full px-1.5 text-[11px] font-bold ${act ? "bg-white/20" : "bg-[#F4F4F5] text-[#A50D25]"}`}>{n}</span>
@@ -49,7 +49,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
           const c = colorOf(a);
           return (
             <li key={a.slug} hidden={!shown.has(a.slug)}>
-              <Link href={urls[a.slug]} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${c}40 100%)` }}>
+              <Link href={urls[a.slug]} className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition duration-300 hover:-translate-y-1 sm:rounded-[22px] sm:p-5" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 50%, ${c}40 100%)` }}>
                 <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition duration-500 group-hover:scale-125" style={{ background: `radial-gradient(closest-side, ${c}77, transparent)` }} />
                 <span className="relative flex items-start justify-between">
                   <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-[14px] font-extrabold ring-1 ring-white/20 sm:h-12 sm:w-12 sm:text-[15px]" style={{ background: `linear-gradient(145deg, ${c}, #131316)` }}>{initials(a.city)}</span>

@@ -18,11 +18,11 @@ export async function getContact(): Promise<Contact> {
   };
 }
 
-/* Both sites share the CMS settings. The .ca site shows info@automiqautomation.ca in place of the
-   .com info address; any other address typed in the CMS shows as is on both sites. */
+/* Both sites share the CMS settings. The fallback email from contact.ts is used when the CMS has none;
+   any address typed in the CMS shows as is on both sites. */
 function siteEmail(cms: string | undefined) {
   const e = cms?.trim() || "";
   if (!e) return fallback.email;
-  if (SITE_COUNTRY === "CA" && e.toLowerCase() === "info@automiqautomation.com") return fallback.email;
+  if (SITE_COUNTRY === "CA" && e.toLowerCase() === "info@industrialautomationrepair.com") return fallback.email;
   return e;
 }

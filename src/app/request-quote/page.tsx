@@ -10,14 +10,14 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-quote", {
-  title: "Request a Quote | Drives, Motors, PLC & CNC Parts | AutomIQ",
+  title: "Request a Quote | Drives, Motors, PLC & CNC Parts | IAR",
   description:
-    "Price, condition and lead time for new, surplus, refurbished and obsolete servo drives, motors, PLCs, HMIs and CNC parts from 1,000+ brands.",
+    "Price, condition and lead time for new, surplus, refurbished and obsolete servo drives, motors, PLCs, HMIs and CNC parts from every major brand.",
 });
 
 const quoteSteps = [
   ["Send your part number", Package],
-  ["We check our stock and 1,000+ brands", Search],
+  ["We check our stock and our supplier network", Search],
   ["You get price, condition and lead time", BadgeCheck],
   ["Tested before it ships", RefreshCw],
 ] as const;
@@ -32,7 +32,7 @@ const tips = [
 /* Same answers as the homepage FAQ: confirmed facts only */
 const faqs = [
   ["What is the difference between new, surplus, refurbished and exchange?", "New is factory-new, in original packaging where available. Surplus is unused or lightly used stock, inspected before listing. Refurbished is repaired and refreshed by our technicians, then tested. Exchange is a tested replacement unit at a lower price: you buy it, ship us your unit, and we ship the replacement once yours arrives."],
-  ["Can you find obsolete or hard-to-find parts?", "Yes. Send us the part number and our team sources it from our stock and from 1,000+ brands and surplus suppliers, including discontinued parts."],
+  ["Can you find obsolete or hard-to-find parts?", "Yes. Send us the part number and our team sources it from our stock and our surplus supplier network, including discontinued parts."],
   ["Will a replacement part work in my machine?", "We match the full part number and the hardware and firmware revision, and confirm compatibility with you before shipping."],
 ];
 
@@ -50,8 +50,8 @@ export default function RequestQuotePage({ searchParams }: { searchParams: Promi
       <Header />
 
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">

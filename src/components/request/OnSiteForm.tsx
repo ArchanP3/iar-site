@@ -13,8 +13,8 @@ export default function OnSiteForm() {
   }
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="onsite" subject="On-site service request: AutomIQ website" />
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="onsite" subject="On-site service request: IAR website" />
 
       <Step n={1} title="How urgent is it?">
         <Choice name="Urgency" value={when} onChange={setWhen} options={[

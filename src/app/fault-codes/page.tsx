@@ -7,7 +7,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 import { SITE_URL } from "@/lib/site";
 
 export const generateMetadata = seo("/fault-codes", {
-  title: "Servo Drive & CNC Fault Codes Explained | AutomIQ",
+  title: "Servo Drive & CNC Fault Codes Explained | IAR",
   description: `Look up ${totalCodes.toLocaleString("en-US")} servo drive, spindle amplifier and power supply fault codes: SINAMICS, Fanuc αi, Indramat DKC, Kinetix 6000 and Yaskawa SGDH.`,
 });
 
@@ -24,8 +24,8 @@ export default function FaultCodesPage() {
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Servo drive and CNC fault code library",
-          description: "Fault codes for servo drives, spindle amplifiers and power supplies, explained by AutomIQ Automation & Drive Services repair technicians.",
-          publisher: { "@type": "Organization", name: "AutomIQ Automation & Drive Services" },
+          description: "Fault codes for servo drives, spindle amplifiers and power supplies, explained by Industrial Automation Repair Inc. repair technicians.",
+          publisher: { "@type": "Organization", name: "Industrial Automation Repair Inc." },
           hasPart: families.map((f) => ({ "@type": "WebPage", name: `${f.short} fault codes`, url: `${SITE_URL}${familyUrl(f)}` })),
         }}
       />
@@ -33,8 +33,8 @@ export default function FaultCodesPage() {
       {/* ---------- Top: heading + search ---------- */}
       <section className="relative bg-[linear-gradient(150deg,#131316_0%,#1B1B1F_60%,#151518_100%)] text-white">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-          <span className="absolute -right-40 -top-40 h-130 w-130 rounded-full bg-[radial-gradient(circle,rgba(200, 16, 46,0.45),transparent_65%)]" />
-          <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
+          <span className="absolute -right-40 -top-40 h-130 w-130 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.45),transparent_65%)]" />
+          <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.05)_1px,transparent_1px)] bg-size-[44px_44px]" />
         </div>
         <div className="relative mx-auto max-w-310 px-5 pb-12 pt-8 sm:px-8 lg:pb-14">
           <Breadcrumbs items={crumbs} dark />
@@ -75,9 +75,9 @@ export default function FaultCodesPage() {
             <li key={f.seriesSlug} className="min-w-0">
               <Link
                 href={familyUrl(f)}
-                className="group flex items-center gap-4 rounded-2xl border border-[#EAEAEC] bg-[#FAFAFB] p-4 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgba(200, 16, 46,0.6)]"
+                className="group flex items-center gap-4 rounded-2xl border border-[#EAEAEC] bg-[#FAFAFB] p-4 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:bg-white hover:shadow-[0_18px_40px_-24px_rgba(200,16,46,0.6)]"
               >
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[18px] font-extrabold text-white shadow-[0_10px_22px_-10px_rgba(200, 16, 46,0.8)]">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-[18px] font-extrabold text-white shadow-[0_10px_22px_-10px_rgba(200,16,46,0.8)]">
                   {f.initials}
                 </span>
                 <span className="min-w-0 flex-1">
@@ -112,7 +112,7 @@ export default function FaultCodesPage() {
             <li key={f.seriesSlug + c.code}>
               <Link
                 href={codeUrl(f, c)}
-                className="group flex h-full flex-col rounded-2xl border border-[#EAEAEC] bg-white p-4 transition hover:border-[#C8102E]/40 hover:shadow-[0_18px_40px_-26px_rgba(200, 16, 46,0.6)]"
+                className="group flex h-full flex-col rounded-2xl border border-[#EAEAEC] bg-white p-4 transition hover:border-[#C8102E]/40 hover:shadow-[0_18px_40px_-26px_rgba(200,16,46,0.6)]"
               >
                 <span className="flex items-center justify-between gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-lg bg-amber-100 px-2 py-0.5 font-mono text-[13.5px] font-bold text-amber-700">
@@ -137,7 +137,7 @@ export default function FaultCodesPage() {
             <div>
               <p className="text-[22px] font-extrabold">Fault won&apos;t clear?</p>
               <p className="mt-1 text-[14.5px] text-white/85">
-                Send the unit in for a free evaluation, component-level repair and operational testing.
+                Send the unit in for a free evaluation, component-level repair and load testing.
               </p>
             </div>
             <Link

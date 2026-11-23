@@ -24,7 +24,7 @@ export function renderMarkdown(md: string): { html: string; toc: { id: string; t
       },
       link({ href, title, tokens }) {
         const text = this.parser.parseInline(tokens);
-        const ext = /^https?:\/\//.test(href) && !/automiqautomation\.com/.test(href);
+        const ext = /^https?:\/\//.test(href) && !/industrialautomationrepair\.com/.test(href);
         return `<a href="${href}"${title ? ` title="${title}"` : ""}${ext ? ' target="_blank" rel="noopener"' : ""}>${text}</a>`;
       },
       image({ href, title, text }) {

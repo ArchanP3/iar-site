@@ -43,7 +43,7 @@ export const glossary: Term[] = [
   t("Servo motor", "A motor with built-in position feedback, controlled by a servo drive for precise motion.", ["Servo motor repair", "/services/servo-motor-repair"]),
   t("Spindle motor", "The motor that turns the cutting tool or workpiece on a machine tool. Usually driven by a spindle drive or amplifier.", ["Motor repair", "/services/industrial-motor-repair"]),
   t("Surplus", "Unused or lightly used stock, often left over from a project or a plant's spares. Inspected before it is listed.", ["Shop Parts", "/shop"]),
-  t("Test jig", "A test setup that runs a unit under real operating conditions on our bench: drives with a motor, motors under drive control.", ["How we work", "/#how-we-work"]),
+  t("Test test bench", "A test setup that runs a unit under real operating conditions on our bench: drives with a motor, motors under drive control.", ["How we work", "/#how-we-work"]),
   t("Test report", "The record of how a repaired unit was tested before it left our bench. Every repair we ship comes with one."),
   t("Turnaround time", "How long a repair takes once the quote is approved. Ours is typically 24 to 72 hours."),
   t("VFD", "Variable frequency drive: controls an AC motor's speed by changing the frequency of its supply. Also called an AC drive or inverter.", ["VFD repair", "/services/vfd-repair"]),

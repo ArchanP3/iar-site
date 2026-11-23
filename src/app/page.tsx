@@ -19,9 +19,9 @@ import { preload } from "react-dom";
 const siteLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: "AutomIQ", alternateName: ["AutomIQ Automation & Drive Services", "AutomIQ Automation"], publisher: { "@id": `${SITE_URL}/#organization` }, inLanguage: "en" },
+    { "@type": "WebSite", "@id": `${SITE_URL}/#website`, url: SITE_URL, name: "IAR", alternateName: ["Industrial Automation Repair Inc.", "Industrial Automation Repair"], publisher: { "@id": `${SITE_URL}/#organization` }, inLanguage: "en" },
     {
-      "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "AutomIQ Automation & Drive Services", alternateName: "AutomIQ", url: SITE_URL,
+      "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Industrial Automation Repair Inc.", alternateName: "IAR", url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` },
       ...(contact.email ? { email: contact.email } : {}), ...(contact.phone ? { telephone: contact.phone } : {}),
       address: postalAddress, geo, openingHoursSpecification: openingHours,

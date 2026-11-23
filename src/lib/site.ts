@@ -1,5 +1,5 @@
 export const site = {
-  name: process.env.NEXT_PUBLIC_COMPANY_NAME || "AutomIQ Automation & Drive Services",
+  name: process.env.NEXT_PUBLIC_COMPANY_NAME || "Industrial Automation Repair Inc.",
   // Until a custom domain is set, fall back to Vercel's production URL.
   url: (
     process.env.NEXT_PUBLIC_SITE_URL ||
@@ -8,7 +8,7 @@ export const site = {
       : "http://localhost:3000")
   ).replace(/\/$/, ""),
   description:
-    "Industrial automation parts and repair — servo drives, motors, PLCs, HMIs, power supplies and more. Mississauga, Ontario. Serving Canada & USA.",
+    "Servo motor repair, servo drive repair and industrial electronics repair in Mississauga, Ontario — load tested, with a one-year warranty. Serving Canada & USA.",
   showRatings: process.env.NEXT_PUBLIC_SHOW_RATINGS === "true",
 };
 
@@ -24,8 +24,8 @@ export const SITE_URL = site.url;
 
 /* ------------------------------------------------------------------ */
 /*  Two country sites from one codebase and one database:              */
-/*    automiqautomation.ca  -> NEXT_PUBLIC_SITE_COUNTRY=CA (Canada)      */
-/*    automiqautomation.com -> NEXT_PUBLIC_SITE_COUNTRY=US (USA + rest)  */
+/*    industrialautomationrepair.com (CA)  -> NEXT_PUBLIC_SITE_COUNTRY=CA*/
+/*    a US domain, if one is added later -> NEXT_PUBLIC_SITE_COUNTRY=US*/
 /*  Not set = one site for both countries (how it worked before .ca),   */
 /*  so nothing changes until the variable is set in Vercel.             */
 /*  Shared pages (parts, services, brands...) exist on both domains and */
@@ -40,8 +40,8 @@ const otherOf = (c: Country): Country => (c === "CA" ? "US" : "CA");
 const origin = (v: string | undefined, fallback: string) => (v || fallback).replace(/\/$/, "");
 /** Home address of each country site (this site's own entry is always SITE_URL). */
 export const COUNTRY_SITES: Record<Country, string> = {
-  CA: SITE_COUNTRY === "CA" ? SITE_URL : origin(process.env.NEXT_PUBLIC_CA_SITE_URL, "https://automiqautomation.ca"),
-  US: SITE_COUNTRY === "US" ? SITE_URL : origin(process.env.NEXT_PUBLIC_US_SITE_URL, "https://automiqautomation.com"),
+  CA: SITE_COUNTRY === "CA" ? SITE_URL : origin(process.env.NEXT_PUBLIC_CA_SITE_URL, "https://industrialautomationrepair.com"),
+  US: SITE_COUNTRY === "US" ? SITE_URL : origin(process.env.NEXT_PUBLIC_US_SITE_URL, "https://industrialautomationrepair.com"),
 };
 /** The other country's site, or null while there is only one site. */
 export const PARTNER_URL = SITE_COUNTRY ? COUNTRY_SITES[otherOf(SITE_COUNTRY)] : null;
@@ -51,7 +51,7 @@ export const LOCALE = SITE_COUNTRY === "US" ? "en-US" : SITE_COUNTRY === "CA" ? 
 
 /** CMS "Show on" setting for landing pages and blog posts. */
 export type SiteChoice = "both" | Country;
-export const SITE_CHOICES: [SiteChoice, string][] = [["both", "Both sites (.ca and .com)"], ["CA", "Canada only (automiqautomation.ca)"], ["US", "USA only (automiqautomation.com)"]];
+export const SITE_CHOICES: [SiteChoice, string][] = [["both", "Both sites"], ["CA", "Canada site only"], ["US", "USA site only"]];
 export const siteChoice = (v: unknown): SiteChoice => (v === "CA" || v === "US" ? v : "both");
 
 /** Does a page meant for this country (or "both"/unset) belong on this site? */

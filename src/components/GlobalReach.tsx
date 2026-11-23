@@ -41,19 +41,19 @@ export default function GlobalReach() {
           </div>
           <Link
             href="/international"
-            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19, 19, 22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
+            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19,19,22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
           >
             Request an International Quote <ArrowRight size={16} className="transition group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
         </div>
 
         {/* Dark glass box */}
-        <div className="relative mt-7 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)]">
+        <div className="relative mt-7 overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200,16,46,0.75)]">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.4),transparent)] blur-2xl" />
-            <span className="absolute -right-24 -bottom-30 h-120 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.24),transparent)] blur-2xl" />
-            <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
-            <span className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.08)_0%,transparent_30%,transparent_70%,rgba(255, 59, 85,0.08)_100%)]" />
+            <span className="absolute -left-32 -top-40 h-105 w-150 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.4),transparent)] blur-2xl" />
+            <span className="absolute -right-24 -bottom-30 h-120 w-155 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.24),transparent)] blur-2xl" />
+            <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.045)_1px,transparent_1px)] bg-size-[44px_44px]" />
+            <span className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.08)_0%,transparent_30%,transparent_70%,rgba(255,59,85,0.08)_100%)]" />
           </div>
 
           <div className="relative grid gap-x-10 gap-y-6 p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:p-10">
@@ -61,7 +61,7 @@ export default function GlobalReach() {
             <ul className="grid gap-3 sm:grid-cols-3 lg:self-end">
               {features.map(({ icon: Icon, t, d }) => (
                 <li key={t} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] sm:block sm:p-4">
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_10px_24px_-10px_rgba(218, 11, 42,0.9)]"><Icon size={17} aria-hidden="true" /></span>
+                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] shadow-[0_10px_24px_-10px_rgba(218,11,42,0.9)]"><Icon size={17} aria-hidden="true" /></span>
                   <span className="block"><span className="block text-[14.5px] font-extrabold sm:mt-3">{t}</span>
                   <span className="mt-0.5 block text-[12.5px] leading-snug text-white/60">{d}</span></span>
                 </li>

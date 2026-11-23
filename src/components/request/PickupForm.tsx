@@ -21,8 +21,8 @@ export default function PickupForm() {
   }
 
   return (
-    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="pickup" subject="New pickup request: AutomIQ website" />
+    <form ref={form} onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="pickup" subject="New pickup request: IAR website" />
 
       <Step n={1} title="Your company"><DetailsFields prefix="pu" location={false} /></Step>
 

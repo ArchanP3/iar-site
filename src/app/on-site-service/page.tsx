@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/on-site-service", {
-  title: "On-site Industrial Repair Service | AutomIQ",
+  title: "On-site Industrial Repair Service | IAR",
   description: "On-site technicians for servo drives, CNC controls, PLCs and VFDs across Canada and the USA. Troubleshooting, replacement and start-up at your plant.",
   alternates: { canonical: `${SITE_URL}/on-site-service` },
 });
@@ -18,7 +18,7 @@ const steps = [
   ["A technician works at your plant", Wrench],
   ["Failed units come to our repair centre", Truck],
 ] as const;
-const points = ["Canada & USA", "Breakdowns & planned visits", "Quote before travel", "Repairs with 12-month warranty"];
+const points = ["Canada & USA", "Breakdowns & planned visits", "Quote before travel", "Repairs with 1-year warranty"];
 
 const work = [
   [Search, "Troubleshooting", "Find the fault on the machine: drive, motor, feedback, wiring or control."],
@@ -30,14 +30,14 @@ const work = [
 const faqs: [string, string][] = [
   ["Where do you provide on-site service?", "Across Canada and the United States. Our repair centre is in Mississauga, Ontario, and technicians travel to your plant."],
   ["How much does a service call cost?", "It depends on the location, the travel and the work. We send you the cost before anyone travels, so there are no surprises."],
-  ["What if the part needs a bench repair?", "We bring the failed unit back to our Mississauga repair centre, repair it at component level and test it on our own jigs. An exchange unit can keep you running in the meantime."],
+  ["What if the part needs a bench repair?", "We bring the failed unit back to our Mississauga repair centre, repair it at component level and test it on our test benches. An exchange unit can keep you running in the meantime."],
   ["Can you help us before a planned shutdown?", "Yes. Book a planned visit, and tell us the machine and the date so the technician comes prepared."],
 ];
 
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Service", name: "On-site industrial repair service", serviceType: "Field service for industrial automation", url: `${SITE_URL}/on-site-service`, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } } },
+    { "@type": "Service", name: "On-site industrial repair service", serviceType: "Field service for industrial automation", url: `${SITE_URL}/on-site-service`, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } } },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
 };

@@ -7,8 +7,8 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/faqs", {
-  title: "FAQs: Repairs, Parts, Exchange, Shipping & Warranty | AutomIQ",
-  description: "Answers about servo drive and motor repair, parts, exchange units, shipping to the USA, warranty and returns, from the AutomIQ repair team.",
+  title: "FAQs: Repairs, Parts, Exchange, Shipping & Warranty | IAR",
+  description: "Answers about servo drive and motor repair, parts, exchange units, shipping to the USA, warranty and returns, from the IAR repair team.",
   alternates: { canonical: `${SITE_URL}/resources/faqs` },
 });
 
@@ -30,7 +30,7 @@ export default function FaqsPage() {
         <FaqHub groups={groups} />
         <aside className="space-y-3 lg:sticky lg:top-28">
           <div className="relative overflow-hidden rounded-[22px] bg-[#0A0A0C] p-6 text-white">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.55),transparent)] blur-xl" />
+            <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <p className="relative text-[17px] font-extrabold">Still have a question?</p>
             <p className="relative mt-1 text-[13.5px] leading-relaxed text-white/70">Ask a technician. Send the part number and what the machine is doing.</p>
             <Link href="/request-repair?service=question" className="relative mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-white text-[14px] font-semibold text-[#131316]">

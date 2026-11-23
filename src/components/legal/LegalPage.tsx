@@ -25,8 +25,8 @@ export default function LegalPage({ crumb, title, accent, intro, sections, path,
       <PageExtras path={path} />
       <Header />
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">
@@ -49,7 +49,7 @@ export default function LegalPage({ crumb, title, accent, intro, sections, path,
         {highlights && (
           <ul className="mb-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {highlights.map(({ icon: Icon, t, d }) => (
-              <li key={t} className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19, 19, 22,0.5)]">
+              <li key={t} className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_30px_60px_-45px_rgba(19,19,22,0.5)]">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white"><Icon size={19} aria-hidden="true" /></span>
                 <p className="mt-3 text-[16px] font-extrabold">{t}</p>
                 <p className="mt-1 text-[13px] leading-relaxed text-[#62626F]">{d}</p>
@@ -87,7 +87,7 @@ export default function LegalPage({ crumb, title, accent, intro, sections, path,
             </div>
           </aside>
 
-          <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+          <article className="rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
             {sections.map((s, i) => (
               <section key={s.id} id={s.id} aria-labelledby={`${s.id}-h`} className="scroll-mt-28 border-t border-[#F3F3F4] px-5 py-6 first:border-t-0 sm:px-9 sm:py-7">
                 <h2 id={`${s.id}-h`} className="flex items-baseline gap-3 text-[19px] font-extrabold sm:text-[21px]">

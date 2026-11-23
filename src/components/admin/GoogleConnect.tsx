@@ -12,7 +12,7 @@ export default function GoogleConnect({ cfg, email, compact }: { cfg: GoogleCfg;
     <Card title={compact ? "Google connection" : "Connect Google (free)"} icon={<Plug size={17} />}>
       <form action={action} className="grid items-start gap-5 lg:grid-cols-[1fr_1.1fr]">
         <div className="flex flex-col gap-3">
-          <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Search Console property</span><input name="gscSite" defaultValue={cfg.gscSite} placeholder="sc-domain:automiqautomation.com" className={cx(input, "font-mono text-[12.5px]")} /></label>
+          <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">Search Console property</span><input name="gscSite" defaultValue={cfg.gscSite} placeholder="sc-domain:industrialautomationrepair.com" className={cx(input, "font-mono text-[12.5px]")} /></label>
           <label className="flex flex-col gap-1.5"><span className="text-[12.5px] font-bold">GA4 Property ID</span><input name="ga4Property" defaultValue={cfg.ga4Property} placeholder="123456789" className={cx(input, "font-mono text-[12.5px]")} /></label>
           {state?.error && <Alert tone="bad" icon={<TriangleAlert size={16} />}>{state.error}</Alert>}
           {state?.ok && <Alert tone="ok" icon={<CheckCircle2 size={16} />}>{state.ok}</Alert>}

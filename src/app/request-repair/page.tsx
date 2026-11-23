@@ -8,9 +8,9 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-repair", {
-  title: "Request a Repair | Servo Drive, Motor & CNC Repair | AutomIQ",
+  title: "Request a Repair | Servo Drive, Motor & CNC Repair | IAR",
   description:
-    "Send servo drives, motors, CNC and industrial electronics to our Mississauga repair centre. Free evaluation, 24–72 hr typical turnaround, 12-month warranty.",
+    "Send servo drives, motors, CNC and industrial electronics to our Mississauga repair centre. Free evaluation, 24–72 hr typical turnaround, 1-year warranty.",
 });
 
 const tips = [
@@ -40,8 +40,8 @@ export default function RequestRepairPage() {
       <Header />
 
       <section className="relative overflow-hidden bg-[#0A0A0C] pb-24 pt-8 text-white">
-        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.5),transparent)] blur-2xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -left-32 -top-40 h-105 w-140 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.5),transparent)] blur-2xl" />
+        <span aria-hidden="true" className="pointer-events-none absolute -right-20 top-0 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
         <div className="relative mx-auto max-w-310 px-5 sm:px-8">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 text-[12.5px] text-white/60">

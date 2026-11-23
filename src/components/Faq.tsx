@@ -49,7 +49,7 @@ export default function Faq() {
                 aria-selected={tab === g.key}
                 onClick={() => setTab(g.key)}
                 className={`flex flex-1 items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-[13px] font-semibold transition sm:text-[14px] ${
-                  tab === g.key ? "bg-[#C8102E]/[0.07] text-[#B30E29] shadow-[0_4px_12px_-6px_rgba(200, 16, 46,0.45)]" : "text-[#62626F] hover:text-[#131316]"
+                  tab === g.key ? "bg-[#C8102E]/[0.07] text-[#B30E29] shadow-[0_4px_12px_-6px_rgba(200,16,46,0.45)]" : "text-[#62626F] hover:text-[#131316]"
                 }`}
               >
                 <span>

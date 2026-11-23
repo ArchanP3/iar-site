@@ -41,7 +41,7 @@ export default function FilterSheet({ active, children }: { active: number; chil
             role="dialog"
             aria-modal="true"
             aria-label="Filters"
-            className="absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-[22px] bg-white text-[#131316] shadow-[0_-20px_50px_-20px_rgba(10, 10, 12,0.5)]"
+            className="absolute inset-x-0 bottom-0 flex max-h-[85dvh] flex-col rounded-t-[22px] bg-white text-[#131316] shadow-[0_-20px_50px_-20px_rgba(10,10,12,0.5)]"
           >
             <span aria-hidden="true" className="mx-auto mt-2 h-1.5 w-11 rounded-full bg-[#D4D4D8]" />
             <div className="flex items-center justify-between border-b border-[#F3F3F4] px-4 pb-3 pt-2">

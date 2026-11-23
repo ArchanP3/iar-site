@@ -130,7 +130,7 @@ export function PartsTable({ rows, cats, mins, canBulkPrice, empty, showLocks = 
         aria-hidden={!sel.size}
         inert={!sel.size}
         className={cx(
-          "fixed bottom-[calc(20px+env(safe-area-inset-bottom,0px))] max-sm:bottom-[calc(76px+env(safe-area-inset-bottom,0px))] left-1/2 z-40 flex max-w-[calc(100vw-32px)] -translate-x-1/2 items-center gap-1.5 rounded-2xl bg-[#131316] py-2 pl-4 pr-2 text-white shadow-[0_24px_50px_-20px_rgba(19, 19, 22,0.8)] transition-all duration-300",
+          "fixed bottom-[calc(20px+env(safe-area-inset-bottom,0px))] max-sm:bottom-[calc(76px+env(safe-area-inset-bottom,0px))] left-1/2 z-40 flex max-w-[calc(100vw-32px)] -translate-x-1/2 items-center gap-1.5 rounded-2xl bg-[#131316] py-2 pl-4 pr-2 text-white shadow-[0_24px_50px_-20px_rgba(19,19,22,0.8)] transition-all duration-300",
           sel.size ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0",
         )}
       >
@@ -164,7 +164,7 @@ function Dialog({ title, sub, onClose, children }: { title: string; sub: string;
   }, []);
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[#131316]/40 p-4 sm:items-center" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby="bulk-title" className="w-full max-w-140 rounded-2xl bg-white p-5 shadow-[0_30px_80px_-30px_rgba(19, 19, 22,0.6)] sm:p-6">
+      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby="bulk-title" className="w-full max-w-140 rounded-2xl bg-white p-5 shadow-[0_30px_80px_-30px_rgba(19,19,22,0.6)] sm:p-6">
         <div className="mb-4 flex items-start gap-3">
           <div className="min-w-0 flex-1">
             <h2 id="bulk-title" className="text-[17px] font-extrabold text-[#131316]">{title}</h2>

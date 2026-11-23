@@ -41,7 +41,7 @@ async function Blog() {
               <td className="max-w-105"><a href={postUrl(p.slug)} target="_blank" className="block truncate font-bold">{p.title}</a><span className="font-mono text-[12px] text-[#91919E]">{postUrl(p.slug)}</span></td>
               <td><Pill tone="ok">Published</Pill></td>
               <td>{p.tag}</td>
-              <td>AutomIQ team</td>
+              <td>IAR team</td>
               <td>—</td>
               <td className="text-[#91919E]"><span className="inline-flex items-center gap-1"><Lock size={12} /> Built into the site · SEO in <Link href={`/admin/pages/edit?path=${encodeURIComponent(postUrl(p.slug))}`} className="font-semibold text-[#A50D25]">Pages</Link></span></td>
             </tr>

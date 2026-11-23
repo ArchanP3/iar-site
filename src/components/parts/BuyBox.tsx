@@ -20,14 +20,14 @@ const details_note: Record<Condition, string> = {
   new: "Factory-new parts are quoted with current price and lead time. Ask for volume pricing on 5 or more units. No payment until you confirm the quote.",
   refurbished: `Usually ships in 1–2 business days. We confirm stock, shipping and your invoice before you pay. Every unit carries a ${WARRANTY}.`,
   exchange: "Request an exchange quote. Need the replacement before you send yours? Contact us and we explain the options and pricing. The final price is confirmed when we check your unit and may be higher depending on its condition.",
-  repair: `Free evaluation and a written quote before any work. Typical turnaround is 24–72 hours once you approve. Every repair is tested on our jigs and returned with a test report and ${WARRANTY}.`,
+  repair: `Free evaluation and a written quote before any work. Typical turnaround is 24–72 hours once you approve. Every repair is load tested on our benches and returned with a test report and ${WARRANTY}.`,
 };
 
 const info: Record<Condition, { title: string; lines: [string, string, string]; steps?: boolean; note: string }> = {
   new: { title: "Factory new", lines: ["Original packaging where available", "Price and lead time confirmed by email", "Volume pricing for 5 or more units"], note: "No payment now. We reply with price and lead time." },
-  refurbished: { title: "Refurbished by AutomIQ", lines: ["Tested under power on our own jigs", WARRANTY, "Usually ships in 1–2 business days"], note: "We confirm stock and your invoice before you pay." },
+  refurbished: { title: "Refurbished by IAR", lines: ["Tested under power on our test benches", WARRANTY, "Usually ships in 1–2 business days"], note: "We confirm stock and your invoice before you pay." },
   exchange: { title: "How exchange works", steps: true, lines: ["Request an exchange quote", "Send us your unit, or book a pickup", "We ship yours, usually in 1–2 business days"], note: "Final price confirmed when we check your unit." },
-  repair: { title: "Repair by AutomIQ", lines: ["Free evaluation and written quote", "Tested on our jigs, test report included", WARRANTY], note: "No work starts until you approve the quote." },
+  repair: { title: "Repair by IAR", lines: ["Free evaluation and written quote", "Load tested on our benches, test report included", WARRANTY], note: "No work starts until you approve the quote." },
 };
 
 
@@ -41,7 +41,7 @@ const link = (path: string, params: Record<string, string | number | undefined>)
 };
 
 const primary =
-  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218, 11, 42,0.9)] transition hover:-translate-y-0.5";
+  "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-white shadow-[0_14px_30px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5";
 const secondary =
   "inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-[#F0DADD] bg-white px-2 text-[13px] min-[400px]:text-[14px] sm:gap-2 sm:px-3 sm:text-[14.5px] [&>svg]:max-[439px]:hidden font-semibold text-[#131316] transition hover:border-[#C8102E]/50 hover:text-[#A50D25]";
 
@@ -108,7 +108,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
         : link("/request-quote", { ...base, condition: label, qty });
 
   return (
-    <div id="buy" className="relative scroll-mt-28 rounded-[22px] border border-[#EAEAEC] bg-white p-4 shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-4.5">
+    <div id="buy" className="relative scroll-mt-28 rounded-[22px] border border-[#EAEAEC] bg-white p-4 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-4.5">
       <div role="tablist" aria-label="Choose how you want it" className="grid grid-cols-4 gap-1 rounded-xl bg-[#F5F5F6] p-1">
         {offers.map((x) => {
           const on = x.condition === sel;
@@ -123,7 +123,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
                 setOffering(false);
                 setDetails(false);
               }}
-              className={`h-9 rounded-lg text-[12.5px] font-semibold transition sm:text-[13px] ${on ? "bg-white text-[#A50D25] shadow-[0_6px_16px_-8px_rgba(19, 19, 22,0.45)] ring-1 ring-[#C8102E]/25" : "text-[#5A5A66] hover:text-[#131316]"}`}
+              className={`h-9 rounded-lg text-[12.5px] font-semibold transition sm:text-[13px] ${on ? "bg-white text-[#A50D25] shadow-[0_6px_16px_-8px_rgba(19,19,22,0.45)] ring-1 ring-[#C8102E]/25" : "text-[#5A5A66] hover:text-[#131316]"}`}
             >
               {conditionLabel[x.condition]}
             </button>
@@ -249,7 +249,7 @@ export default function BuyBox({ slug, name, image, manufacturer, partNumber, of
 
             {/* Details: opens over the box, so the box keeps its size */}
             {details && (
-              <div role="dialog" aria-label={`${label} details`} className="absolute inset-0 z-20 flex flex-col overflow-y-auto rounded-[22px] bg-white p-4 shadow-[0_30px_70px_-30px_rgba(19, 19, 22,0.6)] ring-1 ring-[#EAEAEC] sm:p-4.5">
+              <div role="dialog" aria-label={`${label} details`} className="absolute inset-0 z-20 flex flex-col overflow-y-auto rounded-[22px] bg-white p-4 shadow-[0_30px_70px_-30px_rgba(19,19,22,0.6)] ring-1 ring-[#EAEAEC] sm:p-4.5">
                 <div className="flex items-center justify-between">
                   <p className="text-[15px] font-extrabold text-[#131316]">{info[o.condition].title}</p>
                   <button type="button" onClick={() => setDetails(false)} aria-label="Close details" className="flex h-8 w-8 items-center justify-center rounded-lg text-[#5A5A66] hover:bg-[#F5F5F6]"><X size={17} /></button>

@@ -13,12 +13,12 @@ export default async function SearchMiss({ searchParams }: { searchParams: Promi
   const near = await closeMatches(q, 4);
   return (
     <div className="lg:col-span-2">
-      <div className="rounded-[22px] border border-[#FEDF89] bg-[#FFFCF2] p-4 shadow-[0_24px_50px_-40px_rgba(19, 19, 22,0.5)] sm:p-5">
+      <div className="rounded-[22px] border border-[#FEDF89] bg-[#FFFCF2] p-4 shadow-[0_24px_50px_-40px_rgba(19,19,22,0.5)] sm:p-5">
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#FEF3C7] text-[#B45309]"><SearchX size={19} aria-hidden="true" /></span>
           <div className="min-w-0">
             <p className="text-[15.5px] font-extrabold text-[#131316]">&ldquo;{q}&rdquo; isn&apos;t listed online yet. We can still get it.</p>
-            <p className="mt-0.5 text-[13.5px] leading-normal text-[#696976]">We&apos;ve filled in the form below for you. Send it and we check our stock and 1,000+ brands, then reply with price, condition and lead time.</p>
+            <p className="mt-0.5 text-[13.5px] leading-normal text-[#696976]">We&apos;ve filled in the form below for you. Send it and we check our stock and our supplier network, then reply with price, condition and lead time.</p>
           </div>
         </div>
         {near.length > 0 && (

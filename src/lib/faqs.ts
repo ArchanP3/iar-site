@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------ */
 /*  FAQs used on the homepage and the Resources FAQ page.               */
-/*  Edit questions here. Only facts AutomIQ has confirmed.             */
+/*  Edit questions here. Only facts IAR has confirmed.             */
 /* ------------------------------------------------------------------ */
 export type FaqGroup = { key: string; label: string; short?: string; items: { q: string; a: string }[] };
 
@@ -36,7 +36,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "How do you test a repaired drive or motor?",
-        a: "Every unit is run under power on our own test jigs. Drives are tested with a motor, motors are tested under drive control, encoder alignment is checked, and a test report ships with the unit.",
+        a: "Every unit is run under power on our test benches. Drives are tested with a motor, motors are tested under drive control, encoder alignment is checked, and a test report ships with the unit.",
       },
       {
         q: "Do you repair obsolete or discontinued equipment?",
@@ -44,7 +44,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Which brands do you repair?",
-        a: "We specialise in Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa, and repair equipment from 1,000+ brands, including Mitsubishi, Kollmorgen, Schneider Electric, Omron and ABB.",
+        a: "We specialise in Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa, and repair equipment from every major brand, including Mitsubishi, Kollmorgen, Schneider Electric, Omron and ABB.",
       },
       {
         q: "Do you repair encoders and align them to the motor?",
@@ -70,7 +70,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Can you find obsolete or hard-to-find automation parts?",
-        a: "Yes. Send us the part number and our team sources it from our stock and from 1,000+ brands and surplus suppliers, including discontinued parts.",
+        a: "Yes. Send us the part number and our team sources it from our stock and our surplus supplier network, including discontinued parts.",
       },
       {
         q: "How do I get a price for a part?",
@@ -117,7 +117,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "What warranty comes with a repair?",
-        a: "Every repair comes with a 12-month warranty and a test report showing how the unit was tested before it left our bench.",
+        a: "Every repair comes with a 1-year warranty and a test report showing how the unit was tested before it left our bench.",
       },
       {
         q: "How does an exchange work?",

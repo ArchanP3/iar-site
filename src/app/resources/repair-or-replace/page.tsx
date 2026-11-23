@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/repair-or-replace", {
-  title: "Repair or Replace? Free Advisor | AutomIQ",
+  title: "Repair or Replace? Free Advisor | IAR",
   description: "Answer five quick questions about your failed servo drive, motor or control and get a clear recommendation: repair, exchange unit or refurbished replacement.",
   alternates: { canonical: `${SITE_URL}/resources/repair-or-replace` },
 });

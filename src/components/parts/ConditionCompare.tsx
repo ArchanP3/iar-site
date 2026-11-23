@@ -17,9 +17,9 @@ const ROWS: { key: string; label: string; icon: React.ElementType; v: Record<Con
   } },
   { key: "test", label: "Testing", icon: Gauge, v: {
     new: "Factory-new condition",
-    refurbished: "Tested under power on our own jigs",
+    refurbished: "Tested under power on our test benches",
     exchange: "Tested before it ships",
-    repair: "Tested on our jigs, test report included",
+    repair: "Load tested on our benches, test report included",
   } },
   { key: "warranty", label: "Warranty", icon: ShieldCheck, v: {
     new: "As stated on your quote; may not include the manufacturer's warranty",
@@ -73,7 +73,7 @@ export default function ConditionCompare({ offers }: { offers: Offer[] }) {
       </div>
 
       {/* Desktop: table */}
-      <div className="mt-5 hidden overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-50px_rgba(19, 19, 22,0.6)] lg:block">
+      <div className="mt-5 hidden overflow-hidden rounded-[22px] border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-50px_rgba(19,19,22,0.6)] lg:block">
         <table className="w-full table-fixed border-collapse text-left">
           <thead>
             <tr>

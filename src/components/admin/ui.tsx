@@ -7,7 +7,7 @@ export const cx = (...c: (string | false | null | undefined)[]) => c.filter(Bool
 
 export const btn = {
   base: "inline-flex h-9.5 items-center justify-center gap-2 whitespace-nowrap rounded-[10px] px-4 text-[13px] font-semibold transition disabled:cursor-not-allowed disabled:opacity-50",
-  primary: "bg-linear-to-br from-[#C8102E] to-[#DA0B2A] text-white shadow-[0_12px_26px_-14px_rgba(200, 16, 46,0.9)] hover:brightness-110",
+  primary: "bg-linear-to-br from-[#C8102E] to-[#DA0B2A] text-white shadow-[0_12px_26px_-14px_rgba(200,16,46,0.9)] hover:brightness-110",
   dark: "bg-[#131316] text-white hover:bg-[#A50D25]",
   light: "border border-[#EAEAEC] bg-white text-[#131316] hover:border-[#C8102E] hover:text-[#A50D25]",
   danger: "border border-[#FECDCA] bg-white text-[#B42318] hover:bg-[#FEF3F2]",
@@ -34,7 +34,7 @@ export function PageHead({ title, sub, crumb, actions }: { title: ReactNode; sub
 
 export function Card({ title, icon, right, children, className, pad = true }: { title?: ReactNode; icon?: ReactNode; right?: ReactNode; children: ReactNode; className?: string; pad?: boolean }) {
   return (
-    <section className={cx("min-w-0 rounded-2xl border border-[#EAEAEC] bg-white shadow-[0_1px_2px_rgba(19, 19, 22,0.04)]", className)}>
+    <section className={cx("min-w-0 rounded-2xl border border-[#EAEAEC] bg-white shadow-[0_1px_2px_rgba(19,19,22,0.04)]", className)}>
       {(title || right) && (
         <div className="flex items-center gap-2.5 border-b border-[#EAEAEC] px-4.5 py-3.5">
           {icon && <span className="text-[#131316]">{icon}</span>}
@@ -92,7 +92,7 @@ export function Seg({ items, active }: { items: { label: ReactNode; href: string
   return (
     <div className="inline-flex flex-wrap rounded-[10px] bg-[#F2F2F3] p-0.75">
       {items.map((i) => (
-        <Link key={i.key} href={i.href} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", i.key === active ? "bg-white text-[#131316] shadow-[0_1px_3px_rgba(19, 19, 22,0.12)]" : "text-[#696976] hover:text-[#131316]")}>
+        <Link key={i.key} href={i.href} className={cx("rounded-lg px-3 py-1.5 text-[12.5px] font-semibold", i.key === active ? "bg-white text-[#131316] shadow-[0_1px_3px_rgba(19,19,22,0.12)]" : "text-[#696976] hover:text-[#131316]")}>
           {i.label}
         </Link>
       ))}

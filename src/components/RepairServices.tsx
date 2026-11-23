@@ -149,8 +149,8 @@ function RepairMarquee({ words, reverse = false, dark = false }: { words: string
 const schema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "AutomIQ Automation & Drive Services",
-  alternateName: ["AutomIQ", "A&D AutomIQ", "AutomIQ Drive Services"],
+  name: "Industrial Automation Repair Inc.",
+  alternateName: ["IAR", "A&D IAR", "Industrial Automation Repair"],
   areaServed: [
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United States" },
@@ -208,13 +208,13 @@ export default function RepairServices() {
               Industrial Repair Services
             </h2>
             <p className="mt-2 text-[13px] font-semibold leading-relaxed text-[#B30E29] sm:text-[15px]">
-              Operational testing · 12-month warranty · Free evaluation
+              Load testing · 1-year warranty · Free evaluation
             </p>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[15px]">
-              AutomIQ Automation & Drive Services provides servo motor, servo drive and industrial electronics repair for
+              Industrial Automation Repair Inc. provides servo motor, servo drive and industrial electronics repair for
               manufacturers across Canada and the United States, including VFDs, spindle motors, encoders, PLCs,
               HMIs, CNC controls, power supplies and circuit boards. Ship your unit for a free evaluation,
-              component-level repair and operational testing, or book an on-site technician.
+              component-level repair and load testing, or book an on-site technician.
             </p>
           </div>
 
@@ -223,7 +223,7 @@ export default function RepairServices() {
             <div className="flex flex-wrap gap-2.5 lg:w-75 lg:flex-col">
               <Link
                 href="/request-repair"
-                className="aq-shine group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[15px] font-bold text-white shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_34px_-14px_rgba(255, 59, 85,1)] lg:flex-none"
+                className="aq-shine group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[15px] font-bold text-white shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_34px_-14px_rgba(255,59,85,1)] lg:flex-none"
               >
                 <PackageCheck size={18} className="shrink-0" />
                 Send Us a Repair Job
@@ -231,7 +231,7 @@ export default function RepairServices() {
               </Link>
               <Link
                 href="/request-repair?service=exchange"
-                className="group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] border border-[#FDD1D8] bg-white px-5 text-[15px] font-bold text-[#131316] transition duration-300 hover:-translate-y-0.5 hover:border-[#C8102E] hover:shadow-[0_12px_24px_-16px_rgba(200, 16, 46,0.6)] lg:flex-none"
+                className="group inline-flex h-12 flex-[1_1_220px] items-center justify-center gap-2.5 rounded-[14px] border border-[#FDD1D8] bg-white px-5 text-[15px] font-bold text-[#131316] transition duration-300 hover:-translate-y-0.5 hover:border-[#C8102E] hover:shadow-[0_12px_24px_-16px_rgba(200,16,46,0.6)] lg:flex-none"
               >
                 <span aria-hidden="true" className="relative flex h-2.25 w-2.25 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#12B76A] opacity-60 motion-reduce:animate-none" />
@@ -287,7 +287,7 @@ export default function RepairServices() {
                   <span className="aq-stage relative block h-21 shrink-0 sm:h-22 sm:w-22">
                     <Image
                       src={s.icon}
-                      alt={`${s.title} — AutomIQ Automation & Drive Services`}
+                      alt={`${s.title} — Industrial Automation Repair Inc.`}
                       fill
                       sizes="(max-width: 639px) 45vw, 88px"
                       className="object-contain p-2"
@@ -334,7 +334,7 @@ export default function RepairServices() {
               </span>
               <Link
                 href="/on-site-service"
-                className="relative inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-4 text-[13px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5"
+                className="relative inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-full bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-4 text-[13px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"
               >
                 <MapPin size={14} />
                 Book On-Site Service

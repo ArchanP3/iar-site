@@ -29,19 +29,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const i = getIndustry((await params).slug);
   if (!i) return {};
   return withSeo(industryUrl(i.slug), {
-    title: { absolute: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | AutomIQ`) },
-    description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 12-month warranty. Canada & USA.`),
+    title: { absolute: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | IAR`) },
+    description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Canada & USA.`),
     alternates: { canonical: `${SITE_URL}${industryUrl(i.slug)}` },
     openGraph: {
-      type: "website", url: `${SHARE_URL}${industryUrl(i.slug)}`, siteName: "AutomIQ Automation & Drive Services",
-      title: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | AutomIQ`),
-      description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 12-month warranty. Canada & USA.`),
+      type: "website", url: `${SHARE_URL}${industryUrl(i.slug)}`, siteName: "Industrial Automation Repair Inc.",
+      title: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | IAR`),
+      description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Canada & USA.`),
       images: [{ url: shareImage(i.image), alt: `${i.name} equipment repair` }],
     },
   });
 }
 
-const steps = ["Free evaluation", "Written quote before any work", "Component-level repair", "Tested on our jigs, test report included", "12-month warranty"];
+const steps = ["Free evaluation", "Written quote before any work", "Component-level repair", "Load tested on our benches, test report included", "1-year warranty"];
 
 export default async function IndustryPage({ params }: Props) {
   const i = getIndustry((await params).slug);
@@ -51,13 +51,13 @@ export default async function IndustryPage({ params }: Props) {
   const faqs = [
     { q: `What ${i.name.toLowerCase()} equipment do you repair?`, a: `We repair the servo drives, VFDs, motors, PLCs, HMIs, power supplies and circuit boards used in ${i.name.toLowerCase()} equipment, including ${i.equipment.slice(0, 3).join(", ").toLowerCase()}, from every major brand.` },
     { q: "How long does a repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote. Evaluation is free and no work starts without your approval." },
-    { q: "Is the repair covered by a warranty?", a: "Yes. Every repair is tested on our own jigs, ships with a test report and is covered by a 12-month warranty." },
+    { q: "Is the repair covered by a warranty?", a: "Yes. Every repair is load tested on OEM-standard equipment, ships with a test report and is covered by a 1-year warranty." },
     { q: "Do you serve plants outside Ontario?", a: "Yes. We serve manufacturers across Canada and the USA. Ship your unit to us, book a pickup with FedEx, Purolator, UPS or DHL, or ask about on-site service." },
   ];
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Service", name: `${i.name} equipment repair`, serviceType: "Industrial electronics repair", provider: { "@type": "Organization", name: "AutomIQ Automation & Drive Services", url: SITE_URL }, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], url: `${SITE_URL}${industryUrl(i.slug)}`, description: i.intro },
+      { "@type": "Service", name: `${i.name} equipment repair`, serviceType: "Industrial electronics repair", provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL }, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], url: `${SITE_URL}${industryUrl(i.slug)}`, description: i.intro },
       { "@type": "BreadcrumbList", itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
         { "@type": "ListItem", position: 2, name: "Industries", item: `${SITE_URL}/industries` },
@@ -87,7 +87,7 @@ export default async function IndustryPage({ params }: Props) {
               <h1 className="mt-2 text-[32px] font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-[46px]">{i.name} <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Equipment Repair</span></h1>
               <p className="mt-4 max-w-155 text-[15px] leading-[1.75] text-white/75 sm:text-[17px]">{i.intro}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255, 59, 85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
+                <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
                 <Link href="/request-quote" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 px-6 text-[15px] font-semibold hover:bg-white/10"><FileText size={17} aria-hidden="true" /> Request a Quote</Link>
                 <WhatsAppCta topic={i.name} kind="brand" />
               </div>
@@ -136,7 +136,7 @@ export default async function IndustryPage({ params }: Props) {
           <ul className="mt-5 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3">
             {services.map((s) => (
               <li key={s.slug} className="max-sm:odd:last:col-span-2">
-                <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col items-start gap-2.5 overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white sm:flex-row sm:items-center sm:gap-3 shadow-[0_22px_44px_-24px_rgba(28, 28, 32,0.8)] transition hover:-translate-y-1 sm:p-4" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 55%, ${s.color}40 100%)` }}>
+                <Link href={serviceUrl(s.slug)} className="group relative flex h-full flex-col items-start gap-2.5 overflow-hidden rounded-[18px] border border-white/10 p-3.5 text-white sm:flex-row sm:items-center sm:gap-3 shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1 sm:p-4" style={{ background: `linear-gradient(155deg, #0F0F10 0%, #1A1A1E 55%, ${s.color}40 100%)` }}>
                   <span className="relative flex h-12 w-12 flex-none items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/15 sm:h-14 sm:w-14">
                     {s.icon ? <Image src={s.icon} alt="" aria-hidden="true" fill sizes="56px" className="object-contain p-1.5" /> : <ServiceIcon name={s.lucide} color={s.color} size={48} />}
                   </span>
@@ -177,7 +177,7 @@ export default async function IndustryPage({ params }: Props) {
         </section>
 
         <section aria-labelledby="cta" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-7 text-white sm:p-10">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
           <div className="relative grid gap-6 lg:grid-cols-[1fr_520px] lg:items-center">
             <div>
               <h2 id="cta" className="text-[26px] font-extrabold leading-tight sm:text-[34px]">Have a part number? <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Find it fast.</span></h2>

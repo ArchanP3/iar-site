@@ -22,7 +22,7 @@ export default function Page({ searchParams }: { searchParams: SP }) {
   );
 }
 
-const STOP = new Set(["the", "and", "for", "with", "your", "from", "automiq", "automation", "drive", "services", "repair", "&", "|", "-", "a", "of", "in", "to"]);
+const STOP = new Set(["the", "and", "for", "with", "your", "from", "iar", "automation", "drive", "services", "repair", "&", "|", "-", "a", "of", "in", "to"]);
 const words = (s: string) => s.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !STOP.has(w));
 
 async function Edit({ searchParams }: { searchParams: SP }) {

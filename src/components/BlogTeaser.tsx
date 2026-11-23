@@ -30,7 +30,7 @@ export default async function BlogTeaser() {
           </div>
           <Link
             href="/resources/blog"
-            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19, 19, 22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
+            className="group inline-flex h-12 shrink-0 items-center gap-2 self-start rounded-xl bg-[#131316] px-5 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-16px_rgba(19,19,22,0.8)] transition hover:-translate-y-0.5 hover:bg-[#A50D25] lg:self-auto"
           >
             <BookOpen size={16} aria-hidden="true" /> View all guides <ArrowRight size={16} className="transition group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
@@ -38,11 +38,11 @@ export default async function BlogTeaser() {
 
         <div className="mt-7 grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
           {/* Featured */}
-          <article className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200, 16, 46,0.75)]">
+          <article className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0A0A0C] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_40px_80px_-44px_rgba(200,16,46,0.75)]">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-              <span className="absolute -left-24 -top-32 h-95 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.42),transparent)] blur-2xl" />
-              <span className="absolute -bottom-24 -right-15 h-105 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.3),transparent)] blur-2xl" />
-              <span className="absolute inset-0 bg-[linear-gradient(rgba(255, 138, 153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255, 138, 153,0.04)_1px,transparent_1px)] bg-size-[44px_44px]" />
+              <span className="absolute -left-24 -top-32 h-95 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.42),transparent)] blur-2xl" />
+              <span className="absolute -bottom-24 -right-15 h-105 w-130 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.3),transparent)] blur-2xl" />
+              <span className="absolute inset-0 bg-[linear-gradient(rgba(255,138,153,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,138,153,0.04)_1px,transparent_1px)] bg-size-[44px_44px]" />
             </div>
             <Link href={postUrl(first.slug)} className="group relative flex h-full flex-col p-6 sm:p-8">
               <div className="flex items-center gap-2">
@@ -52,7 +52,7 @@ export default async function BlogTeaser() {
               <h3 className="mt-5 max-w-140 text-[24px] font-extrabold leading-[1.15] tracking-[-0.015em] sm:text-[32px]">{first.title}</h3>
               <p className="mt-3 max-w-130 text-[14.5px] leading-relaxed text-white/70">{first.description}</p>
               <div className="relative my-6 flex flex-1 items-center justify-center">
-                <span aria-hidden="true" className="absolute h-[70%] w-[80%] rounded-full bg-[radial-gradient(closest-side,rgba(255, 59, 85,0.35),transparent)]" />
+                <span aria-hidden="true" className="absolute h-[70%] w-[80%] rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.35),transparent)]" />
                 <Image src={first.image} alt="" aria-hidden="true" width={1700} height={925} sizes="(min-width: 1024px) 560px, 90vw" className="relative h-auto w-full max-w-140 object-contain transition duration-500 group-hover:scale-[1.03]" />
               </div>
               <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-5">
@@ -70,7 +70,7 @@ export default async function BlogTeaser() {
           {/* Two more */}
           <div className="grid gap-5">
             {rest.map((p) => (
-              <article key={p.slug} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-48px_rgba(19, 19, 22,0.6)] transition hover:-translate-y-0.5 hover:border-[#C8102E]/35 hover:shadow-[0_34px_70px_-44px_rgba(165, 13, 37,0.5)]">
+              <article key={p.slug} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_60px_-48px_rgba(19,19,22,0.6)] transition hover:-translate-y-0.5 hover:border-[#C8102E]/35 hover:shadow-[0_34px_70px_-44px_rgba(165,13,37,0.5)]">
                 <Link href={postUrl(p.slug)} className="group grid h-full sm:grid-cols-[200px_minmax(0,1fr)]">
                   <div className="relative flex min-h-37.5 items-center justify-center overflow-hidden bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_60%,#F7E3E6_100%)] p-4">
                     <span aria-hidden="true" className="absolute inset-x-6 bottom-3 h-6 rounded-full bg-[#131316]/10 blur-md" />

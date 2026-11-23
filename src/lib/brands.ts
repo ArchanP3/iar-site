@@ -72,7 +72,7 @@ export const brands: Brand[] = [
     core: true,
     card: "SINAMICS drives, SIMODRIVE, SINUMERIK, 1FK7 motors",
     intro:
-      "Siemens is one of our core specialties. We repair SINAMICS and SIMODRIVE drives, 1FK7, 1FT and 1PH motors, SINUMERIK 840C and 840D CNC controls, SIMATIC PLCs and panels, and SITOP power supplies, at component level, with a free evaluation and a 12-month warranty.",
+      "Siemens is one of our core specialties. We repair SINAMICS and SIMODRIVE drives, 1FK7, 1FT and 1PH motors, SINUMERIK 840C and 840D CNC controls, SIMATIC PLCs and panels, and SITOP power supplies, at component level, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo & AC drives", series: ["SINAMICS S120", "SIMODRIVE 611", "SINAMICS G120", "MICROMASTER", "SINAMICS V90"], service: "servo-drive-repair" },
       { t: "Servo & spindle motors", series: ["1FK7", "1FT6 / 1FT7", "1PH7 / 1PH8"], service: "servo-motor-repair" },
@@ -88,10 +88,10 @@ export const brands: Brand[] = [
       codes: ["F30001", "F30002", "F30003", "F30004", "F30005", "F30021", "F31885"].map((c) => code("siemens", "sinamics-s120", c)),
     },
     faqs: [
-      { q: "Do you repair SINAMICS S120 drives?", a: "Yes. We repair SINAMICS S120 motor modules, line modules and control units at component level, and test them under power on our own jigs." },
+      { q: "Do you repair SINAMICS S120 drives?", a: "Yes. We repair SINAMICS S120 motor modules, line modules and control units at component level, and test them under power on our test benches." },
       { q: "Do you repair older Siemens equipment like the SIMODRIVE 611 or SINUMERIK 840C?", a: "Yes. We repair discontinued Siemens drives and controls, so proven machines keep running after Siemens stops support." },
       { q: "How long does a Siemens repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote. Exchange units usually ship within 1–2 business days of receiving your unit." },
-      { q: "What warranty comes with a Siemens repair?", a: "Every repair comes with a 12-month warranty and a test report." },
+      { q: "What warranty comes with a Siemens repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
@@ -102,7 +102,7 @@ export const brands: Brand[] = [
     core: true,
     card: "IndraDrive, EcoDrive DKC, DIAX, MKD / MSK motors",
     intro:
-      "Rexroth Indramat is one of our core specialties. We repair IndraDrive, EcoDrive DKC, DIAX and DDS drives, MKD, MSK and MAC servo motors and supply modules, including obsolete Indramat equipment, with a free evaluation and a 12-month warranty.",
+      "Rexroth Indramat is one of our core specialties. We repair IndraDrive, EcoDrive DKC, DIAX and DDS drives, MKD, MSK and MAC servo motors and supply modules, including obsolete Indramat equipment, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo drives", series: ["EcoDrive DKC", "IndraDrive", "DIAX03 / DIAX04", "DDS / System 200"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["MKD", "MSK", "MAC", "MHD"], service: "servo-motor-repair" },
@@ -119,7 +119,7 @@ export const brands: Brand[] = [
       { q: "Do you repair obsolete Indramat drives?", a: "Yes. We repair discontinued Indramat drives such as DKC, DIAX and DDS units at component level." },
       { q: "Do you repair Indramat MKD motors?", a: "Yes. We repair MKD, MSK and MAC servo motors, including bearings, brakes, windings and feedback, with encoder alignment." },
       { q: "How long does an Indramat repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
-      { q: "What warranty comes with an Indramat repair?", a: "Every repair comes with a 12-month warranty and a test report." },
+      { q: "What warranty comes with an Indramat repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
@@ -130,7 +130,7 @@ export const brands: Brand[] = [
     core: true,
     card: "Kinetix, PowerFlex, PanelView, SLC 500, ControlLogix",
     intro:
-      "Allen-Bradley is one of our core specialties. We repair Kinetix servo drives, PowerFlex drives, MPL servo motors, PanelView HMIs and SLC 500, PLC-5 and ControlLogix PLCs at component level, with a free evaluation and a 12-month warranty.",
+      "Allen-Bradley is one of our core specialties. We repair Kinetix servo drives, PowerFlex drives, MPL servo motors, PanelView HMIs and SLC 500, PLC-5 and ControlLogix PLCs at component level, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo drives", series: ["Kinetix 6000", "Kinetix 5500", "Kinetix 2000", "Ultra 3000"], service: "servo-drive-repair" },
       { t: "AC drives", series: ["PowerFlex 40", "PowerFlex 525", "PowerFlex 700", "PowerFlex 753"], service: "vfd-repair" },
@@ -145,10 +145,10 @@ export const brands: Brand[] = [
       codes: [code("allen-bradley", "kinetix-6000", "E05")],
     },
     faqs: [
-      { q: "Do you repair Kinetix servo drives?", a: "Yes. We repair Kinetix servo drives at component level and test them with a motor on our own jigs." },
+      { q: "Do you repair Kinetix servo drives?", a: "Yes. We repair Kinetix servo drives at component level and test them with a motor on our test benches." },
       { q: "Do you repair PowerFlex drives?", a: "Yes. We repair PowerFlex AC drives, including power stage, DC bus and control board faults." },
       { q: "Do you repair obsolete Allen-Bradley PLCs?", a: "Yes. We repair discontinued platforms such as PLC-5 and SLC 500." },
-      { q: "What warranty comes with an Allen-Bradley repair?", a: "Every repair comes with a 12-month warranty and a test report." },
+      { q: "What warranty comes with an Allen-Bradley repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
@@ -159,7 +159,7 @@ export const brands: Brand[] = [
     core: true,
     card: "αi / βi amplifiers, spindle motors, CNC controls, robots",
     intro:
-      "We repair Fanuc αi and βi servo and spindle amplifiers, power supply modules, servo and spindle motors, pulsecoders, CNC controls and robot controllers at component level, with a free evaluation and a 12-month warranty.",
+      "We repair Fanuc αi and βi servo and spindle amplifiers, power supply modules, servo and spindle motors, pulsecoders, CNC controls and robot controllers at component level, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo & spindle amplifiers", series: ["αi SVM", "αi SPM", "βi SVSP", "βi SVU"], service: "servo-drive-repair" },
       { t: "Power supply modules", series: ["αi PSM"], service: "power-supply-repair" },
@@ -177,7 +177,7 @@ export const brands: Brand[] = [
       { q: "Do you repair Fanuc αi amplifiers?", a: "Yes. We repair αi servo, spindle and power supply modules at component level and test them under power." },
       { q: "Do you repair Fanuc pulsecoders?", a: "Yes. We repair and replace pulsecoders and align them to the motor." },
       { q: "How long does a Fanuc repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
-      { q: "What warranty comes with a Fanuc repair?", a: "Every repair comes with a 12-month warranty and a test report." },
+      { q: "What warranty comes with a Fanuc repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
@@ -188,7 +188,7 @@ export const brands: Brand[] = [
     core: true,
     card: "SERVOPACK drives, Sigma motors, A1000 / GA700 inverters",
     intro:
-      "We repair Yaskawa Sigma SERVOPACK servo drives and servo motors, A1000, V1000 and GA700 inverters and Motoman robot controllers at component level, with a free evaluation and a 12-month warranty.",
+      "We repair Yaskawa Sigma SERVOPACK servo drives and servo motors, A1000, V1000 and GA700 inverters and Motoman robot controllers at component level, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo drives", series: ["Sigma-II SGDH", "Sigma-5 SGDV", "Sigma-7 SGD7S"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["SGMAH", "SGMGH", "SGM7"], service: "servo-motor-repair" },
@@ -204,7 +204,7 @@ export const brands: Brand[] = [
     faqs: [
       { q: "Do you repair Yaskawa SERVOPACK drives?", a: "Yes. We repair Sigma-II, Sigma-5 and Sigma-7 SERVOPACKs at component level and test them with a motor." },
       { q: "How long does a Yaskawa repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
-      { q: "What warranty comes with a Yaskawa repair?", a: "Every repair comes with a 12-month warranty and a test report." },
+      { q: "What warranty comes with a Yaskawa repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
@@ -414,6 +414,6 @@ const an = (name: string) => (/^[AEIO]/i.test(name) ? "an" : "a");
 export const brandFaqs = (name: string) => [
   { q: `Do you repair ${name} equipment?`, a: `Yes. We repair ${name} equipment at component level at our Mississauga, Ontario repair centre, with a free evaluation first.` },
   { q: `How long does ${an(name)} ${name} repair take?`, a: "Typical turnaround is 24–72 hours once you approve the quote. Exchange units usually ship within 1–2 business days of receiving your unit." },
-  { q: `What warranty comes with ${an(name)} ${name} repair?`, a: "Every repair comes with a 12-month warranty and a test report." },
+  { q: `What warranty comes with ${an(name)} ${name} repair?`, a: "Every repair comes with a 1-year warranty and a test report." },
 ];
 

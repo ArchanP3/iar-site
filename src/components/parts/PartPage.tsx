@@ -19,8 +19,8 @@ import type { Part } from "@/lib/parts/types";
 // Confirmed facts only (see README "Content & claims policy").
 const trust = [
   { icon: ClipboardCheck, t: "Free evaluation", d: "On every repair" },
-  { icon: ShieldCheck, t: "12-month warranty", d: "On repairs" },
-  { icon: Gauge, t: "Tested on our jigs", d: "Test report included" },
+  { icon: ShieldCheck, t: "1-year warranty", d: "On repairs" },
+  { icon: Gauge, t: "Load tested on our benches", d: "Test report included" },
   { icon: MapPin, t: "Canada & USA", d: "Pickup or ship it in" },
 ];
 
@@ -191,7 +191,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
                   ))}
                 </ol>
                 <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-                  <Link href={`/request-repair?${quote}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)]"><Wrench size={17} aria-hidden="true" /> Request a Repair Quote</Link>
+                  <Link href={`/request-repair?${quote}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[14.5px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)]"><Wrench size={17} aria-hidden="true" /> Request a Repair Quote</Link>
                   <Link href={`/request-pickup?part=${encodeURIComponent(p.partNumber)}`} className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-[#F0DADD] px-6 text-[14.5px] font-semibold hover:border-[#C8102E] hover:text-[#A50D25]"><Truck size={17} aria-hidden="true" /> Request a Pickup</Link>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
           <aside className="flex flex-col gap-6">
             {repairable && (
               <section aria-labelledby="repair" className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
-                <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
+                <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
                 <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Repair service</p>
                 <h2 id="repair" className="relative mt-2 text-[22px] font-extrabold leading-tight">Repair your <span className="wrap-break-word">{p.partNumber}</span></h2>
                 <ul className="relative mt-4 space-y-2.5 text-[14px] text-white/85">
@@ -302,7 +302,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
 
         {/* ---------- Not the right part ---------- */}
         <section aria-labelledby="other" className="relative mb-14 mt-12 overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
-          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200, 16, 46,0.6),transparent)] blur-xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.6),transparent)] blur-xl" />
           <div className="relative grid gap-6 lg:grid-cols-[1fr_520px] lg:items-center">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Any part number</p>

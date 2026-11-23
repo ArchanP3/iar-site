@@ -166,7 +166,7 @@ export async function assertUser(perm?: Perm): Promise<User> {
 /** Hashed visitor IP (never stored in plain form). */
 export async function clientKey(): Promise<string> {
   const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  return createHash("sha256").update(`automiq-cms:${ip}`).digest("hex").slice(0, 32);
+  return createHash("sha256").update(`iar-cms:${ip}`).digest("hex").slice(0, 32);
 }
 
 /** Counts one attempt for `key`; false once there were more than `limit` in the current window. */
@@ -243,7 +243,7 @@ export function checkTotp(secret: string, code: string, usedStep: number | null 
 }
 
 export const totpUri = (secret: string, email: string) =>
-  `otpauth://totp/${encodeURIComponent(`AutomIQ CMS:${email}`)}?secret=${secret}&issuer=${encodeURIComponent("AutomIQ CMS")}&digits=6&period=30`;
+  `otpauth://totp/${encodeURIComponent(`IAR CMS:${email}`)}?secret=${secret}&issuer=${encodeURIComponent("IAR CMS")}&digits=6&period=30`;
 
 /** Signs this person out everywhere except this browser. */
 export async function endOtherSessions(userId: number) {

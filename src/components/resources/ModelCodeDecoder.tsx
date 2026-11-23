@@ -43,7 +43,7 @@ export default function ModelCodeDecoder() {
   const valid = Boolean(result && result.complete && result.problems.length === 0);
 
   return (
-    <section aria-labelledby="decoder-title" className="rounded-[24px] border border-[#EAEAEC] bg-white p-4 shadow-[0_40px_80px_-50px_rgba(19, 19, 22,0.6)] sm:p-6">
+    <section aria-labelledby="decoder-title" className="rounded-[24px] border border-[#EAEAEC] bg-white p-4 shadow-[0_40px_80px_-50px_rgba(19,19,22,0.6)] sm:p-6">
       <h2 id="decoder-title" className="sr-only">Decode a model code</h2>
       <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2.5 sm:flex-row">
         <label htmlFor="model-code" className="sr-only">Model code from the motor or drive nameplate</label>
@@ -60,7 +60,7 @@ export default function ModelCodeDecoder() {
             className="h-14 w-full rounded-2xl border-2 border-[#C8102E] bg-white pl-11 pr-4 font-mono text-[17px] font-bold tracking-[0.04em] text-[#131316] outline-none ring-[#C8102E]/10 placeholder:font-sans placeholder:text-[15px] placeholder:font-medium placeholder:tracking-normal placeholder:text-[#A8A8B1] focus:ring-4 sm:text-[19px]"
           />
         </div>
-        <button type="submit" className="h-12 rounded-2xl bg-linear-to-r from-[#C8102E] to-[#F31D3D] px-7 text-[15px] font-bold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.8)] sm:h-14">Decode</button>
+        <button type="submit" className="h-12 rounded-2xl bg-linear-to-r from-[#C8102E] to-[#F31D3D] px-7 text-[15px] font-bold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.8)] sm:h-14">Decode</button>
       </form>
 
       <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[12.5px] text-[#696976]">

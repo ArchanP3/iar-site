@@ -35,7 +35,7 @@ export default function AreasMap({ areas, urls }: { areas: Area[]; urls: Record<
             <stop offset="1" stopColor="#FF3B55" stopOpacity="0" />
           </radialGradient>
         </defs>
-        <path d={NA_DOTS} stroke="rgba(255, 138, 153,0.22)" strokeWidth="5.2" strokeLinecap="round" fill="none" />
+        <path d={NA_DOTS} stroke="rgba(255,138,153,0.22)" strokeWidth="5.2" strokeLinecap="round" fill="none" />
         <circle cx={hx} cy={hy} r="150" fill="url(#sah-hub)" />
         {pts.map(({ a, p: [x, y] }, i) => {
           const mx = (hx + x) / 2, my = (hy + y) / 2 - Math.min(140, Math.hypot(x - hx, y - hy) * 0.28);

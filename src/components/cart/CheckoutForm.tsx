@@ -40,7 +40,7 @@ export default function CheckoutForm() {
 
   if (placed) {
     return (
-      <div className="mx-auto max-w-180 rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)] sm:p-10">
+      <div className="mx-auto max-w-180 rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-10">
         <CheckCircle2 size={52} className="mx-auto text-emerald-500" aria-hidden="true" />
         <h2 className="mt-4 text-[26px] font-extrabold text-[#131316]">Order received</h2>
         <p className="mx-auto mt-2 max-w-120 text-[14.5px] leading-[1.6] text-[#62626F]">
@@ -74,8 +74,8 @@ export default function CheckoutForm() {
 
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_380px]">
-      <form onSubmit={onSubmit} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-        <FormMeta type="order" subject="New order: AutomIQ website" />
+      <form onSubmit={onSubmit} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+        <FormMeta type="order" subject="New order: IAR website" />
         {/* What the server re-prices from the catalog; the Order text below is for people. */}
         <input type="hidden" name="_cart" value={JSON.stringify(items.map(({ slug, condition, qty }) => ({ slug, condition, qty })))} />
         <input type="hidden" name="Order" value={items.map(lineText).join("\n")} />
@@ -108,7 +108,7 @@ export default function CheckoutForm() {
               </div>
               <div className="flex flex-col gap-2 border-t border-[#FDD8DE] bg-white/70 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-5">
                 <span className="text-[12.5px] text-[#62626F]">{count} item{count === 1 ? "" : "s"} · {usd(subtotal)} USD before shipping</span>
-                <Link href={quoteHref} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200, 16, 46,0.9)] transition hover:-translate-y-0.5">
+                <Link href={quoteHref} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white shadow-[0_14px_30px_-14px_rgba(200,16,46,0.9)] transition hover:-translate-y-0.5">
                   Request an International Quote <ArrowRight size={15} aria-hidden="true" />
                 </Link>
               </div>
@@ -180,7 +180,7 @@ export default function CheckoutForm() {
       </form>
 
       <aside aria-label="Your order" className="lg:sticky lg:top-28">
-        <div className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
+        <div className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
           <div className="flex items-center justify-between border-b border-[#F3F3F4] px-5 py-4">
             <h2 className="text-[17px] font-extrabold text-[#131316]">Your order <span className="font-semibold text-[#696976]">({count})</span></h2>
             <Link href="/cart" className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-[#A50D25] hover:underline"><ArrowLeft size={13} aria-hidden="true" /> Edit cart</Link>

@@ -18,8 +18,8 @@ export default function SurplusForm() {
   const toggle = (c: string) => setCond((x) => (x.includes(c) ? x.filter((y) => y !== c) : [...x, c]));
 
   return (
-    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19, 19, 22,0.45)]">
-      <FormMeta type="surplus" subject="Surplus offer: AutomIQ website" />
+    <form onSubmit={send} className="overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]">
+      <FormMeta type="surplus" subject="Surplus offer: IAR website" />
 
       <Step n={1} title="What are you selling?">
         <Choice name="Surplus type" value={kind} onChange={setKind} options={[
