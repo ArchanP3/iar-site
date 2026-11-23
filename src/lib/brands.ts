@@ -16,6 +16,8 @@ const LOGOS: Record<string, string> = {
   okuma: "okuma.svg", mazak: "mazak.svg", fagor: "fagor.svg", beijer: "beijer.svg", "phoenix-contact": "phoenix-contact.svg",
   honeywell: "honeywell.svg", yokogawa: "yokogawa.svg", idec: "idec.svg", kuka: "kuka.svg", kawasaki: "kawasaki.svg",
   keba: "keba.svg", teco: "teco.svg", renishaw: "renishaw.svg", wago: "wago.svg", hurco: "hurco.svg",
+  moog: "moog.svg", bachmann: "bachmann.svg", "invertek-drives": "invertek-drives.svg", "reliance-electric": "reliance-electric.svg",
+  sick: "sick.svg", "sieb-meyer": "sieb-meyer.svg",
 };
 /** Logo path for a brand, or undefined to show initials. */
 export const brandLogo = (slug: string) => (LOGOS[slug] ? `/brands/${LOGOS[slug]}` : undefined);
