@@ -151,19 +151,6 @@ export default function HeroShowcase() {
         </div>
       </div>
 
-      {/* product conveyor */}
-      <div className="relative border-t border-white/10 bg-black/25 py-5">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-ink to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-ink to-transparent" />
-        <div className="conveyor flex w-max gap-6 hover:[animation-play-state:paused]">
-          {[...PRODUCTS, ...PRODUCTS].map((p, i) => (
-            <Link key={i} href="/shop" aria-hidden={i >= PRODUCTS.length} tabIndex={i >= PRODUCTS.length ? -1 : 0} className="group flex w-56 shrink-0 items-center gap-3 rounded-xl border border-white/10 bg-white/[.04] p-3 transition hover:-translate-y-1 hover:border-brand hover:bg-white/[.08]">
-              <span className="relative h-14 w-20 shrink-0"><Image src={p.src} alt="" fill sizes="80px" className="object-contain transition group-hover:scale-110" /></span>
-              <span className="text-xs font-semibold leading-snug text-white/80">{p.label}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
