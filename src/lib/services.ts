@@ -707,7 +707,7 @@ function more(
     slug, title, group, lucide, color, noun, short, kind, icon: "",
     h1: title,
     tagline: short,
-    metaTitle: `${title} | the USA | IAR`,
+    metaTitle: `${title} | USA | IAR`,
     metaDescription: `${short} ${kind === "repair" ? "Free evaluation, 1-year warranty." : ""} Grand Island, New York. Serving the USA.`.replace(/\s+/g, " ").slice(0, 158),
     answerQ, answer,
     repairs: repairs.map(([t, d]) => ({ t, d })),
