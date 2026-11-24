@@ -8,7 +8,6 @@ import ProcessSection from "@/components/iar/ProcessSection";
 import FaultCodeTeaser from "@/components/FaultCodeTeaser";
 import Industries from "@/components/Industries";
 import GlobalReach from "@/components/GlobalReach";
-import ServiceAreasBand from "@/components/ServiceAreasBand";
 import BlogTeaser from "@/components/BlogTeaser";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -48,7 +47,6 @@ export default function Home() {
       <div className="cv-auto"><RepairServices /></div>
       <div className="cv-auto"><PartsSection /></div>
       <div className="cv-auto"><ProcessSection /></div>
-      <div className="cv-auto"><ServiceAreasBand /></div>
       <div className="cv-auto"><GlobalReach /></div>
       <div className="cv-auto"><Industries /></div>
       <div className="cv-auto"><FaultCodeTeaser /></div>
