@@ -81,7 +81,7 @@ export default function ServicesPage() {
                 {/* footer: tag on the left, WhatsApp (outside the link) on the right, same line on every card */}
                 <span className="absolute bottom-3.5 left-3.5 flex h-9 items-center sm:bottom-5 sm:left-5">
                   {s.slug === "exchange" ? (
-                    <span className="rounded-full bg-amber-400 px-1.5 py-1 text-[9.5px] font-bold uppercase tracking-[0.04em] text-[#3D2F0A] sm:px-2.5 sm:text-[10px] sm:tracking-[0.14em]">Line down?</span>
+                    <span className="rounded-full bg-[#C8102E] px-1.5 py-1 text-[9.5px] font-bold uppercase tracking-[0.04em] text-white sm:px-2.5 sm:text-[10px] sm:tracking-[0.14em]">Line down?</span>
                   ) : (
                     <span className="rounded-full bg-[#0A0A0C]/55 px-2 py-1 ring-1 ring-white/10 text-[9.5px] font-bold uppercase tracking-[0.08em] text-[#FF8A99] sm:px-2.5 sm:text-[10px] sm:tracking-[0.14em]">Core<span className="max-sm:hidden"> service</span></span>
                   )}

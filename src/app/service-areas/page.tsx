@@ -50,10 +50,10 @@ const stats: [string, string][] = split
   : [[`${regionCount}`, "States"], [`${us}`, "US cities"], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]];
 const regions = regionsIn(areas);
 
-const dropOff = { icon: MapPin, t: "Drop-off in Grand Island, NY", d: "Walk in during business hours. No appointment needed.", cta: "Contact us", href: "/contact", color: "#FF3B55" };
-const pickupCA = { icon: PackageCheck, t: "Pickup across Canada", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#F31D3D" };
-const pickupUS = { icon: Globe2, t: "Pickup across the USA", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#F43F5E" };
-const onSite = (where: string) => ({ icon: Wrench, t: "On-site service", d: `Technicians at your plant in ${where}.`, cta: "Book on-site service", href: "/on-site-service", color: "#F5A524" });
+const dropOff = { icon: MapPin, t: "Drop-off in Grand Island, NY", d: "Walk in during business hours. No appointment needed.", cta: "Contact us", href: "/contact", color: "#E11D3A" };
+const pickupCA = { icon: PackageCheck, t: "Pickup across Canada", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#E11D3A" };
+const pickupUS = { icon: Globe2, t: "Pickup across the USA", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#E11D3A" };
+const onSite = (where: string) => ({ icon: Wrench, t: "On-site service", d: `Technicians at your plant in ${where}.`, cta: "Book on-site service", href: "/on-site-service", color: "#E11D3A" });
 const ways =
   SITE_COUNTRY === "US" ? [pickupUS, onSite("the USA"), dropOff]
   : SITE_COUNTRY === "CA" ? [dropOff, pickupCA, onSite("Canada")]

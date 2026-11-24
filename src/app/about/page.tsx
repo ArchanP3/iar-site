@@ -35,12 +35,12 @@ const stats: { value: number; to?: number; suffix: string; l: string }[] = [
 ];
 
 const offer = [
-  { icon: Wrench, color: "#EA2946", t: "Component-level repair", d: "Servo drives, VFDs, motors, encoders, CNC controls, PLCs, HMIs, power supplies and circuit boards. Your own unit, repaired and returned.", href: "/services" },
-  { icon: Package, color: "#22C55E", t: "Parts: new and refurbished", d: "Refurbished units you can buy online, new parts on request, and obsolete equipment sourced for you.", href: "/shop" },
-  { icon: RefreshCw, color: "#F59E0B", t: "Exchange units", d: "A tested replacement at a lower price. Ship us your unit and we ship the replacement once it arrives.", href: "/services/exchange" },
-  { icon: Truck, color: "#14B8A6", t: "Pickup and on-site service", d: "Book a pickup with FedEx, UPS or DHL, or have a technician come to your facility in the USA.", href: "/request-pickup" },
-  { icon: Cable, color: "#EC4899", t: "Custom cables", d: "Feedback, power and spare critical cables built to match your drive and motor.", href: "/services/custom-cables" },
-  { icon: FileSearch, color: "#A855F7", t: "Fault code library", d: "Plain-English guides to drive and CNC alarms, written by repair technicians.", href: "/fault-codes" },
+  { icon: Wrench, color: "#E11D3A", t: "Component-level repair", d: "Servo drives, VFDs, motors, encoders, CNC controls, PLCs, HMIs, power supplies and circuit boards. Your own unit, repaired and returned.", href: "/services" },
+  { icon: Package, color: "#E11D3A", t: "Parts: new and refurbished", d: "Refurbished units you can buy online, new parts on request, and obsolete equipment sourced for you.", href: "/shop" },
+  { icon: RefreshCw, color: "#E11D3A", t: "Exchange units", d: "A tested replacement at a lower price. Ship us your unit and we ship the replacement once it arrives.", href: "/services/exchange" },
+  { icon: Truck, color: "#E11D3A", t: "Pickup and on-site service", d: "Book a pickup with FedEx, UPS or DHL, or have a technician come to your facility in the USA.", href: "/request-pickup" },
+  { icon: Cable, color: "#E11D3A", t: "Custom cables", d: "Feedback, power and spare critical cables built to match your drive and motor.", href: "/services/custom-cables" },
+  { icon: FileSearch, color: "#E11D3A", t: "Fault code library", d: "Plain-English guides to drive and CNC alarms, written by repair technicians.", href: "/fault-codes" },
 ];
 
 const process = [
@@ -53,12 +53,12 @@ const process = [
 ];
 
 const values = [
-  { icon: ShieldCheck, color: "#EA2946", t: "Ownership", d: "We treat every unit as if it came off our own line. If it is on our bench, it is our problem until it runs." },
-  { icon: Handshake, color: "#22C55E", t: "Honesty", d: "Free evaluation, a written quote and your approval before any work. The price you approve is the price you pay." },
-  { icon: Zap, color: "#F59E0B", t: "Urgency", d: "A stopped line costs money every hour. We move fast and tell you where your repair stands." },
-  { icon: Gauge, color: "#B60F28", t: "Quality", d: "Tested, not just fixed: drives run a motor, motors run under drive control, and every repair ships with a test report." },
-  { icon: Recycle, color: "#14B8A6", t: "Repair first", d: "Repairing proven equipment keeps machines running longer and keeps good hardware out of the scrap bin." },
-  { icon: Lightbulb, color: "#A855F7", t: "Always learning", d: "Every brand, current or obsolete. We keep learning new platforms so we can repair what others replace." },
+  { icon: ShieldCheck, color: "#E11D3A", t: "Ownership", d: "We treat every unit as if it came off our own line. If it is on our bench, it is our problem until it runs." },
+  { icon: Handshake, color: "#E11D3A", t: "Honesty", d: "Free evaluation, a written quote and your approval before any work. The price you approve is the price you pay." },
+  { icon: Zap, color: "#E11D3A", t: "Urgency", d: "A stopped line costs money every hour. We move fast and tell you where your repair stands." },
+  { icon: Gauge, color: "#E11D3A", t: "Quality", d: "Tested, not just fixed: drives run a motor, motors run under drive control, and every repair ships with a test report." },
+  { icon: Recycle, color: "#E11D3A", t: "Repair first", d: "Repairing proven equipment keeps machines running longer and keeps good hardware out of the scrap bin." },
+  { icon: Lightbulb, color: "#E11D3A", t: "Always learning", d: "Every brand, current or obsolete. We keep learning new platforms so we can repair what others replace." },
 ];
 
 export default async function AboutPage() {
@@ -165,8 +165,8 @@ export default async function AboutPage() {
         <section aria-labelledby="mission" className="grid gap-3 sm:grid-cols-2">
           <h2 id="mission" className="sr-only">Mission and vision</h2>
           {[
-            { k: "Our mission", t: "Fix it, prove it, ship it back", d: "Repair motion control equipment at component level, prove it under load and send it back with a test report, so plants spend less on downtime and less on new hardware.", color: "#C8102E" },
-            { k: "Our vision", t: "The repair shop plants call first", d: "Be the shop maintenance teams across the USA trust with their Siemens, Indramat and Allen-Bradley equipment — and everything else on the floor, current or legacy.", color: "#FF3B55" },
+            { k: "Our mission", t: "Fix it, prove it, ship it back", d: "Repair motion control equipment at component level, prove it under load and send it back with a test report, so plants spend less on downtime and less on new hardware.", color: "#E11D3A" },
+            { k: "Our vision", t: "The repair shop plants call first", d: "Be the shop maintenance teams across the USA trust with their Siemens, Indramat and Allen-Bradley equipment — and everything else on the floor, current or legacy.", color: "#E11D3A" },
           ].map((m) => (
             <div key={m.k} className="relative overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white p-6 sm:p-8">
               <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: `linear-gradient(90deg, ${m.color}, transparent)` }} />
@@ -264,9 +264,9 @@ export default async function AboutPage() {
         <section aria-labelledby="coverage" className="grid gap-3 sm:grid-cols-3">
           <h2 id="coverage" className="sr-only">Brands, industries and fault codes</h2>
           {[
-            { icon: Cpu, n: brands.length, sfx: "+", l: "Brand pages", d: "And equipment from every major brand", href: "/brands", color: "#EA2946" },
-            { icon: Building2, n: industries.length, sfx: "", l: "Industries served", d: "From automotive to water treatment", href: "/industries", color: "#22C55E" },
-            { icon: FileSearch, n: totalCodes, sfx: "", l: "Fault codes explained", d: "Free guides from our technicians", href: "/fault-codes", color: "#A855F7" },
+            { icon: Cpu, n: brands.length, sfx: "+", l: "Brand pages", d: "And equipment from every major brand", href: "/brands", color: "#E11D3A" },
+            { icon: Building2, n: industries.length, sfx: "", l: "Industries served", d: "From automotive to water treatment", href: "/industries", color: "#E11D3A" },
+            { icon: FileSearch, n: totalCodes, sfx: "", l: "Fault codes explained", d: "Free guides from our technicians", href: "/fault-codes", color: "#E11D3A" },
           ].map(({ icon: Icon, n, sfx, l, d, href, color }) => (
             <Link key={l} href={href} className="group flex items-center gap-4 rounded-[22px] border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/40">
               <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl" style={{ background: `${color}18` }}><Icon size={22} style={{ color }} aria-hidden="true" /></span>
