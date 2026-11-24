@@ -106,7 +106,7 @@ export default function ChatPanel({ open, onClose }: { open: boolean; onClose: (
       return;
     }
     if (a === "part") {
-      push({ id: id(), from: "me", text: actionLabel.part }, { id: id(), from: "bot", text: ["Type the part number or model (for example 6SL3120-1TE21-0AA3). I'll search our catalogue."] });
+      push({ id: id(), from: "me", text: actionLabel.part }, { id: id(), from: "bot", text: ["Type the part number or model (for example 6SL3120-1TE21-0AA3). I'll search our catalog."] });
     } else if (a === "fault") {
       push({ id: id(), from: "me", text: actionLabel.fault }, { id: id(), from: "bot", text: ["Type the fault or alarm code from the display, and the brand if you know it (for example \"Siemens F30001\")."] });
     } else {

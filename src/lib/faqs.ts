@@ -73,6 +73,14 @@ export const faqGroups: FaqGroup[] = [
     label: "Parts",
     items: [
       {
+        q: "Can I get a unit faster than a repair?",
+        a: "Ask about the exchange program. A tested exchange unit ships first, and your failed unit comes back to our bench afterwards.",
+      },
+      {
+        q: "Are surplus parts tested?",
+        a: "Every unit is inspected and tested before it ships.",
+      },
+      {
         q: "What is the difference between new, surplus, refurbished and exchange parts?",
         a: "New is factory-new, in original packaging where available. Surplus is unused or lightly used stock, inspected before listing. Refurbished is repaired and refreshed by our technicians, then tested. Exchange is a tested replacement unit at a lower price: you buy it, ship us your unit, and we ship the replacement once yours arrives.",
       },
@@ -116,8 +124,12 @@ export const faqGroups: FaqGroup[] = [
         a: "Request a repair, then ship it to us with any carrier or request a pickup from your facility with FedEx, UPS or DHL. Include the full part number and a short description of the fault.",
       },
       {
-        q: "Do you serve customers in the United States?",
-        a: "Yes. Plants anywhere in the USA ship straight to our Grand Island, NY repair centre, or we arrange a pickup from your facility.",
+        q: "Do you serve all US states?",
+        a: "Yes. Ship to our Grand Island, NY repair center, or we arrange a pickup from your facility.",
+      },
+      {
+        q: "Do you repair units from outside the USA?",
+        a: "Our repair service is for US customers; we quote parts orders for other countries.",
       },
       {
         q: "Do you ship parts outside the USA?",
@@ -140,12 +152,12 @@ export const faqGroups: FaqGroup[] = [
         a: "Yes. Phone support is available 24/7 for line-down emergencies.",
       },
       {
-        q: "Can I drop off a unit at your repair centre?",
-        a: "Yes. Bring it to our repair centre in Grand Island, New York during business hours. No appointment is needed. You can also call us or request a repair online first if you want us to expect it.",
+        q: "Can I drop off a unit at your repair center?",
+        a: "Yes. Bring it to our repair center in Grand Island, New York during business hours. No appointment is needed. You can also call us or request a repair online first if you want us to expect it.",
       },
       {
         q: "Do you have repair shops in other cities?",
-        a: "No. Every repair is done at our one repair centre in Grand Island, New York. We serve all of the USA with pickups, ship-in and on-site service.",
+        a: "No. Every repair is done at our one repair center in Grand Island, New York. We serve all of the USA with pickups, ship-in and on-site service.",
       },
       {
         q: "Can you arrange a pickup from the USA?",

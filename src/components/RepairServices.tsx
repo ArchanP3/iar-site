@@ -209,10 +209,10 @@ export default function RepairServices() {
               Load testing · 1-year warranty · Free evaluation
             </p>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[15px]">
-              Industrial Automation Repair Inc. provides servo motor, servo drive and industrial electronics repair for
-              manufacturers across the United States, including VFDs, spindle motors, encoders, PLCs,
-              HMIs, CNC controls, power supplies and circuit boards. Ship your unit for a free evaluation,
-              component-level repair and load testing, or book an on-site technician.
+              IAR repairs servo motors, servo drives and industrial electronics for manufacturers across the United
+              States — including VFDs, spindle motors, encoders, PLCs, HMIs, CNC controls, power supplies and circuit
+              boards. Ship your unit to our Grand Island, NY repair center for a free evaluation, component-level repair
+              and testing under load.
             </p>
           </div>
 

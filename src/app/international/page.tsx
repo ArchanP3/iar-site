@@ -8,8 +8,8 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/international", {
-  title: "International Orders: Parts Shipped Worldwide | IAR",
-  description: "Servo drives, motors, PLCs, HMIs and CNC parts shipped by air from the USA to Canada, Mexico, Europe and Asia. Get price, shipping and lead time for your country.",
+  title: "International Parts Orders | Servo Drives & Motors | IAR",
+  description: "Servo drives, motors, PLCs and CNC parts shipped by air from the USA. Get price, shipping and lead time for your country.",
   alternates: { canonical: `${SITE_URL}/international` },
 });
 
@@ -60,8 +60,8 @@ const schema = {
 
 export default function InternationalPage() {
   return (
-    <ResourceShell crumb={[{ label: "International Orders" }]} title="International orders," accent="shipped worldwide."
-      text="Industrial automation parts shipped by air from Grand Island, New York to Canada, Mexico, Europe and Asia. Send us your part numbers and we quote the price, shipping and lead time for your country." schema={schema}>
+    <ResourceShell crumb={[{ label: "International Orders" }]} title="Parts Shipped" accent="Worldwide"
+      text="Industrial automation parts shipped by air from Grand Island, New York. Send us your part numbers and we quote the price, shipping and lead time for your country. Repairs are for customers in the USA only." schema={schema}>
       <PageExtras path="/international" />
 
       {/* For USA & Canada buyers */}

@@ -8,7 +8,7 @@ import { legal } from "@/lib/legal";
 export const generateMetadata = seo("/warranty", {
   title: "1-Year Warranty on Repairs & Parts | IAR",
   description:
-    "Every repair, refurbished part and exchange unit from IAR is tested and covered by a 1-year warranty. What is covered and how to make a claim.",
+    "Every IAR repair and part carries a one-year warranty from the ship date. What is covered, what is not and how to make a claim.",
   alternates: { canonical: `${SITE_URL}/warranty` },
 });
 
@@ -113,9 +113,9 @@ export default function WarrantyPage() {
     <LegalPage
       path="/warranty"
       crumb="Warranty"
-      title="Our"
+      title="One-Year"
       accent="Warranty"
-      intro={`Every repair, refurbished part and exchange unit we ship is load tested and covered by our one-year warranty from the ship date. Here is exactly what that means.`}
+      intro={`Every repair carries a one-year warranty from the ship date. It does not cover physical damage, incorrect installation or faults elsewhere in the machine. Here is exactly what that means.`}
       sections={sections}
       highlights={highlights}
     />

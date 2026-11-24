@@ -66,7 +66,7 @@ export const brandMakes = (b: Brand) => b.makes ?? makesOf(b.categories);
 /* Short brand page: intro written from what the brand makes */
 function mk(slug: string, name: string, initials: string, color: string, group: Group, card: string, categories: string[], lines: BrandLine[]): Brand {
   const b: Brand = { slug, name, initials, color, group, card, categories, lines, intro: "" };
-  b.intro = `We repair ${name} ${makesOf(categories)} at component level at our Grand Island, New York repair centre, including discontinued models.`;
+  b.intro = `We repair ${name} ${makesOf(categories)} at component level at our Grand Island, New York repair center, including discontinued models.`;
   return b;
 }
 
@@ -91,7 +91,7 @@ export const brands: Brand[] = [
     core: true,
     card: "SINAMICS drives, SIMODRIVE, SINUMERIK, 1FK7 motors",
     intro:
-      "Siemens motion control is IAR’s core specialty. We repair SINAMICS and SIMODRIVE drives, 1FT5, 1FT6, 1FT7, 1FK6, 1FK7 and 1PH motors, SINUMERIK 840C and 840D controls, SIMATIC PLCs and panels and SITOP power supplies — and test them on working systems, including our own SINUMERIK 840D test setup.",
+      "Siemens motion control is IAR’s core specialty. Our Siemens drive repair and motor repair covers SINAMICS, SIMODRIVE and MASTERDRIVES drives, 1FT5, 1FT6, 1FT7, 1FK6, 1FK7 and 1PH motors, SINUMERIK 840C and 840D controls, SIMATIC PLCs and panels and SITOP power supplies — and test them on working systems, including our own SINUMERIK 840D test bench.",
     lines: [
       { t: "Servo & AC drives", series: ["SINAMICS S120", "SIMODRIVE 611", "SINAMICS G120", "MICROMASTER", "SINAMICS V90"], service: "servo-drive-repair" },
       { t: "Servo & spindle motors", series: ["1FK7", "1FT6 / 1FT7", "1PH7 / 1PH8"], service: "servo-motor-repair" },
@@ -121,7 +121,7 @@ export const brands: Brand[] = [
     core: true,
     card: "IndraDrive, EcoDrive DKC, DIAX, MKD / MSK motors",
     intro:
-      "IAR provides Indramat servo motor repair for legacy equipment, along with Bosch Rexroth drives and power supplies. Our work covers fault diagnosis, mechanical repair, winding assessment and feedback testing on MKD, MAC and MDD motors, DKC, DDS and IndraDrive drives, with the repair scope confirmed for each model.",
+      "IAR provides Indramat servo motor repair for legacy equipment, along with Bosch Rexroth drives and power supplies. Our work covers fault diagnosis, mechanical repair, winding assessment and feedback testing on MKD, MHD, MAC and MDD motors, plus Indramat servo drive repair for DKC, DDS, DIAX04 and IndraDrive drives, with the repair scope confirmed for each model.",
     lines: [
       { t: "Servo drives", series: ["EcoDrive DKC", "IndraDrive", "DIAX03 / DIAX04", "DDS / System 200"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["MKD", "MSK", "MAC", "MHD"], service: "servo-motor-repair" },
@@ -149,7 +149,7 @@ export const brands: Brand[] = [
     core: true,
     card: "Kinetix, PowerFlex, PanelView, SLC 500, ControlLogix",
     intro:
-      "Allen-Bradley and Rockwell Automation motion systems are one of IAR’s core specialties. As experienced servo motor rebuilders, we repair and test Allen-Bradley servo motors from legacy 1326AB models to current MPL and MPF series, plus Kinetix, Ultra and 1394 drives, PanelView terminals and SLC 500 hardware.",
+      "Allen-Bradley and Rockwell Automation motion systems are one of IAR’s core specialties. As experienced servo motor rebuilders, we repair and test Allen-Bradley servo motors from legacy 1326AB models to current MPL and MPF series, plus Allen-Bradley drive repair for Kinetix, Ultra, 1394 and PowerFlex drives, PanelView terminals and SLC 500 PLCs.",
     lines: [
       { t: "Servo drives", series: ["Kinetix 6000", "Kinetix 5500", "Kinetix 2000", "Ultra 3000"], service: "servo-drive-repair" },
       { t: "AC drives", series: ["PowerFlex 40", "PowerFlex 525", "PowerFlex 700", "PowerFlex 753"], service: "vfd-repair" },
@@ -207,7 +207,7 @@ export const brands: Brand[] = [
     core: true,
     card: "SERVOPACK drives, Sigma motors, A1000 / GA700 inverters",
     intro:
-      "We repair Yaskawa Sigma SERVOPACK servo drives and servo motors, A1000, V1000 and GA700 inverters and Motoman robot controllers at component level, with a free evaluation and a 1-year warranty.",
+      "Our Yaskawa servo drive repair covers Sigma and SERVOPACK drives and servo motors, A1000, V1000 and GA700 inverters and Motoman robot controllers at component level, with a free evaluation and a 1-year warranty.",
     lines: [
       { t: "Servo drives", series: ["Sigma-II SGDH", "Sigma-5 SGDV", "Sigma-7 SGD7S"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["SGMAH", "SGMGH", "SGM7"], service: "servo-motor-repair" },
@@ -229,7 +229,7 @@ export const brands: Brand[] = [
   {
     slug: "mitsubishi", group: "drives", categories: ["servo-drive-repair", "vfd-repair", "servo-motor-repair", "encoder-repair", "plc-repair", "hmi-repair", "cnc-repair", "power-supply-repair", "controller-card-repair", "robotics-repair", "exchange"], name: "Mitsubishi Electric", initials: "ME", color: "#F472B6",
     card: "MR-J amplifiers, FR inverters, MELSEC PLCs, GOT HMIs",
-    intro: "We repair Mitsubishi Electric MR-J servo amplifiers, HF and HG servo motors, FR inverters, MELSEC PLCs, GOT HMIs and CNC controls at component level.",
+    intro: "Our Mitsubishi servo drive repair covers MR-J2S to MR-J4 servo amplifiers, HF and HG servo motors, FR inverters, MELSEC PLCs, GOT HMIs and CNC controls at component level.",
     lines: [
       { t: "Servo amplifiers", series: ["MR-J2S", "MR-J3", "MR-J4"], service: "servo-drive-repair" },
       { t: "Servo motors", series: ["HF", "HG", "HC"], service: "servo-motor-repair" },
@@ -241,7 +241,7 @@ export const brands: Brand[] = [
     slug: "abb", group: "drives", categories: ["vfd-repair", "servo-drive-repair", "servo-motor-repair", "industrial-motor-repair", "plc-repair", "power-supply-repair", "controller-card-repair", "robotics-repair", "hmi-repair", "exchange"], name: "ABB", initials: "ABB", color: "#F87171",
     card: "ACS and DCS drives, motors, robot controllers",
     intro:
-      "When an ABB robot axis or drive fails, the whole cell stops. IAR provides ABB robot motor repair, axis drive module repair and ACS and DCS drive repair, confirming the repair scope and test method for each model before work begins.",
+      "When an ABB robot axis or drive fails, the whole cell stops. IAR provides ABB robot motor repair, axis drive module repair and ABB drive repair for ACS and DCS drives, confirming the repair scope and test method for each model before work begins.",
     lines: [
       { t: "AC drives", series: ["ACS355", "ACS550", "ACS800", "ACS880"], service: "vfd-repair" },
       { t: "DC drives", series: ["DCS400", "DCS800"], service: "vfd-repair" },
@@ -404,7 +404,7 @@ export const brands: Brand[] = [
   note(mk("ls-electric", "LS Electric", "LS", "#34D399", "drives", "iG5A, iS7, S100 drives, XGT PLCs, L7 servos", ["vfd-repair", "servo-drive-repair", "servo-motor-repair", "plc-repair", "hmi-repair", "controller-card-repair", "exchange"], [{ t: "AC drives", series: ["iG5A", "iS7", "S100", "H100", "iS5 / iC5"], service: "vfd-repair" }, { t: "Servo systems", series: ["L7NH", "L7P", "L7C"], service: "servo-drive-repair" }, { t: "PLCs", series: ["XGT (XGK / XGI)", "XGB"], service: "plc-repair" }, { t: "HMIs", series: ["iXP", "eXP", "XGT Panel"], service: "hmi-repair" }]), "LS Electric was formerly LS Industrial Systems (LSIS) and LG Industrial Systems."),
   mk("teco", "TECO-Westinghouse", "TE", "#FBBF24", "drives", "E510, A510, F510 drives, JSD servos, motors", ["vfd-repair", "servo-drive-repair", "servo-motor-repair", "industrial-motor-repair", "controller-card-repair", "exchange"], [{ t: "AC drives", series: ["E510", "A510", "F510"], service: "vfd-repair" }, { t: "Servo drives", series: ["JSDG2S", "JSDAP", "JSDEP", "JSDE2"], service: "servo-drive-repair" }, { t: "Motors", series: ["TECO-Westinghouse AC motors"], service: "industrial-motor-repair" }]),
   mk("nord-drivesystems", "NORD Drivesystems", "NO", "#FB7185", "drives", "NORDAC SK 500E, SK 200E, SK 250E; gearmotors", ["vfd-repair", "industrial-motor-repair", "controller-card-repair", "exchange"], [{ t: "Frequency inverters", series: ["NORDAC PRO SK 500E", "NORDAC FLEX SK 200E", "NORDAC LINK SK 250E", "NORDAC BASE SK 180E"], service: "vfd-repair" }, { t: "Gearmotors", series: ["Helical gearmotors", "Bevel gearmotors", "Worm gearmotors"], service: "industrial-motor-repair" }]),
-  makes(note(mk("baumer-hubner", "Baumer Hübner", "BH", "#2DD4BF", "motors", "Hübner DC tachos, HOG/POG heavy-duty encoders", ["encoder-repair", "exchange"], [{ t: "Tachogenerators", series: ["TDP0,2", "TDP0,09", "TDP13", "GT5 / GT7 / GT9"], service: "encoder-repair" }, { t: "Heavy-duty encoders", series: ["HOG 10", "HOG 86", "POG 10", "HMG 10 / PMG 10"], service: "encoder-repair" }]), "We repair Baumer Hübner DC tachogenerators and heavy-duty encoders at component level at our Grand Island, New York repair centre, including discontinued models. Hübner Berlin is now Baumer Hübner.", true), "DC tachogenerators and heavy-duty encoders"),
+  makes(note(mk("baumer-hubner", "Baumer Hübner", "BH", "#2DD4BF", "motors", "Hübner DC tachos, HOG/POG heavy-duty encoders", ["encoder-repair", "exchange"], [{ t: "Tachogenerators", series: ["TDP0,2", "TDP0,09", "TDP13", "GT5 / GT7 / GT9"], service: "encoder-repair" }, { t: "Heavy-duty encoders", series: ["HOG 10", "HOG 86", "POG 10", "HMG 10 / PMG 10"], service: "encoder-repair" }]), "We repair Baumer Hübner DC tachogenerators and heavy-duty encoders at component level at our Grand Island, New York repair center, including discontinued models. Hübner Berlin is now Baumer Hübner.", true), "DC tachogenerators and heavy-duty encoders"),
   mk("kubler", "Kübler", "KÜ", "#F28797", "motors", "Sendix encoders, Limes linear, Codix counters", ["encoder-repair", "controller-card-repair", "exchange"], [{ t: "Encoders", series: ["Sendix 5000", "Sendix 5020", "Sendix F58"], service: "encoder-repair" }, { t: "Linear measuring", series: ["Limes LI20", "Limes LI50"], service: "encoder-repair" }, { t: "Counters & displays", series: ["Codix 130", "Codix 560"], service: "controller-card-repair" }]),
   note(mk("hengstler", "Hengstler", "HG", "#FB923C", "motors", "ACURO encoders, counters and relays", ["encoder-repair", "controller-card-repair", "exchange"], [{ t: "Encoders", series: ["ACURO AC58", "Incremental encoders"], service: "encoder-repair" }, { t: "Counters", series: ["Electronic counters", "Mechanical counters"], service: "controller-card-repair" }]), "Hengstler is part of Hengstler-Dynapar."),
   note(mk("dynapar", "Dynapar", "DY", "#A3E635", "motors", "HS35R, AI25, NorthStar RIM Tach and SLIM Tach", ["encoder-repair", "exchange"], [{ t: "Encoders", series: ["HS35R", "HSD35", "HC25 / HA25", "AI25 absolute"], service: "encoder-repair" }, { t: "NorthStar heavy duty", series: ["RIM Tach RT8", "SLIM Tach ST56 / ST85", "HT85"], service: "encoder-repair" }, { t: "Legacy", series: ["HS35", "RIM Tach 8500", "Rotopulser"], service: "encoder-repair" }]), "Dynapar and NorthStar are part of Hengstler-Dynapar."),
@@ -412,7 +412,7 @@ export const brands: Brand[] = [
   mk("renishaw", "Renishaw", "RN", "#FF5A6E", "motors", "RESOLUTE, TONiC, VIONiC, FORTiS encoders", ["encoder-repair", "exchange"], [{ t: "Absolute encoders", series: ["RESOLUTE", "EVOLUTE", "FORTiS"], service: "encoder-repair" }, { t: "Incremental encoders", series: ["TONiC", "VIONiC", "QUANTiC", "ATOM"], service: "encoder-repair" }]),
   note(mk("leine-linde", "Leine Linde", "LL", "#D91C38", "motors", "600 and 800 series heavy-duty encoders", ["encoder-repair", "exchange"], [{ t: "Encoders", series: ["500 series", "600 series", "800 series (865 Duo)", "1000 series"], service: "encoder-repair" }]), "Leine Linde is part of the HEIDENHAIN group."),
   mk("tr-electronic", "TR-Electronic", "TR", "#E8354F", "motors", "CEV58/CEV65 absolute encoders, LMC linear", ["encoder-repair", "exchange"], [{ t: "Rotary encoders", series: ["CEV58M", "CEH58M", "CEV65M", "CMV36M"], service: "encoder-repair" }, { t: "Linear encoders", series: ["LMC"], service: "encoder-repair" }]),
-  makes(note(mk("bei-kimco", "BEI Kimco", "BK", "#A78BFA", "motors", "Voice coil actuators and brushless DC motors", ["servo-motor-repair", "exchange"], [{ t: "Actuators & motors", series: ["LA15-16 / LA16-16 voice coil actuators", "Brushless DC motors"], service: "servo-motor-repair" }]), "We repair BEI Kimco voice coil actuators and brushless DC motors at our Grand Island, New York repair centre. BEI Kimco is sold by Sensata.", true), "voice coil actuators and brushless DC motors"),
+  makes(note(mk("bei-kimco", "BEI Kimco", "BK", "#A78BFA", "motors", "Voice coil actuators and brushless DC motors", ["servo-motor-repair", "exchange"], [{ t: "Actuators & motors", series: ["LA15-16 / LA16-16 voice coil actuators", "Brushless DC motors"], service: "servo-motor-repair" }]), "We repair BEI Kimco voice coil actuators and brushless DC motors at our Grand Island, New York repair center. BEI Kimco is sold by Sensata.", true), "voice coil actuators and brushless DC motors"),
   mk("keyence", "Keyence", "KY", "#34D399", "controls", "KV PLCs, VT HMIs, SV servos, CV-X vision", ["plc-repair", "hmi-repair", "servo-drive-repair", "controller-card-repair", "exchange"], [{ t: "PLCs", series: ["KV-8000", "KV-7000", "KV-5500", "KV Nano"], service: "plc-repair" }, { t: "HMIs", series: ["VT5", "VT series"], service: "hmi-repair" }, { t: "Servo & vision", series: ["SV servo series", "CV-X vision", "XG-X vision"], service: "controller-card-repair" }]),
   mk("red-lion", "Red Lion", "RL", "#FBBF24", "controls", "G3, Graphite, CR3000 HMIs, PAX meters", ["hmi-repair", "controller-card-repair", "exchange"], [{ t: "HMIs", series: ["G3 / G3 Kadet", "Graphite", "CR3000", "CR1000"], service: "hmi-repair" }, { t: "Panel meters & displays", series: ["PAX", "CUB", "PM-50", "LD2 / LD4"], service: "controller-card-repair" }]),
   mk("weintek", "Weintek", "WT", "#FB7185", "controls", "MT8000, cMT and cMT X touchscreen HMIs", ["hmi-repair", "controller-card-repair", "exchange"], [{ t: "HMIs", series: ["MT6000", "MT8000iE", "MT8000iP", "cMT3000", "cMT X"], service: "hmi-repair" }]),
@@ -423,7 +423,7 @@ export const brands: Brand[] = [
   mk("bwo-elektronik", "BWO Elektronik", "BW", "#F472B6", "cnc", "System 900, CNC 902–905 controls, axis cards", ["cnc-repair", "power-supply-repair", "controller-card-repair", "exchange"], [{ t: "CNC controls", series: ["Control System 900", "CNC 902 / 903 / 904 / 905", "Vektor C / CT"], service: "cnc-repair" }, { t: "Panels & cards", series: ["CNC 910 / 920 / 930 panels", "AAZ / ASM axis cards", "NG8 / NG16 power supplies"], service: "controller-card-repair" }]),
   mk("fadal", "Fadal", "FD", "#FF5A6E", "cnc", "CNC 88, 88HS and 32MP controls, boards", ["cnc-repair", "servo-drive-repair", "controller-card-repair", "exchange"], [{ t: "CNC controls", series: ["CNC 88", "CNC 88HS", "32MP"], service: "cnc-repair" }, { t: "Boards & amplifiers", series: ["1400-series CPU boards", "Axis amplifiers"], service: "controller-card-repair" }]),
   mk("hurco", "Hurco", "HU", "#D91C38", "cnc", "UltiMax, MAX and WinMax CNC controls", ["cnc-repair", "hmi-repair", "controller-card-repair", "exchange"], [{ t: "CNC controls", series: ["UltiMax 2 / 3 / 4", "MAX", "MAX5", "WinMax"], service: "cnc-repair" }]),
-  makes(note(mk("hsd", "HSD", "HSD", "#FB923C", "motors", "ES919, ES929, ES951 electrospindles, 2-axis heads", ["industrial-motor-repair", "servo-motor-repair", "controller-card-repair", "exchange"], [{ t: "Electrospindles (CNC router spindles)", series: ["ES919", "ES929", "ES779", "ES920", "ES884"], service: "industrial-motor-repair" }, { t: "Machining spindles", series: ["ES950", "ES951", "ES510", "ES368", "ES789"], service: "industrial-motor-repair" }, { t: "Heads & motors", series: ["HST610 / HST810 direct drive heads", "Boring heads", "Servomotors with integrated drive"], service: "servo-motor-repair" }]), "We repair HSD electrospindles, 2-axis and boring heads and HSD servomotors at our Grand Island, New York repair centre, including discontinued models. HSD is the Biesse Group's mechatronics company, based in Gradara, Italy.", true), "electrospindles, machining heads and servomotors"),
+  makes(note(mk("hsd", "HSD", "HSD", "#FB923C", "motors", "ES919, ES929, ES951 electrospindles, 2-axis heads", ["industrial-motor-repair", "servo-motor-repair", "controller-card-repair", "exchange"], [{ t: "Electrospindles (CNC router spindles)", series: ["ES919", "ES929", "ES779", "ES920", "ES884"], service: "industrial-motor-repair" }, { t: "Machining spindles", series: ["ES950", "ES951", "ES510", "ES368", "ES789"], service: "industrial-motor-repair" }, { t: "Heads & motors", series: ["HST610 / HST810 direct drive heads", "Boring heads", "Servomotors with integrated drive"], service: "servo-motor-repair" }]), "We repair HSD electrospindles, 2-axis and boring heads and HSD servomotors at our Grand Island, New York repair center, including discontinued models. HSD is the Biesse Group's mechatronics company, based in Gradara, Italy.", true), "electrospindles, machining heads and servomotors"),
 ];
 
 export const getBrand = (slug: string) => brands.find((b) => b.slug === slug);
@@ -432,7 +432,7 @@ export const brandUrl = (slug: string) => `/brands/${slug}`;
 /* Generic FAQ for brands without their own list (all confirmed facts) */
 const an = (name: string) => (/^[AEIO]/i.test(name) ? "an" : "a");
 export const brandFaqs = (name: string) => [
-  { q: `Do you repair ${name} equipment?`, a: `Yes. We repair ${name} equipment at component level at our Grand Island, New York repair centre, with a free evaluation first.` },
+  { q: `Do you repair ${name} equipment?`, a: `Yes. We repair ${name} equipment at component level at our Grand Island, New York repair center, with a free evaluation first.` },
   { q: `How long does ${an(name)} ${name} repair take?`, a: "Typical turnaround is 24–72 hours once you approve the quote. Exchange units usually ship within 1–2 business days of receiving your unit." },
   { q: `What warranty comes with ${an(name)} ${name} repair?`, a: "Every repair comes with a 1-year warranty and a test report." },
 ];

@@ -10,6 +10,7 @@ import Industries from "@/components/Industries";
 import GlobalReach from "@/components/GlobalReach";
 import BlogTeaser from "@/components/BlogTeaser";
 import Faq from "@/components/Faq";
+import HomeAbout from "@/components/iar/HomeAbout";
 import Footer from "@/components/Footer";
 import { PageExtras, seo } from "@/lib/cms/seo";
 import { SITE_URL } from "@/lib/site";
@@ -49,6 +50,7 @@ export default function Home() {
       <div className="cv-auto"><ProcessSection /></div>
       <div className="cv-auto"><GlobalReach /></div>
       <div className="cv-auto"><Industries /></div>
+      <div className="cv-auto"><HomeAbout /></div>
       <div className="cv-auto"><FaultCodeTeaser /></div>
       <div className="cv-auto"><BlogTeaser /></div>
       <div className="cv-auto"><Faq /></div>

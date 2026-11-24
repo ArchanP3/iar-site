@@ -15,7 +15,7 @@ const repairIcons = [Zap, Gauge, Cpu, Radio, CircuitBoard, RefreshCw];
 const testIcons = [Camera, ScanSearch, Gauge, FileCheck2];
 const factSets = {
   repair: [["Free evaluation", ShieldCheck], ["24–72 hr typical", Clock], ["1-year warranty", BadgeCheck], ["Load tested on our benches", Gauge]],
-  service: [["Every brand", BadgeCheck], ["Across the USA", ShieldCheck], ["Repair centre in Grand Island, NY", Gauge]],
+  service: [["Every brand", BadgeCheck], ["Across the USA", ShieldCheck], ["Repair center in Grand Island, NY", Gauge]],
   cable: [["Any brand", BadgeCheck], ["Built to your length", Gauge], ["Across the USA", ShieldCheck]],
 } as const;
 
@@ -83,6 +83,7 @@ export default function ServicePage({ s }: { s: Service }) {
               {words.join(" ")} <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">{lastWord}</span>
             </h1>
             <p className="mt-2 text-[15px] font-semibold text-[#FF8A99] sm:text-[17px]">{s.tagline}</p>
+            {s.intro && <p className="mt-3 max-w-190 text-[15px] leading-[1.7] text-white/75 sm:text-[16px]">{s.intro}</p>}
             <ul className="mt-5 flex flex-wrap gap-2">
               {facts.map(([t, I]) => (
                 <li key={t} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/6 px-3 py-1.5 text-[12.5px] font-semibold text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
@@ -200,7 +201,7 @@ export default function ServicePage({ s }: { s: Service }) {
               <div>
                 <Eyebrow dark>Quality</Eyebrow>
                 <h2 id="test" className="mt-3 text-[26px] font-extrabold leading-tight sm:text-[34px]">{s.testingTitle ?? `How we test every repaired ${noun}`}</h2>
-                <p className="mt-3 text-[15px] leading-[1.7] text-white/70">{kind !== "repair" ? "Checked before it leaves our Grand Island, New York repair centre." : isEx ? "An exchange unit has to work the moment you install it. Every one is checked and tested before it leaves our Grand Island, New York repair centre." : "Parts replaced is not the same as fixed. Every unit is proven under power before it leaves our Grand Island, New York repair centre."}</p>
+                <p className="mt-3 text-[15px] leading-[1.7] text-white/70">{kind !== "repair" ? "Checked before it leaves our Grand Island, New York repair center." : isEx ? "An exchange unit has to work the moment you install it. Every one is checked and tested before it leaves our Grand Island, New York repair center." : "Parts replaced is not the same as fixed. Every unit is proven under power before it leaves our Grand Island, New York repair center."}</p>
               </div>
               <ol className="grid gap-3 sm:grid-cols-2">
                 {s.testing.map((t, i) => {

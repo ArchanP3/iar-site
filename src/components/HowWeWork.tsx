@@ -76,7 +76,7 @@ const ways = [
 
 /* Trust strip */
 const facts = [
-  { icon: MapPin, label: "Repair centre", value: "Grand Island, New York, USA" },
+  { icon: MapPin, label: "Repair center", value: "Grand Island, New York, USA" },
   { icon: BadgeCheck, label: "Warranty", value: "1-year, every repair" },
   { icon: Clock, label: "Turnaround", value: "24–72 hr typical" },
   { icon: PackageCheck, label: "Shipping", value: "Ship It or Request a Pickup" },
@@ -237,7 +237,7 @@ export default function HowWeWork() {
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               A free evaluation and a written quote before any work starts. Every servo drive, servo
-              motor and industrial electronics repair at our Grand Island, New York repair centre is tracked step by
+              motor and industrial electronics repair at our Grand Island, New York repair center is tracked step by
               step, from pickup to tested return.
             </p>
             <p className="mt-2 hidden text-[14px] leading-[1.65] text-[#62626F] sm:block sm:text-[16px]">

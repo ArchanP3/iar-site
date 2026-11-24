@@ -23,27 +23,27 @@ type Slide = { src: string; title: string; text: string; href: string; w: number
 const SLIDES: Slide[] = [
   {
     src: "/iar-hero/servo-motors.webp", title: "Servo Motors", w: 1100, h: 1012,
-    text: "AC, DC, spindle and robot servo motors repaired to spec — new bearings and seals, winding tests, encoder alignment and a full load test on our bench.",
+    text: "AC servo motor repair, DC servo motor repair, spindle and robot servo motor repair to spec: new bearings and seals, winding tests, encoder alignment and a full load test on our bench.",
     href: "/services/servo-motor-repair",
   },
   {
     src: "/iar-hero/servo-drives.webp", title: "Servo Drives", w: 1100, h: 1099,
-    text: "Servo amplifiers and spindle drives diagnosed to component level, repaired and powered up under load with a matching motor before they ship back.",
+    text: "Servo amplifier repair and spindle drive repair to component level, powered up under load with a matching motor before they ship back.",
     href: "/services/servo-drive-repair",
   },
   {
     src: "/iar-hero/hmi-screens.webp", title: "HMI Screens", w: 1100, h: 1095,
-    text: "Touch screens, operator panels and displays — we fix dead touch, dim or failed backlights, cracked screens and boot faults, and keep your program intact.",
+    text: "HMI repair for dead touch, dim or failed backlights, cracked screens and boot faults. Your program stays in place.",
     href: "/services/hmi-repair",
   },
   {
     src: "/iar-hero/motor-overhaul-encoders.webp", title: "Motor Overhaul & Encoder Alignment", w: 1100, h: 844,
-    text: "Complete motor overhauls — rewinds, shafts, bearings and housings — plus encoder and resolver replacement with precise commutation alignment.",
+    text: "Complete overhauls, servo motor rewinding, shafts and bearings, plus encoder and resolver replacement with precise commutation alignment.",
     href: "/services/encoder-repair",
   },
   {
     src: "/iar-hero/power-supplies.webp", title: "Power Supplies", w: 1050, h: 1100,
-    text: "Drive power supply modules and 24 V DIN-rail supplies repaired and tested for clean, stable output — so the whole cabinet runs reliably again.",
+    text: "Industrial power supply repair for drive supply modules and 24 V DIN-rail units, tested for clean, stable output.",
     href: "/services/power-supply-repair",
   },
 ];
@@ -107,7 +107,7 @@ export default function HeroShowcase() {
             <span className="inline-block h-0.5 w-8 bg-brand" />Industrial Automation Repair · Grand Island, New York
           </p>
           <h1 className="iar-fade-up mt-5 font-display text-4xl font-extrabold leading-[1.05] [animation-delay:.1s] sm:text-5xl xl:text-6xl">
-            Servo Motor Repair &amp; <span className="text-brand">Servo Drive Repair</span> USA
+            Servo Motor Repair &amp; <span className="text-brand">Servo Drive Repair</span> — USA
           </h1>
           <p className="iar-fade-up mt-4 text-xs font-medium uppercase tracking-[0.4em] text-white/55 [animation-delay:.2s]">Your Automation Repair Partner</p>
           <p className="iar-fade-up mt-5 max-w-xl text-lg leading-relaxed text-white/75 [animation-delay:.3s]">

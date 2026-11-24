@@ -156,7 +156,7 @@ export default function PartSuggest({ className, onKeyDown, onChange, onFocus, o
             onMouseDown={(e) => e.preventDefault()}
           >
             <div className="flex items-center justify-between gap-3 border-b border-[#F3F3F4] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#696976]">
-              <span>{busy && !items.length && !pages.length ? "Searching…" : items.length ? "Matching parts" : pages.length ? "Repair services" : "No match in our online catalogue yet"}</span>
+              <span>{busy && !items.length && !pages.length ? "Searching…" : items.length ? "Matching parts" : pages.length ? "Repair services" : "No match in our online catalog yet"}</span>
               {total > items.length && <span className="normal-case tracking-normal">{total.toLocaleString("en-US")} results</span>}
             </div>
             {pages.length > 0 && (

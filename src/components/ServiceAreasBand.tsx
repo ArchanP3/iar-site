@@ -6,7 +6,7 @@ import { SITE_COUNTRY } from "@/lib/site";
 import { NA_DOTS, NA_MAP, naPoint } from "@/lib/naMap";
 import { regionColor, regionsIn } from "@/lib/areaRegions";
 
-/* Homepage: one repair centre in Grand Island, NY serving every city in the USA.
+/* Homepage: one repair center in Grand Island, NY serving every city in the USA.
    Static SVG map (no script), real <a> links for every city page (local SEO). */
 const HUB: [number, number] = [43.033, -78.964];
 const LABELS = new Set(["vancouver", "calgary", "edmonton", "saskatoon", "winnipeg", "montreal", "quebec-city", "halifax", "chicago", "pittsburgh"]);
@@ -36,12 +36,12 @@ export default function ServiceAreasBand() {
               Service Areas
             </p>
             <h2 id="service-areas-heading" className="mt-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#131316] sm:text-[36px] lg:text-[40px]">
-              One Repair Centre.{" "}
+              One Repair Center.{" "}
               <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">Every City in {where}.</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               Servo drive, motor and industrial electronics repair for manufacturers {span}. Every repair is done at our repair
-              centre in Grand Island, New York.
+              center in Grand Island, New York.
             </p>
           </div>
           <Link
@@ -63,9 +63,9 @@ export default function ServiceAreasBand() {
             <div className="relative border-b border-white/10 p-4 sm:p-6 lg:border-b-0 lg:border-r">
               <div className="mb-2 inline-flex items-center gap-2.5 rounded-xl border sm:absolute sm:left-7 sm:top-7 sm:z-10 sm:mb-0 sm:flex border-white/12 bg-white/[0.07] px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur">
                 <span className="relative flex h-2.5 w-2.5"><span className="sa-ping absolute inset-0 rounded-full bg-[#FF3B55]" /><span className="relative h-2.5 w-2.5 rounded-full bg-[#FF3B55]" /></span>
-                <span className="text-[12px] font-bold text-white">Repair centre · <span className="font-semibold text-white/65">Grand Island, NY</span></span>
+                <span className="text-[12px] font-bold text-white">Repair center · <span className="font-semibold text-white/65">Grand Island, NY</span></span>
               </div>
-              <svg viewBox={`0 0 ${NA_MAP.width} ${NA_MAP.height}`} className="sa-map sa-dark h-auto w-full overflow-visible" role="group" aria-label="Map of the USA with routes from our Grand Island, NY repair centre to the cities we serve">
+              <svg viewBox={`0 0 ${NA_MAP.width} ${NA_MAP.height}`} className="sa-map sa-dark h-auto w-full overflow-visible" role="group" aria-label="Map of the USA with routes from our Grand Island, NY repair center to the cities we serve">
                 <defs>
                   <linearGradient id="sa-route" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0" stopColor="#C8102E" stopOpacity="0.15" />
@@ -110,7 +110,7 @@ export default function ServiceAreasBand() {
                 <circle cx={hx} cy={hy} r="11" className="sa-pulse" />
               </svg>
               <div className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-1.5 px-1 text-[12px] font-semibold text-white/65">
-                <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 border-[#FF3B55] bg-white" aria-hidden="true" />Our repair centre</span>
+                <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 border-[#FF3B55] bg-white" aria-hidden="true" />Our repair center</span>
                 {regionsIn(areas).map((r) => <span key={r.key} className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 bg-[#0A0A0C]" style={{ borderColor: r.color }} aria-hidden="true" />{r.label}</span>)}
                 <span className="text-white/60">{areas.length} featured cities · every city served</span>
               </div>

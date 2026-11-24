@@ -8,8 +8,8 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-cable", {
-  title: "Order a Custom Servo Cable | Feedback & Power Cables | IAR",
-  description: "Order custom servo feedback, power and brake cables for any drive and motor brand, built to your length. Spare critical cables. Ships to the USA & Canada.",
+  title: "Custom Servo Cables | Feedback, Power & Brake | IAR",
+  description: "Order custom servo feedback, power and brake cables for any drive and motor brand, built to your length. Spare critical cables.",
 });
 
 const steps = [
@@ -39,16 +39,16 @@ export default function RequestCablePage() {
           </nav>
           <h1 className="mt-4 flex items-center gap-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">
             <Cable className="hidden text-[#FF8A99] sm:block" size={36} aria-hidden="true" />
-            Order a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Custom Cable</span>
+            Custom <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Servo Cables</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
-            Servo feedback, power and brake cables for any drive and motor, built to your length. Keep a spare for every critical axis.
+            Custom servo cables built to your length: feedback, power and brake cables for any drive and motor brand, with drag-chain options.
           </p>
         </div>
       </section>
       <div className="relative mx-auto -mt-16 grid max-w-310 gap-5 px-5 pb-14 sm:px-8 lg:grid-cols-[1fr_360px]">
         <CableForm />
-        <NextSteps title="How cable orders work" steps={steps} points={["Any brand", "Any length", "Drag-chain options", "Ships to USA & Canada"]} urgent="Cable damaged and the axis is down? Say so in the notes and we'll prioritise it." />
+        <NextSteps title="How cable orders work" steps={steps} points={["Any brand", "Any length", "Drag-chain options", "Ships across the USA"]} urgent="Cable damaged and the axis is down? Say so in the notes and we'll prioritize it." />
       </div>
       <Footer />
     </main>

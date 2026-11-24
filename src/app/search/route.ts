@@ -7,7 +7,7 @@ import { exactBrand } from "@/lib/siteMatch";
    exact part number  -> that part's page
    anything matching  -> Shop Parts results
    nothing found      -> Request a Quote with the part (and brand) filled in,
-                         plus close matches from our catalogue */
+                         plus close matches from our catalog */
 export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
   const q = (params.get("q") ?? params.get("part") ?? "").trim().slice(0, 80);

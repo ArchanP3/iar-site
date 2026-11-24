@@ -5,8 +5,8 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/shipping", {
-  title: "How to Ship Us a Unit for Repair | Packing Guide | IAR",
-  description: "How to pack and ship a servo drive, servo motor, HMI or circuit board for repair: packing checklist, carriers, pickups and cross-border paperwork for the USA.",
+  title: "How to Ship a Servo Motor or Drive for Repair | IAR",
+  description: "How to pack and ship a servo motor or drive to IAR in Grand Island, NY, free return shipping on completed repairs and pickup options.",
   alternates: { canonical: `${SITE_URL}/resources/shipping` },
 });
 
@@ -45,8 +45,8 @@ const schema = {
 
 export default function ShippingGuidePage() {
   return (
-    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "How to Ship Us a Unit" }]} title="How to ship us" accent="a unit"
-      text="Pack it right, add the paperwork and send it with any carrier, or let us arrange a pickup. Here is everything in one place." schema={schema}>
+    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "How to Ship Us a Unit" }]} title="Shipping, Packing" accent="& Pickup"
+      text="Ship from anywhere in the USA with any carrier, book a pickup, or drop it off at 3279 Grand Island Blvd, Grand Island, NY. Return shipping is free on completed repairs, packed for the trip with the test report inside." schema={schema}>
       <PageExtras path="/resources/shipping" />
       {/* Two ways */}
       <div className="grid gap-4 md:grid-cols-2">

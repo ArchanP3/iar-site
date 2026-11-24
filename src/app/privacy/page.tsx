@@ -24,7 +24,7 @@ const sections: LegalSection[] = [
     id: "who",
     title: "Who we are",
     body: (
-      <p>{n} (&quot;we&quot;, &quot;us&quot;) repairs and supplies industrial automation equipment from our repair centre at {fullAddress(contact)}, for customers across the USA. This policy explains what personal information we collect, why, and the choices you have. We handle personal information in line with Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+      <p>{n} (&quot;we&quot;, &quot;us&quot;) repairs and supplies industrial automation equipment from our repair center at {fullAddress(contact)}, for customers across the USA. This policy explains what personal information we collect, why, and the choices you have. We handle personal information in line with Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
     ),
   },
   {

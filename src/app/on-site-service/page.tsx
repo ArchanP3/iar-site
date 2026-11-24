@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/on-site-service", {
-  title: "On-site Industrial Repair Service | IAR",
+  title: "On-Site Industrial Repair Service | USA | IAR",
   description: "On-site technicians for servo drives, CNC controls, PLCs and VFDs across the USA. Troubleshooting, replacement and start-up at your plant.",
   alternates: { canonical: `${SITE_URL}/on-site-service` },
 });
@@ -16,9 +16,9 @@ const steps = [
   ["Tell us about the machine", Phone],
   ["We confirm the visit and the cost", FileText],
   ["A technician works at your plant", Wrench],
-  ["Failed units come to our repair centre", Truck],
+  ["Failed units come to our repair center", Truck],
 ] as const;
-const points = ["Across the USA", "Breakdowns & planned visits", "Quote before travel", "Repairs with 1-year warranty"];
+const points = ["All 50 states", "Breakdowns & planned visits", "Quote before travel", "Repairs with 1-year warranty"];
 
 const work = [
   [Search, "Troubleshooting", "Find the fault on the machine: drive, motor, feedback, wiring or control."],
@@ -28,9 +28,9 @@ const work = [
 ] as const;
 
 const faqs: [string, string][] = [
-  ["Where do you provide on-site service?", "Across the United States. Our repair centre is in Grand Island, New York, and technicians travel to your plant."],
+  ["Where do you provide on-site service?", "Across the United States. Our repair center is in Grand Island, New York, and technicians travel to your plant."],
   ["How much does a service call cost?", "It depends on the location, the travel and the work. We send you the cost before anyone travels, so there are no surprises."],
-  ["What if the part needs a bench repair?", "We bring the failed unit back to our Grand Island, NY repair centre, repair it at component level and test it on our test benches. An exchange unit can keep you running in the meantime."],
+  ["What if the part needs a bench repair?", "We bring the failed unit back to our Grand Island, NY repair center, repair it at component level and test it on our test benches. An exchange unit can keep you running in the meantime."],
   ["Can you help us before a planned shutdown?", "Yes. Book a planned visit, and tell us the machine and the date so the technician comes prepared."],
 ];
 
@@ -44,8 +44,8 @@ const schema = {
 
 export default function OnSitePage() {
   return (
-    <ResourceShell crumb={[{ label: "Services", href: "/services" }, { label: "On-site Service" }]} title="A technician" accent="at your machine."
-      text="When the problem can't be shipped, we come to you. On-site troubleshooting, replacement and start-up for servo drives, motors, CNC, PLCs and VFDs across the USA." schema={schema}>
+    <ResourceShell crumb={[{ label: "Services", href: "/services" }, { label: "On-site Service" }]} title="On-Site" accent="Service"
+      text="Our on-site industrial repair service sends technicians to your plant for troubleshooting, replacement and start-up of servo drives, CNC controls, PLCs and VFDs, anywhere in the USA. If the part needs the bench, we bring it back to Grand Island, NY, repair it at component level and test it under load." schema={schema}>
       <PageExtras path="/on-site-service" />
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         <OnSiteForm />

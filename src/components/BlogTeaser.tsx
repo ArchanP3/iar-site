@@ -25,7 +25,7 @@ export default async function BlogTeaser() {
               <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">Repair Bench</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
-              Plain-English guides from the technicians who repair and test servo drives, motors and encoders every day.
+              Practical guides from our technicians on servo motors, drives, encoders and CNC controls.
             </p>
           </div>
           <Link

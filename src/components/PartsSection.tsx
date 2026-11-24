@@ -166,10 +166,9 @@ export default function PartsSection() {
                 Hard-to-find parts for current and legacy machines · Tested before it ships
               </p>
               <p className="mt-3 text-[14px] leading-[1.7] text-[#C6C6CD] sm:text-[15px]">
-                Industrial Automation Repair Inc. supplies new, surplus, refurbished and obsolete industrial automation parts for
-                manufacturers across the United States, including servo drives, servo motors, encoders, PLCs,
-                HMIs, CNC controls, power supplies, sensors and gearboxes. Send a part number for price, condition and lead
-                time, or let our team source hard-to-find and discontinued parts from every major brand.
+                We stock industrial automation parts that keep machines running: refurbished servo motors, servo drives, PLC
+                modules, HMIs and power supplies, all tested before they ship. Can’t find it? We source obsolete automation
+                parts and offer a servo motor exchange on many models.
               </p>
             </div>
 

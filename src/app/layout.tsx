@@ -20,16 +20,16 @@ const geistMono = Geist_Mono({
 
 const base: Metadata = {
   metadataBase: new URL(SHARE_URL),
-  title: "Servo Drive & Motor Repair USA | IAR",
+  title: "Servo Motor & Servo Drive Repair USA | IAR",
   description:
-    "Servo drive, motor and electronics repair for Siemens, Indramat, Allen-Bradley, Fanuc and more. Free evaluation, test bench-tested, 1-year warranty. Serving the USA.",
+    "Servo motor, servo drive and industrial electronics repair for US plants. Free evaluation, 1-year warranty, free return shipping. Grand Island, NY.",
   applicationName: "Industrial Automation Repair Inc.",
   openGraph: {
-    title: "Servo Drive & Motor Repair USA | IAR",
+    title: "Servo Motor & Servo Drive Repair USA | IAR",
     description:
-      "Free evaluation, written quote first, 1-year warranty.",
+      "Servo motor, servo drive and industrial electronics repair for US plants. Free evaluation, 1-year warranty, free return shipping.",
     siteName: "Industrial Automation Repair Inc.",
-    locale: LOCALE === "en" ? "en_CA" : LOCALE.replace("-", "_"),
+    locale: LOCALE === "en" ? "en_US" : LOCALE.replace("-", "_"),
     type: "website",
   },
 };

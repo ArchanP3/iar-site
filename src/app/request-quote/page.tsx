@@ -10,9 +10,9 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-quote", {
-  title: "Request a Quote | Drives, Motors, PLC & CNC Parts | IAR",
+  title: "Request a Parts Quote | New, Surplus & Refurbished | IAR",
   description:
-    "Price, condition and lead time for new, surplus, refurbished and obsolete servo drives, motors, PLCs, HMIs and CNC parts from every major brand.",
+    "Request a quote for new, surplus and refurbished automation parts. We source obsolete and hard-to-find parts and test before shipping.",
 });
 
 const quoteSteps = [
@@ -21,7 +21,7 @@ const quoteSteps = [
   ["You get price, condition and lead time", BadgeCheck],
   ["Tested before it ships", RefreshCw],
 ] as const;
-const quotePoints = ["New, surplus & refurbished", "Obsolete parts sourced", "Tested before shipping", "Ships to USA & Canada"];
+const quotePoints = ["New, surplus & refurbished", "Obsolete parts sourced", "Tested before shipping", "Ships across the USA"];
 
 const tips = [
   ["Use the full part number", "Include every suffix, e.g. 6SL3120-1TE21-0AA3, not just 6SL3120.", Cpu],
@@ -61,7 +61,7 @@ export default function RequestQuotePage({ searchParams }: { searchParams: Promi
             </ol>
           </nav>
           <h1 className="mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">
-            Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Quote</span>
+            Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Parts Quote</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
             New, surplus, refurbished and obsolete automation parts. Send the part number and get price, condition and lead time.
@@ -72,7 +72,7 @@ export default function RequestQuotePage({ searchParams }: { searchParams: Promi
       <div className="relative mx-auto -mt-16 grid max-w-310 gap-5 px-5 sm:px-8 lg:grid-cols-[1fr_360px]">
         <Suspense fallback={null}><SearchMiss searchParams={searchParams} /></Suspense>
         <QuoteForm />
-        <NextSteps title="How quotes work" steps={quoteSteps} points={quotePoints} urgent="Choose “Urgent” and we’ll prioritise it, or ask about an exchange unit." />
+        <NextSteps title="How quotes work" steps={quoteSteps} points={quotePoints} urgent="Choose “Urgent” and we’ll prioritize it, or ask about an exchange unit." />
       </div>
 
       <section aria-label="Quote tips and questions" className="mx-auto grid max-w-310 gap-5 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_360px]">

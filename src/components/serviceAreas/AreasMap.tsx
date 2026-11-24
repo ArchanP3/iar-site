@@ -7,7 +7,7 @@ import type { Area } from "@/lib/serviceAreas";
 import { NA_DOTS, NA_MAP, naPoint } from "@/lib/naMap";
 import { regionColor } from "@/lib/areaRegions";
 
-/* Animated map for the Service Areas page: routes draw in from our Grand Island, NY repair centre,
+/* Animated map for the Service Areas page: routes draw in from our Grand Island, NY repair center,
    then flow. Every city dot is a real link; hovering (or focusing) one shows a small card. */
 const HUB: [number, number] = [43.033, -78.964];
 const LABELS = new Set(["vancouver", "calgary", "edmonton", "saskatoon", "winnipeg", "montreal", "quebec-city", "halifax", "chicago", "pittsburgh"]);
@@ -24,7 +24,7 @@ export default function AreasMap({ areas, urls }: { areas: Area[]; urls: Record<
 
   return (
     <div className="relative">
-      <svg viewBox={`0 0 ${NA_MAP.width} ${NA_MAP.height}`} className="sa-map sa-dark sa-hero h-auto w-full overflow-visible" role="group" aria-label="Map of the USA with routes from our Grand Island, NY repair centre to the cities we serve">
+      <svg viewBox={`0 0 ${NA_MAP.width} ${NA_MAP.height}`} className="sa-map sa-dark sa-hero h-auto w-full overflow-visible" role="group" aria-label="Map of the USA with routes from our Grand Island, NY repair center to the cities we serve">
         <defs>
           <linearGradient id="sah-route" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stopColor="#C8102E" stopOpacity="0.2" />

@@ -14,15 +14,15 @@ import { WhatsAppIcon, WhatsAppTrigger } from "@/components/WhatsAppButton";
 import { getContact, type Contact } from "@/lib/cms/business";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
-/* Contact page. Confirmed facts only: Grand Island, NY repair centre, the USA incl. on-site,
+/* Contact page. Confirmed facts only: Grand Island, NY repair center, the USA incl. on-site,
    free evaluation, written quote first, 24–72 hr typical
    turnaround once approved, 1-year warranty on repairs, test report, load tested on OEM-standard equipment.
    Phone, email and hours come from src/lib/contact.ts and stay hidden until they are filled in. */
 
 export const generateMetadata = seo("/contact", {
-  title: "Contact IAR | Industrial Repair in Grand Island, New York",
+  title: "Contact IAR | Repair Quote | Grand Island, NY",
   description:
-    "Contact our Grand Island, New York repair centre about servo drive, motor and industrial electronics repair, parts and exchange units. Serving the USA.",
+    "Contact IAR in Grand Island, NY about servo motor, drive and electronics repair, parts and exchange units. Free evaluation on every repair.",
   alternates: { canonical: `${SITE_URL}/contact` },
 });
 
@@ -76,8 +76,8 @@ const quick = [
 const faqs = [
   ["Is the evaluation really free?", "Yes. Every repair starts with a free evaluation, and you get a written quote to approve before any work starts."],
   ["How long does a repair take?", "Typical turnaround is 24 to 72 hours once you approve the quote. If you need it faster, ask about an exchange unit."],
-  ["Which areas do you serve?", "We repair units for customers across the USA at our Grand Island, New York repair centre, and offer on-site service anywhere in the USA. We also ship parts to Canada."],
-  ["How do I send you my unit?", "Ship it to us with any carrier, such as FedEx, UPS or DHL, or request a pickup and we arrange collection from your site."],
+  ["Which areas do you serve?", "Customers across the USA, with on-site service anywhere in the country."],
+  ["How do I send you my unit?", "Ship it with any carrier such as FedEx, UPS or DHL, or request a pickup."],
   ["What warranty do repairs come with?", "Every repaired unit is load tested on OEM-standard equipment, comes with a test report and is covered by a 1-year warranty."],
 ];
 
@@ -111,12 +111,12 @@ export default async function ContactPage() {
   const contact = await getContact();
   const schema = schemaFor(contact);
   const cards = ([
-    contact.phone && { icon: Phone, k: "Call us", v: contact.phone, note: "Toll-free, 24/7 for line-down emergencies · Local 416-904-6155", href: phoneHref(contact.phone) },
+    contact.phone && { icon: Phone, k: "Call us", v: contact.phone, note: "Toll-free, 24/7 for line-down emergencies", href: phoneHref(contact.phone) },
     contact.email && { icon: Mail, k: "Email us", v: contact.email, note: "Attach photos of the nameplate", href: `mailto:${contact.email}` },
     { icon: WhatsAppIcon, k: "Chat with us", v: "Message our team", note: "Message us, send nameplate photos", wa: true },
     { icon: MessageSquare, k: "Send a message", v: "Use the form below", note: "Repairs, parts or anything else", href: "#message" },
     { icon: Wrench, k: "Equipment down?", v: "Request a Repair", note: "Free evaluation, quote first", href: "/request-repair" },
-    { icon: MapPin, k: "Repair centre", v: fullAddress(contact), note: "Serving the USA", href: "#visit" },
+    { icon: MapPin, k: "Repair center", v: fullAddress(contact), note: "Serving the USA", href: "#visit" },
   ].filter(Boolean) as Card[]).slice(0, 4);
 
   return (
@@ -145,7 +145,7 @@ export default async function ContactPage() {
             Let&apos;s get your <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">machine running</span> again.
           </h1>
           <p className="mt-4 max-w-155 text-[15px] leading-[1.65] text-white/75 sm:text-[17px]">
-            Questions about a repair, a part or an exchange unit? Tell us what you have and our team in Grand Island, NY will help, across the USA.
+            Questions about a repair, a part or an exchange unit? Tell us the manufacturer, part number and the fault you’re seeing, and our team in Grand Island, NY will reply with next steps and a quote.
           </p>
         </div>
       </section>
@@ -195,7 +195,7 @@ export default async function ContactPage() {
       {/* ---------- Visit us: address, hours, map ---------- */}
       <section id="visit" aria-labelledby="visit-h" className="mx-auto max-w-310 scroll-mt-28 px-5 pt-14 sm:px-8">
         <p className="text-[11.5px] font-semibold uppercase tracking-[0.22em] text-[#B30E29]">Visit us</p>
-        <h2 id="visit-h" className="mt-2 text-[26px] font-extrabold tracking-[-0.015em] sm:text-[32px]">Our repair centre in Grand Island, NY</h2>
+        <h2 id="visit-h" className="mt-2 text-[26px] font-extrabold tracking-[-0.015em] sm:text-[32px]">Our repair center in Grand Island, NY</h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-[400px_1fr]">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white sm:p-7">
             <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
@@ -204,7 +204,7 @@ export default async function ContactPage() {
             <address className="relative mt-1 text-[19px] font-extrabold not-italic leading-snug sm:text-[20px]">
               {place.street}<br />{place.city}, {place.region} {place.postal}<br />USA
             </address>
-            <p className="relative mt-3 flex items-start gap-2.5 text-[13.5px] text-white/80"><Truck size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Drop-offs welcome during business hours, no appointment needed.</p>
+            <p className="relative mt-3 flex items-start gap-2.5 text-[13.5px] text-white/80"><Truck size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />For servo repair in Buffalo, NY, Niagara Falls and Western New York, bring the unit in with your company name, contact details and a short fault description. No appointment needed.</p>
             {contact.hours.length > 0 && (
               <div className="relative mt-5 border-t border-white/10 pt-4">
                 <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]"><Clock size={14} aria-hidden="true" /> Business hours</p>
@@ -230,7 +230,7 @@ export default async function ContactPage() {
           </div>
           <div className="relative min-h-80 overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-[#EEEEF0] sm:min-h-105">
             <iframe
-              title={`Map: IAR repair centre, ${place.address}`}
+              title={`Map: IAR repair center, ${place.address}`}
               src={mapEmbedUrl}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -290,7 +290,7 @@ export default async function ContactPage() {
                 <circle cx="182" cy="62" r="9" fill="#C8102E" opacity="0.35" />
                 <circle cx="182" cy="62" r="4.5" fill="#fff" />
               </svg>
-              <p className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Repair centre</p>
+              <p className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Repair center</p>
               <p className="relative mt-1 text-[20px] font-extrabold">{fullAddress(contact)}</p>
               <ul className="relative mt-4 space-y-2.5 text-[13.5px] text-white/80">
                 <li className="flex items-start gap-2.5"><Globe2 size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Serving customers across the USA</li>
