@@ -212,7 +212,7 @@ groups.push({
       links: [
         { label: "Repair Process", href: "/#how-we-work", note: "From check-in to test report", icon: Route },
         { label: "How to Ship Us a Unit", href: "/resources/shipping", note: "Packing & pickups", icon: PackageCheck },
-        { label: "Service Areas", href: "/service-areas", note: "All of Canada & the USA", icon: MapPin },
+        { label: "Service Areas", href: "/service-areas", note: "All of the USA", icon: MapPin },
         { label: "International Orders", href: "/international", note: "Parts shipped worldwide", icon: Globe2 },
         { label: "On-site Service", href: "/on-site-service", note: "Technician at your plant", icon: HardHat },
         { label: "Sell Your Surplus", href: "/sell-surplus", note: "Send a list, get an offer", icon: HandCoins },

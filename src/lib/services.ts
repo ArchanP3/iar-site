@@ -45,7 +45,7 @@ export const services: Service[] = [
     icon: "/services/servo-drive.webp",
     color: "#E8354F",
     h1: "Servo Drive Repair",
-    tagline: "Component-level servo amplifier repair from our Mississauga repair centre",
+    tagline: "Component-level servo amplifier repair from our Grand Island, NY repair centre",
     metaTitle: "Servo Drive Repair | Siemens, Indramat, Kinetix, Fanuc | IAR",
     metaDescription:
       "Servo drive and servo amplifier repair at component level. IAR load tests every drive with a motor, ships a test report and backs it with a one-year warranty.",
@@ -122,7 +122,7 @@ export const services: Service[] = [
     tagline: "AC drive, VFD and DC drive repair at component level",
     metaTitle: "VFD & AC/DC Drive Repair | PowerFlex, ACS, Altivar | IAR",
     metaDescription:
-      "VFD and AC drive repair, inverter repair and DC drive repair in Mississauga. Free evaluation, load tested, one-year warranty. Canada & USA.",
+      "VFD and AC drive repair, inverter repair and DC drive repair in Grand Island, NY. Free evaluation, load tested, one-year warranty. Serving the USA.",
     answerQ: "Can a VFD be repaired?",
     answer:
       "Yes. Our VFD repair service covers power modules, DC bus capacitors, control boards and cooling on AC drives, plus analog and digital DC drives. Each drive is load tested before it leaves our bench and comes back with a test report and a one-year warranty.",
@@ -176,7 +176,7 @@ export const services: Service[] = [
     tagline: "Servo motor repair and rebuilding by experienced servo motor rebuilders",
     metaTitle: "Servo Motor Repair & Rebuilds | 1FK7, MKD, Fanuc αi | IAR",
     metaDescription:
-      "AC and DC servo motor repair and rebuilding: bearings, windings, brakes and encoder alignment. Free evaluation, load tested, one-year warranty. Canada & USA.",
+      "AC and DC servo motor repair and rebuilding: bearings, windings, brakes and encoder alignment. Free evaluation, load tested, one-year warranty. Serving the USA.",
     answerQ: "Can a servo motor be repaired?",
     answer:
       "Yes. As experienced servo motor rebuilders we replace bearings and seals, test and rewind windings, rebuild brakes and align feedback to factory specification. Every motor finishes with a run test under load, a test report and a one-year warranty — usually far below the price of a new motor.",
@@ -234,7 +234,7 @@ export const services: Service[] = [
     tagline: "Spindle motor repair and industrial motor winding repair",
     metaTitle: "Spindle Motor Repair & AC/DC Motor Repair | IAR",
     metaDescription:
-      "Spindle motor repair, AC induction and DC motor repair and rewinding. Load tested in Mississauga with a one-year warranty. Canada & USA.",
+      "Spindle motor repair, AC induction and DC motor repair and rewinding. Load tested in Grand Island, NY with a one-year warranty. Serving the USA.",
     answerQ: "Can a spindle motor be repaired?",
     answer:
       "Yes. We repair CNC spindle motors, AC induction motors and DC motors — bearings, balancing, rewinding and commutator work — then run each motor under load. It ships back with a test report and our one-year warranty.",
@@ -284,7 +284,7 @@ export const services: Service[] = [
     tagline: "Encoder repair, resolver repair and encoder alignment service",
     metaTitle: "Encoder Repair & Servo Encoder Alignment | IAR",
     metaDescription:
-      "Servo motor encoder repair, resolver repair and encoder alignment to factory specification. Tested on the matching drive. Mississauga, Canada & USA.",
+      "Servo motor encoder repair, resolver repair and encoder alignment to factory specification. Tested on the matching drive. Grand Island, NY, the USA.",
     answerQ: "Does a new servo encoder need to be aligned?",
     answer:
       "Yes. We repair or replace encoders and resolvers, then align them to the motor's commutation offset on the matching drive. A misaligned encoder causes position alarms and lost torque, so every motor is run and checked after alignment and covered by our one-year warranty.",
@@ -337,7 +337,7 @@ export const services: Service[] = [
     tagline: "PLC module repair for CPUs, I/O and communication cards",
     metaTitle: "PLC Repair | Siemens S7, SLC 500, ControlLogix | IAR",
     metaDescription:
-      "PLC repair service for CPUs, I/O and communication modules — Siemens, Allen-Bradley, Omron and more. Free evaluation, one-year warranty. Mississauga.",
+      "PLC repair service for CPUs, I/O and communication modules — Siemens, Allen-Bradley, Omron and more. Free evaluation, one-year warranty. Grand Island, NY.",
     answerQ: "Can a PLC be repaired?",
     answer:
       "Yes. We repair PLC CPUs, power supplies, I/O and communication modules at component level and test them on a working rack before they ship. Discontinued modules are often repairable when new ones are no longer sold, and every repair carries our one-year warranty.",
@@ -386,7 +386,7 @@ export const services: Service[] = [
     tagline: "HMI repair, touch screen repair and operator panel repair",
     metaTitle: "HMI Repair | Touchscreen & Operator Panel Repair | IAR",
     metaDescription:
-      "HMI repair, touch screen repair and operator panel repair: dead touch, dim backlights, cracked screens and boot faults. One-year warranty. Mississauga.",
+      "HMI repair, touch screen repair and operator panel repair: dead touch, dim backlights, cracked screens and boot faults. One-year warranty. Grand Island, NY.",
     answerQ: "Can an HMI touchscreen be repaired?",
     answer:
       "Yes. We repair HMIs and operator panels with dead or drifting touch, dim or failed backlights, cracked screens and boot faults, keeping your program in place wherever the unit allows. Each panel is powered up and function-tested before it ships with our one-year warranty.",
@@ -474,7 +474,7 @@ export const services: Service[] = [
     faqs: [
       { q: "Do you repair older CNC controls like the SINUMERIK 840C?", a: "Yes. We repair older and discontinued CNC controls at component level, so proven machine tools keep running." },
       { q: "Will I lose my machine data or parameters?", a: "Back up your machine data and parameters before you ship any control or board that stores them." },
-      { q: "Can a technician come to my machine?", a: "Yes. Our technicians provide on-site service calls across Canada and the United States." },
+      { q: "Can a technician come to my machine?", a: "Yes. Our technicians provide on-site service calls across the United States." },
       { q: "What warranty comes with a CNC repair?", a: "Every CNC repair comes with a 1-year warranty." },
     ],
     related: ["servo-drive-repair", "industrial-motor-repair", "power-supply-repair", "hmi-repair"],
@@ -490,7 +490,7 @@ export const services: Service[] = [
     tagline: "Industrial power supply repair with full load testing",
     metaTitle: "Industrial Power Supply Repair | Line Modules | IAR",
     metaDescription:
-      "Industrial power supply repair: drive supply and line modules plus 24 V DIN-rail supplies, load tested for clean output. One-year warranty. Mississauga.",
+      "Industrial power supply repair: drive supply and line modules plus 24 V DIN-rail supplies, load tested for clean output. One-year warranty. Grand Island, NY.",
     answerQ: "Can an industrial power supply be repaired?",
     answer:
       "Yes. We repair drive power supply and line modules as well as 24 V DIN-rail supplies, then load test them for clean, stable output before they ship. A failing supply can take down a whole cabinet, so every repair carries our one-year warranty.",
@@ -547,7 +547,7 @@ export const services: Service[] = [
     tagline: "Component-level industrial circuit board repair",
     metaTitle: "Controller Card & PCB Repair | IAR",
     metaDescription:
-      "Component-level industrial circuit board repair for controller cards, I/O boards and drive boards, including obsolete boards. One-year warranty. Canada & USA.",
+      "Component-level industrial circuit board repair for controller cards, I/O boards and drive boards, including obsolete boards. One-year warranty. Serving the USA.",
     answerQ: "Can an industrial circuit board be repaired?",
     answer:
       "Yes. We repair controller cards, I/O boards and drive boards at component level, including boards that are no longer made. Each board is tested in a working system or on our test fixtures and comes back with a test report and our one-year warranty.",
@@ -594,7 +594,7 @@ export const services: Service[] = [
     tagline: "Robot servo motor, drive and teach pendant repair",
     metaTitle: "Robotics Repair | Robot Controller & Teach Pendant | IAR",
     metaDescription:
-      "Robot servo motor repair, robot drive and controller repair and teach pendant repair for FANUC, ABB, KUKA and Yaskawa. One-year warranty. Mississauga.",
+      "Robot servo motor repair, robot drive and controller repair and teach pendant repair for FANUC, ABB, KUKA and Yaskawa. One-year warranty. Grand Island, NY.",
     answerQ: "Can a robot teach pendant be repaired?",
     answer:
       "Yes. We repair robot axis servo motors, drive modules, controllers and teach pendants — cracked screens, dead keys, E-stops and enabling switches included. Motors and drives are load tested, pendants are function-tested, and everything carries our one-year warranty.",
@@ -625,7 +625,7 @@ export const services: Service[] = [
     ],
     faqs: [
       { q: "Do you repair robot servo motors?", a: "Yes. We repair robot servo motors, including bearings, brakes, windings and encoders, and align the encoder after repair." },
-      { q: "Can a technician come to the robot cell?", a: "Yes. Our technicians provide on-site service calls across Canada and the United States." },
+      { q: "Can a technician come to the robot cell?", a: "Yes. Our technicians provide on-site service calls across the United States." },
       { q: "How long does robotics repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
       { q: "What warranty comes with a robotics repair?", a: "Every robotics repair comes with a 1-year warranty." },
     ],
@@ -644,7 +644,7 @@ export const services: Service[] = [
     testingTitle: "Every exchange unit, before it ships",
     metaTitle: "Servo Drive & Motor Exchange Program | IAR",
     metaDescription:
-      "Servo exchange program: a tested exchange unit ships right away, your failed unit comes back to our bench. One-year warranty. Canada & USA.",
+      "Servo exchange program: a tested exchange unit ships right away, your failed unit comes back to our bench. One-year warranty. Serving the USA.",
     answerQ: "How does an exchange unit work?",
     answer:
       "When you cannot wait for a repair, we ship a tested exchange unit from our in-stock inventory first. You send back your failed unit once the replacement is running. Exchange units are load tested and covered by our one-year warranty.",
@@ -653,7 +653,7 @@ export const services: Service[] = [
       { t: "Tested before it ships", d: "Every exchange unit is load tested on OEM-standard equipment before it goes out." },
       { t: "Ships once yours arrives", d: "Usually within 1–2 business days of receiving your unit. Need it sooner? Contact us for rush options." },
       { t: "Lower price", d: "Exchange costs less than refurbished because you send us your unit." },
-      { t: "Canada & USA", d: "Exchange units ship to facilities across Canada and the United States." },
+      { t: "Across the USA", d: "Exchange units ship to facilities across the United States." },
       { t: "Condition checked", d: "The final price is confirmed when we check your unit and may be higher depending on its condition." },
     ],
     testing: [
@@ -707,8 +707,8 @@ function more(
     slug, title, group, lucide, color, noun, short, kind, icon: "",
     h1: title,
     tagline: short,
-    metaTitle: `${title} | Canada & USA | IAR`,
-    metaDescription: `${short} ${kind === "repair" ? "Free evaluation, 1-year warranty." : ""} Mississauga, Ontario. Canada & USA.`.replace(/\s+/g, " ").slice(0, 158),
+    metaTitle: `${title} | the USA | IAR`,
+    metaDescription: `${short} ${kind === "repair" ? "Free evaluation, 1-year warranty." : ""} Grand Island, New York. Serving the USA.`.replace(/\s+/g, " ").slice(0, 158),
     answerQ, answer,
     repairs: repairs.map(([t, d]) => ({ t, d })),
     repairsTitle: kind === "repair" ? undefined : "What's included",
@@ -884,7 +884,7 @@ export const moreServices: Service[] = [
     "Rush repair and exchange units when your line is down.",
     "What should I do when my line is down?",
     "Request a repair and tell us your line is down. Your repair goes to the front of the queue. You can also buy an exchange unit: ship us your unit and we ship a tested replacement, usually within 1–2 business days of receiving it. For rush handling, call or email us; rush is quoted separately.",
-    [["Exchange units", "Replacement once your unit arrives."], ["Priority repair", "Line-down jobs go to the front."], ["On-site service", "Technicians across Canada and the USA."]],
+    [["Exchange units", "Replacement once your unit arrives."], ["Priority repair", "Line-down jobs go to the front."], ["On-site service", "Technicians across the USA."]],
     { kind: "service", related: ["exchange", "servo-drive-repair", "servo-motor-repair", "vfd-repair"] }),
   more("failure-analysis", "Failure Analysis Reports", "services", "FileSearch", "#FF5A6E", "failure analysis",
     "Root-cause reports that help stop the same failure happening again.",

@@ -15,8 +15,8 @@ const repairIcons = [Zap, Gauge, Cpu, Radio, CircuitBoard, RefreshCw];
 const testIcons = [Camera, ScanSearch, Gauge, FileCheck2];
 const factSets = {
   repair: [["Free evaluation", ShieldCheck], ["24–72 hr typical", Clock], ["1-year warranty", BadgeCheck], ["Load tested on our benches", Gauge]],
-  service: [["Every brand", BadgeCheck], ["Canada & USA", ShieldCheck], ["Repair centre in Mississauga", Gauge]],
-  cable: [["Any brand", BadgeCheck], ["Built to your length", Gauge], ["Canada & USA", ShieldCheck]],
+  service: [["Every brand", BadgeCheck], ["Across the USA", ShieldCheck], ["Repair centre in Grand Island, NY", Gauge]],
+  cable: [["Any brand", BadgeCheck], ["Built to your length", Gauge], ["Across the USA", ShieldCheck]],
 } as const;
 
 function Eyebrow({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
@@ -48,8 +48,8 @@ export default function ServicePage({ s }: { s: Service }) {
       name: s.h1,
       serviceType: s.h1,
       description: s.answer,
-      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
-      areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Grand Island", addressRegion: "NY", addressCountry: "US" } },
+      areaServed: [{ "@type": "Country", name: "United States" }],
     },
     s.faqs?.length && {
       "@context": "https://schema.org",
@@ -200,7 +200,7 @@ export default function ServicePage({ s }: { s: Service }) {
               <div>
                 <Eyebrow dark>Quality</Eyebrow>
                 <h2 id="test" className="mt-3 text-[26px] font-extrabold leading-tight sm:text-[34px]">{s.testingTitle ?? `How we test every repaired ${noun}`}</h2>
-                <p className="mt-3 text-[15px] leading-[1.7] text-white/70">{kind !== "repair" ? "Checked before it leaves our Mississauga, Ontario repair centre." : isEx ? "An exchange unit has to work the moment you install it. Every one is checked and tested before it leaves our Mississauga, Ontario repair centre." : "Parts replaced is not the same as fixed. Every unit is proven under power before it leaves our Mississauga, Ontario repair centre."}</p>
+                <p className="mt-3 text-[15px] leading-[1.7] text-white/70">{kind !== "repair" ? "Checked before it leaves our Grand Island, New York repair centre." : isEx ? "An exchange unit has to work the moment you install it. Every one is checked and tested before it leaves our Grand Island, New York repair centre." : "Parts replaced is not the same as fixed. Every unit is proven under power before it leaves our Grand Island, New York repair centre."}</p>
               </div>
               <ol className="grid gap-3 sm:grid-cols-2">
                 {s.testing.map((t, i) => {
@@ -325,7 +325,7 @@ export default function ServicePage({ s }: { s: Service }) {
             <div>
               <h2 className="text-[26px] font-extrabold leading-tight sm:text-[32px]">{isCable ? "Need a cable? We'll build it to match." : kind === "service" ? "Let's keep your line running." : `${isEx ? "Line" : Noun} down? Let's get it running again.`}</h2>
               <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[14px] text-white/85">
-                {(kind === "repair" ? ["Free evaluation", "No work without your approval", "1-year warranty"] : ["Any brand", "Canada & USA", "We confirm details before we start"]).map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
+                {(kind === "repair" ? ["Free evaluation", "No work without your approval", "1-year warranty"] : ["Any brand", "Across the USA", "We confirm details before we start"]).map((t) => <span key={t} className="inline-flex items-center gap-1.5"><Check size={14} aria-hidden="true" />{t}</span>)}
               </p>
             </div>
             <div className="grid gap-3 sm:flex sm:flex-wrap lg:flex-nowrap">

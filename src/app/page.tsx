@@ -25,7 +25,7 @@ const siteLd = {
       logo: { "@type": "ImageObject", url: `${SITE_URL}/iar-logo.png` },
       ...(contact.email ? { email: contact.email } : {}), ...(contact.phone ? { telephone: contact.phone } : {}),
       address: postalAddress, geo, openingHoursSpecification: openingHours,
-      areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+      areaServed: [{ "@type": "Country", name: "United States" }],
     },
   ],
 };

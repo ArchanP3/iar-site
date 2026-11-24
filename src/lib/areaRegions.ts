@@ -22,7 +22,7 @@ const USA: Region[] = [
 ];
 
 export const REGIONS: Region[] =
-  SITE_COUNTRY === "US" ? USA : SITE_COUNTRY === "CA" ? CANADA : [...CANADA, { key: "us", label: "United States", color: "#F43F5E", match: (a) => a.country === "US" }];
+  SITE_COUNTRY === "CA" ? CANADA : USA; // repairs are USA-only
 export const regionColor = (a: Area) => REGIONS.find((r) => r.match(a))?.color ?? "#F31D3D";
 /** Regions that have at least one of these cities (for filter tabs and map legends). */
 export const regionsIn = (list: Area[]) => REGIONS.filter((r) => list.some(r.match));

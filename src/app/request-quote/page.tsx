@@ -21,7 +21,7 @@ const quoteSteps = [
   ["You get price, condition and lead time", BadgeCheck],
   ["Tested before it ships", RefreshCw],
 ] as const;
-const quotePoints = ["New, surplus & refurbished", "Obsolete parts sourced", "Tested before shipping", "Canada & USA"];
+const quotePoints = ["New, surplus & refurbished", "Obsolete parts sourced", "Tested before shipping", "Ships to USA & Canada"];
 
 const tips = [
   ["Use the full part number", "Include every suffix, e.g. 6SL3120-1TE21-0AA3, not just 6SL3120.", Cpu],

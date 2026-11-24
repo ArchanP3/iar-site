@@ -58,8 +58,8 @@ export default function BrandPage({ b }: { b: Brand }) {
       name: `${b.name} repair`,
       serviceType: `${b.name} drive, motor and control repair`,
       description: answer,
-      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
-      areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+      provider: { "@type": "LocalBusiness", name: "Industrial Automation Repair Inc.", address: { "@type": "PostalAddress", addressLocality: "Grand Island", addressRegion: "NY", addressCountry: "US" } },
+      areaServed: [{ "@type": "Country", name: "United States" }],
     },
     {
       "@context": "https://schema.org",

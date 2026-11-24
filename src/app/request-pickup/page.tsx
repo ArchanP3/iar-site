@@ -10,7 +10,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 export const generateMetadata = seo("/request-pickup", {
   title: "Request a Pickup | Servo Drive & Motor Repair | IAR",
   description:
-    "Book a pickup for your servo drive, motor or industrial electronics repair with FedEx, Purolator, UPS or DHL. Free evaluation. Canada & USA.",
+    "Book a pickup for your servo drive, motor or industrial electronics repair with FedEx, UPS or DHL. Free evaluation. Serving the USA.",
 });
 
 const pickupSteps = [
@@ -19,7 +19,7 @@ const pickupSteps = [
   ["You get the pickup confirmation", CalendarCheck],
   ["Free evaluation when it arrives", FileText],
 ] as const;
-const pickupPoints = ["FedEx · Purolator · UPS · DHL", "Canada & USA", "Free evaluation", "1-year warranty"];
+const pickupPoints = ["FedEx · UPS · DHL", "Across the USA", "Free evaluation", "1-year warranty"];
 
 const tips = [
   ["Pack it well", "Anti-static bag for electronics, at least 5 cm of padding on every side, sturdy box.", PackageOpen],
@@ -28,8 +28,8 @@ const tips = [
 ] as const;
 
 const faqs = [
-  ["Which carriers can pick up my unit?", "FedEx, Purolator, UPS or DHL. Choose the one you prefer, or let us pick."],
-  ["Do you pick up in the United States?", "Yes. We arrange pickups from facilities across Canada and the United States."],
+  ["Which carriers can pick up my unit?", "FedEx, UPS or DHL. Choose the one you prefer, or let us pick."],
+  ["Do you pick up in the United States?", "Yes. We arrange pickups from facilities across the United States."],
   ["Is the evaluation free?", "Yes. When your unit arrives we test it, find the root cause and send a written quote. No work starts without your approval."],
 ];
 
@@ -61,7 +61,7 @@ export default function RequestPickupPage() {
             Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Pickup</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
-            We collect your servo drive, motor or control from your facility with FedEx, Purolator, UPS or DHL and bring it to our Mississauga repair centre for a free evaluation.
+            We collect your servo drive, motor or control from your facility with FedEx, UPS or DHL and bring it to our Grand Island, NY repair centre for a free evaluation.
           </p>
         </div>
       </section>

@@ -14,15 +14,15 @@ import { WhatsAppIcon, WhatsAppTrigger } from "@/components/WhatsAppButton";
 import { getContact, type Contact } from "@/lib/cms/business";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
-/* Contact page. Confirmed facts only: Mississauga ON repair centre, Canada & USA incl. on-site,
+/* Contact page. Confirmed facts only: Grand Island, NY repair centre, the USA incl. on-site,
    free evaluation, written quote first, 24–72 hr typical
    turnaround once approved, 1-year warranty on repairs, test report, load tested on OEM-standard equipment.
    Phone, email and hours come from src/lib/contact.ts and stay hidden until they are filled in. */
 
 export const generateMetadata = seo("/contact", {
-  title: "Contact IAR | Industrial Repair in Mississauga, Ontario",
+  title: "Contact IAR | Industrial Repair in Grand Island, New York",
   description:
-    "Contact our Mississauga, Ontario repair centre about servo drive, motor and industrial electronics repair, parts and exchange units. Serving Canada & USA.",
+    "Contact our Grand Island, New York repair centre about servo drive, motor and industrial electronics repair, parts and exchange units. Serving the USA.",
   alternates: { canonical: `${SITE_URL}/contact` },
 });
 
@@ -76,8 +76,8 @@ const quick = [
 const faqs = [
   ["Is the evaluation really free?", "Yes. Every repair starts with a free evaluation, and you get a written quote to approve before any work starts."],
   ["How long does a repair take?", "Typical turnaround is 24 to 72 hours once you approve the quote. If you need it faster, ask about an exchange unit."],
-  ["Do you cover the USA as well as Canada?", "Yes. We repair units for customers across Canada and the USA from our Mississauga, Ontario repair centre, and offer on-site service in both countries."],
-  ["How do I send you my unit?", "Ship it to us with any carrier, such as FedEx, Purolator, UPS or DHL, or request a pickup and we arrange collection from your site."],
+  ["Which areas do you serve?", "We repair units for customers across the USA at our Grand Island, New York repair centre, and offer on-site service anywhere in the USA. We also ship parts to Canada."],
+  ["How do I send you my unit?", "Ship it to us with any carrier, such as FedEx, UPS or DHL, or request a pickup and we arrange collection from your site."],
   ["What warranty do repairs come with?", "Every repaired unit is load tested on OEM-standard equipment, comes with a test report and is covered by a 1-year warranty."],
 ];
 
@@ -93,7 +93,7 @@ const schemaFor = (contact: Contact) => ({
         name: "Industrial Automation Repair Inc.",
         url: SITE_URL,
         address: postalAddress, geo, openingHoursSpecification: openingHours,
-        areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+        areaServed: [{ "@type": "Country", name: "United States" }],
         ...(contact.phone ? { telephone: contact.phone } : {}),
         ...(contact.email ? { email: contact.email } : {}),
       },
@@ -116,7 +116,7 @@ export default async function ContactPage() {
     { icon: WhatsAppIcon, k: "Chat with us", v: "Message our team", note: "Message us, send nameplate photos", wa: true },
     { icon: MessageSquare, k: "Send a message", v: "Use the form below", note: "Repairs, parts or anything else", href: "#message" },
     { icon: Wrench, k: "Equipment down?", v: "Request a Repair", note: "Free evaluation, quote first", href: "/request-repair" },
-    { icon: MapPin, k: "Repair centre", v: fullAddress(contact), note: "Serving Canada & USA", href: "#visit" },
+    { icon: MapPin, k: "Repair centre", v: fullAddress(contact), note: "Serving the USA", href: "#visit" },
   ].filter(Boolean) as Card[]).slice(0, 4);
 
   return (
@@ -145,7 +145,7 @@ export default async function ContactPage() {
             Let&apos;s get your <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">machine running</span> again.
           </h1>
           <p className="mt-4 max-w-155 text-[15px] leading-[1.65] text-white/75 sm:text-[17px]">
-            Questions about a repair, a part or an exchange unit? Tell us what you have and our team in Mississauga will help, across Canada and the USA.
+            Questions about a repair, a part or an exchange unit? Tell us what you have and our team in Grand Island, NY will help, across the USA.
           </p>
         </div>
       </section>
@@ -195,14 +195,14 @@ export default async function ContactPage() {
       {/* ---------- Visit us: address, hours, map ---------- */}
       <section id="visit" aria-labelledby="visit-h" className="mx-auto max-w-310 scroll-mt-28 px-5 pt-14 sm:px-8">
         <p className="text-[11.5px] font-semibold uppercase tracking-[0.22em] text-[#B30E29]">Visit us</p>
-        <h2 id="visit-h" className="mt-2 text-[26px] font-extrabold tracking-[-0.015em] sm:text-[32px]">Our repair centre in Mississauga</h2>
+        <h2 id="visit-h" className="mt-2 text-[26px] font-extrabold tracking-[-0.015em] sm:text-[32px]">Our repair centre in Grand Island, NY</h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-[400px_1fr]">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white sm:p-7">
             <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-[#C8102E] to-[#FF3B55]"><MapPin size={21} aria-hidden="true" /></span>
             <p className="relative mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Address</p>
             <address className="relative mt-1 text-[19px] font-extrabold not-italic leading-snug sm:text-[20px]">
-              {place.street}<br />{place.city}, {place.region} {place.postal}<br />Canada
+              {place.street}<br />{place.city}, {place.region} {place.postal}<br />USA
             </address>
             <p className="relative mt-3 flex items-start gap-2.5 text-[13.5px] text-white/80"><Truck size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Drop-offs welcome during business hours, no appointment needed.</p>
             {contact.hours.length > 0 && (
@@ -275,7 +275,7 @@ export default async function ContactPage() {
           <aside className="space-y-3 lg:sticky lg:top-28">
             <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
               <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
-              {/* coverage graphic: Mississauga hub reaching Canada & USA */}
+              {/* coverage graphic: Grand Island, NY hub reaching the USA */}
               <svg aria-hidden="true" viewBox="0 0 320 120" className="relative h-auto w-full">
                 <defs>
                   <linearGradient id="arc" x1="0" x2="1"><stop offset="0" stopColor="#FF3B55" stopOpacity="0" /><stop offset="1" stopColor="#FF3B55" /></linearGradient>
@@ -293,9 +293,9 @@ export default async function ContactPage() {
               <p className="relative mt-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]">Repair centre</p>
               <p className="relative mt-1 text-[20px] font-extrabold">{fullAddress(contact)}</p>
               <ul className="relative mt-4 space-y-2.5 text-[13.5px] text-white/80">
-                <li className="flex items-start gap-2.5"><Globe2 size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Serving customers across Canada and the USA</li>
+                <li className="flex items-start gap-2.5"><Globe2 size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Serving customers across the USA</li>
                 <li className="flex items-start gap-2.5"><Truck size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />Ship it in with any carrier, or request a pickup</li>
-                <li className="flex items-start gap-2.5"><MapPin size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />On-site service in both countries</li>
+                <li className="flex items-start gap-2.5"><MapPin size={16} className="mt-0.5 flex-none text-[#FF8A99]" aria-hidden="true" />On-site service anywhere in the USA</li>
               </ul>
               {(contact.phone || contact.email) && (
                 <div className="relative mt-5 space-y-2 border-t border-white/10 pt-4 text-[14px] font-semibold">

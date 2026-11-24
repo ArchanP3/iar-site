@@ -6,16 +6,16 @@
 /* ------------------------------------------------------------------ */
 export const contact = {
   phone: "1-877-904-6155",
-  /** Local Mississauga line */
+  /** Local line */
   localPhone: "416-904-6155",
   email: "info@industrialautomationrepair.com",
-  address: "1299 Matheson Blvd E, Mississauga, ON L4W 1R1",
+  address: "3279 Grand Island Blvd, Grand Island, NY 14072",
   /** Address parts for Google (structured data) and the map */
-  street: "1299 Matheson Blvd E",
-  city: "Mississauga",
-  region: "ON",
-  postal: "L4W 1R1",
-  geo: { lat: 43.6390196, lng: -79.6355506 },
+  street: "3279 Grand Island Blvd",
+  city: "Grand Island",
+  region: "NY",
+  postal: "14072",
+  geo: { lat: 43.0335, lng: -78.9636 },
   /** WhatsApp number with country code, e.g. "+1 905 555 0123". Empty = WhatsApp buttons open the website chat instead. */
   whatsapp: "",
   /** Opening hours for the Contact page, e.g. [["Mon – Fri", "8:00 am – 5:00 pm"], ["Sat – Sun", "Closed"]].
@@ -33,7 +33,7 @@ export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination
 export const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(`${contact.street}, ${contact.city}, ${contact.region} ${contact.postal}`)}&z=16&output=embed`;
 
 /** Google (schema.org) address and opening hours for the repair centre */
-export const postalAddress = { "@type": "PostalAddress", streetAddress: contact.street, addressLocality: contact.city, addressRegion: contact.region, postalCode: contact.postal, addressCountry: "CA" };
+export const postalAddress = { "@type": "PostalAddress", streetAddress: contact.street, addressLocality: contact.city, addressRegion: contact.region, postalCode: contact.postal, addressCountry: "US" };
 export const openingHours = [
   { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
 ];

@@ -48,7 +48,7 @@ export default function SurplusForm() {
             </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <div><label className={label} htmlFor="sp-where">Where is it? <span className="font-normal text-[#62626F]">(city, province or state)</span></label><input id="sp-where" name="Location" className={input} placeholder="e.g. Brampton, ON" /></div>
+            <div><label className={label} htmlFor="sp-where">Where is it? <span className="font-normal text-[#62626F]">(city and state)</span></label><input id="sp-where" name="Location" className={input} placeholder="e.g. Brampton, ON" /></div>
             <div><label className={label} htmlFor="sp-price">Asking price <span className="font-normal text-[#62626F]">(optional)</span></label><input id="sp-price" name="Asking price" className={input} placeholder="Leave blank and we make an offer" /></div>
           </div>
           <div>

@@ -3,9 +3,9 @@ import { fitTitle } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { ArrowRight, BadgeCheck, Building2, ClipboardCheck, FileText, Globe2, MapPin, PackageCheck, Truck, Wrench } from "lucide-react";
+import { ArrowRight, BadgeCheck, Building2, ClipboardCheck, FileText, MapPin, PackageCheck, Truck, Wrench } from "lucide-react";
 import ResourceShell from "@/components/resources/ResourceShell";
-import { areaHere, areas, areaUrl, countryName, getArea, type Area } from "@/lib/serviceAreas";
+import { areaHere, areas, areaUrl, getArea, type Area } from "@/lib/serviceAreas";
 import { getIndustry, industryUrl } from "@/lib/industries";
 import { getService, serviceUrl } from "@/lib/services";
 import { SITE_URL } from "@/lib/site";
@@ -27,20 +27,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a || !areaHere(a)) return {};
   return withSeo(areaUrl(a.slug), {
     title: { absolute: fitTitle(`Servo Drive & Motor Repair for ${place(a)} | IAR`) },
-    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Mississauga, ON centre. ${a.country === "US" ? "Pickup and customs help." : "Pickup or ship-in."} Free evaluation, 1-year warranty.`,
+    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Grand Island, NY centre. Pickup or ship-in. Free evaluation, 1-year warranty.`,
     // City pages are on one country site only, so no .ca/.com hreflang pair.
     alternates: { canonical: `${SITE_URL}${areaUrl(a.slug)}`, languages: {} },
   });
 }
 
 function faqs(a: Area): [string, string][] {
-  const us = a.country === "US";
   return [
-    [`Do you have a repair shop in ${a.city}?`, `No. Every repair is done at our repair centre in Mississauga, Ontario. ${a.dropOff ? "You can drop units off there, or we" : "We"} arrange a pickup from your plant in ${a.city} and ship the unit back when it is done.`],
+    [`Do you have a repair shop in ${a.city}?`, `No. Every repair is done at our repair centre in Grand Island, New York. ${a.dropOff ? "You can drop units off there, or we" : "We"} arrange a pickup from your plant in ${a.city} and ship the unit back when it is done.`],
     [`How long does a repair take for ${a.city} customers?`, "Typical turnaround is 24 to 72 hours once you approve the quote, plus shipping time each way. Need it sooner? Call or email us: rush handling is available for an extra fee."],
-    us
-      ? [`Do I need customs paperwork to send a unit from ${a.city}?`, "Yes, the unit crosses into Canada. Add a commercial invoice marked for repair and return, and we help you with the waybill and the paperwork. For the return shipment, US customs needs your business EIN or your customs broker."]
-      : [`Can a technician come to our plant in ${a.city}?`, "Yes. Our technicians provide on-site service calls across Canada and the United States. Tell us about the machine and we will plan the visit."],
+    [`Can a technician come to our plant in ${a.city}?`, "Yes. Our technicians provide on-site service calls across the United States. Tell us about the machine and we will plan the visit."],
     ["Is the evaluation free?", "Yes. Every repair starts with a free evaluation and a written quote. No work starts until you approve it, and every repair comes with a test report and a 1-year warranty."],
   ];
 }
@@ -64,12 +61,10 @@ async function Content({ params }: Props) {
   const nearby = areas.filter((x) => x.slug !== a.slug && x.region === a.region).slice(0, 6);
 
   const ways: { icon: React.ElementType; t: string; d: string; href?: string }[] = [
-    ...(a.dropOff ? [{ icon: MapPin, t: "Drop it off", d: "Bring it to our Mississauga repair centre during business hours. No appointment needed." }] : []),
-    us
-      ? { icon: PackageCheck, t: "We arrange the pickup", d: `We arrange collection from your plant in ${a.city} and help you with the waybill and customs paperwork.` }
-      : { icon: PackageCheck, t: "Request a pickup", d: `We arrange collection from your dock in ${a.city} and send you the waybill.` },
-    { icon: Truck, t: "Ship it in", d: "Send it with FedEx, Purolator, UPS, DHL or your own carrier account." },
-    { icon: Wrench, t: "On-site service", d: "Technicians across Canada and the USA for jobs that can't leave the machine.", href: "/on-site-service" },
+    ...(a.dropOff ? [{ icon: MapPin, t: "Drop it off", d: "Bring it to our Grand Island, NY repair centre during business hours. No appointment needed." }] : []),
+    { icon: PackageCheck, t: "Request a pickup", d: `We arrange collection from your dock in ${a.city} and send you the waybill.` },
+    { icon: Truck, t: "Ship it in", d: "Send it with FedEx, UPS, DHL or your own carrier account." },
+    { icon: Wrench, t: "On-site service", d: "Technicians across the USA for jobs that can't leave the machine.", href: "/on-site-service" },
   ];
 
   const schema = {
@@ -85,7 +80,7 @@ async function Content({ params }: Props) {
           "@type": "Organization",
           name: "Industrial Automation Repair Inc.",
           url: SITE_URL,
-          address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" },
+          address: { "@type": "PostalAddress", addressLocality: "Grand Island", addressRegion: "NY", addressCountry: "US" },
         },
       },
       { "@type": "FAQPage", mainEntity: q.map(([n, t]) => ({ "@type": "Question", name: n, acceptedAnswer: { "@type": "Answer", text: t } })) },
@@ -102,7 +97,7 @@ async function Content({ params }: Props) {
 
   return (
     <ResourceShell crumb={[{ label: "Service Areas", href: "/service-areas" }, { label: a.city }]} title="Servo drive & motor repair" accent={`for ${a.city}`}
-      text={`Repaired at our Mississauga, Ontario repair centre for manufacturers in ${place(a)}. ${us ? "We arrange the pickup and help with customs." : a.dropOff ? "Drop it off, ship it in or request a pickup." : "Ship it in or request a pickup."}`} schema={schema}>
+      text={`Repaired at our Grand Island, New York repair centre for manufacturers in ${place(a)}. ${a.dropOff ? "Drop it off, ship it in or request a pickup." : "Ship it in or request a pickup."}`} schema={schema}>
       <PageExtras path={areaUrl(a.slug)} />
       {/* How it gets to us */}
       <div className={`grid gap-3 sm:grid-cols-2 ${ways.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
@@ -149,18 +144,6 @@ async function Content({ params }: Props) {
             <p className="mt-3 text-[13.5px] text-[#62626F]">From every major brand, including Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa. <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">See all brands</Link>.</p>
           </section>
 
-          {us && (
-            <section aria-labelledby="border" className="rounded-[24px] border border-[#EAEAEC] bg-white p-6">
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><Globe2 size={20} aria-hidden="true" /></span>
-                <div>
-                  <h2 id="border" className="text-[19px] font-extrabold">Shipping from {a.city} to Canada</h2>
-                  <p className="mt-1.5 text-[14px] leading-relaxed text-[#62626F]">Your unit crosses the border twice: to us for repair, and back to you. We arrange the pickup, help with the waybill and the commercial invoice, and for the return we need your business EIN or your customs broker. Duties and brokerage are paid by the receiver unless we agree otherwise.</p>
-                  <Link href="/resources/shipping" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#A50D25] hover:underline">Shipping guide <ArrowRight size={13} aria-hidden="true" /></Link>
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* FAQ */}
           <section aria-labelledby="faq">
@@ -182,8 +165,8 @@ async function Content({ params }: Props) {
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
             <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
             <p className="relative flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]"><Building2 size={14} aria-hidden="true" /> Our repair centre</p>
-            <p className="relative mt-2 text-[20px] font-extrabold">Mississauga, Ontario</p>
-            <p className="relative mt-1 text-[13.5px] leading-relaxed text-white/70">Serving {a.city} and every city in {countryName(a.country) === "Canada" ? "Canada" : "the USA"}.</p>
+            <p className="relative mt-2 text-[20px] font-extrabold">Grand Island, New York</p>
+            <p className="relative mt-1 text-[13.5px] leading-relaxed text-white/70">Serving {a.city} and every city in the USA.</p>
             <ul className="relative mt-4 space-y-2 text-[13.5px] text-white/85">
               {[[BadgeCheck, "Free evaluation"], [FileText, "Written quote before any work"], [ClipboardCheck, "Test report with every unit"], [BadgeCheck, "1-year warranty"]].map(([I, t]) => {
                 const Icon = I as React.ElementType;

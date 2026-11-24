@@ -85,7 +85,7 @@ export default function RepairForm() {
           { v: "repair", t: "Repair my unit", d: "Free evaluation and quote first", icon: Wrench },
           { v: "exchange", t: "Exchange unit now", d: "Ship us your unit, we ship a tested replacement", icon: Zap },
           need === "on-site"
-            ? { v: "on-site", t: "On-site service", d: "Technician at your facility, Canada & USA", icon: MapPin }
+            ? { v: "on-site", t: "On-site service", d: "Technician at your facility, the USA", icon: MapPin }
             : { v: "unsure", t: "Not sure yet", d: "A technician will advise you", icon: ClipboardCheck },
         ]} />
       </Step>
@@ -93,7 +93,7 @@ export default function RepairForm() {
       <Step n={3} title="Getting it to us">
         <Choice name="Shipping" cols={2} value={ship} onChange={setShip} options={[
             { v: "self", t: "I'll ship it myself", d: "Any carrier. We send you our address", icon: PackageCheck },
-            { v: "pickup", t: "Request a pickup", d: "From your facility with FedEx, Purolator, UPS or DHL", icon: Truck },
+            { v: "pickup", t: "Request a pickup", d: "From your facility with FedEx, UPS or DHL", icon: Truck },
           ]} />
         {ship === "pickup" && (
           <div className="mt-4 space-y-4 rounded-2xl border border-[#EAEAEC] bg-[#FBFBFC] p-4">

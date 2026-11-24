@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps<"/shop/brands/[slug
   const b = await resolveBrand((await params).slug);
   return withSeo(`/shop/brands/${b.slug}`, {
     title: `${b.name} Parts | Quote & Repair`,
-    description: clip(`New, refurbished and exchange ${b.name} drives, motors, controls and boards, or have your ${b.name} unit repaired. Request a quote. Canada & USA.`),
+    description: clip(`New, refurbished and exchange ${b.name} drives, motors, controls and boards, or have your ${b.name} unit repaired. Request a quote. Ships to the USA & Canada.`),
     alternates: { canonical: `/shop/brands/${b.slug}` },
     // Brands without a catalog match list keyword results: keep them out of the index.
     ...(b.exact ? {} : { robots: { index: false, follow: true } }),

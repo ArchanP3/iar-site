@@ -8,7 +8,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/on-site-service", {
   title: "On-site Industrial Repair Service | IAR",
-  description: "On-site technicians for servo drives, CNC controls, PLCs and VFDs across Canada and the USA. Troubleshooting, replacement and start-up at your plant.",
+  description: "On-site technicians for servo drives, CNC controls, PLCs and VFDs across the USA. Troubleshooting, replacement and start-up at your plant.",
   alternates: { canonical: `${SITE_URL}/on-site-service` },
 });
 
@@ -18,7 +18,7 @@ const steps = [
   ["A technician works at your plant", Wrench],
   ["Failed units come to our repair centre", Truck],
 ] as const;
-const points = ["Canada & USA", "Breakdowns & planned visits", "Quote before travel", "Repairs with 1-year warranty"];
+const points = ["Across the USA", "Breakdowns & planned visits", "Quote before travel", "Repairs with 1-year warranty"];
 
 const work = [
   [Search, "Troubleshooting", "Find the fault on the machine: drive, motor, feedback, wiring or control."],
@@ -28,16 +28,16 @@ const work = [
 ] as const;
 
 const faqs: [string, string][] = [
-  ["Where do you provide on-site service?", "Across Canada and the United States. Our repair centre is in Mississauga, Ontario, and technicians travel to your plant."],
+  ["Where do you provide on-site service?", "Across the United States. Our repair centre is in Grand Island, New York, and technicians travel to your plant."],
   ["How much does a service call cost?", "It depends on the location, the travel and the work. We send you the cost before anyone travels, so there are no surprises."],
-  ["What if the part needs a bench repair?", "We bring the failed unit back to our Mississauga repair centre, repair it at component level and test it on our test benches. An exchange unit can keep you running in the meantime."],
+  ["What if the part needs a bench repair?", "We bring the failed unit back to our Grand Island, NY repair centre, repair it at component level and test it on our test benches. An exchange unit can keep you running in the meantime."],
   ["Can you help us before a planned shutdown?", "Yes. Book a planned visit, and tell us the machine and the date so the technician comes prepared."],
 ];
 
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Service", name: "On-site industrial repair service", serviceType: "Field service for industrial automation", url: `${SITE_URL}/on-site-service`, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } } },
+    { "@type": "Service", name: "On-site industrial repair service", serviceType: "Field service for industrial automation", url: `${SITE_URL}/on-site-service`, areaServed: [{ "@type": "Country", name: "United States" }], provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Grand Island", addressRegion: "NY", addressCountry: "US" } } },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
 };
@@ -45,7 +45,7 @@ const schema = {
 export default function OnSitePage() {
   return (
     <ResourceShell crumb={[{ label: "Services", href: "/services" }, { label: "On-site Service" }]} title="A technician" accent="at your machine."
-      text="When the problem can't be shipped, we come to you. On-site troubleshooting, replacement and start-up for servo drives, motors, CNC, PLCs and VFDs across Canada and the USA." schema={schema}>
+      text="When the problem can't be shipped, we come to you. On-site troubleshooting, replacement and start-up for servo drives, motors, CNC, PLCs and VFDs across the USA." schema={schema}>
       <PageExtras path="/on-site-service" />
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         <OnSiteForm />
@@ -88,7 +88,7 @@ export default function OnSitePage() {
           </div>
           <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5">
             <p className="flex items-center gap-2 text-[15px] font-extrabold"><MapPin size={17} className="text-[#B30E29]" aria-hidden="true" /> Where we work</p>
-            <p className="mt-1 text-[13.5px] text-[#62626F]">Manufacturers in every province and state.</p>
+            <p className="mt-1 text-[13.5px] text-[#62626F]">Manufacturers in every state.</p>
             <Link href="/service-areas" className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#A50D25] hover:underline">Service areas <ArrowRight size={14} aria-hidden="true" /></Link>
           </div>
         </div>

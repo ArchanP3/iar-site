@@ -9,7 +9,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-cable", {
   title: "Order a Custom Servo Cable | Feedback & Power Cables | IAR",
-  description: "Order custom servo feedback, power and brake cables for any drive and motor brand, built to your length. Spare critical cables. Canada & USA.",
+  description: "Order custom servo feedback, power and brake cables for any drive and motor brand, built to your length. Spare critical cables. Ships to the USA & Canada.",
 });
 
 const steps = [
@@ -48,7 +48,7 @@ export default function RequestCablePage() {
       </section>
       <div className="relative mx-auto -mt-16 grid max-w-310 gap-5 px-5 pb-14 sm:px-8 lg:grid-cols-[1fr_360px]">
         <CableForm />
-        <NextSteps title="How cable orders work" steps={steps} points={["Any brand", "Any length", "Drag-chain options", "Canada & USA"]} urgent="Cable damaged and the axis is down? Say so in the notes and we'll prioritise it." />
+        <NextSteps title="How cable orders work" steps={steps} points={["Any brand", "Any length", "Drag-chain options", "Ships to USA & Canada"]} urgent="Cable damaged and the axis is down? Say so in the notes and we'll prioritise it." />
       </div>
       <Footer />
     </main>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Boxes, PackageCheck, Wrench } from "lucide-react";
 import { Choice, FormMeta, Step, SubmitBar, Thanks, input, label, useSend } from "./FormParts";
 
-/* Quote request for buyers outside Canada and the USA. They cannot check out online. */
+/* Quote request for buyers outside the USA. They cannot check out online. */
 const countries: [string, string[]][] = [
   ["North & Latin America", ["Mexico"]],
   ["Europe", ["United Kingdom", "Ireland", "France", "Germany", "Spain", "Portugal", "Italy", "Netherlands", "Belgium", "Switzerland", "Austria", "Poland", "Czech Republic", "Sweden", "Denmark", "Norway", "Finland"]],

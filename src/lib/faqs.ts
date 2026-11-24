@@ -113,15 +113,15 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "How do I send my unit for repair?",
-        a: "Request a repair, then ship it to us with any carrier or request a pickup from your facility with FedEx, Purolator, UPS or DHL. Include the full part number and a short description of the fault.",
+        a: "Request a repair, then ship it to us with any carrier or request a pickup from your facility with FedEx, UPS or DHL. Include the full part number and a short description of the fault.",
       },
       {
         q: "Do you serve customers in the United States?",
-        a: "Yes. US plants ship straight to our Mississauga address. Include a commercial invoice marked “for repair and return” so the unit clears customs both ways.",
+        a: "Yes. Plants anywhere in the USA ship straight to our Grand Island, NY repair centre, or we arrange a pickup from your facility.",
       },
       {
-        q: "Do you ship parts outside Canada and the USA?",
-        a: "Yes. We ship industrial automation parts worldwide by air, including to Mexico, Europe, Japan, South Korea and the rest of Asia. Customers outside Canada and the USA request a quote on our International Orders page, or by phone or email, because shipping charges vary by country. The customer pays all duties, import taxes and brokerage fees. Repairs are available for customers in Canada and the USA.",
+        q: "Do you ship parts outside the USA?",
+        a: "Yes. We ship industrial automation parts worldwide by air, including to Canada, Mexico, Europe, Japan, South Korea and the rest of Asia. Customers in Canada can order online; customers in other countries request a quote on our International Orders page, or by phone or email, because shipping charges vary by country. The customer pays all duties, import taxes and brokerage fees. Repairs are available for customers in the USA.",
       },
       {
         q: "What warranty comes with a repair?",
@@ -133,7 +133,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Do you offer on-site service?",
-        a: "Yes. Our technicians provide on-site service calls across Canada and the United States.",
+        a: "Yes. Our technicians provide on-site service calls across the United States.",
       },
       {
         q: "Can I reach a technician outside business hours?",
@@ -141,15 +141,15 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Can I drop off a unit at your repair centre?",
-        a: "Yes. Bring it to our repair centre in Mississauga, Ontario during business hours. No appointment is needed. You can also call us or request a repair online first if you want us to expect it.",
+        a: "Yes. Bring it to our repair centre in Grand Island, New York during business hours. No appointment is needed. You can also call us or request a repair online first if you want us to expect it.",
       },
       {
         q: "Do you have repair shops in other cities?",
-        a: "No. Every repair is done at our one repair centre in Mississauga, Ontario. We serve all of Canada and the USA with pickups, ship-in and on-site service.",
+        a: "No. Every repair is done at our one repair centre in Grand Island, New York. We serve all of the USA with pickups, ship-in and on-site service.",
       },
       {
         q: "Can you arrange a pickup from the USA?",
-        a: "Yes. We arrange pickups from plants across the USA and help you with the waybill and the customs paperwork. For the return shipment we need your business EIN or your customs broker.",
+        a: "Yes. We arrange pickups from plants across the USA with FedEx, UPS or DHL and send you the waybill.",
       },
     ],
   },
@@ -175,10 +175,10 @@ export const moreFaqGroups: FaqGroup[] = [
     label: "Shipping & Customs",
     short: "Customs",
     items: [
-      { q: "Is shipping free?", a: "Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders. You can send units to us with any carrier, request a pickup or drop them off in Mississauga." },
-      { q: "Which carriers do you use?", a: "FedEx, Purolator, UPS and DHL. You can also give us your own carrier account number at checkout or on a pickup request." },
-      { q: "What do you need for shipments to the USA?", a: "Parts ship from Canada, so US customs needs your company's business EIN (IRS number). You enter it at checkout, and it is used only on the customs paperwork for that shipment." },
-      { q: "Who pays duties and brokerage fees?", a: "For shipments between Canada and the USA, duties, taxes and brokerage fees are paid by the receiver unless we agree otherwise." },
+      { q: "Is shipping free?", a: "Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders. You can send units to us with any carrier, request a pickup or drop them off in Grand Island, NY." },
+      { q: "Which carriers do you use?", a: "FedEx, UPS and DHL. You can also give us your own carrier account number at checkout or on a pickup request." },
+      { q: "What do you need for shipments to Canada?", a: "Parts ship from our Grand Island, NY facility, so orders to Canada go through Canadian customs. We prepare the commercial invoice and export paperwork for each shipment." },
+      { q: "Who pays duties and brokerage fees?", a: "For shipments between the USA and Canada, duties, taxes and brokerage fees are paid by the receiver unless we agree otherwise." },
       { q: "How should I pack a unit I send you?", a: "Use an anti-static bag, at least 5 cm (2 in) of padding on every side and a strong box. Our How to Ship Us a Unit guide has the full checklist." },
     ],
   },

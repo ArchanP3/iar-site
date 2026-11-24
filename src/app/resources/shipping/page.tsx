@@ -14,8 +14,8 @@ const steps = [
   { icon: ClipboardList, t: "Request a repair", d: "Send us the part number and what the machine is doing. We reply with your repair confirmation and the shipping details." },
   { icon: HardDrive, t: "Back up your settings", d: "Save parameters and programs before the unit leaves your site. They are not covered by our warranty if they are lost." },
   { icon: Box, t: "Pack it well", d: "Follow the checklist below. Most transit damage comes from too little padding or a weak box." },
-  { icon: FileText, t: "Add the paperwork", d: "Put a note inside with your company, contact, part number and the fault. Shipping from the USA? Add a commercial invoice." },
-  { icon: Truck, t: "Ship it or book a pickup", d: "Send it with FedEx, Purolator, UPS, DHL or any carrier, or request a pickup and we arrange collection." },
+  { icon: FileText, t: "Add the paperwork", d: "Put a note inside with your company, contact, part number and the fault." },
+  { icon: Truck, t: "Ship it or book a pickup", d: "Send it with FedEx, UPS, DHL or any carrier, or request a pickup and we arrange collection." },
   { icon: Camera, t: "We check it in", d: "On arrival your unit is logged, photographed and its condition recorded before the free evaluation starts." },
 ];
 
@@ -51,7 +51,7 @@ export default function ShippingGuidePage() {
       {/* Two ways */}
       <div className="grid gap-4 md:grid-cols-2">
         {[
-          { icon: Truck, t: "Ship it yourself", d: "Send it with FedEx, Purolator, UPS, DHL or any carrier you use. Use the address in your repair confirmation.", cta: "Request a Repair", href: "/request-repair" },
+          { icon: Truck, t: "Ship it yourself", d: "Send it with FedEx, UPS, DHL or any carrier you use. Use the address in your repair confirmation.", cta: "Request a Repair", href: "/request-repair" },
           { icon: PackageCheck, t: "Request a pickup", d: "Tell us where and when. We send a waybill and arrange collection from your dock, billed to your invoice or your carrier account.", cta: "Request a Pickup", href: "/request-pickup" },
         ].map(({ icon: Icon, t, d, cta, href }, i) => (
           <div key={t} className={`rounded-[24px] p-6 sm:p-7 ${i ? "bg-linear-to-br from-[#C8102E] to-[#FF3B55] text-white" : "border border-[#EAEAEC] bg-white shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)]"}`}>
@@ -113,21 +113,21 @@ export default function ShippingGuidePage() {
         </div>
       </section>
 
-      {/* Cross-border */}
-      <section aria-labelledby="usa" className="mt-12 rounded-[24px] border border-[#EAEAEC] bg-white p-6 sm:p-8">
+      {/* Parts to Canada */}
+      <section aria-labelledby="canada" className="mt-12 rounded-[24px] border border-[#EAEAEC] bg-white p-6 sm:p-8">
         <div className="flex items-start gap-4">
           <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-[#C8102E]/8 text-[#B30E29]"><Globe2 size={22} aria-hidden="true" /></span>
           <div>
-            <h2 id="usa" className="text-[22px] font-extrabold">Shipping from the USA</h2>
+            <h2 id="canada" className="text-[22px] font-extrabold">Shipping parts to Canada</h2>
             <p className="mt-1.5 max-w-190 text-[14.5px] leading-relaxed text-[#62626F]">
-              Our repair centre is in Mississauga, Ontario, so units from the USA cross the border. Add a commercial invoice to the shipment that shows:
+              Parts ship from our Grand Island, New York facility, so orders to Canada cross the border. Every shipment goes out with:
             </p>
             <ul className="mt-3 grid gap-2 text-[14px] text-[#131316] sm:grid-cols-2">
-              {["Marked \"for repair and return\"", "Part number, description and quantity", "Value of the unit", "Country of origin of the unit", "Your company, address and contact", "Our details from your repair confirmation"].map((x) => (
+              {["A commercial invoice prepared by us", "Part number, description and quantity", "Value and country of origin", "Your company, address and contact"].map((x) => (
                 <li key={x} className="flex gap-2"><CheckCircle2 size={17} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />{x}</li>
               ))}
             </ul>
-            <p className="mt-4 text-[13px] text-[#696976]">When we ship the unit back, US customs needs your business EIN (IRS number). Add it to your repair request, or enter it at checkout for parts orders. Duties and brokerage fees are paid by the receiver unless we agree otherwise.</p>
+            <p className="mt-4 text-[13px] text-[#696976]">Duties, taxes and brokerage fees on shipments to Canada are paid by the receiver unless we agree otherwise. Repair services are for customers in the USA.</p>
           </div>
         </div>
       </section>
@@ -136,12 +136,12 @@ export default function ShippingGuidePage() {
         <div className="flex items-start gap-4">
           <span className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-[#C8102E]/8 text-[#B30E29]"><Globe2 size={22} aria-hidden="true" /></span>
           <div>
-            <h2 id="intl" className="text-[22px] font-extrabold">Ordering parts from outside Canada and the USA</h2>
+            <h2 id="intl" className="text-[22px] font-extrabold">Ordering parts from outside the USA and Canada</h2>
             <p className="mt-1.5 max-w-190 text-[14.5px] leading-relaxed text-[#62626F]">
-              We ship industrial automation parts worldwide by air, including to Mexico, Europe, Japan, South Korea and the rest of Asia. Online ordering is for Canada and the USA, so customers in other countries send us an <Link href="/international" className="font-semibold text-[#A50D25] hover:underline">international quote request</Link>.
+              We ship industrial automation parts worldwide by air, including to Canada, Mexico, Europe, Japan, South Korea and the rest of Asia. Online ordering is for the USA and Canada, so customers in other countries send us an <Link href="/international" className="font-semibold text-[#A50D25] hover:underline">international quote request</Link>.
             </p>
             <ul className="mt-3 grid gap-2 text-[14px] text-[#131316] sm:grid-cols-2">
-              {["Shipping charges vary by country and are quoted with your order", "You pay all duties, import taxes and brokerage fees", "We prepare the commercial invoice and export paperwork", "Repairs are for customers in Canada and the USA"].map((x) => (
+              {["Shipping charges vary by country and are quoted with your order", "You pay all duties, import taxes and brokerage fees", "We prepare the commercial invoice and export paperwork", "Repairs are for customers in the USA"].map((x) => (
                 <li key={x} className="flex gap-2"><CheckCircle2 size={17} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />{x}</li>
               ))}
             </ul>

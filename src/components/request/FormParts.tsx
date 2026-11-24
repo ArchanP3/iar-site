@@ -64,7 +64,7 @@ export function DetailsFields({ prefix, location = true }: { prefix: string; loc
         <>
           <div>
             <label className={label} htmlFor={f("country")}>Country</label>
-            <select id={f("country")} name="Country" className={input}><option>Canada</option><option>United States</option></select>
+            <select id={f("country")} name="Country" className={input}><option>United States</option><option>Canada</option></select>
           </div>
           <div><label className={label} htmlFor={f("postal")}>Postal / ZIP code</label><input id={f("postal")} name="Postal code" className={input} autoComplete="postal-code" /></div>
         </>
@@ -81,18 +81,18 @@ export function AddressFields({ prefix }: { prefix: string }) {
       <div className="sm:col-span-4"><label className={label} htmlFor={f("street")}>Street address *</label><input id={f("street")} name="Pickup street" required className={input} autoComplete="address-line1" /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("suite")}>Unit / dock <span className="font-normal text-[#62626F]">(optional)</span></label><input id={f("suite")} name="Pickup unit or dock" className={input} autoComplete="address-line2" /></div>
       <div className="sm:col-span-2"><label className={label} htmlFor={f("city")}>City *</label><input id={f("city")} name="Pickup city" required className={input} autoComplete="address-level2" /></div>
-      <div className="sm:col-span-2"><label className={label} htmlFor={f("region")}>Province / State *</label><input id={f("region")} name="Pickup province or state" required className={input} autoComplete="address-level1" /></div>
-      <div className="sm:col-span-2"><label className={label} htmlFor={f("postal")}>Postal / ZIP *</label><input id={f("postal")} name="Pickup postal code" required className={input} autoComplete="postal-code" /></div>
+      <div className="sm:col-span-2"><label className={label} htmlFor={f("region")}>State *</label><input id={f("region")} name="Pickup province or state" required className={input} autoComplete="address-level1" /></div>
+      <div className="sm:col-span-2"><label className={label} htmlFor={f("postal")}>ZIP code *</label><input id={f("postal")} name="Pickup postal code" required className={input} autoComplete="postal-code" /></div>
       <div className="sm:col-span-3">
         <label className={label} htmlFor={f("country")}>Country</label>
-        <select id={f("country")} name="Pickup country" className={input} autoComplete="country-name"><option>Canada</option><option>United States</option></select>
+        <select id={f("country")} name="Pickup country" className={input} autoComplete="country-name"><option>United States</option></select>
       </div>
     </div>
   );
 }
 
 /* Preferred carrier: names only, no logos */
-const carriers = ["FedEx", "Purolator", "UPS", "DHL", "No preference"];
+const carriers = ["FedEx", "UPS", "DHL", "No preference"];
 
 export function CarrierPicker({ prefix, value, onChange }: { prefix: string; value: string; onChange: (v: string) => void }) {
   return (
