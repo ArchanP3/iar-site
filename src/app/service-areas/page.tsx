@@ -15,9 +15,9 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 const text = {
   CA: {
     title: "Service Areas: Industrial Repair Across Canada | IAR",
-    description: "One repair centre in Grand Island, New York serving manufacturers across Canada: drop-off, pickup, ship-in and on-site service.",
+    description: "One repair center in Grand Island, New York serving manufacturers across Canada: drop-off, pickup, ship-in and on-site service.",
     accent: "All of Canada.",
-    intro: "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax.",
+    intro: "Every repair is done at our repair center in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax.",
     stats: [["provinces", "Provinces"], ["cities", "Canadian cities"]],
     everywhere: "Every city in Canada",
     anywhere: "Request a pickup from anywhere in Canada, or book a technician for on-site service at your plant.",
@@ -25,9 +25,9 @@ const text = {
   },
   US: {
     title: "Service Areas: Industrial Repair for US Manufacturers | IAR",
-    description: "Servo drive, motor and industrial electronics repair for US manufacturers: pickup from your plant, repaired at our centre in Grand Island, New York.",
+    description: "Servo drive, motor and industrial electronics repair for US manufacturers: pickup from your plant, repaired at our center in Grand Island, New York.",
     accent: "Serving the USA.",
-    intro: "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA.",
+    intro: "Every repair is done at our repair center in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA.",
     stats: [["states", "States"], ["cities", "US cities"]],
     everywhere: "Every city in the USA",
     anywhere: "Request a pickup from anywhere in the USA, or book a technician for on-site service at your plant.",
@@ -37,8 +37,8 @@ const text = {
 const split = SITE_COUNTRY !== null;
 
 export const generateMetadata = seo("/service-areas", {
-  title: split ? text.title : "Service Areas: Industrial Repair Across the USA | IAR",
-  description: split ? text.description : "One repair centre in Grand Island, New York serving manufacturers across the USA: drop-off, pickup, ship-in and on-site service.",
+  title: split ? text.title : "Service Areas | Industrial Repair Across the USA | IAR",
+  description: split ? text.description : "One repair center in Grand Island, NY serving manufacturers in all 50 states: drop-off, pickup, ship-in and on-site service.",
   alternates: { canonical: `${SITE_URL}/service-areas` },
 });
 
@@ -101,16 +101,16 @@ export default function ServiceAreasPage() {
             </nav>
             <p className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/6 px-3.5 py-1.5 text-[12px] font-semibold text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur">
               <span className="relative flex h-2 w-2"><span className="sa-ping absolute inset-0 rounded-full bg-[#FF3B55]" /><span className="relative h-2 w-2 rounded-full bg-[#FF3B55]" /></span>
-              Repair centre · Grand Island, New York
+              Repair center · Grand Island, New York
             </p>
             <h1 className="mt-4 text-[34px] font-extrabold leading-[1.06] tracking-[-0.025em] sm:text-[48px] lg:text-[54px]">
-              One repair centre.{" "}
-              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "All of the USA."}</span>
+              Industrial Repair{" "}
+              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "Across the USA"}</span>
             </h1>
             <p className="mt-4 max-w-140 text-[15px] leading-[1.7] text-white/72 sm:text-[16.5px]">
               {split
                 ? text.intro
-                : "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA."}
+                : "Every repair is done at our repair center in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA. We also provide industrial electronics repair across the USA for plants that can’t spare a technician."}
             </p>
             <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_16px_34px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5">
@@ -134,7 +134,7 @@ export default function ServiceAreasPage() {
           <div className="relative">
             <AreasMap areas={areas} urls={urls} />
             <div className="mt-1 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[12px] font-semibold text-white/60 lg:justify-end">
-              <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 border-[#FF3B55] bg-white" aria-hidden="true" />Our repair centre</span>
+              <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 border-[#FF3B55] bg-white" aria-hidden="true" />Our repair center</span>
               {regions.map((r) => <span key={r.key} className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 bg-[#0A0A0C]" style={{ borderColor: r.color }} aria-hidden="true" />{r.label}</span>)}
               <span className="text-white/60"><span className="hidden sm:inline">Hover a city · </span>{split ? text.everywhere : "Every city in the USA"} served</span>
             </div>

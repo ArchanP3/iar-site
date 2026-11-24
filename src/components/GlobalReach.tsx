@@ -31,12 +31,13 @@ export default function GlobalReach() {
               Global Reach
             </p>
             <h2 id="worldwide-heading" className="mt-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#131316] sm:text-[36px] lg:text-[40px]">
-              Serving Customers{" "}
-              <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">Worldwide</span>
+              Parts Shipped{" "}
+              <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">Nationwide &amp; Worldwide</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
-              Industrial automation parts shipped by air to manufacturers across North America, Europe and Asia, from our
-              repair centre in Grand Island, New York.
+              Repairs are for customers in the United States. Parts ship by air from Grand Island, NY to plants across the
+              USA and to Canada, Mexico, Europe and Asia. Buying from outside the USA? Send your part numbers and we quote
+              price, shipping and lead time.
             </p>
           </div>
           <Link

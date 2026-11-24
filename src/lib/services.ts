@@ -16,6 +16,8 @@ export type Service = {
   facts?: string[];
   color: string; // card metal tint on /services
   h1: string;
+  /** opening paragraph under the headline (wording doc) */
+  intro?: string;
   tagline: string;
   metaTitle: string;
   metaDescription: string;
@@ -45,10 +47,12 @@ export const services: Service[] = [
     icon: "/services/servo-drive.webp",
     color: "#E11D3A",
     h1: "Servo Drive Repair",
-    tagline: "Component-level servo amplifier repair from our Grand Island, NY repair centre",
-    metaTitle: "Servo Drive Repair | Siemens, Indramat, Kinetix, Fanuc | IAR",
+    intro:
+      "We provide servo drive repair across the USA: component-level repair of servo amplifiers, spindle drives and line modules, tested on a motor under load. Common jobs include SINAMICS S120 repair, SIMODRIVE 611 repair, Kinetix drive repair, IndraDrive repair and FANUC amplifier repair, plus Yaskawa Servopack repair, Mitsubishi MR-J4 repair, Lexium servo drive repair and Kollmorgen AKD repair.",
+    tagline: "Component-level servo amplifier repair from our Grand Island, NY repair center",
+    metaTitle: "Servo Drive Repair | Siemens, Indramat, Kinetix, FANUC | IAR",
     metaDescription:
-      "Servo drive and servo amplifier repair at component level. IAR load tests every drive with a motor, ships a test report and backs it with a one-year warranty.",
+      "Servo drive and servo amplifier repair for US plants: SINAMICS, SIMODRIVE, Indramat, Kinetix and FANUC. Load tested, 1-year warranty.",
     answerQ: "Can a servo drive be repaired?",
     answer:
       "Usually, yes. A failed servo drive can stop a machine as fast as a failed motor, and most drives are repairable at component level. We find why it failed, replace the faulty parts and test the drive with a motor under load. It ships back with a test report and our one-year warranty.",
@@ -119,10 +123,12 @@ export const services: Service[] = [
     icon: "/services/vfd-drive.webp",
     color: "#E11D3A",
     h1: "VFD & AC/DC Drive Repair",
+    intro:
+      "Variable frequency drives fail on power sections, DC bus capacitors, fans and control boards. We repair them to component level and run them on a motor before they ship — including PowerFlex drive repair, ABB ACS880 repair and Altivar drives, plus analog and digital DC drives.",
     tagline: "AC drive, VFD and DC drive repair at component level",
     metaTitle: "VFD & AC/DC Drive Repair | PowerFlex, ACS, Altivar | IAR",
     metaDescription:
-      "VFD and AC drive repair, inverter repair and DC drive repair in Grand Island, NY. Free evaluation, load tested, one-year warranty. Serving the USA.",
+      "VFD repair, AC drive and DC drive repair for PowerFlex, ABB ACS, Altivar and more. Free evaluation, load tested, 1-year warranty.",
     answerQ: "Can a VFD be repaired?",
     answer:
       "Yes. Our VFD repair service covers power modules, DC bus capacitors, control boards and cooling on AC drives, plus analog and digital DC drives. Each drive is load tested before it leaves our bench and comes back with a test report and a one-year warranty.",
@@ -172,11 +178,13 @@ export const services: Service[] = [
     short: "AC and DC servo motor repair and rebuilding — bearings, windings, brakes and feedback.",
     icon: "/services/servo-motor.webp",
     color: "#E11D3A",
-    h1: "Servo Motor Repair",
+    h1: "Servo Motor Repair & Rebuilds",
+    intro:
+      "IAR provides servo motor repair in New York and for plants nationwide. We replace bearings and seals, repair brakes, test and rewind windings, and align the encoder on the matching drive. Typical jobs: Siemens servo motor repair (1FK7, 1FT), Indramat servo motor repair and Bosch Rexroth servo motor repair (MKD, MHD, MSK), Allen-Bradley servo motor repair (MPL), FANUC servo motor repair (αi, βi) and ABB servo motor repair. If a motor is beyond repair, we help you find a replacement servo motor. Seeing servo motor overheating? The free evaluation finds the cause.",
     tagline: "Servo motor repair and rebuilding by experienced servo motor rebuilders",
-    metaTitle: "Servo Motor Repair & Rebuilds | 1FK7, MKD, Fanuc αi | IAR",
+    metaTitle: "Servo Motor Repair & Rebuilds | 1FK7, MKD, FANUC αi | IAR",
     metaDescription:
-      "AC and DC servo motor repair and rebuilding: bearings, windings, brakes and encoder alignment. Free evaluation, load tested, one-year warranty. Serving the USA.",
+      "Servo motor repair and rebuilds: bearings, seals, brakes, windings and encoder alignment. Load tested with a 1-year warranty. Free evaluation.",
     answerQ: "Can a servo motor be repaired?",
     answer:
       "Yes. As experienced servo motor rebuilders we replace bearings and seals, test and rewind windings, rebuild brakes and align feedback to factory specification. Every motor finishes with a run test under load, a test report and a one-year warranty — usually far below the price of a new motor.",
@@ -231,10 +239,12 @@ export const services: Service[] = [
     icon: "/services/spindle-ac-dc-motor.webp",
     color: "#E11D3A",
     h1: "Spindle, AC & DC Motor Repair",
+    intro:
+      "Spindle motor repair for machining centers, lathes and grinders — bearings, balancing, windings and encoders — including FANUC spindle motor repair and Siemens 1PH motors. We also repair AC induction and DC motors on conveyors, extruders and presses.",
     tagline: "Spindle motor repair and industrial motor winding repair",
     metaTitle: "Spindle Motor Repair & AC/DC Motor Repair | IAR",
     metaDescription:
-      "Spindle motor repair, AC induction and DC motor repair and rewinding. Load tested in Grand Island, NY with a one-year warranty. Serving the USA.",
+      "Spindle motor repair, AC induction and DC motor repair and rewinding for CNC machines and production lines. Load tested, 1-year warranty.",
     answerQ: "Can a spindle motor be repaired?",
     answer:
       "Yes. We repair CNC spindle motors, AC induction motors and DC motors — bearings, balancing, rewinding and commutator work — then run each motor under load. It ships back with a test report and our one-year warranty.",
@@ -280,11 +290,13 @@ export const services: Service[] = [
     short: "Encoder and resolver repair, replacement and alignment to the motor's commutation.",
     icon: "/services/encoder.webp",
     color: "#E11D3A",
-    h1: "Encoder Repair & Alignment",
+    h1: "Encoder Repair & Servo Feedback Alignment",
+    intro:
+      "A servo axis is only as accurate as its feedback. A servo motor encoder error, position drift or a motor that races with no command usually points to the encoder. We repair incremental, absolute and sin/cos encoders (EnDat, HIPERFACE), resolvers and Hall boards. If an encoder is beyond repair, we fit an encoder replacement, set the commutation offset on the matching drive and record it on the test report.",
     tagline: "Encoder repair, resolver repair and encoder alignment service",
     metaTitle: "Encoder Repair & Servo Encoder Alignment | IAR",
     metaDescription:
-      "Servo motor encoder repair, resolver repair and encoder alignment to factory specification. Tested on the matching drive. Grand Island, NY, the USA.",
+      "Encoder repair, resolver repair and encoder alignment service for servo motors, set up on the matching drive and confirmed under load.",
     answerQ: "Does a new servo encoder need to be aligned?",
     answer:
       "Yes. We repair or replace encoders and resolvers, then align them to the motor's commutation offset on the matching drive. A misaligned encoder causes position alarms and lost torque, so every motor is run and checked after alignment and covered by our one-year warranty.",
@@ -334,10 +346,12 @@ export const services: Service[] = [
     icon: "/services/plc.webp",
     color: "#E11D3A",
     h1: "PLC Repair",
+    intro:
+      "Module-level and component-level repair for PLC CPUs, power supplies, I/O and communication cards — including SLC 500 repair, ControlLogix and Siemens S7. When a module can’t be saved, we can often supply used PLC modules from stock.",
     tagline: "PLC module repair for CPUs, I/O and communication cards",
     metaTitle: "PLC Repair | Siemens S7, SLC 500, ControlLogix | IAR",
     metaDescription:
-      "PLC repair service for CPUs, I/O and communication modules — Siemens, Allen-Bradley, Omron and more. Free evaluation, one-year warranty. Grand Island, NY.",
+      "PLC repair for CPUs, I/O and communication modules: Siemens S7, Allen-Bradley SLC 500 and ControlLogix, Omron and more. 1-year warranty.",
     answerQ: "Can a PLC be repaired?",
     answer:
       "Yes. We repair PLC CPUs, power supplies, I/O and communication modules at component level and test them on a working rack before they ship. Discontinued modules are often repairable when new ones are no longer sold, and every repair carries our one-year warranty.",
@@ -382,11 +396,13 @@ export const services: Service[] = [
     short: "HMI, touch screen and operator panel repair — touch, backlight, display and boot faults.",
     icon: "/services/hmi.webp",
     color: "#E11D3A",
-    h1: "HMI Repair",
+    h1: "HMI & Touchscreen Repair",
+    intro:
+      "We repair operator interfaces at component level: touch digitizers, backlights, LCDs, power and boot faults — including PanelView repair and Siemens SIMATIC panels. Out of repair? Ask about an HMI replacement panel.",
     tagline: "HMI repair, touch screen repair and operator panel repair",
     metaTitle: "HMI Repair | Touchscreen & Operator Panel Repair | IAR",
     metaDescription:
-      "HMI repair, touch screen repair and operator panel repair: dead touch, dim backlights, cracked screens and boot faults. One-year warranty. Grand Island, NY.",
+      "HMI, touchscreen and operator panel repair: dead touch, dim backlights, cracked screens and boot faults. PanelView, Siemens and more.",
     answerQ: "Can an HMI touchscreen be repaired?",
     answer:
       "Yes. We repair HMIs and operator panels with dead or drifting touch, dim or failed backlights, cracked screens and boot faults, keeping your program in place wherever the unit allows. Each panel is powered up and function-tested before it ships with our one-year warranty.",
@@ -431,10 +447,12 @@ export const services: Service[] = [
     icon: "/services/cnc-control.webp",
     color: "#E11D3A",
     h1: "CNC Control Repair",
+    intro:
+      "CNC controls, NC units, operator panels and machine I/O repaired and tested — including SINUMERIK 840D repair, SINUMERIK 840C repair and FANUC CNC control repair.",
     tagline: "CNC control repair and CNC machine electronics repair",
-    metaTitle: "CNC Control Repair | Fanuc, SINUMERIK 840D | IAR",
+    metaTitle: "CNC Control Repair | FANUC, SINUMERIK 840D | IAR",
     metaDescription:
-      "CNC control repair for SINUMERIK, FANUC and other machine tool controls, plus spindle drives and operator panels. Load tested, one-year warranty.",
+      "CNC control repair for FANUC, SINUMERIK 840D and 840C, Heidenhain and more: NCUs, operator panels, I/O and power supplies. 1-year warranty.",
     answerQ: "Can a CNC control be repaired?",
     answer:
       "Yes. We repair CNC controls, screens, operator panels and the spindle and servo amplifiers behind them, including SINUMERIK 840C/840D on our own test setup. Every unit is tested under power and ships with a test report and our one-year warranty.",
@@ -486,11 +504,13 @@ export const services: Service[] = [
     short: "Industrial power supply repair and load testing — drive supply modules and 24 V units.",
     icon: "/services/power-supply.webp",
     color: "#E11D3A",
-    h1: "Power Supply Repair",
+    h1: "Industrial Power Supply Repair",
+    intro:
+      "Drive supply modules, regenerative line modules and 24 V DIN-rail supplies repaired and load tested for clean, stable output.",
     tagline: "Industrial power supply repair with full load testing",
     metaTitle: "Industrial Power Supply Repair | Line Modules | IAR",
     metaDescription:
-      "Industrial power supply repair: drive supply and line modules plus 24 V DIN-rail supplies, load tested for clean output. One-year warranty. Grand Island, NY.",
+      "Industrial power supply repair: drive line modules and 24 V DIN-rail supplies, load tested for clean output. Free evaluation, 1-year warranty.",
     answerQ: "Can an industrial power supply be repaired?",
     answer:
       "Yes. We repair drive power supply and line modules as well as 24 V DIN-rail supplies, then load test them for clean, stable output before they ship. A failing supply can take down a whole cabinet, so every repair carries our one-year warranty.",
@@ -544,10 +564,12 @@ export const services: Service[] = [
     icon: "/services/controller-card-pcb.webp",
     color: "#E11D3A",
     h1: "Controller Card & PCB Repair",
+    intro:
+      "Component-level repair for controller cards, I/O boards and drive boards, with reverse-engineering for boards the manufacturer no longer supports.",
     tagline: "Component-level industrial circuit board repair",
     metaTitle: "Controller Card & PCB Repair | IAR",
     metaDescription:
-      "Component-level industrial circuit board repair for controller cards, I/O boards and drive boards, including obsolete boards. One-year warranty. Serving the USA.",
+      "Component-level PCB repair for controller cards, I/O boards and drive boards, including obsolete boards. Free evaluation, 1-year warranty.",
     answerQ: "Can an industrial circuit board be repaired?",
     answer:
       "Yes. We repair controller cards, I/O boards and drive boards at component level, including boards that are no longer made. Each board is tested in a working system or on our test fixtures and comes back with a test report and our one-year warranty.",
@@ -591,10 +613,12 @@ export const services: Service[] = [
     icon: "/services/robotics.webp",
     color: "#E11D3A",
     h1: "Robotics Repair",
+    intro:
+      "Robot axis motors, drives, controllers and teach pendant repair for FANUC, ABB, KUKA and Yaskawa cells — including ABB robot motor repair.",
     tagline: "Robot servo motor, drive and teach pendant repair",
     metaTitle: "Robotics Repair | Robot Controller & Teach Pendant | IAR",
     metaDescription:
-      "Robot servo motor repair, robot drive and controller repair and teach pendant repair for FANUC, ABB, KUKA and Yaskawa. One-year warranty. Grand Island, NY.",
+      "Robot servo motor, drive, controller and teach pendant repair for FANUC, ABB, KUKA and Yaskawa robots. Load tested, 1-year warranty.",
     answerQ: "Can a robot teach pendant be repaired?",
     answer:
       "Yes. We repair robot axis servo motors, drive modules, controllers and teach pendants — cracked screens, dead keys, E-stops and enabling switches included. Motors and drives are load tested, pendants are function-tested, and everything carries our one-year warranty.",
@@ -638,13 +662,15 @@ export const services: Service[] = [
     short: "Servo exchange program — a tested unit ships first while yours is repaired.",
     icon: "/services/exchange.webp",
     color: "#E11D3A",
-    h1: "Exchange Program",
+    h1: "Servo Exchange Program",
+    intro:
+      "Some lines can’t wait for a repair. Our servo exchange program puts a tested unit on your machine first; your failed unit comes back to our bench afterwards. Call 1-877-904-6155 with the part number, we ship a tested servo drive exchange or motor exchange unit, you install it and return the failed unit in the same box. Exchange pricing and return terms are on your quote. If no exchange unit is on the shelf, we prioritize the repair instead.",
     tagline: "A tested exchange unit ships first, so your line restarts sooner",
     repairsTitle: "How the exchange program works",
     testingTitle: "Every exchange unit, before it ships",
     metaTitle: "Servo Drive & Motor Exchange Program | IAR",
     metaDescription:
-      "Servo exchange program: a tested exchange unit ships right away, your failed unit comes back to our bench. One-year warranty. Serving the USA.",
+      "Line down? Swap your failed servo drive or motor for a tested unit from IAR stock, then send the old one back. 1-year warranty.",
     answerQ: "How does an exchange unit work?",
     answer:
       "When you cannot wait for a repair, we ship a tested exchange unit from our in-stock inventory first. You send back your failed unit once the replacement is running. Exchange units are load tested and covered by our one-year warranty.",

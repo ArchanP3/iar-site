@@ -23,7 +23,7 @@ export default async function SearchMiss({ searchParams }: { searchParams: Promi
         </div>
         {near.length > 0 && (
           <div className="mt-4">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#696976]">Close matches in our catalogue. Is one of these your part?</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-[#696976]">Close matches in our catalog. Is one of these your part?</p>
             <ul className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {near.map((p) => {
                 const price = p.offers.find(canBuyOnline)?.price;

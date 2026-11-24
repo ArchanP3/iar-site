@@ -3,8 +3,8 @@ import { brandFont } from "@/lib/font";
 
 /* Trust strip under the home hero. Wording from the IAR website wording document. */
 const TRUST: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: Truck, title: "Free Return Shipping", text: "We cover outbound shipping on completed repairs and in-stock orders." },
-  { icon: ShieldCheck, title: "1-Year Warranty", text: "Every repair and every part is covered for a full year." },
+  { icon: Truck, title: "Free Return Shipping", text: "We cover return shipping on completed repairs and outbound shipping on in-stock orders." },
+  { icon: ShieldCheck, title: "One-Year Warranty", text: "Every repair and every part is covered for a full year." },
   { icon: Phone, title: "24/7 Servo Motor Repair Support", text: "Need emergency servo motor repair? Call 1-877-904-6155 any time." },
   { icon: CreditCard, title: "Secure Payment", text: "Visa, Mastercard, American Express, Discover and PayPal." },
 ];

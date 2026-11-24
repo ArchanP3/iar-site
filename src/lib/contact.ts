@@ -7,7 +7,7 @@
 export const contact = {
   phone: "1-877-904-6155",
   /** Local line */
-  localPhone: "416-904-6155",
+  localPhone: "",
   email: "info@industrialautomationrepair.com",
   address: "3279 Grand Island Blvd, Grand Island, NY 14072",
   /** Address parts for Google (structured data) and the map */
@@ -20,24 +20,24 @@ export const contact = {
   whatsapp: "",
   /** Opening hours for the Contact page, e.g. [["Mon – Fri", "8:00 am – 5:00 pm"], ["Sat – Sun", "Closed"]].
       Empty = the hours card is hidden. */
-  hours: [["Mon – Fri", "8:00 am – 5:00 pm"], ["Sat – Sun", "Closed"]] as [days: string, time: string][],
+  hours: [["Mon – Fri", "8:00 am – 5:00 pm ET"], ["Sat – Sun", "Closed"]] as [days: string, time: string][],
   /** Shown under the hours */
   afterHours: "Machine down after hours? Our 24/7 line is always open: 1-877-904-6155.",
 };
 
 export const phoneHref = (p: string) => "tel:" + p.replace(/[^+\d]/g, "");
 
-/** Google Maps links for the repair centre */
+/** Google Maps links for the repair center */
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${contact.street}, ${contact.city}, ${contact.region} ${contact.postal}`)}`;
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${contact.street}, ${contact.city}, ${contact.region} ${contact.postal}`)}`;
 export const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(`${contact.street}, ${contact.city}, ${contact.region} ${contact.postal}`)}&z=16&output=embed`;
 
-/** Google (schema.org) address and opening hours for the repair centre */
+/** Google (schema.org) address and opening hours for the repair center */
 export const postalAddress = { "@type": "PostalAddress", streetAddress: contact.street, addressLocality: contact.city, addressRegion: contact.region, postalCode: contact.postal, addressCountry: "US" };
 export const openingHours = [
   { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
 ];
 export const geo = { "@type": "GeoCoordinates", latitude: contact.geo.lat, longitude: contact.geo.lng };
 
-/** Street address to show: the CMS one when it has a street, else the repair centre above. */
+/** Street address to show: the CMS one when it has a street, else the repair center above. */
 export const fullAddress = (c: { street?: string; address: string }) => (c.street ? c.address : contact.address);

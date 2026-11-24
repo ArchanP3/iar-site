@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!a || !areaHere(a)) return {};
   return withSeo(areaUrl(a.slug), {
     title: { absolute: fitTitle(`Servo Drive & Motor Repair for ${place(a)} | IAR`) },
-    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Grand Island, NY centre. Pickup or ship-in. Free evaluation, 1-year warranty.`,
+    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Grand Island, NY center. Pickup or ship-in. Free evaluation, 1-year warranty.`,
     // City pages are on one country site only, so no .ca/.com hreflang pair.
     alternates: { canonical: `${SITE_URL}${areaUrl(a.slug)}`, languages: {} },
   });
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function faqs(a: Area): [string, string][] {
   return [
-    [`Do you have a repair shop in ${a.city}?`, `No. Every repair is done at our repair centre in Grand Island, New York. ${a.dropOff ? "You can drop units off there, or we" : "We"} arrange a pickup from your plant in ${a.city} and ship the unit back when it is done.`],
+    [`Do you have a repair shop in ${a.city}?`, `No. Every repair is done at our repair center in Grand Island, New York. ${a.dropOff ? "You can drop units off there, or we" : "We"} arrange a pickup from your plant in ${a.city} and ship the unit back when it is done.`],
     [`How long does a repair take for ${a.city} customers?`, "Typical turnaround is 24 to 72 hours once you approve the quote, plus shipping time each way. Need it sooner? Call or email us: rush handling is available for an extra fee."],
     [`Can a technician come to our plant in ${a.city}?`, "Yes. Our technicians provide on-site service calls across the United States. Tell us about the machine and we will plan the visit."],
     ["Is the evaluation free?", "Yes. Every repair starts with a free evaluation and a written quote. No work starts until you approve it, and every repair comes with a test report and a 1-year warranty."],
@@ -61,7 +61,7 @@ async function Content({ params }: Props) {
   const nearby = areas.filter((x) => x.slug !== a.slug && x.region === a.region).slice(0, 6);
 
   const ways: { icon: React.ElementType; t: string; d: string; href?: string }[] = [
-    ...(a.dropOff ? [{ icon: MapPin, t: "Drop it off", d: "Bring it to our Grand Island, NY repair centre during business hours. No appointment needed." }] : []),
+    ...(a.dropOff ? [{ icon: MapPin, t: "Drop it off", d: "Bring it to our Grand Island, NY repair center during business hours. No appointment needed." }] : []),
     { icon: PackageCheck, t: "Request a pickup", d: `We arrange collection from your dock in ${a.city} and send you the waybill.` },
     { icon: Truck, t: "Ship it in", d: "Send it with FedEx, UPS, DHL or your own carrier account." },
     { icon: Wrench, t: "On-site service", d: "Technicians across the USA for jobs that can't leave the machine.", href: "/on-site-service" },
@@ -97,7 +97,7 @@ async function Content({ params }: Props) {
 
   return (
     <ResourceShell crumb={[{ label: "Service Areas", href: "/service-areas" }, { label: a.city }]} title="Servo drive & motor repair" accent={`for ${a.city}`}
-      text={`Repaired at our Grand Island, New York repair centre for manufacturers in ${place(a)}. ${a.dropOff ? "Drop it off, ship it in or request a pickup." : "Ship it in or request a pickup."}`} schema={schema}>
+      text={`Repaired at our Grand Island, New York repair center for manufacturers in ${place(a)}. ${a.dropOff ? "Drop it off, ship it in or request a pickup." : "Ship it in or request a pickup."}`} schema={schema}>
       <PageExtras path={areaUrl(a.slug)} />
       {/* How it gets to us */}
       <div className={`grid gap-3 sm:grid-cols-2 ${ways.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
@@ -164,7 +164,7 @@ async function Content({ params }: Props) {
         <aside className="space-y-3 lg:sticky lg:top-28">
           <div className="relative overflow-hidden rounded-[24px] bg-[#0A0A0C] p-6 text-white">
             <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
-            <p className="relative flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]"><Building2 size={14} aria-hidden="true" /> Our repair centre</p>
+            <p className="relative flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FF8A99]"><Building2 size={14} aria-hidden="true" /> Our repair center</p>
             <p className="relative mt-2 text-[20px] font-extrabold">Grand Island, New York</p>
             <p className="relative mt-1 text-[13.5px] leading-relaxed text-white/70">Serving {a.city} and every city in the USA.</p>
             <ul className="relative mt-4 space-y-2 text-[13.5px] text-white/85">

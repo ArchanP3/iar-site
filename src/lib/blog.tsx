@@ -101,7 +101,7 @@ export const posts: Post[] = [
     description: "A repair is only as good as its test. How every unit is checked in, evaluated and run under power on our test benches before it leaves our Grand Island, NY bench.",
     date: "2026-10-26",
     minutes: 5,
-    tag: "Inside our repair centre",
+    tag: "Inside our repair center",
     color: "#E11D3A",
     image: "/hero/servo-motors.webp",
     related: [["Our warranty", "/warranty"], ["Servo motor repair", "/services/servo-motor-repair"], ["How to ship us a unit", "/resources/shipping"]],
@@ -206,7 +206,7 @@ export const posts: Post[] = [
       {
         h: "Safety first",
         body: (
-          <p>A misaligned motor can move unexpectedly when enabled. Never test an axis with people near the machine, and follow your lockout and the manufacturer&apos;s instructions. If in doubt, send the motor to a repair centre that can align and test it under drive control.</p>
+          <p>A misaligned motor can move unexpectedly when enabled. Never test an axis with people near the machine, and follow your lockout and the manufacturer&apos;s instructions. If in doubt, send the motor to a repair center that can align and test it under drive control.</p>
         ),
       },
       {

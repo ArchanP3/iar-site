@@ -17,13 +17,13 @@ import { WhatsAppCta } from "@/components/WhatsAppButton";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 /* About page. Only facts IAR has confirmed are used here:
-   Grand Island, NY repair centre, the USA, free evaluation, written quote first,
+   Grand Island, NY repair center, the USA, free evaluation, written quote first,
    24–72 hr typical turnaround, load testing, test report, one-year warranty,
    free return shipping, 24/7 line, on-site service. */
 
 export const generateMetadata = seo("/about", {
-  title: { absolute: "About IAR | Industrial Repair in Grand Island, New York" },
-  description: "Industrial Automation Repair Inc. (IAR) is a servo motor, servo drive and industrial electronics repair centre in Grand Island, New York, serving plants across the USA.",
+  title: { absolute: "About IAR | Industrial Repair Center in Grand Island, NY" },
+  description: "IAR is a servo motor, servo drive and industrial electronics repair center in Grand Island, NY, serving manufacturers across the USA.",
   alternates: { canonical: `${SITE_URL}/about` },
 });
 
@@ -109,10 +109,10 @@ export default async function AboutPage() {
           <div className="mt-6 max-w-205">
             <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#FF8A99]"><span className="h-0.5 w-8 rounded bg-[#FF3B55]" aria-hidden="true" />About IAR</p>
             <h1 className="mt-3 text-[36px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[54px]">
-              Your automation <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">repair partner.</span>
+              About Industrial <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Automation Repair</span>
             </h1>
             <p className="mt-4 text-[15.5px] leading-[1.75] text-white/75 sm:text-[18px]">
-              Industrial Automation Repair Inc. (IAR) is a full-service servo motor repair shop and industrial automation repair centre in Grand Island, New York. We repair servo motors, servo drives and industrial electronics for plant maintenance teams, OEMs and manufacturers across the USA.
+              Industrial Automation Repair Inc. (IAR) is a full-service servo motor repair shop and industrial automation repair center in Grand Island, New York. We repair servo motors, servo drives and industrial electronics for plant maintenance teams, OEMs and manufacturers across the USA.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
@@ -139,7 +139,7 @@ export default async function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">About IAR</p>
             <h2 id="story" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">A full-service servo repair shop in Grand Island, NY</h2>
             <div className="mt-4 space-y-4 text-[15px] leading-[1.8] text-[#5A5A66] sm:text-[16px]">
-              <p>Our Grand Island, NY repair centre serves Buffalo, Niagara and Western New York, and plants across the USA ship units to our bench. Every repair follows our documented inspection, repair and testing process: failure analysis, a written quote with lead time, repair with genuine OEM components and full testing under load.</p>
+              <p>Our repair center serves Buffalo, Niagara and Western New York in person, and plants across the USA ship units to our bench. Every repair follows our documented inspection, repair and testing process: failure analysis, a written quote with lead time, repair with genuine OEM components and full testing under load.</p>
               <p>We specialize in Siemens (SINAMICS, SIMODRIVE, SINUMERIK), Bosch Rexroth Indramat and Allen-Bradley / Rockwell Automation, and routinely repair FANUC, ABB, Yaskawa, Mitsubishi, Panasonic, Kollmorgen, Parker, Baldor and Control Techniques equipment.</p>
               <p>Legacy automation equipment support is a big share of our bench time. When a manufacturer stops supporting a motor or drive, repair is often the only option — so we rebuild discontinued units, stock obsolete parts and offer a servo exchange on many models.</p>
             </div>
@@ -216,14 +216,14 @@ export default async function AboutPage() {
           </ol>
         </section>
 
-        {/* ---------- Repair centre ---------- */}
+        {/* ---------- Repair center ---------- */}
         <section aria-labelledby="bench" className="relative overflow-hidden rounded-[26px] bg-[#0A0A0C] p-6 text-white sm:p-9">
           <span aria-hidden="true" className="pointer-events-none absolute -left-20 -bottom-24 h-80 w-105 rounded-full bg-[radial-gradient(closest-side,rgba(255,59,85,0.35),transparent)] blur-xl" />
           <div className="relative grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Our repair centre</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Our repair center</p>
               <h2 id="bench" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">Tested the way it will be used</h2>
-              <p className="mt-3 text-[15px] leading-[1.75] text-white/70">Every unit is repaired and tested at our Grand Island, New York repair centre. A drive that only powers up on the bench is not finished. It has to run a motor under load before it ships.</p>
+              <p className="mt-3 text-[15px] leading-[1.75] text-white/70">Every unit is repaired and tested at our Grand Island, New York repair center. A drive that only powers up on the bench is not finished. It has to run a motor under load before it ships.</p>
             </div>
             <ul className="grid gap-2.5 sm:grid-cols-2">
               {[
@@ -278,6 +278,13 @@ export default async function AboutPage() {
               <ArrowUpRight size={18} className="flex-none text-[#B30E29]" aria-hidden="true" />
             </Link>
           ))}
+        </section>
+
+        {/* ---------- Careers ---------- */}
+        <section aria-labelledby="careers" className="rounded-[28px] border border-[#EAEAEC] bg-white p-7 sm:p-10">
+          <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]"><span className="h-0.5 w-8 rounded bg-[#C8102E]" aria-hidden="true" />Careers</p>
+          <h2 id="careers" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">Careers at Industrial Automation Repair</h2>
+          <p className="mt-3 max-w-200 text-[15px] leading-[1.75] text-[#5A5A66]">We hire repair technicians who are precise, curious and accountable. Experience with electronics repair, motor rebuilding, drives or PLCs is an asset, and we also train motivated people early in their careers. Send your resume to <a href="mailto:info@industrialautomationrepair.com?subject=Careers" className="font-semibold text-[#A50D25] hover:underline">info@industrialautomationrepair.com</a> with “Careers” in the subject line.</p>
         </section>
 
         {/* ---------- CTA ---------- */}

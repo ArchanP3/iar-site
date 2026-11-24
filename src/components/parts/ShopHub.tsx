@@ -73,11 +73,9 @@ export function ShopHubView({ data }: { data: HubData }) {
             </ol>
           </nav>
           <h1 className="mt-5 max-w-200 text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[52px]">
-            Find your part <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">by number, type or brand.</span>
+            Servo Motors, Servo Drives &amp; <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Industrial Automation Parts</span>
           </h1>
-          <p className="mt-3 max-w-180 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">
-            New, refurbished and exchange servo drives, motors, PLCs, HMIs and CNC parts, or have your own unit repaired. Request a quote on any part.
-          </p>
+          <p className="mt-3 max-w-180 text-[15px] font-semibold text-[#FF8A99] sm:text-[17px]">Tested Parts. Genuine Components. Ready to Ship.</p>
 
           <form action="/shop" method="get" role="search" className="mt-6 max-w-215 rounded-2xl border border-white/15 bg-white/6 p-2 backdrop-blur">
             <label htmlFor="hub-q" className="sr-only">Search by part number, brand or name</label>
@@ -183,6 +181,31 @@ export function ShopHubView({ data }: { data: HubData }) {
               <Link key={l} href={`/shop/brands#letter-${l}`} className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[13px] font-bold text-[#5A5A66] ring-1 ring-[#EAEAEC] transition hover:bg-[#C8102E] hover:text-white">{l}</Link>
             ))}
             <Link href="/shop/brands" className="ml-2 inline-flex h-9 items-center gap-1.5 text-[13.5px] font-bold text-[#B30E29] hover:underline">All manufacturers A–Z <ArrowRight size={14} aria-hidden="true" /></Link>
+          </div>
+        </section>
+
+        <section aria-labelledby="about-parts" className="mt-12 grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+          <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-6 sm:p-7">
+            <h2 id="about-parts" className="text-[22px] font-extrabold tracking-[-0.01em] sm:text-[26px]">Tested parts from every major brand</h2>
+            <p className="mt-3 text-[14.5px] leading-[1.7] text-[#4A4A55]">IAR supplies the parts that keep automated equipment running: servo motors, servo drives, PLC modules, HMIs, power supplies and circuit boards from Siemens, Bosch Rexroth Indramat, Allen-Bradley, FANUC, ABB, Mitsubishi, Yaskawa, Schneider Electric, Lenze, Kollmorgen, Parker, Baldor and Control Techniques.</p>
+            <p className="mt-3 text-[14.5px] leading-[1.7] text-[#4A4A55]">Every surplus and refurbished unit is inspected and tested in our repair center before it is listed, and every part is backed by a one-year warranty. Stock also includes refurbished servo drives and PLC modules.</p>
+            <p className="mt-3 text-[14.5px] leading-[1.7] text-[#4A4A55]">Search by part number or browse by manufacturer. Part not listed? Give us the number — we source hard-to-find automation parts, suggest a discontinued servo drive replacement, or <Link href="/services" className="font-semibold text-[#A50D25] hover:underline">repair your existing unit</Link>.</p>
+            <p className="mt-3 text-[13.5px] font-semibold text-[#131316]">Free outbound shipping on in-stock orders within the USA. Orders from outside the USA: <Link href="/international" className="text-[#A50D25] hover:underline">request a quote</Link>.</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-6">
+              <p className="text-[16px] font-extrabold">Stock labels</p>
+              <ul className="mt-2 space-y-1.5 text-[13.5px] leading-snug text-[#4A4A55]">
+                <li><b className="text-[#131316]">New</b> — factory-sealed or unused in original packaging</li>
+                <li><b className="text-[#131316]">Surplus</b> — never installed, may be out of box</li>
+                <li><b className="text-[#131316]">Refurbished</b> — repaired, cleaned and load-tested on our bench</li>
+                <li><b className="text-[#131316]">Exchange</b> — tested swap unit; your failed unit comes back to us</li>
+              </ul>
+            </div>
+            <div className="hexcard relative overflow-hidden rounded-[22px] p-6 text-white">
+              <p className="relative text-[16px] font-extrabold">Why buy from IAR</p>
+              <p className="relative mt-2 text-[13.5px] leading-[1.6] text-white/80">One-year warranty · Tested in-house under load before shipping · Genuine OEM components · Technical support from experienced repair technicians.</p>
+            </div>
           </div>
         </section>
 

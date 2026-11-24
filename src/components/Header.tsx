@@ -108,7 +108,7 @@ const groups: MenuGroup[] = [
   {
     label: "Repair Services",
     href: "/services",
-    intro: "Expert repair, testing and exchange for critical equipment.",
+    intro: "Expert repair, testing and exchange for critical equipment. Every repair, load tested.",
     links: [
       { label: "Servo Drive Repair", href: "/services/servo-drive-repair", icon: Zap },
       { label: "Servo Motor Repair", href: "/services/servo-motor-repair", icon: Cog },
@@ -212,7 +212,7 @@ groups.push({
       links: [
         { label: "Repair Process", href: "/#how-we-work", note: "From check-in to test report", icon: Route },
         { label: "How to Ship Us a Unit", href: "/resources/shipping", note: "Packing & pickups", icon: PackageCheck },
-        { label: "Service Areas", href: "/service-areas", note: "All of the USA", icon: MapPin },
+        { label: "Service Areas", href: "/service-areas", note: "All 50 states", icon: MapPin },
         { label: "International Orders", href: "/international", note: "Parts shipped worldwide", icon: Globe2 },
         { label: "On-site Service", href: "/on-site-service", note: "Technician at your plant", icon: HardHat },
         { label: "Sell Your Surplus", href: "/sell-surplus", note: "Send a list, get an offer", icon: HandCoins },

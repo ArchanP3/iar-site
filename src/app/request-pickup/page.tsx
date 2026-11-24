@@ -8,9 +8,9 @@ import { brandFont } from "@/lib/font";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/request-pickup", {
-  title: "Request a Pickup | Servo Drive & Motor Repair | IAR",
+  title: "Request a Pickup | Industrial Repair Pickup Service | IAR",
   description:
-    "Book a pickup for your servo drive, motor or industrial electronics repair with FedEx, UPS or DHL. Free evaluation. Serving the USA.",
+    "Book a pickup for your servo drive, motor or electronics repair with FedEx, UPS or DHL, anywhere in the USA. Free evaluation.",
 });
 
 const pickupSteps = [
@@ -19,12 +19,12 @@ const pickupSteps = [
   ["You get the pickup confirmation", CalendarCheck],
   ["Free evaluation when it arrives", FileText],
 ] as const;
-const pickupPoints = ["FedEx · UPS · DHL", "Across the USA", "Free evaluation", "1-year warranty"];
+const pickupPoints = ["FedEx · UPS · DHL", "Anywhere in the USA", "Free evaluation", "1-year warranty"];
 
 const tips = [
   ["Pack it well", "Anti-static bag for electronics, at least 5 cm of padding on every side, sturdy box.", PackageOpen],
   ["Include a note", "Part number, fault code and what happened before it failed. It speeds up diagnosis.", Tag],
-  ["Be ready at the dock", "Have the box sealed and labelled with your company name by your pickup time.", Truck],
+  ["Be ready at the dock", "Have the box sealed and labeled with your company name by your pickup time.", Truck],
 ] as const;
 
 const faqs = [
@@ -61,14 +61,14 @@ export default function RequestPickupPage() {
             Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Pickup</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
-            We collect your servo drive, motor or control from your facility with FedEx, UPS or DHL and bring it to our Grand Island, NY repair centre for a free evaluation.
+            Our industrial repair pickup service collects your servo drive, motor or control from your facility with FedEx, UPS or DHL and brings it to our Grand Island, NY repair center for a free evaluation.
           </p>
         </div>
       </section>
 
       <div className="relative mx-auto -mt-16 grid max-w-310 gap-5 px-5 sm:px-8 lg:grid-cols-[1fr_360px]">
         <PickupForm />
-        <NextSteps title="How pickups work" steps={pickupSteps} points={pickupPoints} urgent="Ask for an exchange unit in the notes, and we’ll prioritise it." />
+        <NextSteps title="How pickups work" steps={pickupSteps} points={pickupPoints} urgent="Ask for an exchange unit in the notes, and we’ll prioritize it." />
       </div>
 
       <section aria-label="Pickup tips and questions" className="mx-auto grid max-w-310 gap-5 px-5 py-10 sm:px-8 lg:grid-cols-[1fr_360px]">

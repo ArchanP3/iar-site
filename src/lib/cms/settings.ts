@@ -39,7 +39,7 @@ export const DEFAULTS = {
     serviceArea: "Repairs across the USA. Parts shipped to the USA, Canada and worldwide.",
   } as Business,
   site: {
-    announcement: { on: true, text: "Repairs in the USA · Parts shipped to the USA, Canada & worldwide" },
+    announcement: { on: true, text: "Repairs across the USA · Free evaluation on every repair · 24/7 line 1-877-904-6155" },
     social: { linkedin: "", youtube: "", facebook: "", instagram: "", x: "" },
     titleSuffix: "IAR",
     ogImage: "",

@@ -7,16 +7,16 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/blog", {
-  title: "Blog & Guides: Servo Drive, Motor & Encoder Repair | IAR",
-  description: "Practical guides from our repair bench: repair vs replace a servo drive, how we test motors and drives on our test benches, encoder alignment explained.",
+  title: "Servo Repair Guides & Technical Articles | IAR",
+  description: "Practical guidance on servo motor faults, drive alarms, encoder problems and repair testing from the IAR repair bench.",
   alternates: { canonical: `${SITE_URL}/resources/blog` },
 });
 
 export default async function BlogIndex() {
   const [first, ...rest] = await allPostCards();
   return (
-    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "Blog & Guides" }]} title="Blog &" accent="guides"
-      text="Practical, plain-English guides from our repair bench: how to decide, what to check and how we work.">
+    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "Blog & Guides" }]} title="Repair Insights &" accent="Technical Articles"
+      text="Practical guidance from our repair bench: early warning signs, common failure modes and the maintenance that prevents them — from motor testing and encoder alignment to drive and VFD repair.">
       <PageExtras path="/resources/blog" />
       <Link href={postUrl(first.slug)} className="group relative block overflow-hidden rounded-[26px] bg-[#131316] p-6 text-white shadow-[0_40px_80px_-45px_rgba(200,16,46,0.8)] transition hover:-translate-y-0.5 sm:p-9">
         <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full blur-xl" style={{ background: `radial-gradient(closest-side, #C8102E88, transparent)` }} />

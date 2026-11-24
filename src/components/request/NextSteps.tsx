@@ -14,13 +14,13 @@ const repairSteps: StepList = [
   ["Component-level repair after you approve", Wrench],
   ["Load tested on our benches, returned with a test report", RefreshCw],
 ];
-const repairPoints = ["1-year warranty", "24–72 hr typical", "Free evaluation", "Across the USA"];
+const repairPoints = ["1-year warranty", "24–72 hr typical turnaround once approved", "Free evaluation", "Repairs across the USA"];
 
 export default async function NextSteps({
   title = "What happens next",
   steps = repairSteps,
   points = repairPoints,
-  urgent = "Choose “Exchange unit now” and we’ll prioritise it.",
+  urgent = "Choose “Exchange unit now” and we’ll prioritize it.",
   urgentTitle = "Line down right now?",
 }: { title?: string; steps?: StepList; points?: string[]; urgent?: string; urgentTitle?: string }) {
   const contact = await getContact();

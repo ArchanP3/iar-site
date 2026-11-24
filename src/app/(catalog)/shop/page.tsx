@@ -4,9 +4,9 @@ import ShopListing from "@/components/parts/ShopListing";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/shop", {
-  title: "Shop Industrial Automation Parts | New, Refurbished & Exchange",
+  title: "Servo Motors, Drives & Automation Parts | IAR",
   description:
-    "New, refurbished and exchange servo drives, motors, PLCs, HMIs and CNC parts, or have your own unit repaired. Request a quote. Ships to the USA & Canada.",
+    "Buy new, surplus and refurbished servo motors, drives, PLCs and HMIs by brand or part number. Tested in-house, 1-year warranty.",
   alternates: { canonical: "/shop" },
 });
 

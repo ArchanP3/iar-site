@@ -7,8 +7,8 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/resources/faqs", {
-  title: "FAQs: Repairs, Parts, Exchange, Shipping & Warranty | IAR",
-  description: "Answers about servo drive and motor repair, parts, exchange units, shipping to the USA, warranty and returns, from the IAR repair team.",
+  title: "Industrial Repair FAQ | Servo Motor & Drive Repair | IAR",
+  description: "Answers about evaluations, turnaround, warranty, exchanges, pickups and shipping for servo motor, drive and electronics repair at IAR.",
   alternates: { canonical: `${SITE_URL}/resources/faqs` },
 });
 
@@ -23,7 +23,7 @@ const schema = {
 
 export default function FaqsPage() {
   return (
-    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "FAQs" }]} title="Frequently asked" accent="questions"
+    <ResourceShell crumb={[{ label: "Resources", href: "/resources" }, { label: "FAQs" }]} title="Industrial Repair" accent="FAQ"
       text="Repairs, parts, exchange units, orders, shipping, customs and warranty: every common question in one place." schema={schema}>
       <PageExtras path="/resources/faqs" />
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">

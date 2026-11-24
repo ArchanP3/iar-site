@@ -189,7 +189,7 @@ export async function think(raw: string): Promise<Reply> {
   }
   if (has(m, INTENT.location) || has(m, INTENT.hours) || has(m, INTENT.email)) {
     const contact = await getContact();
-    const bits = [`Our repair centre is at ${fullAddress(contact)}. Drop-offs are welcome during business hours.`];
+    const bits = [`Our repair center is at ${fullAddress(contact)}. Drop-offs are welcome during business hours.`];
     if (contact.hours.length) bits.push(`Hours: ${contact.hours.map(([d, t]) => `${d} ${t}`).join(", ")}.`);
     if (contact.email) bits.push(`Email: ${contact.email}.`);
     out.text.push(bits.join(" "));

@@ -30,8 +30,8 @@ export default function Industries() {
               <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">That Never Stop</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
-              Servo drive, motor and control repair for manufacturers across the USA, from automotive
-              and packaging lines to steel mills, mines and aerospace plants.
+              Servo drive, motor and control repair for US manufacturers, from automotive and packaging lines
+              to steel mills, mines and aerospace plants. Pick an industry to see what we repair.
             </p>
           </div>
           <Link

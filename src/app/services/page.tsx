@@ -7,13 +7,35 @@ import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import { allServices, serviceUrl, services } from "@/lib/services";
 import MoreServices from "@/components/services/MoreServices";
+import { ProcessPlates } from "@/components/iar/ProcessSection";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/services", {
-  title: "Industrial Repair Services | Servo, VFD, PLC & CNC | IAR",
+  title: "Industrial Repair Services | Motors, Drives & PLCs | IAR",
   description:
-    "Servo drive, VFD, servo motor, encoder, PLC, HMI, CNC and power supply repair in Grand Island, NY. Free evaluation, 1-year warranty. Serving the USA.",
+    "Servo motor, servo drive, VFD, PLC, HMI and CNC control repair for US plants. Send your part number for a free evaluation and a written quote.",
 });
+
+const whatWeRepair: { t: string; href: string; p?: string; points: string[] }[] = [
+  { t: "Servo Motor Repair", href: "/services/servo-motor-repair", points: [
+    "CNC servo motor repair, stepper motor repair and integrated servo motor repair",
+    "Servo motor bearing replacement, servo motor brake repair and industrial motor winding repair",
+    "Encoder repair, encoder alignment service and resolver repair",
+    "Finished with servo motor testing under load.",
+  ] },
+  { t: "Servo Drive Repair", href: "/services/servo-drive-repair", points: [
+    "AC servo drive repair for current platforms and DC servo drive repair for legacy machines",
+    "Line module repair and servo motor controller repair",
+    "Power-section, logic-board and feedback faults, with a drive parameter backup before work starts",
+    "Every drive tested on a motor under load.",
+  ] },
+  { t: "VFD & DC Drives", href: "/services/vfd-repair", p: "Our VFD repair service covers AC drive repair and variable frequency drives, along with analog and digital DC drive repair.", points: [] },
+  { t: "Industrial Electronics", href: "/services/plc-repair", points: [
+    "PLC repair service and PLC module repair · Touch screen repair and operator panel repair",
+    "CNC control repair and CNC machine electronics repair",
+    "PCB repair: industrial circuit board repair, printed circuit board repair and circuit board refurbishing",
+  ] },
+];
 
 const why = [
   { t: "Component-level repair", d: "We replace the failed parts, not the whole board, so the price stays a fraction of new.", I: Wrench },
@@ -49,10 +71,10 @@ export default function ServicesPage() {
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-190">
               <h1 className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">
-                Industrial <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair Services</span>
+                Servo Motor Repair Service &amp; <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Industrial Electronics Repair</span>
               </h1>
               <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">
-                Component-level repair of servo drives, VFDs, servo and spindle motors, encoders, PLCs, HMIs, CNC controls, power supplies, circuit boards and robotics, at our Grand Island, New York repair centre for manufacturers across the USA.
+                IAR provides industrial repair services across the USA for plants that run on motion control. As experienced servo motor rebuilders, our technicians repair, rebuild and test servo motors, servo drives and industrial electronics at the component level, returning them to OEM specification — a complete servo motor repair service under one roof. Every job follows our documented inspection, repair and testing process, with a test report for every unit.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -94,6 +116,50 @@ export default function ServicesPage() {
 
         <MoreServices />
 
+        <section aria-labelledby="what-we-repair" className="mb-8">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">Repair Built Around Your Uptime</p>
+          <h2 id="what-we-repair" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[32px]">What we repair</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {whatWeRepair.map((c) => (
+              <div key={c.t} className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 shadow-[0_24px_50px_-40px_rgba(19,19,22,0.5)] sm:p-6">
+                <Link href={c.href} className="text-[18px] font-extrabold hover:text-[#B30E29]">{c.t}</Link>
+                {c.p && <p className="mt-2 text-[14.5px] leading-[1.65] text-[#4A4A55]">{c.p}</p>}
+                {c.points.length > 0 && (
+                  <ul className="mt-2 space-y-1.5">
+                    {c.points.map((p) => <li key={p} className="flex items-start gap-2 text-[14.5px] leading-snug text-[#4A4A55]"><BadgeCheck size={16} className="mt-0.5 flex-none text-[#C8102E]" aria-hidden="true" />{p}</li>)}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+            <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 sm:p-6">
+              <p className="text-[18px] font-extrabold">Brands we repair</p>
+              <ul className="mt-2 space-y-2 text-[14.5px] leading-[1.6] text-[#4A4A55]">
+                <li><b className="text-[#131316]">Core platforms</b> — <Link href="/brands/siemens" className="font-semibold text-[#A50D25] hover:underline">Siemens</Link>: 1FT/1FK servo motors, 1PH spindle motors, SINAMICS and SIMODRIVE drives, SINUMERIK controls · <Link href="/brands/rexroth-indramat" className="font-semibold text-[#A50D25] hover:underline">Bosch Rexroth Indramat</Link>: MKD/MHD motors, DKC/DDS drives, IndraDrive · <Link href="/brands/allen-bradley" className="font-semibold text-[#A50D25] hover:underline">Allen-Bradley</Link>: MPL/1326 motors, Kinetix and 1394 drives</li>
+                <li><b className="text-[#131316]">Robotics &amp; CNC</b> — FANUC · ABB · Yaskawa · KUKA</li>
+                <li><b className="text-[#131316]">Factory automation</b> — Mitsubishi · Panasonic · Omron · Schneider Electric</li>
+                <li><b className="text-[#131316]">Motors &amp; drives</b> — Baldor · Parker · SEW-Eurodrive · Lenze · Control Techniques · Kollmorgen · Moog · <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">all brands</Link></li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 sm:p-6">
+                <p className="text-[18px] font-extrabold">Fast &amp; affordable</p>
+                <p className="mt-2 text-[14.5px] leading-[1.65] text-[#4A4A55]">Fast repair without shortcuts, and an affordable alternative to new hardware — often the only route for discontinued units. Our 24/7 servo motor repair line is 1-877-904-6155.</p>
+              </div>
+              <div className="rounded-[22px] border border-[#EAEAEC] bg-white p-5 sm:p-6">
+                <p className="text-[18px] font-extrabold">On-site &amp; pickup</p>
+                <p className="mt-2 text-[14.5px] leading-[1.65] text-[#4A4A55]">Need a technician at the machine? Our <Link href="/on-site-service" className="font-semibold text-[#A50D25] hover:underline">on-site industrial repair</Link> service covers plants across the USA. Prefer to send it in? <Link href="/request-pickup" className="font-semibold text-[#A50D25] hover:underline">Book a pickup</Link> and we collect it from your dock.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="process" className="mb-8">
+          <h2 id="process" className="text-[26px] font-extrabold leading-tight sm:text-[32px]">Your Repair, Step by Step</h2>
+          <div className="mt-5"><ProcessPlates /></div>
+        </section>
+
         <section aria-labelledby="why" className="relative overflow-hidden rounded-[28px] bg-[#0A0A0C] p-6 text-white sm:p-10">
           <span aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-[radial-gradient(closest-side,rgba(200,16,46,0.55),transparent)] blur-xl" />
           <div className="relative">
@@ -115,7 +181,7 @@ export default function ServicesPage() {
           <div className="relative flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="text-[26px] font-extrabold leading-tight sm:text-[32px]">Don&apos;t see your equipment?</h2>
-              <p className="mt-1.5 text-[14.5px] text-white/85">We repair equipment from every major brand. Send the part number and we&apos;ll tell you what we can do.</p>
+              <p className="mt-1.5 text-[14.5px] text-white/85">Request a repair quote: call 1-877-904-6155 or email info@industrialautomationrepair.com with the manufacturer, part number and fault description.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <Link href="/request-repair?service=question" className="inline-flex h-12 items-center gap-2 rounded-xl bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:-translate-y-0.5"><BadgeCheck size={17} aria-hidden="true" /> Ask a Technician</Link>

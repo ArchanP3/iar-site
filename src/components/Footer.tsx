@@ -74,7 +74,7 @@ export default async function Footer() {
               <Image src="/iar-logo-white.png" alt="Industrial Automation Repair Inc." width={988} height={448} sizes="180px" className="h-auto w-44" />
             </Link>
             <p className="mt-3 max-w-70 text-[12.5px] leading-[1.6] text-white/55">
-              Servo drive, motor and industrial electronics repair for the USA.
+              Industrial Automation Repair Inc. is a Grand Island, New York repair center specializing in servo motor, servo drive, spindle and industrial electronics repair for plants across the United States.
             </p>
             <ul className="mt-3 space-y-1.5 text-[12.5px] text-white/75">
               {contact.email && (
@@ -126,14 +126,12 @@ export default async function Footer() {
               ))}
               {/* Country switch: link to the same site in the other country */}
               {SITE_COUNTRY === "CA" && <a href={`${COUNTRY_SITES.US}/`} hrefLang="en-US" className="hover:text-white">USA site</a>}
-              {SITE_COUNTRY === "US" && <a href={`${COUNTRY_SITES.CA}/`} hrefLang="en-CA" className="hover:text-white">Canada site</a>}
             </nav>
           </div>
           <p className="mt-2 leading-[1.55] text-white/60">
-            Industrial Automation Repair Inc. is an independent repair and surplus parts provider. We are not affiliated with, authorized
-            by, or endorsed by any manufacturer named on this site, and we are not an authorized distributor or service centre
-            unless stated. All brand names, logos, model numbers and trademarks belong to their respective owners and are used
-            only to identify compatible equipment. New and surplus parts sold by us may not include the manufacturer&apos;s
+            IAR is an independent repair company. Manufacturer names and part numbers are used only to identify equipment; IAR is
+            not affiliated with or authorized by those manufacturers. All brand names, logos, model numbers and trademarks belong to
+            their respective owners. New and surplus parts sold by us may not include the manufacturer&apos;s
             warranty; our own warranty applies as stated. Product images may be representative.
           </p>
         </div>

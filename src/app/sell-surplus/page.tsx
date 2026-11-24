@@ -8,8 +8,8 @@ import { surplusFaqs } from "@/lib/faqs";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/sell-surplus", {
-  title: "Sell Your Surplus Automation Parts | IAR",
-  description: "Sell surplus servo drives, motors, PLCs, HMIs and CNC parts. Send your list, get an offer, and we can arrange the pickup. Serving the USA.",
+  title: "Sell Surplus Automation Parts | IAR Buys Surplus",
+  description: "Sell surplus servo drives, motors, PLCs, HMIs and CNC parts. Send your list, get an offer, and we arrange the pickup anywhere in the USA.",
   alternates: { canonical: `${SITE_URL}/sell-surplus` },
 });
 
@@ -40,8 +40,8 @@ const schema = {
 
 export default function SellSurplusPage() {
   return (
-    <ResourceShell crumb={[{ label: "Shop", href: "/shop" }, { label: "Sell Your Surplus" }]} title="Sell your" accent="surplus parts."
-      text="Spare drives on the shelf? A line being removed? Send us the list. We make an offer on surplus automation parts from every major brand and can arrange the pickup anywhere in the USA." schema={schema}>
+    <ResourceShell crumb={[{ label: "Shop", href: "/shop" }, { label: "Sell Your Surplus" }]} title="Sell Your" accent="Surplus"
+      text="Spare drives on the shelf? A line being removed? Sell surplus automation parts to IAR: send us the list and we make an offer on parts from every major brand, then arrange the pickup anywhere in the USA." schema={schema}>
       <PageExtras path="/sell-surplus" />
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         <SurplusForm />

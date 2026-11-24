@@ -13,7 +13,7 @@ export const PROCESS: Step[] = [
   },
   {
     t: "Ship Your Unit",
-    d: "Package the unit securely with your contact details and a short fault description, and ship it to our Grand Island, NY repair centre — or drop it off in person.",
+    d: "Package the unit securely with your contact details and a short fault description, and ship it to our Grand Island, NY repair center — or drop it off in person.",
     points: ["Packed securely", "Contact details and fault note inside", "Ship it in or drop it off"],
     icon: "truck", status: "In transit",
   },
@@ -48,7 +48,7 @@ export const PROCESS: Step[] = [
     icon: "package", status: "Shipped",
   },
   {
-    t: "1-Year Warranty",
+    t: "One-Year Warranty",
     d: "Every repair is backed by a one-year warranty, so your equipment is covered long after it is back in service.",
     points: ["Every repair covered", "One full year", "Covered long after it’s back in service"],
     icon: "shield", status: "Covered",
@@ -57,8 +57,8 @@ export const PROCESS: Step[] = [
 
 // "How your unit reaches us" — wording from the Contact, Shipping & Warranty and Exchange Program pages.
 export const INTAKE = [
-  { t: "Drop-off in Grand Island, NY", d: "3279 Grand Island Blvd — bring units to our repair centre during business hours.", icon: "pin" },
+  { t: "Drop-off in Grand Island, NY", d: "3279 Grand Island Blvd; bring units in during business hours.", icon: "pin" },
   { t: "Ship from Anywhere in the USA", d: "Send it with any carrier — same lead times and reporting.", icon: "truck" },
-  { t: "Book a Pickup", d: "We arrange collection from your facility with FedEx, UPS or DHL.", icon: "package" },
+  { t: "Book a Pickup", d: "Our industrial repair pickup service collects from your facility with FedEx, UPS or DHL.", icon: "package" },
   { t: "Line Down? Exchange First", d: "A tested exchange unit ships first; your failed unit follows.", icon: "swap" },
 ];

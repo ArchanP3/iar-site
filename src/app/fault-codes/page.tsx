@@ -46,7 +46,7 @@ export default function FaultCodesPage() {
             <span className="bg-linear-to-r from-[#FF5A6E] to-[#FF3B55] bg-clip-text text-transparent">Explained by Repair Technicians</span>
           </h1>
           <p className="mt-4 max-w-175 text-[15px] leading-[1.65] text-white/70 sm:text-[15.5px]">
-            Look up your alarm, see what it means and the likely cause, then decide: reset it, fix it on site, or send the unit in for repair.
+            Our servo fault code guide covers the drive families we see most — SINAMICS S120, SIMODRIVE 611, FANUC alpha i, Indramat DKC and Kinetix: what the alarm means, what to check first and when the unit needs the bench.
           </p>
           <div className="mt-7 max-w-190">
             <FaultCodeSearch size="lg" button="Search" readUrl placeholder="Enter a fault code or name, e.g. F30001, SV0449, overcurrent" />

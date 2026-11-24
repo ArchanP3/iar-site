@@ -139,7 +139,7 @@ const sections: LegalSection[] = [
     id: "brands",
     title: "Brands and trademarks",
     body: (
-      <p>{n} is an independent repair and surplus parts provider. We are not affiliated with, authorized by, or endorsed by any manufacturer named on this website, and we are not an authorized distributor or service centre unless stated. Brand names, model numbers and trademarks belong to their owners and are used only to identify compatible equipment. Product images may be representative.</p>
+      <p>{n} is an independent repair and surplus parts provider. We are not affiliated with, authorized by, or endorsed by any manufacturer named on this website, and we are not an authorized distributor or service center unless stated. Brand names, model numbers and trademarks belong to their owners and are used only to identify compatible equipment. Product images may be representative.</p>
     ),
   },
   {

@@ -52,7 +52,7 @@ export default async function IndustryPage({ params }: Props) {
     { q: `What ${i.name.toLowerCase()} equipment do you repair?`, a: `We repair the servo drives, VFDs, motors, PLCs, HMIs, power supplies and circuit boards used in ${i.name.toLowerCase()} equipment, including ${i.equipment.slice(0, 3).join(", ").toLowerCase()}, from every major brand.` },
     { q: "How long does a repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote. Evaluation is free and no work starts without your approval." },
     { q: "Is the repair covered by a warranty?", a: "Yes. Every repair is load tested on OEM-standard equipment, ships with a test report and is covered by a 1-year warranty." },
-    { q: "Do you serve plants outside New York State?", a: "Yes. We serve manufacturers across the USA. Ship your unit to us, book a pickup with FedEx, UPS or DHL, or ask about on-site service." },
+    { q: "Do you serve plants outside New York State?", a: "Yes. We serve manufacturers across the USA: ship your unit in, book a pickup with FedEx, UPS or DHL, or ask for on-site service." },
   ];
   const ld = {
     "@context": "https://schema.org",

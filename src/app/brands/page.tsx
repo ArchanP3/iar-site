@@ -9,8 +9,8 @@ import BrandDirectory from "@/components/brands/BrandDirectory";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/brands", {
-  title: "Brands We Repair | Siemens, Indramat, Fanuc & More | IAR",
-  description: "We repair every automation brand: Siemens, Indramat, Allen-Bradley, Fanuc, Yaskawa, Danfoss, KUKA and many more. Drives, motors, controls, HMIs and boards.",
+  title: "Brands We Repair | Siemens, Indramat, FANUC & More | IAR",
+  description: "Servo motor, drive and control repair for 90+ manufacturers, led by Siemens, Bosch Rexroth Indramat, Allen-Bradley and FANUC. Free evaluation.",
 });
 
 export default function BrandsPage() {
@@ -53,8 +53,8 @@ export default function BrandsPage() {
           <nav aria-label="Breadcrumb"><ol className="flex items-center gap-1.5 text-[12.5px] text-white/60"><li><Link href="/" className="hover:text-white">Home</Link></li><li aria-hidden="true"><ChevronRight size={13} /></li><li className="text-white/85">Brands</li></ol></nav>
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-190">
-              <h1 className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">Every brand. <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Every part.</span></h1>
-              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">We repair drives, motors, controller cards, CNC controls, HMIs, PLCs, power supplies and circuit boards from every major automation brand, current or obsolete. Name any brand and we&apos;ll repair it.</p>
+              <h1 className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">Brands We <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair</span></h1>
+              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">We repair motors, drives and controls from every major automation brand, current and discontinued. Pick a manufacturer to see the series we work on most.</p>
             </div>
             <Link href="/request-repair" className="inline-flex h-12 w-fit items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
           </div>

@@ -35,8 +35,8 @@ export default function FaultCodeTeaser() {
               <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">Telling You?</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
-              Look up {totalCodes.toLocaleString("en-US")} servo drive, spindle and power supply fault codes, explained in
-              plain English by our repair technicians, with likely causes and safe checks.
+              Look up {totalCodes.toLocaleString("en-US")} servo drive fault codes in plain English — what the alarm means,
+              what to check first and when the unit needs our bench.
             </p>
           </div>
           <Link

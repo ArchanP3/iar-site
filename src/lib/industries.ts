@@ -27,28 +27,28 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     slug: "automotive", name: "Automotive", color: "#E11D3A", image: "/industries/automotive.jpg", zoom: true, icon: "Car", core: true,
-    short: "Robot servo motor repair, weld-cell drives and conveyor VFDs.",
+    short: "Robot servo motors, weld-cell drives and conveyor VFDs.",
     intro: "A stopped robot or weld cell holds up the whole body shop. IAR handles robot servo motor repair, weld-cell drive repair and conveyor VFD repair for automotive and parts plants, load testing every unit before it goes back on the line.",
     equipment: ["Body shop and welding robots", "Transfer presses and press lines", "Paint shop conveyors and robots", "Final assembly conveyors", "Welding controllers", "Torque and fastening systems"],
     services: ["robotics-repair", "servo-drive-repair", "servo-motor-repair", "welding-controller-repair", "plc-repair", "hmi-repair"],
   },
   {
     slug: "packaging", name: "Packaging", color: "#E11D3A", image: "/industries/packaging.jpg", zoom: true, icon: "Package", core: true,
-    short: "Servo repair for fillers, cartoners, wrappers and labellers.",
-    intro: "Packaging lines live on tight servo timing. We provide packaging machine servo repair for fillers, cartoners, wrappers and labellers — drives, motors, motion controllers and HMIs — and test each axis under load before it ships.",
+    short: "Packaging machine servo repair for fillers, cartoners, wrappers and labelers.",
+    intro: "Packaging lines live on tight servo timing. We provide packaging machine servo repair for fillers, cartoners, wrappers and labelers — drives, motors, motion controllers and HMIs — and test each axis under load before it ships.",
     equipment: ["Form-fill-seal machines", "Cartoners and case packers", "Flow wrappers", "Labelers and coders", "Palletizers and stretch wrappers", "Fillers and cappers"],
     services: ["servo-drive-repair", "servo-motor-repair", "motion-controller-repair", "hmi-repair", "encoder-repair", "plc-repair"],
   },
   {
     slug: "plastics", name: "Plastics & Thermoforming", color: "#E11D3A", image: "/industries/plastics.jpg", zoom: true, icon: "Factory", core: true,
-    short: "Thermoformer and injection-moulding servo axes.",
-    intro: "Thermoformers and injection-moulding machines put big servo axes under constant load, many of them SINAMICS-driven. IAR repairs those drives, motors, heater controls and HMIs at component level so your moulds keep cycling.",
+    short: "Thermoformer and injection-molding servo axes.",
+    intro: "Thermoformers and injection-molding machines put big servo axes under constant load, many of them SINAMICS-driven. IAR repairs those drives, motors, heater controls and HMIs at component level so your molds keep cycling.",
     equipment: ["Injection molding machines", "Extruders and pullers", "Thermoformers", "Blow molding machines", "Robots and sprue pickers", "Temperature controllers and heater zones"],
     services: ["servo-drive-repair", "servo-motor-repair", "temperature-controller-repair", "vfd-repair", "hmi-repair", "controller-card-repair"],
   },
   {
     slug: "food-beverage", name: "Food & Beverage", color: "#E11D3A", image: "/industries/food-beverage.jpg", zoom: true, icon: "Beef", core: true,
-    short: "Washdown-damaged motors and drives on food lines.",
+    short: "Food and beverage equipment repair, including washdown-damaged motors and drives.",
     intro: "Food and beverage plants run around the clock and wash down every shift. Our food and beverage equipment repair covers washdown-damaged servo motors, VFDs, drives and controls on processing, bottling, filling and packaging lines.",
     equipment: ["Bottling and canning lines", "Fillers and cappers", "Mixers and processing equipment", "Conveyors", "Ovens and fryers", "Packaging machines"],
     services: ["vfd-repair", "servo-drive-repair", "industrial-motor-repair", "pump-fan-motor-repair", "plc-repair", "hmi-repair"],
@@ -56,7 +56,7 @@ export const industries: Industry[] = [
   {
     slug: "metalworking", name: "Metalworking & CNC", color: "#E11D3A", image: "/industries/metalworking.jpg", zoom: true, icon: "Cog", core: true,
     short: "Spindles, servo drives and controls on machine tools.",
-    intro: "Machining centres, lathes and grinders depend on spindle motors, servo amplifiers and CNC controls. We repair Siemens SINUMERIK, FANUC and Indramat systems and rebuild spindle motors, testing every unit before it returns.",
+    intro: "Machining centers, lathes and grinders depend on spindle motors, servo amplifiers and CNC controls. We repair Siemens SINUMERIK, FANUC and Indramat systems and rebuild spindle motors, testing every unit before it returns.",
     equipment: ["CNC machining centers", "CNC lathes", "Grinders", "Press brakes and punch presses", "Laser and plasma cutters", "Spindle motors and drives"],
     services: ["cnc-repair", "spindle-rebuild", "servo-drive-repair", "servo-motor-repair", "encoder-repair", "power-supply-repair"],
   },

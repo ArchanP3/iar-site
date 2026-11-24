@@ -10,8 +10,8 @@ import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/industries", {
-  title: { absolute: "Industries We Serve | Industrial Repair | IAR" },
-  description: "Servo drive, motor, PLC, HMI and CNC repair for automotive, packaging, plastics, food, metalworking, printing, pharma and 12 more industries. Serving the USA.",
+  title: { absolute: "Industries We Serve | Servo & Drive Repair | IAR" },
+  description: "Servo motor, drive and electronics repair for US automotive, packaging, plastics, food and beverage, metalworking, printing and robotics plants.",
   alternates: { canonical: `${SITE_URL}/industries` },
 });
 
@@ -36,7 +36,7 @@ export default function IndustriesPage() {
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div className="max-w-190">
               <h1 className="text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">Industries <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">We Serve</span></h1>
-              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">Every plant runs on drives, motors and controls. We repair them for manufacturers across the USA, whatever you make.</p>
+              <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">Different plants, same problem: a stopped axis. We repair drives, motors and controls for manufacturers across the USA, whatever you make.</p>
             </div>
             <div className="flex gap-3">
             <Link href="/request-repair" className="inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap sm:flex-none rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>

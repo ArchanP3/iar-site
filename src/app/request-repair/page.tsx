@@ -10,7 +10,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 export const generateMetadata = seo("/request-repair", {
   title: "Request a Repair | Servo Drive, Motor & CNC Repair | IAR",
   description:
-    "Send servo drives, motors, CNC and industrial electronics to our Grand Island, NY repair centre. Free evaluation, 24–72 hr typical turnaround, 1-year warranty.",
+    "Send servo drives, motors, CNC and industrial electronics to our Grand Island, NY repair center. Free evaluation, 24–72 hr typical turnaround.",
 });
 
 const tips = [
@@ -54,7 +54,7 @@ export default function RequestRepairPage() {
             Request a <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair</span>
           </h1>
           <p className="mt-2 max-w-160 text-[14.5px] leading-[1.6] text-white/75 sm:text-[16px]">
-            Servo drives, motors, CNC controls and industrial electronics. Free evaluation and a written quote before any work starts.
+            Tell us what failed and how you want to send it: ship it in, drop it off or book a pickup. We reply with next steps, and the evaluation is free.
           </p>
         </div>
       </section>

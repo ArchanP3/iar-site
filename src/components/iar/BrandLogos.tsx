@@ -89,7 +89,7 @@ export default function BrandLogos() {
   return (
     <section aria-label="Brands we repair" className={`${brandFont.className} relative overflow-hidden border-b border-line bg-white py-8`}>
       <p className="mb-4 text-center font-display text-xs font-bold uppercase tracking-[0.25em] text-ink/50">
-        Servo motors, drives &amp; controls we repair from <span className="text-brand">40+ manufacturers</span>
+        Siemens, Bosch Rexroth Indramat, Allen-Bradley and FANUC, plus <span className="text-brand">40+ more manufacturers</span> — current models and discontinued units
       </p>
       <div className="logo-marquee relative space-y-2">
         <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-32" />
