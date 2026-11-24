@@ -34,12 +34,12 @@ export type PartsMinPrice = Record<string, number>;
 export const DEFAULTS = {
   tracking: { gtm: "", ga4: "", gscVerification: "", gscVerificationCa: "", bingVerification: "", clarity: "", linkedin: "", headHtml: "", bodyHtml: "" } as Tracking,
   business: {
-    name: "Industrial Automation Repair Inc.", street: "", city: "Mississauga", region: "ON", postal: "", country: "CA",
+    name: "Industrial Automation Repair Inc.", street: "3279 Grand Island Blvd", city: "Grand Island", region: "NY", postal: "14072", country: "US",
     phone: contact.phone, email: contact.email, hours: contact.hours, gbp: "", dropOff: "Drop off during business hours, no appointment needed.",
-    serviceArea: "Repairs across Canada and the USA. Parts shipped worldwide by air.",
+    serviceArea: "Repairs across the USA. Parts shipped to the USA, Canada and worldwide.",
   } as Business,
   site: {
-    announcement: { on: true, text: "Repairs in Canada & USA · Parts shipped worldwide" },
+    announcement: { on: true, text: "Repairs in the USA · Parts shipped to the USA, Canada & worldwide" },
     social: { linkedin: "", youtube: "", facebook: "", instagram: "", x: "" },
     titleSuffix: "IAR",
     ogImage: "",
@@ -49,7 +49,7 @@ export const DEFAULTS = {
   partsSeo: {
     on: false,
     titleTemplate: "{brand} {part_number} {name} | Buy & Repair",
-    descriptionTemplate: "{brand} {part_number} {name}. {availability} {repair} Canada & USA.",
+    descriptionTemplate: "{brand} {part_number} {name}. {availability} {repair} Ships to the USA & Canada.",
   } as PartsSeo,
   google: { gscSite: "", ga4Property: "" } as GoogleCfg,
   security: { require2fa: false } as Security,

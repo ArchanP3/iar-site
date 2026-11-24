@@ -30,12 +30,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!i) return {};
   return withSeo(industryUrl(i.slug), {
     title: { absolute: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | IAR`) },
-    description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Canada & USA.`),
+    description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Serving the USA.`),
     alternates: { canonical: `${SITE_URL}${industryUrl(i.slug)}` },
     openGraph: {
       type: "website", url: `${SHARE_URL}${industryUrl(i.slug)}`, siteName: "Industrial Automation Repair Inc.",
       title: fitTitle(`${i.name} Equipment Repair | Drives, Motors & Controls | IAR`),
-      description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Canada & USA.`),
+      description: clip(`${i.name} equipment repair: ${i.short} Servo drives, motors, PLCs and HMIs repaired with a free evaluation and 1-year warranty. Serving the USA.`),
       images: [{ url: shareImage(i.image), alt: `${i.name} equipment repair` }],
     },
   });
@@ -52,12 +52,12 @@ export default async function IndustryPage({ params }: Props) {
     { q: `What ${i.name.toLowerCase()} equipment do you repair?`, a: `We repair the servo drives, VFDs, motors, PLCs, HMIs, power supplies and circuit boards used in ${i.name.toLowerCase()} equipment, including ${i.equipment.slice(0, 3).join(", ").toLowerCase()}, from every major brand.` },
     { q: "How long does a repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote. Evaluation is free and no work starts without your approval." },
     { q: "Is the repair covered by a warranty?", a: "Yes. Every repair is load tested on OEM-standard equipment, ships with a test report and is covered by a 1-year warranty." },
-    { q: "Do you serve plants outside Ontario?", a: "Yes. We serve manufacturers across Canada and the USA. Ship your unit to us, book a pickup with FedEx, Purolator, UPS or DHL, or ask about on-site service." },
+    { q: "Do you serve plants outside New York State?", a: "Yes. We serve manufacturers across the USA. Ship your unit to us, book a pickup with FedEx, UPS or DHL, or ask about on-site service." },
   ];
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Service", name: `${i.name} equipment repair`, serviceType: "Industrial electronics repair", provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL }, areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }], url: `${SITE_URL}${industryUrl(i.slug)}`, description: i.intro },
+      { "@type": "Service", name: `${i.name} equipment repair`, serviceType: "Industrial electronics repair", provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL }, areaServed: [{ "@type": "Country", name: "United States" }], url: `${SITE_URL}${industryUrl(i.slug)}`, description: i.intro },
       { "@type": "BreadcrumbList", itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
         { "@type": "ListItem", position: 2, name: "Industries", item: `${SITE_URL}/industries` },

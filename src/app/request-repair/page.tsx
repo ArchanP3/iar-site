@@ -10,7 +10,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 export const generateMetadata = seo("/request-repair", {
   title: "Request a Repair | Servo Drive, Motor & CNC Repair | IAR",
   description:
-    "Send servo drives, motors, CNC and industrial electronics to our Mississauga repair centre. Free evaluation, 24–72 hr typical turnaround, 1-year warranty.",
+    "Send servo drives, motors, CNC and industrial electronics to our Grand Island, NY repair centre. Free evaluation, 24–72 hr typical turnaround, 1-year warranty.",
 });
 
 const tips = [

@@ -13,7 +13,7 @@ export const PROCESS: Step[] = [
   },
   {
     t: "Ship Your Unit",
-    d: "Package the unit securely with your contact details and a short fault description, and ship it to our Mississauga repair centre — or drop it off in person.",
+    d: "Package the unit securely with your contact details and a short fault description, and ship it to our Grand Island, NY repair centre — or drop it off in person.",
     points: ["Packed securely", "Contact details and fault note inside", "Ship it in or drop it off"],
     icon: "truck", status: "In transit",
   },
@@ -57,8 +57,8 @@ export const PROCESS: Step[] = [
 
 // "How your unit reaches us" — wording from the Contact, Shipping & Warranty and Exchange Program pages.
 export const INTAKE = [
-  { t: "Drop-off in Mississauga", d: "1299 Matheson Blvd E — GTA customers can bring units to our repair centre.", icon: "pin" },
-  { t: "Courier Across Canada", d: "Ship from any province — same lead times and reporting.", icon: "leaf" },
-  { t: "Ship from the USA", d: "Include a commercial invoice marked “for repair and return”.", icon: "globe" },
+  { t: "Drop-off in Grand Island, NY", d: "3279 Grand Island Blvd — bring units to our repair centre during business hours.", icon: "pin" },
+  { t: "Ship from Anywhere in the USA", d: "Send it with any carrier — same lead times and reporting.", icon: "truck" },
+  { t: "Book a Pickup", d: "We arrange collection from your facility with FedEx, UPS or DHL.", icon: "package" },
   { t: "Line Down? Exchange First", d: "A tested exchange unit ships first; your failed unit follows.", icon: "swap" },
 ];

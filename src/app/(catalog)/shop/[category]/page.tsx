@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/shop/[category]">
   if (process.env.PREVIEW_NO_DB === "1") return { title: c.name, robots: { index: false } }; // PREVIEW BRANCH ONLY
   return withSeo(`/shop/${c.slug}`, {
     title: `${c.name} | Quote & Repair`,
-    description: clip(`${c.intro} Request a quote for new, refurbished or exchange units, or have yours repaired. Canada & USA.`),
+    description: clip(`${c.intro} Request a quote for new, refurbished or exchange units, or have yours repaired. Parts ship to the USA & Canada.`),
     alternates: { canonical: `/shop/${c.slug}` },
     // Until products carry this category the page lists keyword matches: useful, too thin to index.
     ...((await hasCategoryFacet(c.slug)) ? {} : { robots: { index: false, follow: true } }),

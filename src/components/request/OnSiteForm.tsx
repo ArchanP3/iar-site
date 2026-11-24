@@ -46,10 +46,10 @@ export default function OnSiteForm() {
       <Step n={3} title="Site location">
         <div className="grid gap-3 sm:grid-cols-3">
           <div><label className={label} htmlFor="os-city">City *</label><input id="os-city" name="Site city" required className={input} autoComplete="address-level2" /></div>
-          <div><label className={label} htmlFor="os-region">Province / State *</label><input id="os-region" name="Site province or state" required className={input} autoComplete="address-level1" /></div>
+          <div><label className={label} htmlFor="os-region">State *</label><input id="os-region" name="Site province or state" required className={input} autoComplete="address-level1" /></div>
           <div>
             <label className={label} htmlFor="os-country">Country</label>
-            <select id="os-country" name="Site country" className={input}><option>Canada</option><option>United States</option></select>
+            <select id="os-country" name="Site country" className={input}><option>United States</option></select>
           </div>
         </div>
       </Step>

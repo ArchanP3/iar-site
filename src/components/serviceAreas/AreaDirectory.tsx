@@ -61,7 +61,6 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
                 <span className="relative mt-auto flex flex-wrap gap-1.5 pt-3 text-[10px] font-bold uppercase tracking-[0.1em] sm:text-[10.5px]">
                   {a.dropOff && <span className="rounded-full px-2 py-1 text-white" style={{ background: `${c}55` }}>Drop-off</span>}
                   <span className="rounded-full bg-white/10 px-2 py-1 text-[#FF8A99]">Pickup</span>
-                  {a.country === "US" && <span className="rounded-full bg-white/10 px-2 py-1 text-white/80">Customs help</span>}
                 </span>
               </Link>
             </li>
@@ -70,7 +69,7 @@ export default function AreaDirectory({ areas, urls }: { areas: Area[]; urls: Re
       </ul>
       {shown.size === 0 && (
         <div className="mt-6 flex flex-col items-start gap-3 rounded-[20px] border border-dashed border-[#D6D6DB] bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[14.5px] text-[#4E4E58]"><b className="text-[#131316]">{q ? `“${q}” isn’t on the list yet` : "No cities here"}</b>, but we serve every city in Canada and the USA.</p>
+          <p className="text-[14.5px] text-[#4E4E58]"><b className="text-[#131316]">{q ? `“${q}” isn’t on the list yet` : "No cities here"}</b>, but we serve every city in the USA.</p>
           <Link href="/request-pickup" className="inline-flex h-11 items-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-5 text-[14px] font-semibold text-white"><Truck size={16} aria-hidden="true" /> Request a Pickup</Link>
         </div>
       )}

@@ -14,7 +14,7 @@ const repairSteps: StepList = [
   ["Component-level repair after you approve", Wrench],
   ["Load tested on our benches, returned with a test report", RefreshCw],
 ];
-const repairPoints = ["1-year warranty", "24–72 hr typical", "Free evaluation", "Canada & USA"];
+const repairPoints = ["1-year warranty", "24–72 hr typical", "Free evaluation", "Across the USA"];
 
 export default async function NextSteps({
   title = "What happens next",

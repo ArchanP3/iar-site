@@ -70,7 +70,7 @@ export default function QuoteForm() {
         {offer && (
           <div className="mt-4 max-w-[320px]">
             <label className={label} htmlFor="rq-offer">Your offer (price per unit) *</label>
-            <input id="rq-offer" key={amount} defaultValue={amount} name="Offer per unit" required className={input} placeholder="e.g. $450 CAD" />
+            <input id="rq-offer" key={amount} defaultValue={amount} name="Offer per unit" required className={input} placeholder="e.g. $450 USD" />
           </div>
         )}
         <div className="mt-4">

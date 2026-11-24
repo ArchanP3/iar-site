@@ -15,9 +15,9 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 const text = {
   CA: {
     title: "Service Areas: Industrial Repair Across Canada | IAR",
-    description: "One repair centre in Mississauga, Ontario serving manufacturers across Canada: drop-off, pickup, ship-in and on-site service.",
+    description: "One repair centre in Grand Island, New York serving manufacturers across Canada: drop-off, pickup, ship-in and on-site service.",
     accent: "All of Canada.",
-    intro: "Every repair is done at our repair centre in Mississauga, Ontario. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax.",
+    intro: "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax.",
     stats: [["provinces", "Provinces"], ["cities", "Canadian cities"]],
     everywhere: "Every city in Canada",
     anywhere: "Request a pickup from anywhere in Canada, or book a technician for on-site service at your plant.",
@@ -25,9 +25,9 @@ const text = {
   },
   US: {
     title: "Service Areas: Industrial Repair for US Manufacturers | IAR",
-    description: "Servo drive, motor and industrial electronics repair for US manufacturers: pickup from your plant with customs paperwork help, repaired at our centre in Mississauga, Ontario.",
+    description: "Servo drive, motor and industrial electronics repair for US manufacturers: pickup from your plant, repaired at our centre in Grand Island, New York.",
     accent: "Serving the USA.",
-    intro: "Every repair is done at our repair centre in Mississauga, Ontario. We arrange the pickup from your plant and help with the customs paperwork, from Chicago to Pittsburgh and across the USA.",
+    intro: "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA.",
     stats: [["states", "States"], ["cities", "US cities"]],
     everywhere: "Every city in the USA",
     anywhere: "Request a pickup from anywhere in the USA, or book a technician for on-site service at your plant.",
@@ -37,32 +37,31 @@ const text = {
 const split = SITE_COUNTRY !== null;
 
 export const generateMetadata = seo("/service-areas", {
-  title: split ? text.title : "Service Areas: Industrial Repair Across Canada & USA | IAR",
-  description: split ? text.description : "One repair centre in Mississauga, Ontario serving manufacturers across Canada and the USA: drop-off, pickup, ship-in and on-site service.",
+  title: split ? text.title : "Service Areas: Industrial Repair Across the USA | IAR",
+  description: split ? text.description : "One repair centre in Grand Island, New York serving manufacturers across the USA: drop-off, pickup, ship-in and on-site service.",
   alternates: { canonical: `${SITE_URL}/service-areas` },
 });
 
 const urls = Object.fromEntries(areas.map((a) => [a.slug, areaHref(a)]));
-const ca = areas.filter((a) => a.country === "CA").length;
 const us = areas.filter((a) => a.country === "US").length;
 const regionCount = new Set(areas.map((a) => a.regionCode)).size;
 const stats: [string, string][] = split
   ? [[`${regionCount}`, text.stats[0][1]], [`${areas.length}`, text.stats[1][1]], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]]
-  : [[`${ca}`, "Canadian cities"], [`${us}`, "US cities"], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]];
+  : [[`${regionCount}`, "States"], [`${us}`, "US cities"], ["24–72 hr", "typical turnaround"], ["1-year", "warranty"]];
 const regions = regionsIn(areas);
 
-const dropOff = { icon: MapPin, t: "Drop-off in Mississauga", d: "Walk in during business hours. No appointment needed.", cta: "Contact us", href: "/contact", color: "#FF3B55" };
+const dropOff = { icon: MapPin, t: "Drop-off in Grand Island, NY", d: "Walk in during business hours. No appointment needed.", cta: "Contact us", href: "/contact", color: "#FF3B55" };
 const pickupCA = { icon: PackageCheck, t: "Pickup across Canada", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#F31D3D" };
-const pickupUS = { icon: Globe2, t: "Pickup across the USA", d: "Waybill and customs paperwork help included.", cta: "Request a pickup", href: "/request-pickup", color: "#F43F5E" };
+const pickupUS = { icon: Globe2, t: "Pickup across the USA", d: "We arrange the collection and send you the waybill.", cta: "Request a pickup", href: "/request-pickup", color: "#F43F5E" };
 const onSite = (where: string) => ({ icon: Wrench, t: "On-site service", d: `Technicians at your plant in ${where}.`, cta: "Book on-site service", href: "/on-site-service", color: "#F5A524" });
 const ways =
   SITE_COUNTRY === "US" ? [pickupUS, onSite("the USA"), dropOff]
   : SITE_COUNTRY === "CA" ? [dropOff, pickupCA, onSite("Canada")]
-  : [dropOff, pickupCA, pickupUS, onSite("Canada and the USA")];
+  : [dropOff, pickupUS, onSite("the USA")];
 
 const steps = [
   { icon: Truck, t: "Book the pickup", d: "Tell us what's failed and where it is. Pickup from your plant, or ship it in with any carrier." },
-  { icon: ClipboardCheck, t: "We send the waybill", d: "We arrange the collection and send the paperwork. US shipments get customs paperwork help." },
+  { icon: ClipboardCheck, t: "We send the waybill", d: "We arrange the collection and send you the paperwork." },
   { icon: FileText, t: "Free evaluation & quote", d: "Root cause found and a written quote sent before any work starts." },
   { icon: ShieldCheck, t: "Tested & returned", d: "Repaired, load tested on our benches and shipped back with a test report and a 1-year warranty." },
 ];
@@ -102,16 +101,16 @@ export default function ServiceAreasPage() {
             </nav>
             <p className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/6 px-3.5 py-1.5 text-[12px] font-semibold text-white/85 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur">
               <span className="relative flex h-2 w-2"><span className="sa-ping absolute inset-0 rounded-full bg-[#FF3B55]" /><span className="relative h-2 w-2 rounded-full bg-[#FF3B55]" /></span>
-              Repair centre · Mississauga, Ontario
+              Repair centre · Grand Island, New York
             </p>
             <h1 className="mt-4 text-[34px] font-extrabold leading-[1.06] tracking-[-0.025em] sm:text-[48px] lg:text-[54px]">
               One repair centre.{" "}
-              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "All of Canada & the USA."}</span>
+              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "All of the USA."}</span>
             </h1>
             <p className="mt-4 max-w-140 text-[15px] leading-[1.7] text-white/72 sm:text-[16.5px]">
               {split
                 ? text.intro
-                : "Every repair is done at our repair centre in Mississauga, Ontario. Drop it off, ship it in, or let us arrange the pickup from your plant, from Vancouver to Halifax and Chicago to Pittsburgh."}
+                : "Every repair is done at our repair centre in Grand Island, New York. Drop it off, ship it in, or let us arrange the pickup from your plant, from Buffalo to Chicago and across the USA."}
             </p>
             <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
               <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold text-white shadow-[0_16px_34px_-14px_rgba(218,11,42,0.9)] transition hover:-translate-y-0.5">
@@ -137,7 +136,7 @@ export default function ServiceAreasPage() {
             <div className="mt-1 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[12px] font-semibold text-white/60 lg:justify-end">
               <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 border-[#FF3B55] bg-white" aria-hidden="true" />Our repair centre</span>
               {regions.map((r) => <span key={r.key} className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full border-2 bg-[#0A0A0C]" style={{ borderColor: r.color }} aria-hidden="true" />{r.label}</span>)}
-              <span className="text-white/60"><span className="hidden sm:inline">Hover a city · </span>{split ? text.everywhere : "Every city in Canada & the USA"} served</span>
+              <span className="text-white/60"><span className="hidden sm:inline">Hover a city · </span>{split ? text.everywhere : "Every city in the USA"} served</span>
             </div>
           </div>
         </div>
@@ -219,9 +218,9 @@ export default function ServiceAreasPage() {
           <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 right-40 h-64 w-64 rounded-full border-[28px] border-white/6" />
           <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-160">
-              <p className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-white/80"><BadgeCheck size={15} aria-hidden="true" /> {split ? text.everywhere : "Every city in Canada & the USA"}</p>
+              <p className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-white/80"><BadgeCheck size={15} aria-hidden="true" /> {split ? text.everywhere : "Every city in the USA"}</p>
               <h2 className="mt-2 text-[26px] font-extrabold leading-[1.15] tracking-[-0.02em] sm:text-[34px]">City not listed? We still come to you.</h2>
-              <p className="mt-2 text-[14.5px] leading-[1.6] text-white/85 sm:text-[16px]">{split ? text.anywhere : "Request a pickup from anywhere in Canada or the USA, or book a technician for on-site service at your plant."}</p>
+              <p className="mt-2 text-[14.5px] leading-[1.6] text-white/85 sm:text-[16px]">{split ? text.anywhere : "Request a pickup from anywhere in the USA, or book a technician for on-site service at your plant."}</p>
             </div>
             <div className="flex flex-col gap-2.5 sm:flex-row">
               <Link href="/request-pickup" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-[15px] font-semibold text-[#131316] shadow-[0_14px_30px_-14px_rgba(0,0,0,0.5)] transition hover:-translate-y-0.5"><Truck size={17} aria-hidden="true" /> Request a Pickup</Link>

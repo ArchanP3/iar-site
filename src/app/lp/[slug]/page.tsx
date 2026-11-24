@@ -60,7 +60,7 @@ async function Content({ params }: Props) {
             image: `${SITE_URL}/iar-logo.png`,
             ...(c.phone ? { telephone: c.phone } : {}),
             email: c.email,
-            address: { "@type": "PostalAddress", ...(c.street ? { streetAddress: c.street } : {}), addressLocality: c.city || "Mississauga", addressRegion: c.region || "ON", addressCountry: "CA" },
+            address: { "@type": "PostalAddress", ...(c.street ? { streetAddress: c.street } : {}), addressLocality: c.city || "Grand Island", addressRegion: c.region || "NY", addressCountry: "US" },
             areaServed: { "@type": "City", name: [d.vars.city, d.vars.province].filter(Boolean).join(", ") },
           }]
         : []),

@@ -24,7 +24,7 @@ const sections: LegalSection[] = [
     id: "who",
     title: "Who we are",
     body: (
-      <p>{n} (&quot;we&quot;, &quot;us&quot;) repairs and supplies industrial automation equipment from our repair centre at {fullAddress(contact)}, for customers across Canada and the USA. This policy explains what personal information we collect, why, and the choices you have. We handle personal information in line with Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
+      <p>{n} (&quot;we&quot;, &quot;us&quot;) repairs and supplies industrial automation equipment from our repair centre at {fullAddress(contact)}, for customers across the USA. This policy explains what personal information we collect, why, and the choices you have. We handle personal information in line with Canada&apos;s Personal Information Protection and Electronic Documents Act (PIPEDA).</p>
     ),
   },
   {
@@ -67,7 +67,7 @@ const sections: LegalSection[] = [
       <>
         <p>We do not sell or rent your personal information. We share it only as needed to do business with you:</p>
         <ul>
-          <li><strong>Shipping carriers</strong> such as FedEx, Purolator, UPS and DHL, to deliver or collect your units;</li>
+          <li><strong>Shipping carriers</strong> such as FedEx, UPS and DHL, to deliver or collect your units;</li>
           <li><strong>Service providers</strong> who help us run the business, such as our website host, the service that delivers website form messages to our inbox, email, accounting and, when it is added, payment processing;</li>
           <li><strong>Authorities</strong> when the law requires it, or to protect our rights and safety.</li>
         </ul>

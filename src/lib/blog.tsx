@@ -98,7 +98,7 @@ export const posts: Post[] = [
   {
     slug: "how-we-test-servo-motors-and-drives",
     title: "How we test servo motors and drives on our test benches",
-    description: "A repair is only as good as its test. How every unit is checked in, evaluated and run under power on our test benches before it leaves our Mississauga bench.",
+    description: "A repair is only as good as its test. How every unit is checked in, evaluated and run under power on our test benches before it leaves our Grand Island, NY bench.",
     date: "2026-10-26",
     minutes: 5,
     tag: "Inside our repair centre",

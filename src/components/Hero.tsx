@@ -473,7 +473,7 @@ export default function Hero() {
               <span className="h-0.75 w-10 shrink-0 rounded-full bg-linear-to-r from-[#C8102E] to-[#FF3B55]" />
               {/* Main page heading for Google (fixed, never changes) */}
               <h1 className="text-[13px] font-semibold leading-snug tracking-[0.01em] text-white/90 sm:text-[15px]">
-                Servo Drive, Motor &amp; Industrial Electronics Repair in Canada &amp; USA
+                Servo Drive, Motor &amp; Industrial Electronics Repair in the USA
               </h1>
             </div>
 

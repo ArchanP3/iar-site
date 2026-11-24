@@ -21,12 +21,12 @@ const trust = [
   { icon: ClipboardCheck, t: "Free evaluation", d: "On every repair" },
   { icon: ShieldCheck, t: "1-year warranty", d: "On repairs" },
   { icon: Gauge, t: "Load tested on our benches", d: "Test report included" },
-  { icon: MapPin, t: "Canada & USA", d: "Pickup or ship it in" },
+  { icon: MapPin, t: "Across the USA", d: "Pickup or ship it in" },
 ];
 
 // Used when the catalog has no repair steps for this part.
 const defaultProcess = [
-  { step: "Send it in", detail: "Ship your unit to us, or book a pickup in Canada and the USA." },
+  { step: "Send it in", detail: "Ship your unit to us, or book a pickup in the USA." },
   { step: "Quote first", detail: "We check the unit and send a quote. No work starts until you approve it." },
   { step: "Repair", detail: "Your own unit is repaired and returned to you." },
   { step: "Warranty", detail: `Every repair carries a ${WARRANTY}.` },
@@ -222,7 +222,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
               <h2 className="text-[20px] font-extrabold sm:text-[22px]">Shipping &amp; warranty</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {[
-                  { icon: Truck, t: "Canada & USA", d: "We ship across Canada and the USA, and outbound shipping on in-stock orders is on us. We confirm the ship date with your order." },
+                  { icon: Truck, t: "USA & Canada", d: "We ship across the USA and Canada, and outbound shipping on in-stock orders is on us. We confirm the ship date with your order." },
                   { icon: MapPin, t: "Pickup available", d: "Ship your unit in, or book a pickup for repairs and exchanges." },
                   { icon: ShieldCheck, t: WARRANTY, d: "On every repair." },
                   { icon: Package, t: "No payment online", d: "We confirm stock, shipping and your invoice before you pay." },
@@ -260,7 +260,7 @@ export default function PartPage({ p, related }: { p: Part; related?: React.Reac
                 <p className="relative text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Repair service</p>
                 <h2 id="repair" className="relative mt-2 text-[22px] font-extrabold leading-tight">Repair your <span className="wrap-break-word">{p.partNumber}</span></h2>
                 <ul className="relative mt-4 space-y-2.5 text-[14px] text-white/85">
-                  {["Price depends on the fault: you get a quote before any work starts", "Ship it in, or we arrange a pickup in Canada & USA", `${WARRANTY} on the repair`].map((t) => (
+                  {["Price depends on the fault: you get a quote before any work starts", "Ship it in, or we arrange a pickup in the USA", `${WARRANTY} on the repair`].map((t) => (
                     <li key={t} className="flex gap-2.5"><BadgeCheck size={17} className="mt-0.5 flex-none text-[#FF5A6E]" aria-hidden="true" />{t}</li>
                   ))}
                 </ul>

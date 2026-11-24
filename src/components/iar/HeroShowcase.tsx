@@ -104,10 +104,10 @@ export default function HeroShowcase() {
         {/* text — swap wording here */}
         <div className="relative z-10">
           <p className="iar-fade-up flex items-center gap-2 font-display text-xs font-bold uppercase tracking-[0.25em] text-white/70">
-            <span className="inline-block h-0.5 w-8 bg-brand" />Industrial Automation Repair · Mississauga, Ontario
+            <span className="inline-block h-0.5 w-8 bg-brand" />Industrial Automation Repair · Grand Island, New York
           </p>
           <h1 className="iar-fade-up mt-5 font-display text-4xl font-extrabold leading-[1.05] [animation-delay:.1s] sm:text-5xl xl:text-6xl">
-            Servo Motor Repair &amp; <span className="text-brand">Servo Drive Repair</span> Canada &amp; USA
+            Servo Motor Repair &amp; <span className="text-brand">Servo Drive Repair</span> USA
           </h1>
           <p className="iar-fade-up mt-4 text-xs font-medium uppercase tracking-[0.4em] text-white/55 [animation-delay:.2s]">Your Automation Repair Partner</p>
           <p className="iar-fade-up mt-5 max-w-xl text-lg leading-relaxed text-white/75 [animation-delay:.3s]">

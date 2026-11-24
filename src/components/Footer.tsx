@@ -74,7 +74,7 @@ export default async function Footer() {
               <Image src="/iar-logo-white.png" alt="Industrial Automation Repair Inc." width={988} height={448} sizes="180px" className="h-auto w-44" />
             </Link>
             <p className="mt-3 max-w-70 text-[12.5px] leading-[1.6] text-white/55">
-              Servo drive, motor and industrial electronics repair for Canada and the USA.
+              Servo drive, motor and industrial electronics repair for the USA.
             </p>
             <ul className="mt-3 space-y-1.5 text-[12.5px] text-white/75">
               {contact.email && (

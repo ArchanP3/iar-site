@@ -32,7 +32,7 @@ const steps = [
     icon: Truck,
     title: "Ship It or Request a Pickup",
     text: "Ship it to us with any carrier, or request a pickup from your facility.",
-    points: ["FedEx, Purolator, UPS or DHL", "Pickup from your facility", "Canada and USA"],
+    points: ["FedEx, UPS or DHL", "Pickup from your facility", "Across the USA"],
   },
   {
     icon: ClipboardCheck,
@@ -68,15 +68,15 @@ const steps = [
 
 /* Ways to get a unit to us (shown above the steps) */
 const ways = [
-  { icon: MapPin, t: "Drop-off in Mississauga", d: "Walk in during business hours. No appointment needed.", href: "/contact" },
-  { icon: PackageCheck, t: "Pickup across Canada", d: "We arrange the collection and send you the waybill.", href: "/request-pickup" },
-  { icon: Globe2, t: "Pickup across the USA", d: "Waybill and customs paperwork help included.", href: "/request-pickup" },
-  { icon: Wrench, t: "On-site service", d: "Technicians at your plant in Canada and the USA.", href: "/on-site-service" },
+  { icon: MapPin, t: "Drop-off in Grand Island, NY", d: "Walk in during business hours. No appointment needed.", href: "/contact" },
+  { icon: PackageCheck, t: "Pickup across the USA", d: "We arrange the collection and send you the waybill.", href: "/request-pickup" },
+  { icon: Globe2, t: "Pickup across the USA", d: "We arrange the collection and send you the waybill.", href: "/request-pickup" },
+  { icon: Wrench, t: "On-site service", d: "Technicians at your plant in the USA.", href: "/on-site-service" },
 ];
 
 /* Trust strip */
 const facts = [
-  { icon: MapPin, label: "Repair centre", value: "Mississauga, Ontario, Canada" },
+  { icon: MapPin, label: "Repair centre", value: "Grand Island, New York, USA" },
   { icon: BadgeCheck, label: "Warranty", value: "1-year, every repair" },
   { icon: Clock, label: "Turnaround", value: "24–72 hr typical" },
   { icon: PackageCheck, label: "Shipping", value: "Ship It or Request a Pickup" },
@@ -237,7 +237,7 @@ export default function HowWeWork() {
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               A free evaluation and a written quote before any work starts. Every servo drive, servo
-              motor and industrial electronics repair at our Mississauga, Ontario repair centre is tracked step by
+              motor and industrial electronics repair at our Grand Island, New York repair centre is tracked step by
               step, from pickup to tested return.
             </p>
             <p className="mt-2 hidden text-[14px] leading-[1.65] text-[#62626F] sm:block sm:text-[16px]">

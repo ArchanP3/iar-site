@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!f) return {};
   return withSeo(familyUrl(f), {
     title: `${f.short} Fault Codes & Alarms List | IAR`,
-    description: clip(`All ${f.codes.length.toLocaleString("en-US")} ${f.brand} ${f.series} fault and alarm codes in plain English, from repair technicians. ${f.short} repair in Mississauga.`),
+    description: clip(`All ${f.codes.length.toLocaleString("en-US")} ${f.brand} ${f.series} fault and alarm codes in plain English, from repair technicians. ${f.short} repair in Grand Island, NY.`),
   });
 }
 

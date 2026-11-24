@@ -4,7 +4,7 @@ import { brandFont } from "@/lib/font";
 import { destinations, origin } from "@/lib/globalRoutes";
 import RouteGlobe from "@/components/globe/RouteGlobe";
 
-/* Homepage: parts ship worldwide by air. Online ordering and repairs are for Canada & USA;
+/* Homepage: parts ship worldwide by air. Online ordering is for the USA & Canada, repairs for the USA;
    other countries contact us for a quote. The customer pays duties, import taxes and brokerage. */
 const features = [
   { icon: Plane, t: "Air Freight", d: "Priority air shipping to Mexico, Europe and Asia." },
@@ -36,7 +36,7 @@ export default function GlobalReach() {
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               Industrial automation parts shipped by air to manufacturers across North America, Europe and Asia, from our
-              repair centre in Mississauga, Ontario.
+              repair centre in Grand Island, New York.
             </p>
           </div>
           <Link
@@ -70,7 +70,7 @@ export default function GlobalReach() {
 
             {/* Globe */}
             <div className="relative mx-auto w-full max-w-140 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
-              <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Mississauga, Ontario to Mexico, Europe, Asia and the USA" />
+              <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Grand Island, New York to Canada, Mexico, Europe, Asia and across the USA" />
               <p className="-mt-2 text-center text-[11.5px] text-white/60">Routes are illustrative, not live shipment tracking.</p>
             </div>
 
@@ -91,7 +91,7 @@ export default function GlobalReach() {
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/4 p-4 sm:p-5">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF8A99]">Ordering from outside Canada &amp; the USA</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#FF8A99]">Ordering from outside the USA &amp; Canada</p>
                 <ol className="mt-3 grid gap-3 sm:grid-cols-3">
                   {steps.map(([t, d], i) => (
                     <li key={t} className="flex gap-2.5 sm:block">
@@ -105,7 +105,7 @@ export default function GlobalReach() {
                 </ol>
                 <p className="mt-4 border-t border-white/10 pt-3 text-[12.5px] text-white/60">
                   <Link href="/international" className="font-semibold text-[#FF8A99] hover:text-white">How international orders work</Link>.{" "}
-                  In Canada or the USA? <Link href="/shop" className="font-semibold text-[#FF8A99] hover:text-white">Buy parts online</Link> or{" "}
+                  In the USA or Canada? <Link href="/shop" className="font-semibold text-[#FF8A99] hover:text-white">Buy parts online</Link> or{" "}
                   <Link href="/request-repair" className="font-semibold text-[#FF8A99] hover:text-white">request a repair</Link>.
                 </p>
               </div>

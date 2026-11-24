@@ -152,10 +152,8 @@ const schema = {
   name: "Industrial Automation Repair Inc.",
   alternateName: ["IAR", "A&D IAR", "Industrial Automation Repair"],
   areaServed: [
-    { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United States" },
-    { "@type": "AdministrativeArea", name: "Ontario" },
-    { "@type": "City", name: "Montreal" },
+    { "@type": "AdministrativeArea", name: "New York" },
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -170,7 +168,7 @@ const schema = {
         itemOffered: {
           "@type": "Service",
           name: "On-Site Industrial Repair Service Call",
-          description: "On-site technician service calls across Canada and the United States.",
+          description: "On-site technician service calls across the United States.",
         },
       },
     ],
@@ -212,7 +210,7 @@ export default function RepairServices() {
             </p>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[15px]">
               Industrial Automation Repair Inc. provides servo motor, servo drive and industrial electronics repair for
-              manufacturers across Canada and the United States, including VFDs, spindle motors, encoders, PLCs,
+              manufacturers across the United States, including VFDs, spindle motors, encoders, PLCs,
               HMIs, CNC controls, power supplies and circuit boards. Ship your unit for a free evaluation,
               component-level repair and load testing, or book an on-site technician.
             </p>
@@ -329,7 +327,7 @@ export default function RepairServices() {
                 </span>
                 <span>
                   <b className="font-semibold text-white">Technician at your facility?</b>{" "}
-                  <span className="hidden sm:inline">On-site across Canada &amp; USA</span>
+                  <span className="hidden sm:inline">On-site across the USA</span>
                 </span>
               </span>
               <Link

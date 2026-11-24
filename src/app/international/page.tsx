@@ -9,7 +9,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/international", {
   title: "International Orders: Parts Shipped Worldwide | IAR",
-  description: "Servo drives, motors, PLCs, HMIs and CNC parts shipped by air from Canada to Mexico, Europe and Asia. Get price, shipping and lead time for your country.",
+  description: "Servo drives, motors, PLCs, HMIs and CNC parts shipped by air from the USA to Canada, Mexico, Europe and Asia. Get price, shipping and lead time for your country.",
   alternates: { canonical: `${SITE_URL}/international` },
 });
 
@@ -37,10 +37,10 @@ const good = [
 
 const faqs: [string, string][] = [
   ["Which countries do you ship to?", "We ship industrial automation parts by air to Mexico, Europe and Asia, including the United Kingdom, France, Germany, Spain, Italy, Japan, South Korea, India and Singapore. For other countries, send a quote request and we will tell you what is possible."],
-  ["Why can't I check out online from my country?", "Online checkout is for Canada and the USA. Shipping charges, lead times and customs rules change by country, so we quote international orders individually."],
+  ["Why can't I check out online from my country?", "Online checkout is for the USA and Canada. Shipping charges, lead times and customs rules change by country, so we quote international orders individually."],
   ["Who pays duties and import taxes?", "You do. All duties, import taxes, brokerage fees and other import charges in your country are paid by the buyer."],
   ["How long does international shipping take?", "Parts usually ship from us in 1–2 business days; some units take 5–10 business days to test, prepare or bring in from our warehouse. Transit time depends on your country and courier, and we include it in your quote."],
-  ["Can you repair units from outside Canada and the USA?", "Our repair service is for customers in Canada and the USA. Outside North America we supply parts, including refurbished units load tested on OEM-standard equipment."],
+  ["Can you repair units from outside the USA?", "Our repair service is for customers in the USA. Elsewhere we supply parts, including refurbished units load tested on OEM-standard equipment."],
 ];
 
 const schema = {
@@ -52,7 +52,7 @@ const schema = {
       serviceType: "Industrial automation parts export",
       url: `${SITE_URL}/international`,
       areaServed: [...new Set(abroad.map((d) => d.country))].map((c) => ({ "@type": "Country", name: c })),
-      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Mississauga", addressRegion: "ON", addressCountry: "CA" } },
+      provider: { "@type": "Organization", name: "Industrial Automation Repair Inc.", url: SITE_URL, address: { "@type": "PostalAddress", addressLocality: "Grand Island", addressRegion: "NY", addressCountry: "US" } },
     },
     { "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
   ],
@@ -61,15 +61,15 @@ const schema = {
 export default function InternationalPage() {
   return (
     <ResourceShell crumb={[{ label: "International Orders" }]} title="International orders," accent="shipped worldwide."
-      text="Industrial automation parts shipped by air from Mississauga, Ontario to Mexico, Europe and Asia. Send us your part numbers and we quote the price, shipping and lead time for your country." schema={schema}>
+      text="Industrial automation parts shipped by air from Grand Island, New York to Canada, Mexico, Europe and Asia. Send us your part numbers and we quote the price, shipping and lead time for your country." schema={schema}>
       <PageExtras path="/international" />
 
-      {/* For Canada & USA buyers */}
+      {/* For USA & Canada buyers */}
       <div className="flex flex-col gap-3 rounded-[22px] border border-[#DDDDE1] bg-white p-4 shadow-[0_24px_60px_-45px_rgba(165,13,37,0.6)] sm:flex-row sm:items-center sm:justify-between sm:p-5">
         <div className="flex items-start gap-3">
           <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29]"><ShoppingCart size={19} aria-hidden="true" /></span>
           <div>
-            <p className="text-[15px] font-extrabold">In Canada or the USA? You don&apos;t need a quote.</p>
+            <p className="text-[15px] font-extrabold">In the USA or Canada? You don&apos;t need a quote.</p>
             <p className="text-[13.5px] text-[#62626F]">Buy parts online with Buy Now and check out directly, or request a repair.</p>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function InternationalPage() {
         <div className="relative grid items-center gap-6 p-5 sm:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:p-10">
           <div className="min-w-0">
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]"><Globe2 size={15} aria-hidden="true" /> Where we ship</p>
-            <h2 id="where" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[32px]">From Mississauga to plants across three continents</h2>
+            <h2 id="where" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[32px]">From Grand Island, NY to plants across three continents</h2>
             <div className="mt-6 space-y-4">
               {regions.map(([r, list]) => (
                 <div key={r}>
@@ -132,7 +132,7 @@ export default function InternationalPage() {
             <p className="mt-5 text-[13px] text-white/60">Country not listed? Send a quote request and we will tell you what is possible.</p>
           </div>
           <div className="mx-auto w-full max-w-130">
-            <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Mississauga, Ontario to Mexico, Europe and Asia" />
+            <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Grand Island, New York to Canada, Mexico, Europe and Asia" />
             <p className="-mt-2 text-center text-[11.5px] text-white/60">Routes are illustrative, not live shipment tracking.</p>
           </div>
         </div>

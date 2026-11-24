@@ -6,7 +6,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 export const generateMetadata = seo("/shop", {
   title: "Shop Industrial Automation Parts | New, Refurbished & Exchange",
   description:
-    "New, refurbished and exchange servo drives, motors, PLCs, HMIs and CNC parts, or have your own unit repaired. Request a quote. Canada & USA.",
+    "New, refurbished and exchange servo drives, motors, PLCs, HMIs and CNC parts, or have your own unit repaired. Request a quote. Ships to the USA & Canada.",
   alternates: { canonical: "/shop" },
 });
 

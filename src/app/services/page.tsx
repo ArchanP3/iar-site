@@ -12,7 +12,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 export const generateMetadata = seo("/services", {
   title: "Industrial Repair Services | Servo, VFD, PLC & CNC | IAR",
   description:
-    "Servo drive, VFD, servo motor, encoder, PLC, HMI, CNC and power supply repair in Mississauga. Free evaluation, 1-year warranty. Canada & USA.",
+    "Servo drive, VFD, servo motor, encoder, PLC, HMI, CNC and power supply repair in Grand Island, NY. Free evaluation, 1-year warranty. Serving the USA.",
 });
 
 const why = [
@@ -52,7 +52,7 @@ export default function ServicesPage() {
                 Industrial <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair Services</span>
               </h1>
               <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">
-                Component-level repair of servo drives, VFDs, servo and spindle motors, encoders, PLCs, HMIs, CNC controls, power supplies, circuit boards and robotics, at our Mississauga, Ontario repair centre for manufacturers across Canada and the USA.
+                Component-level repair of servo drives, VFDs, servo and spindle motors, encoders, PLCs, HMIs, CNC controls, power supplies, circuit boards and robotics, at our Grand Island, New York repair centre for manufacturers across the USA.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

@@ -17,13 +17,13 @@ import { WhatsAppCta } from "@/components/WhatsAppButton";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 /* About page. Only facts IAR has confirmed are used here:
-   Mississauga ON repair centre, Canada & USA, free evaluation, written quote first,
+   Grand Island, NY repair centre, the USA, free evaluation, written quote first,
    24–72 hr typical turnaround, load testing, test report, one-year warranty,
    free return shipping, 24/7 line, on-site service. */
 
 export const generateMetadata = seo("/about", {
-  title: { absolute: "About IAR | Industrial Repair in Mississauga, Ontario" },
-  description: "Industrial Automation Repair Inc. (IAR) is a servo motor, servo drive and industrial electronics repair centre in Mississauga, Ontario, serving plants across Canada and the USA.",
+  title: { absolute: "About IAR | Industrial Repair in Grand Island, New York" },
+  description: "Industrial Automation Repair Inc. (IAR) is a servo motor, servo drive and industrial electronics repair centre in Grand Island, New York, serving plants across the USA.",
   alternates: { canonical: `${SITE_URL}/about` },
 });
 
@@ -38,7 +38,7 @@ const offer = [
   { icon: Wrench, color: "#EA2946", t: "Component-level repair", d: "Servo drives, VFDs, motors, encoders, CNC controls, PLCs, HMIs, power supplies and circuit boards. Your own unit, repaired and returned.", href: "/services" },
   { icon: Package, color: "#22C55E", t: "Parts: new and refurbished", d: "Refurbished units you can buy online, new parts on request, and obsolete equipment sourced for you.", href: "/shop" },
   { icon: RefreshCw, color: "#F59E0B", t: "Exchange units", d: "A tested replacement at a lower price. Ship us your unit and we ship the replacement once it arrives.", href: "/services/exchange" },
-  { icon: Truck, color: "#14B8A6", t: "Pickup and on-site service", d: "Book a pickup with FedEx, Purolator, UPS or DHL, or have a technician come to your facility in Canada or the USA.", href: "/request-pickup" },
+  { icon: Truck, color: "#14B8A6", t: "Pickup and on-site service", d: "Book a pickup with FedEx, UPS or DHL, or have a technician come to your facility in the USA.", href: "/request-pickup" },
   { icon: Cable, color: "#EC4899", t: "Custom cables", d: "Feedback, power and spare critical cables built to match your drive and motor.", href: "/services/custom-cables" },
   { icon: FileSearch, color: "#A855F7", t: "Fault code library", d: "Plain-English guides to drive and CNC alarms, written by repair technicians.", href: "/fault-codes" },
 ];
@@ -80,7 +80,7 @@ export default async function AboutPage() {
         logo: `${SITE_URL}/iar-logo.png`,
         description: "Industrial electronics repair: servo drives, motors, CNC controls, PLCs and HMIs, plus new and refurbished automation parts.",
         address: postalAddress, geo, openingHoursSpecification: openingHours,
-        areaServed: [{ "@type": "Country", name: "Canada" }, { "@type": "Country", name: "United States" }],
+        areaServed: [{ "@type": "Country", name: "United States" }],
         ...(contact.phone ? { telephone: contact.phone } : {}),
         ...(contact.email ? { email: contact.email } : {}),
       },
@@ -112,7 +112,7 @@ export default async function AboutPage() {
               Your automation <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">repair partner.</span>
             </h1>
             <p className="mt-4 text-[15.5px] leading-[1.75] text-white/75 sm:text-[18px]">
-              Industrial Automation Repair Inc. (IAR) is a full-service servo motor repair shop and industrial automation repair centre in Mississauga, Ontario. We repair servo motors, servo drives and industrial electronics for plant maintenance teams, OEMs and manufacturers across Canada and the USA.
+              Industrial Automation Repair Inc. (IAR) is a full-service servo motor repair shop and industrial automation repair centre in Grand Island, New York. We repair servo motors, servo drives and industrial electronics for plant maintenance teams, OEMs and manufacturers across the USA.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/request-repair" className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#FF3B55] px-6 text-[15px] font-semibold shadow-[0_14px_30px_-14px_rgba(255,59,85,0.9)] transition hover:-translate-y-0.5"><Wrench size={17} aria-hidden="true" /> Request a Repair</Link>
@@ -137,9 +137,9 @@ export default async function AboutPage() {
         <section aria-labelledby="story" className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
           <div className="rounded-[26px] border border-[#EAEAEC] bg-white p-6 sm:p-9">
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">About IAR</p>
-            <h2 id="story" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">A full-service servo repair shop in Mississauga</h2>
+            <h2 id="story" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">A full-service servo repair shop in Grand Island, NY</h2>
             <div className="mt-4 space-y-4 text-[15px] leading-[1.8] text-[#5A5A66] sm:text-[16px]">
-              <p>Our Mississauga repair centre serves Toronto and the GTA, and plants in every province and across the USA ship units to our bench. Every repair follows our documented inspection, repair and testing process: failure analysis, a written quote with lead time, repair with genuine OEM components and full testing under load.</p>
+              <p>Our Grand Island, NY repair centre serves Buffalo, Niagara and Western New York, and plants across the USA ship units to our bench. Every repair follows our documented inspection, repair and testing process: failure analysis, a written quote with lead time, repair with genuine OEM components and full testing under load.</p>
               <p>We specialize in Siemens (SINAMICS, SIMODRIVE, SINUMERIK), Bosch Rexroth Indramat and Allen-Bradley / Rockwell Automation, and routinely repair FANUC, ABB, Yaskawa, Mitsubishi, Panasonic, Kollmorgen, Parker, Baldor and Control Techniques equipment.</p>
               <p>Legacy automation equipment support is a big share of our bench time. When a manufacturer stops supporting a motor or drive, repair is often the only option — so we rebuild discontinued units, stock obsolete parts and offer a servo exchange on many models.</p>
             </div>
@@ -152,7 +152,7 @@ export default async function AboutPage() {
                 <li key={t} className="flex gap-3 text-[15px] text-white/85"><BadgeCheck size={20} className="mt-0.5 flex-none text-[#FF5A6E]" aria-hidden="true" />{t}</li>
               ))}
             </ul>
-            <p className="relative mt-6 flex items-center gap-2 border-t border-white/10 pt-5 text-[13.5px] text-white/65"><MapPin size={16} className="flex-none text-[#FF8A99]" aria-hidden="true" /> <span><a href={directionsUrl} target="_blank" rel="noopener" className="underline-offset-2 hover:text-white hover:underline">{place.address}</a> · serving Canada &amp; USA</span></p>
+            <p className="relative mt-6 flex items-center gap-2 border-t border-white/10 pt-5 text-[13.5px] text-white/65"><MapPin size={16} className="flex-none text-[#FF8A99]" aria-hidden="true" /> <span><a href={directionsUrl} target="_blank" rel="noopener" className="underline-offset-2 hover:text-white hover:underline">{place.address}</a> · serving the USA</span></p>
             {/* questions: two easy ways in, pinned to the bottom of the card */}
             <div className="relative mt-6 grid gap-3 sm:grid-cols-2 lg:mt-auto lg:pt-6">
               <WhatsAppCta topic="A question from the About page" label="WhatsApp us" />
@@ -166,7 +166,7 @@ export default async function AboutPage() {
           <h2 id="mission" className="sr-only">Mission and vision</h2>
           {[
             { k: "Our mission", t: "Fix it, prove it, ship it back", d: "Repair motion control equipment at component level, prove it under load and send it back with a test report, so plants spend less on downtime and less on new hardware.", color: "#C8102E" },
-            { k: "Our vision", t: "The repair shop plants call first", d: "Be the shop maintenance teams across Canada and the USA trust with their Siemens, Indramat and Allen-Bradley equipment — and everything else on the floor, current or legacy.", color: "#FF3B55" },
+            { k: "Our vision", t: "The repair shop plants call first", d: "Be the shop maintenance teams across the USA trust with their Siemens, Indramat and Allen-Bradley equipment — and everything else on the floor, current or legacy.", color: "#FF3B55" },
           ].map((m) => (
             <div key={m.k} className="relative overflow-hidden rounded-[24px] border border-[#EAEAEC] bg-white p-6 sm:p-8">
               <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1" style={{ background: `linear-gradient(90deg, ${m.color}, transparent)` }} />
@@ -223,7 +223,7 @@ export default async function AboutPage() {
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#FF8A99]">Our repair centre</p>
               <h2 id="bench" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">Tested the way it will be used</h2>
-              <p className="mt-3 text-[15px] leading-[1.75] text-white/70">Every unit is repaired and tested at our Mississauga, Ontario repair centre. A drive that only powers up on the bench is not finished. It has to run a motor under load before it ships.</p>
+              <p className="mt-3 text-[15px] leading-[1.75] text-white/70">Every unit is repaired and tested at our Grand Island, New York repair centre. A drive that only powers up on the bench is not finished. It has to run a motor under load before it ships.</p>
             </div>
             <ul className="grid gap-2.5 sm:grid-cols-2">
               {[

@@ -8,7 +8,7 @@ export const site = {
       : "http://localhost:3000")
   ).replace(/\/$/, ""),
   description:
-    "Servo motor repair, servo drive repair and industrial electronics repair in Mississauga, Ontario — load tested, with a one-year warranty. Serving Canada & USA.",
+    "Servo motor repair, servo drive repair and industrial electronics repair in Grand Island, New York — load tested, with a one-year warranty. Serving the USA.",
   showRatings: process.env.NEXT_PUBLIC_SHOW_RATINGS === "true",
 };
 

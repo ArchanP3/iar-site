@@ -2,9 +2,10 @@ import { absoluteFor, hrefFor, onThisSite } from "./site";
 
 /* ------------------------------------------------------------------ */
 /*  Service area pages: /service-areas/<slug>.                          */
-/*  IAR has ONE repair centre, in Mississauga, Ontario. These pages */
+/*  IAR has ONE repair centre, in Grand Island, New York. Repairs are */
+/*  for the USA only, so only US cities are listed (see `areas`).    */
 /*  never claim a local shop: they explain how units from each city     */
-/*  reach Mississauga (drop-off, pickup, ship-in) and what we repair.   */
+/*  reach Grand Island (drop-off, pickup, ship-in) and what we repair.  */
 /*  dropOff = close enough that dropping a unit off is practical.       */
 /*  industries = slugs from src/lib/industries.ts                       */
 /*  country = which site the page lives on: CA -> industrialautomationrepair.com, */
@@ -25,7 +26,7 @@ export type Area = {
   industries: string[];
 };
 
-export const areas: Area[] = [
+const ALL_AREAS: Area[] = [
   // Ontario
   { slug: "toronto", at: [43.653, -79.383], city: "Toronto", region: "Ontario", regionCode: "ON", country: "CA", dropOff: true, local: "The Greater Toronto Area runs a wide mix of manufacturing, from food processing and pharmaceuticals to plastics, packaging and printing.", industries: ["food-beverage", "pharmaceutical", "plastics", "packaging", "printing", "automotive"] },
   { slug: "brampton", at: [43.731, -79.762], city: "Brampton", region: "Ontario", regionCode: "ON", country: "CA", dropOff: true, local: "Brampton is home to automotive assembly, food processing, packaging lines and large distribution centres.", industries: ["automotive", "food-beverage", "packaging", "material-handling"] },
@@ -49,7 +50,7 @@ export const areas: Area[] = [
   // USA
   { slug: "detroit", at: [42.331, -83.046], city: "Detroit", region: "Michigan", regionCode: "MI", country: "US", local: "Detroit and southeast Michigan build cars, trucks and engines, with stamping, machining and plastics suppliers across the region.", industries: ["automotive", "metalworking", "plastics"] },
   { slug: "grand-rapids", at: [42.963, -85.668], city: "Grand Rapids", region: "Michigan", regionCode: "MI", country: "US", local: "Grand Rapids and west Michigan build office furniture, automotive parts and food products.", industries: ["woodworking", "automotive", "food-beverage"] },
-  { slug: "buffalo", at: [42.886, -78.878], city: "Buffalo", region: "New York", regionCode: "NY", country: "US", local: "Buffalo and western New York run automotive parts, food processing and metal plants.", industries: ["automotive", "food-beverage", "steel-metals"] },
+  { slug: "buffalo", at: [42.886, -78.878], city: "Buffalo", region: "New York", regionCode: "NY", country: "US", dropOff: true, local: "Buffalo and western New York run automotive parts, food processing and metal plants.", industries: ["automotive", "food-beverage", "steel-metals"] },
   { slug: "cleveland", at: [41.499, -81.694], city: "Cleveland", region: "Ohio", regionCode: "OH", country: "US", local: "Cleveland and northeast Ohio are known for steel, metalworking, plastics and polymers.", industries: ["steel-metals", "metalworking", "plastics"] },
   { slug: "toledo", at: [41.654, -83.537], city: "Toledo", region: "Ohio", regionCode: "OH", country: "US", local: "Toledo is a centre for glass making and automotive manufacturing.", industries: ["glass", "automotive", "plastics"] },
   { slug: "pittsburgh", at: [40.441, -79.996], city: "Pittsburgh", region: "Pennsylvania", regionCode: "PA", country: "US", local: "Pittsburgh and western Pennsylvania run steel, metals and glass plants.", industries: ["steel-metals", "glass", "metalworking"] },
@@ -66,6 +67,9 @@ export const areas: Area[] = [
   { slug: "lansing", at: [42.733, -84.556], city: "Lansing", region: "Michigan", regionCode: "MI", country: "US", local: "Lansing and mid-Michigan assemble vehicles with on-site stamping, and the region is building up battery manufacturing.", industries: ["automotive", "metalworking", "electronics"] },
   { slug: "flint", at: [43.013, -83.687], city: "Flint", region: "Michigan", regionCode: "MI", country: "US", local: "Flint and Genesee County build pickup trucks and vehicle seating, press metal parts, and make food products.", industries: ["automotive", "metalworking", "food-beverage"] },
 ];
+
+/** Repairs are USA-only: the Canadian entries above are kept for reference but not shown. */
+export const areas: Area[] = ALL_AREAS.filter((a) => a.country === "US");
 
 export const getArea = (slug: string) => areas.find((a) => a.slug === slug);
 export const areaUrl = (slug: string) => `/service-areas/${slug}`;

@@ -131,7 +131,7 @@ export default function DowntimeCalculator() {
       y += 52;
       doc.setFont("helvetica", "bold"); doc.setFontSize(10); doc.setTextColor(19, 19, 22);
       const site = window.location.origin.replace(/^https?:\/\//, "");
-      doc.text(["Industrial Automation Repair Inc. · Mississauga, Ontario · Canada & USA", [site, contact.phone, contact.email].filter(Boolean).join(" · ")], M, y);
+      doc.text(["Industrial Automation Repair Inc. · Grand Island, New York · the USA", [site, contact.phone, contact.email].filter(Boolean).join(" · ")], M, y);
       doc.save(`downtime-cost-${part.trim().replace(/[^a-z0-9]+/gi, "-") || "summary"}.pdf`);
     } finally {
       setBusy(false);

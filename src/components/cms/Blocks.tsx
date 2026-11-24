@@ -164,7 +164,7 @@ async function Section({ b, vars, H }: { b: Block; vars: Record<string, string>;
             {b.text && <p className="relative mt-3 max-w-155 text-[15.5px] text-white/75">{f(b.text)}</p>}
             <div className="relative mt-7 flex flex-wrap gap-3"><Btn link={{ label: f(b.primary?.label), href: f(b.primary?.href) }} primary /><Btn link={b.secondary && { label: f(b.secondary.label), href: f(b.secondary.href) }} dark /></div>
             <ul className="relative mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13.5px] text-white/80">
-              {["Free evaluation", "1-year warranty", "Canada & USA"].map((t) => <li key={t} className="flex items-center gap-1.5"><CheckCircle2 size={15} className="text-[#FF8A99]" aria-hidden="true" />{t}</li>)}
+              {["Free evaluation", "1-year warranty", "Across the USA"].map((t) => <li key={t} className="flex items-center gap-1.5"><CheckCircle2 size={15} className="text-[#FF8A99]" aria-hidden="true" />{t}</li>)}
             </ul>
           </div>
         </section>

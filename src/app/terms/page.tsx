@@ -75,11 +75,11 @@ const sections: LegalSection[] = [
     body: (
       <>
         <ul>
-          <li>Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders within Canada and the USA. Shipping units to us is at your cost: send them with any carrier, request a pickup (added to your invoice or billed to your carrier account) or drop them off in Mississauga.</li>
+          <li>Return shipping is free on completed repairs, and we cover outbound shipping on in-stock orders within the USA and Canada. Shipping units to us is at your cost: send them with any carrier, request a pickup (added to your invoice or billed to your carrier account) or drop them off in Grand Island, NY.</li>
           <li>Risk of loss or damage passes to you when we hand the shipment to the carrier. Please inspect deliveries and report visible damage to the carrier and to us right away.</li>
           <li>Pack units you send us carefully. We are not responsible for damage caused in transit to us.</li>
-          <li>For shipments between Canada and the USA, any duties, taxes and brokerage fees are your responsibility unless we agree otherwise.</li>
-          <li>Online orders are for delivery in Canada and the USA. For delivery to other countries, contact us for a quote. International shipping charges vary by country, and all duties, import taxes, brokerage fees and other import charges are paid by you. Repair services are offered to customers in Canada and the USA.</li>
+          <li>For shipments between the USA and Canada, any duties, taxes and brokerage fees are your responsibility unless we agree otherwise.</li>
+          <li>Online orders are for delivery in the USA and Canada. For delivery to other countries, contact us for a quote. International shipping charges vary by country, and all duties, import taxes, brokerage fees and other import charges are paid by you. Repair services are offered to customers in the USA.</li>
           <li>Delivery dates are estimates. We are not responsible for carrier delays.</li>
         </ul>
       </>
