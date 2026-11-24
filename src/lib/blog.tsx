@@ -225,7 +225,7 @@ export const posts: Post[] = [
     minutes: 5,
     tag: "Troubleshooting",
     color: "#E11D3A",
-    image: "/blog/siemens-1ft5-servo-motor.webp",
+    image: "/blog/siemens-1ft5-motor.webp",
     related: [["Servo motor repair", "/services/servo-motor-repair"], ["Encoder repair & alignment", "/services/encoder-repair"], ["SIMODRIVE 611U fault codes", "/fault-codes/siemens/simodrive-611u"]],
     sections: [
       {
