@@ -2,16 +2,16 @@ import Image from "next/image";
 import WhatsAppButton, { WhatsAppCta } from "@/components/WhatsAppButton";
 import Link from "next/link";
 import {
-  ArrowRight, BadgeCheck, Camera, Check, ChevronRight, CircuitBoard, Clock, Cpu, FileCheck2, Gauge,
-  MessageCircleQuestion, Plus, Radio, RefreshCw, ScanSearch, ShieldCheck, Wrench, Zap,
+  ArrowRight, BadgeCheck, Camera, Check, ChevronRight, Clock, FileCheck2, Gauge,
+  MessageCircleQuestion, Plus, ScanSearch, ShieldCheck, Wrench, Zap,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import { getService, serviceUrl, type Service } from "@/lib/services";
 import ServiceIcon from "./ServiceIcon";
+import RepairIcon from "./RepairIcon";
 
-const repairIcons = [Zap, Gauge, Cpu, Radio, CircuitBoard, RefreshCw];
 const testIcons = [Camera, ScanSearch, Gauge, FileCheck2];
 const factSets = {
   repair: [["Free evaluation", ShieldCheck], ["24–72 hr typical", Clock], ["1-year warranty", BadgeCheck], ["Load tested on our benches", Gauge]],
@@ -145,12 +145,11 @@ export default function ServicePage({ s }: { s: Service }) {
             <Eyebrow>{s.repairsTitle ? "How it works" : "What we repair"}</Eyebrow>
             <h2 id="what" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.repairsTitle ?? `What we repair on ${an} ${noun}`}</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {s.repairs.map((r, i) => {
-                const I = repairIcons[i % repairIcons.length];
+              {s.repairs.map((r) => {
                 return (
                   <li key={r.t} className="group rounded-2xl border border-[#EAEAEC] bg-white p-5 transition hover:-translate-y-0.5 hover:border-[#C8102E]/30 hover:shadow-[0_18px_40px_-26px_rgba(200,16,46,0.6)]">
                     <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] transition group-hover:bg-linear-to-br group-hover:from-[#C8102E] group-hover:to-[#FF3B55] group-hover:text-white"><I size={18} aria-hidden="true" /></span>
+                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C8102E]/8 text-[#B30E29] transition group-hover:bg-linear-to-br group-hover:from-[#C8102E] group-hover:to-[#FF3B55] group-hover:text-white"><RepairIcon title={r.t} size={20} /></span>
                       <h3 className="text-[16px] font-bold">{r.t}</h3>
                     </div>
                     <p className="mt-2.5 text-[13.5px] leading-[1.6] text-[#62626F]">{r.d}</p>
