@@ -31,7 +31,7 @@ export default function MoreServices() {
             <p className="mt-2 max-w-160 text-[14.5px] leading-[1.7] text-white/70">Servo power, feedback and brake cables for any drive and motor. Send the models, connector photos, pinout and length.</p>
             <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] text-white/80">
               {["Any brand", "Any length", "Feedback, power & brake", "Cable & connector repair"].map((t) => (
-                <li key={t} className="inline-flex items-center gap-1.5"><Check size={14} className="text-emerald-400" aria-hidden="true" />{t}</li>
+                <li key={t} className="inline-flex items-center gap-1.5"><Check size={14} className="text-[#FF3B55]" aria-hidden="true" />{t}</li>
               ))}
             </ul>
           </div>

@@ -29,7 +29,7 @@ export const posts: Post[] = [
     date: "2026-10-26",
     minutes: 6,
     tag: "Decision guide",
-    color: "#C8102E",
+    color: "#E11D3A",
     image: "/hero/servo-drives.webp",
     related: [["Downtime Cost Calculator", "/resources/downtime-calculator"], ["Servo drive repair", "/services/servo-drive-repair"], ["Exchange program", "/services/exchange"]],
     sections: [
@@ -102,7 +102,7 @@ export const posts: Post[] = [
     date: "2026-10-26",
     minutes: 5,
     tag: "Inside our repair centre",
-    color: "#10B981",
+    color: "#E11D3A",
     image: "/hero/servo-motors.webp",
     related: [["Our warranty", "/warranty"], ["Servo motor repair", "/services/servo-motor-repair"], ["How to ship us a unit", "/resources/shipping"]],
     sections: [
@@ -158,7 +158,7 @@ export const posts: Post[] = [
     date: "2026-10-26",
     minutes: 6,
     tag: "Technical guide",
-    color: "#A855F7",
+    color: "#E11D3A",
     image: "/hero/encoders.webp",
     related: [["Encoder repair & alignment", "/services/encoder-repair"], ["Glossary: encoder", "/resources/glossary#encoder"], ["Fault Code Library", "/fault-codes"]],
     sections: [
@@ -224,7 +224,7 @@ export const posts: Post[] = [
     date: "2026-10-29",
     minutes: 5,
     tag: "Troubleshooting",
-    color: "#14C8B0",
+    color: "#E11D3A",
     image: "/hero/servo-motors.webp",
     related: [["Servo motor repair", "/services/servo-motor-repair"], ["Encoder repair & alignment", "/services/encoder-repair"], ["SIMODRIVE 611U fault codes", "/fault-codes/siemens/simodrive-611u"]],
     sections: [
