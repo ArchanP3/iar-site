@@ -1,5 +1,5 @@
 import Image from "next/image";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { WhatsAppCta } from "@/components/WhatsAppButton";
 import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, ChevronRight, Clock, History, MapPin, ShieldCheck, Wrench, Zap } from "lucide-react";
 import Header from "@/components/Header";
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                 </span>
                 <h2 className="relative mt-3 min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[19px]">{s.title}</h2>
                 <p className="relative mt-1 hidden min-h-[3lh] text-[13px] leading-[1.55] text-white/70 sm:block">{s.short}</p>
-                {/* footer: tag on the left, WhatsApp (outside the link) on the right, same line on every card */}
+                {/* footer: tag on the left */}
                 <span className="absolute bottom-3.5 left-3.5 flex h-9 items-center sm:bottom-5 sm:left-5">
                   {s.slug === "exchange" ? (
                     <span className="rounded-full bg-[#C8102E] px-1.5 py-1 text-[9.5px] font-bold uppercase tracking-[0.04em] text-white sm:px-2.5 sm:text-[10px] sm:tracking-[0.14em]">Line down?</span>
@@ -109,7 +109,6 @@ export default function ServicesPage() {
                   )}
                 </span>
               </Link>
-              <WhatsAppButton tone="dark" size="sm" topic={s.title} kind="service" url={serviceUrl(s.slug)} label={`Ask about ${s.title} on WhatsApp`} className="absolute right-3.5 bottom-3.5 sm:right-5 sm:bottom-5" />
             </li>
           ))}
         </ul>
@@ -186,6 +185,7 @@ export default function ServicesPage() {
             <div className="flex flex-wrap gap-3">
               <Link href="/request-repair?service=question" className="inline-flex h-12 items-center gap-2 rounded-xl bg-white px-6 text-[15px] font-semibold text-[#131316] transition hover:-translate-y-0.5"><BadgeCheck size={17} aria-hidden="true" /> Ask a Technician</Link>
               <Link href="/request-repair?service=exchange" className="inline-flex h-12 items-center gap-2 rounded-xl border border-white/40 px-6 text-[15px] font-semibold transition hover:bg-white/10"><Zap size={17} aria-hidden="true" /> Get an Exchange Unit</Link>
+              <WhatsAppCta topic="A question from the Repair Services page" kind="service" label="Ask on WhatsApp" />
             </div>
           </div>
         </section>
