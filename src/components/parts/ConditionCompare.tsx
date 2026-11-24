@@ -6,7 +6,7 @@ import { conditionLabel, type Condition, type Offer } from "@/lib/parts/types";
 
 /* Side-by-side comparison of the four ways to get this part. Wording comes only from the
    company's own FAQ, warranty page and selling rules. "Choose" switches the buy box above. */
-const COLOR: Record<Condition, string> = { new: "#F31D3D", refurbished: "#12B76A", exchange: "#9B5CF6", repair: "#F5A524" };
+const COLOR: Record<Condition, string> = { new: "#FF3B55", refurbished: "#FF3B55", exchange: "#FF3B55", repair: "#FF3B55" };
 
 const ROWS: { key: string; label: string; icon: React.ElementType; v: Record<Condition, string> }[] = [
   { key: "what", label: "What you get", icon: PackageOpen, v: {

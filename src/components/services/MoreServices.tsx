@@ -5,7 +5,6 @@ import { useMemo, useState } from "react";
 import { ArrowRight, ArrowUpRight, Cable, Check, Search } from "lucide-react";
 import { moreServices, serviceGroups, serviceUrl } from "@/lib/services";
 import ServiceIcon from "./ServiceIcon";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 /* Short tag in each card footer */
 const groupTag: Record<string, string> = { cables: "Cables", drives: "Drives", motors: "Motors", controls: "Controls", services: "Support" };
@@ -77,7 +76,6 @@ export default function MoreServices() {
                   <span className="rounded-full bg-[#0A0A0C]/55 px-2 py-1 ring-1 ring-white/10 text-[9.5px] font-bold uppercase tracking-[0.08em] sm:px-2.5 sm:text-[10px] sm:tracking-[0.14em]" style={{ color: s.color }}>{groupTag[s.group ?? ""] ?? "Repair"}</span>
                 </span>
               </Link>
-              <WhatsAppButton tone="dark" size="sm" topic={s.title} kind="service" url={serviceUrl(s.slug)} label={`Ask about ${s.title} on WhatsApp`} className="absolute right-3.5 bottom-3.5 sm:right-5 sm:bottom-5" />
             </li>
           ))}
         </ul>
