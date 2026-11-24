@@ -21,7 +21,7 @@ Columbus, Indianapolis and Milwaukee (USA wave 1) are the models:
 | `city` | Name as people search it (`Fort Wayne`). |
 | `region` / `regionCode` | Full state or province name, and its 2-letter code (`Indiana`, `IN`). |
 | `country` | `"US"` or `"CA"`. This decides which site shows the page. |
-| `dropOff` | Leave it out for every US city: drop-off means driving to Mississauga. |
+| `dropOff` | Set `true` only for cities close enough to drive to our Grand Island, NY repair centre (e.g. Buffalo). |
 | `local` | One or two sentences on the kinds of manufacturing in and around the city. See the writing rules below. |
 | `industries` | 3 or 4 slugs from `src/lib/industries.ts`, most relevant first. A slug that isn't in that file is silently dropped from the page, so copy them exactly. |
 
@@ -34,7 +34,7 @@ Google ranks city pages that say something true and specific about the place. It
 - Write about the city's real industries: what is made there and which kinds of plants run there. Check one or two sources before you write it.
 - Make it different from every other city in the same state. Read the neighbours' lines, because they appear together under "Also in Ohio".
 - No numbers or rankings ("3rd largest", "500 plants"), no company names, no customer names, unless the team gives them to you.
-- Never suggest we are local. No "our Columbus shop", "local technicians", a US address or a US phone number. Every repair happens in Mississauga, Ontario. The template already says this, so don't contradict it.
+- Never suggest we are local. No "our Columbus shop" or "local technicians". Every repair happens at our one repair centre in Grand Island, New York. The template already says this, so don't contradict it.
 - No promised transit or turnaround times. The template covers turnaround; transit times come from the team only.
 - Plain English, no hype words ("leading", "world-class", "premier").
 
