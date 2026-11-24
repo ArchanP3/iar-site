@@ -1,20 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone, Wrench } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { brandFont } from "@/lib/font";
-import { totalCodes } from "@/lib/faultCodes";
 import { directionsUrl, fullAddress, phoneHref as toTel } from "@/lib/contact";
 import { getContact } from "@/lib/cms/business";
 import { WhatsAppIcon, WhatsAppTrigger } from "@/components/WhatsAppButton";
 import { COUNTRY_SITES, SITE_COUNTRY } from "@/lib/site";
-
-/* Status pills: only true facts. The phone pill shows once a number is set
-   (CMS > Locations, or src/lib/contact.ts). */
-const baseVitals: [string, string, boolean?][] = [
-  ["Turnaround", "24–72 hr typical"],
-  ["Exchange units", "1–2 business days once yours arrives"],
-  ["Fault codes", `${totalCodes.toLocaleString("en-US")} explained`],
-];
 
 const columns: { title: string; links: [string, string][] }[] = [
   {
@@ -66,7 +57,6 @@ const columns: { title: string; links: [string, string][] }[] = [
 export default async function Footer() {
   const contact = await getContact();
   const phoneHref = toTel(contact.phone);
-  const vitals: [string, string, boolean?][] = [...(contact.phone ? [["Calls & WhatsApp", contact.phone, true] as [string, string, boolean]] : []), ...baseVitals];
   return (
     <footer id="footer" className={`${brandFont.className} relative overflow-hidden bg-[#0A0A0C] text-white`}>
       {/* liquid colour blobs */}
@@ -77,67 +67,8 @@ export default async function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-360 px-5 pb-5 pt-8 sm:px-8 lg:px-12">
-        {/* ---------- Glass panel ---------- */}
-        <div className="relative overflow-hidden rounded-[22px] border border-white/15 bg-white/6 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_20px_50px_-30px_rgba(200,16,46,0.8)] backdrop-blur-xl">
-          <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_28%,transparent_70%,rgba(255,59,85,0.10)_100%)]" />
-          <div className="relative grid gap-5 p-5 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-8 lg:px-8">
-            <div>
-              <p className="text-[20px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[24px]">
-                Machine down?{" "}
-                <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Let&apos;s get it running again.</span>
-              </p>
-              <div className="mt-4 grid gap-2 sm:flex sm:flex-wrap">
-                <Link
-                  href="/request-repair"
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full sm:h-10 bg-white px-5 text-[13.5px] font-semibold text-[#131316] transition hover:-translate-y-0.5"
-                >
-                  <Wrench size={15} aria-hidden="true" /> Request a Repair <ArrowRight size={15} aria-hidden="true" />
-                </Link>
-                {contact.phone ? (
-                  <a
-                    href={phoneHref}
-                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full sm:h-10 border border-white/20 bg-white/6 px-5 text-[13.5px] font-semibold transition hover:border-white/40"
-                  >
-                    <Phone size={15} aria-hidden="true" /> {contact.phone}
-                  </a>
-                ) : (
-                  <Link
-                    href="/request-repair?service=question"
-                    className="inline-flex h-11 items-center justify-center gap-2 rounded-full sm:h-10 border border-white/20 bg-white/6 px-5 text-[13.5px] font-semibold transition hover:border-white/40"
-                  >
-                    <Phone size={15} aria-hidden="true" /> Ask a Technician
-                  </Link>
-                )}
-                <WhatsAppTrigger
-                  topic="A question from the website"
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full sm:h-10 bg-[#25D366] px-5 text-[13.5px] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1FC15B]"
-                >
-                  <WhatsAppIcon size={15} /> WhatsApp
-                </WhatsAppTrigger>
-              </div>
-            </div>
-
-            <dl className={`grid grid-cols-2 gap-2 lg:w-155 ${vitals.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"}`}>
-              {vitals.map(([k, v, live]) => (
-                <div key={k} className="rounded-2xl border border-white/10 bg-white/5 px-3.5 py-2.5 max-sm:odd:last:col-span-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-                  <dt className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/50">{k}</dt>
-                  <dd className="mt-1 flex items-center gap-1.5 text-[13px] font-semibold [&:has(.animate-ping)]:whitespace-nowrap">
-                    {live && (
-                      <span className="relative flex h-2 w-2 shrink-0">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-                      </span>
-                    )}
-                    {v}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-
         {/* ---------- Links ---------- */}
-        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
+        <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           <div className="col-span-2 sm:col-span-4 lg:col-span-1">
             <Link href="/" aria-label="Industrial Automation Repair Inc. home" className="inline-flex">
               <Image src="/iar-logo-white.png" alt="Industrial Automation Repair Inc." width={988} height={448} sizes="180px" className="h-auto w-44" />
@@ -165,7 +96,7 @@ export default async function Footer() {
               <li>
                 <WhatsAppTrigger topic="A question from the website" className="inline-flex items-center gap-2 hover:text-white">
                   <WhatsAppIcon size={13} className="text-[#25D366]" />
-                  {contact.phone ? `WhatsApp ${contact.phone}` : "WhatsApp us"}
+                  Message us
                 </WhatsAppTrigger>
               </li>
               <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 flex-none text-[#FF5A6E]" aria-hidden="true" /><span>{fullAddress(contact)} <a href={directionsUrl} target="_blank" rel="noopener" className="ml-1 whitespace-nowrap font-semibold text-[#FF8A99] hover:text-white">Directions</a></span></li>
