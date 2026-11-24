@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, MousePointerClick } from "lucide-react";
 import { brandFont } from "@/lib/font";
 import { industries as all, industryUrl } from "@/lib/industries";
-import IndustriesCarousel from "./IndustriesCarousel";
+import IndustriesPicker from "./IndustriesPicker";
 
 /* Card photos live in public/industries/<slug>.jpg (600x760, title on the photo).
    An industry shows in the carousel once its card file exists in this list. */
@@ -10,7 +10,9 @@ const withCard = new Set([
   "automotive", "packaging", "plastics", "food-beverage", "metalworking", "printing", "pharmaceutical", "material-handling",
   "steel-metals", "pulp-paper", "tire-rubber", "aerospace", "electronics", "water-wastewater", "mining", "oil-gas", "glass", "textiles", "machine-builders",
 ]);
-const items = all.filter((i) => withCard.has(i.slug)).map((i) => ({ key: i.slug, name: i.name, href: industryUrl(i.slug) }));
+const items = all.filter((i) => withCard.has(i.slug) && i.image).map((i) => ({
+  key: i.slug, name: i.name, short: i.short, href: industryUrl(i.slug), image: i.image, zoom: i.zoom, equipment: i.equipment,
+}));
 
 export default function Industries() {
   return (
@@ -52,15 +54,15 @@ export default function Industries() {
           <div className="relative flex items-center justify-between gap-3 px-5 pt-4 sm:px-7 sm:pt-5">
             <p className="flex items-center gap-2 text-[12px] font-semibold text-white/65">
               <MousePointerClick size={15} className="text-[#FF8A99]" aria-hidden="true" />
-              Drag to explore · Click an industry to open it
+              Pick an industry to see what we repair
             </p>
             <span className="hidden shrink-0 rounded-full border border-white/15 bg-white/6 px-3.5 py-1.5 text-[12px] font-semibold text-white/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:inline-flex">
               Canada &amp; USA
             </span>
           </div>
 
-          <div className="relative h-65 sm:h-87.5">
-            <IndustriesCarousel items={items} />
+          <div className="relative">
+            <IndustriesPicker items={items} />
           </div>
 
           {/* For Google, keyboards and screen readers */}
