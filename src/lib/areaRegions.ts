@@ -13,12 +13,13 @@ const CANADA: Region[] = [
 ];
 
 const inUS = (a: Area, codes: string[]) => a.country === "US" && codes.includes(a.regionCode);
-const NAMED_STATES = ["MI", "OH", "PA", "NY"];
 const USA: Region[] = [
-  { key: "mi", label: "Michigan", color: "#E11D3A", match: (a) => inUS(a, ["MI"]) },
-  { key: "oh", label: "Ohio", color: "#E11D3A", match: (a) => inUS(a, ["OH"]) },
-  { key: "pany", label: "Pennsylvania & New York", color: "#E11D3A", match: (a) => inUS(a, ["PA", "NY"]) },
-  { key: "mw", label: "Midwest", color: "#E11D3A", match: (a) => a.country === "US" && !NAMED_STATES.includes(a.regionCode) },
+  { key: "ne", label: "Northeast", color: "#E11D3A", match: (a) => inUS(a, ["NY", "PA", "NJ", "MA", "CT", "RI", "NH", "VT", "ME", "MD", "DE"]) },
+  { key: "gl", label: "Great Lakes", color: "#E11D3A", match: (a) => inUS(a, ["MI", "OH", "IN", "IL", "WI", "MN"]) },
+  { key: "plains", label: "Central Plains", color: "#E11D3A", match: (a) => inUS(a, ["IA", "MO", "KS", "NE", "ND", "SD"]) },
+  { key: "se", label: "Southeast", color: "#E11D3A", match: (a) => inUS(a, ["KY", "TN", "AL", "MS", "GA", "FL", "SC", "NC", "VA", "WV"]) },
+  { key: "sc", label: "Texas & South Central", color: "#E11D3A", match: (a) => inUS(a, ["TX", "OK", "LA", "AR"]) },
+  { key: "west", label: "West", color: "#E11D3A", match: (a) => inUS(a, ["CA", "OR", "WA", "AZ", "NV", "UT", "CO", "NM", "ID", "MT", "WY", "AK", "HI"]) },
 ];
 
 export const REGIONS: Region[] =

@@ -1,6 +1,6 @@
 # Adding a city page (USA or Canada)
 
-City pages live at `/service-areas/<slug>`. US cities are shown on **automiqautomation.com**, Canadian cities on **automiqautomation.ca**. The other domain links to them and redirects to the right site, so you never handle that yourself.
+City pages live at `/service-areas/<slug>`. Only US cities are shown (repairs are USA-only); the Canadian entries in the file are kept for reference.
 
 One city = one line in `src/lib/serviceAreas.ts`. The page template (`src/app/service-areas/[city]/page.tsx`) does the rest: title, meta description, pickup and customs wording for US cities, FAQ, schema, the map and directory on `/service-areas`, the home page band, the HTML site map and the XML sitemap.
 
@@ -38,13 +38,9 @@ Google ranks city pages that say something true and specific about the place. It
 - No promised transit or turnaround times. The template covers turnaround; transit times come from the team only.
 - Plain English, no hype words ("leading", "world-class", "premier").
 
-## USA wave 1: still to add
+## Current list
 
-Wave 1 still needs these 7 cities: Dayton (OH), Cincinnati (OH), Akron (OH), Fort Wayne (IN), Minneapolis (MN), Lansing (MI), Flint (MI).
-
-Watch for:
-- Ohio will have six cities: make sure each `local` line reads differently.
-- Michigan already has Detroit and Grand Rapids.
+100 US cities (wave 1 and wave 2, Nov 2026). Filter tabs group them by region in `src/lib/areaRegions.ts` (Northeast, Great Lakes, Central Plains, Southeast, Texas & South Central, West); a new state must be in one of those lists or its city won't appear under a tab.
 
 ## Pull request checklist
 
