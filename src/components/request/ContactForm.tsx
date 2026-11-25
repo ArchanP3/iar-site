@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { HelpCircle, Package, RefreshCw, Wrench } from "lucide-react";
 import { Choice, DetailsFields, FormMeta, Step, SubmitBar, Thanks, input, label, useSend } from "./FormParts";
 
 export default function ContactForm() {
   const [topic, setTopic] = useState("repair");
   const { status, send } = useSend();
+  const router = useRouter();
+
+  /* once the message is saved, show the thank-you page */
+  useEffect(() => {
+    if (status === "sent") router.push("/contact/thank-you");
+  }, [status, router]);
 
   if (status === "sent") {
     return <Thanks title="Message received" text="Thank you. A member of our team will reply by email." />;
