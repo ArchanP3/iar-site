@@ -21,6 +21,8 @@ export default function AreasMap({ areas, urls }: { areas: Area[]; urls: Record<
   const [on, setOn] = useState<string | null>(null);
   const pts = areas.map((a) => ({ a, p: naPoint(...a.at) }));
   const cur = pts.find((x) => x.a.slug === on);
+  /* whole intro animation fits in ~2.5s however many cities there are */
+  const step = Math.min(0.06, 2.4 / Math.max(1, pts.length));
 
   return (
     <div className="relative">
@@ -43,7 +45,7 @@ export default function AreasMap({ areas, urls }: { areas: Area[]; urls: Record<
           const hot = on === a.slug;
           return (
             <g key={a.slug}>
-              <path d={d} className="sah-draw" pathLength={1} style={{ animationDelay: `${0.15 + i * 0.06}s` }} />
+              <path d={d} className="sah-draw" pathLength={1} style={{ animationDelay: `${0.15 + i * step}s` }} />
               <path d={d} className="sah-flow" style={{ animationDelay: `1.8s, ${(i % 8) * 0.45}s`, strokeOpacity: on && !hot ? 0.2 : 1, strokeWidth: hot ? 4 : undefined }} />
             </g>
           );
@@ -54,7 +56,7 @@ export default function AreasMap({ areas, urls }: { areas: Area[]; urls: Record<
             href={urls[a.slug]}
             aria-label={`${a.city}, ${a.regionCode}`}
             className="sah-dot"
-            style={{ animationDelay: `${0.5 + i * 0.06}s` }}
+            style={{ animationDelay: `${0.5 + i * step}s` }}
             onMouseEnter={() => setOn(a.slug)}
             onMouseLeave={() => setOn(null)}
             onFocus={() => setOn(a.slug)}
