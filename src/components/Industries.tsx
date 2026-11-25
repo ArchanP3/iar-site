@@ -57,7 +57,7 @@ export default function Industries() {
               Pick an industry to see what we repair
             </p>
             <span className="hidden shrink-0 rounded-full border border-white/15 bg-white/6 px-3.5 py-1.5 text-[12px] font-semibold text-white/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:inline-flex">
-              the USA
+              USA
             </span>
           </div>
 
