@@ -30,7 +30,7 @@ export default function QuoteForm() {
   }, []);
 
   if (status === "sent") {
-    return <Thanks title="Quote request received" text="Thank you. We will reply with price, condition and lead time for your part." />;
+    return <Thanks title="Quote request received" text="Thank you. We will reply with price, condition and lead time for your part." next="/request-quote/thank-you" />;
   }
 
   return (

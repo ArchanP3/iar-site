@@ -9,7 +9,7 @@ export default function OnSiteForm() {
   const { status, send } = useSend();
 
   if (status === "sent") {
-    return <Thanks title="On-site request received" text="Thank you. We contact you to go over the machine, confirm the visit and send a quote for the service call before anyone travels." />;
+    return <Thanks title="On-site request received" text="Thank you. We contact you to go over the machine, confirm the visit and send a quote for the service call before anyone travels." next="/on-site-service/thank-you" />;
   }
 
   return (

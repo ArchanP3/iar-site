@@ -113,7 +113,7 @@ export default async function ContactPage() {
   const cards = ([
     contact.phone && { icon: Phone, k: "Call us", v: contact.phone, note: "Toll-free, 24/7 for line-down emergencies", href: phoneHref(contact.phone) },
     contact.email && { icon: Mail, k: "Email us", v: contact.email, note: "Attach photos of the nameplate", href: `mailto:${contact.email}` },
-    { icon: WhatsAppIcon, k: "Chat with us", v: "Message our team", note: "Message us, send nameplate photos", wa: true },
+    { icon: WhatsAppIcon, k: "Chat with us", v: place.whatsapp ? place.whatsapp.replace(/^\+1\s*/, "") : "Message our team", note: "WhatsApp us, send nameplate photos", wa: true },
     { icon: MessageSquare, k: "Send a message", v: "Use the form below", note: "Repairs, parts or anything else", href: "#message" },
     { icon: Wrench, k: "Equipment down?", v: "Request a Repair", note: "Free evaluation, quote first", href: "/request-repair" },
     { icon: MapPin, k: "Repair center", v: fullAddress(contact), note: "Serving the USA", href: "#visit" },
@@ -301,7 +301,7 @@ export default async function ContactPage() {
                 <div className="relative mt-5 space-y-2 border-t border-white/10 pt-4 text-[14px] font-semibold">
                   {contact.phone && <a href={phoneHref(contact.phone)} className="flex items-center gap-2.5 hover:text-[#FF8A99]"><Phone size={16} aria-hidden="true" />{contact.phone}</a>}
                   {contact.email && <a href={`mailto:${contact.email}`} className="flex items-center gap-2.5 break-all hover:text-[#FF8A99]"><Mail size={16} aria-hidden="true" />{contact.email}</a>}
-                  <WhatsAppTrigger topic="A question from the contact page" className="flex items-center gap-2.5 hover:text-[#FF8A99]"><WhatsAppIcon size={16} className="text-[#25D366]" />WhatsApp{contact.phone ? ` ${contact.phone}` : " us"}</WhatsAppTrigger>
+                  <WhatsAppTrigger topic="A question from the contact page" className="flex items-center gap-2.5 hover:text-[#FF8A99]"><WhatsAppIcon size={16} className="text-[#25D366]" />WhatsApp{place.whatsapp ? ` ${place.whatsapp.replace(/^\+1\s*/, "")}` : " us"}</WhatsAppTrigger>
                 </div>
               )}
             </div>

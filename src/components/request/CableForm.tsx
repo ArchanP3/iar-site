@@ -25,7 +25,7 @@ export default function CableForm() {
   }, []);
 
   if (status === "sent") {
-    return <Thanks title="Cable request received" text="Thank you. We'll confirm the cable details and send your quote. If we need connector photos or a pinout, we'll ask by email." />;
+    return <Thanks title="Cable request received" text="Thank you. We'll confirm the cable details and send your quote. If we need connector photos or a pinout, we'll ask by email." next="/request-cable/thank-you" />;
   }
 
   return (
