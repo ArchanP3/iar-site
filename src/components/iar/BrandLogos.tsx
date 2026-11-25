@@ -28,6 +28,16 @@ const ROW_1: Brand[] = [
   B("Heidenhain", "heidenhain.svg"),
   B("Indramat", undefined, "/brands/rexroth-indramat"),
   B("KUKA", "kuka.svg"),
+  B("B&R Automation", "b-and-r.png", "/brands/b-and-r"),
+  B("AMK", "amk.png", "/brands/amk"),
+  B("Elau", "elau.png", "/brands/elau"),
+  B("Berger Lahr", "berger-lahr.png", "/brands/berger-lahr"),
+  B("Pacific Scientific", "pacific-scientific.png", "/brands/pacific-scientific"),
+  B("Sanyo Denki", "sanyo-denki.png", "/brands/sanyo-denki"),
+  B("Elmo Motion Control", "elmo-motion-control.png", "/brands/elmo-motion-control"),
+  B("Copley Controls", "copley-controls.png", "/brands/copley-controls"),
+  B("Advanced Motion Controls", "advanced-motion-controls.png", "/brands/advanced-motion-controls"),
+  B("Aerotech", "aerotech.png", "/brands/aerotech"),
 ];
 
 const ROW_2: Brand[] = [
@@ -53,6 +63,16 @@ const ROW_2: Brand[] = [
   B("TECO", "teco.svg"),
   B("Toshiba", "toshiba.svg"),
   B("Yokogawa", "yokogawa.svg"),
+  B("NUM", "num.png", "/brands/num"),
+  B("GE Fanuc", "ge-fanuc.png", "/brands/ge-fanuc"),
+  B("Haas", "haas.png", "/brands/haas"),
+  B("Fadal", "fadal.png", "/brands/fadal"),
+  B("HSD", "hsd.png", "/brands/hsd"),
+  B("Hengstler", "hengstler.png", "/brands/hengstler"),
+  B("Kübler", "kubler.png", "/brands/kubler"),
+  B("Dynapar", "dynapar.png", "/brands/dynapar"),
+  B("BEI Kimco", "bei-kimco.png", "/brands/bei-kimco"),
+  B("Bonfiglioli", "bonfiglioli.png", "/brands/bonfiglioli"),
 ];
 
 function Row({ brands, reverse = false }: { brands: Brand[]; reverse?: boolean }) {

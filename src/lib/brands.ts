@@ -19,6 +19,7 @@ const LOGOS: Record<string, string> = {
   moog: "moog.svg", bachmann: "bachmann.svg", "invertek-drives": "invertek-drives.svg", "reliance-electric": "reliance-electric.svg",
   sick: "sick.svg", "sieb-meyer": "sieb-meyer.svg", tamagawa: "tamagawa.svg", advantech: "advantech.svg", nachi: "nachi.svg",
   inovance: "inovance.svg", "ls-electric": "ls-electric.svg", "baumer-hubner": "baumer-hubner.svg", weintek: "weintek.svg",
+  "b-and-r": "b-and-r.png", "amk": "amk.png", "elau": "elau.png", "berger-lahr": "berger-lahr.png", "pacific-scientific": "pacific-scientific.png", "sanyo-denki": "sanyo-denki.png", "elmo-motion-control": "elmo-motion-control.png", "copley-controls": "copley-controls.png", "advanced-motion-controls": "advanced-motion-controls.png", "aerotech": "aerotech.png", "num": "num.png", "ge-fanuc": "ge-fanuc.png", "haas": "haas.png", "fadal": "fadal.png", "hsd": "hsd.png", "hengstler": "hengstler.png", "kubler": "kubler.png", "dynapar": "dynapar.png", "bei-kimco": "bei-kimco.png", "bonfiglioli": "bonfiglioli.png",
 };
 /** Logo path for a brand, or undefined to show initials. */
 export const brandLogo = (slug: string) => (LOGOS[slug] ? `/brands/${LOGOS[slug]}` : undefined);
