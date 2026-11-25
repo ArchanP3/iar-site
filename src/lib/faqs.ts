@@ -23,12 +23,24 @@ export const faqGroups: FaqGroup[] = [
         a: "Typical turnaround is 24–72 hours once you approve the quote. Exchange units usually ship within 1–2 business days of receiving your unit.",
       },
       {
+        q: "What equipment do you repair?",
+        a: "Servo drives and amplifiers, servo and spindle motors, VFDs and AC/DC drives, encoders and resolvers, PLCs, HMIs and operator panels, CNC controls, power supplies, circuit boards and robot motors, drives and teach pendants. If it runs a machine, send us the part number and we tell you what we can do.",
+      },
+      {
         q: "How do I get a repair quote?",
         a: "Send the manufacturer, part number and fault description by phone, email or the request form — the evaluation is free. You get a written quote with the repair cost and lead time, and a repair is usually far cheaper than a new unit.",
       },
       {
         q: "Do you charge to look at a unit?",
         a: "No — the evaluation costs nothing and commits you to nothing. We inspect and test the unit, find the root cause and send a written quote with the lead time. No work starts without your approval.",
+      },
+      {
+        q: "How much does a repair cost?",
+        a: "It depends on the unit and what failed, so every repair is quoted after the free evaluation. The written quote shows the repair cost and lead time before any work starts, and a repair typically costs well below the price of new hardware.",
+      },
+      {
+        q: "What happens if I decline the quote?",
+        a: "Nothing is repaired without your approval. If you decline, we return your unit at your shipping cost, or dispose of it if you ask us to in writing.",
       },
       {
         q: "Can you fix a servo drive overcurrent fault?",
@@ -44,7 +56,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "How do you test a repaired drive or motor?",
-        a: "Every repaired unit is tested under real operating load on OEM-standard test equipment, including a SINUMERIK 840D test setup for Siemens units. Drives run a motor, motors run under drive control, and the results go into the test report that ships with the unit.",
+        a: "Every repaired unit is tested under real operating load on OEM-standard test equipment, including a SINUMERIK 840D test bench for Siemens units. Drives run a motor, motors run under drive control, and the results go into the test report that ships with the unit.",
       },
       {
         q: "Do you repair obsolete or discontinued equipment?",
@@ -73,10 +85,6 @@ export const faqGroups: FaqGroup[] = [
     label: "Parts",
     items: [
       {
-        q: "Can I get a unit faster than a repair?",
-        a: "Ask about the exchange program. A tested exchange unit ships first, and your failed unit comes back to our bench afterwards.",
-      },
-      {
         q: "Are surplus parts tested?",
         a: "Every unit is inspected and tested before it ships.",
       },
@@ -89,8 +97,8 @@ export const faqGroups: FaqGroup[] = [
         a: "Yes. Send us the part number and our team sources it from our stock and our surplus supplier network, including discontinued parts.",
       },
       {
-        q: "How do I get a price for a part?",
-        a: "Enter the part number in the part search or request a quote. We reply with price, condition and lead time.",
+        q: "How do I check stock and price for a part?",
+        a: "Type the part number in the part search or the Part Number Checker to see whether we stock it, offer it as an exchange or can repair your own unit. Or request a quote and we reply with price, condition and lead time.",
       },
       {
         q: "Will a replacement part work in my machine?",
@@ -103,14 +111,6 @@ export const faqGroups: FaqGroup[] = [
       {
         q: "Do you make custom cables?",
         a: "Yes. Request a custom cable with the drive and motor model numbers and the length you need. We confirm the connectors and pinout and send you a quote.",
-      },
-      {
-        q: "Do you buy surplus parts?",
-        a: "Yes. Send us your list of spare drives, motors, PLCs, HMIs or CNC parts on our Sell Your Surplus page. We reply with an offer, with no obligation, and can arrange the pickup.",
-      },
-      {
-        q: "How do I check if you have a part?",
-        a: "Type the part number in the part search or the Part Number Checker. It shows whether we stock it, offer it as an exchange or can repair your own unit.",
       },
     ],
   },
@@ -152,16 +152,16 @@ export const faqGroups: FaqGroup[] = [
         a: "Yes. Phone support is available 24/7 for line-down emergencies.",
       },
       {
+        q: "What are your business hours?",
+        a: "Monday to Friday, 8:00 am to 5:00 pm Eastern Time. Our phone line, 1-877-904-6155, is open 24/7 for line-down emergencies.",
+      },
+      {
         q: "Can I drop off a unit at your repair center?",
         a: "Yes. Bring it to our repair center in Grand Island, New York during business hours. No appointment is needed. You can also call us or request a repair online first if you want us to expect it.",
       },
       {
         q: "Do you have repair shops in other cities?",
         a: "No. Every repair is done at our one repair center in Grand Island, New York. We serve all of the USA with pickups, ship-in and on-site service.",
-      },
-      {
-        q: "Can you arrange a pickup from the USA?",
-        a: "Yes. We arrange pickups from plants across the USA with FedEx, UPS or DHL and send you the waybill.",
       },
     ],
   },
@@ -191,7 +191,7 @@ export const moreFaqGroups: FaqGroup[] = [
       { q: "Which carriers do you use?", a: "FedEx, UPS and DHL. You can also give us your own carrier account number at checkout or on a pickup request." },
       { q: "What do you need for shipments to Canada?", a: "Parts ship from our Grand Island, NY facility, so orders to Canada go through Canadian customs. We prepare the commercial invoice and export paperwork for each shipment." },
       { q: "Who pays duties and brokerage fees?", a: "For shipments between the USA and Canada, duties, taxes and brokerage fees are paid by the receiver unless we agree otherwise." },
-      { q: "How should I pack a unit I send you?", a: "Use an anti-static bag, at least 5 cm (2 in) of padding on every side and a strong box. Our How to Ship Us a Unit guide has the full checklist." },
+      { q: "How should I pack a unit I send you?", a: "Use an anti-static bag, at least 2 in (5 cm) of padding on every side and a strong box. Our How to Ship Us a Unit guide has the full checklist." },
     ],
   },
   {
@@ -200,6 +200,7 @@ export const moreFaqGroups: FaqGroup[] = [
     short: "Returns",
     items: [
       { q: "What warranty do refurbished parts and exchange units have?", a: "Repairs, refurbished parts and exchange units are all covered by our one-year warranty from the date we ship them." },
+      { q: "How do I make a warranty claim?", a: "Contact us with your order or repair number, the part number and a short description of the fault. We confirm the claim, arrange how the unit comes back to us and evaluate it for free before any work is done." },
       { q: "What does the warranty not cover?", a: "Failures caused by incorrect installation, misuse, power surges, water or contamination, faults elsewhere in the machine, or opening of the unit by anyone else. Lost parameters and programs are not covered, so keep a backup." },
       { q: "Can I return a part I ordered by mistake?", a: "Yes, within 14 days of delivery if it is unused and in its original condition and packaging, less a 15% restocking fee. Contact us first for a return authorization." },
       { q: "What cannot be returned?", a: "Repairs, exchange units, custom cables and special-order or sourced parts cannot be returned unless they are faulty." },
@@ -216,7 +217,7 @@ export const moreFaqGroups: FaqGroup[] = [
     label: "Tools & Guides",
     short: "Tools",
     items: [
-      { q: "What is the Fault Code Library?", a: "A free library of more than 2,000 servo drive, spindle, AC drive and power supply fault codes from Siemens, Fanuc, Rexroth Indramat, Yaskawa and Allen-Bradley, each explained in plain English with likely causes and safe checks." },
+      { q: "What is the Fault Code Library?", a: "A free library of more than 2,000 servo drive, spindle, AC drive and power supply fault codes from Siemens, FANUC, Rexroth Indramat, Yaskawa and Allen-Bradley, each explained in plain English with likely causes and safe checks." },
       { q: "What does the Downtime Cost Calculator show?", a: "Enter what an hour of downtime costs you and how long each option takes. It compares a new part, a repair and an exchange unit, and you can download the result as a PDF." },
       { q: "How does the Repair or Replace Advisor work?", a: "Answer five quick questions about your unit and your line. It suggests whether a repair, an exchange or a replacement makes the most sense, and explains why." },
       { q: "Are the tools free?", a: "Yes. All tools and guides are free to use, with no sign-up." },
