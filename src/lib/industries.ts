@@ -103,7 +103,7 @@ export const industries: Industry[] = [
     services: ["vfd-repair", "servo-drive-repair", "industrial-motor-repair", "temperature-controller-repair", "plc-repair", "hmi-repair"],
   },
   {
-    slug: "woodworking", name: "Woodworking & Furniture", color: "#E11D3A", image: "", icon: "TreePine",
+    slug: "woodworking", name: "Woodworking & Furniture", color: "#E11D3A", image: "/industries/v2/woodworking.webp", icon: "TreePine",
     short: "CNC routers, edgebanders and panel saws.",
     intro: "Woodworking and furniture plants use CNC routers, edgebanders and saws with fast spindles and servo axes. We repair the spindles, drives, motors and CNC controls.",
     equipment: ["CNC routers and nesting machines", "Edgebanders", "Panel saws", "Moulders and sanders", "Boring and insertion machines", "Spindle motors"],
