@@ -31,13 +31,12 @@ export type GoogleReviews = {
 };
 
 const NAME = "Industrial Automation Repair Inc.";
+/** Share link to IAR's Google Business Profile (owner, Nov 2026). */
+const PROFILE_URL = "https://share.google/Y64ld1uIo1cChbPeU";
 
-/** Link to the Google profile: the configured Maps link, else a Maps link built from the Place ID, else a Maps search. */
+/** Link to the Google profile: the IAR_GOOGLE_PROFILE_URL setting if set, else the profile's share link. */
 export function googleProfileUrl(): string {
-  if (process.env.IAR_GOOGLE_PROFILE_URL) return process.env.IAR_GOOGLE_PROFILE_URL;
-  const q = encodeURIComponent(NAME);
-  const id = process.env.IAR_GOOGLE_PLACE_ID;
-  return id ? `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${id}` : `https://www.google.com/maps/search/?api=1&query=${q}`;
+  return process.env.IAR_GOOGLE_PROFILE_URL || PROFILE_URL || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(NAME)}`;
 }
 
 type PlacesReview = {
@@ -68,7 +67,7 @@ export async function getGoogleReviews(): Promise<GoogleReviews | null> {
     return {
       rating: p.rating,
       count: p.userRatingCount,
-      url: process.env.IAR_GOOGLE_PROFILE_URL || p.googleMapsUri || googleProfileUrl(),
+      url: process.env.IAR_GOOGLE_PROFILE_URL || PROFILE_URL || p.googleMapsUri || googleProfileUrl(),
       reviews: (p.reviews ?? [])
         .map((r) => ({
           author: r.authorAttribution?.displayName ?? "Google user",
