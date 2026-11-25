@@ -8,7 +8,7 @@ export type Group = "drives" | "motors" | "cnc" | "controls" | "robots";
 const LOGOS: Record<string, string> = {
   siemens: "siemens.svg", "rexroth-indramat": "bosch-rexroth.svg", "allen-bradley": "allen-bradley.svg", fanuc: "fanuc.svg",
   yaskawa: "yaskawa.svg", mitsubishi: "mitsubishi-electric.svg", abb: "abb.svg", schneider: "schneider.webp", kollmorgen: "kollmorgen.png",
-  beckhoff: "beckhoff.svg", parker: "parker.svg", lenze: "lenze.svg", "sew-eurodrive": "sew-eurodrive.svg", omron: "omron.svg",
+  beckhoff: "beckhoff.svg", parker: "parker.svg", lenze: "lenze.png", "sew-eurodrive": "sew-eurodrive.svg", omron: "omron.svg",
   baldor: "baldor.svg", danfoss: "danfoss.svg", delta: "delta.svg", "fuji-electric": "fuji-electric.svg", hitachi: "hitachi.svg",
   aeg: "aeg.svg", toshiba: "toshiba.svg", keb: "keb.svg", "control-techniques": "control-techniques.svg", emerson: "emerson.svg",
   eaton: "eaton.svg", bosch: "bosch.webp", baumuller: "baumuller.svg", magnetek: "magnetek.svg", festo: "festo.svg",

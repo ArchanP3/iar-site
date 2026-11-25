@@ -20,7 +20,7 @@ const ROW_1: Brand[] = [
   B("Kollmorgen", "kollmorgen.png"),
   B("Parker", "parker.svg"),
   B("Baldor", "baldor.svg"),
-  B("Lenze", "lenze.svg"),
+  B("Lenze", "lenze.png"),
   B("Schneider Electric", "schneider.webp"),
   B("SEW-Eurodrive", "sew-eurodrive.svg"),
   B("Omron", "omron.svg"),
