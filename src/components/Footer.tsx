@@ -96,7 +96,7 @@ export default async function Footer() {
               <li>
                 <WhatsAppTrigger topic="A question from the website" className="inline-flex items-center gap-2 hover:text-white">
                   <WhatsAppIcon size={13} className="text-[#25D366]" />
-                  Message us
+                  WhatsApp 416-904-6155
                 </WhatsAppTrigger>
               </li>
               <li className="flex items-start gap-2"><MapPin size={13} className="mt-0.5 flex-none text-[#FF5A6E]" aria-hidden="true" /><span>{fullAddress(contact)} <a href={directionsUrl} target="_blank" rel="noopener" className="ml-1 whitespace-nowrap font-semibold text-[#FF8A99] hover:text-white">Directions</a></span></li>

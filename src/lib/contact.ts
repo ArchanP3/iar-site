@@ -17,7 +17,7 @@ export const contact = {
   postal: "14072",
   geo: { lat: 43.0335, lng: -78.9636 },
   /** WhatsApp number with country code, e.g. "+1 905 555 0123". Empty = WhatsApp buttons open the website chat instead. */
-  whatsapp: "",
+  whatsapp: "+1 416-904-6155",
   /** Opening hours for the Contact page, e.g. [["Mon – Fri", "8:00 am – 5:00 pm"], ["Sat – Sun", "Closed"]].
       Empty = the hours card is hidden. */
   hours: [["Mon – Fri", "8:00 am – 5:00 pm ET"], ["Sat – Sun", "Closed"]] as [days: string, time: string][],
