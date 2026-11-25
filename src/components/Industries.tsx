@@ -8,7 +8,7 @@ import IndustriesPicker from "./IndustriesPicker";
    An industry shows in the carousel once its card file exists in this list. */
 const withCard = new Set([
   "automotive", "packaging", "plastics", "food-beverage", "metalworking", "printing", "pharmaceutical", "material-handling",
-  "steel-metals", "pulp-paper", "tire-rubber", "aerospace", "electronics", "water-wastewater", "mining", "oil-gas", "glass", "textiles", "machine-builders",
+  "steel-metals", "pulp-paper", "tire-rubber", "aerospace", "electronics", "water-wastewater", "mining", "oil-gas", "glass", "textiles", "woodworking", "machine-builders",
 ]);
 const items = all.filter((i) => withCard.has(i.slug) && i.image).map((i) => ({
   key: i.slug, name: i.name, short: i.short, href: industryUrl(i.slug), image: i.image, zoom: i.zoom, equipment: i.equipment,
