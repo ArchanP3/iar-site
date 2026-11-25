@@ -25,7 +25,7 @@ export default function InternationalQuoteForm() {
   }, []);
 
   if (status === "sent") {
-    return <Thanks title="International quote request received" text="Thank you. We check availability and reply by email with the price, shipping charges and lead time for your country." />;
+    return <Thanks title="International quote request received" text="Thank you. We check availability and reply by email with the price, shipping charges and lead time for your country." next="/international/thank-you" />;
   }
 
   return (

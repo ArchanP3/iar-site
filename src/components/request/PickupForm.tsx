@@ -17,7 +17,7 @@ export default function PickupForm() {
   }, []);
 
   if (status === "sent") {
-    return <Thanks title="Pickup request received" text="Thank you. We will book the pickup with your preferred carrier and send you the details. Your unit gets a free evaluation when it arrives." />;
+    return <Thanks title="Pickup request received" text="Thank you. We will book the pickup with your preferred carrier and send you the details. Your unit gets a free evaluation when it arrives." next="/request-pickup/thank-you" />;
   }
 
   return (

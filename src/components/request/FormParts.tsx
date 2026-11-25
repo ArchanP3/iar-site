@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, Check, CheckCircle2, Loader2, Minus, Plus, ShieldCheck } from "lucide-react";
 import { submitServiceRequest } from "@/lib/requests";
 
@@ -174,10 +175,16 @@ export function FormMeta({ type, subject }: { type: RequestType; subject: string
   );
 }
 
-export function Thanks({ title, text }: { title: string; text: string }) {
+/** Shown once a request is saved. With `next`, the visitor goes straight to that thank-you page
+    (src/app/<form page>/thank-you); the panel stays as a fallback while the page loads. */
+export function Thanks({ title, text, next }: { title: string; text: string; next?: string }) {
+  const router = useRouter();
+  useEffect(() => {
+    if (next) router.push(next);
+  }, [next, router]);
   return (
     <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-10">
-      <CheckCircle2 size={48} className="mx-auto text-emerald-500" aria-hidden="true" />
+      <CheckCircle2 size={48} className="mx-auto text-[#C8102E]" aria-hidden="true" />
       <h2 className="mt-4 text-[24px] font-extrabold text-[#131316]">{title}</h2>
       <p className="mx-auto mt-2 max-w-115 text-[14.5px] leading-[1.6] text-[#62626F]">{text}</p>
       <Link href="/" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">

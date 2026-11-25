@@ -33,7 +33,7 @@ export default function RepairForm() {
   }, []);
 
   if (status === "sent") {
-    return <Thanks title="Repair request received" text="Thank you. Our team will contact you to confirm the details and your shipping option. No work starts without your approval." />;
+    return <Thanks title="Repair request received" text="Thank you. Our team will contact you to confirm the details and your shipping option. No work starts without your approval." next="/request-repair/thank-you" />;
   }
 
   return (

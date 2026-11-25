@@ -12,7 +12,7 @@ export default function SurplusForm() {
   const { status, send } = useSend();
 
   if (status === "sent") {
-    return <Thanks title="Surplus list received" text="Thank you. We review your list and reply with an offer or questions. Nothing is shipped or sold until you agree." />;
+    return <Thanks title="Surplus list received" text="Thank you. We review your list and reply with an offer or questions. Nothing is shipped or sold until you agree." next="/sell-surplus/thank-you" />;
   }
 
   const toggle = (c: string) => setCond((x) => (x.includes(c) ? x.filter((y) => y !== c) : [...x, c]));
