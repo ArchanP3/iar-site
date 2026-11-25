@@ -4,7 +4,7 @@ import { cacheLife } from "next/cache";
 /*  IAR's Google reviews, read live from the Google Places API (New). */
 /*  Settings (Vercel → Settings → Environment Variables, server only):  */
 /*    GOOGLE_PLACES_API_KEY  Places API key (Google Cloud, billing on)  */
-/*    IAR_GOOGLE_PLACE_ID    Place ID of the IAR Google Business Profile */
+/*    IAR_GOOGLE_PLACE_ID    optional, overrides PLACE_ID below          */
 /*    IAR_GOOGLE_PROFILE_URL optional: the profile's Google Maps link   */
 /*  Google's terms: show reviews as returned (no editing or filtering), */
 /*  with Google attribution, and link back to Google.                  */
@@ -33,6 +33,8 @@ export type GoogleReviews = {
 const NAME = "Industrial Automation Repair Inc.";
 /** Share link to IAR's Google Business Profile (owner, Nov 2026). */
 const PROFILE_URL = "https://share.google/Y64ld1uIo1cChbPeU";
+/** Place ID of IAR's Google Business Profile (owner, Nov 2026). Not secret; the IAR_GOOGLE_PLACE_ID setting overrides it. */
+const PLACE_ID = "ChIJf0c5Arw4K4gRBHR5a_Iq8s0";
 
 /** Link to the Google profile: the IAR_GOOGLE_PROFILE_URL setting if set, else the profile's share link. */
 export function googleProfileUrl(): string {
@@ -52,7 +54,7 @@ export async function getGoogleReviews(): Promise<GoogleReviews | null> {
   "use cache";
   cacheLife("days");
   const key = process.env.GOOGLE_PLACES_API_KEY;
-  const id = process.env.IAR_GOOGLE_PLACE_ID;
+  const id = process.env.IAR_GOOGLE_PLACE_ID || PLACE_ID;
   if (!key || !id) return null;
   try {
     const res = await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(id)}?languageCode=en`, {
