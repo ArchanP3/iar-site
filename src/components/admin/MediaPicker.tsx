@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- CMS media from the database, shown at its stored size */
 
 import { useEffect, useState } from "react";
 import { ImageIcon, X } from "lucide-react";
@@ -17,7 +18,7 @@ export default function MediaPicker({ onPick, onClose }: { onPick: (m: { url: st
           {items?.length === 0 && <p className="col-span-full flex flex-col items-center gap-2 p-8 text-center text-[#91919E]"><ImageIcon size={28} />No images yet. Upload some in Media Library.</p>}
           {items?.map((m) => (
             <button type="button" key={m.filename} onClick={() => onPick({ url: `/media/${m.filename}`, alt: m.alt })} className="overflow-hidden rounded-xl border border-[#EAEAEC] text-left hover:border-[#C8102E]">
-              <div className="flex h-24 items-center justify-center bg-[#F4F4F5]">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={`/media/${m.filename}`} alt="" className="max-h-[80%] max-w-[80%] object-contain" /></div>
+              <div className="flex h-24 items-center justify-center bg-[#F4F4F5]"><img src={`/media/${m.filename}`} alt="" className="max-h-[80%] max-w-[80%] object-contain" /></div>
               <div className="truncate px-2 py-1.5 font-mono text-[11px]">{m.filename}</div>
             </button>
           ))}

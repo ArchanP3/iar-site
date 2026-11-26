@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 
 const norm = (s: string) => s.toLowerCase().replace(/[\s.\-_]/g, "");
@@ -21,12 +22,14 @@ export default function FamilyFilter({
   areas: [string, number][];
   page: number;
 }) {
+  const router = useRouter();
   const [q, setQ] = useState("");
   const [area, setArea] = useState("All");
   const [all, setAll] = useState(false);
   const first = useRef(true);
 
   // "/fault-codes/...?q=F30006" opens the list filtered to that code
+  /* eslint-disable react-hooks/set-state-in-effect -- prefill from the page URL once after mount; the server render can't see it */
   useEffect(() => {
     const v = new URLSearchParams(window.location.search).get("q");
     if (v) setQ(v);
@@ -38,14 +41,15 @@ export default function FamilyFilter({
     const onAsk = (e: Event) => {
       const b = (e.target as HTMLElement).closest("td button");
       const code = b?.closest("tr")?.cells[0]?.textContent;
-      if (code) window.location.href = `${askHref}?fault=${encodeURIComponent(code)}`;
+      if (code) router.push(`${askHref}?fault=${encodeURIComponent(code)}`);
     };
     table?.addEventListener("click", onAsk);
     return () => {
       more?.removeEventListener("click", onMore);
       table?.removeEventListener("click", onAsk);
     };
-  }, [tableId, askHref]);
+  }, [tableId, askHref, router]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (first.current && !q && area === "All" && !all) {

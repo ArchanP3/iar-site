@@ -16,6 +16,7 @@ export default function CableForm() {
   const form = useRef<HTMLFormElement>(null);
   const { status, send } = useSend();
 
+  /* eslint-disable react-hooks/set-state-in-effect -- prefill from the page URL once after mount; the server render can't see it */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
     fill(form.current, "Drive model", q.get("drive"));
@@ -23,6 +24,7 @@ export default function CableForm() {
     const t = q.get("type");
     if (t && types.includes(t)) setType(t);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (status === "sent") {
     return <Thanks title="Cable request received" text="Thank you. We'll confirm the cable details and send your quote. If we need connector photos or a pinout, we'll ask by email." next="/request-cable/thank-you" />;

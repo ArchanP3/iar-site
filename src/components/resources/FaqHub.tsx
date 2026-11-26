@@ -25,7 +25,7 @@ export default function FaqHub({ groups }: { groups: FaqGroup[] }) {
         <label className="flex items-center gap-2 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-4 focus-within:border-[#C8102E] focus-within:bg-white">
           <Search size={17} className="text-[#B30E29]" aria-hidden="true" />
           <span className="sr-only">Search questions</span>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${total} questions, e.g. warranty, exchange, EIN`} className="h-12 w-full bg-transparent text-[15px] outline-none placeholder:text-[#696976]" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${total} questions, e.g. warranty, exchange, shipping`} className="h-12 w-full bg-transparent text-[15px] outline-none placeholder:text-[#696976]" />
         </label>
         <div className="-mx-1 mt-3 flex gap-2 overflow-x-auto px-1 scrollbar-none sm:flex-wrap">
           {[{ key: "all", label: "All" }, ...groups].map((g) => (

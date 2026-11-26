@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
-import { site } from "@/lib/site";
 
 // Shared shell for the parts catalog (/shop, /parts, /search). The marketing
 // pages render Header/Footer themselves; catalog pages get them from here.
 export const metadata: Metadata = {
-  title: { default: `Industrial Automation Parts | ${site.name}`, template: `%s | ${site.name}` },
+  title: { default: `Industrial Automation Parts | IAR`, template: `%s | IAR` },
 };
 
 export default function CatalogLayout({ children }: { children: React.ReactNode }) {

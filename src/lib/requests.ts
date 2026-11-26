@@ -108,8 +108,52 @@ export async function submitServiceRequest(fields: Record<string, string>): Prom
     console.error("request insert failed", error);
     return { ok: false, message: "Sorry, your request could not be sent. Please try again in a minute." };
   }
-  // TODO: notify the team (Supabase Database Webhook → email/CRM) once the inbox is decided.
+  // Email the team so new leads are seen right away (the request is already saved; a failed email never fails it).
+  await notifyTeam(type, rest, details).catch((e) => console.error("lead email failed", e));
   return { ok: true };
+}
+
+const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
+
+/**
+ * New-lead email through Resend's HTTP API (no package needed). Off until both settings are set (Vercel, server only):
+ *   RESEND_API_KEY   API key from resend.com (the sending domain must be verified there)
+ *   LEADS_EMAIL_TO   who gets the alerts, comma-separated, e.g. info@industrialautomationrepair.com
+ *   LEADS_EMAIL_FROM optional sender, default "IAR Website <leads@industrialautomationrepair.com>"
+ */
+async function notifyTeam(type: string, core: Omit<z.infer<typeof Core>, "type">, details: Record<string, string>) {
+  const key = process.env.RESEND_API_KEY;
+  const to = process.env.LEADS_EMAIL_TO?.split(",").map((s) => s.trim()).filter(Boolean);
+  if (!key || !to?.length) return;
+  const rows: [string, string][] = [
+    ["Type", type],
+    ["Name", core.name],
+    ["Company", core.company ?? ""],
+    ["Email", core.email ?? ""],
+    ["Phone", core.phone ?? ""],
+    ["Part number", core.part_number ?? ""],
+    ["Manufacturer", core.manufacturer ?? ""],
+    ["Quantity", core.quantity ? String(core.quantity) : ""],
+    ["Message", core.message ?? ""],
+    ...Object.entries(details),
+  ];
+  const html = `<h2 style="font-family:Arial,sans-serif">New website ${esc(type)} request</h2><table style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">${rows
+    .filter(([, v]) => v)
+    .map(([k, v]) => `<tr><td style="padding:6px 12px 6px 0;color:#555;vertical-align:top;white-space:nowrap"><b>${esc(k)}</b></td><td style="padding:6px 0;white-space:pre-wrap">${esc(v)}</td></tr>`)
+    .join("")}</table><p style="font-family:Arial,sans-serif;font-size:13px;color:#777">Also saved in the CMS: Leads.</p>`;
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: process.env.LEADS_EMAIL_FROM || "IAR Website <leads@industrialautomationrepair.com>",
+      to,
+      reply_to: core.email || undefined,
+      subject: `New ${type} request: ${core.company || core.name}${core.part_number ? ` (${core.part_number.slice(0, 60)})` : ""}`,
+      html,
+    }),
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!res.ok) console.error("lead email failed", res.status, await res.text().catch(() => ""));
 }
 
 /** At most 10 requests per network per 10 minutes (public.request_allowed in the database). */

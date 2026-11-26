@@ -89,6 +89,16 @@ export const THANK_YOU = {
     ],
     links: [{ href: "/shop", label: "Shop parts" }, { href: "/services", label: "Repair services" }],
   },
+  order: {
+    eyebrow: "Order received", title: "Your order is in.",
+    text: "Thank you. We confirm stock, shipping and your invoice by email before you pay. No payment has been taken.",
+    steps: [
+      { icon: ClipboardList, t: "We confirm your order", d: "We check stock for every part and work out shipping to your address." },
+      { icon: Mail, t: "You get your invoice", d: `We email the invoice with the shipping cost. Our office hours are ${hours}.` },
+      { icon: Package, t: "Tested, packed and shipped", d: "Once paid, parts are tested, packed and shipped from Grand Island, NY with a 1-year warranty." },
+    ],
+    links: [{ href: "/shop", label: "Continue shopping" }, { href: "/request-repair", label: "Request a repair" }],
+  },
   international: {
     eyebrow: "Quote request sent", title: "Your international quote request is in.",
     text: "Thank you. We check availability and reply by email with the price, shipping charges and lead time for your country.",
@@ -109,7 +119,7 @@ export const thankYouMetadata = (kind: ThankYouKind): Metadata => ({
   robots: { index: false, follow: true },
 });
 
-export default function ThankYouPage({ kind }: { kind: ThankYouKind }) {
+export default function ThankYouPage({ kind, children }: { kind: ThankYouKind; children?: React.ReactNode }) {
   const k: Kind = THANK_YOU[kind];
   return (
     <div className={`${brandFont.className} flex min-h-screen flex-col bg-[#F7F7F8]`}>
@@ -131,6 +141,7 @@ export default function ThankYouPage({ kind }: { kind: ThankYouKind }) {
 
         <section className="relative mx-auto -mt-14 max-w-5xl px-4 pb-16 sm:px-6">
           <div className="rounded-[24px] border border-[#EAEAEC] bg-white p-6 shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-8">
+            {children}
             <h2 className="text-[20px] font-extrabold text-[#131316] sm:text-[22px]">What happens next</h2>
             <ol className="mt-5 grid gap-4 md:grid-cols-3">
               {k.steps.map((s, i) => (

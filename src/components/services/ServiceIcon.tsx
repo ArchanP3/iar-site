@@ -11,6 +11,7 @@ const map: Record<string, React.ElementType> = {
 };
 
 /* Coloured icon tile for services without a product photo */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- callers still pass a colour; tiles are now IAR red
 export default function ServiceIcon({ name, color, size = 48, className = "" }: { name?: string; color: string; size?: number; className?: string }) {
   const I = (name && map[name]) || Wrench;
   return (

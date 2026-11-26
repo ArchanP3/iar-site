@@ -9,12 +9,14 @@ export default function PickupForm() {
   const form = useRef<HTMLFormElement>(null);
   const { status, send } = useSend();
 
+  /* eslint-disable react-hooks/set-state-in-effect -- prefill from the page URL once after mount; the server render can't see it */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
     fill(form.current, "Part numbers", q.get("part"));
     const c = q.get("carrier");
     if (c) setCarrier(c);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (status === "sent") {
     return <Thanks title="Pickup request received" text="Thank you. We will book the pickup with your preferred carrier and send you the details. Your unit gets a free evaluation when it arrives." next="/request-pickup/thank-you" />;
