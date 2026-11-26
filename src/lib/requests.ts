@@ -58,6 +58,8 @@ const COLUMNS: Record<string, keyof z.infer<typeof Core>> = {
 export async function submitServiceRequest(fields: Record<string, string>): Promise<RequestResult> {
   // Spam trap: real visitors never fill this hidden field. Pretend success.
   if (fields._honey) return { ok: true };
+  // PREVIEW BRANCH ONLY: no database yet, so forms go straight to the thank-you page without saving anything.
+  if (process.env.PREVIEW_NO_DB === "1") return { ok: true };
   if (!(await allowed())) return { ok: false, message: "Too many requests from your network. Please try again in a few minutes, or call or email us." };
 
   const core: Record<string, string> = {};

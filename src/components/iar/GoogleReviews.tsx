@@ -1,14 +1,26 @@
 import { ArrowUpRight } from "lucide-react";
 import ReviewSlider, { Stars } from "./ReviewSlider";
 import { brandFont } from "@/lib/font";
-import { FOUNDED, getGoogleReviews, googleProfileUrl } from "@/lib/googleReviews";
+import { FOUNDED, getGoogleReviews, googleProfileUrl, type GoogleReviews as Reviews } from "@/lib/googleReviews";
+
+/* PREVIEW BRANCH ONLY: placeholder reviews so the slideshow can be seen before the Google key is added. Clearly labelled as samples. */
+const SAMPLE: Reviews = {
+  rating: 5, count: 5, url: googleProfileUrl(),
+  reviews: [
+    { author: "Sample reviewer", rating: 5, when: "Preview only", text: "Sample review for the preview. Your real Google reviews will appear here, one at a time, once the Google key is added." },
+    { author: "Sample reviewer", rating: 5, when: "Preview only", text: "Second sample slide. Reviews change every 7 seconds, and visitors can use the arrows, the dots or swipe on a phone." },
+    { author: "Sample reviewer", rating: 5, when: "Preview only", text: "Third sample slide. Long reviews get a Read more link that opens the full text right here on the page, so nobody has to leave the site to read it. ".repeat(3).trim() },
+  ],
+};
 
 /* "Trusted since 2008" + live Google reviews (src/lib/googleReviews.ts).
    Until the Places API key and Place ID are set, it shows the history line and a link to the Google profile. */
 
 
 export default async function GoogleReviews({ tone = "light", embedded = false }: { tone?: "light" | "white"; embedded?: boolean }) {
-  const data = await getGoogleReviews();
+  const live = await getGoogleReviews();
+  const sample = !live && process.env.PREVIEW_NO_DB === "1";
+  const data = live ?? (sample ? SAMPLE : null);
   const url = data?.url ?? googleProfileUrl();
 
   return (
@@ -53,6 +65,7 @@ export default async function GoogleReviews({ tone = "light", embedded = false }
 
         {data && data.reviews.length > 0 && (
           <div className="mt-8">
+            {sample && <p className="mb-3 text-center text-[12.5px] font-semibold text-[#B30E29]">Preview: sample reviews. The real Google reviews appear here once the Google key is added.</p>}
             <ReviewSlider reviews={data.reviews} />
             <p className="mt-4 text-center text-[12px] text-[#76767F]">
               Reviews from Google Maps ·{" "}
