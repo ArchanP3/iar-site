@@ -133,7 +133,7 @@ async function Parts({ searchParams }: Props) {
       <PageHead
         crumb={<><span>CMS</span><span>/</span><span className="text-[#696976]">Parts Catalog</span></>}
         title="Parts Catalog"
-        sub={<>{list.total.toLocaleString()} part pages on .com and .ca · {indexable.toLocaleString()} in the parts sitemaps</>}
+        sub={<>{list.total.toLocaleString()} part pages · {indexable.toLocaleString()} in the parts sitemaps</>}
         actions={<a href="/shop" target="_blank" rel="noopener" className={b("light")}><ExternalLink size={14} /> View shop</a>}
       />
 

@@ -57,7 +57,7 @@ async function Edit({ searchParams }: Props) {
               <p className="text-[13px] text-[#696976]">Nothing yet. Any field you change here gets locked, so the CSV and catalog imports keep your version.</p>
             )}
           </Card>
-          <Alert tone="blue">Changes show on industrialautomationrepair.com and .ca straight away, and every change is in Users &amp; Activity with Undo.</Alert>
+          <Alert tone="blue">Changes show on industrialautomationrepair.com straight away, and every change is in Users &amp; Activity with Undo.</Alert>
           <div className="text-[12px] text-[#91919E]">Part number, brand and photos can&apos;t be changed here yet.</div>
         </div>
       </div>
