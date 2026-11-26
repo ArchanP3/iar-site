@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight, ArrowUpRight, BadgeCheck, Building2, Cable, ChevronRight, CircuitBoard, ClipboardCheck, Cpu, FileSearch, Gauge,
@@ -240,6 +241,29 @@ export default async function AboutPage() {
               ))}
             </ul>
           </div>
+        </section>
+
+        {/* ---------- Inside the shop: real photos (from the brochure) ---------- */}
+        <section aria-labelledby="shop-photos">
+          <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]"><span className="h-0.5 w-8 rounded bg-[#C8102E]" aria-hidden="true" />Inside our shop</p>
+          <h2 id="shop-photos" className="mt-2 text-[26px] font-extrabold leading-tight sm:text-[34px]">Real test jigs, real inventory</h2>
+          <p className="mt-3 max-w-200 text-[15px] leading-[1.75] text-[#5A5A66]">Every unit is tested on working equipment before it ships, and thousands of parts sit on our shelves ready to go.</p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: "/facility/840d-test-jig.webp", t: "Siemens 840D test jig", d: "Controls and drives run on a live system." },
+              { src: "/facility/technician-testing-cnc.webp", t: "Testing on the jig", d: "Every control is checked before it ships." },
+              { src: "/facility/repair-bench-drop-offs.webp", t: "Drop-offs on the bench", d: "Units in for evaluation and repair." },
+              { src: "/facility/parts-inventory.webp", t: "Parts inventory", d: "Drives, motors and modules in stock." },
+            ].map((p) => (
+              <li key={p.src} className="group relative aspect-4/3 overflow-hidden rounded-[22px] bg-[#131316]">
+                <Image src={p.src} alt={p.t} fill sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/95 via-black/70 to-transparent p-4 pt-16 text-white">
+                  <p className="text-[15px] font-bold">{p.t}</p>
+                  <p className="text-[12.5px] text-white/75">{p.d}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </section>
 
         {/* ---------- Core values ---------- */}
