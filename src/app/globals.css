@@ -165,8 +165,15 @@ h1, h2, h3, h4 { font-family: var(--font-saira), "Inter", ui-sans-serif, system-
 .float-y { animation: iar-float 5.5s ease-in-out infinite; }
 .conveyor { animation: iar-marquee 48s linear infinite; }
 .circuit path { stroke-dasharray: 700; stroke-dashoffset: 700; animation: iar-draw 2.8s ease-out .6s forwards; }
+/* Shipping hub (src/components/ShippingHub.tsx): dashes fly out along each route, rings pulse from the hub */
+@keyframes iar-route { from { stroke-dashoffset: 310; } to { stroke-dashoffset: 0; } }
+@keyframes iar-ring { from { transform: scale(.6); opacity: .9; } to { transform: scale(2.6); opacity: 0; } }
+@keyframes iar-blink { 50% { opacity: .25; } }
+.route-dash { stroke-dasharray: 10 300; animation: iar-route 3.2s linear infinite; }
+.hub-ring { animation: iar-ring 3s ease-out infinite; }
+.live-dot { animation: iar-blink 1.6s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .iar-fade-up, .hex-ring, .float-y, .conveyor, .logo-track { animation: none; }
+  .iar-fade-up, .hex-ring, .float-y, .conveyor, .logo-track, .route-dash, .hub-ring, .live-dot { animation: none; }
   .circuit path { animation: none; stroke-dashoffset: 0; }
 }
 .font-display { font-family: var(--font-saira), "Inter", ui-sans-serif, system-ui, sans-serif; }
