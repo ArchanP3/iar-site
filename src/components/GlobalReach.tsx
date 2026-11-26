@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Globe2, PackageCheck, Plane } from "lucide-react";
 import { brandFont } from "@/lib/font";
-import { destinations } from "@/lib/globalRoutes";
-import DepartureBoard from "@/components/DepartureBoard";
+import { destinations, origin } from "@/lib/globalRoutes";
+import RouteGlobe from "@/components/globe/RouteGlobe";
 
 /* Homepage: parts ship worldwide by air. Online ordering is for the USA & Canada, repairs for the USA;
    other countries contact us for a quote. The customer pays duties, import taxes and brokerage. */
@@ -17,6 +17,7 @@ const steps = [
   ["We ship it by air", "Duties, import taxes and brokerage are paid by you."],
 ];
 const regions = ["North America", "Europe", "Asia"] as const;
+const routes = destinations.map((d) => ({ id: d.id, to: d.at, label: d.city }));
 
 export default function GlobalReach() {
   return (
@@ -68,9 +69,10 @@ export default function GlobalReach() {
               ))}
             </ul>
 
-            {/* Departure board */}
+            {/* Globe */}
             <div className="relative mx-auto w-full max-w-140 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
-              <DepartureBoard />
+              <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Grand Island, New York to Canada, Mexico, Europe, Asia and across the USA" />
+              <p className="-mt-2 text-center text-[11.5px] text-white/60">Routes are illustrative, not live shipment tracking.</p>
             </div>
 
             {/* Destinations + how it works */}
