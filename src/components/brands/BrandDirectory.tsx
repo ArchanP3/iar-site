@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { brandLogo, brands, brandUrl, groups } from "@/lib/brands";
 
 /* Searchable brand list. All links are in the HTML, so Google sees every brand. */
@@ -41,7 +40,7 @@ export default function BrandDirectory() {
       <ul className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
         {list.map((b) => (
           <li key={b.slug} className="relative">
-            <Link href={brandUrl(b.slug)} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 pb-15 sm:pb-17 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1">
+            <Link href={brandUrl(b.slug)} className="hexcard group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-white/10 p-3.5 sm:rounded-[22px] sm:p-5 text-white shadow-[0_22px_44px_-24px_rgba(28,28,32,0.8)] transition hover:-translate-y-1">
               <span aria-hidden="true" className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full blur-xl transition group-hover:scale-125" style={{ background: `radial-gradient(closest-side, #C8102E77, transparent)` }} />
               <span className="relative flex items-start justify-between">
                 {brandLogo(b.slug) ? (
@@ -57,7 +56,6 @@ export default function BrandDirectory() {
               <span className="relative mt-3 block min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[18px]">{b.name} Repair</span>
               <span className="relative mt-1 line-clamp-2 block min-h-[2lh] text-[11.5px] leading-normal text-white/70 sm:line-clamp-none sm:min-h-[3lh] sm:text-[13px]">{b.card}</span>
             </Link>
-            <WhatsAppButton tone="dark" size="sm" topic={b.name} kind="brand" url={brandUrl(b.slug)} label={`Ask about ${b.name} repair on WhatsApp`} className="absolute right-3.5 bottom-3.5 sm:right-5 sm:bottom-5" />
           </li>
         ))}
       </ul>

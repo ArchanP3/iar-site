@@ -3,7 +3,6 @@ import { ArrowRight, ArrowUpRight, ChevronRight, Wrench } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import { brandLogo, brands, brandUrl } from "@/lib/brands";
 import BrandDirectory from "@/components/brands/BrandDirectory";
 import { PageExtras, seo } from "@/lib/cms/seo";
@@ -39,7 +38,6 @@ export default function BrandsPage() {
       <p className="relative mt-1 line-clamp-3 min-h-[3lh] text-[11.5px] leading-normal text-white/70 sm:line-clamp-none sm:text-[13px]">{b.card}</p>
       {b.core && <span className="absolute bottom-3.5 left-3.5 flex h-9 items-center sm:bottom-5 sm:left-5"><span className="rounded-full bg-[#0A0A0C]/55 px-2 py-1 text-[9.5px] font-bold uppercase tracking-[0.08em] text-[#FF8A99] ring-1 ring-white/10 sm:px-2.5 sm:text-[10.5px] sm:tracking-[0.14em]">Core<span className="max-sm:hidden lg:max-xl:hidden"> specialty</span></span></span>}
     </Link>
-    <WhatsAppButton tone="dark" size="sm" topic={b.name} kind="brand" url={brandUrl(b.slug)} label={`Ask about ${b.name} repair on WhatsApp`} className="absolute right-3.5 bottom-3.5 sm:right-5 sm:bottom-5" />
     </div>
   );
   return (
