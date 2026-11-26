@@ -15,13 +15,11 @@ export default function CatalogLayout({ children }: { children: React.ReactNode 
     <div className={`${brandFont.className} flex min-h-screen flex-col bg-white text-ink`}>
       <Header />
       <main id="main" className="flex-1">
-        {/* PREVIEW BRANCH ONLY: shop and part pages wait for the parts database. */}
-        {process.env.PREVIEW_NO_DB === "1" ? (
-          <section className="mx-auto max-w-3xl px-5 py-24 text-center">
-            <h1 className="text-3xl font-extrabold">The online shop is coming soon</h1>
-            <p className="mt-3 text-[#5A5A66]">This preview is not connected to the parts database yet. Call 1-877-904-6155 or request a quote for any part number.</p>
-          </section>
-        ) : children}
+        {/* PREVIEW BRANCH ONLY: the shop shows 10 sample listings (src/lib/demoCatalog.ts) until the parts database is connected. */}
+        {process.env.PREVIEW_NO_DB === "1" && (
+          <p className="bg-[#FBE9EC] px-5 py-2 text-center text-[13px] font-semibold text-[#A50D25]">Preview: these are 10 sample listings. Prices and stock are examples only.</p>
+        )}
+        {children}
       </main>
       <Footer />
     </div>
