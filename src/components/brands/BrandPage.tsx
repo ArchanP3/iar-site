@@ -1,12 +1,11 @@
 import Link from "next/link";
 import WhatsAppButton, { WhatsAppCta } from "@/components/WhatsAppButton";
-import { ArrowRight, ArrowUpRight, BadgeCheck, Bot, Check, ChevronRight, CircuitBoard, Clock, Cog, Cpu, Disc3, Gauge, Monitor, Power, Radar, RefreshCw, SlidersHorizontal, MessageCircleQuestion, Plus, ShieldCheck, Wrench, Zap, Binary } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BadgeCheck, Bot, Check, ChevronRight, CircuitBoard, Clock, Cog, Cpu, Disc3, Gauge, Monitor, Power, Radar, RefreshCw, SlidersHorizontal, MessageCircleQuestion, Plus, ShieldCheck, Wrench, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import { brandFaqs, brandLogo, brandMakes, brands, brandUrl, type Brand } from "@/lib/brands";
 import { services, serviceUrl } from "@/lib/services";
-import { familyBySeries } from "@/lib/decoder/families";
 
 /* Icons for the 12 repair categories. Same for every brand, so nothing is mislabelled.
    Later: when inventory photos exist for a brand + category, show those here instead. */
@@ -182,15 +181,9 @@ export default function BrandPage({ b }: { b: Brand }) {
               <li key={l.t} className="flex flex-col rounded-2xl border border-[#EAEAEC] bg-white p-5">
                 <h3 className="text-[16px] font-extrabold">{b.name} {l.t}</h3>
                 <ul className="mt-2.5 flex flex-1 flex-wrap content-start gap-1.5">
-                  {l.series.map((x) => {
-                    // Series the model code decoder covers link straight to their section.
-                    const fam = familyBySeries(x);
-                    return fam && fam.brandSlug === b.slug ? (
-                      <li key={x} className="h-fit"><Link href={`/resources/model-code-decoder#${fam.id}`} title={`Decode a ${x} model code`} className="inline-flex items-center gap-1 rounded-lg bg-[#FBE9EC] px-2.5 py-1 text-[12.5px] font-semibold text-[#A50D25] hover:bg-[#ECECEF]">{x} <Binary size={12} aria-hidden="true" /><span className="sr-only">: decode a model code</span></Link></li>
-                    ) : (
-                      <li key={x} className="h-fit rounded-lg bg-[#F7F7F8] px-2.5 py-1 text-[12.5px] font-semibold text-[#62626F]">{x}</li>
-                    );
-                  })}
+                  {l.series.map((x) => (
+                    <li key={x} className="h-fit rounded-lg bg-[#F7F7F8] px-2.5 py-1 text-[12.5px] font-semibold text-[#62626F]">{x}</li>
+                  ))}
                 </ul>
                 <Link href={serviceUrl(l.service)} className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#B30E29]">How we repair them <ArrowRight size={14} aria-hidden="true" /></Link>
               </li>

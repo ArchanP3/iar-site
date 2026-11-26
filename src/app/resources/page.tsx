@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   AlertTriangle, ArrowRight, ArrowUpRight, BookOpen, BookText, Calculator, ChevronRight, FileCheck2, HelpCircle,
-  PackageCheck, Route, Scale, ScanSearch, Binary } from "lucide-react";
+  PackageCheck, Route, Scale, ScanSearch } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FaultCodeSearch from "@/components/fault-codes/FaultCodeSearch";
@@ -126,11 +126,10 @@ export default function ResourcesPage() {
         {/* ---------- Tools ---------- */}
         <section aria-labelledby="tools">
           <h2 id="tools" className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#B30E29]">Tools</h2>
-          <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Tile accent icon={Calculator} t="Downtime Cost Calculator" d="Waiting vs repair vs exchange, with a PDF summary for your manager." href="/resources/downtime-calculator" />
             <Tile accent icon={Scale} t="Repair or Replace Advisor" d="Five quick questions, then a clear recommendation and the right next step." href="/resources/repair-or-replace" />
             <Tile accent icon={ScanSearch} t="Part Number Checker" d="Type a part number to see refurbished stock, exchange and repair options." href="/resources/part-checker" />
-            <Tile accent icon={Binary} t="Model Code Decoder" d="Decode a servo motor or drive code: Rexroth MKD, Siemens 1FK7, Allen-Bradley MPL, Yaskawa Sigma-5." href="/resources/model-code-decoder" />
           </div>
         </section>
 

@@ -33,7 +33,7 @@ const groups: Group[] = [
     title: "Resources", icon: BookOpen, href: "/resources", wide: true, links: [
       ["Fault Code Library", "/fault-codes"], ["Blog & Guides", "/resources/blog"], ...posts.map((p) => [p.title, postUrl(p.slug)] as [string, string]),
       ["Glossary", "/resources/glossary"], ["FAQs", "/resources/faqs"], ["Downtime Cost Calculator", "/resources/downtime-calculator"],
-      ["Repair or Replace Advisor", "/resources/repair-or-replace"], ["Part Number Checker", "/resources/part-checker"], ["Model Code Decoder", "/resources/model-code-decoder"], ["How to Ship Us a Unit", "/resources/shipping"],
+      ["Repair or Replace Advisor", "/resources/repair-or-replace"], ["Part Number Checker", "/resources/part-checker"], ["How to Ship Us a Unit", "/resources/shipping"],
     ],
   },
   {
