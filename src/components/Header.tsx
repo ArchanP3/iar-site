@@ -42,7 +42,11 @@ import {
   ShoppingCart,
   HardHat,
   HandCoins,
-  Globe2 } from "lucide-react";
+  Globe2,
+  Building2,
+  Microscope,
+  Star,
+  Briefcase } from "lucide-react";
 import { cartCount, useCart } from "@/lib/cart";
 import FaultCodeSearch from "@/components/fault-codes/FaultCodeSearch";
 import { categoryIcon } from "@/components/parts/categoryIcons";
@@ -70,7 +74,7 @@ type MenuGroup = {
 
 const groups: MenuGroup[] = [
   {
-    label: "Shop Parts",
+    label: "Shop",
     href: "/shop",
     intro: "New, surplus and refurbished industrial automation parts.",
     // Built from the shop categories, so new categories show up here too.
@@ -127,7 +131,7 @@ const groups: MenuGroup[] = [
     },
   },
   {
-    label: "Brands",
+    label: "Brands We Repair",
     href: "/brands",
     intro: "Multi-brand expertise from one trusted source.",
     columns: 4,
@@ -181,20 +185,30 @@ const groups: MenuGroup[] = [
   },
 ];
 
-/* Resources menu (add soon: true to a link to show a "Soon" badge instead of a link) */
+/* Company menu: resources, about us, tools and working with us (add soon: true to a link to show a "Soon" badge instead of a link) */
 groups.push({
-  label: "Resources",
-  href: "/resources",
-  intro: "Guides, tools and answers from our repair technicians.",
+  label: "Company",
+  href: "/about",
+  intro: "Who we are, how we work, and guides and tools from our repair technicians.",
   links: [],
   sections: [
     {
-      title: "Learn",
+      title: "Resources",
       links: [
         { label: "Fault Code Library", href: "/fault-codes", note: "2,000+ codes explained", icon: AlertTriangle },
         { label: "Blog & Guides", href: "/resources/blog", note: "From our repair bench", icon: BookOpen },
         { label: "Glossary", href: "/resources/glossary", note: "Terms in plain English", icon: BookText },
         { label: "FAQs", href: "/resources/faqs", note: "Quick answers", icon: HelpCircle },
+        { label: "All Resources", href: "/resources", note: "Guides and tools in one place", icon: Layers },
+      ],
+    },
+    {
+      title: "About Us",
+      links: [
+        { label: "About Us", href: "/about", note: "Repairing since 2008", icon: Building2 },
+        { label: "Our Repair Center", href: "/about#bench", note: "Test jigs and inventory", icon: Microscope },
+        { label: "Customer Reviews", href: "/about#reviews-heading", note: "What customers say", icon: Star },
+        { label: "Careers", href: "/about#careers", note: "Join our team", icon: Briefcase },
       ],
     },
     {
@@ -229,8 +243,7 @@ groups.push({
 });
 
 const simpleLinks = [
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -548,7 +561,7 @@ export default function Header() {
                       </div>
                     </div>
                   ) : active.sections ? (
-                    <div className="grid grid-cols-3 gap-x-6">
+                    <div className={`grid gap-x-5 ${active.sections.length > 3 ? "grid-cols-4" : "grid-cols-3"}`}>
                       {active.sections.map((sec) => (
                         <div key={sec.title}>
                           <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#696976]">{sec.title}</p>
