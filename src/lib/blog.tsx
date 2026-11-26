@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /* ------------------------------------------------------------------ */
@@ -20,6 +21,20 @@ export type Post = {
 };
 
 const A = ({ href, children }: { href: string; children: React.ReactNode }) => <Link href={href}>{children}</Link>;
+
+/** Real photos from our repair center (public/facility), one or two side by side with captions. */
+const Photos = ({ items }: { items: [src: string, caption: string][] }) => (
+  <div className={`my-5 grid gap-3 ${items.length > 1 ? "sm:grid-cols-2" : ""}`}>
+    {items.map(([src, caption]) => (
+      <figure key={src} className="m-0">
+        <div className={`relative overflow-hidden rounded-2xl bg-[#131316] ${items.length > 1 ? "aspect-4/3" : "aspect-video"}`}>
+          <Image src={src} alt={caption} fill sizes={items.length > 1 ? "(min-width:640px) 400px, 100vw" : "(min-width:900px) 800px, 100vw"} className="object-cover" />
+        </div>
+        <figcaption className="mt-2 text-center text-[13px] text-[#696976]">{caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+);
 
 export const posts: Post[] = [
   {
@@ -115,7 +130,10 @@ export const posts: Post[] = [
       {
         h: "1. Check-in: logged and photographed",
         body: (
-          <p>When your unit arrives it is logged in our system, photographed and its condition recorded, including any wear and tear or physical damage. You always know what state it arrived in.</p>
+          <>
+            <p>When your unit arrives it is logged in our system, photographed and its condition recorded, including any wear and tear or physical damage. You always know what state it arrived in.</p>
+            <Photos items={[["/facility/repair-bench-drop-offs.webp", "Units dropped off and checked in on our repair bench"]]} />
+          </>
         ),
       },
       {
@@ -135,6 +153,7 @@ export const posts: Post[] = [
         body: (
           <>
             <p>We have test benches for most units, including Fanuc, Yaskawa, Siemens, Rexroth Indramat and Allen-Bradley, and we build custom test benches when a job needs one.</p>
+            <Photos items={[["/facility/840d-test-jig.webp", "Our Siemens SINUMERIK 840D test jig"], ["/facility/technician-testing-cnc.webp", "A technician testing a control on the 840D jig"]]} />
             <ul>
               <li><strong>Servo drives</strong> are tested with a motor, so the drive is proven under real current, not just powered on.</li>
               <li><strong>Servo motors</strong> are tested under drive control, so we see how they actually run.</li>
