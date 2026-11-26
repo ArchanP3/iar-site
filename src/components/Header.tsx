@@ -42,8 +42,7 @@ import {
   ShoppingCart,
   HardHat,
   HandCoins,
-  Globe2,
-  Binary } from "lucide-react";
+  Globe2 } from "lucide-react";
 import { cartCount, useCart } from "@/lib/cart";
 import FaultCodeSearch from "@/components/fault-codes/FaultCodeSearch";
 import { categoryIcon } from "@/components/parts/categoryIcons";
@@ -204,7 +203,6 @@ groups.push({
         { label: "Downtime Cost Calculator", href: "/resources/downtime-calculator", note: "What waiting really costs", icon: Calculator },
         { label: "Repair or Replace Advisor", href: "/resources/repair-or-replace", note: "Five quick questions", icon: Scale },
         { label: "Part Number Checker", href: "/resources/part-checker", note: "Stock, exchange & repair", icon: ScanSearch },
-        { label: "Model Code Decoder", href: "/resources/model-code-decoder", note: "What a motor or drive code means", icon: Binary },
       ],
     },
     {
