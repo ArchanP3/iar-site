@@ -54,14 +54,6 @@ export default function FaultCodeSearch({
   const [noMatch, setNoMatch] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
 
-  // On the library page, "/fault-codes?q=F300" fills in the search box
-  useEffect(() => {
-    if (!readUrl) return;
-    const v = new URLSearchParams(window.location.search).get("q");
-    if (v) update(v);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [readUrl]);
-
   const update = async (value: string) => {
     setQ(value);
     setActive(0);
@@ -72,6 +64,15 @@ export default function FaultCodeSearch({
     setNoMatch(value.trim().length > 1 && h.length === 0);
     setOpen(true);
   };
+
+  // On the library page, "/fault-codes?q=F300" fills in the search box
+  useEffect(() => {
+    if (!readUrl) return;
+    const v = new URLSearchParams(window.location.search).get("q");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- prefill from the page URL once after mount
+    if (v) update(v);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [readUrl]);
 
   const go = (r?: Row) => {
     if (r) router.push(r[3]);

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, shareImage, SHARE_URL } from "@/lib/site";
+import { shareImage, SHARE_URL } from "@/lib/site";
 import { fitTitle } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";

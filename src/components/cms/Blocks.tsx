@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- CMS media from the database, shown at its stored size */
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BadgeCheck, CheckCircle2, ChevronDown } from "lucide-react";
@@ -146,7 +147,7 @@ async function Section({ b, vars, H }: { b: Block; vars: Record<string, string>;
       return (
         <section className={`${wrap} grid items-center gap-8 py-12 lg:grid-cols-2`}>
           <div className={`flex min-h-65 items-center justify-center rounded-[24px] border border-[#EAEAEC] bg-[radial-gradient(120%_90%_at_30%_10%,#FFFFFF_0%,#F4F4F5_55%,#ECECEE_100%)] p-6 ${b.side === "right" ? "lg:order-2" : ""}`}>
-            {b.image && /* eslint-disable-next-line @next/next/no-img-element */ <img src={b.image} alt={f(b.alt)} loading="lazy" className="max-h-80 w-auto object-contain" />}
+            {b.image && <img src={b.image} alt={f(b.alt)} loading="lazy" className="max-h-80 w-auto object-contain" />}
           </div>
           <div>
             <H className="text-[26px] font-extrabold tracking-[-0.02em] text-[#131316] sm:text-[32px]">{f(b.heading)}</H>

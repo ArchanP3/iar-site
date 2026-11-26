@@ -159,7 +159,7 @@ const sections: LegalSection[] = [
     title: "General",
     body: (
       <ul>
-        <li>These terms are governed by the laws of {legal.law}, and the courts of Ontario have jurisdiction over any dispute.</li>
+        <li>These terms are governed by the laws of {legal.law}, and {legal.courts} have jurisdiction over any dispute.</li>
         <li>We are not responsible for delays or failures caused by events outside our reasonable control, such as carrier delays, supply shortages, severe weather or power outages.</li>
         <li>If any part of these terms cannot be enforced, the rest still applies.</li>
         <li>We may update these terms. The version on this page on the date of your order applies to that order.</li>

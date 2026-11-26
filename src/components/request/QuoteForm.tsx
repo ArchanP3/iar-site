@@ -15,6 +15,7 @@ export default function QuoteForm() {
   const form = useRef<HTMLFormElement>(null);
   const { status, send } = useSend();
 
+  /* eslint-disable react-hooks/set-state-in-effect -- prefill from the page URL once after mount; the server render can't see it */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
     fill(form.current, "Part number", q.get("part"));
@@ -28,6 +29,7 @@ export default function QuoteForm() {
     const match = conditions.find((x) => x.toLowerCase() === c?.toLowerCase());
     if (match) setCondition(match);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (status === "sent") {
     return <Thanks title="Quote request received" text="Thank you. We will reply with price, condition and lead time for your part." next="/request-quote/thank-you" />;

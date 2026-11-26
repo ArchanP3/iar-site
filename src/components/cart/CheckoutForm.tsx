@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Building2, Globe2, CheckCircle2, Landmark, Package, RefreshCw, ShieldCheck, ShoppingCart, Truck } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowLeft, ArrowRight, Building2, Globe2, CheckCircle2, Package, RefreshCw, ShoppingCart, Truck } from "lucide-react";
 import AddressBlock, { type Country } from "./AddressBlock";
+import { PLACED_KEY } from "./PlacedOrder";
 import { handling } from "@/lib/shipping";
 import { CarrierPicker, Choice, DetailsFields, FormMeta, Step, SubmitBar, input, label, useSend } from "@/components/request/FormParts";
 import { conditionLabel } from "@/lib/parts/types";
@@ -18,14 +20,13 @@ export default function CheckoutForm() {
   const { status, send } = useSend();
   const [carrier, setCarrier] = useState("No preference");
   const [unitReturn, setUnitReturn] = useState("ship");
-  const [shipCountry, setShipCountry] = useState<Country>("Canada");
-  const [billCountry, setBillCountry] = useState<Country>("Canada");
+  const router = useRouter();
+  const [shipCountry, setShipCountry] = useState<Country>("United States");
+  const [billCountry, setBillCountry] = useState<Country>("United States");
   const [sameBilling, setSameBilling] = useState(true);
-  const [ein, setEin] = useState("");
-  const toUS = shipCountry === "United States";
+  const toCanada = shipCountry === "Canada";
   const abroad = shipCountry === "Other";
   const quoteHref = `/international?${new URLSearchParams({ parts: items.map((i) => `${i.manufacturer} ${i.partNumber} × ${i.qty} (${conditionLabel[i.condition]})`).join("\n") })}#quote`;
-  const [placed, setPlaced] = useState<{ items: CartItem[]; subtotal: number } | null>(null);
   const hasExchange = items.some((i) => i.condition === "exchange");
   const subtotal = cartSubtotal(items);
   const count = cartCount(items);
@@ -33,33 +34,11 @@ export default function CheckoutForm() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     const snapshot = { items, subtotal };
     if (await send(e)) {
-      setPlaced(snapshot);
+      // The thank-you page shows what was ordered (src/app/checkout/thank-you).
+      try { sessionStorage.setItem(PLACED_KEY, JSON.stringify(snapshot)); } catch {}
       clearCart();
+      router.push("/checkout/thank-you");
     }
-  }
-
-  if (placed) {
-    return (
-      <div className="mx-auto max-w-180 rounded-[24px] border border-[#EAEAEC] bg-white p-7 text-center shadow-[0_30px_70px_-45px_rgba(19,19,22,0.45)] sm:p-10">
-        <CheckCircle2 size={52} className="mx-auto text-emerald-500" aria-hidden="true" />
-        <h2 className="mt-4 text-[26px] font-extrabold text-[#131316]">Order received</h2>
-        <p className="mx-auto mt-2 max-w-120 text-[14.5px] leading-[1.6] text-[#62626F]">
-          Thank you. We will confirm stock, shipping and your invoice by email before you pay.
-        </p>
-        <ul className="mx-auto mt-6 max-w-120 divide-y divide-[#F3F3F4] rounded-2xl bg-[#FAFAFB] px-4 text-left text-[13.5px] ring-1 ring-[#EAEAEC]">
-          {placed.items.map((i) => (
-            <li key={i.id} className="flex justify-between gap-3 py-2.5">
-              <span className="min-w-0 truncate"><span className="font-semibold">{i.qty} ×</span> <span className="font-mono">{i.partNumber}</span></span>
-              <span className="font-semibold">{usd(Math.round(i.price * i.qty * 100) / 100)}</span>
-            </li>
-          ))}
-          <li className="flex justify-between py-2.5 font-bold"><span>Subtotal</span><span>{usd(placed.subtotal)}</span></li>
-        </ul>
-        <Link href="/shop" className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl border border-[#E3E3E7] px-5 text-[14px] font-semibold text-[#131316] hover:border-[#C8102E]">
-          Continue shopping
-        </Link>
-      </div>
-    );
   }
 
   if (!items.length) {
@@ -92,6 +71,12 @@ export default function CheckoutForm() {
         <Step n={2} title="Shipping address">
           <AddressBlock prefix="co-ship" name="Ship" section="shipping" country={shipCountry} onCountry={setShipCountry} />
           {!abroad && <div className="mt-5"><CarrierPicker prefix="co" value={carrier} onChange={setCarrier} /></div>}
+          {toCanada && (
+            <p className="mt-4 flex items-start gap-2 rounded-xl bg-[#FFF6F7] px-3.5 py-3 text-[13px] leading-snug text-[#4E4E58]">
+              <Globe2 size={16} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />
+              Parts ship from Grand Island, NY. For Canada, a commercial invoice goes with every shipment, and duties, taxes and brokerage are paid by the receiver.
+            </p>
+          )}
           {abroad && (
             <div className="mt-4 overflow-hidden rounded-2xl border border-[#DDDDE1] bg-[#FFF6F7]">
               <div className="flex items-start gap-3.5 p-4 sm:p-5">
@@ -118,33 +103,8 @@ export default function CheckoutForm() {
 
         {!abroad && (<>
 
-        {/* Only for shipments to the USA: who clears US customs */}
-        {toUS && (
-          <Step n={3} title="US customs" hint="Parts ship from Canada, so US customs needs your company's tax number.">
-            <div className="overflow-hidden rounded-2xl border border-[#E3E3E7]">
-              <div className="grid gap-4 p-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:p-5">
-                <div>
-                  <label className={label} htmlFor="co-ein">Business EIN (IRS number) *</label>
-                  <div className="relative">
-                    <Landmark size={17} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-[#B30E29]" aria-hidden="true" />
-                    <input id="co-ein" name="US importer EIN" required inputMode="numeric" autoComplete="off" pattern="\d{2}-\d{7}" title="9-digit EIN, e.g. 12-3456789" placeholder="12-3456789"
-                      value={ein} onChange={(e) => { const d = e.target.value.replace(/\D/g, "").slice(0, 9); setEin(d.length > 2 ? `${d.slice(0, 2)}-${d.slice(2)}` : d); }}
-                      className={`${input} h-12 pl-10 font-mono text-[16px] tracking-[0.08em]`} />
-                  </div>
-                  <p className="mt-1.5 text-[12px] text-[#62626F]">The 9-digit Employer Identification Number from your company&apos;s IRS letter.</p>
-                </div>
-                <ul className="space-y-2 self-center rounded-xl bg-[#FFF6F7] p-3.5 text-[12.5px] text-[#4E4E58]">
-                  {["Printed on the customs invoice for faster clearance", "Used only for this shipment's paperwork", "Duties, taxes and brokerage are paid by the receiver"].map((t) => (
-                    <li key={t} className="flex items-start gap-2"><ShieldCheck size={14} className="mt-0.5 flex-none text-[#B30E29]" aria-hidden="true" />{t}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Step>
-        )}
-
         {hasExchange && (
-          <Step n={toUS ? 4 : 3} title="Your exchange unit" hint="We ship the replacement once your unit reaches us, usually within 1–2 business days.">
+          <Step n={3} title="Your exchange unit" hint="We ship the replacement once your unit reaches us, usually within 1–2 business days.">
             <Choice name="Exchange unit return" value={unitReturn} onChange={setUnitReturn} cols={2} options={[
               { v: "ship", t: "I will ship it", d: "Send it with any carrier", icon: Package },
               { v: "pickup", t: "Book a pickup", d: "We arrange it from your site", icon: Truck },
@@ -152,7 +112,7 @@ export default function CheckoutForm() {
           </Step>
         )}
 
-        <Step n={3 + (toUS ? 1 : 0) + (hasExchange ? 1 : 0)} title="Billing and order details">
+        <Step n={3 + (hasExchange ? 1 : 0)} title="Billing and order details">
           <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 py-3 text-[14px] font-semibold text-[#131316]">
             <input type="checkbox" checked={sameBilling} onChange={(e) => { setSameBilling(e.target.checked); setBillCountry(shipCountry); }} className="h-4 w-4 accent-[#C8102E]" />
             Billing address is the same as shipping

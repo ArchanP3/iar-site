@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- CMS media from the database, shown at its stored size */
 
 import { useActionState, useState, useTransition } from "react";
 import {
@@ -219,7 +220,7 @@ function BlockFields({ b: bl, set, services, brands, pickImage }: { b: Block; se
         <div className="grid gap-3">
           <F label="Heading">{t("heading", bl.heading)}</F>
           <F label="Text (Markdown)">{t("body", bl.body, true, 5)}</F>
-          <div className="flex items-center gap-3">{bl.image ? /* eslint-disable-next-line @next/next/no-img-element */ <img src={bl.image} alt="" className="h-16 w-24 rounded-lg border border-[#EAEAEC] object-contain" /> : null}<button type="button" onClick={pickImage} className={b("light", true)}><ImageIcon size={13} /> {bl.image ? "Change image" : "Choose image"}</button></div>
+          <div className="flex items-center gap-3">{bl.image ? <img src={bl.image} alt="" className="h-16 w-24 rounded-lg border border-[#EAEAEC] object-contain" /> : null}<button type="button" onClick={pickImage} className={b("light", true)}><ImageIcon size={13} /> {bl.image ? "Change image" : "Choose image"}</button></div>
           <F label="Image alt text">{t("alt", bl.alt)}</F>
           <F label="Image side"><select value={bl.side ?? "left"} onChange={(e) => set({ side: e.target.value as "left" | "right" })} className={input}><option value="left">Left</option><option value="right">Right</option></select></F>
         </div>

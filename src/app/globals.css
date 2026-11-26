@@ -88,16 +88,8 @@ body {
   --color-danger: #b91c1c;
 }
 
-/* ---------- RouteGlobe (Serving Customers Worldwide) ---------- */
-.rg-layer .rg-base { fill: none; stroke: rgba(255,59,85, 0.28); stroke-width: 1.4; stroke-dasharray: 3 7; }
-.rg-layer .rg-trail { fill: none; stroke: #FF3B55; stroke-width: 2.6; stroke-linecap: round; filter: url(#rg-glow); }
-.rg-layer .rg-plane path { fill: #ffffff; filter: drop-shadow(0 0 4px rgba(255,59,85, 0.9)); }
-.rg-layer .rg-dot { fill: #FF8A99; }
-.rg-layer .rg-home .rg-dot { fill: #ffffff; }
-.rg-layer .rg-pulse { fill: none; stroke: #FF3B55; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: rg-pulse 2.4s ease-out infinite; }
-.rg-layer .rg-home .rg-pulse { stroke: #ffffff; }
+/* Pulse used by the Service Areas map */
 @keyframes rg-pulse { 0% { transform: scale(0.35); opacity: 0.9; } 100% { transform: scale(1.6); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .rg-layer .rg-pulse { animation: none; opacity: 0.5; } }
 
 /* ---------- Service Areas map ---------- */
 .sa-map .sa-route { fill: none; stroke: url(#sa-route); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 6 9; animation: sa-flow 2.6s linear infinite; }

@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- CMS media from the database, shown at its stored size */
 
 import { useActionState, useRef, useState, useTransition } from "react";
 import {
@@ -195,7 +196,7 @@ export default function PostEditor({ post, categories, canPublish, me, site, sav
             <div className="flex flex-col gap-1.5">
               <span className="text-[12.5px] font-bold">Cover image</span>
               {cover ? (
-                <div className="relative flex h-32 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[#F4F4F5]">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={cover} alt="" className="max-h-[85%] max-w-[85%] object-contain" /><button type="button" onClick={() => setCover("")} className="absolute right-2 top-2 rounded-lg bg-white p-1 text-[#91919E] shadow"><Trash2 size={14} /></button></div>
+                <div className="relative flex h-32 items-center justify-center rounded-xl border border-[#EAEAEC] bg-[#F4F4F5]"><img src={cover} alt="" className="max-h-[85%] max-w-[85%] object-contain" /><button type="button" onClick={() => setCover("")} className="absolute right-2 top-2 rounded-lg bg-white p-1 text-[#91919E] shadow"><Trash2 size={14} /></button></div>
               ) : <button type="button" onClick={() => setPicker("cover")} className={b("light")}><ImagePlus size={15} /> Choose from Media Library</button>}
               {cover && <input name="cover_alt" value={coverAlt} onChange={(e) => setCoverAlt(e.target.value)} placeholder="Alt text for the cover" className={input} />}
             </div>

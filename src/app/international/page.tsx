@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck, ClipboardList, FileText, Globe2, Landmark, MailCheck, PackageCheck, Plane, Plus, ShoppingCart, Truck, Wrench } from "lucide-react";
 import ResourceShell from "@/components/resources/ResourceShell";
 import InternationalQuoteForm from "@/components/request/InternationalQuoteForm";
-import RouteGlobe from "@/components/globe/RouteGlobe";
-import { destinations, origin } from "@/lib/globalRoutes";
+import ShippingHub from "@/components/ShippingHub";
+import { destinations } from "@/lib/globalRoutes";
 import { SITE_URL } from "@/lib/site";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
@@ -14,7 +14,6 @@ export const generateMetadata = seo("/international", {
 });
 
 const abroad = destinations.filter((d) => d.country !== "USA");
-const routes = abroad.map((d) => ({ id: d.id, to: d.at, label: d.city }));
 const regions = [
   ["North America", abroad.filter((d) => d.region === "North America")],
   ["Europe", abroad.filter((d) => d.region === "Europe")],
@@ -132,8 +131,7 @@ export default function InternationalPage() {
             <p className="mt-5 text-[13px] text-white/60">Country not listed? Send a quote request and we will tell you what is possible.</p>
           </div>
           <div className="mx-auto w-full max-w-130">
-            <RouteGlobe origin={origin.at} routes={routes} fallbackSrc="/globe/globe-still.webp" fallbackAlt="Globe showing air routes from Grand Island, New York to Canada, Mexico, Europe and Asia" />
-            <p className="-mt-2 text-center text-[11.5px] text-white/60">Routes are illustrative, not live shipment tracking.</p>
+            <ShippingHub />
           </div>
         </div>
       </section>

@@ -36,7 +36,7 @@ const sections: LegalSection[] = [
         <ul>
           <li>your name, company, work email and phone number;</li>
           <li>shipping, billing and pickup addresses, carrier account numbers and purchase order numbers;</li>
-          <li>for shipments to the USA, your business EIN or customs broker details, used only for customs paperwork;</li>
+          <li>for shipments outside the USA, your tax or importer number if you give it, used only for customs paperwork;</li>
           <li>details about your equipment, such as part numbers, fault descriptions and photos;</li>
           <li>anything else you write in a form or message.</li>
         </ul>
@@ -71,7 +71,7 @@ const sections: LegalSection[] = [
           <li><strong>Service providers</strong> who help us run the business, such as our website host, the service that delivers website form messages to our inbox, email, accounting and, when it is added, payment processing;</li>
           <li><strong>Authorities</strong> when the law requires it, or to protect our rights and safety.</li>
         </ul>
-        <p>Our service providers may store or process information outside Canada, including in the United States, where it may be subject to the laws of that country.</p>
+        <p>Our service providers may store or process information in the United States, Canada or other countries, where it may be subject to the laws of those countries.</p>
       </>
     ),
   },
@@ -108,7 +108,7 @@ const sections: LegalSection[] = [
           <li>delete your information, where we are not required to keep it;</li>
           <li>stop using your information for marketing.</li>
         </ul>
-        <p>To make a request, {reach}. We may need to confirm your identity first. If you are not satisfied with our answer, you can contact the Office of the Privacy Commissioner of Canada.</p>
+        <p>To make a request, {reach}. We may need to confirm your identity first. If you are not satisfied with our answer, please tell us and we will review it.</p>
       </>
     ),
   },

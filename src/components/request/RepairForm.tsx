@@ -16,6 +16,7 @@ export default function RepairForm() {
   const form = useRef<HTMLFormElement>(null);
   const { status, send } = useSend();
 
+  /* eslint-disable react-hooks/set-state-in-effect -- prefill from the page URL once after mount; the server render can't see it */
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
     const f = form.current;
@@ -31,6 +32,7 @@ export default function RepairForm() {
     const note = [fault && `Fault code ${fault}`, service === "question" && "Question for a technician", q.get("note")].filter(Boolean).join(" · ");
     if (note) fill(f, "Fault", `${note}: `);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (status === "sent") {
     return <Thanks title="Repair request received" text="Thank you. Our team will contact you to confirm the details and your shipping option. No work starts without your approval." next="/request-repair/thank-you" />;

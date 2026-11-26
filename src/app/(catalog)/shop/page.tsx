@@ -4,7 +4,7 @@ import ShopListing from "@/components/parts/ShopListing";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/shop", {
-  title: "Servo Motors, Drives & Automation Parts | IAR",
+  title: "Servo Motors, Drives & Automation Parts",
   description:
     "Buy new, surplus and refurbished servo motors, drives, PLCs and HMIs by brand or part number. Tested in-house, 1-year warranty.",
   alternates: { canonical: "/shop" },

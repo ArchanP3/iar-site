@@ -2,7 +2,7 @@
 
 import { input, label } from "@/components/request/FormParts";
 
-/* Canada / USA address with a province-or-state dropdown and postal / ZIP checking,
+/* USA / Canada address with a province-or-state dropdown and postal / ZIP checking,
    so addresses arrive complete and in the right format. */
 
 export type Country = "Canada" | "United States" | "Other";
@@ -31,9 +31,9 @@ export default function AddressBlock({ prefix, name, section, country, onCountry
 }) {
   const f = (id: string) => `${prefix}-${id}`;
   const ac = (t: string) => `${section} ${t}`;
-  const options: Country[] = section === "shipping" ? ["Canada", "United States", "Other"] : ["Canada", "United States"];
+  const options: Country[] = section === "shipping" ? ["United States", "Canada", "Other"] : ["United States", "Canada"];
   const other = country === "Other";
-  const p = postal[other ? "Canada" : country];
+  const p = postal[other ? "United States" : country];
   const regionLabel = country === "Canada" ? "Province" : "State";
   return (
     <div className="grid gap-3 sm:grid-cols-6">
