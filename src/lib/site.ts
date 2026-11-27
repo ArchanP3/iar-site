@@ -23,11 +23,9 @@ export const indexable = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "pr
 export const SITE_URL = site.url;
 
 /* ------------------------------------------------------------------ */
-/*  Two country sites from one codebase and one database:              */
-/*    industrialautomationrepair.com (CA)  -> NEXT_PUBLIC_SITE_COUNTRY=CA*/
-/*    a US domain, if one is added later -> NEXT_PUBLIC_SITE_COUNTRY=US*/
-/*  Not set = one site for both countries (how it worked before .ca),   */
-/*  so nothing changes until the variable is set in Vercel.             */
+/*  IAR: leave NEXT_PUBLIC_SITE_COUNTRY unset. industrialautomationrepair.com */
+/*  is one US site. (The code can also run two country sites from one     */
+/*  codebase and database, CA and US, if that is ever wanted.)            */
 /*  Shared pages (parts, services, brands...) exist on both domains and */
 /*  are linked with hreflang in the sitemaps; city pages live only on   */
 /*  their own country's domain (the other domain 301s to it).           */
