@@ -111,7 +111,7 @@ export default function HeroShowcase() {
           </h1>
           <p className="iar-fade-up mt-4 text-xs font-medium uppercase tracking-[0.4em] text-white/55 [animation-delay:.2s]">Your Automation Repair Partner</p>
           <p className="iar-fade-up mt-5 max-w-xl text-lg leading-relaxed text-white/75 [animation-delay:.3s]">
-            Component-level motion control repair, load testing and a one-year warranty for servo motors, drives and industrial electronics — plus surplus servo motors and replacement parts when you can’t wait.
+            Industrial automation repair for plants across the USA: industrial servo motor repair, servo drive repair and industrial electronics repair at component level, load tested with a one-year warranty — plus surplus servo motors and replacement parts when you can’t wait.
           </p>
           <div className="iar-fade-up mt-8 flex flex-col gap-3 [animation-delay:.4s] sm:flex-row">
             <Link href="/request-repair" className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-dark">Request a Repair Quote <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" aria-hidden /></Link>

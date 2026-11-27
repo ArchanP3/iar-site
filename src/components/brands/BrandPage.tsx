@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import { brandFaqs, brandLogo, brandMakes, brands, brandUrl, type Brand } from "@/lib/brands";
 import { services, serviceUrl } from "@/lib/services";
+import { brandSeo, lineNote } from "@/lib/brandSeo";
 
 /* Icons for the 12 repair categories. Same for every brand, so nothing is mislabelled.
    Later: when inventory photos exist for a brand + category, show those here instead. */
@@ -47,7 +48,9 @@ export default function BrandPage({ b }: { b: Brand }) {
   const makes = brandMakes(b);
   const Makes = makes.charAt(0).toUpperCase() + makes.slice(1);
   const cats = services.filter((x) => b.categories.includes(x.slug));
-  const answer = `Yes. ${b.intro} If it carries the ${b.name} name, send it in and we will repair it.`;
+  const seo = brandSeo[b.slug];
+  const h1: [string, string] = seo?.h1 ?? [b.name, "Repair"];
+  const answer = `Yes. ${seo?.intro ?? b.intro} If it carries the ${b.name} name, send it in and we will repair it.`;
   const repairHref = `/request-repair?brand=${encodeURIComponent(b.name)}`;
   const others = brands.filter((x) => x.slug !== b.slug && x.core).slice(0, 4);
   const schema = [
@@ -94,7 +97,7 @@ export default function BrandPage({ b }: { b: Brand }) {
               </span>
             )}
             <h1 className="mt-5 text-[34px] font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-[48px]">
-              {b.name} <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Repair</span>
+              {h1[0]} <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">{h1[1]}</span>
             </h1>
             <p className="mt-2 text-[15px] font-semibold text-[#FF8A99] sm:text-[17px]">{Makes}</p>
             <ul className="mt-5 flex flex-wrap gap-2">
@@ -185,6 +188,7 @@ export default function BrandPage({ b }: { b: Brand }) {
                     <li key={x} className="h-fit rounded-lg bg-[#F7F7F8] px-2.5 py-1 text-[12.5px] font-semibold text-[#62626F]">{x}</li>
                   ))}
                 </ul>
+                {lineNote(b.slug, l.t) && <p className="mt-3 text-[13.5px] leading-[1.6] text-[#4A4A55]">{lineNote(b.slug, l.t)}</p>}
                 <Link href={serviceUrl(l.service)} className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#B30E29]">How we repair them <ArrowRight size={14} aria-hidden="true" /></Link>
               </li>
             ))}

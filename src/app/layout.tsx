@@ -20,12 +20,12 @@ const geistMono = Geist_Mono({
 
 const base: Metadata = {
   metadataBase: new URL(SHARE_URL),
-  title: "Servo Motor & Servo Drive Repair USA | IAR",
+  title: "Industrial Automation Repair | Servo Motor & Drive Repair USA",
   description:
-    "Servo motor, servo drive and industrial electronics repair for US plants. Free evaluation, 1-year warranty, free return shipping. Grand Island, NY.",
+    "Industrial automation repair for US plants: servo motor, servo drive and industrial electronics repair in Grand Island, NY. Free evaluation, 1-year warranty.",
   applicationName: "Industrial Automation Repair Inc.",
   openGraph: {
-    title: "Servo Motor & Servo Drive Repair USA | IAR",
+    title: "Industrial Automation Repair | Servo Motor & Drive Repair USA",
     description:
       "Servo motor, servo drive and industrial electronics repair for US plants. Free evaluation, 1-year warranty, free return shipping.",
     siteName: "Industrial Automation Repair Inc.",
