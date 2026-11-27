@@ -45,7 +45,6 @@ import {
   Globe2,
   Building2,
   Microscope,
-  Star,
   Briefcase } from "lucide-react";
 import { cartCount, useCart } from "@/lib/cart";
 import FaultCodeSearch from "@/components/fault-codes/FaultCodeSearch";
@@ -207,7 +206,6 @@ groups.push({
       links: [
         { label: "About Us", href: "/about", note: "Repairing since 2008", icon: Building2 },
         { label: "Our Repair Center", href: "/about#bench", note: "Test jigs and inventory", icon: Microscope },
-        { label: "Customer Reviews", href: "/about#reviews-heading", note: "What customers say", icon: Star },
         { label: "Careers", href: "/about#careers", note: "Join our team", icon: Briefcase },
       ],
     },
