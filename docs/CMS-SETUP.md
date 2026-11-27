@@ -1,4 +1,4 @@
-# AutomIQ CMS: setup and hosting
+# IAR CMS: setup and hosting
 
 The CMS lives inside the website at **/admin**. Its data is in a private `cms` schema in the
 same Supabase project as the parts catalog, reached by its own limited login (`cms_app`).
@@ -59,7 +59,8 @@ Both need `Authorization: Bearer $CRON_SECRET` (Vercel adds it).
 * Blog posts and landing pages (block builder, city templates, preview, schedule, review).
 * Media library: images resized to WebP on upload, stored in the database, cached for a year.
 * Leads: the website requests themselves (`public.quote_requests`) with where the visitor came
-  from; the CMS keeps status and notes per request. There is no email alert yet.
+  from; the CMS keeps status and notes per request. Each new request is also emailed to the
+  team when `RESEND_API_KEY` and `LEADS_EMAIL_TO` are set (see `.env.example`).
 
 ## 6. Security
 
