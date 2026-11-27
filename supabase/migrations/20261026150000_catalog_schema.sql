@@ -1,4 +1,4 @@
--- AutomIQ catalog schema: products, fault codes, quote requests.
+-- IAR USA catalog schema: products, fault codes, quote requests.
 -- Based on SUPABASE-RECOMMENDATION.md from the frontend sample pack.
 -- Sized for ~1M products: all list/search paths are index-backed.
 

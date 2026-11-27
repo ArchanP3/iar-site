@@ -5,7 +5,7 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Imported marketing-site components (from automiq-website @ ee95a01) break
+  // Imported marketing-site components (from the original codebase) break
   // the React Compiler hook rules in ways that work at runtime (URL-param
   // prefill in effects, refs read during render in WebGL effects). Warn
   // rather than fail CI; fix when these components are next touched.

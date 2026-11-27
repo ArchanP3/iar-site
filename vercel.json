@@ -1,7 +1,6 @@
 {
-  "git": { "deploymentEnabled": false },
   "crons": [
     { "path": "/api/cms/cron", "schedule": "17 7 * * *" },
-    { "path": "/api/cms/publish", "schedule": "*/15 * * * *" }
+    { "path": "/api/cms/publish", "schedule": "0 11 * * *" }
   ]
 }

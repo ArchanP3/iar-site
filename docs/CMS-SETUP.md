@@ -39,8 +39,8 @@ Then: Users & Activity → add people (Super Admin, Admin, SEO Editor, Writer, V
 
 ## 4. Scheduled jobs (`vercel.json`)
 
-* `/api/cms/publish` every 15 minutes: scheduled posts go live on time (needs Vercel Pro for
-  15-minute crons; on Hobby only daily crons run).
+* `/api/cms/publish` daily: scheduled posts go live. On Vercel Pro, change it to `*/15 * * * *`
+  so they go live within 15 minutes (Hobby plans only allow daily jobs).
 * `/api/cms/cron` daily: SEO scan, Google data refresh, and clean-up of old sign-ins, rate-limit
   rows, the 404 log (capped) and activity older than 400 days.
 

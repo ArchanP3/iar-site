@@ -81,7 +81,7 @@ if (!url || !secret) {
 }
 const supabase = createClient(url, secret, { auth: { persistSession: false } });
 
-const company = process.env.NEXT_PUBLIC_COMPANY_NAME || "AutomIQ";
+const company = process.env.NEXT_PUBLIC_COMPANY_NAME || "Industrial Automation Repair";
 
 // The sample data was sourced from a third-party site and names that company
 // and its location. Rewrite those references to our own brand on import.

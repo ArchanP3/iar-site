@@ -1,6 +1,6 @@
 /**
  * Import a parts package (products.csv + images/<slug>-1.jpg) into public.products,
- * with photos on S3 + CloudFront (media.automiqautomation.com).
+ * with photos on S3 + CloudFront (MEDIA_BUCKET + NEXT_PUBLIC_MEDIA_URL; set both, or use --skip-images).
  *
  *   npm run import:csv -- --dir /path/to/package [--skip-images] [--dry-run]
  *
@@ -25,8 +25,8 @@ import { createClient } from "@supabase/supabase-js";
 import { categories } from "../src/lib/parts/categories";
 
 const BATCH_SIZE = 500;
-const BUCKET = process.env.MEDIA_BUCKET || "automiqautomation-media";
-const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || "https://media.automiqautomation.com";
+const BUCKET = process.env.MEDIA_BUCKET || "";
+const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || "";
 
 const args = process.argv.slice(2);
 const dir = args[args.indexOf("--dir") + 1];
@@ -34,6 +34,10 @@ const skipImages = args.includes("--skip-images");
 const dryRun = args.includes("--dry-run");
 if (!args.includes("--dir") || !dir) {
   console.error("Usage: npm run import:csv -- --dir <package-folder> [--skip-images] [--dry-run]");
+  process.exit(1);
+}
+if (!skipImages && (!BUCKET || !MEDIA_URL)) {
+  console.error("Set MEDIA_BUCKET and NEXT_PUBLIC_MEDIA_URL for photo uploads, or add --skip-images.");
   process.exit(1);
 }
 

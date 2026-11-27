@@ -1,4 +1,4 @@
--- Two country sites (automiqautomation.ca and .com) share this CMS.
+-- Two country sites (CA and US) can share this CMS; IAR USA runs one US site.
 --   site:           which site shows a landing page / blog post: both (default), CA only or US only.
 --   ca_title etc.:  optional Canada-only SEO for any page; empty = the normal SEO fields on .ca too.
 -- Additive only: existing rows get 'both' / NULL, so nothing changes until someone edits them.
