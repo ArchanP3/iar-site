@@ -40,9 +40,10 @@ export default function HomeAbout() {
               <MapPin size={20} className="mt-0.5 flex-none text-[#C8102E]" aria-hidden="true" />
               <p className="text-[14.5px] leading-[1.7] text-[#4A4A55]">
                 We offer <Link href="/services/servo-motor-repair" className="font-semibold text-[#A50D25] hover:underline">servo motor repair</Link>{" "}
-                across the USA. Our nationwide servo repair service works the same in every state: free evaluation, written quote,
-                load test and a one-year warranty, with free return shipping on completed repairs. For Western New York industrial
-                repair, walk-in drop-off is available during business hours.
+                across the USA from one repair center in Grand Island, New York, serving plants in all 50 states. Our nationwide servo
+                repair service works the same in every state: free evaluation, written quote, load test and a one-year warranty, with
+                free return shipping on completed repairs. For servo motor repair in New York, Buffalo and Rochester plants can drop
+                units off during business hours.
               </p>
             </div>
             <div className="mt-5 flex gap-3 rounded-2xl border border-[#EAEAEC] bg-[#FAFAFB] p-4">
@@ -74,7 +75,8 @@ export default function HomeAbout() {
             <div className="rounded-[22px] bg-linear-to-br from-[#C8102E] to-[#8E0B20] p-6 text-white shadow-[0_30px_60px_-35px_rgba(200,16,46,0.9)] sm:p-7">
               <p className="text-[20px] font-extrabold leading-tight">Machine down?</p>
               <p className="mt-2 text-[14.5px] leading-relaxed text-white/85">
-                Our machine down repair service starts with one call: {contact.phone} (24/7), or request a quote online.
+                Our machine down repair service starts with one call: {contact.phone} (24/7), or request a quote online. Emergency
+                servo motor repair with a written quote first, and fast servo motor repair with rush handling (extra fee) when you need it.
               </p>
               <div className="mt-4 flex flex-wrap gap-2.5">
                 <Link href="/request-repair" className="inline-flex h-11 items-center gap-2 rounded-xl bg-white px-5 text-[14px] font-semibold text-[#131316] transition hover:bg-[#131316] hover:text-white">

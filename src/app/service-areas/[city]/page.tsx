@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getArea((await params).city);
   if (!a || !areaHere(a)) return {};
   return withSeo(areaUrl(a.slug), {
-    title: { absolute: fitTitle(`Servo Drive & Motor Repair for ${place(a)} | IAR`) },
-    description: `Servo drive, motor and electronics repair for ${a.city} plants at our Grand Island, NY center. Pickup or ship-in. Free evaluation, 1-year warranty.`,
+    title: { absolute: fitTitle(`Servo Motor & Drive Repair in ${place(a)} | IAR USA`) },
+    description: `Servo motor and drive repair for ${place(a)} plants: ${a.dropOff ? "drop-off or pickup" : "pickup from your dock"}, free evaluation, 24–72 hr typical turnaround, 1-year warranty.`,
     // City pages are on one country site only, so no .ca/.com hreflang pair.
     alternates: { canonical: `${SITE_URL}${areaUrl(a.slug)}`, languages: {} },
   });
@@ -96,7 +96,7 @@ async function Content({ params }: Props) {
   };
 
   return (
-    <ResourceShell crumb={[{ label: "Service Areas", href: "/service-areas" }, { label: a.city }]} title="Servo drive & motor repair" accent={`for ${a.city}`}
+    <ResourceShell crumb={[{ label: "Service Areas", href: "/service-areas" }, { label: a.city }]} title="Servo motor & drive repair" accent={`in ${place(a)}`}
       text={`Repaired at our Grand Island, New York repair center for manufacturers in ${place(a)}. ${a.dropOff ? "Drop it off, ship it in or request a pickup." : "Ship it in or request a pickup."}`} schema={schema}>
       <PageExtras path={areaUrl(a.slug)} />
       {/* How it gets to us */}
@@ -127,6 +127,14 @@ async function Content({ params }: Props) {
               ))}
             </ul>
           </section>
+
+          {/* Written for this city (SEO plan): what local plants run and how units reach us */}
+          {a.story && (
+            <section aria-labelledby="city-plants">
+              <h2 id="city-plants" className="text-[24px] font-extrabold tracking-[-0.015em] sm:text-[28px]">Repairs for {a.city} plants</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#4E4E58]">{a.story}</p>
+            </section>
+          )}
 
           {/* What we repair */}
           <section aria-labelledby="repairs">

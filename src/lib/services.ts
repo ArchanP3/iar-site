@@ -951,6 +951,101 @@ export const chipHref: Record<string, string> = {
 };
 
 
-export const allServices: Service[] = [...services, ...moreServices];
+
+/* SEO Improvement Plan (Nov 2026): title, description, headline and opening paragraph for these pages. */
+const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" | "h1" | "intro">> = {
+  "servo-motor-repair": {
+    metaTitle: "Servo Motor Repair Service | AC, DC & CNC Motors | IAR",
+    metaDescription: "Industrial servo motor repair: bearings, brakes, windings and encoder alignment for AC, DC and CNC servo motors. Free evaluation, 1-year warranty.",
+    h1: "Industrial Servo Motor Repair & Rebuilds",
+    intro: "Our servo motor repair service covers AC servo motor repair, DC servo motor repair and CNC servo motor repair. As experienced servo motor rebuilders, we handle servo motor bearing replacement, servo motor brake repair and encoder alignment, and finish every job with servo motor testing under load. Overheating, noise and encoder errors are the faults we see most.",
+  },
+  "servo-drive-repair": {
+    metaTitle: "Servo Drive & Amplifier Repair | AC & DC Drives | IAR",
+    metaDescription: "Servo drive and servo amplifier repair for US plants: AC and DC servo drives, spindle drives, SINAMICS, Indramat, Kinetix and FANUC.",
+    h1: "Servo Drive & Servo Amplifier Repair",
+    intro: "Servo drive repair and servo amplifier repair for every major brand. We repair AC servo drives, DC servo drives and spindle drives at component level, from overcurrent faults to dead control boards, and load test each one before it ships.",
+  },
+  "motor-rewinding": {
+    metaTitle: "Servo Motor Rewinding & Winding Testing | IAR",
+    metaDescription: "Servo motor rewinding and industrial motor winding repair: surge, resistance and insulation testing, then a full load test. 1-year warranty.",
+    h1: "Servo Motor Rewinding & Winding Repair",
+    intro: "When a winding fails, servo motor rewinding is often cheaper and faster than a new motor. Our industrial motor winding repair starts with surge and insulation tests, and every rewound motor is load tested before it ships.",
+  },
+  "industrial-motor-repair": {
+    metaTitle: "Spindle Motor Repair | AC & DC Motor Repair | IAR",
+    metaDescription: "Spindle motor repair and AC and DC motor repair: bearings, windings, encoders and balancing for CNC spindles and industrial motors.",
+    h1: "Spindle Motor Repair & AC/DC Motor Repair",
+    intro: "Spindle motor repair for CNC machines, including FANUC spindle motor repair, plus AC and DC motor repair. We replace bearings, repair windings, align encoders and balance rotors.",
+  },
+  "emergency-repair": {
+    metaTitle: "Emergency Servo Motor & Drive Repair | 24/7 | IAR",
+    metaDescription: "Emergency servo motor and drive repair for a machine down: 24/7 line, rush service for a fee and exchange units. Call 1-877-904-6155.",
+    h1: "Emergency Servo Motor & Drive Repair",
+    intro: "Line down? Our machine down repair service starts with a call to our 24/7 line. We offer emergency servo motor repair and 24/7 servo motor repair intake, rush handling for an extra fee, and exchange units when you can't wait for a repair. It's fast servo motor repair without cutting corners: every unit is still load tested.",
+  },
+  "exchange": {
+    metaTitle: "Servo Drive & Motor Exchange Program | IAR",
+    metaDescription: "Servo exchange program: get a tested, refurbished servo drive or motor fast and send your failed unit back. Refurbished servo drives in stock.",
+    h1: "Servo Exchange Program",
+    intro: "Our servo exchange program gets you running before your unit is repaired. A servo drive exchange or servo motor exchange unit is a tested, refurbished servo drive or motor that ships in 1 to 2 business days; you send your failed unit back after.",
+  },
+  "drive-retrofit": {
+    metaTitle: "Discontinued Servo Drive Replacement & Retrofit | IAR",
+    metaDescription: "Discontinued servo drive replacement and retrofit: repair, exchange or upgrade obsolete automation parts and legacy drives.",
+    h1: "Discontinued Servo Drive Replacement & Retrofit",
+    intro: "When a drive is discontinued, we repair it, find a replacement or plan a retrofit. Discontinued servo drive replacement, obsolete automation parts and legacy automation equipment support are a big part of our work, along with hard-to-find automation parts.",
+  },
+  "controller-card-repair": {
+    metaTitle: "PCB Repair | Industrial Circuit Board Repair | IAR",
+    metaDescription: "Printed circuit board repair for drives, controls and machines: component-level PCB repair and circuit board refurbishing. 1-year warranty.",
+    h1: "Industrial Circuit Board & PCB Repair",
+    intro: "Industrial circuit board repair at component level. Our PCB repair and printed circuit board repair work covers drive control boards, power boards and machine control cards, and circuit board refurbishing replaces aging capacitors and connectors before they fail.",
+  },
+  "hmi-repair": {
+    metaTitle: "HMI & Touch Screen Repair | Operator Panels | IAR",
+    metaDescription: "HMI and touch screen repair: operator panel repair, backlights and HMI replacement panels for PanelView, SIMATIC and Pro-face.",
+    h1: "HMI, Touch Screen & Operator Panel Repair",
+    intro: "HMI repair, touch screen repair and operator panel repair for every major brand, including PanelView repair. If a panel can't be repaired, we can supply an HMI replacement panel.",
+  },
+  "plc-repair": {
+    metaTitle: "PLC Repair Service | PLC Module Repair | IAR",
+    metaDescription: "PLC repair service for Siemens S7, SLC 500, ControlLogix and more: PLC module repair, I/O cards and power supplies. Used PLC modules available.",
+    h1: "PLC Repair & PLC Module Repair",
+    intro: "Our PLC repair service covers CPUs, I/O cards and power supplies. PLC module repair includes SLC 500 repair, ControlLogix and Siemens S7. Need a spare fast? Ask us about used PLC modules and surplus stock.",
+  },
+  "vfd-repair": {
+    metaTitle: "VFD Repair Service | AC & DC Drive Repair | IAR",
+    metaDescription: "VFD repair service for AC and DC drives: PowerFlex, ABB ACS, Altivar and more. Component-level repair, load tested, 1-year warranty.",
+    h1: "VFD, AC Drive & DC Drive Repair",
+    intro: "VFD repair service for every major brand. AC drive repair and DC drive repair cover PowerFlex, ABB ACS and DCS, Altivar and Yaskawa drives, each load tested before it ships.",
+  },
+  "robotics-repair": {
+    metaTitle: "Robot Servo Motor & Teach Pendant Repair | IAR",
+    metaDescription: "Robotics repair: robot servo motor repair, teach pendant repair and robot controller repair for FANUC, ABB and Yaskawa Motoman.",
+    h1: "Robot Servo Motor, Controller & Teach Pendant Repair",
+    intro: "Robot servo motor repair, teach pendant repair and controller repair for FANUC, ABB and Yaskawa Motoman cells, including ABB robot motor repair.",
+  },
+  "encoder-repair": {
+    metaTitle: "Encoder Repair & Replacement | Servo Encoder Alignment | IAR",
+    metaDescription: "Encoder repair, encoder replacement and encoder alignment service for servo motors: Heidenhain, FANUC pulsecoders and more. 1-year warranty.",
+    h1: "Encoder Repair, Replacement & Alignment",
+    intro: "Encoder repair and encoder replacement for servo motors, with an encoder alignment service so the motor commutates correctly once installed. We also handle resolver repair on older motors.",
+  },
+  "motion-controller-repair": {
+    metaTitle: "Motion Controller & Servo Controller Repair | IAR",
+    metaDescription: "Motion control repair: servo motor controller repair, motion cards and multi-axis controllers, tested on our benches. 1-year warranty.",
+    h1: "Motion Controller & Servo Controller Repair",
+    intro: "Motion control repair for multi-axis controllers and motion cards, including servo motor controller repair. Every controller is tested before it ships.",
+  },
+  "parameter-backup": {
+    metaTitle: "Drive Parameter Backup & Firmware Service | IAR",
+    metaDescription: "Drive parameter backup before a repair or replacement: we save drive parameters and firmware so your machine runs the same afterward.",
+    h1: "Drive Parameter & Firmware Backup",
+    intro: "A drive parameter backup before a repair or exchange means the new or repaired unit runs your machine the same way. We save parameters and firmware where the drive allows it and load them back before the unit ships.",
+  },
+};
+
+export const allServices: Service[] = [...services, ...moreServices].map((s) => (SEO_WORDING[s.slug] ? { ...s, ...SEO_WORDING[s.slug] } : s));
 export const getService = (slug: string) => allServices.find((s) => s.slug === slug);
 export const serviceUrl = (slug: string) => `/services/${slug}`;

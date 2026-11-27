@@ -50,7 +50,7 @@ export default function ShopListing({ cat, brand, title, searchParams }: { cat?:
                 {heading ? heading : <>Industrial parts. <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Every condition.</span></>}
               </h1>
               <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">
-                {intro || "New, refurbished and exchange servo drives, motors, PLCs, HMIs and CNC parts, or have your own unit repaired. Request a quote on any part."}
+                {intro || "Buy refurbished servo motors, surplus servo motors, refurbished servo drives and industrial automation parts, or have your own unit repaired. Every part is tested in-house and covered by a 1-year warranty."}
               </p>
             </div>
             <form action={base} method="get" role="search" className="rounded-2xl border border-white/15 bg-white/6 p-2 backdrop-blur">

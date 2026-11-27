@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import BrandPage from "@/components/brands/BrandPage";
 import { brandMakes, brands, getBrand } from "@/lib/brands";
 import { PageExtras, withSeo } from "@/lib/cms/seo";
+import { brandSeo } from "@/lib/brandSeo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,9 +29,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const b = getBrand((await params).slug);
   if (!b) return {};
-  const title = fitTitle(`${b.name} Repair | ${makesTitle(b.categories)} | IAR`);
+  const seo = brandSeo[b.slug];
+  const title = seo?.title ?? fitTitle(`${b.name} Repair | ${makesTitle(b.categories)} | IAR`);
   const full = `${b.name} repair at component level: ${brandMakes(b)}. Free evaluation, 1-year warranty. Serving the USA.`;
-  const description = full.length <= 160 ? full : `${b.name} repair at component level: drives, motors, controls, HMIs, power supplies and boards. Free evaluation, 1-year warranty.`;
+  const description = seo?.description ?? (full.length <= 160 ? full : `${b.name} repair at component level: drives, motors, controls, HMIs, power supplies and boards. Free evaluation, 1-year warranty.`);
   return withSeo(`/brands/${b.slug}`, {
     title: { absolute: title },
     description,

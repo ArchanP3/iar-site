@@ -11,7 +11,7 @@ import { ProcessPlates } from "@/components/iar/ProcessSection";
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/services", {
-  title: "Industrial Repair Services | Motors, Drives & PLCs | IAR",
+  title: "Industrial Repair Services | Servo, Drive & PLC Repair | IAR",
   description:
     "Servo motor, servo drive, VFD, PLC, HMI and CNC control repair for US plants. Send your part number for a free evaluation and a written quote.",
 });
@@ -74,7 +74,7 @@ export default function ServicesPage() {
                 Servo Motor Repair Service &amp; <span className="bg-linear-to-r from-[#FF8A99] to-[#FF3B55] bg-clip-text text-transparent">Industrial Electronics Repair</span>
               </h1>
               <p className="mt-3 text-[15px] leading-[1.7] text-white/75 sm:text-[17px]">
-                IAR provides industrial repair services across the USA for plants that run on motion control. As experienced servo motor rebuilders, our technicians repair, rebuild and test servo motors, servo drives and industrial electronics at the component level, returning them to OEM specification — a complete servo motor repair service under one roof. Every job follows our documented inspection, repair and testing process, with a test report for every unit.
+                IAR provides industrial repair services across the USA for plants that run on motion control. As experienced servo motor rebuilders, our technicians repair, rebuild and test servo motors, servo drives and industrial electronics at the component level, returning them to OEM specification — a complete servo motor repair service under one roof. Every job follows our documented inspection, repair and testing process, with a test report for every unit. We repair factory automation equipment of every kind: motion control, industrial control systems, CNC machine electronics and integrated servo motors.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
