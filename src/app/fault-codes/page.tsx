@@ -7,9 +7,24 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 import { SITE_URL } from "@/lib/site";
 
 export const generateMetadata = seo("/fault-codes", {
-  title: "Servo Drive & CNC Fault Codes Explained | IAR",
-  description: `Look up ${totalCodes.toLocaleString("en-US")} servo drive, spindle amplifier and power supply fault codes: SINAMICS, Fanuc αi, Indramat DKC, Kinetix 6000 and Yaskawa SGDH.`,
+  title: "Servo Fault Code Guide | Drive & CNC Fault Codes | IAR",
+  description: `A servo fault code guide with ${totalCodes.toLocaleString("en-US")} drive, spindle and power supply codes: SINAMICS, FANUC αi, Indramat DKC, Kinetix 6000 and Yaskawa.`,
 });
+
+const commonFaults = [
+  {
+    t: "Servo drive overcurrent fault",
+    d: "The drive saw more current than it allows and shut down to protect itself. Common causes are a shorted motor winding, a damaged motor cable, a failed output transistor (IGBT) in the drive, or a load that has jammed. Check the motor and cable with an insulation tester before resetting. If the fault returns with the motor disconnected, the drive itself needs repair.",
+  },
+  {
+    t: "Servo motor encoder error",
+    d: "The drive lost or doubted the motor’s position signal. Look first at the encoder cable and connectors, then at the encoder itself. A replaced encoder must be aligned to the motor before it will run smoothly, which we do on the matching drive.",
+  },
+  {
+    t: "Servo motor overheating",
+    d: "A motor that runs hot is usually overloaded, short on cooling, dragging a worn bearing or brake, or has windings that are starting to break down. Our free evaluation finds the cause, and we test every repaired motor under load before it ships.",
+  },
+];
 
 const crumbs = [{ label: "Home", href: "/" }, { label: "Fault Codes" }];
 
@@ -130,6 +145,22 @@ export default function FaultCodesPage() {
             </li>
           ))}
         </ul>
+
+        {/* ---------- Common faults (symptom searches) ---------- */}
+        <section aria-labelledby="common-faults" className="mt-12">
+          <h2 id="common-faults" className="text-[24px] font-extrabold tracking-[-0.02em] sm:text-[30px]">Common servo faults and what they usually mean</h2>
+          <ul className="mt-5 grid gap-3 lg:grid-cols-3">
+            {commonFaults.map((f) => (
+              <li key={f.t} className="flex flex-col rounded-2xl border border-[#EAEAEC] bg-white p-5">
+                <h3 className="text-[17px] font-extrabold">{f.t}</h3>
+                <p className="mt-2 flex-1 text-[14px] leading-[1.65] text-[#4A4A55]">{f.d}</p>
+                <Link href="/request-repair" className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#B30E29]">
+                  Send us the part number for a free evaluation <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* ---------- Repair + safety ---------- */}
         <div className="mt-12 grid gap-3 lg:grid-cols-[1.6fr_1fr]">

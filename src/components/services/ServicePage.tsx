@@ -116,7 +116,7 @@ export default function ServicePage({ s }: { s: Service }) {
               {s.brands && (
                 <p className="relative mt-2 border-t border-white/10 pt-4 text-[12.5px] leading-relaxed text-white/70">
                   <span className="font-semibold text-white">Brands we repair: </span>
-                  {s.brands.filter((b) => b.name !== "And more").map((b) => b.name).join(" · ") || "Siemens · Allen-Bradley · Indramat · Fanuc · Yaskawa"}{isEx ? " and more" : " and every other make"}
+                  {s.brands.filter((b) => b.name !== "And more").map((b) => b.name).join(" · ") || "Siemens · Allen-Bradley · Indramat · FANUC · Yaskawa"}{isEx ? " and more" : " and every other make"}
                 </p>
               )}
             </div>
@@ -130,7 +130,7 @@ export default function ServicePage({ s }: { s: Service }) {
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B30E29]">Short answer</p>
-              <h2 id="answer" className="mt-1.5 text-[22px] font-extrabold sm:text-[26px]">{s.answerQ}</h2>
+              <h2 id="answer" className="mt-1.5 text-[22px] font-extrabold sm:text-[26px]">{s.headings?.answer ?? s.answerQ}</h2>
               <p className="mt-2 max-w-205 text-[15px] leading-[1.7] text-[#62626F] sm:text-[16px]">{s.answer}</p>
             </div>
             <Link href={isCable ? "/request-cable" : isEx ? "/request-repair?service=exchange" : kind === "service" ? "/request-repair?service=question" : "/request-repair"} className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl border border-[#D6D6DB] px-5 text-[14.5px] font-semibold transition hover:border-[#C8102E] hover:text-[#B30E29]">
@@ -143,7 +143,7 @@ export default function ServicePage({ s }: { s: Service }) {
         {s.repairs && (
           <section aria-labelledby="what">
             <Eyebrow>{s.repairsTitle ? "How it works" : "What we repair"}</Eyebrow>
-            <h2 id="what" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.repairsTitle ?? `What we repair on ${an} ${noun}`}</h2>
+            <h2 id="what" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.headings?.what ?? s.repairsTitle ?? `What we repair on ${an} ${noun}`}</h2>
             <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {s.repairs.map((r) => {
                 return (
@@ -166,7 +166,7 @@ export default function ServicePage({ s }: { s: Service }) {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <Eyebrow>Diagnosis guide</Eyebrow>
-                <h2 id="faults" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">Common {noun} faults we fix</h2>
+                <h2 id="faults" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.headings?.faults ?? `Common ${noun} faults we fix`}</h2>
               </div>
               <Link href="/fault-codes" className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#B30E29]">Look up any fault code <ArrowRight size={15} aria-hidden="true" /></Link>
             </div>
@@ -199,7 +199,7 @@ export default function ServicePage({ s }: { s: Service }) {
             <div className="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
                 <Eyebrow dark>Quality</Eyebrow>
-                <h2 id="test" className="mt-3 text-[26px] font-extrabold leading-tight sm:text-[34px]">{s.testingTitle ?? `How we test every repaired ${noun}`}</h2>
+                <h2 id="test" className="mt-3 text-[26px] font-extrabold leading-tight sm:text-[34px]">{s.headings?.test ?? s.testingTitle ?? `How we test every repaired ${noun}`}</h2>
                 <p className="mt-3 text-[15px] leading-[1.7] text-white/70">{kind !== "repair" ? "Checked before it leaves our Grand Island, New York repair center." : isEx ? "An exchange unit has to work the moment you install it. Every one is checked and tested before it leaves our Grand Island, New York repair center." : "Parts replaced is not the same as fixed. Every unit is proven under power before it leaves our Grand Island, New York repair center."}</p>
               </div>
               <ol className="grid gap-3 sm:grid-cols-2">
@@ -221,7 +221,7 @@ export default function ServicePage({ s }: { s: Service }) {
         {s.brands && (
           <section aria-labelledby="brands">
             <Eyebrow>{isEx ? "Brands & series" : "All makes & models"}</Eyebrow>
-            <h2 id="brands" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{isEx ? "Exchange units by brand" : kind === "repair" ? `We repair every ${noun} brand` : "Every brand, every model"}</h2>
+            <h2 id="brands" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.headings?.brands ?? (isEx ? "Exchange units by brand" : kind === "repair" ? `We repair every ${noun} brand` : "Every brand, every model")}</h2>
             {!isEx && (
               <p className="mt-2 max-w-190 text-[15px] leading-[1.7] text-[#62626F]">
                 {kind === "repair" ? <>We repair {plural} from any manufacturer, current or obsolete.</> : <>For equipment from any manufacturer, current or obsolete.</>} These are some of the brands and series we see most often. If yours isn&apos;t listed, we still repair it.
@@ -257,7 +257,7 @@ export default function ServicePage({ s }: { s: Service }) {
         {/* ---------- Repair vs exchange vs replace ---------- */}
         {kind === "repair" && <section aria-labelledby="options">
           <Eyebrow>Your options</Eyebrow>
-          <h2 id="options" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">Repair, exchange or replace?</h2>
+          <h2 id="options" className="mt-3 text-[26px] font-extrabold leading-tight tracking-[-0.01em] sm:text-[34px]">{s.headings?.options ?? "Repair, exchange or replace?"}</h2>
           <div className="mt-5 grid gap-3 lg:grid-cols-3">
             {[
               { t: "Repair your unit", tag: "Best value", d: "Your original unit, repaired at component level and tested. Usually a fraction of the price of new.", href: "/request-repair", cta: "Request a Repair", on: true },

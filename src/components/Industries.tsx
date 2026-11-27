@@ -26,8 +26,8 @@ export default function Industries() {
               Industries We Serve
             </p>
             <h2 id="industries-heading" className="mt-3 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#131316] sm:text-[36px] lg:text-[40px]">
-              Built for the Lines{" "}
-              <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">That Never Stop</span>
+              Legacy Automation Equipment Support{" "}
+              <span className="bg-linear-to-r from-[#C8102E] to-[#FF3B55] bg-clip-text text-transparent">for Lines That Never Stop</span>
             </h2>
             <p className="mt-3 text-[14px] leading-[1.65] text-[#62626F] sm:text-[16px]">
               Servo drive, motor and control repair for US manufacturers, from automotive and packaging lines

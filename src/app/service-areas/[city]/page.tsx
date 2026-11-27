@@ -149,7 +149,7 @@ async function Content({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-[13.5px] text-[#62626F]">From every major brand, including Siemens, Rexroth Indramat, Allen-Bradley, Fanuc and Yaskawa. <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">See all brands</Link>.</p>
+            <p className="mt-3 text-[13.5px] text-[#62626F]">From every major brand, including Siemens, Rexroth Indramat, Allen-Bradley, FANUC and Yaskawa. <Link href="/brands" className="font-semibold text-[#A50D25] hover:underline">See all brands</Link>.</p>
           </section>
 
 

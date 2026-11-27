@@ -9,7 +9,7 @@ export const repairBrands = [
   { name: "Siemens", initials: "S", repairs: "SINAMICS drives, 1FK7 motors", href: "/brands/siemens" },
   { name: "Allen-Bradley", initials: "AB", repairs: "Kinetix, PowerFlex, PanelView", href: "/brands/allen-bradley" },
   { name: "Rexroth Indramat", initials: "RI", repairs: "IndraDrive, DKC, MKD motors", href: "/brands/rexroth-indramat" },
-  { name: "Fanuc", initials: "F", repairs: "Alpha i amplifiers, spindle motors", href: "/brands/fanuc" },
+  { name: "FANUC", initials: "F", repairs: "Alpha i amplifiers, spindle motors", href: "/brands/fanuc" },
   { name: "Yaskawa", initials: "Y", repairs: "SERVOPACK drives, Sigma motors", href: "/brands/yaskawa" },
   { name: "Mitsubishi Electric", initials: "ME", repairs: "MR-J amplifiers, FR inverters", href: "/brands/mitsubishi" },
   { name: "ABB", initials: "ABB", repairs: "ACS and DCS drives, motors", href: "/brands/abb" },

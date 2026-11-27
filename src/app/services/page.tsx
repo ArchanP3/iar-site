@@ -8,6 +8,9 @@ import { brandFont } from "@/lib/font";
 import { allServices, serviceUrl, services } from "@/lib/services";
 import MoreServices from "@/components/services/MoreServices";
 import { ProcessPlates } from "@/components/iar/ProcessSection";
+
+/** Card headings on this hub that carry a search phrase (cards elsewhere keep the short title) */
+const hubTitle: Record<string, string> = { "vfd-repair": "VFD & AC Drive Repair", "cnc-repair": "CNC Machine Electronics Repair" };
 import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/services", {
@@ -98,7 +101,7 @@ export default function ServicesPage() {
                   </span>
                   <ArrowUpRight size={18} className="text-[#FF5A6E] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>
-                <h2 className="relative mt-3 min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[19px]">{s.title}</h2>
+                <h2 className="relative mt-3 min-h-[2lh] text-[15px] font-extrabold leading-snug sm:mt-4 sm:text-[19px]">{hubTitle[s.slug] ?? s.title}</h2>
                 <p className="relative mt-1 hidden min-h-[3lh] text-[13px] leading-[1.55] text-white/70 sm:block">{s.short}</p>
                 {/* footer: tag on the left */}
                 <span className="absolute bottom-3.5 left-3.5 flex h-9 items-center sm:bottom-5 sm:left-5">

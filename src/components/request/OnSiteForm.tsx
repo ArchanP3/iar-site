@@ -34,7 +34,7 @@ export default function OnSiteForm() {
         <div className="space-y-3">
           <div className="grid gap-3 sm:grid-cols-2">
             <div><label className={label} htmlFor="os-machine">Machine or line *</label><input id="os-machine" name="Machine" required className={input} placeholder="e.g. CNC lathe, packaging line 2" /></div>
-            <div><label className={label} htmlFor="os-control">Control / drive brands</label><input id="os-control" name="Control brands" className={input} placeholder="e.g. Fanuc 0i, Siemens S120" /></div>
+            <div><label className={label} htmlFor="os-control">Control / drive brands</label><input id="os-control" name="Control brands" className={input} placeholder="e.g. FANUC 0i, Siemens S120" /></div>
           </div>
           <div>
             <label className={label} htmlFor="os-fault">What is happening? *</label>

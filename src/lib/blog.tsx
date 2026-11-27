@@ -152,7 +152,7 @@ export const posts: Post[] = [
         h: "4. Testing on our test benches",
         body: (
           <>
-            <p>We have test benches for most units, including Fanuc, Yaskawa, Siemens, Rexroth Indramat and Allen-Bradley, and we build custom test benches when a job needs one.</p>
+            <p>We have test benches for most units, including FANUC, Yaskawa, Siemens, Rexroth Indramat and Allen-Bradley, and we build custom test benches when a job needs one.</p>
             <Photos items={[["/facility/840d-test-jig.webp", "Our Siemens SINUMERIK 840D test jig"], ["/facility/technician-testing-cnc.webp", "A technician testing a control on the 840D jig"]]} />
             <ul>
               <li><strong>Servo drives</strong> are tested with a motor, so the drive is proven under real current, not just powered on.</li>

@@ -136,7 +136,7 @@ export async function think(raw: string): Promise<Reply> {
     break;
   }
 
-  /* 1b. "alarm 9 on my Fanuc": point to that brand's fault code library */
+  /* 1b. "alarm 9 on my FANUC": point to that brand's fault code library */
   if (!out.links.length && has(m, INTENT.alarm)) {
     const br = brandInQuery(msg).brand?.toLowerCase().split(" ")[0];
     const fams = families.filter((f) => !br || f.brand.toLowerCase().includes(br) || f.brandSlug.includes(br));

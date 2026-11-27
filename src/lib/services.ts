@@ -31,6 +31,8 @@ export type Service = {
   brands?: { name: string; series: string[] }[];
   faqs?: { q: string; a: string }[];
   related?: string[];
+  /** Optional wording for the page's section headings (SEO); defaults are built from the noun */
+  headings?: Partial<Record<"answer" | "what" | "faults" | "test" | "brands" | "options", string>>;
 };
 
 const fc = (brand: string, series: string, code: string, slug = code.toLowerCase().replace(/\./g, "-")) => ({
@@ -102,7 +104,7 @@ export const services: Service[] = [
       { name: "Siemens", series: ["SINAMICS S120", "SIMODRIVE 611", "SINAMICS V90"] },
       { name: "Rexroth Indramat", series: ["EcoDrive DKC", "IndraDrive", "DIAX04"] },
       { name: "Allen-Bradley", series: ["Kinetix 6000", "Kinetix 5500", "Ultra 3000"] },
-      { name: "Fanuc", series: ["αi servo amplifiers", "βi servo amplifiers"] },
+      { name: "FANUC", series: ["αi servo amplifiers", "βi servo amplifiers"] },
       { name: "Yaskawa", series: ["Sigma-II SGDH", "Sigma-5 SGDV", "Sigma-7"] },
       { name: "And more", series: ["Mitsubishi MR-J", "Kollmorgen", "Schneider Lexium", "Omron", "ABB"] },
     ],
@@ -218,7 +220,7 @@ export const services: Service[] = [
       { name: "Siemens", series: ["1FK7", "1FT6", "1FT7", "1FK6"] },
       { name: "Rexroth Indramat", series: ["MKD", "MSK", "MAC", "MHD"] },
       { name: "Allen-Bradley", series: ["MPL", "VPL", "TL Series"] },
-      { name: "Fanuc", series: ["αi servo motors", "βi servo motors"] },
+      { name: "FANUC", series: ["αi servo motors", "βi servo motors"] },
       { name: "Yaskawa", series: ["SGMAH", "SGMGH", "Sigma-7 SGM7"] },
       { name: "And more", series: ["Kollmorgen AKM", "Mitsubishi HF / HG", "Bosch", "Baumüller"] },
     ],
@@ -271,7 +273,7 @@ export const services: Service[] = [
     ],
     brands: [
       { name: "Siemens", series: ["1PH7", "1PH8", "1PH4"] },
-      { name: "Fanuc", series: ["αi spindle motors", "βi spindle motors"] },
+      { name: "FANUC", series: ["αi spindle motors", "βi spindle motors"] },
       { name: "Rexroth Indramat", series: ["MAD", "MAF", "2AD"] },
       { name: "And more", series: ["Baldor", "WEG", "Reliance DC", "General Electric DC"] },
     ],
@@ -327,7 +329,7 @@ export const services: Service[] = [
     brands: [
       { name: "Heidenhain", series: ["EQN", "ECN", "ERN"] },
       { name: "Siemens", series: ["DRIVE-CLiQ motor encoders", "1FK7 / 1FT7 encoders"] },
-      { name: "Fanuc", series: ["αi pulsecoders", "βi pulsecoders"] },
+      { name: "FANUC", series: ["αi pulsecoders", "βi pulsecoders"] },
       { name: "And more", series: ["Tamagawa", "SICK Stegmann", "Indramat motor feedback", "Yaskawa"] },
     ],
     faqs: [
@@ -485,7 +487,7 @@ export const services: Service[] = [
       "Test report ships with every unit",
     ],
     brands: [
-      { name: "Fanuc", series: ["Series 0i", "16i / 18i / 21i", "30i / 31i", "αi amplifiers"] },
+      { name: "FANUC", series: ["Series 0i", "16i / 18i / 21i", "30i / 31i", "αi amplifiers"] },
       { name: "Siemens", series: ["SINUMERIK 840C", "SINUMERIK 840D", "SINUMERIK 810D", "SINUMERIK 828D"] },
       { name: "And more", series: ["Heidenhain TNC", "Mitsubishi CNC", "Okuma", "Mazak"] },
     ],
@@ -544,7 +546,7 @@ export const services: Service[] = [
     ],
     brands: [
       { name: "Siemens", series: ["SITOP", "SINAMICS line modules", "SIMODRIVE 611 supply modules"] },
-      { name: "Fanuc", series: ["αi PSM power supply modules"] },
+      { name: "FANUC", series: ["αi PSM power supply modules"] },
       { name: "Rexroth Indramat", series: ["HVE / HVR supply modules"] },
       { name: "And more", series: ["Allen-Bradley", "Phoenix Contact QUINT", "TDK-Lambda", "Sola"] },
     ],
@@ -594,7 +596,7 @@ export const services: Service[] = [
       "Test report ships with every board",
     ],
     brands: [
-      { name: "Drive & control boards", series: ["Siemens", "Rexroth Indramat", "Allen-Bradley", "Fanuc", "Yaskawa"] },
+      { name: "Drive & control boards", series: ["Siemens", "Rexroth Indramat", "Allen-Bradley", "FANUC", "Yaskawa"] },
       { name: "Machine OEM boards", series: ["Packaging machines", "Plastics & thermoforming", "Printing presses"] },
     ],
     faqs: [
@@ -643,7 +645,7 @@ export const services: Service[] = [
       "Test report ships with every unit",
     ],
     brands: [
-      { name: "Fanuc", series: ["R-30iA", "R-30iB", "iPendant"] },
+      { name: "FANUC", series: ["R-30iA", "R-30iB", "iPendant"] },
       { name: "KUKA", series: ["KR C2", "KR C4", "smartPAD"] },
       { name: "And more", series: ["ABB IRC5 FlexPendant", "Yaskawa Motoman DX100 / YRC1000", "Kawasaki", "Denso"] },
     ],
@@ -692,7 +694,7 @@ export const services: Service[] = [
       { name: "Siemens", series: ["SINAMICS", "SIMODRIVE", "1FK7 / 1FT motors"] },
       { name: "Rexroth Indramat", series: ["EcoDrive", "IndraDrive", "MKD / MSK motors"] },
       { name: "Allen-Bradley", series: ["Kinetix", "PowerFlex", "MPL motors"] },
-      { name: "And more", series: ["Fanuc", "Yaskawa", "Mitsubishi"] },
+      { name: "And more", series: ["FANUC", "Yaskawa", "Mitsubishi"] },
     ],
     faqs: [
       { q: "How fast does an exchange unit ship?", a: "As soon as we receive your unit, when a matching unit is in stock." },
@@ -709,7 +711,7 @@ export const services: Service[] = [
 /*  More repair services (second section on /services)                 */
 /* ------------------------------------------------------------------ */
 type R = [string, string];
-const anyBrand = [{ name: "And more", series: ["Siemens", "Allen-Bradley", "Rexroth Indramat", "Fanuc", "Yaskawa", "ABB"] }];
+const anyBrand = [{ name: "And more", series: ["Siemens", "Allen-Bradley", "Rexroth Indramat", "FANUC", "Yaskawa", "ABB"] }];
 const repairTesting = [
   "Photos and condition report when it arrives",
   "Root cause found before we quote",
@@ -786,7 +788,7 @@ export const moreServices: Service[] = [
     "Line modules, DC bus modules and regenerative units for servo and spindle systems.",
     "Can a drive line module be repaired?",
     "Yes. Line modules, infeed and supply modules, DC bus modules and regenerative units can usually be repaired at component level, including IGBT and rectifier replacement, then tested under power.",
-    [["Line & infeed modules", "SINAMICS, SIMODRIVE 611, Indramat and Fanuc supply modules."], ["DC bus modules", "Bus capacitors, pre-charge and monitoring."], ["Regen units", "Regenerative and braking circuits."], ["IGBT replacement", "Power stage parts replaced and tested."]],
+    [["Line & infeed modules", "SINAMICS, SIMODRIVE 611, Indramat and FANUC supply modules."], ["DC bus modules", "Bus capacitors, pre-charge and monitoring."], ["Regen units", "Regenerative and braking circuits."], ["IGBT replacement", "Power stage parts replaced and tested."]],
     { related: ["power-supply-repair", "servo-drive-repair", "cnc-repair", "exchange"] }),
   more("motion-controller-repair", "Motion Controller Repair", "drives", "Workflow", "#E11D3A", "motion controller",
     "Multi-axis motion controllers, axis cards and fieldbus and network cards.",
@@ -953,14 +955,24 @@ export const chipHref: Record<string, string> = {
 
 
 /* SEO Improvement Plan (Nov 2026): title, description, headline and opening paragraph for these pages. */
-const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" | "h1" | "intro">> = {
+const SEO_WORDING: Record<string, Partial<Pick<Service, "metaTitle" | "metaDescription" | "h1" | "intro" | "headings">>> = {
   "servo-motor-repair": {
-    metaTitle: "Servo Motor Repair Service | AC, DC & CNC Motors | IAR",
-    metaDescription: "Industrial servo motor repair: bearings, brakes, windings and encoder alignment for AC, DC and CNC servo motors. Free evaluation, 1-year warranty.",
+    metaTitle: "Servo Motor Repair Service | CNC Servo Motor Repair | IAR",
+    metaDescription: "Industrial servo motor repair by experienced servo motor rebuilders: bearings, brakes, windings and encoders for AC, DC and CNC motors.",
+    headings: {
+      what: "Servo motor bearing replacement, brake repair and rewinds",
+      test: "Servo motor testing under load",
+      brands: "AC servo motor repair and DC servo motor repair for every brand",
+      options: "Repair, exchange or replacement servo motor?",
+    },
     h1: "Industrial Servo Motor Repair & Rebuilds",
     intro: "Our servo motor repair service covers AC servo motor repair, DC servo motor repair and CNC servo motor repair. As experienced servo motor rebuilders, we handle servo motor bearing replacement, servo motor brake repair and encoder alignment, and finish every job with servo motor testing under load. Overheating, noise and encoder errors are the faults we see most. If a motor is beyond repair, we help you find a replacement servo motor.",
   },
   "servo-drive-repair": {
+    headings: {
+      faults: "Servo drive overcurrent faults and other common failures",
+      brands: "AC servo drive repair, DC servo drive repair and spindle drive repair",
+    },
     metaTitle: "Servo Drive & Amplifier Repair | AC & DC Drives | IAR",
     metaDescription: "Servo drive and servo amplifier repair for US plants: AC and DC servo drives, spindle drives, SINAMICS, Indramat, Kinetix and FANUC.",
     h1: "Servo Drive & Servo Amplifier Repair",
@@ -973,18 +985,25 @@ const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" 
     intro: "When a winding fails, servo motor rewinding is often cheaper and faster than a new motor. Our industrial motor winding repair starts with surge and insulation tests, and every rewound motor is load tested before it ships.",
   },
   "industrial-motor-repair": {
+    headings: { what: "Spindle, AC/DC and integrated servo motor repair" },
     metaTitle: "Spindle Motor Repair | AC & DC Motor Repair | IAR",
     metaDescription: "Spindle motor repair and AC and DC motor repair: bearings, windings, encoders and balancing for CNC spindles and industrial motors.",
     h1: "Spindle Motor Repair & AC/DC Motor Repair",
     intro: "Spindle motor repair for CNC machines, including FANUC spindle motor repair, plus AC and DC motor repair. We replace bearings, repair windings, align encoders and balance rotors.",
   },
   "emergency-repair": {
-    metaTitle: "Emergency Servo Motor & Drive Repair | 24/7 | IAR",
+    metaTitle: "Emergency Servo Motor Repair | 24/7 Drive Repair | IAR",
+    headings: {
+      answer: "Machine down repair service: what to do first",
+      what: "24/7 servo motor repair line, rush service and exchange units",
+      brands: "Fast servo motor repair for every brand and model",
+    },
     metaDescription: "Emergency servo motor and drive repair for a machine down: 24/7 line, rush service for a fee and exchange units. Call 1-877-904-6155.",
     h1: "Emergency Servo Motor & Drive Repair",
     intro: "Line down? Our machine down repair service starts with a call to our 24/7 line. We offer emergency servo motor repair and 24/7 servo motor repair intake, rush handling for an extra fee, and exchange units when you can't wait for a repair. It's fast servo motor repair without cutting corners: every unit is still load tested.",
   },
   "exchange": {
+    headings: { brands: "Servo drive exchange and servo motor exchange by brand" },
     metaTitle: "Servo Drive & Motor Exchange Program | IAR",
     metaDescription: "Servo exchange program: get a tested, refurbished servo drive or motor fast and send your failed unit back. Refurbished servo drives in stock.",
     h1: "Servo Exchange Program",
@@ -1027,6 +1046,7 @@ const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" 
     intro: "Robot servo motor repair, teach pendant repair and controller repair for FANUC, ABB and Yaskawa Motoman cells, including ABB robot motor repair.",
   },
   "encoder-repair": {
+    headings: { answer: "Encoder alignment service: does a new encoder need aligning?" },
     metaTitle: "Encoder Repair & Replacement | Servo Encoder Alignment | IAR",
     metaDescription: "Encoder repair, encoder replacement, resolver repair and encoder alignment for servo motors: Heidenhain, FANUC pulsecoders and more. 1-year warranty.",
     h1: "Encoder Repair, Replacement & Alignment",

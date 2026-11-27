@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { brandFont } from "@/lib/font";
 import { brandFaqs, brandLogo, brandMakes, brands, brandUrl, type Brand } from "@/lib/brands";
 import { services, serviceUrl } from "@/lib/services";
-import { brandSeo, lineNote } from "@/lib/brandSeo";
+import { brandSeo, lineHeading, lineNote } from "@/lib/brandSeo";
 
 /* Icons for the 12 repair categories. Same for every brand, so nothing is mislabelled.
    Later: when inventory photos exist for a brand + category, show those here instead. */
@@ -182,7 +182,7 @@ export default function BrandPage({ b }: { b: Brand }) {
           <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {b.lines.map((l) => (
               <li key={l.t} className="flex flex-col rounded-2xl border border-[#EAEAEC] bg-white p-5">
-                <h3 className="text-[16px] font-extrabold">{b.name} {l.t}</h3>
+                <h3 className="text-[16px] font-extrabold">{lineHeading(b.slug, l.t) ?? `${b.name} ${l.t}`}</h3>
                 <ul className="mt-2.5 flex flex-1 flex-wrap content-start gap-1.5">
                   {l.series.map((x) => (
                     <li key={x} className="h-fit rounded-lg bg-[#F7F7F8] px-2.5 py-1 text-[12.5px] font-semibold text-[#62626F]">{x}</li>

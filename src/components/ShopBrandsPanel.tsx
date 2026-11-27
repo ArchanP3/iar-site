@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 export const shopBrands = [
   { name: "Siemens", initials: "S", series: "SINAMICS, SIMODRIVE, SINUMERIK", href: "/shop/brands/siemens" },
   { name: "Allen-Bradley", initials: "AB", series: "Kinetix, PowerFlex, PanelView", href: "/shop/brands/allen-bradley" },
-  { name: "Fanuc", initials: "F", series: "Alpha i, Beta i, Series 0i / 30i", href: "/shop/brands/fanuc" },
+  { name: "FANUC", initials: "F", series: "Alpha i, Beta i, Series 0i / 30i", href: "/shop/brands/fanuc" },
   { name: "Rexroth Indramat", initials: "RI", series: "IndraDrive, EcoDrive, DIAX", href: "/shop/brands/rexroth-indramat" },
   { name: "Yaskawa", initials: "Y", series: "Sigma, SERVOPACK, GA700", href: "/shop/brands/yaskawa" },
   { name: "Mitsubishi Electric", initials: "ME", series: "MR-J, MELSEC, GOT", href: "/shop/brands/mitsubishi" },

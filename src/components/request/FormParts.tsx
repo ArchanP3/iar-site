@@ -9,7 +9,7 @@ import { submitServiceRequest } from "@/lib/requests";
 export const input =
   "h-11 w-full rounded-xl border border-[#E3E3E7] bg-[#FBFBFC] px-3.5 text-[14px] text-[#131316] outline-none transition placeholder:text-[#90909C] focus:border-[#C8102E] focus:bg-white focus:ring-4 focus:ring-[#C8102E]/10";
 export const label = "mb-1.5 block text-[12.5px] font-semibold text-[#131316]";
-export const brands = ["Siemens", "Rexroth Indramat", "Allen-Bradley", "Fanuc", "Yaskawa", "Mitsubishi", "Kollmorgen", "Schneider Electric", "Omron", "ABB", "Other"];
+export const brands = ["Siemens", "Rexroth Indramat", "Allen-Bradley", "FANUC", "Yaskawa", "Mitsubishi", "Kollmorgen", "Schneider Electric", "Omron", "ABB", "Other"];
 
 export function Step({ n, title, hint, children }: { n: number; title: string; hint?: string; children: React.ReactNode }) {
   return (
