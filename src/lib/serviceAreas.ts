@@ -8,8 +8,8 @@ import { absoluteFor, hrefFor, onThisSite } from "./site";
 /*  reach Grand Island (drop-off, pickup, ship-in) and what we repair.  */
 /*  dropOff = close enough that dropping a unit off is practical.       */
 /*  industries = slugs from src/lib/industries.ts                       */
-/*  country = which site the page lives on: CA -> industrialautomationrepair.com, */
-/*  US -> industrialautomationrepair.com. The other site links to it and 301s.   */
+/*  country = which site the page lives on (US -> www.servorepairusa.com).       */
+/*  Only used if two country sites ever run from this code.                    */
 /* ------------------------------------------------------------------ */
 
 export type Area = {

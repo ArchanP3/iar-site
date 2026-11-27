@@ -121,7 +121,7 @@ const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
  * New-lead email through Resend's HTTP API (no package needed). Off until both settings are set (Vercel, server only):
  *   RESEND_API_KEY   API key from resend.com (the sending domain must be verified there)
  *   LEADS_EMAIL_TO   who gets the alerts, comma-separated, e.g. info@industrialautomationrepair.com
- *   LEADS_EMAIL_FROM optional sender, default "IAR Website <leads@industrialautomationrepair.com>"
+ *   LEADS_EMAIL_FROM optional sender, default "IAR Website <leads@servorepairusa.com>" (domain verified in Resend)
  */
 async function notifyTeam(type: string, core: Omit<z.infer<typeof Core>, "type">, details: Record<string, string>) {
   const key = process.env.RESEND_API_KEY;
@@ -147,7 +147,7 @@ async function notifyTeam(type: string, core: Omit<z.infer<typeof Core>, "type">
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: process.env.LEADS_EMAIL_FROM || "IAR Website <leads@industrialautomationrepair.com>",
+      from: process.env.LEADS_EMAIL_FROM || "IAR Website <leads@servorepairusa.com>",
       to,
       reply_to: core.email || undefined,
       subject: `New ${type} request: ${core.company || core.name}${core.part_number ? ` (${core.part_number.slice(0, 60)})` : ""}`,

@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react";
 import { CheckCircle2, TriangleAlert } from "lucide-react";
 import { savePartsSeo } from "@/app/admin/(app)/parts/actions";
+import { SITE_URL } from "@/lib/site";
 import type { PartsSeo } from "@/lib/cms/settings";
 import { Alert, Card, b, cx, input, lenColor } from "./ui";
 
@@ -32,7 +33,7 @@ export default function PartsSeoForm({ cfg, samples }: { cfg: PartsSeo; samples:
       </Card>
       <Card title="Google preview" right={samples.length > 1 && <select value={s} onChange={(e) => setS(Number(e.target.value))} className={cx(input, "h-8! w-auto! py-0! text-[12px]")}>{samples.map((x, i) => <option key={i} value={i}>{x.label}</option>)}</select>}>
         <div className="rounded-xl border border-[#EAEAEC] p-4 font-[Arial,sans-serif]">
-          <div className="text-[12px] text-[#4D4D56]">industrialautomationrepair.com › parts</div>
+          <div className="text-[12px] text-[#4D4D56]">{new URL(SITE_URL).host.replace(/^www\./, "")} › parts</div>
           <div className="mt-1 text-[18px] leading-tight text-[#931326]">{ft}</div>
           <div className="mt-1 text-[13px] text-[#4D4D56]">{fd}</div>
         </div>
