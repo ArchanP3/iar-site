@@ -37,8 +37,8 @@ const text = {
 const split = SITE_COUNTRY !== null;
 
 export const generateMetadata = seo("/service-areas", {
-  title: split ? text.title : "Service Areas | Industrial Repair Across the USA | IAR",
-  description: split ? text.description : "One repair center in Grand Island, NY serving manufacturers in all 50 states: drop-off, pickup, ship-in and on-site service.",
+  title: split ? text.title : "Servo Motor Repair USA | Service Areas | IAR",
+  description: split ? text.description : "Industrial repair USA-wide from one repair center in Grand Island, NY: drop-off, pickup, ship-in and on-site service in all 50 states.",
   alternates: { canonical: `${SITE_URL}/service-areas` },
 });
 
@@ -104,8 +104,8 @@ export default function ServiceAreasPage() {
               Repair center · Grand Island, New York
             </p>
             <h1 className="mt-4 text-[34px] font-extrabold leading-[1.06] tracking-[-0.025em] sm:text-[48px] lg:text-[54px]">
-              Industrial Repair{" "}
-              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "Across the USA"}</span>
+              {split ? "Industrial Repair" : "Servo Motor Repair USA-Wide,"}{" "}
+              <span className="bg-linear-to-r from-[#FF8A99] via-[#FF5A6E] to-[#DA0B2A] bg-clip-text text-transparent">{split ? text.accent : "From Grand Island, NY"}</span>
             </h1>
             <p className="mt-4 max-w-140 text-[15px] leading-[1.7] text-white/72 sm:text-[16.5px]">
               {split

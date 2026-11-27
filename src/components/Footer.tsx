@@ -36,7 +36,7 @@ const columns: { title: string; links: [string, string][] }[] = [
       ["Siemens", "/brands/siemens"],
       ["Rexroth Indramat", "/brands/rexroth-indramat"],
       ["Allen-Bradley", "/brands/allen-bradley"],
-      ["Fanuc", "/brands/fanuc"],
+      ["FANUC", "/brands/fanuc"],
       ["All brands", "/brands"],
     ],
   },

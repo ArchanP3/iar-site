@@ -7,7 +7,7 @@ import { PageExtras, seo } from "@/lib/cms/seo";
 
 export const generateMetadata = seo("/shop/brands", {
   title: "Shop Parts by Brand",
-  description: "Shop new, surplus and refurbished automation parts by brand: Siemens, Allen-Bradley, Fanuc, Rexroth Indramat, Yaskawa and many more. Ships to the USA & Canada.",
+  description: "Shop new, surplus and refurbished automation parts by brand: Siemens, Allen-Bradley, FANUC, Rexroth Indramat, Yaskawa and many more. Ships to the USA & Canada.",
   alternates: { canonical: "/shop/brands" },
 });
 

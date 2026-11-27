@@ -203,7 +203,7 @@ export default function RepairServices() {
               id="repair-services-heading"
               className="mt-3 text-[30px] font-extrabold leading-[1.08] tracking-[-0.025em] text-[#131316] sm:text-[36px] lg:text-[40px]"
             >
-              Industrial Repair Services
+              Factory Automation Equipment Repair &amp; Industrial Control System Repair
             </h2>
             <p className="mt-2 text-[13px] font-semibold leading-relaxed text-[#B30E29] sm:text-[15px]">
               Load testing · 1-year warranty · Free evaluation

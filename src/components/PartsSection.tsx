@@ -160,7 +160,7 @@ export default function PartsSection() {
                 id="parts-heading"
                 className="mt-3 text-[26px] font-extrabold leading-[1.1] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[34px]"
               >
-                Buy Industrial Automation Parts: New, Refurbished, Surplus &amp; Obsolete
+                Buy Hard-to-Find Automation Parts: New, Refurbished, Surplus &amp; Obsolete
               </h2>
               <p className="mt-2 text-[14px] font-semibold text-[#FF5A6E] sm:text-[15px]">
                 Hard-to-find parts for current and legacy machines · Tested before it ships

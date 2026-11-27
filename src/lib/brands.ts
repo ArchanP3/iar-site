@@ -173,7 +173,7 @@ export const brands: Brand[] = [
   },
   {
     slug: "fanuc", categories: ["servo-drive-repair", "servo-motor-repair", "industrial-motor-repair", "encoder-repair", "cnc-repair", "power-supply-repair", "controller-card-repair", "robotics-repair", "exchange"],
-    name: "Fanuc",
+    name: "FANUC",
     initials: "F",
     color: "#E11D3A",
     core: true,
@@ -189,15 +189,15 @@ export const brands: Brand[] = [
       { t: "Robots", series: ["R-30iA", "R-30iB", "iPendant"], service: "robotics-repair" },
     ],
     faultLibrary: {
-      label: "Fanuc αi alarm codes",
+      label: "FANUC αi alarm codes",
       href: "/fault-codes/fanuc/alpha-i",
       codes: [code("fanuc", "alpha-i", "SV0449"), code("fanuc", "alpha-i", "SP9012")],
     },
     faqs: [
-      { q: "Do you repair Fanuc αi amplifiers?", a: "Yes. We repair αi servo, spindle and power supply modules at component level and test them under power." },
-      { q: "Do you repair Fanuc pulsecoders?", a: "Yes. We repair and replace pulsecoders and align them to the motor." },
-      { q: "How long does a Fanuc repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
-      { q: "What warranty comes with a Fanuc repair?", a: "Every repair comes with a 1-year warranty and a test report." },
+      { q: "Do you repair FANUC αi amplifiers?", a: "Yes. We repair αi servo, spindle and power supply modules at component level and test them under power." },
+      { q: "Do you repair FANUC pulsecoders?", a: "Yes. We repair and replace pulsecoders and align them to the motor." },
+      { q: "How long does a FANUC repair take?", a: "Typical turnaround is 24–72 hours once you approve the quote." },
+      { q: "What warranty comes with a FANUC repair?", a: "Every repair comes with a 1-year warranty and a test report." },
     ],
   },
   {
