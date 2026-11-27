@@ -16,7 +16,6 @@ import { totalCodes } from "@/lib/faultCodes";
 import StatCounter from "@/components/about/StatCounter";
 import { WhatsAppCta } from "@/components/WhatsAppButton";
 import { PageExtras, seo } from "@/lib/cms/seo";
-import GoogleReviews from "@/components/iar/GoogleReviews";
 
 /* About page. Only facts IAR has confirmed are used here:
    Grand Island, NY repair center, the USA, free evaluation, written quote first,
@@ -305,7 +304,7 @@ export default async function AboutPage() {
           ))}
         </section>
 
-        <GoogleReviews embedded />
+        {/* Google reviews switched off for now; to bring them back: <GoogleReviews embedded /> */}
 
         {/* ---------- Careers ---------- */}
         <section aria-labelledby="careers" className="rounded-[28px] border border-[#EAEAEC] bg-white p-7 sm:p-10">
