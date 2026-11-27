@@ -1,5 +1,7 @@
 # Old IAR site addresses → new addresses (301 redirects)
 
+> **Not used (Nov 2026):** the new site launches on www.servorepairusa.com, and industrialautomationrepair.com stays IAR's Canadian site, so no redirects from the old site are needed. Kept for reference only.
+
 The current industrialautomationrepair.com runs on Shopify. When the domain moves to this site,
 add these as permanent (301) redirects in the CMS (Admin → Redirects) or in `vercel.json`.
 Shopify also creates `/products/<handle>` pages for every listed item: export the product list

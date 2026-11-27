@@ -23,9 +23,10 @@ export const indexable = process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "pr
 export const SITE_URL = site.url;
 
 /* ------------------------------------------------------------------ */
-/*  IAR: leave NEXT_PUBLIC_SITE_COUNTRY unset. industrialautomationrepair.com */
-/*  is one US site. (The code can also run two country sites from one     */
-/*  codebase and database, CA and US, if that is ever wanted.)            */
+/*  IAR USA: leave NEXT_PUBLIC_SITE_COUNTRY unset. www.servorepairusa.com    */
+/*  is one US site; industrialautomationrepair.com stays IAR's separate    */
+/*  Canadian site and is not run from this code. (The code can also run    */
+/*  two country sites from one codebase if that is ever wanted.)           */
 /*  Shared pages (parts, services, brands...) exist on both domains and */
 /*  are linked with hreflang in the sitemaps; city pages live only on   */
 /*  their own country's domain (the other domain 301s to it).           */
@@ -39,7 +40,7 @@ const origin = (v: string | undefined, fallback: string) => (v || fallback).repl
 /** Home address of each country site (this site's own entry is always SITE_URL). */
 export const COUNTRY_SITES: Record<Country, string> = {
   CA: SITE_COUNTRY === "CA" ? SITE_URL : origin(process.env.NEXT_PUBLIC_CA_SITE_URL, "https://industrialautomationrepair.com"),
-  US: SITE_COUNTRY === "US" ? SITE_URL : origin(process.env.NEXT_PUBLIC_US_SITE_URL, "https://industrialautomationrepair.com"),
+  US: SITE_COUNTRY === "US" ? SITE_URL : origin(process.env.NEXT_PUBLIC_US_SITE_URL, "https://www.servorepairusa.com"),
 };
 /** The other country's site, or null while there is only one site. */
 export const PARTNER_URL = SITE_COUNTRY ? COUNTRY_SITES[otherOf(SITE_COUNTRY)] : null;
