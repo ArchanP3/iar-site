@@ -958,7 +958,7 @@ const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" 
     metaTitle: "Servo Motor Repair Service | AC, DC & CNC Motors | IAR",
     metaDescription: "Industrial servo motor repair: bearings, brakes, windings and encoder alignment for AC, DC and CNC servo motors. Free evaluation, 1-year warranty.",
     h1: "Industrial Servo Motor Repair & Rebuilds",
-    intro: "Our servo motor repair service covers AC servo motor repair, DC servo motor repair and CNC servo motor repair. As experienced servo motor rebuilders, we handle servo motor bearing replacement, servo motor brake repair and encoder alignment, and finish every job with servo motor testing under load. Overheating, noise and encoder errors are the faults we see most.",
+    intro: "Our servo motor repair service covers AC servo motor repair, DC servo motor repair and CNC servo motor repair. As experienced servo motor rebuilders, we handle servo motor bearing replacement, servo motor brake repair and encoder alignment, and finish every job with servo motor testing under load. Overheating, noise and encoder errors are the faults we see most. If a motor is beyond repair, we help you find a replacement servo motor.",
   },
   "servo-drive-repair": {
     metaTitle: "Servo Drive & Amplifier Repair | AC & DC Drives | IAR",
@@ -1003,7 +1003,7 @@ const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" 
     intro: "Industrial circuit board repair at component level. Our PCB repair and printed circuit board repair work covers drive control boards, power boards and machine control cards, and circuit board refurbishing replaces aging capacitors and connectors before they fail.",
   },
   "hmi-repair": {
-    metaTitle: "HMI & Touch Screen Repair | Operator Panels | IAR",
+    metaTitle: "HMI Repair & Touch Screen Repair | Operator Panels | IAR",
     metaDescription: "HMI and touch screen repair: operator panel repair, backlights and HMI replacement panels for PanelView, SIMATIC and Pro-face.",
     h1: "HMI, Touch Screen & Operator Panel Repair",
     intro: "HMI repair, touch screen repair and operator panel repair for every major brand, including PanelView repair. If a panel can't be repaired, we can supply an HMI replacement panel.",
@@ -1028,7 +1028,7 @@ const SEO_WORDING: Record<string, Pick<Service, "metaTitle" | "metaDescription" 
   },
   "encoder-repair": {
     metaTitle: "Encoder Repair & Replacement | Servo Encoder Alignment | IAR",
-    metaDescription: "Encoder repair, encoder replacement and encoder alignment service for servo motors: Heidenhain, FANUC pulsecoders and more. 1-year warranty.",
+    metaDescription: "Encoder repair, encoder replacement, resolver repair and encoder alignment for servo motors: Heidenhain, FANUC pulsecoders and more. 1-year warranty.",
     h1: "Encoder Repair, Replacement & Alignment",
     intro: "Encoder repair and encoder replacement for servo motors, with an encoder alignment service so the motor commutates correctly once installed. We also handle resolver repair on older motors.",
   },
